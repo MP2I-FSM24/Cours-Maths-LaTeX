@@ -1,0 +1,711 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{13}
+\chapter{Suites numériques}
+\tableofcontents
+\clearpage
+
+\setcounter{section}{17}
+\section{Premier théorème de comparaison}
+\begin{tcolorbox}[title=Théorème 14.18, title filled=false, colframe=orange, colback=orange!10!white]
+    Si à partir d'un certain rang on a 
+    $$|u_n - l| \leq v_n$$
+    avec $v_n \underset{n \to +\infty}{\longrightarrow} 0$, alors $u_n \underset{n \to +\infty}{\longrightarrow} l$. 
+\end{tcolorbox}
+
+Soit $u_n \in \mathbb{N}$ tel que : 
+$$\forall n \geq N_1, |u_n - l| \leq v_n$$
+Comme $v_n \underset{n \to +\infty}{\longrightarrow} 0$, pour tout $\epsilon > 0$, on choisit $N_2 \in \mathbb{N}$ tel que :
+$$\forall n \geq N_2, |v_n - 0| = |v_n| < \epsilon$$
+On pose $N = \max(N_1, N_2)$. Ainsi : 
+$$\forall n \geq \mathbb{N}, |u_n - l| \leq v_n = |v_n| < \epsilon$$
+Donc $\boxed{u_n \underset{n \to +\infty}{\longrightarrow} l}$
+
+\setcounter{section}{21}
+\section{Unicité de la limite}
+\begin{tcolorbox}[title=Propostion 14.22, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $u$ admet une limite $l \in \mathbb{R}$, alors celle-ci est unique. 
+\end{tcolorbox}
+
+On suppose que $u$ admet comme limite $l$ et $l'$ dans $\mathbb{R}$. \\
+Soit $\epsilon > 0$. On choisit $N$ et $N'$ dans $\mathbb{N}$ tels que : 
+\begin{align*}
+    \forall n \geq N, |u_n - l| &< \epsilon \\
+    \forall n \geq N', |u_n - l'| &< \epsilon
+\end{align*}
+Pour tout $n \geq \max(N, N')$ : 
+\begin{align*}
+    |l - l'| &= |l - u_n + u_n - l'| \\
+    &\leq |l - u_n| + |u_n - l'| \text{ (Inégalité triangulaire)} \\
+    &< l\epsilon
+\end{align*}
+Nécessairement : 
+$$|l - l'| = 0$$
+
+\section{Limite et inégalité}
+\begin{tcolorbox}[title=Propostion 14.23, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $u$ converge vers $l$ et si $\alpha < l$, alors à partir d'un certain rang, $\alpha < u_n$. De la même manière, si $\beta > l$, alors à partir d'un certain rang, $u_n < \beta$. 
+\end{tcolorbox}
+
+On suppose que $u_n \underset{n \to +\infty}{\longrightarrow} l$. Soit $\alpha < l$. On pose $\epsilon = \frac{|l-\alpha|}{2}$. \\
+D'après la définition, on choisit $N \in \mathbb{N}$ tel que : 
+$$\forall n \geq N, |u_n - l| < \epsilon$$
+Soit : 
+\begin{align*}
+    \forall n \geq N, \underbrace{u_n}_{> \alpha} &\in ]\underbrace{l-\epsilon}_{> \alpha}, l+\epsilon[
+\end{align*}
+
+\section{Convergence et bornitude}
+\begin{tcolorbox}[title=Propostion 14.24, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Une suite convergente est bornée. 
+\end{tcolorbox}
+
+Soit $u$ une suite convergente. Notons $l = \lim\limits_{n \to +\infty} u_n$. \\
+On pose $\epsilon = $. \\
+Par définition, soit $N \in \mathbb{N}$ tel que : 
+\begin{align*}
+    \forall n \geq N, u_n &\in ]l-1, l+1[
+\end{align*}
+Donc $\{ u_n, n \geq N \}$ est borné. 
+Donc $\{ u_n, n \in \mathbb{N} \} = \underbrace{\{ u_n, n \in \llbracket 0, N-1 \rrbracket \}}_{\text{ensemble fini}} \cup \underbrace{\{ u_n, n \geq N \}}_{\text{borné}}$ est borné. 
+
+\setcounter{section}{28}
+\section{Minoration d'une extraction}
+\begin{tcolorbox}[title=Lemme 14.29, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sigma : \mathbb{N} \to \mathbb{N}$ une application strictement croissante, alors
+    $$\forall n \in \mathbb{N}, n \leq \sigma(n). $$
+\end{tcolorbox}
+
+Par récurrence. \\
+Comme $\sigma(0) \in \mathbb{N}$, on a bien $\sigma(0) \geq 0$. \\
+Si $\sigma(n) \geq n$, alors $\sigma(n+1) > \sigma(n) \geq n$. \\
+Donc $\sigma(n+1) \geq n+1$. 
+
+\section{Extraction d'une suite convergente}
+\begin{tcolorbox}[title=Propostion 14.30, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Toute suite extraite d'une suite qui tend vers $l \in \overline{\mathbb{R}}$ est une suite convergente vers $l$. 
+\end{tcolorbox}
+
+On suppose que $u_n \underset{n \to +\infty}{\longrightarrow}  l \in \mathbb{R}$ (à adapter pour $l = \pm\infty$) \\
+Soit $\sigma : \mathbb{N} \to \mathbb{N}$ strictement croissante. \\
+On note $v = u \circ \sigma$. \\
+Soit $\epsilon > 0$. Soit $N \in \mathbb{N}$ tel que : 
+$$\forall n \geq \mathbb{N}, |u_n - l| < \epsilon$$
+Pour $n \geq N$, on a : 
+\begin{align*}
+    \sigma(n) \underset{\text{(14.29)}}{\geq} n &\geq N \\
+    \text{donc } |u_{\sigma(n)} - l| &< \epsilon \\
+    \text{soit } |v_n - l| &< \epsilon \\
+    \text{donc } \boxed{v_n \underset{n \to +\infty}{\longrightarrow} l}
+\end{align*}
+
+\setcounter{section}{31}
+\section{Pair, impair et convergence}
+\begin{tcolorbox}[title=Propostion 14.32, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $\lim u_{2n} = \lim u_{2n+1} = l \in \mathbb{R}$, alors $\lim u_n = l$
+\end{tcolorbox}
+
+Soit $\epsilon > 0$. Soit $N_1$ et $N_2$ dans $\mathbb{N}$ telq que : 
+\begin{align*}
+    \forall n \geq N_1, |u_{2n} - l| &\leq \epsilon \\
+    \forall n \geq N_2, |u_{2n+1} - l| &\leq \epsilon
+\end{align*}
+Or pour $N = \max(2N_1, 2N_2 + 1)$. \\
+Soit $n \geq N$. \\
+\begin{itemize}
+    \item Si $n = 2p$, alors $p \geq N_1$
+    $$|u_n - l| = |u_{2p} - l| \leq \epsilon$$
+
+    \item Si $n = 2p+1$, alors $p \geq N_2$
+    $$|u_n - l| = |u_{2p+1} - l| \leq \epsilon$$
+\end{itemize}
+Dans tous les cas, $\boxed{|u_n - l| \leq \epsilon}$. 
+
+\setcounter{section}{33}
+\section{Opérations usuelles sur les limites}
+\begin{tcolorbox}[title=Théorème 14.34, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u$ et $v$ deux suites qui convergent respectivement vers $l$ et $l'$ et soit $\lambda \in \mathbb{R}$, alors
+    \begin{itemize}
+        \item $u + v$ converge ver $l + l'$
+        \item $\lambda u$ converge vers $\lambda l$
+        \item $uv$ converge vers $ll'$
+        \item Si $l \neq 0$, alors à partir d'un certain rang, la suite des termes $u_n$ sont tous nuls et la suite $\frac{1}{u}$ converge vers $\frac{1}{l}$
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Soit $n \in \mathbb{N}$ tel que 
+    $$\forall n \in \mathbb{N}, |u_n - l| \leq \epsilon \text{ et } |v_n - l'| \leq \epsilon$$
+    Donc : 
+    \begin{align*}
+        \forall n \in \mathbb{N}, |u_n + v_n - (l + l')| &\leq |u_n - l| + |v_n - l'| \text{ (Inégalité triangulaire)} \\
+        &\leq \epsilon
+    \end{align*}
+
+    \item RAS ($\lambda = 0$ et $\lambda \neq 0$)
+
+    \item Comme $u$ converge, $u$ est bornée. Soit $M \in \mathbb{R}_+$ tel que : 
+    $$\forall n \in N, |u_n| \leq M$$
+    Pour $n \in \mathbb{N}$ : 
+    \begin{align*}
+        |u_n v_n - ll'| &= |u_n v_n - u_n l' + u_n l' - ll'| \\
+        &\leq |M| |v_n - l'| + |l'| \times |u_n - l| \\
+        &\leq M \times \epsilon + |l'| \times \epsilon \\
+        &= (M + |l'|) \times \epsilon
+    \end{align*}
+
+    Donc $\boxed{u_n v_n \underset{n \to +\infty}{\longrightarrow}  ll'}$. 
+
+    \item On suppose $l \neq 0$. D'après $\text{(14.23)}$, à partir d'un certain rang $u_n > 0$ (ou $u_n < 0$). Il existe en outre $N \in \mathbb{N}$ tel que : 
+    \begin{align*}
+        0 < \frac{l}{2} < u_n \text{ et } |u_n - l| < \epsilon
+    \end{align*}
+    Pour $n \geq N$ : 
+    \begin{align*}
+        \left| \frac{1}{u_n} - \frac{1}{l} \right| &= \frac{|l - u_n|}{|u_n l|} \\
+        &\leq 2 \frac{|l - u_n|}{l^2} \\
+        &< \frac{2 \epsilon}{l^2}
+    \end{align*}
+\end{itemize}
+
+\section{Conservation des inégalités larges par passage à la limite}
+\begin{tcolorbox}[title=Théorème 14.35, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u$ et $v$ deux suites réelles. Si $u$ converge vers $l$ et $v$ converge vers $l'$ et si à partir d'un certain rang $u_n \leq v_n$ alors $l \leq l'$. 
+\end{tcolorbox}
+
+On raisonne par l'absurde : $l > l'$. \\
+On pose $\epsilon = \frac{|l' - l|}{2}$. \\
+On choisit $N \in \mathbb{N}$ tel que : 
+\begin{align*}
+    \forall n \geq N, u_n \in ]l-\epsilon, l+\epsilon[ \text{ et } v_n \in ]l'-\epsilon, l'+\epsilon[
+\end{align*}
+En particulier : 
+\begin{align*}
+    \forall n \geq N, u_n > v_n
+\end{align*}
+Absurde. 
+
+\setcounter{section}{36}
+\section{Théorème d'encadrement}
+\begin{tcolorbox}[title=Théorème 14.37, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u$, $v$ et $w$ trois suites réelles. Si $u$ et $v$ convergent vers $l$ et si à partir d'un certain rang, $u_n \leq w_n \leq v_n$, alors $w$ converge vers $l$. 
+\end{tcolorbox}
+
+Soit $\epsilon > 0$, on choisit $N \in \mathbb{N}$ tel que : 
+\begin{align*}
+    \forall n \geq N, u_n \in ]l-\epsilon[ \text{ et } v_n \in ]l-\epsilon, l+\epsilon[
+\end{align*}
+A partir d'un certain rang $M$, par connexité de l'intervalle $]l-\epsilon, l+\epsilon[$ : 
+\begin{align*}
+    \forall n \geq M, w_n \in ]l-\epsilon, l+\epsilon[
+\end{align*}
+
+\section{Produit d'une suite bornée par une limite nulle}
+\begin{tcolorbox}[title=Théorème 14.38, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u$ et $v$ deux suites réelles. Si $u$ converge vers $0$ et si $v$ est bornée, alors $w$ converge vers $0$. 
+\end{tcolorbox}
+
+Soit $M \in \mathbb{R}_+$ telq ue : 
+\begin{align*}
+    \forall n \in \mathbb{N}, |v_n| \leq M
+\end{align*}
+Alors : 
+\begin{align*}
+    \forall n \in \mathbb{N}, |u_n v_n| \leq M \times |u_n| \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+Donc : 
+\begin{align*}
+    |u_n v_n| \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+Soit : 
+\begin{align*}
+    u_n v_n \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 14.39, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $(u_n)$ une suite strictement positive et $\eta \in ]0; 1[$. On suppose qu'à partir d'un certain rang, on a $\frac{u_{n+1}}{u_n} \leq \eta$. Alors $\lim u_n = 0$. 
+\end{tcolorbox}
+
+On suppose que : 
+\begin{align*}
+    \forall n \geq n_0, \frac{u_{n+1}}{u_n} \leq 2
+\end{align*}
+Donc $\text{($u_n > 0$)}$ : 
+\begin{align*}
+    \forall n \geq n_0, 0 < u_n < \underbrace{\eta^{n-n_0}}_{\underset{n \to +\infty}{\longrightarrow} 0} \times u_{n_0}
+\end{align*}
+Par encadrement : 
+\begin{align*}
+    \boxed{u_n \underset{n \to +\infty}{\longrightarrow} 0}
+\end{align*}
+
+\section{Comparaison puissance factorielle}
+\begin{tcolorbox}[title=Théorème 14.40, title filled=false, colframe=orange, colback=orange!10!white]
+    \begin{align*}
+        \forall x \in \mathbb{R}, \lim_{n \to +\infty} \frac{x^n}{n!} = 0.
+    \end{align*}
+\end{tcolorbox}
+
+Pour $x \in \mathbb{R}$ fixé, non nul. \\
+On note pour tout $n \in \mathbb{N}$ : 
+\begin{align*}
+    u_n = \frac{|x|^n}{n!} > 0
+\end{align*}
+Or : 
+\begin{align*}
+    \frac{u_{n+1}}{u_n} = \frac{|x|}{n+1} \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+A partir d'un certain rang : 
+\begin{align*}
+    \frac{u_{n+1}}{u_n} \leq \frac{1}{2}
+\end{align*}
+Donc $\text{(14.39)}$ : 
+\begin{align*}
+    \boxed{u_n \underset{n \to +\infty}{\longrightarrow}  0}
+\end{align*}
+
+\section{Caractérisation séquentielle de la borne supérieure}
+\begin{tcolorbox}[title=Théorème 14.41, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $A$ une partie non vide de $\mathbb{R}$ et soit $M \in \mathbb{R}$. Alors $M$ est la borne supérieure (resp. inférieure) de $A$ si et seulement si $M$ majore (resp. minore) $A$ et s'il existe une suite d'éléments de $A$ qui converge vers $M$. 
+\end{tcolorbox}
+
+\boxed{\Rightarrow} \\
+On suppose que $M = \sup A$. Donc $M$ majore $A$. \\
+On rappelle que : 
+\begin{align*}
+    \forall \epsilon > 0, \exists a \in A, M - \epsilon < a
+\end{align*}
+Donc : 
+\begin{align*}
+    \forall n \in N, \exists a \in A, M - \frac{1}{n+1} < a_n \leq M \text{ ($M$ est un majorant)}
+\end{align*}
+D'après la suite $(a_n) \in A^{\mathbb{N}}$ étant ainsi définie, d'après le théorème d'encadrement : 
+\begin{align*}
+    \boxed{a_n \underset{n \to +\infty}{\longrightarrow} M}
+\end{align*} \\
+
+\boxed{\Leftarrow} \\
+On choisit $(a_n) \in A^{\mathbb{N}}$ telle que : 
+\begin{align*}
+    a_n \underset{n \to +\infty}{\longrightarrow} M \text{ (majorant de $A$)}
+\end{align*}
+Soit $\epsilon > 0$. On choisit $a_n \in A$ tel que : 
+\begin{align*}
+    a_n \in ]M-\epsilon, M+\epsilon[
+\end{align*}
+Donc $M - \epsilon$ ne majore pas $A$. \\
+Donc : 
+\begin{align*}
+    \boxed{M = \sup A}
+\end{align*}
+
+\section{Caractérisation séquentielle de la borne supérieure}
+\begin{tcolorbox}[title=Théorème 14.42, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $A$ une partie non vide de $\mathbb{R}$, alors $A$ est dense dans $\mathbb{R}$ si et seulement si pour tout $x \in \mathbb{R}$, il existe une suite d'éléments de $A$ qui converge vers $x$. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+On suppose que $A$ est dense dans $\mathbb{R}$. \\
+Soit $x \in \mathbb{R}$. 
+\begin{align*}
+    \forall \epsilon > 0, \exists a \in A, a \in ]x-\epsilon, x+\epsilon[
+\end{align*}
+En particulier : 
+\begin{align*}
+    \forall n \in \mathbb{N}, \exists a_n \in A, x - \frac{1}{n+1} < a_n < x + \frac{1}{n+1}
+\end{align*}
+
+La suite $(a_n) \in A^{\mathbb{N}}$ étant fixée ainsi : 
+\begin{align*}
+    a_n \underset{n \to +\infty}{\longrightarrow} x \text{ (théorème d'encadrement)}
+\end{align*} \\
+
+$\boxed{\Leftarrow}$ \\
+Soit $]x, y[$ un intervalle non vide de $\mathbb{R}$. \\
+On pose $z = \frac{x + y}{2}$. On pose $\epsilon = \frac{|y-x|}{2}$. \\
+On choisit $(a_n) \in A^{\mathbb{N}}$ telle que :
+\begin{align*}
+    a_n \underset{n \to +\infty}{\longrightarrow} z
+\end{align*}
+On choisit $N \in \mathbb{N}$ tel que : 
+\begin{align*}
+    a_n \in ]z-\epsilon, z+\epsilon[ = ]x, y[
+\end{align*}
+Donc : 
+\begin{align*}
+    \boxed{A \cap ]x, y[ \neq \emptyset}
+\end{align*}
+
+\setcounter{section}{47}
+\section{Théorème de comparaison}
+\begin{tcolorbox}[title=Théorème 14.48, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u$ et $v$ deux suites réelles. 
+    \begin{enumerate}
+        \item Si $\lim u = +\infty$ et si à partir d'un certain rang on a $u_n \leq v_n$, alors $\lim v = + \infty$;
+        \item Si $\lim v = -\infty$ et si à partir d'un certain rang on a $u_n \leq v_n$, alors $\lim u = - \infty$;
+        \item Si $\lim u = +\infty$ (resp. $-\infty$) et si $v$ est minorée (resp. majorée), alors $\lim u + v = +\infty$ (resp. $-\infty$).
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Soit $A \geq 0$. On choisit $n \in \mathbb{N}$ tel que : 
+    \begin{align*}
+        \forall n \geq N, A \leq u_n \text{ et } u_n \leq v_n
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \boxed{v_n \underset{n \to +\infty}{\longrightarrow} + \infty}
+    \end{align*}
+
+    \item RAS
+    
+    \item Si $(v_n)$ est minorée, alors à partir d'un certain rang : 
+    \begin{align*}
+        m + u_n \leq u_n + v_n
+    \end{align*}
+    En adaptant le premier point ($A' = A - m$), on a : 
+    \begin{align*}
+        \boxed{u_n + v_n \underset{n \to +\infty}{\longrightarrow} + \infty}
+    \end{align*}
+\end{enumerate}
+
+\section{Limites infinies et opérations}
+\begin{tcolorbox}[title=Théorème 14.49, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u$ et $v$ deux suites réelles de limites respectives $l$ et $l'$ dans $\overline{\mathbb{R}}$ et soit $\lambda \in \mathbb{R}$. On a 
+    \begin{itemize}
+        \item $\lim u + v = l + l'$ (sauf si $l = +\infty$ et $l' = -\infty$ ou inversement)
+        \item $\lim \lambda u = \lambda l$ sauf si $\lambda = 0$ auquel cas la suite $\lambda u$ est la suite nulle. 
+        \item $\lim u \times v = l \times l'$ sauf si $\lambda = 0$ et $l' = \pm \infty$ ou inversement
+        \item Si à partir d'un certain rang, la suite $u$ ne s'annule pas, alors la suite $\frac{1}{u}$ : 
+        \begin{itemize}
+            \item si $l \in \mathbb{R}^*$, tend vers $\frac{}{l}$;
+            \item si $l = \pm\infty$, tend vers $0$;
+            \item si $l = 0$ et $u_n > 0$, tend vers $+\infty$;
+            \item si $l = 0$ et $u_n < 0$, tend vers $-\infty$;
+            \item n'a pas de limite dans les autre cas. 
+        \end{itemize}
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On suppose $l' \in \mathbb{R}$ et $l = +\infty$. Donc $v$ est bornée. \\
+    Donc $\text{(14.48)}$ : 
+    \begin{align*}
+        u_n + v_n \underset{n \to +\infty}{\longrightarrow}  +\infty
+    \end{align*}
+
+    \item $\lambda \neq 0, \lambda > 0$ et $l = +\infty$. Pour $A \in \mathbb{R}$, on choisit un rang à partir duquel $u_n > \frac{A}{\lambda}$. 
+    
+    \item On suppose $l > 0$ et $l' = +\infty$. \\
+    Comme $u_n \underset{n \to +\infty}{\longrightarrow} l$, alors à partir d'un certain rang, $u_n > m$ avec $m = \begin{cases}
+        1 \text{ si } l = +\infty \\
+        \frac{l}{2} \text{ sinon}
+    \end{cases}$
+    \begin{align*}
+        u_n v_n > m v_n \underset{n \to +\infty}{\longrightarrow} +\infty
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        u_n v_n \underset{n \to +\infty}{\longrightarrow} +\infty \text{ (14.48)}
+    \end{align*}
+
+    \item $l = +\infty$. \\
+    Soit $\epsilon > 0$, à partir d'un certain rang : 
+    \begin{align*}
+        u_n > \frac{1}{\epsilon} > 0
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        0 < \frac{1}{u_n} < \epsilon \\
+        \frac{1}{u_n} \underset{n \to +\infty}{\longrightarrow} 0
+    \end{align*}
+    Si $l = 0$ et $u_n > 0$ à partir d'un certain rang. \\
+    Pour $A \in \mathbb{R}_+^*$, à partir d'un certain rang : 
+    \begin{align*}
+        u_n > 0 \text{ et } u_n < \frac{1}{A} \\
+        \text{donc } \frac{1}{u_n} > A \\
+        \frac{1}{u_n} \underset{n \to +\infty}{\longrightarrow} +\infty
+    \end{align*}
+\end{itemize}
+
+\section{Théorème de la limite monotone}
+\begin{tcolorbox}[title=Théorème 14.50, title filled=false, colframe=orange, colback=orange!10!white]
+    Si $u$ est une suite croissante et majorée (resp. décroissante et minorée), alors $u$ converge vers $\sup_{n\in \mathbb{N}}(u_n)$ (resp. vers $\inf_{n\in \mathbb{N}}(u_n)$). \\
+    Si $u$ est une suite croissante et non majorée (resp. décroissante et non minorée) alors $u$ tend vers $+\infty$ (resp. vers $-\infty$). 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On suppose $u$ croissante et majorée. \\
+    L'ensemble $A = \{ u_n | n\in \mathbb{N} \}$ est non vide et majoré. Cet ensemble possède une borne supérieure notée $l$ (propriété fondamentale de $\mathbb{R}$). \\
+    Soit $\epsilon > $. Comme $l - \epsilon < u_n$ ne majore pas $A$, on choisit $N \in \mathbb{N}$ tel que $l - \epsilon < u_n$. \\
+    Or $(u_n)$ est croissante donc : 
+    \begin{align*}
+        \forall n \geq N, l - \epsilon < u_N \leq u_n \leq l
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \forall n \geq N, u_n \in ]l-\epsilon, l+\epsilon[
+    \end{align*}
+    Soit : 
+    \begin{align*}
+        \boxed{u_n \underset{n \to +\infty}{\longrightarrow} l}
+    \end{align*}
+
+    \item On suppose $u$ croissante et non majorée. \\
+    Soit $A \in \mathbb{R}_+$. Soit $N \in \mathbb{N}$ tel que : 
+    \begin{align*}
+        u_N \geq A \text{ ($u$ non majorée)}
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \forall n \geq N, A \leq u_N \leq u_n \text{ ($u$ croissante)}
+    \end{align*}
+    Soit : 
+    \begin{align*}
+        \boxed{u_n \underset{n \to +\infty}{\longrightarrow} +\infty}
+    \end{align*}
+\end{itemize}
+
+\setcounter{section}{53}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 14.54, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $u$ et $v$ les suites définies par 
+    \begin{align*}
+        \forall n \in \mathbb{N}^*, u_n = \sum_{k=0}^{n} \frac{1}{k!} \text{ et } v_n = u_n + \frac{1}{n \times n!}
+    \end{align*}
+    Ces deux suites sont adjacentes. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item $$\forall n \in \mathbb{N}^*, u_{n+1} - u_n = \frac{1}{(n+1)!} \geq 0$$
+    Donc $(u_n)$ est croissante. 
+
+    \item \begin{align*}
+        \forall n \in \mathbb{N}^* v_{n+1} - v_n &= u_{n+1} - u_n + \frac{1}{(n+1)(n+1)!} - \frac{1}{nn!} \\
+        &= \frac{1}{(n+1)!} + \frac{1}{(n+1)(n+1)!} - \frac{1}{nn!} \\
+        &= \frac{1}{n!} \left[ \frac{1}{n+1} + \frac{1}{(n+1)^2} - \frac{1}{n} \right] \\
+        &= \frac{1}{n!(n+1)^2n} [(n+1)n + n - (n+1)^2] \\
+        &= - \frac{1}{n!(n+1)^2 n} \\
+        &\leq 0
+    \end{align*}
+
+    \item $$\forall n \in \mathbb{N}^*, v_n - u_n = \frac{1}{n \times n!}$$
+    Donc : 
+    $$v_n - u_n \underset{n \to +\infty}{\longrightarrow} 0$$
+    Donc $u$ et $v$ sont adjacentes et convergent alors vers une limite commune. (TCSA)
+\end{itemize}
+
+
+\section{Convergence des suites adjacentes}
+\begin{tcolorbox}[title=Théorème 14.55, title filled=false, colframe=orange, colback=orange!10!white]
+    Deux suites adjacentes convergent vers une limite commune. 
+\end{tcolorbox}
+
+Soit $u$ et $v$ deux suites adjacentes avec $u$ croissante et $v$ décroissante. \\
+Soit $w = v - u$. Par opération, $w$ est décroissante. \\
+Par hypothèse : 
+\begin{align*}
+    w_n \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+Donc $w \leq 0$, soit $u \leq v$. \\
+La suite $u$ est donc majorée par $v_0$, et croissante donc convergente d'après le théorème de la limite monotone. \\
+Pour les mêmes raisons, $v$ converge. \\
+Or, par théorème d'opérations : 
+\begin{align*}
+    \lim_{n\to +\infty} v_n - \lim_{n\to +\infty} u_n = \lim_{n\to +\infty} (v_n - u_n) = 0
+\end{align*}
+
+\section{Théorème de Bolzano-Weierstrass}
+\begin{tcolorbox}[title=Théorème 14.56, title filled=false, colframe=orange, colback=orange!10!white]
+    On peut extraire de toute suite réelle bornée une suite convergente. 
+\end{tcolorbox}
+
+Soit $u$ une suite bornée. On note $a$ et $b$ un minorant et majorant de $u$. On construit deux suites $(a_n)$ et $(b_n)$ par récurrence de la manière suivante : 
+\begin{itemize}
+    \item On initialise $a_0 = a$ et $b_0 = b$. 
+    
+    \item Si l'intervalle $\left[ a_0, \frac{a_0 + b_0}{2} \right]$ contient une infinité de valeurs de la suite $(u_n)$, alors $a_1 = a_0$ et $b_1 = \frac{a_0 + b_0}{2}$. \\
+    Sinon, l'intervalle $\left[ \frac{a_0 + b_0}{2}, b_0 \right]$ contient une infinité de valeurs, alors $a_1 = \frac{a_0 + b_0}{2}$ et $b_1 = b_0$. \\
+    On note $\sigma(0) = 0$ et comme $[a_1, b_1]$ contient une infinité de valeurs, on dixe $u_{n_1}  \in [a_1, b_1]$ avec $n_1 > 0$. On pose alors $\sigma(1) = n_1$. 
+
+    \item Supposons construits $(a_n)$, $(b_n)$ et $\sigma$ avec le principe précédent : 
+    \begin{align*}
+        \forall n\in \mathbb{N}, \begin{cases}
+            a_{n+1} = a_n \text{ et } b_{n+1} = \frac{a_n + b_n}{2} \\
+            \text{ou} \\
+            a_{n+1} = \frac{a_n + b_n}{2} \text{ et } b_{n+1} = b_n
+        \end{cases}
+    \end{align*}
+    Selon que $\left[a_n, \frac{a_n + b_n}{2}\right]$ contient une infinité de valeurs ou $\left[ \frac{a_n + b_n}{2}, b_n \right]$ et $v(n+1) > v(n)$ et $u_{\sigma(n+1)} \in [a_{n+1}, b_{n+1}]$. 
+    \begin{align*}
+        \forall n \in \mathbb{N}, a_n \leq u_{\sigma(n)} \leq b_n \\
+        \forall n \in \mathbb{N}, |b_{n+1} - a_{n+1}| = \frac{|b_n - a_n|}{2} \\
+        \forall n \in \mathbb{N}, |b_n - a_n| = \frac{|b_0 - a_0|}{2^n} \underset{n \to +\infty}{\longrightarrow} 0
+    \end{align*}
+    Donc $(a_n)$ et $(b_n)$ sont adjacentes donc convergent vers la même limite (TCSA) donc $(u_{\sigma(n)})$ converge (TE). 
+\end{itemize}
+
+\setcounter{section}{62}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 14.63, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    La suite $(u_n)$ définie par $u_0 = 1$ et pour tout $n \in \mathbb{N}, u_{n+1} = u_n + e^{u_n}$ diverge vers $+\infty$. 
+\end{tcolorbox}
+
+$R_+$ est stable par $f:x \mapsto x + e^x$. \\
+Comme $0 \in \mathbb{R}_+$, la suite $(u_n)$ est bien définie. \\
+\begin{align*}
+    \forall n \in \mathbb{N}, u_{n+1} = f(u_n) = u_n + e^{u_n} \geq u_n
+\end{align*}
+Donc $(u_n)$ est croissant. \\
+Supposeons que $u_n \underset{n \to +\infty}{\longrightarrow} l \in \mathbb{R}_+$. \\
+Par théorème d'opération, $l = l + e^l$. \\
+Absurde. \\
+Donc d'après le TLM : 
+\begin{align*}
+    u_n \underset{n \to +\infty}{\longrightarrow} +\infty
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 14.64, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    La suite $(u_n)$ défine par $u_0 = 1$ et pour tout $n \in \mathbb{N}, u_{n+1} = \frac{u_n}{1 + u_n^2}$ converge vers $0$. 
+\end{tcolorbox}
+
+$[0,1]$ est stable par $f:x\mapsto \frac{x}{x^2 + 1}$ et $1 \in [0,1]$. \\
+Donc $(u_n)$ est bien définie et est minorée. \\
+Or : 
+\begin{align*}
+    \forall n \in \mathbb{N}, u_{n+1} ) f(u_n) = \frac{u_n}{u_n^2 + 1} \leq u_n
+\end{align*}
+Donc $(u_n)$ est décroissante donc converge vers $l \in [0,1]$ d'après le TLM. \\
+Par théorème d'opération : 
+\begin{align*}
+    l &= \frac{l}{l^2 + 1} \\
+    \text{donc } l^2 &= 0 \\
+    \text{donc } l &= 0
+\end{align*}
+
+\setcounter{section}{65}
+\section{Monotonie d'une suite récurrente définie par une relation $u_{n+1} = f(u_n)$}
+\begin{tcolorbox}[title=Théorème 14.66, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $D$ une partie de $\mathbb{R}$, $u_0 \in D$ et $f:D\to D$ une fonction (autrement dit, $D$ est stable par $f$). On note $(u_n)$ l'unique suite définie sur $\mathbb{N}$ par $u_{n+1} = f(u_n)$. 
+    \begin{enumerate}
+        \item Si pour tout $x \in D, f(x) \geq x$, alors $(u_n)$ est croissante. Si pour tout $x \in D, f(x) \leq x$, alors $(u_n)$ est décroissante. Le signe de la fonction $x \mapsto f(x) - x$ renseigne donc sur la monotonie de la suite $(u_n)$. 
+        \item Si $f$ est croissante, alors $(u_n)$ est monotone. Son sens de variation dépend alors du signe de $u_1 - u_0$. 
+        \item Si $f$ est décroissante, alors $(u_{2n})$ et $(u_{2n+1})$ sont monotones et de sens contraires. Leur sens de variation est entièrement déterminé par le signe de $u_2 - u_0$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Si : 
+    \begin{align*}
+        \forall n \in D, f(x) \geq x
+    \end{align*}
+    Alors : 
+    \begin{align*}
+        \forall n \in \mathbb{N}, f(u_n) = u_{n+1} > u_n
+    \end{align*}
+    Donc $(u_n)$ est croissante. 
+
+    \item On suppose $f$ croissate et $u_0 \leq u_1$. Alors : 
+    \begin{align*}
+        u_1 = f(u_0) \leq f(u_1) = u_2
+    \end{align*}
+    On termine par récurrence. 
+
+    \item Si $f$ est décroissante, alors $f^2 = f \circ f$ est croissante. 
+    Or : 
+    \begin{align*}
+        \forall n \in \mathbb{N}, u_{2n+2} &= f^2(u_{2n}) \\
+        u_{2n+1} &= f^2(u_{2n-1})
+    \end{align*}
+    Donc (14.66.2) $(u_{2n})$ et $(u_{2n+1})$ sont monotones. \\
+    Or, si $u_2 \leq u_0$, alors $u_3 = f(u_2) \leq f(u_0) = u_1$
+\end{enumerate}
+
+\setcounter{section}{67}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 14.68, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $(u_n)$ la suite définie par $u_0 = 1$ et pour tout $n \in \mathbb{N}, u_{n+1} = u_n^2 + u_n$ et notons $f:x\mapsto 1+\frac{1}{x}$. \\
+    Etudier la convergence de la suite $(u_n)$. 
+\end{tcolorbox}
+
+$\mathbb{R}_+$ est stable par $f:x \mapsto x^2 + x$ et $1 \in \mathbb{R}_+$. \\
+Donc $(u_n)$ est bien définie. \\
+Comme : 
+\begin{align*}
+    \forall x \in \mathbb{R}_+, f(x) - x \geq 0
+\end{align*}
+$(u_n)$ est croissante. \\
+On suppose que : 
+\begin{align*}
+    u_n \underset{n \to +\infty}{\longrightarrow} l \geq 1 = u_0
+\end{align*}
+Comme $f \in \mathcal{C}^{\infty}(\mathbb{R}_+, \mathbb{R}_+)$. \\
+On a $f(l) = l$ donc $l^2 = 0$. \\
+Absurde. \\
+Donc, d'après le TLM : 
+\begin{align*}
+    u_n \underset{n \to +\infty}{\longrightarrow} +\infty
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 14.69, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $(u_n)$ la suite définie apr $u_0 = 1$ et pour tout $n \in \mathbb{N}, u_{n+1} = 1 + \frac{1}{u_n}$, et notons $f:x\mapsto 1 + \frac{1}{x}$. \\
+    Etudier la convergence de la suite $(u_n)$. 
+\end{tcolorbox}
+
+$[1, 2]$ est stable par $f:x\mapsto 1 +\ frac{1}{x}$ et $1 \in [1, 2]$. \\
+Donc $(u_n)$ est bien définie et est bornée. \\
+Comme $f$ est décroissante sur $[1, 2]$, $(u_{2n})$ et $(u_{2n+1})$ sont monotones de monoties contraires. \\
+Comme$u_0 = 1 = \min([1,2])$, $(u_{2n})$ est croissante et $(u_{2n+1})$ décroissante, puis convergentes (TLM) vers des points fixes de $f^2$ (car $f^2$ est continue sur $[1,2]$) \\
+Soit $x \in [1, 2]$.
+\begin{align*}
+    f^2(x) = x &\Leftrightarrow 1 + \frac{1}{1 + \frac{1}{x}} = x \\
+    &\Leftrightarrow x + 1 + x = x(x + 1) \\
+    &\Leftrightarrow x^2 - x - 1 = 0 \\
+    &\Leftrightarrow \left( x - \underbrace{\frac{1 + \sqrt{5}}{2}}_{\in [1, 2]} \right) \left( x - \underbrace{\frac{1 - \sqrt{5}}{2}}_{\not \in [1,2]} \right) = 0 \\
+    &\Leftrightarrow x = \frac{1 + \sqrt{5}}{2}
+\end{align*}
+Donc $(u_{2n})$ et $(u_{2n+1})$ convergent nécessairement vers $\frac{1 + \sqrt{5}}{2}$. \\
+Donc : 
+\begin{align*}
+    u_n \underset{n \to +\infty}{\longrightarrow} \frac{1 + \sqrt{5}}{2}
+\end{align*}
+
+\setcounter{section}{71}
+\section{Convergence et parties réelles et imaginaires}
+\begin{tcolorbox}[title=Théorème 14.72, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u$ une suite complexe et $l \in \mathcal{C}$. Alors la suite $u$ converge vers $l$ si et seulement si la suite $(Re(u_n))$ converge vers $Re(l)$ et $(Im(u_n))$ converge vers $Im(l)$. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+Pour tout $n \in \mathbb{N}$ : 
+\begin{align*}
+    |Re(u_n) - Re(l)| \leq |u_n - l| \underset{n \to +\infty}{\longrightarrow} 0 \\
+    |Im(u_n) - Im(l)| \leq |u_n - l| \underset{n \to +\infty}{\longrightarrow} 0 \\
+\end{align*}
+Ainsi, $Im(u_n) \underset{n \to +\infty}{\longrightarrow} Im(l)$ et $Re(u_n) \underset{n \to +\infty}{\longrightarrow} Re(l)$. \\ \\
+
+$\boxed{\Leftarrow}$
+On a : 
+\begin{align*}
+    |u_n - l| &= \sqrt{(Im(u_n) - Im(l))^2 + (Re(u_n) - Re(l))^2} \\
+    &\underset{n \to +\infty}{\longrightarrow} 0 \text{ (théorème d'opérations)}
+\end{align*}
+
+\section{Théorème de Bolzano-Weierstrass pour les suites complexes}
+\begin{tcolorbox}[title=Remarque 14.73, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $u$ est bornée , on peut en extraire une suite convergente (Bolzano-Weierstrass). 
+\end{tcolorbox}
+
+$u_n = a_n + b_n$ bornée. \\
+$(a_n)$ et $(b_n)$ sont bornés. \\
+$(a_n)$ borneé donc $(a_{\sigma(n)})$ converge. \\
+$(b_{\sigma(n)})$ bornée donc $(b_{\sigma \circ \varphi(n)})$ converge. \\
+$(a_{\sigma \circ \varphi(n)})$ extraite de $(a_{\sigma (n)})$ donc converge. \\
+$(u_{\sigma \circ \varphi(n)})$ converge. 
+
+
+\end{document}
