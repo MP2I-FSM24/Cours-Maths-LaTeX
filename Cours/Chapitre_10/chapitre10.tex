@@ -1,0 +1,49 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{9}
+\chapter{Structures algébriques}
+\tableofcontents
+\clearpage
+
+\setcounter{section}{2}
+\section{Exemple}
+
+\begin{tcolorbox}[title=Exemple, title filled=false, colframe=darkgreen]
+    Soit $E = ]-1 ; 1[$. Pour $(x,y) \in E^2$, on pose : $x \star y = \frac{x + y}{1 + xy}$. Montrer que l'on définit ainsi une lci dans $E$. 
+\end{tcolorbox}
+
+On fixe $y \in E$. On note $\varphi:[-1 ; 1] \to \mathbb{R} ; x \mapsto x \star y = \frac{x + y}{1 + xy}$. \\
+$\varphi \in \mathcal{D}^1([-1;1], \mathbb{R})$ et : 
+\begin{align*}
+    \forall x \in E, \varphi'(x) &= \frac{1 + xy -y(x + y)}{(1 + xy)^2} \\
+    &= \frac{1 - y^2}{(1 + xy)^2} \\
+    &> 0
+\end{align*}
+Comme $E$ est un intervalle : $\varphi$ est strictement croissante sur $E$ et :
+$$\forall x \in E, -1 = \varphi(-1) < \varphi(x) < \varphi(1) = 1$$
+Donc : 
+$$\forall (x,y) \in E^2, x \star y \in E$$
+
+\setcounter{section}{5}
+\section{Exemple}
+
+\begin{tcolorbox}[title=Exemple, title filled=false, colframe=darkgreen]
+    Soit $E = ]-1;1[$. Pour $(x,y) \in E^2$, on pose $x \star y = \frac{x + y}{1 + xy}$. Montrer que $\star$ est associative et commutative.
+\end{tcolorbox}
+
+\begin{itemize}
+    \item \underline{Commutativité} : RAF
+    \item \underline{Associativité} : \\
+    Soit $(x,y,z) \in E^3$. On a :
+    \begin{align*}
+        x \star (y \star z) &= x \star \left( \frac{y + z}{1 + yz} \right) \\
+        &= \frac{x + \frac{y + z}{1 + yz}}{1 + x \frac{y + z}{1 + yz}} \\
+        &= \frac{x(1 + yz) + y + z}{1 + yz + xy + xz} \\
+        &= \frac{x + y + z + xyz}{1 + yz + xy + xz} \\
+    \end{align*}
+    C'est une expression symétrique en $x$, $y$ et $z$ donc :
+    $$x \star (y \star z) = (x \star y) \star z$$
+\end{itemize}
+
+\end{document}
