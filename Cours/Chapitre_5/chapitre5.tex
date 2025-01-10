@@ -1,0 +1,200 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{4}
+\chapter{Fonctions usuelles}
+\tableofcontents
+\clearpage
+
+\setcounter{section}{1}
+\section{Propriétés du logarithme}
+Par définition, $\ln$ est définie et dérvable sur $\mathbb{R}_+^*$ et :
+\begin{align*}
+    \forall x > 0, \ln'(x) = \frac{1}{x}
+\end{align*}
+
+\noindent On montre par récurrence sur $n \geq 1$ que 
+\begin{align*}
+    \text{"$\ln$ est dérivable $n$ fois et } \forall n > 0, \ln^{(n)}(x) = \frac{(-1)^{n - 1}(n - 1)!}{x^n} \text{"}
+\end{align*}
+\underline{Initialisation :} \\
+La propriété est vraie pour $n = 1$. \\ \\
+
+\noindent \underline{Hérédité :} \\
+Si elle est vraie pour $n \geq 1$, par théorème d'opérations, $\ln^{(n)}$ est encore dérivable et :
+\begin{align*}
+    \forall x > 0, ln^{(n + 1)}(x) &= \left[ \ln^{(x)} \right](x) \\
+    &= (-1)^n n! x^{-n-1} 
+\end{align*} 
+
+\noindent Comme $\ln' > 0$ sur $\mathbb{R}_+^*$, alors $\ln$ est strictement croissante sur $\mathbb{R}_+^*$. \\
+
+\section{Propriété fondamentale du logarithme}
+On montre seulement la propriété pour $a > 0$ et $b > 0$. \\
+On fixe $b > 0$ et on considère : 
+\begin{align*}
+    f: \mathbb{R}_+^* \rightarrow \mathbb{R} ; x \mapsto \ln (xb) \\
+\end{align*}
+Par composition, $f \in \mathcal{D}^1(\mathbb{R}_+^*, \mathbb{R})$ et :
+\begin{align*}
+    \forall x > 0, f'(x) = b \times \frac{1}{xb} = \frac{1}{x}
+\end{align*}
+Donc $f$ est une primitive de $\frac{1}{x}$ sur $\mathbb{R}_+^*$. \\
+On choisit $c \in \mathbb{R}$ tel que : \\
+\begin{align*}
+    f = \ln + c
+\end{align*}
+En particulier : 
+\begin{align*}
+    f(1) = \ln 1 + c
+\end{align*}
+Soit : 
+\begin{align*}
+    \ln b = c
+\end{align*}
+Ainsi : 
+\begin{align*}
+    \forall x > 0, \ln (xb) = \ln x + \ln b
+\end{align*}
+On a par conséquent :
+\begin{align*}
+    \forall x \in \mathbb{R}_+^*, 0 &= \ln 1 \\
+    &= \ln (x \times \frac{1}{x}) \\
+    &= \ln x + \ln \frac{1}{x} \\
+\end{align*}
+Donc pour $a > 0$ et $b > 0$, on a :
+\begin{align*}
+    \ln \left( \frac{a}{b} \right) &= \ln \left( a \times \frac{1}{b} \right) \\
+    &= \ln a + \ln \frac{1}{b} \\
+    &= \ln a - \ln b
+\end{align*}
+
+\section{Limites usuelles de la fonction logarithme}
+On commence par montrer que : 
+\begin{align*}
+    \ln x \underset{x \rightarrow +\infty}{\longrightarrow} +\infty
+\end{align*}
+On sait que $\ln$ est croissante sur $\mathbb{R}_+^*$, donc d'après le théorème de la limite monotone : 
+\begin{align*}
+    & \ln x \underset{x \rightarrow +\infty}{\longrightarrow} +\infty && \text{ou} && \ln x \underset{x \rightarrow +\infty}{\longrightarrow} \lambda
+\end{align*}
+Soit $n \geq 1$. On a :
+\begin{align*}
+    \ln n  &= \int_{1}^{n} \frac{\,dt}{t} \\
+    &= \sum_{k = 1}^{n - 1} \int_{k}^{k + 1} \frac{\,dt}{t} \\
+    &\geq \sum_{k = 1}^{n - 1} \int_{k}^{k + 1} \frac{\,dt}{k + 1} \\
+    &= \sum_{k = 1}^{n - 1} \frac{1}{k + 1} \\
+    &= \sum_{k = 1}^{n} \left( \frac{1}{k} \right) - 1 \\
+\end{align*}
+Or :
+\begin{align*}
+    \sum_{k=1}^{n} \left( \frac{1}{k} \right) - 1 \underset{n \rightarrow +\infty}{\longrightarrow} +\infty
+\end{align*}
+Par théorème de comparaison : 
+\begin{align*}
+    \ln n \underset{n \rightarrow +\infty}{\longrightarrow} +\infty
+\end{align*}
+Donc : 
+\begin{align*}
+    \ln x \underset{x \rightarrow +\infty}{\longrightarrow} +\infty
+\end{align*} \\
+Enfin : 
+\begin{align*}
+    \forall x > 0, \ln x = -\ln \left( \frac{1}{x} \right)
+\end{align*}
+Donc par composition :
+\begin{align*}
+    \ln x \underset{x \rightarrow 0^+}{\longrightarrow} -\infty
+\end{align*} \\
+Par taux d'accroissement, en introduisant : 
+\begin{align*}
+    f: \mathbb{R}_+ \rightarrow \mathbb{R} ; x \mapsto \ln (1 + x) \\
+    f \in \mathcal{D}^1(\mathbb{R}_+, \mathbb{R}) \\
+    \frac{\ln (x + 1)}{x} = \frac{f(x) - f(0)}{x - 0} \underset{x \rightarrow 0}{f'(0)} = 1
+\end{align*}
+
+\setcounter{section}{7}
+\section{Propriétés de la fonction exponentielle}
+D'après les résultas précédents $\text{(5.2)}$, $\text{(5.4)}$, on applique le théorème de la bijection dérivable. 
+La fonction exponentielle est dérivable sur $\mathbb{R}$ et :
+\begin{align*}
+    \forall x \in \mathbb{R}, \exp' x &= \frac{1}{\ln' \circ \exp x} \\
+    &= \exp x
+\end{align*}
+On obtient directement que $\exp \in \mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R}_+^*)$ et que $\exp^{(n)} = \exp n$ pour tout $n \in \mathbb{N}$. \\
+
+\section{Propriété fondamentale de l'exponentielle}
+Soit $(x, y) \in \mathbb{R}^2$. On choisit $(a, b) \in (\mathbb{R}_+^*)^2$ tel que : 
+\begin{align*}
+    x = \ln a \text{ et } y = \ln b
+\end{align*}
+Ainsi : 
+\begin{align*}
+    \exp (x + y) &= \exp (\ln a + \ln b) \\
+    &= \exp (\ln (ab)) \\
+    &= ab \\
+    &= \exp x \times \exp y
+\end{align*}
+Ainsi, $\exp 0 = \exp (0 + 0) = \exp^2 0$. \\
+Donc $\exp 0 \in \{0 ; 1\}$ \\
+Or $\exp$ est à valeur dans $\mathbb{R}_+^*$, donc $\exp 0 = 1$, donc :
+\begin{align*}
+    \forall x \in \mathbb{R}_+^*, \exp 0 = \exp (x - x) = \exp x \times \exp (-x) = 1
+\end{align*}
+
+\setcounter{section}{14}
+\section{Dérivée d'une fonction puissance}
+Soit $y > 0$. On pose $f:\mathbb{R} \to \mathbb{R} ; x \mapsto y^x = \exp (x \ln y)$. \\
+$f \in \mathcal{D}^1(\mathbb{R}, \mathbb{R})$, donc par composition : 
+\begin{align*}
+    \forall x \in \mathbb{R}, f'(x) &= \ln y \times \exp (x \ln y) \\
+    &= \ln y \times y^x
+\end{align*}
+
+\setcounter{section}{20}
+\section{Croissances comparées en $+\infty$}
+\begin{enumerate}
+    \item On commence par montrer que $\frac{\ln x}{x} \underset{x \to +\infty}{\longrightarrow} 0$. \\
+    Soit $x \geq 1$. On a : 
+    \begin{align*}
+        0 \leq \frac{\ln x}{x} &= \frac{1}{x} \int_{1}^{x} \frac{\,dt}{t} \\
+        &\leq \frac{1}{x} \int_{1}^{x} \frac{\,dt}{\sqrt{t}} \\
+        &= \frac{1}{x} \left[ 2 \sqrt{t} \right]_{1}^{x} \\
+        &= \frac{2(\sqrt{x} - 1)}{x} \\
+        &= 2 \left( \frac{1}{\sqrt{x}} - \frac{1}{x} \right) \\
+        &\underset{x \to +\infty}{\longrightarrow} 0 
+    \end{align*}
+    D'après le théorème d'encadrement, $\frac{\ln x}{x} \underset{x \to +\infty}{\longrightarrow} 0$. \\
+    Soit $a > 0$ et $x > 0$ :
+    \begin{align*}
+        &\frac{\ln x}{x^a} = \frac{1}{a} \times \frac{\ln x^a}{x^a} \underset{x \to +\infty}{\longrightarrow} 0 && \text{(composition et théorème d'opérations)} \\
+    \end{align*}
+
+    \item On utilise le changement de variable : 
+    \begin{align*}
+        x = (\ln y)^{\frac{1}{a}} \text{, soit } y = e^{ax}
+    \end{align*}
+    Ainsi : 
+    \begin{align*}
+        \frac{x^a}{e^x} &= \frac{\ln y}{y^{\frac{1}{a}}} \underset{x \to +\infty}{\longrightarrow} 
+        \begin{cases}
+            0 \text{ par composition si } a > 0 \\
+            0 \text{ par théorème d'opérations si } a \leq 0 \\
+        \end{cases}
+    \end{align*}
+\end{enumerate}
+
+\section{Croissances comparées en $0$}
+On utilise la proposition $\text{(5.21.1)}$ avec $y = \frac{1}{x}$. 
+
+\setcounter{section}{43}
+\setcounter{subsection}{1}
+\subsection{Formule de trigonométrie hyperbolique}
+Soit $(a, b) \in \mathbb{R}^2$. 
+\begin{align*}
+    ch(a)ch(b) + sh(a)sh(b) &= \frac{(e^a + e^{-a})(e^b + e^{-b})}{4} + \frac{(e^a - e^{-a})(e^b - e^{-b})}{4} \\
+    &= \frac{2e^{a + b} + 2e^{-(a + b)}}{4} \\
+    &= ch(a + b)
+\end{align*}
+
+\end{document}
