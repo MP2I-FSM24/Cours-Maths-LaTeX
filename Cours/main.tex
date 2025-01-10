@@ -1,0 +1,59 @@
+\documentclass[titlepage, twoside]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{subfiles}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{dsfont}
+\usepackage{tikz}
+\usepackage{cancel}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage[dvipsnames]{xcolor}
+
+\geometry{a4paper, left=20mm, right=20mm, top=20mm, bottom=20mm}
+
+\definecolor{darkgreen}{RGB}{6, 64, 43}
+\definecolor{lightblue}{RGB}{87, 185, 255}
+
+\pagestyle{fancy}
+\fancyhead
+\fancyfoot
+
+\fancyhead[C]{Démonstrations - MP2I}
+\fancyfoot[C]{\thepage}
+
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \@starttoc{toc}
+}
+\makeatother
+
+\begin{document}
+    \title{Maths - MP2I}
+    \author{Axel Montlahuc}
+    \date{2024/2025}
+    \maketitle
+
+    \tableofcontents
+
+    \subfile{Chapitre_1/chapitre1.tex}
+    \subfile{Chapitre_2/chapitre2.tex}
+    \subfile{Chapitre_3/chapitre3.tex}
+    \subfile{Chapitre_4/chapitre4.tex}
+    \subfile{Chapitre_5/chapitre5.tex}
+    \subfile{Chapitre_6/chapitre6.tex}
+    \subfile{Chapitre_7/chapitre7.tex}
+    \subfile{Chapitre_8/chapitre8.tex}
+    \subfile{Chapitre_9/chapitre9.tex}
+    \subfile{Chapitre_10/chapitre10.tex}
+    \subfile{Chapitre_11/chapitre11.tex}
+    \subfile{Chapitre_12/chapitre12.tex}
+    \subfile{Chapitre_13/chapitre13.tex}
+    \subfile{Chapitre_14/chapitre14.tex}
+    \subfile{Chapitre_15/chapitre15.tex}
+\end{document}
