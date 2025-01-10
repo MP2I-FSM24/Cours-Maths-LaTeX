@@ -1,0 +1,123 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{0}
+\chapter{Calculs Algébriques}
+\tableofcontents
+\clearpage
+
+\setcounter{section}{19}
+\section{Somme des carrés et des cubes}
+\begin{itemize}
+    \item Somme des carrés : \\
+    Pour tout $n \in \mathbb{N}$, on note la proposition :
+    $$P(n): \text\og\sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6}\text\fg$$
+    Démontrons-la par récurrence.\\
+    \\
+    \underline{Initialisation :} Pour $n=0$, on a :
+    $$\sum_{k=1}^{0}k^2=0$$
+    et :
+    $$\frac{0\times(0+1)\times(2\times0+1)}{6}=0$$
+    Donc $P(0)$ est vraie.\\
+    \\
+    \underline{Hérédité :} On suppose $P(n)$ vraie pour un $n$ fixé dans
+    $\mathbb N$. On a :
+    \begin{align*}
+    \sum_{k=1}^{n+1}k^2 & = \sum_{k=1}^{n}k^2 + (n+1)^2 \\
+    & = \frac{n(n+1)(2n+1)}{6} + (n+1)^2 \\
+    & = \frac{n+1}{6}(n(2n+1) + 6(n+1)) \\
+    & = \frac{n+1}{6}(2n^2 + 7n + 6) \\
+    & = \frac{(n+1)(n+2)(2n+3)}{6}
+    \end{align*}
+    Donc $P(n+1)$ est vraie aussi.\\
+    \\
+    \underline{Conclusion :} D'après le principe de récurrence,
+    $$\forall n \in \mathbb{N}, \sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6}$$
+    \\
+    \item Somme des cubes : \\
+    Pour tout $n \in \mathbb{N}$, on note la proposition :
+    $$P(n): \text\og\sum_{k=1}^{n}k^3=\frac{n^2(n+1)^2}{4}\text\fg$$
+    Démontrons-la par récurrence.\\
+    \\
+    \underline{Initialisation :} Pour $n=0$, on a :
+    $$\sum_{k=1}^{0}k^3=0$$
+    et :
+    $$\frac{0\times(0+1)^2}{4}=0$$
+    Donc $P(0)$ est vraie.\\
+    \\
+    \underline{Hérédité :} On suppose $P(n)$ vraie pour un $n$ fixé dans
+    $\mathbb N$. On a :
+    \begin{align*}
+    \sum_{k=1}^{n+1}k^3 & = \sum_{k=1}^{n}k^3 + (n+1)^3 \\
+    & = \frac{n^2(n+1)^2}{4} + (n+1)^3 \\
+    & = \frac{(n+1)^2}{4}(n^2 + 4(n+1)) \\
+    & = \frac{(n+1)^2}{4}(n^2 + 4n + 4) \\
+    & = \frac{(n+1)^2(n+2)^2}{4}
+    \end{align*}
+    Donc $P(n+1)$ est vraie aussi.\\
+    \\
+    \underline{Conclusion :} D'après le principe de récurrence,
+    $$\forall n \in \mathbb{N}, \sum_{k=1}^{n}k^2=\frac{n^2(n+1)^2}{4}$$
+\end{itemize}
+
+\setcounter{section}{38}
+\section{Formule de Pascal}
+Démontrons pour tout $(n,p)\in(\mathbb{N}^*)^2$ la relation :
+$$\text\og\binom{n}{p}=\binom{n-1}{p-1}+\binom{n-1}{p}\text\fg$$
+La relation est vraie si $p>n$ (on a $0 = 0+0$) et si $p=n$ (qui
+donne $1=0+1$).\\
+\\
+Soit $1\le p\le n$ :
+\begin{align*}
+  \binom{n-1}{p}+\binom{n-1}{p-1} & = \frac{(n-1)!}{p!(n-1-p)!} +
+  \frac{(n-1)!}{(p-1)!(n-p)!} \\[8pt]
+  & = \frac{(n-1)!}{(p-1)!(n-1-p)!}\bigg(\frac 1 p + \frac{1}{n-p}\bigg) \\[8pt]
+  & = \frac{(n-1)!\times n}{(p-1)!(n-1-p)!\times p(n-p)} \\[8pt]
+  & = \frac{n!}{p!(n-p)!} \\[8pt]
+  & = \binom{n}{p}
+\end{align*}
+
+\setcounter{section}{40}
+\section{Formule du capitaine}
+Démontrons pour $n$ et $p$ deux entiers tels que $1\le p\le n$ la relation :
+$$\text\og n\binom{n-1}{p-1}=p\binom{n}{p}\text\fg$$
+On a :
+$$n\binom{n-1}{p-1}=n\times\frac{(n-1)!}{(p-1)!(n-p)!}=p\times\frac{n!}{p!(n-p)!}=p\binom{n}{p}$$
+
+\section{Formule du binôme de Newton}
+Soit $(x,y)\in\mathbb{C}^2$. Pour tout $n \in \mathbb{N}$, on note la
+proposition :
+$$P(n): \text\og(x+y)^n=\sum_{k=0}^{n}x^k y^{n-k}\text\fg$$
+Démontrons-la par récurrence.\\
+\\
+\underline{Initialisation :} Pour $n=0$, on a :
+$$(x+y)^0=1$$
+et
+$$\sum_{k=0}^{0}\binom{0}{k}x^k y^{0-k}=\binom{0}{0}x^0 y^0=1$$
+Donc $P(0)$ est vraie.\\
+\\
+\underline{Hérédité :} On suppose $P(n)$ vraie pour un $n$ fixé dans
+$\mathbb N$. On a :
+\begin{align*}
+  (x+y)^{n+1} & = (x+y)(x+y)^n \\
+  & = (x+y)\sum_{k=0}^{n}\binom{n}{k}x^k y^{n-k} &&
+  \textit{(hypothèse de récurrence)}\\
+  & = \sum_{k=0}^{n}\binom{n}{k}(x^{k+1}y^{n-k}+x^k y^{n+1-k}) &&
+  \textit{(linéarité)}\\
+  & =
+  \sum_{k=0}^{n}\binom{n}{k}x^{k+1}y^{n-k}+\sum_{k=0}^{n}\binom{n}{k}x^k
+  y^{n+1-k}\\
+  & = \sum_{k=1}^{n+1}\binom{n}{k-1}x^k y^{n-k} +
+  \sum_{k=0}^{n}\binom{n}{k}x^k y^{n+1-k} && \textit{(translation)}\\
+  & = x^{n+1} + \sum_{k=1}^{n}x^k
+  y^{n+1-k}\Bigg(\binom{n}{k-1}+\binom{n}{k}\Bigg)+y^{n+1}\\
+  & = x^{n+1} + \sum_{k=1}^{n}\binom{n+1}{k}x^k y^{n+1-k}+y^{n+1} &&
+  \textit{(formule de Pascal)}\\
+  & = \sum_{k=0}^{n+1}x^k y^{n+1-k}
+\end{align*}
+Donc $P(n+1)$ est vraie aussi.\\
+\\
+\underline{Conclusion :} D'après le principe de récurrence,
+$$\forall n \in \mathbb{N}, (x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^k y^{n-k}$$
+
+\end{document}
