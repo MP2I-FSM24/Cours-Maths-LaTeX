@@ -1,0 +1,207 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{2}
+\chapter{Ensembles et applications}
+\tableofcontents
+\clearpage
+
+\setcounter{section}{11}
+\section{Propriétés du produit cartésien}
+Soit $x$ et $y$. On a :
+\begin{enumerate}
+    \item 
+    \begin{align*}
+        (x, y) \in E \times F &\Leftrightarrow x \in E \text{ et } y \in F \\ 
+        \text{Donc } (x, y) \not \in E \times F &\Leftrightarrow x \not \in E \text{ ou } y \not \in F
+    \end{align*}
+
+    \item 
+    \begin{align*}
+        E \times F \not = \emptyset &\Leftrightarrow \exists (x, y) \in E \times F \\ 
+        &\Leftrightarrow \exists x \in E \text{ et } \exists y \in F \\ 
+        &\Leftrightarrow E \not = \emptyset \text{ et } F \not = \emptyset \\ 
+        &\Leftrightarrow \text{non } (E = \emptyset \text{ ou } F = \emptyset)
+    \end{align*}
+
+    \item 
+    \begin{align*}
+        E \times F = F \times E &\Leftrightarrow 
+        \begin{cases}
+            E \times F = F \times E \text{ et } E = \emptyset \\
+            E \times F = F \times E \text{ et } F = \emptyset \\
+            E \times F = F \times E \text{ et } E \not = \emptyset \text{ et } F \not = \emptyset
+        \end{cases}
+        \\
+        &\Leftrightarrow 
+        \begin{cases}
+            E = \emptyset \text{ ou } F = \emptyset \\
+            E \not = \emptyset \text{ et } F \not = \emptyset \text{ et } \forall (x, y) \in E \times F, (x, y) \in F \times E \text{ et } \forall (a, b) \in F \times E, (a, b) \in E \times F
+        \end{cases}
+        \\
+        &\Leftrightarrow 
+        \begin{cases}
+            E = \emptyset \text{ ou } F = \emptyset \\
+            E \not = \emptyset \text{ et } F \not = \emptyset \text{ et } \forall x \in E, x \in F \text{ et } \forall y \in F, y \in E
+        \end{cases}
+        \\
+        &\Leftrightarrow
+        \begin{cases}
+            E = \emptyset \text{ ou } F = \emptyset \\
+            E = F
+        \end{cases}
+    \end{align*}
+
+    \item 
+    \begin{align*}
+        (x, y) \in (E \times F) \cup (F \times G) &\Leftrightarrow (x, y) \in E \times F \text{ ou } (x, y) \in F \times G \\
+        &\Leftrightarrow (x \in E \text{ et } y \in F) \text{ ou } (x \in F \text{ et } y \in G) \\
+        &\Leftrightarrow x \in E \text{ et } y \in F \cup G \\
+    \end{align*}
+
+    \item
+    \begin{align*}
+        (x, y) \in (E \times F) \cap (G \times H) &\Leftrightarrow (x, y) \in E \times F \text{ et } (x, y) \in G \times H \\
+        &\Leftrightarrow x \in E \text{ et } y \in F \text{ et } x \in G \text{ et } y \in H \\
+        &\Leftrightarrow x \in E \cap G \text{ et } y \in F \cap H \\
+        &\Leftrightarrow (x, y) \in (E \cap G) \times (F \cap H)
+    \end{align*}
+\end{enumerate}
+
+\setcounter{section}{17}
+\section{Associativité des relations}
+Les ensembles de départ et d'arrivée sont bien égaux (à $E$ et $H$ respectivement).
+Soit $(x, y) \in E \times H$
+\begin{align*}
+    x(\mathcal{T} \circ \mathcal{S}) \circ \mathcal{R}y &\Leftrightarrow \exists z \in F, x(\mathcal{T} \circ \mathcal{S})z \text{ et } z\mathcal{R}y \\
+    &\Leftrightarrow \exists z \in F, \exists v \in G, (x\mathcal{T}v \text{ et } v\mathcal{S}z) \text{ et } z\mathcal{R}y \\
+    &\Leftrightarrow \exists z \in F, \exists v \in G, x\mathcal{T}v \text{ et } (v\mathcal{S}z \text{ et } z\mathcal{R}y) \\
+    &\Leftrightarrow \exists v \in G, x \mathcal{T} v \text{ et } v(\mathcal{S} \circ \mathcal{R})y \\
+    &\Leftrightarrow x\mathcal{T} \circ (\mathcal{S} \circ \mathcal{R})y
+\end{align*}
+
+\setcounter{section}{19}
+\section{Propriétés des relations réciproques}
+\begin{itemize}
+    \item RAF
+    \item Les ensembles de départ sont égaux respectivement à $E$ et à $G$. \\
+    Soit $(x, y) \in G \times E$. On a :
+    \begin{align*}
+        x \mathcal{R}^{-1} \circ \mathcal{S}^{-1} y &\Leftrightarrow \exists \alpha \in F, x \mathcal{S}^{-1} \alpha \text{ et } \alpha \mathcal{R}^{-1} y \\
+        &\Leftrightarrow \exists \alpha \in F, \alpha \mathcal{S} x \text{ et } y \mathcal{R} \alpha \\
+        &\Leftrightarrow y \mathcal{S} \circ \mathcal{R} x \\
+        &\Leftrightarrow x (\mathcal{R} \circ \mathcal{S})^{-1} y
+    \end{align*}
+\end{itemize}
+
+\setcounter{section}{22}
+\section{Composition de fonctions}
+Soit $f$ une fonction de $E$ vers $F$. \\
+Soit $g$ une fonction de $E$ vers $G$. \\
+\begin{align*}
+    g \circ f \text{ est une relation de } E \text{ vers } G
+\end{align*}
+Soit $(x, y, y') \in E \times G \times G$. 
+On suppose
+\begin{align*}
+    \begin{cases}
+        x (g \circ f) y \\
+        x (g \circ f) y'
+    \end{cases}
+\end{align*}
+Donc on choisit $\alpha$ dans $F$ tel que : 
+\begin{align*}
+    xf\alpha \text{ et } \alpha gy
+\end{align*}
+et $\beta$ dans $F$ tel que :
+\begin{align*}
+    xf\beta \text{ et } \beta gy' 
+\end{align*}
+Or $f$ est une fonction, donc $\alpha = \beta$. \\
+Donc $\alpha g y \text{ et } \alpha g y'$, or $g$ est une fonction, donc $y = y'$.
+Par définition, $g \circ f$ est une fonction.
+
+\setcounter{section}{29}
+\section{Schémas de raisonnement : montrer l'injectivité/surjectivité/bijectivité}
+\underline{Injectivité :} \\
+Soit $(x, x') \in E^2$. \\
+On suppose que $f(x) = f(x')$. \\
+$\vdots$ \\
+Donc $x = x'$. \\ \\
+
+\underline{Surjectivité :} \\
+Soit $y \in F$. \\
+$\vdots$ \\
+On choisit $\ldots$ tel que : \\
+$\vdots$ \\
+Donc$f(x) = y$ \\ \\
+
+\underline{Bijectivité :} \\
+Pour la bijectivité, on montre l'injectivité et la surjectivité séparément.
+
+\setcounter{section}{34}
+\section{Composée d'injections/surjections}
+Soit $f:E \rightarrow F$ et $g:F \rightarrow G$. 
+\begin{itemize}
+    \item On suppose que $f$ et $g$ sont injectives. \\
+    Soit $(x, x') \in E^2$. \\
+    \begin{align*}
+        \text{On suppose que } g \circ f(x) &= g \circ f(x') \\
+        \text{Donc } g(f(x)) &= g(f(x')) \\
+        \text{Donc } f(x) &= f(x') && \text{(g est injective)}\\
+        \text{Donc } x &= x' && \text{(f est injective)}
+    \end{align*}
+    
+    \item On suppose que $f$ et $g$ sont surjectives. \\
+    Soit $y \in G$. \\
+    Par surjectivité de $g$, on choisit $\alpha \in F$ tel que $g(\alpha) = y$. \\
+    Par surjectivité de $f$, on choisit $x \in E$ tel que $f(x) = \alpha$. \\
+    Donc $g \circ f(x) = y$.\\
+    Donc $g \circ f$ est surjective.
+\end{itemize}
+
+\section{Condition nécessaire pour une composition injective/surjective}
+\begin{itemize}
+    \item Soit $(x, x') \in E^2$ tels que :
+    \begin{align*}
+        f(x) &= f(x') \\
+        \text{Donc } g(f(x)) &= g(f(x')) \\
+        \text{Donc } x &= x'
+    \end{align*}
+    Donc $f$ est injective. \\
+
+    \item On suppose $g \circ f$ surjective. \\
+    Soit $y \in G$. Soit $\alpha \in E$ tel que $g \circ f(\alpha) = y$. \\
+    On pose $x = f(\alpha) \in F$. \\
+    Donc $g(x) = y$
+    Donc $g$ est surjective.
+\end{itemize}
+
+\section{Réciproque et bijection}
+Soit $f:E \rightarrow F$ et $f^{-1}$ la relation réciproque de $f$
+\begin{itemize}
+    \item $f^{-1}$ est une fonction si et seulement si $f$ est injective. 
+    \item Si $f^{-1}$ est une fonction, c'est une application. \\
+    ssi. $Def(f^{-1}) = F$ \\
+    ssi. $f$ est surjective.
+\end{itemize}
+
+\section{Inverse d'une composée de bijections}
+Propositions $(3.35)$, $(3.27)$ et $(3.20)$
+
+\section{Condition nécessaire et suffisante de bijectivité}
+\boxed{\Rightarrow} \\
+On suppose que $f$ est bijective. \\
+On pose $g = f^{-1}$ sa bijection réciproque. \\
+On a bien $g \circ f = id_E$ et $f \circ g = id_F$. \\
+
+\boxed{\Leftarrow} \\
+Soit $g:F \rightarrow E$ vérifiant $g \circ f = id_E$ et $f \circ g = id_F$. \\
+En particulier, $g \circ f$ est injective, donc $f$ est injective. \\
+En particulier, $f \circ g$ est surjective, donc $f$ est surjective. \\
+Donc $f$ est bijective. \\
+Or $f \circ g = id_F$. \\
+Donc $f^{-1} \circ f \circ g = f^{-1} \circ id_F$. \\
+Soit $g = f^{-1}$.
+
+\end{document}
