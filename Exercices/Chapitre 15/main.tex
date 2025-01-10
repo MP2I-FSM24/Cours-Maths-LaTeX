@@ -39,4 +39,31 @@
     \end{align*}
 \end{enumerate}
 
+\setcounter{section}{5}
+\section{Exercice}
+\begin{enumerate}
+    \item Soit $x > 0$, d'après le TLM : 
+    \begin{align*}
+        \lim_{x^-} f &\geq f(x) \geq \lim_{x^+} f \\
+        \text{ et } \lim_{t\to x^-} tf(t) &\leq xf(x) \leq \lim_{t\to x^+} tf(t) \\
+        \text{donc } x \lim_{x^-} f &\leq xf(x) \leq x \lim_{x^+} f \text{ (théorème d'opérations + TLM)} \\
+        \text{ et } \lim_{x^-} f &\geq f(x) \geq \lim_{x^+} f \text{ ($x > 0$)} \\
+        \text{donc } &\boxed{\lim_{x^-} f = f(x) = \lim_{x^+} f}
+    \end{align*}
+
+    \item Soit $x \leq y$. \\
+    On a : 
+    \begin{align*}
+        f(x) - f(y) &= \int_{0}^{\frac{\pi}{2}} \frac{\overbrace{\sqrt{\cos^2 t + y^2 \sin^2 t} - \sqrt{\cos^2 t + x^2 \sin^2 t}}^{\geq 0 \text{ car } u\mapsto \sqrt{\cos^2 t + u^2 \sin^2 t} \text{ est croissante sur } \mathbb{R}_+}}{\underbrace{\sqrt{\cos^2 t + x^2 \sin^2 t} \sqrt{\cos^2 t + y^2 \sin^2 t}}_{> 0}} \,dt
+    \end{align*}
+    Donc $f$ est décroissante. \\
+    Par ailleurs : 
+    \begin{align*}
+        xf(x) - yf(y) &= \int_{0}^{\frac{\pi}{2}} \frac{x\sqrt{\cos^2 t + y^2 \sin^2 t} - y\sqrt{\cos^2 t + x^2 \sin^2 t}}{\Delta} \,dt \\
+        &= \int_{0}^{\frac{\pi}{2}} \frac{\overbrace{\cos^2 (t) (x^2 - y^2)}^{\leq 0}}{\underbrace{\Delta[x\sqrt{\ldots} + y\sqrt{\ldots}}_{> 0}]} \,dt \\
+        &\leq 0
+    \end{align*}
+\end{enumerate}
+
+
 \end{document}

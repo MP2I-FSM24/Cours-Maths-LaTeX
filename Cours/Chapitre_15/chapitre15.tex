@@ -213,5 +213,43 @@ Par construction :
     \end{itemize}
 \end{enumerate}
 
+\setcounter{section}{58}
+\section{Théorème des valeurs intermédiaires : version 1}
+\begin{tcolorbox}[title=Théorème 15.59, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ une fonction continue sur un intervalle $I$ d'extrémité $a$ et $b$ dans $\overline{\mathbb{R}}$ (avec existence des limites dans le cas des bornes infinies). Alors si $f(a) > 0$ et $f(b) < 0$ (ou l'inverse), il exsite $c \in ]a, b[$, tel que $f(c) = 0$. 
+\end{tcolorbox}
+
+On note $A = \{ x\in I, f(x) > 0 \}$. \\
+\begin{itemize}
+    \item $A \neq \emptyset$ car $f$ est définie et strictement positive au voisinage de $a$ (15.32). 
+    \item $A$ est majoré car $f$ est strictement négative au voisinage de $b$ (et tout élément dans ce voisinage est un majorant). 
+\end{itemize}
+D'après la propriété fondamentale de $\mathbb{R}$, $A$ possède une borne supérieure notée $c \in ]a, b[$. 
+\begin{itemize}
+    \item On a $c \not \in A$. En effet, si $f(x) > 0$, alors $f$ est strictement postivie sur un voisinage de $c$, et comme $f$ est définie à droite de $c$, cela contredirait que c'est un majorant de $A$. \\
+    Donc $f(c) \leq 0$. 
+    \item Si $f(c) < 0$, alors $f$ est strictement négative au voisinage à gauche de $c$. \\
+    Absurde car $c$ est le plus petit des majorants. \\
+    Conclusion, $\boxed{f(c) = 0}$. 
+\end{itemize}
+
+\section{Théorème des valeurs intermédiaires : version 2}
+\begin{tcolorbox}[title=Théorème 15.60, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ une fonction continue sur un intervalle $I$ et soit $M = \sup_I f(x)$ et $m = \inf_I f(x)$ (éventuellement infinies). \\
+    Alors $f$ prend toutes les valeurs de l'intervalle $]m; M[$ :
+    \begin{align*}
+        \forall x_0\in ]m ; M[, \exists c \in I, f(c) = x_0. 
+    \end{align*}
+\end{tcolorbox}
+
+RAF : (15.59) à $f - x_0$. 
+
+\section{Théorème des valeurs intermédiaires : version 3}
+\begin{tcolorbox}[title=Théorème 15.61, title filled=false, colframe=orange, colback=orange!10!white]
+    L'image d'un intervalle quelconque par une fonction continue est un intervalle. 
+\end{tcolorbox}
+
+Définition d'un intervalle par connexité. 
+
 
 \end{document}
