@@ -1,0 +1,275 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{12}
+\chapter{Polynômes}
+\tableofcontents
+\clearpage
+
+\setcounter{section}{5}
+\section{Produit de deux polynômes}
+
+\begin{tcolorbox}[title=Définition 13.6, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $P = (a_n)$ et $Q = (b_n)$ deux polynômes de $\mathbb{A}[X]$. Soit pour tout $n \in \mathbb{N}, c_n = \sum_{k=0}^{n} a_k b_{n-k}$. Alors la suite $(c_n)_{n \in \mathbb{N}}$ est un polynôme. On définit alors $PQ = (c_n)$. La suite $c = (c_n)$ est appelée \textbf{produit de convolution} (ou \textbf{produit de Cauchy}) des suites $a = (a_n)$ et $b = (b_n)$ et est parfois noté $c = a \star b$.
+\end{tcolorbox}
+
+Montrons que $(c_n)$ est un polynôme. \\
+Soit $N$ te $M$ dans $\mathbb{N}$ tels que : 
+$$
+\begin{cases}
+    \forall n \in \mathbb{N}, n \geq N, a_n = 0 \\
+    \forall n \in \mathbb{N}, n \geq M, b_n = 0
+\end{cases}
+$$
+Soit $n \geq M + N$, on a : 
+$$c_n = \sum_{k=0}^{n} a_k b_{n-k}$$
+\begin{itemize}
+    \item Si $k \geq N$, $a_k = 0$. 
+    \item Si $k \leq N$, $n-k \geq M$, donc $b_{n-k} = 0$.
+\end{itemize}
+Donc $c_n = 0$. 
+
+\section{Structure d'anneau de $\mathbb{A}[X]$}
+
+\begin{tcolorbox}[title=Théorème 13.7, title filled=false, colframe=orange, colback=orange!10!white]
+    La somme et le produit définis ci-dessus munissent $\mathbb{A}[X]$ d'une structure d'anneau commutatif. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item $(\mathbb{A}[X], +)$ est un sous-groupe de $(\overbrace{\mathbb{A}^{\mathbb{N}}}^{\text{suites d'éléments de } \mathbb{A}}, +)$ abélien donc est bien un sous-groupe abélien. 
+    
+    \item Montrons que $\times$ est associative. Soit $(P,R,Q) \in \mathbb{A}[X]$. \\
+    On note $P = (p_k)_{k \in \mathbb{N}}$, $R = (r_k)_{k \in \mathbb{N}}$, $Q = (q_k)_{k \in \mathbb{N}}$. \\
+    Soit $n \in \mathbb{N}$. 
+    \begin{align*}
+        (P \times (RQ))_n &= \sum_{k=0}^{n} p_k (RQ)_{n-k} \\
+        &= \sum_{i+j=n} p_i (RQ)_j \\
+        &= \sum_{i+j=n} \left( p_i \sum_{k+l=j} r_k q_l \right) \\
+        &= \sum_{i+k+l=n} p_i r_k q_l \\
+        &= ((PR) \times Q)_n
+    \end{align*}
+
+    \item Notons $E = (1, 0, \ldots) = (\delta_{0n})_{n\in \mathbb{N}}$. \\
+    On a pour tout $n \in \mathbb{N}$ : 
+    \begin{align*}
+        (E \times P)_n &= \sum_{i+j=n} E_i \times P_j \\
+        &= \sum_{i+j=n} \delta_{0i}\times P_j \\
+        &= P_n \text{ ($i=0$, $j=n$)} \\
+        &= (P \times E)_n 
+    \end{align*}
+    Donc $E$ est l'élément neutre de $\mathbb{A}[X]$. 
+
+    \item 
+    \begin{align*}
+        \left[ P \times (R + Q) \right]_n &= \sum_{i+j=n} p_i (R + q)_j \\
+        &= \sum_{i+j=n} p_i (r_j + a_j) \\
+        &= \sum_{i+j=n} p_i r_j + \sum_{i+j=n} p_i q_j \\
+        &= (PR)_n + (PQ)_n \\
+        &= [PR + PQ]_n
+    \end{align*}
+    Donc $\times$ est distributive sur $+$. 
+
+    \item Comme $\mathbb{A}$ est commutatif : 
+    $$\sum_{i+j=n} p_i q_j = \sum_{i+j=n} q_j p_i$$
+    Donc $\times$ est commutatif. 
+\end{itemize}
+
+\setcounter{section}{10}
+\section{Monômes}
+
+\begin{tcolorbox}[title=Propostion 13.11, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Pour tout $n \in \mathbb{N}$, on a $X^n = (\underbrace{0, \ldots, 0}_{\text{$n$ zéros}}, 1, 0, \ldots)$, le $1$ est donc à l'indice $n$ (soit $X^n = (\delta_{n,k})_{k\in \mathbb{N}}$)
+\end{tcolorbox}
+
+Pour $n = 0$, on a bien $X^0 = (1, 0, \ldots)$ \\
+Pour $n = 1$, RAF \\
+On suppose le résultat vrai pour $n \in \mathbb{N}$. \\
+Soit $k \in \mathbb{N}$ : 
+\begin{align*}
+    \left[ X^{n+1} \right]_k &= \left[ X^n \times X \right] \\
+    &= \sum_{i+j=k} \left[ X^n \right]_i X_j \\
+    &= \sum_{i+j=k} \delta_{n,i} \times \delta_{j,1} \\
+    &= \delta_{k, n+1}
+\end{align*}
+
+\section{Expression d'un polynôme à l'aide de l'indéterminée formelle}
+
+\begin{tcolorbox}[title=Corollaire 13.12, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $P = (a_n)$ un polynôme de $\mathbb{A}[X]$. Alors $P = \sum\limits_{k=0}^{+\infty} a_kX^k$, cette somme ayant un sens puisqu'elle est en fait finie, les $a_k$ étant nuls à partir d'un certain rang. 
+\end{tcolorbox}
+
+\begin{align*}
+    P &= (a_n)_{n \geq 0} \\
+    &= (a_0, a_1, a_2, \ldots \\
+    &= a_0 (1, 0, 0,\ldots) + a_1(0, 1, 0, \ldots) +a_2(0, 0, 1, \ldots) + \ldots \\
+    &= a_0X^0 + a_1X^1 + a_2X^2 + \ldots
+\end{align*}
+
+\setcounter{section}{25}
+\section{Dérivée de produits}
+
+\begin{tcolorbox}[title=Propostion 13.26, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    \begin{itemize}
+        \item Soit $P$ et $Q$ deux polynômes à coefficients dans $\mathbb{A}$. Alors
+        $$(PQ)' = P'Q + Q'P.$$
+
+        \item Soit $P_1, \ldots, P_n$ des polynômes à coefficients dans $\mathbb{A}$, alors
+        $$(P_1 \ldots P_n)' = \sum_{i=1}^{n} P_1 \ldots P_{i-1} P_i' P_{i+1} \ldots P_n.$$
+    
+        \item \textbf{Formule de Leibniz} : Soit $P$ et $Q$ deux polynômes à coefficients dans $\mathbb{A}$ et $n \in \mathbb{N}$. Alors
+        $$(PQ)^{(n)} = \sum_{k=0}^{n} \binom{n}{k} P^{(k)} Q^{(n-k)}.$$
+    \end{itemize}
+\end{tcolorbox}
+
+Soit $P = \sum\limits_{k \geq 0} a_k X^k, P' = \sum\limits_{k \geq 1} ka_kX^{k-1}$ et $Q = \sum\limits_{k \geq 0} b_k X^k, Q' = \sum\limits_{k \geq 1} kb_kX^{k-1}$. \\
+On a : 
+\begin{align*}
+    PQ &= \sum_{k \geq 0} \left( \sum_{k=0}^{n} a_k b_{n-k} \right) X^n \\
+\end{align*}
+Donc : 
+\begin{align*}
+    (PQ)' &= \sum_{n \{geq 1} \left[ n \sum_{k=0}^{n} a_k b_{n-k} \right] X^{n-1} \\
+    \text{et } P'Q &= \sum_{n \geq 0} \left[ \sum_{k=0}^{n} (k+1)a_{k+1} b_{n-k} \right] X^n \\
+    \text{et } PQ' &= \sum_{n \geq 0} \left[ \sum_{k=0}^{n} a_k (n-k+1)b_{n-k+1} \right] X^n \\
+    \text{donc } P'Q + Q'P &= \sum_{n \geq 0} \left[ \sum_{k=0}^{n} (k+1)a_{k+1} b_{n-k} \right]X^n + \sum_{n \geq 0} \left[ \sum_{k=0}^{n} (n-k+1)a_k b_{n-k+1} \right] X^n \\
+    &= \sum_{n \geq 0} \left[ \sum_{k=1}^{n+1} k a_{k} b_{n-k+1} \right] X^n + \sum_{n \geq 0} \left[ \sum_{k=0}^{n} (n-k+1) a_k b_{n-k+1} \right] X^n \\
+    &= \sum_{n \geq 0} \left[ (n+1) a_{n+1} b_0 + \sum_{k=1}^{n} (n+1) a_k b_{n-k+1} + (n+1) a_0 b_{n+1} \right] X^n \\
+    &= \sum_{n \geq 0} \left[ (n+1) \sum_{k=0}^{n+1} a_k b_{n-k+1} \right] X^n
+\end{align*}
+
+\setcounter{section}{27}
+\section{Dérivée d'une composition}
+
+\begin{tcolorbox}[title=Propostion 13.28, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $P$ et $Q$ dans $\mathbb{A}[X]$, alors 
+    $$(Q \circ P)' = P' \times (Q' \circ P)$$
+\end{tcolorbox}
+
+Soit $Q = \sum\limits_{k \geq 0} a_k X^k$. \\
+Ainsi $Q \circ P = \sum\limits_{k \geq 0} a_k p^k$. \\
+Donc : 
+\begin{align*}
+    (Q \circ P)' &= \sum_{k \geq 0} a_k (p_k)' \text{ (13.24)} \\
+    &= \sum_{k \geq 1} k a_k p' p^{k-1} \text{ (13.27)} \\
+    &= P' \times \sum_{k \geq 1} k a_k p^{k-1} \\
+    &= P' \times Q' \circ P
+\end{align*}
+
+\setcounter{section}{33}
+\section{Degré d'une somme, d'un produit, d'une dérivée}
+
+\begin{tcolorbox}[title=Propostion 13.34, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $P$ et $Q$ deux polynômes de $\mathbb{A}[X]$ et $\lambda \in \mathbb{A}$. 
+    \begin{enumerate}
+        \item On a $\deg(P + Q) \leq \max(\deg(P), \deg(Q))$ avec égalité si $\deg(P) \neq \deg(Q)$. 
+        \item Si $\mathbb{A}$ est intègre et si $\lambda \neq 0$, alors $\deg(\lambda P) = \deg(P)$. 
+        \item Si $\mathbb{A}$ est intègre alors $\deg(PQ) = \deg(P) + \deg(Q)$. 
+        \item On a $\deg(P') \leq \deg(P) - 1$. 
+        \item Si $\mathbb{A}$ est intègre alors $\deg(Q \circ P) = \deg(Q) + \deg(P)$, sauf si $P = 0$ ou si $Q = 0$ et $P \in \mathbb{A}_0[X]$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On note $p = \deg(P), q = \deg(Q)$. 
+    $$P = \sum_{k=0}^{p} a_k X^k, Q = \sum_{k=0}^{q} b_k X^k$$
+    Supposons $p \geq q$. \\
+    On écrit alors : 
+    \begin{align*}
+        Q &= \sum_{k=0}^{p} b_k X^k \\
+        \text{et ainsi } P+Q &= \sum_{k=0}^{p} (a_k + b_k) X^k \\
+        \text{et donc } \deg(P+Q) &\leq p
+    \end{align*}
+    Si de plus $p > q$, alors : 
+    \begin{align*}
+        P + Q &= a_p X^p + \sum_{k=0}^{p-1} (a_k + b_k) X^k \text{ ($b_p = 0$)} \\
+        \text{donc ($a_p \neq 0$), } \deg(P+Q) &= p
+    \end{align*}
+
+    \item \begin{align*}
+        \lambda P &= \sum_{k=0}^{p} \lambda a_k X^k
+    \end{align*}
+    Or $\lambda a_p \neq 0$ car $a_p \neq 0$ et $\mathbb{A}$ intègre. 
+
+    \item \begin{align*}
+        P.Q &= \sum_{n \geq 0} \left( \sum_{k=0}^{n} a_k b_{n-k} \right) X^n
+    \end{align*}
+    Si $n > p+q$, alors : 
+    $$\sum_{k=0}^{n} a_k b{n-k} = 0 \text{ (preuve (13.6))}$$
+    Or : 
+    \begin{align*}
+        (PQ)_{p+q} &= \sum_{k=0}^{p+q} a_k b_{p+q-k} \\
+        &= \underbrace{a_p}_{\neq 0} \underbrace{b_q}_{\neq 0} \\
+        &\neq 0 \text{ car $\mathbb{A}$ intègre}
+    \end{align*}
+
+    \item Si $P \in \mathbb{A}_0[X]$, l'inégalité est vérifiée. \\
+    Sinon : 
+    \begin{align*}
+        p' &= \sum_{k=0}^{p-1} (k+1) a_{k+1} X^k \\
+        \text{et } \deg(P') &\leq d-1 = \deg(P) - 1
+    \end{align*}
+
+    \item On a :
+    \begin{align*}
+        Q \circ P &= \sum_{k=0}^{q} b_k p_k
+    \end{align*}
+    Or, pour $k \in \llbracket 0, q-1 \rrbracket$, $\deg(b_k p^k) < \deg(\underbrace{b_q}_{\neq 0} p^q)$ ($(\text{13.34.2})$ et $(\text{13.34.3})$ avec $\mathbb{A}$ intègre) \\
+    Donc : 
+    \begin{align*}
+        deg(Q \circ P) &= \deg(b_q p^q) \\
+        &= q \times \deg(P) \\
+        &= \deg(Q) \times \deg(P)
+    \end{align*}
+\end{enumerate}
+
+\setcounter{section}{35}
+\section{Théorème de permanence de l'intégrité}
+
+\begin{tcolorbox}[title=Corollaire 13.36, title filled=false, colframe=orange, colback=orange!10!white]
+    Si $\mathbb{A}$ est intègre, alors $\mathbb{A}[X]$ est intègre. 
+\end{tcolorbox}
+
+Si $P \neq 0$ et $Q \neq 0$
+\begin{align*}
+    \deg(P \times Q) &= \deg(P) + \deg(Q) \text{ ($\mathbb{A}$ est intègre)}\\
+    &\geq 0
+\end{align*}
+
+\setcounter{section}{38}
+\section{Propriété de stabilité}
+
+\begin{tcolorbox}[title=Corollaire 13.39, title filled=false, colframe=orange, colback=orange!10!white]
+    \begin{itemize}
+        \item $\mathbb{A}_n [X]$ est un sous-groupe additif de $\mathbb{A}[X]$.
+        \item La dérivation $D:\mathbb{A}[X] \to \mathbb{A}[X]$ induit un homomorphisme de groupe $D_n: \mathbb{A}_n[X] \to \mathbb{A}_{n-1}[X]$. 
+        \item Si $\mathbb{K}$ est un corps de caractéristique nulle, $D_n$ est une surjection. Autrement dit, tout polynôme de $\mathbb{K}_{n-1}[X]$ est primitivable formellement dans $\mathbb{K}_n[X]$. 
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item RAF
+    \item RAF
+    \item $\text{carac}(\mathbb{K}) = 0$. Soit $P = \sum\limits_{k=0}^{n-1} a_k X^k \in \mathbb{K}_{n-1} [X]$. \\
+    Pour $k \in \llbracket 1, n \rrbracket, k = k \times 1 \neq 0$ dans $\mathbb{K}$ car $\mathbb{K}$ est de caractéristique nulle. \\
+    Donc $k^{-1}$ est bien défini dans $\mathbb{K}$. 
+    On pose : 
+    $$Q = \sum_{k=1}^{n} k^{-1} q_{k-1} X^k$$
+    Alors : 
+    $$Q' = \sum_{k=0}^{n-1} (k+1)(k+1)^{-1} a_k X^k = P.$$
+\end{itemize}
+
+\setcounter{section}{41}
+\section{Corollaire du degré d'une dérivée dans $\mathbb{K}[X]$, avec $\mathbb{K} = \mathbb{R} \text{ ou } \mathbb{C}$}
+
+\begin{tcolorbox}[title=Corollaire 13.42, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\mathbb{K}$ un corps de caractéristique nulle et soit $P$ et $Q$ deux polynômes de $\mathbb{K}[X]$. Alors $P' = Q'$ si et seulement si $P$ et $Q$ diffèrent d'une constante. 
+\end{tcolorbox}
+
+Soit $P \in \ker (D)$, où $D:\mathbb{K}[X] \to \mathbb{K}[X], P \mapsto P'$. \\
+Donc $P' = 0$. \\
+Si $\deg (P) > 0$, alors $\deg(P') \geq 0$ $\text{(13.41)}$. \\
+Donc nécessairement, $\mathbb{K}_0[X] \subset \ker(D)$. \\
+Donc $\ker(D) = \mathbb{K}_0[X]$. 
+
+
+\end{document}
