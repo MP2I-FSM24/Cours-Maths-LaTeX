@@ -1,0 +1,42 @@
+\documentclass{report}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\usepackage{tkz-tab}
+\usepackage{tcolorbox}
+
+\geometry{a4paper, left=20mm, right=20mm, top=20mm, bottom=20mm}
+
+\begin{document}
+\setcounter{chapter}{15}
+\setcounter{section}{1}
+\section{Exercice}
+\begin{align*}
+    0 \leq x \left\lfloor \frac{1}{x} \right\rfloor \leq x \times \frac{1}{x} \\
+    \text{donc } 0 \leq x \left\lfloor \frac{1}{x} \right\rfloor \leq 1 \\
+\end{align*}
+\begin{enumerate}
+    \item Quand $x \in ]-1, 0[ \cup ]0, 1[$, on remarque que $\lim\limits_x \left\lfloor \frac{1}{x} \right\rfloor \geq \lim\limits_x \frac{1}{x}$. \\
+    Ainsi, par théorème d'opérations on a :
+    \begin{align*}
+        \lim_{x\to 0} x \times \frac{1}{x} \leq \lim_{x\to 0} x \times \left\lfloor \frac{1}{x} \right\rfloor \leq \lim_{x\to 0} x \times \frac{1}{x}
+    \end{align*}
+    Donc d'après le théorème d'encadrement : 
+    \begin{align*}
+        \boxed{\lim_{x\to 0} x \left\lfloor \frac{1}{x} \right\rfloor = 1}
+    \end{align*}
+
+    \item Quand $x > 1$, $\left\lfloor \frac{1}{x} \right\rfloor = 0$. \\
+    Donc : 
+    \begin{align*}
+        \forall x > 1, x \left\lfloor \frac{1}{x} \right\rfloor = 0
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \boxed{\lim_{x\to +\infty} x \left\lfloor \frac{1}{x} \right\rfloor = 0} 
+    \end{align*}
+\end{enumerate}
+
+\end{document}
