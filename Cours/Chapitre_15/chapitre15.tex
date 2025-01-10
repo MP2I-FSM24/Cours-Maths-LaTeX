@@ -1,0 +1,217 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{14}
+\chapter{Limites et continuité}
+\tableofcontents
+\clearpage
+
+\setcounter{section}{5}
+\section{Limite en un point du domaine}
+\begin{tcolorbox}[title=Propostion 15.6, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $a \in X$ et si $f(x)$ admet une limite finie en $a$, alors cette limite est nécessairement égale à $f(a)$. 
+\end{tcolorbox}
+
+Comme $f(x)$ admet une limite finie $b$ quand $x \to a$ : 
+\begin{align*}
+    \forall \epsilon, \exists \nu > 0, \forall x \in X, |x - a| \leq \nu \Rightarrow |f(x) - b| \leq \epsilon
+\end{align*}
+Or pour tout $\epsilon > 0$ : 
+\begin{align*}
+    |a - a| \leq \nu \text{ (quelque soit $\nu$)}
+\end{align*}
+Donc : 
+\begin{align*}
+    \forall \epsilon, |f(a) - b| \leq \epsilon
+\end{align*}
+Donc $\boxed{f(a) = b}$. 
+
+\setcounter{section}{14}
+\section{Comparaison des limites de deux fonctions coincidant au voisinage de $a$}
+\begin{tcolorbox}[title=Propostion 15.15, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f$ et $g$ deux fonctions coincidant au voisinage d'un point $a$. Alors, si $f$ admet une limite (finie ou infinie) en $a$, alors $g$ aussi et
+    $$\lim_{x\to a} f(x) = \lim_{x\to a} g(x)$$
+\end{tcolorbox}
+
+On choisit $W \in \mathcal{V}(a)$ tel que $W \cap X = W \cap Y$ et $\left. f \right|_{W \cap X} = \left. g \right|_{W \cap Y}$. \\
+Soit $b \in \overline{\mathbb{R}}$ tel que $f(x)$ tend vers $b$ quand $x \to a$. \\
+Soit $V \in \mathcal{V}(b)$. On choisit $U \in \mathcal{V}(a)$ tel que : 
+\begin{align*}
+    f(U \cap X) \subset V
+\end{align*}
+Or $$W \cap U \in \mathcal{V}(a) \text{ et } \subset{f(W \cap U \cap X)}_{g(W \cap U \cap Y)} \subset V$$
+Donc $g$ admet une limite en $a$ égale à $b$
+
+\setcounter{section}{16}
+\section{Unicité de la limite, cas réel}
+\begin{tcolorbox}[title=Théorème 15.17, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $a \in \overline{X}$ et $f$ une fonction réelle. Sous réserve d'existence, la limite de $f(x)$, lorsque $x$ tend vers $a$ est unique. 
+\end{tcolorbox}
+
+Par l'absurde. On suppose que $f$ possède deux limites $l \neq l'$ en $a$. \\
+On choisit $u \in \mathcal{V}(l)$ et $u' \in \mathcal{V}(l')$ tels que $u \cap u' = \emptyset$. \\
+Par définition, on choisit $(W, W') \in \mathcal{V}(a)^2$ tels que $f(W \cap X) \subset U$ et $f(W' \cap X) \subset U'$. \\
+Or $\underbrace{W \cap W'}_{\neq \emptyset} \not \in \mathcal{V}(a)$ et $f(\underbrace{W \cap W' \cap X}_{\neq \emptyset}) \subset U \cap U' = \emptyset$. \\
+Absurde.
+
+\setcounter{section}{22}
+\section{Propostion}
+\begin{tcolorbox}[title=Propostion 15.23, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $a \in \overline{X}$. Soit $(Z_i)_{i\in I}$ une famille \textbf{finie} de sous-ensembles de $\mathbb{R}$ tels que $X \in \bigcup\limits_{i \in I} Z_i$ (on dit que $(Z_i)$ est un \textbf{recouvrement} de $X$). La fonction $f$ admet au point $a$ une limite $\ell$ (finie ou infinie) si et seulement si pour tout $i$ tel que la limite de $f$ en $a$ sur $Z_i$ est envisageable, cette limite existe et vaut $\ell$. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+On suppose que $\lim\limits_a f = \ell$. \\
+Soit $i \in I$ tel que $a \in \overline{X \cap Z}$. \\
+Soit $V \in \mathcal{V}(\ell)$. On choisit $U \in \mathcal{V}(a)$ tel que $f(U \cap X) \subset V$. \\
+EN particulier $f(\underbrace{U\cap X \cap Z_i}_{\subset U \cap X}) \subset V = \left. f \right|_{X \cap Z_i} (U \cap X \cap Z_i)$. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+Notons $J \subset I$ l'ensemble des indices pour lesquels la limite est envisageable en $Z_i$. \\
+Soit $V \in \mathcal{V}(\ell)$. Pour tout $i \in J$, comme $\lim\limits_{x \to a \\ x \in Z_i} = \ell$ on choisit $U_i \in \mathcal{V}(a)$ tel que $\left. f \right|_{Z_i \cap X} (U_i \cap Z_i \cap X) \subset V$. \\
+On pose $U = \bigcap\limits_{i \in J} U_i \in \mathcal{V}(a)$ car $J$ est fini. \\
+On choisit $U' \in \mathcal{V}(a)$ tel que $U' \cap \left(\bigcup\limits_{i \in I \backslash J} Z_i \right) = \emptyset$. \\
+$f(U \cap U' \cap X) \subset V$ \\
+Donc $\boxed{\lim\limits_a f = \ell}$. 
+
+\setcounter{section}{29}
+\section{Composition de limites}
+\begin{tcolorbox}[title=Propostion 15.30, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f:X\to \mathbb{R}$, $g:Y\to \mathbb{R}$ deux fonctions avec $f(X) \subset Y$. Soit $a \in \overline{X}$, $b \in \overline{Y}$ et $c \in \overline{\mathbb{R}}$. Si $\lim\limits_a f = b$ et si $\lim\limits_b g = c$, alors $\lim\limits_a g \circ f = c$. 
+\end{tcolorbox}
+
+Soit $W \in \mathcal{V}(c)$. On choisit $V \in \mathcal{V}(b)$ tel que : 
+\begin{align*}
+    g(V \cap Y) \subset W
+\end{align*}
+On choisit $U \in \mathcal{V}(a)$ tel que : 
+\begin{align*}
+    f(U \cap X) \subset V \cap Y \text{ ($\lim\limits_a f = b$)}
+\end{align*}
+On a alors : 
+\begin{align*}
+    \boxed{g \circ f(U \cap X) \subset W}
+\end{align*}
+
+\setcounter{section}{31}
+\section{Limites et inégalités strictes}
+\begin{tcolorbox}[title=Propostion 15.32, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f:X \to \mathbb{R}$, $a \in \overline{X}$, $m \in \mathbb{R}$ et $M \in \mathbb{R}$. 
+    \begin{enumerate}
+        \item Si $\lim\limits_a f < M$ alors $f(x) < M$ au voisinage de $a$ 
+        \item Si $\lim\limits_a f > m$ alors $f(x) > m$ au voisinage de $a$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Notons $b = \lim\limits_a f \in \overline{\mathbb{R}}$. Si $b < M$, on choisit $U \in \mathcal{V}(b)$ et $U' \in \mathcal{V}(M)$ avec $U < U'$. \\
+    Comme $\lim\limits_a f = b$, on choisit $W \in \mathcal{V}(a)$ tel que : 
+    \begin{align*}
+        f(W \cap X) \subset U
+    \end{align*}
+\end{enumerate}
+
+\section{Limite et inégalités larges}
+\begin{tcolorbox}[title=Propostion 15.33, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f:X\to \mathbb{R}$ et $g:X\to \mathbb{R}$ deux fonctions et $a \in \overline{X}$. On suppose que $f$ et $g$ possède des limites finies en $a$. \\
+    Si $f(x) \leq g(x)$ au voisinage de $a$, alors $\lim\limits_a f \leq \lim\limits_a g$. \\
+    Ce résultat est le plus souvent utilisé lorsqu'une des deux fonctions est constante. 
+\end{tcolorbox}
+
+RAF : absurde + (15.32)
+
+\section{Caractérisations séquentielle de la limite d'une fonction}
+\begin{tcolorbox}[title=Théorème 15.34, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f:X\to \mathbb{R}$ une fonction et $a \in \overline{X}$ et $\ell \in \overline{\mathbb{R}}$. Sont équivalentes : 
+    \begin{enumerate}
+        \item $\lim\limits_a f = \ell \Leftrightarrow \forall u_n \to a, \lim f(u_n) = \ell \text{ ($= f(\lim u_n)$)}$
+        \item Pour toute suite $(u_n)$ de limite $a$ à valeurs dans $X$, la suite $(f(u_n))$ a pour limite $\ell$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+$\boxed{1 \Rightarrow 2}$ \\
+On suppose que $\lim\limits_a f = \ell$. \\
+Soit $(u_n) \in X^{\mathbb{N}}$ avec $u_n \underset{n \to +\infty}{\longrightarrow} a$. \\
+Soit $V \in \mathcal{V}(\ell)$. On choisit $U \in \mathcal{V}(a)$ tel que : 
+\begin{align*}
+    f(U \cap X) \subset V \text{ ($\lim\limits_a f = \ell$)}
+\end{align*}
+Comme $u_n \underset{n \to +\infty}{\longrightarrow} a$, on choisit $N \in \mathbb{N}$ tel que : 
+\begin{align*}
+    \forall n \geq N, u_n \in U \cap X
+\end{align*}
+Donc : 
+\begin{align*}
+    \forall n \geq N, f(u_n) \in V
+\end{align*}
+Donc : 
+\begin{align*}
+    f(u_n) \underset{n \to +\infty}{\longrightarrow} \ell
+\end{align*} \\
+
+$\boxed{1 \Leftarrow 2}$ \\
+Par contraposée. On suppose que $f$ n'admet pas $\ell$ comme limite en $a$. Pour tout $n \in \mathbb{N}$, on note : 
+\begin{align*}
+    V_n = \begin{cases}
+        ]a - \frac{1}{n+1}, a + \frac{1}{n+1}[ \text{ si $a \in \mathbb{R}$} \\
+        [n, +\infty[ \text{ si $a = +\infty$} \\
+        ]-\infty, -n] \text{ si $a = -\infty$}
+    \end{cases}
+\end{align*}
+Par définition, il existe $W \in \mathcal{V}(\ell)$ tel que pour tout $V \in \mathcal{V}(a)$, il existe $x \in V \cap X$ et $f(x) \neq W$. \\
+Pour tout $n \in \mathbb{N}$, on choisit $x_n \in V_n \cap X$ tel que $f(x_n) \neq W$. \\
+Par construction : 
+\begin{align*}
+    (x_n) \in X^\mathbb{N}, x_n \underset{n \to +\infty}{\longrightarrow} a \text{ et } f(x_n) \cancel{\underset{n \to +\infty}{\longrightarrow}} \ell
+\end{align*}
+
+\setcounter{section}{38}
+\section{Théorème de la limite monotone}
+\begin{tcolorbox}[title=Théorème 15.39, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $a \in \mathbb{R}$ et $b\in \mathbb{R} \cup \{+\infty\}$ avec $a < b$ et $f:[a, b[ \to \mathbb{R}$ une fonction croissante.
+    \begin{enumerate}
+        \item La limite $\lim\limits_{a^+} f$ existe et est finie. Plus précisément, on a $f(a) \leq \lim\limits_{a^+} f$. 
+        \item Pour tout $c \in ]a, b[$, $\lim\limits_{c^-} f$ et $\lim\limits_{c^+} f$ existent et sont finies. Plus précisément : $\lim\limits_{c^-} f \leq f(c) \leq \lim\limits_{c^+} f$. 
+        \item La limite $\lim\limits_{b} f$ existe et est soit finie, soit égale à $+\infty$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On note $F = f(]a, b[)$. Comme $f$ est définie au voisinage de $a$, $]a, b[ \neq \emptyset$ et $F \neq \emptyset$. \\
+    Par ailleurs, comme $f$ est croissante sur $]a, b[$, $F$ est minorée par $f(a)$. \\
+    D'après la propriété fondamentale de $\mathbb{R}$, $F$ possède une borne inférieure notée $\alpha$, avec $f(a) \leq \alpha$. \\
+    Montrons par définition que $\lim\limits_{a^+} f = \alpha$. \\
+    Soit $\epsilon > 0$, $\alpha + \epsilon$ n'est pas un minorant de $F$ par définition de $\alpha$. On choisit : 
+    \begin{align*}
+        \alpha \leq f(x_0) < \alpha + \epsilon
+    \end{align*}
+    Par croissance de $f$ sur $]a, b[$ : 
+    \begin{align*}
+        \forall x \in ]a, x_0[, \alpha \leq f(x) \leq f(x_0) < \alpha + \epsilon
+    \end{align*}
+    On pose $\eta = x_0 - a > 0$, on a montré que : 
+    \begin{align*}
+        \boxed{\forall x \in ]a - \eta[ \cap ]a, b[, |f(x) - \alpha| < \epsilon}
+    \end{align*}
+
+    \item Pour $c \in ]a, b[$, en appliquant (15.39.1) à $\left. f \right|_{[a, b[}$, on montre que $\lim\limits_{c^+} f$ existe et $f(x) \leq \lim\limits_{x^+} f$. \\
+    On adapte ensuite la preuve de (15.39.1) : 
+    \begin{align*}
+        F = f(]a, c[), \alpha = \sup (F)
+    \end{align*}
+    pour montrer que $\lim\limits_{c^-} f$ existe et 
+
+    \item Par disjonction de cas. \\
+    \begin{itemize}
+        \item Si $f$ est majorée : on adapte la 2ème partie de (15.39.2). 
+        \item Si $f$ n'est pas majorée. Soit $A \in \mathbb{R}$. Comme $f$ n'est pas majorée, on choisit $x_0 \in ]a, b[$ tel que $f(x_0) > A$. \\
+        Comme $f$ est croissante : 
+        \begin{align*}
+            \forall x \geq x_0, f(x) > A
+        \end{align*}
+        Donc $\lim\limits_{b} f = +\infty$. 
+    \end{itemize}
+\end{enumerate}
+
+
+\end{document}
