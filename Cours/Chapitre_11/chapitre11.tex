@@ -1,0 +1,580 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{10}
+\chapter{Matrices}
+\tableofcontents
+\clearpage
+
+
+\setcounter{section}{10}
+\section{Produit matriciel}
+\begin{align*}
+    & \begin{pmatrix} 2 & 8 & 4 \\ -1 & -1 & -1 \\ 2 & 0 & 0 \end{pmatrix} \\
+    AB = \begin{pmatrix} 1 & 2 & -1\\-1 & 2 & 5 \end{pmatrix}
+    &\begin{pmatrix} -2& 6 & 2 \\ 6 & -10 & -6 \end{pmatrix}
+\end{align*}
+
+\section{Produit matriciel, lignes par colonnes}
+\begin{itemize}
+    \item $A = (a_{i,j})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq p}}$ et $C_{i} = \begin{pmatrix} 0 \\ \vdots \\ i \\ \vdots \\ 0 \end{pmatrix} = (\delta_{ij})_{1 \leq j \leq p} \in \mathcal M_{p, 1} (\mathbb K)$
+    \begin{align*} 
+        (AC_{i})_{k,1} &= \sum^p_{l=1} a_{kl} (C_{i})_{l,1} \\ &= \sum^p_{l=1} a_{kl}\delta_{il} \\ &= a_{ki} 
+    \end{align*}
+    \item $L_{j} = \begin{pmatrix} 0 & \ldots & 1 & \ldots & 0 \end{pmatrix} = (\delta_{ji})_{1 \leq i \leq n}$
+    \begin{align*} 
+        (L_{j}A)_{1k} &= \sum^n_{l=1}(L_{j})_{1,e} \times a_{ek} \\ &= \sum^n_{l=1} \delta_{je}a_{lk} \\ &= a_{jk} 
+    \end{align*}
+    \item On note $A = \begin{pmatrix} C_1 & | \ldots| & C_{p} \end{pmatrix}$ et $X = \begin{pmatrix} x_{1} \\ \vdots \\x_{p} \end{pmatrix} = \sum^p_{k=1} x_{k} \begin{pmatrix} 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{pmatrix}$
+    \begin{align*} 
+        AX = \sum^p_{k=1} x_{k} A \begin{pmatrix} 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{pmatrix} = \sum^p_{k=1} x_{kC_{k}} 
+    \end{align*}
+\end{itemize}
+
+\setcounter{section}{15}
+\section{Produit de deux matrices élémentaires}
+Soit $1 \leq k \leq n ; 1 \leq l \leq m$
+\begin{align*} 
+(E_{ij} \times E_{rs})_{k,l} &= \sum^t_{p=1}(E_{ij})_{kp} \times (E_{rs})_{pl} \\
+&= \sum^t_{p=1} \delta_{ik}\delta_{pj}\delta_{rp}\delta_{sl}  \\
+&= \delta_{rj}\delta_{ik}\delta_{sl} \\
+&= \delta_{rj} (E_{is})_{kl} \\
+\text{Donc } E_{ij} \times E_{rs} &= \delta_{jr}E_{is}
+\end{align*}
+
+\section{Propriétés du produit matriciel, matrice identité}
+\begin{itemize}
+    \item Soit $(A,B,C) \in \mathcal M_{i,p}(\mathbb K) \times \mathcal M_{q,r}(\mathbb K)$
+    \begin{align*} 
+        (AB)_{ij} &= \sum^p_{k=1} A_{ik}B_{kj} \\
+        [(AB)C]_{il} &= \sum^q_{t=1} (AB)_{it} C_{tl}  \\
+        &= \sum^q_{t=1} \sum^p_{k=1}A_{ik}B_{kt}C_{tl} \\
+        &= \sum^p_{k=1}A_{ik}\sum^q_{t=1}B_{kt}C_{tl} \\
+        &= \sum^p_{k=1}A_{ik}(BC)_{kl} \\
+        &= (A(BC))_{il}
+    \end{align*}
+    \item RAF
+    \item RAF
+\end{itemize}
+
+\setcounter{section}{23}
+\section{Exemple}
+On écrit $A = I_{3} + N$ avec $N = \begin{pmatrix} 0 & 1 & 2 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$. 
+
+\begin{align*} 
+N^2 = \begin{pmatrix} 0 & 0 & 0\\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} 
+\end{align*}
+
+Soit $k \in \mathbb N$. Comme $I_{3}$ et $N$ commutent, 
+
+\begin{align*} 
+A^k &= (I_{3} + N)^k \\
+&= \sum^k_{i=0} \binom{k}{i} N^i & \text{ (Binôme de Newton)} \\
+&= I_{3} + \binom{k}{1}N & \text{ ($N^2 = 0$)} \\
+&= I_{3} + kN \\
+&= \begin{pmatrix} 1 & k & 2k \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}
+\end{align*}
+
+\section{Produit par bloc}
+On le fait pour un bloc. 
+Soit $1 \leq i \leq n$ et $1 \leq j \leq s$. 
+
+\begin{align*} 
+\left [ \begin{pmatrix} A & C \\B & D \end{pmatrix} \begin{pmatrix} A' & C' \\ B' & D' \end{pmatrix} \right ]_{i,j} &= \sum^{p + q}_{k = 1} \begin{pmatrix} A & C\\B & D \end{pmatrix}_{ik} \begin{pmatrix} A' & C' \\ B' & D' \end{pmatrix}_{kj} \\
+&= \sum^p_{k=1} \begin{pmatrix} A & C \\ B & D\end{pmatrix}_{ik} \begin{pmatrix} A' & C' \\ B' & D' \end{pmatrix}_{kj} + \sum^{p+q}_{k=p+1} \begin{pmatrix} A & C \\ B & D \end{pmatrix}_{ik} \begin{pmatrix} A' & C' \\ B' & D' \end{pmatrix}_{kj} \\
+&= \sum^p_{k=1} A_{ik}A'_{kj} + \sum^q_{k=1} C_{ik}B_{kj} \\
+&= (AA' + CB')_{ij}
+\end{align*}
+
+\setcounter{section}{26}
+\section{Propriétés de la transposition}
+\begin{itemize}
+    \item RAF
+    \item RAF
+    \item Soit $(i, j) \in \llbracket 1, q\rrbracket \times \llbracket 1, n \rrbracket$
+    \begin{align*} 
+        [^t(AB)]_{ij} &= (AB)_{ji} \\
+        &= \sum^p_{k=1} A_{jk}B_{ki} \\
+        &= \sum^p_{k=i}[^tB]_{ik}[^tA]_{kj} \\
+        &= [^tB ^tA]_{ij}
+    \end{align*}
+\end{itemize}
+
+\setcounter{section}{30}
+\section{Forme linéaire sur $\mathcal{M}_n(\mathbb{K})$}
+Soit $(A,B) \in \mathcal{M}_n(\mathbb{K})^2$, $\lambda \in \mathbb{K}$.
+\begin{itemize}
+\item Trace d'une somme de matrices :
+\begin{align*}
+    tr(A + B) &= \sum^n_{i=1} (A + B)_{ii} \\
+    &= \sum^n_{i=1} A_{ii} + B_{ii} \\
+    &= \sum^n_{i=1} A_{ii} + \sum^n_{i=1} B_{ii} \\
+    &= tr(A) + tr(B)
+\end{align*}
+
+\item Trace d'un produit par un scalaire :
+\begin{align*}
+    tr(\lambda A) &= \sum^n_{i=1} (\lambda A)_{ii} \\
+    &= \lambda \sum^n_{i=1} A_{ii} \\
+    &= \lambda tr(A)
+\end{align*}
+
+\item Trace d'un produit de matrices :
+\begin{align*}
+    tr(AB) &= \sum^n_{i=1} (AB)_{ii} \\
+    &= \sum^n_{i=1} \sum^n_{k=1} A_{ik}B_{ki} \\
+    &= \sum^n_{k=1} \sum^n_{i=1} B_{ki}A_{kj} \\
+    &= \sum^n_{k=1} (BA)_{kk} \\
+    &= tr(BA)
+\end{align*}
+\end{itemize}
+
+\setcounter{section}{32}
+\section{Exemple}
+On suppose $A$ et $B$ solutions. \\
+Donc $AB - BA = I_n$ \\
+Donc $tr(AB - BA) = tr(I_n) = n$ \\
+Or $tr(AB - BA) = 0$ \\
+Absurde. 
+
+\setcounter{section}{36}
+\section{Stabilité des matrices diagonales ou triangulaires}
+On montre le résultat pour les matrices triangulaires supérieures (ensemble noté $\mathcal{T}_n^+(\mathbb{K})$). \\
+Soit $(A,B) \in \mathcal{T}_n^+(\mathbb{K})^2$ . On a bien $A + B \in \mathcal{T}_n^+(\mathbb{K})$ et aussi $\lambda A \in \mathcal{T}_n^+(\mathbb{K})$ pour tout $\lambda \in \mathbb{K}$ \\
+Soit $i > j$, on a : 
+\begin{align*}
+    (AB)_{ij} &= \sum^n_{k=1} A_{ik}B_{kj} \\
+\end{align*}
+\begin{itemize}
+    \item Si $i > j$, $A_{ik} = 0$.
+    \item Si $i = j$, $B_{kj} = 0$.
+\end{itemize}
+Donc $(AB)_{ij} = 0$. \\
+Donc $AB \in \mathcal{T}_n^+(\mathbb{K})$. \\ \\
+
+Si $(AB) \in \mathcal{T}_n^+(\mathbb{K})^2$, alors $^t(AB) = \underbrace{^tB}_{\in \mathcal{T}_n^+(\mathbb{K})} \times \underbrace{^tA}_{\in \mathcal{T}_n^+(\mathbb{K})} \in \mathcal{T}_n^+(\mathbb{K})$ \\
+Donc $AB \in \mathcal{T}_n^+(\mathbb{K})$ \\ \\
+
+Le résultat est vrai pour les matrices diagonales, à la fois triangulaires supérieures et inférieures. 
+
+\setcounter{section}{40}
+\section{Nilpotence des matrices triangulaires}
+Soit $T \in \mathcal{T}_n^{++}(\mathbb{K})$. \\
+On va montrer par récurrence sur $k \in \llbracket 1, n \rrbracket$ que :
+\begin{align*}
+    \text{" } T^k = 
+    \begin{pmatrix}
+        O & - & O & - & \triangle \\
+        & & & & | \\
+        & & & & O \\
+        & & & & | \\
+        & & & & O \\
+    \end{pmatrix}
+    \text{ "} \\
+\end{align*}
+C'est-à-dire que pour tout $(i,j) \in \llbracket 1, n \rrbracket^2, i + k - 1 \geq j \Rightarrow T_{ij}^k = 0$. \\
+On suppose le résultat vrai pour $k \in \llbracket 1, n-1 \rrbracket$. \\
+Soit $i + k \geq j$. 
+\begin{align*}
+    (T^{k+1})_{ij} &= (T^k T)_{ij} \\
+    &= \sum^n_{p=1} T^k_{ip}T_{pj} \\
+\end{align*}
+\begin{itemize}
+    \item Si $p \leq i + k - 1$, $T^k_{ip} = 0$
+    \item Si $p \geq i + k$, $T_{pj} = 0$
+\end{itemize}
+Donc $(T^{k+1})_{ij} = 0$. \\
+Par réccurence, $P(k)$ est vrai pour tout $k \in \llbracket 1, n \rrbracket$. En particulier, pour $k = n$, on obtient $T^n = 0$.
+
+\setcounter{section}{43}
+\section{Opérations}
+\begin{itemize}
+    \item $^tA \times ^t(A^{-1}) = ^t(A^{-1}A) = ^tI_n = I_n$
+    \item $^t(A^{-1}) \times ^tA = ^t(AA^{-1}) = ^tI_n = I_n$
+\end{itemize}
+Donc$(^tA)^{-1} = ^t(A^{-1})$
+
+\setcounter{section}{47}
+\section{Caractérisation de $GL_2(\mathbb{K})$}
+On note $M = 
+\begin{pmatrix}
+    a & c \\
+    b & d
+\end{pmatrix}$
+et $N =
+\begin{pmatrix}
+    d & -c \\
+    -b & a
+\end{pmatrix}$. \\
+\begin{align*}
+    M.N &= 
+    \begin{pmatrix}
+        a & c \\
+        b & d
+    \end{pmatrix}
+    \begin{pmatrix}
+        d & -c \\
+        -b & a
+    \end{pmatrix} \\
+    &= 
+    \begin{pmatrix}
+        ad - bc & 0 \\
+        0 & ad - bc
+    \end{pmatrix} \\
+    &= det(M) I_2
+\end{align*}
+\begin{itemize}
+    \item Si $det(M) \neq 0$, alors $M \times \left( \frac{1}{det(M)} N \right) = I_2$. Donc $M$ est inversible et $M^{-1} = \frac{1}{det(M)} N$.
+    \item Si $det(M) = 0$, alors $M.N = 0$ donc $M$ n'est pas inversible.
+\end{itemize}
+
+\section{Matrices diagonales inversibles}
+Soit $D = Diag(\lambda_1, \ldots, \lambda_n)$. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+On suppose que : 
+\begin{align*}
+    \forall i \in \llbracket 1, n \rrbracket, \lambda_i \neq 0
+\end{align*}
+\begin{align*}
+    D \times Diag(\lambda_1^{-1}, \ldots, \lambda_n^{-1}) &= Diag(\lambda_1 \times \lambda_1^{-1}, \ldots, \lambda_n \times \lambda_n^{-1}) \\
+    &= Diag(1, \ldots, 1) \\
+    &= I_n
+\end{align*}
+Donc $D$ est inversible et $$D^{-1} = Diag(\lambda_1^{-1}, \ldots, \lambda_n^{-1})$$ \\ \\
+
+$\boxed{\Rightarrow}$ \\
+Par contraposée, soit $i \in \llbracket 1, n \rrbracket$ tel que $\lambda_i = 0$. \\
+\begin{align*}
+    D \times Diag(0, \ldots, \underbrace{1}_{i^\text{ème} \text{ place}}, \ldots, 0) &= 0 \\
+\end{align*}
+Donc $D$ est un diviseur de $0$, donc $D$ n'est pas inversible.
+
+\section{Exemple}
+On a : 
+\begin{align*}
+    \begin{pmatrix}
+        1 & & & a_{1n} \\
+        & \ddots & & \vdots \\
+        & & \ddots & a_{n-1,n} \\
+        & & & 1
+    \end{pmatrix}
+    \times
+    \begin{pmatrix}
+        1 & & & -a_{1n} \\
+        & \ddots & & \vdots \\
+        & & \ddots & -a_{n-1,n} \\
+        & & & 1
+    \end{pmatrix}
+    &=
+    \begin{pmatrix}
+        1 & & & 0 \\
+        & \ddots & & \vdots \\
+        & & \ddots & 0 \\
+        & & & 1
+    \end{pmatrix}
+\end{align*}
+
+\section{Matrices triangulaires inversibles}
+On raisonne par récurrence forte sur $n \in \mathbb{N}^*$. \\
+Pour $n = 1$ RAF. \\
+Pour $n = 2$, RAS $\text{(11.48)}$. \\
+On suppose le résultat vrai pour $n \in \mathbb{N}^*$. \\
+Soi $T \in \mathcal{T}_{n+1}^{+}(\mathbb{K})$. Donc $T$ est de la forme : \\
+\begin{align*}
+    T &= 
+    \begin{pmatrix}
+         \mathcal{U}& X \\
+        0 & a
+    \end{pmatrix}
+    && \text{avec } \mathcal{U} \in \mathcal{T}_n^{+}(\mathbb{K}) \text{, } X \in \mathcal{M}_{n,1}(\mathbb{K}) \text{ et } a \in \mathbb{K}
+\end{align*}
+
+$\boxed{\Rightarrow}$ \\
+On suppose que la diagonale de $T$ ne contient aucun $0$. \\
+Donc $\mathcal{U}$ est inversible d'après l'hypothèse de réccurence. \\
+On choisit $V \in \mathcal{T}_n^+(\mathbb{K})$ tel que $\text{(Hypothèse de récurrence)}$. \\
+\begin{align*}
+    \mathcal{U}V &= I_n \\
+\end{align*}
+On a : 
+\begin{align*}
+    T \times 
+    \begin{pmatrix}
+        V & 0 \\
+        0 & \underbrace{a^{-1}}_{a \neq 0}
+    \end{pmatrix}
+    &=
+    \begin{pmatrix}
+        \mathcal{U} & X \\
+        0 & a
+    \end{pmatrix}
+    \begin{pmatrix}
+        V & 0 \\
+        0 & a^{-1}
+    \end{pmatrix} \\
+    &= 
+    \begin{pmatrix}
+        U_n & a^{-1}X \\
+        0 & 1
+    \end{pmatrix} \\
+\end{align*}
+Donc $\text{(11.50)}$ : 
+\begin{align*}
+    T \times 
+    \begin{pmatrix}
+        V & 0 \\
+        0 & a^{-1}
+    \end{pmatrix}
+    \begin{pmatrix}
+        I_n & -a^{-1}X \\
+        & 1
+    \end{pmatrix}
+    &= 
+    \begin{pmatrix}
+        1 & & \\
+        & \ddots & \\
+        & & 1
+    \end{pmatrix}
+\end{align*}
+Donc $T$ est inversible d'inverse dans $\mathcal{T}_{n+1}^{+}(\mathbb{K})$. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+On suppose que la diagonale de $T$ contient un $0$. \\
+\begin{itemize}
+    \item Si $T_{11} = 0$, alors $T = 
+    \begin{pmatrix}
+        0 & L \\
+        & W
+    \end{pmatrix}$ \\
+    Et $T \times \underbrace{E_{11}}_{\neq 0} = 0$ \\
+    Donc $T \not \in GL_{n+1}(\mathbb{K})$ \\
+    
+    \item On suppose que le premier $0$ apparait à $T_{kk}$ avec $k \geq 2$. \\
+    Donc $$T = 
+    \begin{pmatrix}
+        A & C \\
+        0 & B
+    \end{pmatrix} 
+    \text{ avec } A = 
+    \begin{pmatrix}
+        F & G \\
+        0 & 0
+    \end{pmatrix} 
+    \text{, } F \in \mathcal{T}_{k-1}^+(\mathbb{K})$$ 
+    La diagonale de $F$ ne contient aucun $0$ donc $F \in GL_{k - 1}(\mathbb{K})$ et :
+    \begin{align*}
+        A \times 
+        \begin{pmatrix}
+            0 & -F^{-1}G \\
+            0 & 1
+        \end{pmatrix}
+        &= 
+        \begin{pmatrix}
+            F & G \\
+            0 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            0 & -F^{-1}G \\
+            0 & 1
+        \end{pmatrix} \\
+        &=
+        \begin{pmatrix}
+            0 & 0 \\
+            0 & 0
+        \end{pmatrix}
+    \end{align*}
+    Alors :
+    \begin{align*}
+        T \times \underbrace{\begin{pmatrix}
+            H & 0 \\
+            0 & 0
+        \end{pmatrix}}_{\neq 0} = 0
+    \end{align*}
+Donc $T \not \in GL_{n+1}(\mathbb{K})$.
+\end{itemize}
+
+\setcounter{section}{53}
+\section{Exemple}
+Soit $X \in \mathbb{K}^2$. \\
+\begin{align*}
+    X \in \ker A &\Leftrightarrow AX = 0 \\
+    &\Leftrightarrow 
+    \begin{pmatrix}
+        1 & 2 \\
+        0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+        x \\
+        y
+    \end{pmatrix}
+    = 
+    \begin{pmatrix}
+        0 \\
+        0
+    \end{pmatrix} \\
+    &\Leftrightarrow
+    \begin{cases}
+        x + 2y = 0 \\
+        y = 0
+    \end{cases} \\
+    &\Leftrightarrow X = 0 \\
+\end{align*}
+Donc $\ker A = \{0\}$.
+\begin{align*}
+    X \in \ker B &\Leftrightarrow BX = 0 \\
+    &\Leftrightarrow
+    \begin{pmatrix}
+        1 & 1 \\
+        1 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+        x \\
+        y
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        0 \\
+        0
+    \end{pmatrix} \\
+    &\Leftrightarrow
+    \begin{cases}
+        x + y = 0 \\
+        x + y = 0
+    \end{cases} \\
+    &\Leftrightarrow x + y = 0 \\
+    &\Leftrightarrow X \in \left\{ 
+    \begin{pmatrix}
+        x \\
+        -x
+    \end{pmatrix}
+    \text{, } x \in \mathbb{K}
+    \right\} \\
+    &\Leftrightarrow X \in \mathbb{K}.
+    \begin{pmatrix}
+        1 \\
+        -1
+    \end{pmatrix}
+\end{align*}
+Donc $\ker B = \mathbb{K} 
+\begin{pmatrix}
+    1 \\
+    -1
+\end{pmatrix}
+$.
+
+\setcounter{section}{60}
+\section{Exemple}
+\begin{align*}
+    &\begin{cases}
+        x + 2y - z = 1 \\
+        2x + 5y + z = 2 
+    \end{cases} \\
+    &\Leftrightarrow 
+    \begin{cases}
+        x + 2y - z = 1 \\
+        3x + 7y = 3
+    \end{cases} \\
+    &\Leftrightarrow
+    \begin{cases}
+        x - a = 1 - 2y \\
+        3x = 3 - 7y
+    \end{cases} \\
+    &\Leftrightarrow
+    \begin{cases}
+        -3z = y \\
+        x = 1 - \frac{7}{3}y
+    \end{cases} \\
+    &\Leftrightarrow
+    \begin{cases}
+        x = 1 - \frac{7}{3}y \\
+        z = -\frac{1}{3}y
+    \end{cases} \\
+    \Leftrightarrow
+    X &= 
+    \begin{pmatrix}
+        1 - \frac{7}{3}y \\
+        y \\
+        -\frac{1}{3}y
+    \end{pmatrix} \\
+    &= 
+    \begin{pmatrix}
+        1 \\
+        0 \\
+        0
+    \end{pmatrix}
+    + y
+    \begin{pmatrix}
+        -\frac{7}{3} \\
+        1 \\
+        -\frac{1}{3}
+    \end{pmatrix} \\
+\end{align*}
+
+\begin{align*}
+    \text{Donc } \mathcal{S} &=
+    \begin{pmatrix}
+        1 \\
+        0 \\
+        0
+    \end{pmatrix}
+    + \mathbb{K}
+    \begin{pmatrix}
+        -\frac{7}{3} \\
+        1 \\
+        -\frac{1}{3}
+    \end{pmatrix} \\
+    &= 
+    \begin{pmatrix}
+        1 \\
+        0 \\
+        0
+    \end{pmatrix}
+    + \mathbb{K}
+    \begin{pmatrix}
+        7 \\
+        -3 \\
+        1
+    \end{pmatrix}
+\end{align*}
+
+\setcounter{section}{64}
+\section{Caractérisation des matrices inversibles par les sytèmes linaires}
+$\boxed{\Rightarrow}$ \\
+RAF : $\text{(11.63)}$ \\
+
+$\boxed{\Leftarrow}$ \\
+Pour tout $i \in \llbracket 1, n \rrbracket$, on note $Y_i \in \mathcal{M}_{n,1}(\mathbb{K})$ définie par :
+$$Y_i = \begin{pmatrix}
+    0 \\
+    \vdots \\
+    1 \\
+    \vdots \\
+    0
+\end{pmatrix}$$
+Par hypothèse, on choisit $X_i \in \mathbb{K}^n$ tel que :
+$$AX_i = Y_i$$
+On pose $B = \begin{pmatrix}
+    X_1 & \ldots & X_n
+\end{pmatrix}$ et on remarque que :
+$$\begin{pmatrix}
+    Y_1 & \ldots & Y_n
+\end{pmatrix} = I_n$$
+Par construction : 
+$$AB = I_n$$
+
+\setcounter{section}{73}
+\section{Système équivalents et opérations élémentaires}
+Soit $\Sigma$ un système et $\Sigma'$ un système obtenu après avoir effectué une opération élémentaire. \\
+Soit $A \in \mathcal{M}_{n,p}(\mathbb{K})$ la matrice du système $\Sigma$ et $B \in \mathbb{K}^n$ son second membre. \\
+Soit $X \in \mathbb{K}^p$. 
+Effectuer une opération élémentaire revient à choisir une matrice $P$ de la forme $P_{ij}$, $Q_i(\lambda)$, $R_{ij}(\lambda)$. 
+Ainsi : 
+\begin{align*}
+    X \in \mathcal{S}(\Sigma) &\Leftrightarrow AX = B \\
+    &\underset{P \in GL_n(\mathbb{K})}{\Leftrightarrow} PAX = PB \\
+    &\Leftrightarrow X \in \mathcal{S}(\Sigma')
+\end{align*}
+Donc $\boxed{\mathcal{S}(\Sigma) = \mathcal{S}(\Sigma')}$. 
+
+\end{document}
