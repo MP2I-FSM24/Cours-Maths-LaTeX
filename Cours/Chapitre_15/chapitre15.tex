@@ -351,5 +351,32 @@ Par continuité de $f$ sur les intervalles $]x, y[$ et $]y, z[$, il existe $\alp
 \end{align*}
 Donc $f$ n'est pas injective. 
 
+\section{Théorème 15.73}
+\begin{tcolorbox}[title=Théorème 15.73, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ un intervalle et $f$ monotone sur $I$. Si $f(I)$ est un intervalle, alors $f$ est continue sur $I$. 
+\end{tcolorbox}
+
+\noindent On suppose $f$ croissante sur $I$. \\
+On suppose que $f$ n'est pas continue sur $I$. \\
+On applique le TLM : 
+\begin{align*}
+    \forall a \in I, \lim_{a^-} f \leq f(a) \leq \lim_{a^+} f \text{ (quand tout existe)}
+\end{align*}
+Comme $f$ n'est pas continue sur $I$, on choisit $a \in I$ tel que : 
+\begin{align*}
+    \lim_{a^-} f < f(a) \text{ ou } f(a) < \lim_{a^+} f
+\end{align*}
+On pose :
+\begin{align*}
+    \lambda = \frac{f(a) + \lim_{a^-} f}{2} \text{ ou } \lambda = \frac{f(a) + \lim_{a^+} f}{2}
+\end{align*}
+$f(a) \neq \lambda$ et par croissance : 
+\begin{align*}
+    \forall x < a, f(x) < \lambda \\
+    \forall x > a, f(x) > \lambda
+\end{align*}
+Donc $\lambda \not\in f(I)$. \\
+Donc $f(I)$ n'est pas connexe, donc $f(I)$ n'est pas un intervalle. 
+
 
 \end{document}
