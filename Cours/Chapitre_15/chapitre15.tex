@@ -378,5 +378,22 @@ $f(a) \neq \lambda$ et par croissance :
 Donc $\lambda \not\in f(I)$. \\
 Donc $f(I)$ n'est pas connexe, donc $f(I)$ n'est pas un intervalle. 
 
+\setcounter{section}{75}
+\section{Théorème de la bijection}
+\begin{tcolorbox}[title=Théorème 15.76, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ un intervalle d'extrémités $a$ et $b$. Soit $f:I\to \mathbb{R}$ strictement monotone et continue. Soit 
+    $$\alpha = \lim_{x\to a} f(x) \text{ et } \beta = \lim_{x\to b} f(x).$$
+    (ces limites existent car $f$ et monotone). Alors $f(I)$ est un intervalle d'extrémité $\alpha$ et $\beta$, et $f$ est un homémorphisme de $I$ sur $f(I)$. \\
+    Plus précisément, la borne $\alpha$ de $f(I)$ est ouverte si et seulement si la borne $a$ de $I$ est ouverte (et de même pour $\beta$). 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item $f(I)$ est un intervalle : (15.61). 
+    \item $f$ induit une bijection de $I$ sur $f(I)$ (15.72 $\boxed{\Leftarrow}$). 
+    \item $f^{-1}$ est strictement monotone et définie sur $f(I)$ intervalle, d'image $I$ intervalle donc $f^{-1}$ est continue sur $f(I)$ (15.73 $\boxed{\Rightarrow}$). 
+\end{itemize}
+Ainsi, $f$ induit un homéomorphisme de $I$ sur $f(I)$. \\
+La nature des bornes (fermées ou ouvertes) provient de la monotonie de $f$. 
+
 
 \end{document}
