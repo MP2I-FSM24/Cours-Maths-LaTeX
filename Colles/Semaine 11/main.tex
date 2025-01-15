@@ -1,0 +1,455 @@
+\documentclass[titlepage, twoside]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{subfiles}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{dsfont}
+\usepackage{tikz}
+\usepackage{cancel}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage[dvipsnames]{xcolor}
+
+\geometry{a4paper, left=20mm, right=20mm, top=20mm, bottom=20mm}
+
+\setcounter{tocdepth}{3}
+
+\definecolor{darkgreen}{RGB}{6, 64, 43}
+\definecolor{lightblue}{RGB}{87, 185, 255}
+
+\pagestyle{fancy}
+\fancyhead
+\fancyfoot
+
+\fancyhead[L]{Programme de colle}
+\fancyhead[R]{Axel Montlahuc}
+\fancyfoot[C]{\thepage}
+
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \@starttoc{toc}
+}
+\makeatother
+\renewcommand{\thesection}{\Roman{section}}
+
+\begin{document}
+\chapter*{Programme de colle : semaine 11}
+\tableofcontents
+
+\section{Arithmétique}
+\subsection{Questions de cours}
+\subsubsection{Enoncer et démontrer la propriété fondamentale de $\mathbb{Z}$. }
+\begin{tcolorbox}[title=Théorème 12.1, title filled=false, colframe=orange, colback=orange!10!white]
+    Toute partie non vide et minorée de $\mathbb{Z}$ admet un plus petit élément. 
+\end{tcolorbox}
+
+\noindent Soit $A$ une partie non vide et minorée de $\mathbb{Z}$. \\
+On note $\mathcal{M}$ l'ensemble des minorants de $A$. \\
+Par hypothèse, $\mathcal{M} \neq \emptyset$. \\
+Supposons par l'absurde que : 
+\begin{align*}
+    \forall a \in \mathbb{Z}, a \in \mathcal{M} \Rightarrow a + 1 \in \mathcal{M}
+\end{align*}
+D'après le principe de récurrence, si $a_0 \in \mathcal{M}$ est fixé : 
+$$\forall n \geq a_0, n \in \mathcal{M}$$
+En particulier, pour $n \in A$ ($A \neq \emptyset$) on a : 
+\begin{align*}
+    n \geq a_0 \text{ ($a_0$ est un minorant)}
+\end{align*}
+Donc $n \in \mathcal{M}$. \\
+Donc $n + 1 \in \mathcal{M}$. \\
+Donc $n + 1$ est un minorant de $A$. \\
+Donc $n + 1 \leq n$. \\
+Absurde. \\
+Ainsi, on choisit $a \in \mathbb{Z}$ avec $a \in \mathcal{M}$ et $a + 1 \not \in \mathcal{M}$. \\
+On choisit donc $n \in A$ tel que : 
+$$a \leq n < a + 1$$
+Donc $n = a \in A$. \\
+Donc $a = \min(A)$.
+
+\subsubsection{Enoncer et démontrer le théorème de la division euclidienne. }
+\begin{tcolorbox}[title=Théorème 12.4, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $(a,b) \in \mathbb{Z} \times \mathbb{Z}^*$. Il existe un unique coupe $(q,r) \in \mathbb{Z} \times \mathbb{N}$ tel que :
+    $$a = bq + r$$
+    avec $0 \leq r < |b|$. Cette égalité est appelée \textbf{division euclidienne de $a$ par $b$}, l'entier $q$ est alors appelé \textbf{quotient} et l'entier $r$ le \textbf{reste}, tandis que $a$ porte le nom de dividende et $b$ celui de diviseur. 
+\end{tcolorbox}
+
+\noindent\underline{Existence :} \\
+On suppose dans un premier temps que $b > 0$. \\
+Soit $a \in \mathbb{Z}$. \\
+On note $A = \{ n \in \mathbb{Z}, bn \leq a \}$. \\
+$A$ est un sous-ensemble non vide de $\mathbb{Z}$ et majoré. \\
+Il admet donc un plus grand élément, noté $q$. 
+On a donc $q \in A$ et $q + 1 \not \in A$. 
+\begin{align*}
+    &bq \leq a < b(q + 1) \\
+    \text{donc } &0 \leq a - bq < b
+\end{align*}
+On pose alors $r = a - bq$. L'exsitence est alors prouvée pour $b > 0$. \\
+Si $b < 0$, alors $-b > 0$ et on choisit $(q,r) \in \mathbb{Z}^2$ tel que :
+\begin{align*}
+    a = -b \times q + r \text{ avec } 0 \leq r < -b
+\end{align*}
+Le couple $(-q, r)$ convient. \\ \\
+
+\noindent\underline{Unicité :} \\
+On suppose $a = bq + r = bq' + r'$ avec $0 \leq r, ' < |b|$. \\
+Donc $b(q-q') = r' - r$. \\
+Donc $\underbrace{|b|}_{> 0} \times |q - q'| = |r' - r| < \underbrace{|b|}_{> 0}$. \\
+Donc $|q - q'| < 1$. \\
+Donc $q = q'$. \\
+Puis $r = r'$. 
+
+\subsubsection{Enoncer et démontrer le théorème de Bézout. }
+\begin{tcolorbox}[title=Théorème 12.26, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $a$ et $b$ deux entiers. Alors $a$ et $b$ sont premiers entre eux si et seulement si il existe $(u,v) \in \mathbb{Z}^2$ tel que
+    $$au + bv = 1$$
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+On suppose $a$ et $b$ premiers entre eux. \\
+Donc $\mathcal{D}_{a,b} = \{\pm 1\}$. \\
+Soit $r$ le dernier reste non nul dans l'algorithme d'Euclide, \\
+$$\mathcal{D}_r = \mathcal{D}_{a,b} = \{\pm 1\}$$
+Donc $r = \pm 1$. \\
+D'après le théorème de Bézout, il existe deux entiers $u$ et $v$ tels que : 
+$$au + bv = 1$$ \\
+
+$\boxed{\Leftarrow}$ \\
+Réciproquement, si $au + bv = 1$, alors pour tout $d \in \mathcal{D}_{a,b}$ $d|au + bv$ donc $d|1$ donc $d = \pm 1$. \\
+Donc $\mathcal{D}_{a,b} = \{\pm 1\}$. 
+
+\subsubsection{Enoncer et démontrer la proposition caractérisant le pgcd par les idéaux. }
+\begin{tcolorbox}[title=Propostion 12.37, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $a$ et $b$ deux entiers, alors $d$ est le $pgcd$ de $a$ et $b$ si et seulement si $a \mathbb{Z} + b \mathbb{Z} = d \mathbb{Z}$.
+\end{tcolorbox}
+
+\noindent Soit $(a,b) \in \mathbb{Z}^2$. $a \mathbb{Z} \text{ et } b \mathbb{Z}$ dont des idéaux de $\mathbb{Z}$. \\
+Donc $a \mathbb{Z} + b \mathbb{Z}$ est un idéal de $\mathbb{Z}$, donc en particulier un sous-groupe de $\mathbb{Z}$. \\
+On choisit donc $d \geq 0$ tel que $a \mathbb{Z} + b \mathbb{Z} = d \mathbb{Z}$. \\
+Montrons que $d = pgcd(a,b) = a \wedge b$. \\
+D'une part : 
+\begin{align*}
+    d &\in d \mathbb{Z} && \text{donc } d = au + bv \text{ (avec $(u, v) \in \mathbb{Z}^2$} \\
+    &\in a \mathbb{Z} + b \mathbb{Z} \\
+    \text{or } a \wedge b | a &\text{ et } a \wedge b | b && \text{donc } a \wedge b | au + bv \\
+    & && \text{soit } a \wedge b | d
+\end{align*}
+D'autre part, $a \wedge b$ est le dernier reste non nul de l'algorithme d'Euclide, donc $(\text{12.23})$ :
+\begin{align*}
+    a \wedge b &= au + bv \text{ (avec $(u, v) \in \mathbb{Z}^2$)} \\
+    &\in a \mathbb{Z} + b \mathbb{Z} \\
+    &\in d \mathbb{Z} \\
+\end{align*}
+Donc $d | a \wedge b$. \\
+Ainsi, $d$ et $a \wedge b$ sont positifs et associés, donc égaux.
+
+
+\subsection{Exercices types}
+\subsubsection{Exercice type 1}
+\begin{tcolorbox}[title=Exercice 1, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $a \geq 2$ et $n \geq 2$. On suppose que $a^n-1$ premier.
+    \begin{enumerate}
+        \item Proposer une factorisation non triviale de $a^n-1$ en produit de deux entiers et montrer que $a=2$.
+        \item Montrer de même que $n$ est premier.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+\item On a :
+\begin{align*}
+    a^n - 1 &= a^n - 1^n \\
+    &= (a-1) \sum_{k=0}^{n-1} a^k \times 1^{n-k-1} \\
+    &= (a-1) \sum_{k=0}^{n-1} a^k
+\end{align*}
+Or $a^n - 1$ est premier, donc $a-1 = a^n - 1$ ou $a-1 = \sum\limits_{k=0}^{n-1} a$. \\
+Comme $a \geq 2$ et $n \geq 2$, $a^n - 1 \neq a - 1$. \\
+Donc : 
+\begin{align*}
+    a^n - 1 &= \sum_{k=0}^{n-1} a^k \\
+    \text{donc } a - 1 &= 1 \\
+    \text{soit } a &= 2
+\end{align*}
+
+\item On suppose que $n \not\in \mathbb{P}$. \\
+Donc on choisit $(u,v) \in \llbracket 2, n-1 \rrbracket^2$ tel que : 
+\begin{align*}
+    n = uv
+\end{align*}
+Ainsi on a : 
+\begin{align*}
+    2^n - 1 &= (2^u)^v - (1^u)^v \\
+    &= \underbrace{(2^u - 1)}_{\geq 2} \underbrace{\sum_{k=0}^{v-1} 2^{uk}}_{\geq 2} \\
+    &\not\in \mathbb{P}
+\end{align*}
+Donc $n$ est premier.
+\end{enumerate}
+
+
+\subsubsection{Exercice type 2}
+\begin{tcolorbox}[title=Exercice 2, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{enumerate}
+        \item \begin{enumerate}
+            \item Factoriser $a^{2 n+1}+b^{2 n+1}$ par $a+b$ pour tout $n \in \mathbb{N}$ et $(a, b) \in \mathbb{C}^2$.
+            \item Pour tout $n \in \mathbb{N}^*$, montrer que si $2^n+1$ est premier, alors $n$ est une puissance de 2.
+        \end{enumerate}
+    Pour tout $n \in \mathbb{N}$, on pose $F_n=2^{2^n}+1$ ( $n$-ème nombre de Fermat).
+    \item \begin{enumerate}
+        \item Montrer que pour tout $n \in \mathbb{N}$,
+        $$F_{n+1}=F_0 \times \cdots \times F_n+2$$
+        \item En déduire que $F_m$ et $F_n$ sont premiers entre eux pour tout $m$ et $n$ entiers naturels distincts.
+    \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item \begin{align*}
+            a^{2n+1} + b^{2n+1} = (a + b) \sum_{k=0}^{2n} (-1)^k a^k b^{2n-k}
+        \end{align*}
+
+        \item Par contraposée. On suppose que $n$ n'est pas une puissance de $2$. \\
+        On choisit $(q, p) \in \mathbb{N}^* \times \mathbb{N}$ tel que : 
+        \begin{align*}
+            n = (2q+1)2^p
+        \end{align*}
+        On a alors : 
+        \begin{align*}
+            2^n + 1 &= (2^{2^p})^{2q+1} + 1^{2q+1} \\
+            &= (2^{2^p} + 1) \sum_{k=0}^{2q} (-1)^k (2^{2p})^k 
+        \end{align*}
+        Or ces facteurs sont strictement supérieurs à $1$, donc $2^n + 1$ n'est pas premier. 
+    \end{enumerate}
+
+    \item \begin{enumerate}
+        \item Soit $n \in \mathbb{N}$
+        \begin{align*}
+            P(n) : "F_{n+1} = F_0 \times \ldots \times F_n + 2"
+        \end{align*}
+        Pour $n = 0$, $F_1 = 2^{2^1} + 1 = 5 = (2^{2^0} + 1) + 2 = F_0 + 2$ donc $P(0)$ est vrai. \\
+        Soit $n \in \mathbb{N}$. On suppose que $P(n)$ est vrai. 
+        \begin{align*}
+            F_{n+2} &= 2^{2^{n+2}} + 1 \\
+            &= ({2^{2^{n+1}}})^2 + 1 \\
+            &= (F_{n+1}-1)^2 + 1 \\
+            &= F_{n+1}(F_{n+1} - 2) + 1 + 1 \\
+            &= F_{n+1} \times \prod_{k=0}^{n} F_k + 2 \text{ (Hypothèse de récurrence)} \\
+            &= \boxed{\prod_{k=0}^{n+1} F_k + 2} 
+        \end{align*}
+        $P(n+1)$ est vrai, donc d'après le principe de récurrence : 
+        \begin{align*}
+            \forall n \in \mathbb{N}, P(n)
+        \end{align*}
+
+        \item \begin{align*}
+            F_n \wedge F_m &= F_n \wedge \left( \prod_{m-1}^{k=0} F_k + 2 \right) \\
+            &= F_n \wedge 2 \text{ (car $n \in \llbracket 0, m-1 \rrbracket$)} \\
+            &= 1 \text{ (car $F_n$ est impair)}
+        \end{align*}
+        Donc $F_n$ et $F_m$ sont premiers entre eux. 
+    \end{enumerate}
+\end{enumerate}
+
+
+\subsubsection{Exercice type 3}
+\begin{tcolorbox}[title=Exercice 3, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $p \in \mathbb{P}$.
+    \begin{enumerate}
+        \item Montrer que
+        $$\forall y \in \llbracket 1, p-1 \rrbracket, \exists!x \in \llbracket 1, p-1 \rrbracket, x y \equiv 1[p]$$
+
+        \item En déduire le théorème de Wilson:
+        $$(p-1)!\equiv-1[p]$$
+
+        \item On suppose $p$ impair. Montrer que
+        $$\left(\left(\frac{p-1}{2}\right)!\right)^2 \equiv(-1)^{\frac{p+1}{2}}[p]$$
+    \end{enumerate}
+\end{tcolorbox}
+
+
+\section{Polynômes}
+\subsection{Questions de cours}
+\subsubsection{Démontrer que $\mathbb{A}[X]$ est un anneau. }
+\begin{tcolorbox}[title=Théorème 13.7, title filled=false, colframe=orange, colback=orange!10!white]
+    La somme et le produit définis ci-dessus munissent $\mathbb{A}[X]$ d'une structure d'anneau commutatif. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item $(\mathbb{A}[X], +)$ est un sous-groupe de $(\overbrace{\mathbb{A}^{\mathbb{N}}}^{\text{suites d'éléments de } \mathbb{A}}, +)$ abélien donc est bien un sous-groupe abélien. 
+    
+    \item Montrons que $\times$ est associative. Soit $(P,R,Q) \in \mathbb{A}[X]$. \\
+    On note $P = (p_k)_{k \in \mathbb{N}}$, $R = (r_k)_{k \in \mathbb{N}}$, $Q = (q_k)_{k \in \mathbb{N}}$. \\
+    Soit $n \in \mathbb{N}$. 
+    \begin{align*}
+        (P \times (RQ))_n &= \sum_{k=0}^{n} p_k (RQ)_{n-k} \\
+        &= \sum_{i+j=n} p_i (RQ)_j \\
+        &= \sum_{i+j=n} \left( p_i \sum_{k+l=j} r_k q_l \right) \\
+        &= \sum_{i+k+l=n} p_i r_k q_l \\
+        &= ((PR) \times Q)_n
+    \end{align*}
+
+    \item Notons $E = (1, 0, \ldots) = (\delta_{0n})_{n\in \mathbb{N}}$. \\
+    On a pour tout $n \in \mathbb{N}$ : 
+    \begin{align*}
+        (E \times P)_n &= \sum_{i+j=n} E_i \times P_j \\
+        &= \sum_{i+j=n} \delta_{0i}\times P_j \\
+        &= P_n \text{ ($i=0$, $j=n$)} \\
+        &= (P \times E)_n 
+    \end{align*}
+    Donc $E$ est l'élément neutre de $\mathbb{A}[X]$. 
+
+    \item 
+    \begin{align*}
+        \left[ P \times (R + Q) \right]_n &= \sum_{i+j=n} p_i (R + q)_j \\
+        &= \sum_{i+j=n} p_i (r_j + a_j) \\
+        &= \sum_{i+j=n} p_i r_j + \sum_{i+j=n} p_i q_j \\
+        &= (PR)_n + (PQ)_n \\
+        &= [PR + PQ]_n
+    \end{align*}
+    Donc $\times$ est distributive sur $+$. 
+
+    \item Comme $\mathbb{A}$ est commutatif : 
+    $$\sum_{i+j=n} p_i q_j = \sum_{i+j=n} q_j p_i$$
+    Donc $\times$ est commutatif. 
+\end{itemize}
+
+\subsubsection{Enoncer et démontrer la formule de la dérivée d'un produit de deux polynômes. \\ Enoncer la formule de Leibniz. }
+\begin{tcolorbox}[title=Propostion 13.26, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    \begin{itemize}
+        \item Soit $P$ et $Q$ deux polynômes à coefficients dans $\mathbb{A}$. Alors
+        $$(PQ)' = P'Q + Q'P.$$
+
+        \item Soit $P_1, \ldots, P_n$ des polynômes à coefficients dans $\mathbb{A}$, alors
+        $$(P_1 \ldots P_n)' = \sum_{i=1}^{n} P_1 \ldots P_{i-1} P_i' P_{i+1} \ldots P_n.$$
+    
+        \item \textbf{Formule de Leibniz} : Soit $P$ et $Q$ deux polynômes à coefficients dans $\mathbb{A}$ et $n \in \mathbb{N}$. Alors
+        $$(PQ)^{(n)} = \sum_{k=0}^{n} \binom{n}{k} P^{(k)} Q^{(n-k)}.$$
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Soit $P = \sum\limits_{k \geq 0} a_k X^k, P' = \sum\limits_{k \geq 1} ka_kX^{k-1}$ et $Q = \sum\limits_{k \geq 0} b_k X^k, Q' = \sum\limits_{k \geq 1} kb_kX^{k-1}$. \\
+    On a : 
+    \begin{align*}
+        PQ &= \sum_{k \geq 0} \left( \sum_{k=0}^{n} a_k b_{n-k} \right) X^n \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        (PQ)' &= \sum_{n \{geq 1} \left[ n \sum_{k=0}^{n} a_k b_{n-k} \right] X^{n-1} \\
+        \text{et } P'Q &= \sum_{n \geq 0} \left[ \sum_{k=0}^{n} (k+1)a_{k+1} b_{n-k} \right] X^n \\
+        \text{et } PQ' &= \sum_{n \geq 0} \left[ \sum_{k=0}^{n} a_k (n-k+1)b_{n-k+1} \right] X^n \\
+        \text{donc } P'Q + Q'P &= \sum_{n \geq 0} \left[ \sum_{k=0}^{n} (k+1)a_{k+1} b_{n-k} \right]X^n + \sum_{n \geq 0} \left[ \sum_{k=0}^{n} (n-k+1)a_k b_{n-k+1} \right] X^n \\
+        &= \sum_{n \geq 0} \left[ \sum_{k=1}^{n+1} k a_{k} b_{n-k+1} \right] X^n + \sum_{n \geq 0} \left[ \sum_{k=0}^{n} (n-k+1) a_k b_{n-k+1} \right] X^n \\
+        &= \sum_{n \geq 0} \left[ (n+1) a_{n+1} b_0 + \sum_{k=1}^{n} (n+1) a_k b_{n-k+1} + (n+1) a_0 b_{n+1} \right] X^n \\
+        &= \sum_{n \geq 0} \left[ (n+1) \sum_{k=0}^{n+1} a_k b_{n-k+1} \right] X^n
+    \end{align*}
+
+    \item Récurrence immédiate. 
+\end{itemize}
+
+\subsubsection{Enoncer la formule de la dérivée d'une composition de polynômes. }
+\begin{tcolorbox}[title=Propostion 13.28, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $P$ et $Q$ dans $\mathbb{A}[X]$, alors 
+    $$(Q \circ P)' = P' \times (Q' \circ P)$$
+\end{tcolorbox}
+
+\noindent Soit $Q = \sum\limits_{k \geq 0} a_k X^k$. \\
+Ainsi $Q \circ P = \sum\limits_{k \geq 0} a_k p^k$. \\
+Donc : 
+\begin{align*}
+    (Q \circ P)' &= \sum_{k \geq 0} a_k (p_k)' \text{ (13.24)} \\
+    &= \sum_{k \geq 1} k a_k p' p^{k-1} \text{ (13.27)} \\
+    &= P' \times \sum_{k \geq 1} k a_k p^{k-1} \\
+    &= P' \times Q' \circ P
+\end{align*}
+
+
+\subsection{Exercices types}
+\subsubsection{Exercice type 1}
+\begin{tcolorbox}[title=Exercice 1, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Simplifier $\sum_{k=0}\limits^r\binom{a}{k}\binom{b}{r-k}$ pour tout $a, b, r \in \mathbb{N}$.
+\end{tcolorbox}
+
+\noindent Soit $(a, b) \in \mathbb{N}^2$. \\
+\begin{align*}
+    (1 + X)^a (1 + X)^b &= (1 + X)^{a+b} \\
+    \text{donc } \left( \sum_{k=0}^{a} \binom{a}{k} X^k \right) \left( \sum_{k=0}^{b} \binom{b}{k} X^k \right) &= \sum_{k=0}^{a+b} \binom{a+b}{k} X^k
+\end{align*}
+Soit $r \in \mathbb{N}$. On identifie les coefficients en $X^r$, et on obtient : 
+\begin{align*}
+    \sum_{k=0}^{r} \binom{a}{k} \binom{b}{r-k} = \binom{a+b}{n}
+\end{align*}
+
+
+\subsubsection{Exercice type 2}
+\begin{tcolorbox}[title=Exercice 3, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Résoudre les équations suivantes:
+    \begin{enumerate}
+        \item $X(X+1) P^{\prime \prime}+(X+2) P^{\prime}-P=0$, d'inconnue $P \in \mathbb{R}[X]$.
+        \item $\quad P(2 X)=P^{\prime}(X) P^{\prime \prime}(X)$ d'inconnue $P \in \mathbb{C}[X]$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Par analyse-synthèse. \\
+    \underline{Analyse :}
+    On suppose que $\deg P \geq 2$ \\
+    Soit $a_n$ le coefficient constant. On obtient : 
+    \begin{align*}
+        (n^2 - 1) a_n X^n + \ldots = 0
+    \end{align*}
+    Abusrde. \\
+    Donc $\deg P < 2$. \\ \\
+
+    \noindent \underline{Synthèse :}
+    Soit $P = aX + b$. 
+    \begin{align*}
+        Psd' &\Leftrightarrow a(X+2) - (aX + b) = 0 \\
+        &\Leftrightarrow 2a - b = 0 \\
+        &\text{donc } \mathcal{S} = R(X+2)
+    \end{align*}
+
+    \item Par analyse-synthèse. \\
+    \underline{Analyse :}
+    On suppose $P$ solution de $P(2X) = P'(X)P''(X)$. \\
+    $\mathbb{C}$ est intègre est de caractéristique nulle donc : 
+    \begin{align*}
+        \deg P(2X) &= \deg P'(X) + \deg P''(X) \\
+        \text{donc } \deg P \leq 3
+    \end{align*} \\
+
+    \noindent \underline{Synthèse :}
+    Soit $(a,b,c,d) \in \mathbb{C}^4$ et $P = aX^3 + bX^2 + cX + d$. 
+    \begin{align*}
+        P(2X) = P'(X) P''(X) &\Leftrightarrow 8aX^3 + 4bX^2 + 2cX + d = (3aX^2 + 2bX + c)(6aX + 2b) \\
+        &\Leftrightarrow 8aX^3 + 4bX^2 + 2cX + d = 18a^2 X^3 + 18abX^2 + (4b^2 + 6ac)X + 2bc \\
+        &\Leftrightarrow \begin{cases}
+            8a = 18a^2 \\
+            4b = 18ab \\
+            2c = 4b^2 + 6ac \\
+            d = 2bc
+        \end{cases} \\
+        &\Leftrightarrow \begin{cases}
+            a = \frac{4}{9} \\
+            b = 0 \\
+            c = 0
+            d = 0
+        \end{cases}
+        \text{ ou }
+        \begin{cases}
+            a = 0 \\
+            b = 0 \\
+            c = 0 \\
+            d = 0
+        \end{cases} \\
+        &\Leftrightarrow \mathcal{S} = \left\{ 0, \frac{4}{9}X^3 \right\}
+    \end{align*}
+\end{enumerate}
+
+
+\end{document}

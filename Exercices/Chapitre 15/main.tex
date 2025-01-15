@@ -65,6 +65,31 @@
     \end{align*}
 \end{enumerate}
 
+\setcounter{section}{7}
+\section{Exercice}
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item On a :
+        \begin{align*}
+            \left( \varphi_{n+1}(x) + \frac{1}{n+1} \right) - \left( \varphi_n (x) + \frac{1}{n} \right) &= \sum_{k=0}^{n+1} \frac{1}{(k+1)(k+x)} + \frac{1}{n+1} - \sum_{k=0}^{n} \frac{1}{(k+1)(k+x)} - \frac{1}{n} \\
+            &= \frac{1}{(n+2)(n+1+x)} + \frac{1}{(n+1)n} \\
+            &= \frac{n(n+1) - (n+2)(n+1+x)}{\underbrace{n(n+1)(n+2)(n+1+x)}_{\geq 0}}
+        \end{align*}
+        En outre : 
+        \begin{align*}
+            n \leq n+1 \text{ et } n+1 \leq n+1+x
+        \end{align*}
+        Ainsi : 
+        \begin{align*}
+            n(n+1) \leq (n+2)(n+1+x) &\Leftrightarrow n(n+1) - (n+2)(n+1+x) \\
+            &\Leftrightarrow \left( \varphi_{n+1}(x) + \frac{1}{n+1} \right) - \left( \varphi_n (x) + \frac{1}{n} \right) \leq 0 \\
+            &\Leftrightarrow \text{La suite est décroissante. }
+        \end{align*}
+
+        \item 
+    \end{enumerate}
+\end{enumerate}
+
 \setcounter{section}{9}
 \section{Exercice}
 Soit $x \in \mathbb{R}$. 
