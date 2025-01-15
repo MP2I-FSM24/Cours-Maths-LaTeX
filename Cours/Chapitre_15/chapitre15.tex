@@ -324,5 +324,32 @@ Or $I$ est compact (15.67), on choisit :
 \end{align*}
 $y_{\varphi(n)} \underset{n \to +\infty}{\longrightarrow} f(\ell)$ car $f$ est continue sur $I$. 
 
+\setcounter{section}{71}
+\section{Théorème 15.72}
+\begin{tcolorbox}[title=Théorème 15.72, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ un intervalle et $f$ une fonction continue sur $I$. Alors $f$ est injective si et seulement si $f$ est strictement monotone. 
+\end{tcolorbox}
+
+$\boxed{\Leftarrow}$ \\
+RAS \\ \\
+
+$\boxed{\Rightarrow}$ \\
+Supposons $f$ non strictement monotone. \\
+On peut supposer qu'il existe alors : 
+\begin{align*}
+    x < y < z
+\end{align*}
+tels que $f(x) < f(y)$ et $f(z) < f(y)$. \\
+Soit :
+\begin{align*}
+    \lambda = \frac{f(y) + \max(f(y), f(z))}{2} &\in ]f(x), f(y)[ \\
+    &\in ]f(z), f(y)[
+\end{align*}
+Par continuité de $f$ sur les intervalles $]x, y[$ et $]y, z[$, il existe $\alpha \in ]x, y[$ et $\beta \in ]y, z[$ tels que : 
+\begin{align*}
+    f(\alpha) = \lambda = f(\beta)
+\end{align*}
+Donc $f$ n'est pas injective. 
+
 
 \end{document}
