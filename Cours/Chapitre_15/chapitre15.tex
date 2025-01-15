@@ -306,5 +306,23 @@ Les segments sont bien compacts (BW et TCILPPL). \\
     \end{align*} 
 \end{itemize}
 
+\section{Image d'un compact par une fonction continue}
+\begin{tcolorbox}[title=Lemme 15.68, title filled=false, colframe=orange, colback=orange!10!white]
+    L'image continue d'un compact est compact. 
+\end{tcolorbox}
+
+Soit $I$ un segment, donc un intervalle. \\
+Comme $f$ est continue sur $I$, $f(I)$ est un intervalle (TVI v3). \\
+Montrons que $f(I)$ est compact. \\
+Soit $(y_n) \in f(I)^{\mathbb{N}}$. Pour tout $n \in \mathbb{N}$, soit $x_n \in I$ tel que : 
+\begin{align*}
+    y_n = f(x_n)
+\end{align*}
+Or $I$ est compact (15.67), on choisit : 
+\begin{align*}
+    x_{\varphi(n)} \underset{n \to +\infty}{\longrightarrow} \ell \in I
+\end{align*}
+$y_{\varphi(n)} \underset{n \to +\infty}{\longrightarrow} f(\ell)$ car $f$ est continue sur $I$. 
+
 
 \end{document}
