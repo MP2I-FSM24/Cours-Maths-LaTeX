@@ -251,5 +251,45 @@ RAF : (15.59) à $f - x_0$.
 
 Définition d'un intervalle par connexité. 
 
+\setcounter{section}{64}
+\section{Théorème de Heine}
+\begin{tcolorbox}[title=Théorème 15.65, title filled=false, colframe=orange, colback=orange!10!white]
+    Une fonction continue sur un segment est uniformément continue sur ce segment. 
+\end{tcolorbox}
+
+\noindent \underline{Rappel :}
+\begin{align*}
+    C^0(I) &: \forall x \in I, \forall \epsilon > 0, \exists \eta > 0, \forall y \in I, |x-y| < \eta \Rightarrow |f(x) - f(y)| < \epsilon \\
+    Cu(I) &: \forall \epsilon > 0, \exists \eta > 0, \forall (x,y) \in I^2, |x-y| < \eta \Rightarrow |f(x) - f(y)| < \epsilon
+\end{align*}
+On raisonne par l'absurde. Soit $f$ continue sur $[a,b]$ mais non uniformément continue sur $[a,b]$. \\
+On choisit $\epsilon$ tel que : 
+\begin{align*}
+    \forall \eta > 0, \exists (x, y) \in [a,b]^2, |x - y| < \eta \text{ et } |f(x) - f(y)| \geq \epsilon
+\end{align*}
+Ainsi, pour tout $b \in \mathbb{N}^*$, on choisit un couple $(x_n, y_n) \in [a,b]^2$ tel que : 
+\begin{align*}
+    |x_n - y_n| < \frac{1}{n} \text{ et } \underbrace{|f(x_n) - f(y_n)|}_{(*)} \geq \epsilon
+\end{align*}
+En particulier $(x_n)$ est bornée donc d'après le théorème de Bolzano-Weierstrass, on en extrait $(x_{\varphi(n)})$ suite convergente vers $\ell$. \\
+D'après le TCILPPL, $\ell \in [a,b]$. \\
+Comme : 
+\begin{align*}
+    \forall n \in \mathbb{N}, |x_{\varphi(n)} - y_{\varphi(n)}| < \frac{1}{\varphi(n)} \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+Alors : 
+\begin{align*}
+    y_{\varphi(n)} \underset{n \to +\infty}{\longrightarrow} \ell
+\end{align*}
+Par continuité : 
+\begin{align*}
+    f(x_{\varphi(n)}) \underset{n \to +\infty}{\longrightarrow} f(\ell) \text{ et } f(y_{\varphi(n)}) \underset{n \to +\infty}{\longrightarrow} f(\ell)
+\end{align*}
+Donc par opération : 
+\begin{align*}
+    |f(x_{\varphi(n)}) - f(y_{\varphi(n)})| \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+Absurde d'après $(*)$. 
+
 
 \end{document}
