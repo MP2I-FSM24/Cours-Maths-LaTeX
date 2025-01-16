@@ -50,5 +50,45 @@ Donc :
     \text{puis } R_1 - R = 0
 \end{align*}
 
+\section{Proposition 16.7}
+\begin{tcolorbox}[title=Propostion 16.7, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    On a :
+    \begin{enumerate}
+        \item Soit $A$ et $P$ deux polynômes non nuls. Si $A|P$ et si $P|A$, alors il existe $\alpha \in \mathbb{K}^*$ tel que $P = \alpha A$. (La relation de divisibilité n'est pas antisymétrique)
+        \item Si $A|B$ et si $B|C$, alors $A|C$. La relation de divisibilité est transitive. 
+        \item Pour tout $A \in \mathbb{K}[X]$ non nul, $A|A$. La relation de divisibilité est réflexive. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $P \neq 0$, $A \neq 0$. Si $A | P$ et $P | A$, alors (16.6.2) :
+    \begin{align*}
+        \deg A \leq \deg P \text{ et } \deg P \leq \deg A
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \deg P = \deg A
+    \end{align*}
+    Or $A|P$, alors : 
+    \begin{align*}
+        P = A \times Q
+    \end{align*}
+    Puis : 
+    \begin{align*}
+        \deg P = \deg (AQ) = \deg A + \deg Q \text{ ($\mathbb{K}$ est intègre)}
+    \end{align*}
+    Donc :
+    \begin{align*}
+        \deg Q = 0
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        Q = \alpha \in \mathbb{K}^*
+    \end{align*}
+
+    \item RAS
+    \item RAS
+\end{enumerate}
+
 
 \end{document}
