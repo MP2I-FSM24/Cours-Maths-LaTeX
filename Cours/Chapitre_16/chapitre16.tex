@@ -50,6 +50,7 @@ Donc :
     \text{puis } R_1 - R = 0
 \end{align*}
 
+\setcounter{section}{6}
 \section{Proposition 16.7}
 \begin{tcolorbox}[title=Propostion 16.7, title filled=false, colframe=lightblue, colback=lightblue!10!white]
     On a :
@@ -89,6 +90,46 @@ Donc :
     \item RAS
     \item RAS
 \end{enumerate}
+
+\setcounter{section}{14}
+\section{Principalité de $\mathbb{K}[X]$}
+\begin{tcolorbox}[title=Théorème 16.15, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ un idéal de $\mathbb{K}[X]$ non réduit à $\{0\}$. Il existe un unique polynôme unitaire $D$ tel que
+    $$I = D \mathbb{K}[X]$$
+\end{tcolorbox}
+
+\noindent \underline{Existence :} \\
+Soit $I \neq \{0\}$ un idéal. \\
+On note $A = \{ \deg P, P \in I\backslash \{0\} \} \subset \mathbb{N}$. \\
+$A \neq \emptyset$ ($I \neq \{0\}$), d'après la propriété fondamentale de $\mathbb{N}$, $A$ possède un plus petit élément noté $n \geq 0$. \\
+Comme $n \in A$, on choisit $D \in I$ tel que $\deg D = n$. \\
+Comme $I$ est un idéal de $\mathbb{K}[X]$ et que $\mathbb{K} = \mathbb{K}_0[X] \subset \mathbb{K}[X]$, on a : 
+\begin{align*}
+    \forall \alpha \in \mathbb{K}, \alpha D \in I
+\end{align*}
+On peut donc supposer $D$ unitaire. 
+Comme $I$ est un idéal de $\mathbb{K}[X]$, on a : 
+\begin{align*}
+    D \times \mathbb{K}[X] \subset I
+\end{align*}
+Soit $P \in I$. On effectue la division euclidienne de $P$ par $D$ ($\neq 0$) : 
+\begin{align*}
+    P = BD + R
+\end{align*}
+avec $\deg R \subset \deg D$. \\
+Or : 
+\begin{align*}
+    R &= \underbrace{P}_{\in I} - \underbrace{BD}_{\in I} \\
+    &\in I
+\end{align*}
+Par définition de $\deg D = n$, $R = 0$. \\ \\
+
+\noindent \underline{Unicité :} \\
+\begin{align*}
+    I = D \mathbb{K}[X] = J \mathbb{K}[X] \\
+\end{align*}
+avec $D$ et $J$ unitaires. \\
+Or ils sont associés, donc égaux.
 
 
 \end{document}
