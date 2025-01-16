@@ -142,5 +142,33 @@ On note $\mathcal{C} = \{ \deg P, P|A \text{ et } P|B \text{ et } P\neq 0 \} \su
 $\mathcal{C} \neq \emptyset$ car $0 \in \mathcal{C}$ et $\mathcal{C}$ est majoré par $\deg B$ ($\max (\deg A, \deg B)$). \\
 L'existence est assurée par la propriété fondamentale de $\mathbb{N}$. 
 
+\section{Principalité de $\mathbb{K}[X]$}
+\begin{tcolorbox}[title=Propostion 16.18, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $A$ et $B$ deux polynômes non tous deux nuls. Soit $D \in \mathbb{K}[X]$. Alors $\Delta$ est un PGCD de $A$ et $B$ si et seulement si 
+    $$A \mathbb{K}[X] + B \mathbb{K}[X] = D \mathbb{K}[X].$$
+\end{tcolorbox}
+
+\noindent D'après (16.15), on choisit $F \in \mathbb{K}[X]$ tel que :
+\begin{align*}
+    A \mathbb{K}[X] + B \mathbb{K}[X] = F \mathbb{K}[X]
+\end{align*}
+Soit $D \in \mathbb{K}[X]$. \\ \\
+
+$\boxed{\Rightarrow}$ \\
+On suppose que $D$ est un PGCD. \\
+Donc $D|A$ et $D|B$. \\
+Donc $D|F \text{ (combinaison $F \in A \mathbb{K}[X] + B \mathbb{K}[X]$)}$. \\
+Or $F|A$ et $F|B$ ($A \in F \mathbb{K}[X]$, $B \in F \mathbb{K}[X]$). \\
+Par maximalité de $\deg D$, on a $F$ et $D$ associés. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+\begin{align*}
+    D \mathbb{K}[X] = A \mathbb{K}[X] + B \mathbb{K}[X] = F \mathbb{K}[X]
+\end{align*}
+Donc $D|A$ et $D|B$. \\
+Pour tout diviseur commun $P$ de $A$ et $B$, $P|A$ et $P|B$. \\
+Donc $P|D$ ($D \in A \mathbb{K}[X] + B \mathbb{K}[X])$. \\
+Donc $\deg D$ est maximal pour la divisibilité. 
+
 
 \end{document}
