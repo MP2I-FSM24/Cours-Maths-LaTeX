@@ -1,0 +1,54 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{15}
+\chapter{Arithmétique des polynômes}
+\tableofcontents
+\clearpage
+
+\section{Division euclidienne}
+\begin{tcolorbox}[title=Théorème 16.1, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $A \in \mathbb{K}[X]$ et $B \in \mathbb{K}[X]$ non nul, il existe un unique couple de polynômes $(Q,R)$ tel que $A = BQ + R$ avec $\deg R < \deg B$. Le polynôme $Q$ est appelé \textbf{quotient} et $R$ le \textbf{reste}. 
+\end{tcolorbox}
+
+\noindent \underline{Existence :} \\
+On raisonne par récurrence sur le degré de $A$. \\
+\begin{itemize}
+    \item Pour $n = \deg A = 0$. Soit $A \in \mathbb{K}[X]$.
+    \begin{itemize}
+        \item Si $\deg B > 0$, alors $(0, A)$ convient. \\
+        \item Si $\deg B = 0$, le couple $(B^{-1} \times A, 0)$ convient (comme $B$ est constant et non nul), alors $B \in \mathbb{K}^*$ donc inversible). \\
+    \end{itemize}
+
+    \item On suppose le résultat vrai pour tout $A \in \mathbb{K}_n[X]$. \\
+    Soit $A \in \mathbb{K}_{n+1}[X]$ avec $\deg A = n+1$. \\
+    On écrit $A = \underbrace{a}_{\neq 0} X^{n+1} + A_1$ avec $A_1 \in \mathbb{K}_n[X]$. 
+    \begin{itemize}
+        \item Si $\deg A < \deg B$, le couple $(0, A)$ convient. 
+        \item Si $\deg A \geq \deg B$ et on note $b$ le coefficient dominant de $B$ : 
+        \begin{align*}
+            A - ab^{-1} B \times X^{n+1 - \deg B} \in \mathbb{K}_n[X]
+        \end{align*}
+        D'après l'hypothèse de récurrence, on choisit $(Q, R) \in \mathbb{K}[X]^2$ tel que $\deg R < \deg B$ et $A - ab^{-1} B \times X^{n+1 - \deg B} = QB + R$. \\
+        Donc : 
+        \begin{align*}
+            A = \left[ Q + ab^{-1}X^{n+1 - \deg A} \right] \times B + R
+        \end{align*}
+    \end{itemize}
+\end{itemize}
+
+\noindent\underline{Unicité :} \\
+On suppose que $A = BQ + R = BQ_1 + R_1$. \\
+Donc : 
+\begin{align*}
+    B(Q - Q_1) &= R_1 - R \\
+    \text{donc } \underbrace{\deg{(B(Q - Q_1))}}_{\deg{B} + \deg{Q - Q_1}} &= \deg{(R_1 - R)} \\
+    &\leq \max(\deg{R_1}, \deg{R}) \\
+    &< \deg{B} \\
+    \text{donc } \deg{(Q - Q_1)} &< 0 \\
+    \text{donc } Q - Q_1 &= 0 \\
+    \text{puis } R_1 - R = 0
+\end{align*}
+
+
+\end{document}
