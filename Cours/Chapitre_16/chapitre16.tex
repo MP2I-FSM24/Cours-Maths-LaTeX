@@ -275,5 +275,45 @@ Donc :
     \boxed{deg P \leq \deg Q}
 \end{align*}
 
+\setsection{41}
+\section{Cas d'unicité d'une relation de Bézout}
+\begin{tcolorbox}[title=Propostion 16.42, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $A$ et $B$ non constants et premiers entre eux. Il existe un unique couple $(U, V) \in \mathbb{K}[X]^2$ tel que
+    $$AU + BV = 1 \text{ et } \deg U < \deg B \text{ et } \deg V < \deg A.$$
+\end{tcolorbox}
+
+\noindent \underline{Existence :} \\
+Soit $(C, D) \in \mathbb{K}[X]^2$ tel que (16.37 - Bézout) :
+\begin{align*}
+    AC + BD = 1
+\end{align*}
+On effectue la dviision euclidienne de $C$ par $B$ :
+\begin{align*}
+    C &= BE + U \text{ avec } \deg U < \deg B \\
+    \text{donc } AU + B(\underbrace{D + AE}_{V}) &= 1 \\
+    \text{donc } \deg (AU + BV) &= 0 \\
+\end{align*}
+Si $\deg V \geq \deg A$, alors :
+\begin{align*}
+    \deg B + \deg V &\geq \deg B + \deg A \\
+    &> \deg U + \deg B \\
+    &= \deg AU
+\end{align*}
+Donc $\deg (AU + BV) = \deg BV > 0$. \\
+Absurde. \\
+L'exsitence est prouvée. \\ \\
+
+\noindent \underline{Unicité :} \\
+Avec es hypothèses correspondantes : 
+\begin{align*}
+    AU_1 + BV_1 &= 1 = AU_2 + BV_2 \\
+    \text{donc } A(U_1 - U_2) &= B(V_2 - V_1) \\
+    \text{donc } A | B(V_2 - V_1)
+\end{align*}
+Or $A \wedge B = 1$, donc $A | (V_2 - V_1)$. \\
+Or $\deg (V_2 - V_1) < \deg A$. \\
+Donc $V_2 - V_1 = 0$. \\
+Puis $A(U_1 - U_2) = 0$, donc $U_1 - U_2 = 0$ car $\mathbb{K}[X]$ est intègre avec $A \neq 0$.
+
 
 \end{document}
