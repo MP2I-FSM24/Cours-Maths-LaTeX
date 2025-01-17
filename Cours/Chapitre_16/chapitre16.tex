@@ -184,5 +184,23 @@ Donc $\deg D$ est maximal pour la divisibilité.
 \end{align*}
 Donc $A \wedge B$ et $(A - BQ) \wedge B$ sont associés, unitaires par définition, donc égaux. 
 
+\setsection{25}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple alternatif 16.26, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Trouver les PGCD de $A = X^5 + 2X$ et de $B = X^4 + 2X^3 + 4$ et une relation de Bézout. 
+\end{tcolorbox}
+
+\begin{align*}
+    X^5 + 2X &= (X^4 + 2X^3 + 4)(X - 2) + 4X^3 - 2X + 8 \\
+    X^4 + 2X^3 + 4 &= (4X^3 - 2X + 8)(\frac{1}{4}X + \frac{1}{2}) + \frac{1}{2}X^2 - X \\
+    4X^3 - 2X + 8 &= (\frac{1}{2}X^2 - X)(8X + 16) + 14X + 8 \\
+    \frac{1}{2}X^2 - X &= (14X + 8)(\frac{1}{28}X - \frac{9}{14 \times 7}) + \frac{9 \times 4}{7^2} \\
+    A \wedge B = 1
+\end{align*}
+\begin{align*}
+    \frac{9 \times 4}{7^2} &= \frac{1}{2}X^2 - X - (14X + 8)(\frac{1}{28}X - \frac{9}{2 \times 7^2}) \\
+    &= \frac{1}{2}X^2 - X - (4X^3 - 2X + 8 - (\frac{1}{2}X^2 - X)(8X + 16))(\frac{1}{28}X - \frac{9}{2 \times 7^2}) \\
+\end{align*}
+
 
 \end{document}
