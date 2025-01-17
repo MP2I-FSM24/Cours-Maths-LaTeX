@@ -202,5 +202,32 @@ Donc $A \wedge B$ et $(A - BQ) \wedge B$ sont associés, unitaires par définiti
     &= \frac{1}{2}X^2 - X - (4X^3 - 2X + 8 - (\frac{1}{2}X^2 - X)(8X + 16))(\frac{1}{28}X - \frac{9}{2 \times 7^2}) \\
 \end{align*}
 
+\section{Propriétés du PGCD}
+\begin{tcolorbox}[title=Propostion 16.27, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    L'opération $\wedge$ est commutative et associative. Par ailleurs, si $C$ est unitaire, alors $(A \wedge B) C = (AC) \wedge (BC)$.
+\end{tcolorbox}
+
+\noindent Soit $(A, B, C) \in \mathbb{K}[X]^3$ non tous nuls. 
+\begin{align*}
+    (A \wedge B) \mathbb{K}[X] &= A \mathbb{K}[X] + B \mathbb{K}[X] \\
+    &= B \mathbb{K}[X] + A \mathbb{K}[X] \\
+    &= (B \wedge A) \mathbb{K}[X]
+\end{align*}
+Donc $A \wedge B$ et $B \wedge A$ sont associés et unitaires donc égaux. 
+\begin{align*}
+    ((A \wedge B) \wedge C) \mathbb{K}[X] &= (A \wedge B) \mathbb{K}[X] + C \mathbb{K}[X] \\
+    &= A \mathbb{K}[X] + B \mathbb{K}[X] + C \mathbb{K}[X] \\
+    &= (A \wedge (B \wedge C)) \mathbb{K}[X]
+\end{align*}
+Donc $A \wedge (B \wedge C)$ et $(A \wedge B) \wedge C$ sont associés et unitaires donc égaux. \\
+On suppose $C$ unitaire. \\
+On a : 
+\begin{align*}
+    (A \wedge B) \mathbb{K}[X] &= A \mathbb{K}[X] + B \mathbb{K}[X] \\
+    \text{donc } (A \wedge B)C \mathbb{K}[X] &= AC \mathbb{K}[X] + BC \mathbb{K}[X] \\
+    &= ((AC) \wedge (BC)) \mathbb{K}[X]
+\end{align*}
+Ainsi $C(A \wedge B)$ et $(AC) \wedge (BC)$ sont associés et unitaires donc égaux.
+
 
 \end{document}
