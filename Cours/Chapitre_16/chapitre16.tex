@@ -239,6 +239,41 @@ Ainsi $C(A \wedge B)$ et $(AC) \wedge (BC)$ sont associés et unitaires donc ég
 \begin{align*}
     \deg AB \in \mathcal{D} \neq \emptyset
 \end{align*}
+On conclut avec la propriété fondamentale de $\mathbb{N}$. 
+
+\section{Caractérisation des PPCM par les idéaux}
+\begin{tcolorbox}[title=Propostion 16.30, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $A$ et $B$ deux polynômes non nuls de $\mathbb{K}[X]$ et soit $P \in \mathbb{K}[X]$. Alors $P$ est un PPCM de $A$ et $B$ si et seulement si 
+    $$A \mathbb{K}[X] \cap B \mathbb{K}[X] = P \mathbb{K}[X].$$
+\end{tcolorbox}
+
+\noindent $A \mathbb{K}[X] \cap B \mathbb{K}[X]$ est un idéal de $\mathbb{K}[X]$, donc de la forme $M \mathbb{K}[X]$ (16.15). \\
+Montrons que $P$ est un PPCM de $A$ et $B$ si et seulement si $P$ et $M$ sont associés. \\ \\
+
+$\boxed{\Rightarrow}$ \\
+On a donc : 
+\begin{align*}
+    P &\in A \mathbb{K}[X] \cap B \mathbb{K}[X] \\
+    &\in M \mathbb{K}[X] \\
+\end{align*}
+Donc $M|P$. \\
+Or $M$ est un multiple commun à $A$ et $B$, donc par définition de $P$, on a : 
+\begin{align*}
+    \boxed{\deg P \leq \deg M}
+\end{align*}
+Donc $P$ et $M$ sont associés. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+On suppose $P$ et $M$ associés, donc : 
+\begin{align*}
+    P \mathbb{K}[X] &= M \mathbb{K}[X] \\
+    &= A \mathbb{K}[X] \cap B \mathbb{K}[X]
+\end{align*}
+En particulier, $P$ est un multiple commun à $A$ et $B$ et pour tout $Q \in A \mathbb{K}[X] \cap B \mathbb{K}[X]$, donc $P|Q$. \\
+Donc : 
+\begin{align*}
+    \boxed{deg P \leq \deg Q}
+\end{align*}
 
 
 \end{document}
