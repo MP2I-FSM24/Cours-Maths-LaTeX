@@ -170,5 +170,19 @@ Pour tout diviseur commun $P$ de $A$ et $B$, $P|A$ et $P|B$. \\
 Donc $P|D$ ($D \in A \mathbb{K}[X] + B \mathbb{K}[X])$. \\
 Donc $\deg D$ est maximal pour la divisibilité. 
 
+\setcounter{section}{23}
+\section{Lemme de préparation au calcul pratique du PGCD unitaire}
+\begin{tcolorbox}[title=Lemme 16.24, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $A$ et $B$ deux polynômes tels que $B \neq 0$. Pour tout $Q \in \mathbb{K}[X]$, on a $A \wedge B = (A - BQ) \wedge B$. \\
+    En particulier, si $Q$ et $R$ sont le quotient et le reste de la division euclidienne de $A$ par $B$ Alors $A \wedge B = B \wedge R$.
+\end{tcolorbox}
+
+\begin{align*}
+    (A \wedge B) \mathbb{K}[X] &= A \mathbb{K}[X] + B \mathbb{K}[X] \\
+    &= (A - BQ) \mathbb{K}[X] + B \mathbb{K}[X] \\
+    &= ((A - BQ) \wedge B) \mathbb{K}[X]
+\end{align*}
+Donc $A \wedge B$ et $(A - BQ) \wedge B$ sont associés, unitaires par définition, donc égaux. 
+
 
 \end{document}
