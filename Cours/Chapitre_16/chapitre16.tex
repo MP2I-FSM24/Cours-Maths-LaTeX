@@ -327,5 +327,64 @@ Puis $A(U_1 - U_2) = 0$, donc $U_1 - U_2 = 0$ car $\mathbb{K}[X]$ est intègre a
 \end{itemize}
 Ainsi, $A \wedge C$ et $A \wedge (BC)$ sont associés et unitaires donc égaux.
 
+\section{Caractérisation des PGCD et PPCM}
+\begin{tcolorbox}[title=Propostion 16.44, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $A$ et $B$ deux polynômes non nuls, $M$ et $D$ deux polynômes. Alors
+    $$ M = A \vee B \Leftrightarrow (M \text{ unitaire et } \exists (U, V) \in \mathbb{K}[X]^2, M = AU = BV \text{ et } U \wedge V = 1). $$
+    $$ D = A \wedge B \Leftrightarrow (D \text{ unitaire et } \exists (U, V) \in \mathbb{K}[X]^2, A = DU \text{ et } B = DV \text{ et } U \wedge V = 1). $$
+\end{tcolorbox}
+
+\begin{itemize}
+    \item \indent \indent $\boxed{\Rightarrow}$ \\
+    $M = A \vee B$. On écrit $M = AU + BV$ avec $(U, V) \in \mathbb{K}[X]^2$. \\
+    On note $R = U \wedge V$. On écrit $U = RU_1$ et $V = RV_1$. \\
+    Ainsi :
+    \begin{align*}
+        M = RAU_1 &= RBV_1 \\
+        \text{donc } R(AU_1 - BV_1) &= 0 \\
+        \text{donc } AU_1 &= BV_1 \text{ ($\mathbb{K}[X]$ est intègre)} \\
+    \end{align*}
+    Donc $M_1 = AU_1 = BV_1$ est un multiple commun et par minimalité des degrés : 
+    \begin{align*}
+        RM_1 = M | M_1 \text{ donc } R = 1
+    \end{align*}
+
+    $\boxed{\Leftarrow}$ \\
+    Par hypothèse, $M$ est un multiple commun, donc : 
+    \begin{align*}
+        M \in A \mathbb{K}[X] \cap B \mathbb{K}[X] = (A \vee B) \mathbb{K}[X]
+    \end{align*}
+    Donc $A \vee B | M$. \\
+    Donc $M = D \times A \vee B$. \\
+    Or $A \vee B = AU_1 = BV_1$. \\
+    Donc $M = DAU_1 = DBV_1 = AU = BV$. \\
+    Donc : 
+    \begin{align*}
+        A(DU_1 - U) &= 0 \\
+        B(DV_1 - V) &= 0
+    \end{align*}
+    Or $\mathbb{K}[X]$ est intègre donc $DU_1 = U$ et $DV_1 = V$. \\
+    Donc $D | U \wedge V = 1$. \\
+    
+    \item \indent \indent $\boxed{\Rightarrow}$ \\
+    $D = A \wedge B$. On écrit $A = DU$ et $B = DV$. \\
+    Or pour $R = U \wedge V$, on écrit $U = RU_1$ et $V = RV_1$. \\
+    Donc $A = DRU_1$ et $B = DRV_1$. \\
+    Donc $DR | A$ et $DR | B$. \\
+    Donc $DR | D$. \\
+    Nécessairement, $R = 1$. \\
+
+    $\boxed{\Leftarrow}$ \\
+    Par hypothèse, $D | A$ et $D | B$, donc $D | A \wedge B$. \\
+    Comme $U \wedge V = 1$, d'après le théorème de Bézout : 
+    \begin{align*}
+        UU_1 + VV_1 &= 1 \\
+        \text{donc } DUU_1 + DVV_1 &= D \\
+        \text{soit } AU_1 + BV_1 &= D \\
+        \text{donc } A \wedge B &| D
+    \end{align*}
+    Ainsi, $A \wedge B$ et $D$ sont associés. Or ils sont unitaires, donc égaux. 
+\end{itemize}
+
 
 \end{document}
