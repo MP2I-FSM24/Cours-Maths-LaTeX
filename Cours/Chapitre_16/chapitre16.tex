@@ -442,5 +442,31 @@ Ainsi :
     &= \sum_{i=0}^{d} \frac{1}{i!} P^{(i)}(a) X^i
 \end{align*}
 
+\section{Caractérisation de la multiplicité par les dérivées}
+\begin{tcolorbox}[title=Théorème 16.57, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\mathbb{K}$ un corps de caractéristique nulle, $P \in \mathbb{K}[X]$ et $a \in \mathbb{K}$. Le réel $a$ est racine d'ordre multiplicité $k$ de $P$ si et seulement si 
+    $$P(a) = P'(a) = \ldots = P^{(k-1)}(a) = 0 \text{ et } P^{(k)}(a) \neq 0.$$
+\end{tcolorbox}
+
+$\boxed{\Leftarrow}$ \\
+D'après la formule de Taylor : 
+\begin{align*}
+    P &= \sum_{i=0}^{d} \frac{P^{(i)}(a)}{i!} (X - a)^i \\
+    &= \sum_{i=k}^{d} \frac{P^{(i)}(a)}{i!} (X - a)^i \\
+    &= (X - a)^k \underbrace{\sum_{i=k}^{d} \frac{P^{(i)}(a)}{i!} (X - a)^{i-k}}_{= Q} \\
+    Q(a) &= \frac{P^{(k)}(a)}{k!} \neq 0
+\end{align*}
+
+$\boxed{\Rightarrow}$ \\
+$P = (\underbrace{X - a}_B)^k Q$ avec $Q(a) \neq 0$. \\
+Pour tout $i \in \llbracket 0, k-1 \rrbracket$ : 
+\begin{align*}
+    P^{(i)} &= (BQ)^{(i)} \\
+    &= \sum_{l=0}^{i} \binom{i}{l} B^{(l)} Q^{(i-l)} \\
+    P^{(i)}(a) &= 0 \\
+    P^{(k)} &= \binom{k}{k} B^{(k)}(a) \times Q^{(k-k)}(a) \\
+    &= k! \times Q(a) \neq 0
+\end{align*}
+
 
 \end{document}
