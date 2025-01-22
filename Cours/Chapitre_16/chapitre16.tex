@@ -386,5 +386,29 @@ Ainsi, $A \wedge C$ et $A \wedge (BC)$ sont associés et unitaires donc égaux.
     Ainsi, $A \wedge B$ et $D$ sont associés. Or ils sont unitaires, donc égaux. 
 \end{itemize}
 
+\setsection{52}
+\section{Caractérisation des racines par la divisibilité}
+\begin{tcolorbox}[title=Théorème 16.53, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\mathbb{K}$ un corps, $P \in \mathbb{K}[X]$ et $r \in \mathbb{K}$. Alors $r$ est racine de $P$ si et seulement si $X - r$ divise $P$. Donc s'il existe $Q \in \mathbb{K}[X]$ tel que $P = (X - r)Q$.
+\end{tcolorbox}
+
+$\boxed{\Leftarrow}$ \\
+Si $P = (X - r)Q$, alors : 
+\begin{align*}
+    \tilde{P}(r) &= (X - r)\tilde{Q}(r)  \\
+    &= 0 \times \tilde Q (r) \\
+    &= 0
+\end{align*}
+
+$\boxed{\Rightarrow}$ \\
+On suppose $r$ racine de $P$. \\
+On effectue la division euclidienne de $P$ par $X - r$ :
+\begin{align*}
+    P &= (X - r)Q + R, R \in \mathbb{K}_0[X]
+\end{align*}
+Donc $0 = \tilde P(r) = \tilde R(r)$. \\
+Donc $R = 0$. \\
+Donc $X - r | P$.
+
 
 \end{document}
