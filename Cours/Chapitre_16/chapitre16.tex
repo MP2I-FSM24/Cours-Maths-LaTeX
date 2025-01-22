@@ -469,6 +469,7 @@ Pour tout $i \in \llbracket 0, k-1 \rrbracket$ :
 \end{align*}
 
 \setsection{58}
+\section{Caractérisation de la multiplicité des racines par la divisibilité}
 \begin{tcolorbox}[title=Théorème 16.59, title filled=false, colframe=orange, colback=orange!10!white]
     Soit $\mathbb{K}$ un corps. Soit $P \in \mathbb{K}[X]$ et $r_1, \ldots, r_k$ des racines deux à deux distinctes de $P$, de multiplicités respectives $a_1, \ldots, a_k$. Alors $(X - r_1)^{a_1} \ldots (X - r_k)^{a_k}$ divise $P$ et $r_1, \ldots, r_k$ ne sont pas racines du quotient.
 \end{tcolorbox}
@@ -493,6 +494,24 @@ $\tilde{P} - \tilde{Q}$ s'annule sur $\mathbb{K}$ infini et on applique (16.62).
 
 \noindent\underline{Existence :} RAF \\
 \noindent\underline{Unicité :} (16.61.3) \\
+
+\setsection{68}
+\section{Corollaire}
+\begin{tcolorbox}[title=Corollaire 16.69, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $P$ le polynôme d'interpolation de Lagrange associé à la famille $(x_i)_{0 \leq i \leq n}$ et aux valeurs $(y_i)_{0 \leq i \leq n}$ Soit $P_0 = (X - x_0) \ldots (X - x_n)$. L'ensemble $E$ des polynômes $Q$ (sans restriction de degré) tel que pour tout $i \in \llbracket 0, n \rrbracket, Q(x_i) = y_i$ est décrit par
+    $$E = P + (P_0) = \{ P + (X - x_0) \ldots (X - x_n)R, R \in \mathbb{K}[X] \}$$
+\end{tcolorbox}
+
+$\boxed{\supset}$ \\
+Si $Q = P + (X - x_0) \ldots (X - x_n)R$, alors :
+\begin{align*}
+    \forall i \in \llbracket 0, n \rrbracket, Q(x_i) &= P(x_i) = y_i
+\end{align*}
+Donc $Q\in E$. \\ \\
+
+$\boxed{\subset}$ \\
+Soit $Q \in E$, alors $x_0, \ldots, x_n$ sont racines de $Q - P$. \\
+Donc $(X - x_0) \ldots (X - x_n) | Q - P$. \\
 
 
 \end{document}
