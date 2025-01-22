@@ -410,5 +410,37 @@ Donc $0 = \tilde P(r) = \tilde R(r)$. \\
 Donc $R = 0$. \\
 Donc $X - r | P$.
 
+\setsection{55}
+\section{Formule de Taylor pour les polynômes}
+\begin{tcolorbox}[title=Théorème 16.56, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\mathbb{K}$ un corps de caractéristique nulle, $P$ un polynôme de $\mathbb{K}[X]$ de degré $d$ et $a \in \mathbb{K}$, alors
+    $$ P = \sum_{k=0}^{d} \frac{P^{(k)}(a)}{k!} (X - a)^k. $$
+\end{tcolorbox}
+
+\noindent On note $E_k = X^k$, pour $k \in \mathbb{N}$. \\
+On a, pour $i \in \mathbb{N}$ : 
+\begin{align*}
+    E_k^{(i)} = \begin{cases}
+        \frac{k!}{(k-i)!}X^{k-i} & \text{ si } i \leq k \\
+        0 & \text{ si } i > k
+    \end{cases}
+\end{align*}
+Ainsi : 
+\begin{align*}
+    E_k(X + a) &= (X + a)^k \\
+    &= \sum_{i=0}^{k} \binom{k}{i} a^{k-i} X^i \\
+    &= \sum_{i=0}^{k} \frac{k!}{i!(k-i)!} a^{k-i} X^i \\
+    &= \sum_{i=0}^{k} \frac{E_k^{(i)}(a)}{i!} X^i
+\end{align*}
+Soit $P = \sum\limits_{k=0}^{d} a_k X^k = \sum_{k=0}^{d} a_k E_k$. \\
+Ainsi :
+\begin{align*}
+    P(x + a) &= \sum_{k=0}^{d} a_k E_k(X + a) \\
+    &= \sum_{k=0}^{d} a_k \sum_{i=0}^{k} \frac{E_k^{(i)}(a)}{i!} X^i \\
+    &= \sum_{i=0}^{d} \frac{1}{i!} \left( \sum_{k=i}^{d} a_k E_k^{(i)}(a) \right) X_i \\
+    &= \sum_{i=0}^{d} \frac{1}{i!} \left( \sum_{k=0}^{d} a_k E_k^{(i)}(a) \right) X_i \\
+    &= \sum_{i=0}^{d} \frac{1}{i!} P^{(i)}(a) X^i
+\end{align*}
+
 
 \end{document}
