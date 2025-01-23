@@ -513,5 +513,20 @@ $\boxed{\subset}$ \\
 Soit $Q \in E$, alors $x_0, \ldots, x_n$ sont racines de $Q - P$. \\
 Donc $(X - x_0) \ldots (X - x_n) | Q - P$. \\
 
+\setsection{73}
+\section{Proposition}
+\begin{tcolorbox}[title=Propostion 16.74 (HP), title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $P$ un polynôme scindé non constant de $\mathbb{R}[X]$ à racines simples. Alors $P'$ est scindé, et ses racines séparent celles de $P$. 
+\end{tcolorbox}
+
+\noindent Soit $P = \prod\limits_{k=1}^{n} (x - x_k)$ avec $x_1 < \ldots < x_n$. \\
+D'après le théroème de Rolle, comme $P(x_1) = P(x_2) = \ldots = P(x_n)$ pour tout $k \in \llbracket 1, n-1 \rrbracket$, on choisit $y_k \in ]x_k, x_{k+1}[$ tel que $P'(y_k) = 0$. \\
+On a donc : 
+\begin{align*}
+    x_1 < y_1 < x_2 < y_2 < \ldots < y_{n-1} < x_n
+\end{align*}
+et $y_1, \ldots, y_{n-1}$ sont $n-1$ racines distinctes de $P'$ de degré $n-1$ ($\mathbb{R}$ de caractéristique nulle). \\
+Donc $P'$ est scindé (à racines simples). 
+
 
 \end{document}
