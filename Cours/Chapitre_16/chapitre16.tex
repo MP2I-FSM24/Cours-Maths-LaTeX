@@ -528,5 +528,21 @@ On a donc :
 et $y_1, \ldots, y_{n-1}$ sont $n-1$ racines distinctes de $P'$ de degré $n-1$ ($\mathbb{R}$ de caractéristique nulle). \\
 Donc $P'$ est scindé (à racines simples). 
 
+\setsection{75}
+\section{Relation de Viète}
+\begin{tcolorbox}[title=Théorème 16.76, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $P = \sum\limits_{k=0}^{n} a_k X^k$ un polynôme de degré $n$, scindé, de racines (éventuellement non distinctes, apparaissant dans la liste autant de fois que sa multiplicité) $r_1, \ldots, r_n$ alors pour tout $k \in \llbracket 0, n \rrbracket$ :
+    $$\sum_{1 \leq i_1 < \ldots < i_k \leq n} r_{i_1} \ldots r_{i_k} = (-1)^k \frac{a_{n-k}}{a_n}$$
+\end{tcolorbox}
+
+\begin{align*}
+    P &= \sum_{k=0}^{n} a_k X^k \\
+    &= a_n \prod_{k=1}^{n} (X - r_k) \\
+\end{align*}
+Les relations de Viète consistent simplement à développer l'expression de droite et à identifier les mnômes de degré $n-k$.
+\begin{align*}
+    a_{n-k} = (-1)^k a_n \sum_{1 \leq i_1 < \ldots < i_k \leq n} r_{i_1} \ldots r_{i_k}
+\end{align*}
+
 
 \end{document}
