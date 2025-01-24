@@ -1,0 +1,168 @@
+\documentclass[titlepage, twoside]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{subfiles}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{dsfont}
+\usepackage{tikz}
+\usepackage{cancel}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage[dvipsnames]{xcolor}
+
+\geometry{a4paper, left=20mm, right=20mm, top=20mm, bottom=20mm}
+
+\setcounter{tocdepth}{3}
+
+\definecolor{darkgreen}{RGB}{6, 64, 43}
+\definecolor{lightblue}{RGB}{87, 185, 255}
+
+\pagestyle{fancy}
+\fancyhead
+\fancyfoot
+
+\fancyhead[L]{Programme de colle}
+\fancyhead[R]{Axel Montlahuc}
+\fancyfoot[C]{\thepage}
+
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \@starttoc{toc}
+}
+\makeatother
+\renewcommand{\thesection}{\Roman{section}}
+
+\begin{document}
+\chapter*{Programme de colle : semaine 13}
+\tableofcontents
+
+\section{Suites numériques}
+\subsection{Questions de cours}
+\subsubsection{Enoncer et démontrer la caractérisation séquentielle de la borne supérieure}
+\begin{tcolorbox}[title=Théorème 14.41, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $A$ une partie non vide de $\mathbb{R}$ et soit $M \in \mathbb{R}$. Alors $M$ est la borne supérieure (resp. inférieure) de $A$ si et seulement si $M$ majore (resp. minore) $A$ et s'il existe une suite d'éléments de $A$ qui converge vers $M$. 
+\end{tcolorbox}
+
+\boxed{\Rightarrow} \\
+On suppose que $M = \sup A$. Donc $M$ majore $A$. \\
+On rappelle que : 
+\begin{align*}
+    \forall \epsilon > 0, \exists a \in A, M - \epsilon < a
+\end{align*}
+Donc : 
+\begin{align*}
+    \forall n \in N, \exists a \in A, M - \frac{1}{n+1} < a_n \leq M \text{ ($M$ est un majorant)}
+\end{align*}
+D'après la suite $(a_n) \in A^{\mathbb{N}}$ étant ainsi définie, d'après le théorème d'encadrement : 
+\begin{align*}
+    \boxed{a_n \underset{n \to +\infty}{\longrightarrow} M}
+\end{align*} \\
+
+\boxed{\Leftarrow} \\
+On choisit $(a_n) \in A^{\mathbb{N}}$ telle que : 
+\begin{align*}
+    a_n \underset{n \to +\infty}{\longrightarrow} M \text{ (majorant de $A$)}
+\end{align*}
+Soit $\epsilon > 0$. On choisit $a_n \in A$ tel que : 
+\begin{align*}
+    a_n \in ]M-\epsilon, M+\epsilon[
+\end{align*}
+Donc $M - \epsilon$ ne majore pas $A$. \\
+Donc : 
+\begin{align*}
+    \boxed{M = \sup A}
+\end{align*}
+
+\subsubsection{Enoncer et démontrer le théorème de la limite monotone}
+\begin{tcolorbox}[title=Théorème 14.50, title filled=false, colframe=orange, colback=orange!10!white]
+    Si $u$ est une suite croissante et majorée (resp. décroissante et minorée), alors $u$ converge vers $\sup_{n\in \mathbb{N}}(u_n)$ (resp. vers $\inf_{n\in \mathbb{N}}(u_n)$). \\
+    Si $u$ est une suite croissante et non majorée (resp. décroissante et non minorée) alors $u$ tend vers $+\infty$ (resp. vers $-\infty$). 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On suppose $u$ croissante et majorée. \\
+    L'ensemble $A = \{ u_n | n\in \mathbb{N} \}$ est non vide et majoré. Cet ensemble possède une borne supérieure notée $l$ (propriété fondamentale de $\mathbb{R}$). \\
+    Soit $\epsilon > $. Comme $l - \epsilon < u_n$ ne majore pas $A$, on choisit $N \in \mathbb{N}$ tel que $l - \epsilon < u_n$. \\
+    Or $(u_n)$ est croissante donc : 
+    \begin{align*}
+        \forall n \geq N, l - \epsilon < u_N \leq u_n \leq l
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \forall n \geq N, u_n \in ]l-\epsilon, l+\epsilon[
+    \end{align*}
+    Soit : 
+    \begin{align*}
+        \boxed{u_n \underset{n \to +\infty}{\longrightarrow} l}
+    \end{align*}
+
+    \item On suppose $u$ croissante et non majorée. \\
+    Soit $A \in \mathbb{R}_+$. Soit $N \in \mathbb{N}$ tel que : 
+    \begin{align*}
+        u_N \geq A \text{ ($u$ non majorée)}
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \forall n \geq N, A \leq u_N \leq u_n \text{ ($u$ croissante)}
+    \end{align*}
+    Soit : 
+    \begin{align*}
+        \boxed{u_n \underset{n \to +\infty}{\longrightarrow} +\infty}
+    \end{align*}
+\end{itemize}
+
+\subsubsection{Démontrer que deux suites adjacentes convergent vers la même limite}
+\begin{tcolorbox}[title=Théorème 14.55, title filled=false, colframe=orange, colback=orange!10!white]
+    Deux suites adjacentes convergent vers une limite commune. 
+\end{tcolorbox}
+
+Soit $u$ et $v$ deux suites adjacentes avec $u$ croissante et $v$ décroissante. \\
+Soit $w = v - u$. Par opération, $w$ est décroissante. \\
+Par hypothèse : 
+\begin{align*}
+    w_n \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+Donc $w \leq 0$, soit $u \leq v$. \\
+La suite $u$ est donc majorée par $v_0$, et croissante donc convergente d'après le théorème de la limite monotone. \\
+Pour les mêmes raisons, $v$ converge. \\
+Or, par théorème d'opérations : 
+\begin{align*}
+    \lim_{n\to +\infty} v_n - \lim_{n\to +\infty} u_n = \lim_{n\to +\infty} (v_n - u_n) = 0
+\end{align*}
+
+\section{Exercices types}
+\begin{tcolorbox}[title=Exercice 1, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Déterminer l'expression explicite de la suite de Fibonnaci, définie par
+    \begin{align*}
+        \begin{cases}
+            \phi_0 = 0 \text{ et } \phi_1 = 1 \\
+            \forall n \in \mathbb{N}, \phi_{n+2} = \phi_{n+1} + \phi_n
+        \end{cases}
+    \end{align*}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Exercice 2, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On pose pour tout $n \in \mathbb{N}, u_n = \sqrt{n} - \lfloor \sqrt{n} \rfloor$.
+    \begin{enumerate}
+        \item Etudier $\lim\limits_{n\to + \infty} u_{n^2 + n}$. En déduire que la suite $(u_n)$ n'a pas de limite. 
+        \item Soit $a \in \mathbb{N}$ et $b \in \mathbb{N}^*$ avec $a \leq b$. Etudier $\lim\limits_{n\to +\infty} u_{n^2b^2 + 2an}$. 
+        \item Montrer que tout élément de $[0, 1]$ est la limite d'une certaine suite extraite de $(u_n)$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Exercice 3, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{enumerate}
+        \item Montrer que $[3, +\infty[$ est stable par $x\mapsto \frac{2x^2 - 3}{x + 2}$. On note alors $(x_n)$ la suite définie par $x_0 = 5$ et pour tout $n \in \mathbb{N}, x_{n+1} = \frac{2x_n^2 - 3}{x_n + 2}$. 
+        \item \begin{enumerate}
+            \item Etudier la monotonie de $(x_n)$.
+            \item En déduire $\lim\limits_{n\to +\infty} x_n$.
+        \end{enumerate}
+    \end{enumerate}
+\end{tcolorbox}
+
+\end{document}
