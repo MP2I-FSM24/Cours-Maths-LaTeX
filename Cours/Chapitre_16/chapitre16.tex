@@ -555,5 +555,25 @@ Si $P \not | A$, alors $D \neq U(P)$. \\
 Donc $D = 1$. \\
 Donc $P \wedge A = 1$.
 
+\setsection{97}
+\section{Caractérisation de la divisibilité dans $\mathbb{C}[X]$ par les racines}
+\begin{tcolorbox}[title=Théorème 16.98, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $P$ et $Q$ deux polynômes de $\mathbb{C}[X]$. Alors $P$ divise $Q$ si et seulement si toute racine de $P$ est aussi une racine de $Q$, et que sa multiplicité dans $Q$ est supérieure ou  égale à sa multiplicité dans $P$.
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+Supposons $P|Q$. \\
+Soit $r$ une racine de $P$ de multiplicité $\alpha$. Donc : 
+\begin{align*}
+    (X - r)^{\alpha} &| P \\
+    \text{donc } (X - r)^{\alpha} &| Q \\
+\end{align*}
+Donc $r$ est racine de $Q$ de multiplicité supérieure à $\alpha$. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+On décompose  $P = \lambda \prod\limits_{i=1}^{n} (X - r_i)^{\alpha_i}$ ($P$ est scindé sur $\mathbb{C}$). \\
+Par hypothèse, $\prod\limits_{i=1}^{n} (X - r_i)^{\alpha_i} | Q$. \\
+Donc $P | Q$. 
+
 
 \end{document}
