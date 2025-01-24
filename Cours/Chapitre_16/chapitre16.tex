@@ -575,5 +575,44 @@ On décompose  $P = \lambda \prod\limits_{i=1}^{n} (X - r_i)^{\alpha_i}$ ($P$ es
 Par hypothèse, $\prod\limits_{i=1}^{n} (X - r_i)^{\alpha_i} | Q$. \\
 Donc $P | Q$. 
 
+\section{Caractérisation des polynômes à coefficients réels}
+\begin{tcolorbox}[title=Théorème 16.99, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $P \in \mathbb{C}[X]$. Les propositions sont équivalents : 
+    \begin{enumerate}
+        \item $P$ est à coefficients réels;
+        \item $P(\mathbb{R}) \subset \mathbb{R}$;
+        \item pour tout $z \in \mathbb{C}, \overline{P(z)} = P(\overline{z})$.
+    \end{enumerate}
+\end{tcolorbox}
+
+$\boxed{1 \Rightarrow 2}$ \\
+RAF \\ \\
+
+$\boxed{2 \Rightarrow 1}$ \\
+On suppose que $P(\mathbb{R}) \subset \mathbb{R}$. \\
+Soit $z \in \mathbb{C}$. 
+\begin{align*}
+    P &= \sum_{k=0}^{n} a_k X^k \\
+    \overline{P(z)} &= \overline{\sum_{k=0}^{n} a_k z^k} \\
+    &= \sum_{k=0}^{n} \overline{a_k} (\overline{z})^k 
+\end{align*}
+Par hypothèse, pour $z \in \mathbb{R}$, $P(z) \in \mathbb{R}$, soit $\overline{P(z)} = P(z)$. \\
+Ainsi, pour $z \in \mathbb{R}$ : 
+\begin{align*}
+    \sum_{k=0}^{n} \overline{a_k} z^k &= \sum_{k=0}^{n} a_k z^k
+\end{align*}
+Les deux polynômes $\sum\limits_{k=0}^{n} \overline{a_k} X^k$ et $\sum\limits_{k=0}^{n} a_k X^k$ coincident sur une infinité de valeurs, donc (théorème de rigidité) ils sont égaux. \\
+Donc : 
+\begin{align*}
+    \forall k \in \llbracket 0, n \rrbracket, a_k = \overline{a_k}
+\end{align*}
+Donc $P \in \mathbb{R}[X]$. \\ \\
+
+$\boxed{1 \Rightarrow 3}$ \\
+RAF \\ \\
+
+$\boxed{3 \Rightarrow 2}$ \\
+Si $\overline{P(z)} = P(\overline{z})$ pour tout $z \in \mathbb{C}$, alors en particulier pour $z \in \mathbb{R}$, $\overline{P(z)} = P(z)$ soit $P(z) \in \mathbb{R}$.
+
 
 \end{document}
