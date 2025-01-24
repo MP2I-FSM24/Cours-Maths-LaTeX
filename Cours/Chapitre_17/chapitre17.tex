@@ -6,4 +6,25 @@
 \tableofcontents
 \clearpage
 
+\setsection{1}
+\section{Addition, multiplication et produit par un scalaire}
+\begin{tcolorbox}[title=Définition 17.2, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\frac{P}{Q}$ et $\frac{R}{S}$ deux fractions rationnelles et soit $\lambda \in \mathbb{K}$. On pose
+    $$\frac{P}{Q} + \frac{R}{S} = \frac{PS + QR}{QS} \text{, } \frac{P}{Q} \times \frac{R}{S} = \frac{PR}{QS} \text{ et } \lambda \times \frac{P}{Q} = \frac{\lambda P}{Q}.$$
+\end{tcolorbox}
+
+\noindent Montrons que l'addition est bien définie. \\
+Soit $\frac{P_1}{Q_1} = \frac{P}{Q}$ et $\frac{R}{S}$ dans $\mathbb{K}(X)$. \\
+Montrons que : 
+\begin{align*}
+    \frac{PS + QR}{QS} = \frac{P_1S + Q_1R}{Q_1S}
+\end{align*}
+On a : 
+\begin{align*}
+    (PS + QR)Q_1S - (P_1S + Q_1R)QS &= S^2(\underbrace{PQ_1 - P_1Q}_{= 0}) + RS(\underbrace{QQ_1 - Q_1Q}_{= 0}) \\
+    &= 0
+\end{align*}
+On raisonne de la même manière pour $\frac{R}{S} = \frac{R_1}{S_1}$ et ainsi, l'opération est bien définie. 
+
+
 \end{document}
