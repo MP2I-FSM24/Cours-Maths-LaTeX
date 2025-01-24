@@ -627,5 +627,31 @@ Donc $\overline{r}$ est aussi une racine de $P$. \\
 Donc $(X - \overline{r})(X - r) | P$. \\
 Donc $P = (X - \overline{r})(X - r)Q$ et si $r$ est une racine de $Q$, $\overline{r}$ également, ce qui justifie que $\overline{r}$ ala même multiplicité que $r$. 
 
+\section{Polynômes irréductibles de $\mathbb{R}[X]$}
+\begin{tcolorbox}[title=Théorème 16.101, title filled=false, colframe=orange, colback=orange!10!white]
+    \begin{enumerate}
+        \item Les polynômes irréductibles de $\mathbb{R}[X]$ sont les polynômes de degré 1 et les polynômes de degré 2 de discriminant strictement négatif. 
+        \item Ainsi, tout polynôme $P \in \mathbb{R}[X]$ peut être factorisé en produit de polynômes de $\mathbb{R}[X]$ de degré 1 ou de degré 2, de discriminant strictement négatif. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Les polynômes annoncés sont bien les seuls irréductibles dans $\mathbb{R}_2[X]$. \\
+    Soit $P \in \mathbb{R}[X]$, avec $\deg P \geq 3$. Dans $\mathbb{C}[X]$, $P$ est scindé. \\
+    Si $P$ admet une racine dans $\mathbb{R}$, $P$ est réductible. \\
+    Supposons maintenant que toutes les racines de $P$ sont complexes. Soit $r$ l'une d'entre elles. \\
+    Alors $\overline{r} \neq r$ est aussi une racine de $P$. \\
+    Donc $(X - r)(X - \overline{r}) | P$. \\
+    Donc : 
+    \begin{align*}
+        P &= (X - r)(X - \overline{r})Q \text{ avec } Q \in \mathbb{C}[X] \\
+        &= (\underbrace{x^2 - 2 Re{(r)}X + |r|^2}_{:= R \in \mathbb{R}[X]})Q
+    \end{align*}
+    Donc $P = RQ$ est la division euclidienne de $P$ par $R$ dans $\mathbb{C}[X]$ et aussi dans $\mathbb{R}[X]$. \\
+    Par unicité, on a donc $Q \in \mathbb{R}[X]$ et $P$ est réductible dans $\mathbb{R}[X]$. 
+
+    \item RAF
+\end{enumerate}
+
 
 \end{document}
