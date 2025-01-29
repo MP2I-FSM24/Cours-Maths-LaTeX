@@ -79,5 +79,24 @@ Soit :
 \end{align*}
 Comme $\mathcal{D}$ est infini, d'après le théorème de rigidité, $PS = RQ$, donc $F = G$.
 
+\section{Fraction dérivée}
+\begin{tcolorbox}[title=Définition 17.20, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $F = \frac{P}{Q} \in \mathbb{K}(X)$. On appelle \textbf{fraction dérivée} de $F$ la fraction notée $F'$ (ou $\frac{dF}{dX}$) définie par
+    $$F' = \frac{P'Q - PQ'}{Q^2}.$$
+    Le résultat ne dépend pas du représentant de $F$ choisi. On définit également les dérivées successives de $F$ en posant $F^(0) = F$ et pour tout $n \in \mathbb{N}, F^{(n+1)} = (F^{(n)})'$.
+\end{tcolorbox}
+
+\noindent On écrit $F = \frac{P}{Q} = \frac{R}{S}$. \\
+Montrons que $\frac{P'Q - Q'P}{Q^2} = \frac{R'S - RS'}{S^2}$. \\
+Comme $\frac{P}{Q} = \frac{R}{S}$, on a $PS = RQ$. \\
+Donc $P'S + S'P = R'Q + Q'R$. \\
+Ainsi : 
+\begin{align*}
+    [P'Q - PQ']S^2 - [R'S - RS']Q^2 &= P'SQ^2 + S'PQ^2 - R'QS^2 - Q'RS^2 \\
+    &= QS(P'S - R'Q) + Q^2 RS' - S^2 Q'P \\
+    &= QS (Q'R - S'P) + PSQS' - SQRQ' \\
+    &= 0
+\end{align*}
+
 
 \end{document}
