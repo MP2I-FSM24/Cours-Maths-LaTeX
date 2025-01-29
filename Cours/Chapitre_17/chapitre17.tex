@@ -263,5 +263,34 @@ Si $B = (X - a)Q$, alors $B'(a) = Q(a)$.
 En évaluant en $a$ : $\beta = H(a)$. \\
 On dérive et on évalue en $a$ : $\alpha = H'(a)$.
 
+\setsection{41}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 17.42, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Décomposer $F = \frac{X^6}{(X - 1)^2(X^3 + 1)}$ en éléments simples dans $\mathbb{C}(X)$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item $\deg F = 1 \geq 0$
+    \item \begin{align*}
+        X^6 = (X-1)^2(X^3 + 1)(X + 2) + R \text{ avec } \deg R < 5
+    \end{align*}
+    \item D'après le théorème DES : 
+    \begin{align*}
+        F &= \frac{X^6}{(X - 1)^2(X + 1)(X + j)(X + j^2)} \\
+        &= X + 2 + \frac{a}{X - 1} + \frac{b}{(X - 1)^2} + \frac{c}{X + 1} + \frac{d}{X + j} + \frac{e}{x + j^2} \\
+        c &= (x+1)\tilde F (-1) = \frac{1}{4} \\
+        d &= (x+j)\tilde F (-j) \\
+        &= \frac{1}{(j+1)^2(1-j)(-j+j^2)} \\
+        &= \frac{1}{(1+j)(1-j^2)(j-1)j} \\
+        &= \frac{-1}{(1-j^2)^2j} \\
+        &= \frac{-1}{j(-3j^2)} \\
+        &= \frac{1}{3} \\
+        e &= (x+j^2)\tilde F (-j^2) = \frac{1}{3} \\
+        H &= (X-1)^2 F = \frac{X^6}{X^3 + 1} \\
+        b &= H(1) = \frac{1}{2} \\
+        a = H'(1) &= \frac{9}{4}
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
