@@ -152,5 +152,42 @@ Donc :
 \end{align*}
 Or $Q - Q_1 \in \mathbb{K}[X]$, donc $Q = Q_1$. 
 
+\setsection{30}
+\section{Existence d'une décomposition}
+\begin{tcolorbox}[title=Théorème 17.31, title filled=false, colframe=orange, colback=orange!10!white]
+    Si $T$ et $S$ sont deux polynômes premiers entre eux et si $\deg \left( \frac{A}{TS} \right) < 0$, alors il existe deux polynômes $U$ et $V$ tels que
+    $$\frac{A}{TS} = \frac{U}{T} + \frac{V}{S} \text{, avec } \deg(U) < \deg(T) \text{ et } \deg(V) < \deg(S).$$
+\end{tcolorbox}
+
+\noindent Comme $T \wedge S = 1$, d'après le théormème de Bézout, on écrit : 
+\begin{align*}
+    CT + DS = 1
+\end{align*}
+Donc : 
+\begin{align*}
+    ACT + DSA = A
+\end{align*}
+Donc : 
+\begin{align*}
+    \frac{A}{TS} &= \frac{ACT + DSA}{TS} \\
+    &= \frac{DA}{T} + \frac{AC}{S}
+\end{align*}
+On écrit la division euclidienne de $DA$ par $T$ et de $AC$ par $S$ :
+\begin{align*}
+    DA &= TQ + U \text{ avec } \deg(U) < \deg(T) \\
+    AC &= SH + V \text{ avec } \deg(V) < \deg(S)
+\end{align*}
+Donc :
+\begin{align*}
+    \frac{A}{TS} = \frac{U}{T} + \frac{V}{S} + Q + H
+\end{align*}
+Ainsi : 
+\begin{align*}
+    \deg (Q + H) &= \deg \left( \frac{A}{TS} - \frac{U}{T} - \frac{V}{S} \right) \\
+    &\leq \max(\ldots, \ldots, \ldots) \\
+    &< 0
+\end{align*}
+Donc $Q + H = 0$. 
+
 
 \end{document}
