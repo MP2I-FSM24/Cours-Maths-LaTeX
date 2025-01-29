@@ -118,5 +118,39 @@ Donc :
     \frac{F'}{F} = \frac{F_1'F_2}{F_1F_2} + \frac{F_1F_2'}{F_1F_2} = \frac{F_1'}{F_1} + \frac{F_2'}{F_2}
 \end{align*}
 
+\section{Partie entière}
+\begin{tcolorbox}[title=Théorème 17.25, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $F \in \mathbb{K}(X)$. Il existe un unique polynôme $Q$ tel que $\deg(F - Q) < 0$. Celui-ci est appelé \textbf{partie entière} de $F$, c'est le quotient dans la division euclidienne du numérateur de $F$ par le dénominateur. 
+\end{tcolorbox}
+
+\noindent \underline{Existence :} \\
+Soit $F = \frac{A}{B}$ avec $A \wedge B = 1$. \\
+Soit la division euclidiene de $A$ par $B$ : 
+\begin{align*}
+    A = BQ + R \text{ avec } \deg(R) < \deg(B)
+\end{align*}
+Donc : 
+\begin{align*}
+    F = \frac{A}{B} = \frac{BQ + R}{B} = Q + \frac{R}{B}
+\end{align*}
+Donc : 
+\begin{align*}
+    \deg(F - Q) = \deg\left(\frac{R}{B}\right) = \deg(R) - \deg(B) < 0
+\end{align*} \\
+
+\noindent \underline{Unicité :} \\
+On suppose que : 
+\begin{align*}
+    F = Q + G = Q_1 + G_1 \text{ avec } (Q_1, G_1) \in \mathbb{K}[X]^2 \text{ et } \deg(G), \deg(G_1) < 0
+\end{align*}
+Donc :
+\begin{align*}
+    Q - Q_1 &= G_1 - G \\
+    \text{donc } \deg(Q - Q_1) &= \deg(G_1 - G) \\
+    &\leq \max(\deg(G_1), \deg(G)) \\
+    &< 0
+\end{align*}
+Or $Q - Q_1 \in \mathbb{K}[X]$, donc $Q = Q_1$. 
+
 
 \end{document}
