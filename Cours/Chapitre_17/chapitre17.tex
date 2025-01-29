@@ -189,5 +189,28 @@ Ainsi :
 \end{align*}
 Donc $Q + H = 0$. 
 
+\section{Théorème}
+\begin{tcolorbox}[title=Théorème 17.33, title filled=false, colframe=orange, colback=orange!10!white]
+    Si $T$ est un polynôme irréductible unitaire et si $\deg \left( \frac{A}{T^n} \right) < 0$ (avec $n \geq 1$), alors il existe des polynômes $V_1, \ldots, V_n$ tels que
+    $$\frac{A}{T^n} = \sum_{k=1}^{n} \frac{V_k}{T^k} \text{, avec } \deg(V_k) < \deg(T).$$
+    C'est une \textbf{décomposition en éléments simples}.
+\end{tcolorbox}
+
+\noindent Par récurrence sur $n$. \\
+\begin{itemize}
+    \item Pour $n = 1$, RAF. 
+    \item On suppose le résultat vrai pour $n \geq 1$ fixé. \\
+    On écrit la division euclidienne de $A$ par $T$ :
+    \begin{align*}
+        A = BT + V_{n+1} \text{ avec } \deg(V_{n+1}) < \deg(T)
+    \end{align*}
+    Ainsi : 
+    \begin{align*}
+        \frac{A}{T^{n+1}} &= \frac{BT + V_{n+1}}{T^{n+1}} \\
+        &= \frac{B}{T^n} + \frac{V_{n+1}}{T^{n+1}} \\
+        &= \sum_{k=1} \frac{V_k}{T^k} + \frac{V_{n+1}}{T^{n+1}} \text{ (Hypothèse de récurrence)} 
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
