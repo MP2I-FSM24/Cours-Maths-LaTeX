@@ -231,5 +231,23 @@ Donc :
 Donc $c = \frac{A(a)}{Q(a)}$. \\
 Si $B = (X - a)Q$, alors $B'(a) = Q(a)$.
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 17.39, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Décomposer en éléments simples dan $\mathbb{C}(X)$ la fraction raitonnelle $F = \frac{1}{X^n - 1}$ avec $n \geq 1$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item $\deg F = -n < 0$. \\
+    \item $F$ possède $n$ pôles simples. $e^{\frac{2ik\pi}{n}} = \omega_k$. 
+    \item D'après le théorème de DES : 
+    \begin{align*}
+        F = \sum_{k=0}^{n-1} \frac{c_k}{X - \omega_k}
+    \end{align*}
+    Or, pour tout $k \in \llbracket 0, n-1 \rrbracket$, $c_k = \frac{1}{nw_k^{n-1}} = \frac{\omega_k}{n}$. \\
+    \begin{align*}
+        F = \frac{1}{n} \sum_{k=0}^{n-1} \frac{\omega_k}{X - \omega_k}
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
