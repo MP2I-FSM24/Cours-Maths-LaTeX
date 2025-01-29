@@ -249,5 +249,19 @@ Si $B = (X - a)Q$, alors $B'(a) = Q(a)$.
     \end{align*}
 \end{itemize}
 
+\section{Cas d'un pôle double}
+\begin{tcolorbox}[title=Propostion 17.40, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $a$ est un pôle double de $F = \frac{A}{B}$, alors la partie polaire de $F$ relative à $a$ est
+    $$P_F(a) = \frac{\alpha}{X - a} + \frac{\beta}{(X - a)^2} \text{ avec } \beta = H(a) \text{ et } \alpha = H'(a) \text{ en posant } H = (X - a)^2 F.$$
+\end{tcolorbox}
+
+\noindent On a (notations 17.38) : 
+\begin{align*}
+    F &= E + \frac{\alpha}{X - a} + \frac{\beta}{(X - a)^2} + G \\
+    \beta + (X - a) \alpha &= \underbrace{(X - a)^2 F}_{:= H} - (X - a)^2 E - (X - a)^2 G \\
+\end{align*}
+En évaluant en $a$ : $\beta = H(a)$. \\
+On dérive et on évalue en $a$ : $\alpha = H'(a)$.
+
 
 \end{document}
