@@ -318,5 +318,19 @@ Or $r$ n'est pas un pôle de $\overline{P_F(r)}$ mais $\overline{r}$ est un pôl
 De la même manière, comme $r$ n'est pas un pôle de $G$, $\overline{r}$ n'est pas un pôle de $\overline{G}$. \\
 Donc $P_F(\overline{r}) = \overline{P_F(r)}$.
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 17.45, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Décomposer en éléments simples $F = \frac{1}{(X^2 + X + 1)^2}$ dans $\mathbb{C}(X)$. 
+\end{tcolorbox}
+
+\noindent $F = \overline{(x^2 + x + 1)^2}, \deg(F) = -4 < 0$. \\
+Les pôles de $F$ sont $j$ et $j^2$ (de multiplicité 2). \\
+D'après le théorème de DES :
+\begin{align*}
+    F = \frac{a}{X - j} + \frac{b}{(X - j)^2} + \frac{c}{X - j^2} + \frac{d}{(X - j^2)^2} \text{ car } F \in \mathbb{R}(X)
+\end{align*}
+On pose $H = (X -j)^2 F = \frac{1}{(x - j^2)^2}$. \\
+On trouve $b = H(j) = \frac{j}{(1-j)}$ et $a = H'(j) = \frac{-2}{(1-j)^3} = \frac{-2j^2}{3(1-j)j}$. \\
+
 
 \end{document}
