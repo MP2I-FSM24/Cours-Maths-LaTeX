@@ -332,5 +332,43 @@ D'après le théorème de DES :
 On pose $H = (X -j)^2 F = \frac{1}{(x - j^2)^2}$. \\
 On trouve $b = H(j) = \frac{j}{(1-j)}$ et $a = H'(j) = \frac{-2}{(1-j)^3} = \frac{-2j^2}{3(1-j)j}$. \\
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 17.47, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Décomposer en éléments simples $F = \frac{X^4 + 1}{X(X^2 - 1)^2}$ dans $\mathbb{R}(X)$. 
+\end{tcolorbox}
+\noindent $F = \frac{X^4 + 1}{X(X^2 - 1)^2}, \deg F = -1 < 0$. Donc :\\
+\begin{align*}
+    F = \frac{a}{X} + \frac{b}{X - 1} + \frac{c}{(X - 1)^2} + \frac{d}{X + 1} + \frac{e}{(X + 1)^2}
+\end{align*}
+$F$ est impaire donc : 
+\begin{align*}
+    F(-X) &= -\frac{a}{X} + \frac{b}{-X-1} + \frac{c}{(-X - 1)^2} + \frac{d}{-X + 1} + \frac{e}{(-X + 1)^2} \\
+    &= -\frac{a}{X} - \frac{b}{X + 1} + \frac{c}{(X + 1)^2} - \frac{d}{X - 1} + \frac{e}{(X - 1)^2} \\
+    &= -F \\
+    &= -\frac{a}{X} - \frac{b}{X - 1} - \frac{c}{(X - 1)^2} - \frac{d}{X + 1} - \frac{e}{(X + 1)^2} \\
+\end{align*}
+Par unicité : 
+\begin{align*}
+    \begin{cases}
+        a = a \\
+        -b = -d \\
+        -c = e
+    \end{cases}
+    \text{ soit }
+    \begin{cases}
+        b = d \\
+        e = -c
+    \end{cases}
+\end{align*}
+On a : $a = \tilde{XF}(0) = 1$. \\
+On pose : 
+\begin{align*}
+    H &= (X - 1)^2 F = \frac{X^4 + 1}{X(X + 1)^2} \\
+    c &= H(1) = \frac{1}{2} \\
+    b &= H'(1) \\
+    &= \frac{4 \times 4 - 2 \times (3 + 4 + 1)}{4} \\
+    &= 0
+\end{align*}
+
 
 \end{document}
