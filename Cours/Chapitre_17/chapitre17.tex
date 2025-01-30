@@ -292,5 +292,31 @@ On dérive et on évalue en $a$ : $\alpha = H'(a)$.
     \end{align*}
 \end{itemize}
 
+\setsection{43}
+\section{Parties polaires conjuguées d'une fraction réelle}
+\begin{tcolorbox}[title=Propostion 17.44, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $F$ est à coefficients réels, alors les parties polaires relatives aux pôles conjugués sont conjuguées. 
+\end{tcolorbox}
+
+\noindent Soit $F \in \mathbb{R}(X) \subset \mathbb{C}(X)$. \\
+On écrit $F = \frac{A}{B}$ avec $A, B \in \mathbb{R}(X)^2$. \\
+Soit $r$ un pôle de multiplicité $m$. \\
+Comme $F \in \mathbb{R}(X)$, $\overline{r}$ est un pôle de multiplicité $m$. On suppose que $r \neq \overline{r}$ \\
+D'après le théorème de DES, on écrit : 
+\begin{align*}
+    F = E + P_F(r) + G \text{ avec } (E, r) \in \mathbb{R}(X)^2, G \in \mathbb{C}(X)
+\end{align*}
+$r$ n'est pas un pôle de $G$ ($\overline{r}$ oui). \\
+Ainsi : 
+\begin{align*}
+    F &= \overline{F} \\
+    &= \overline{E + P_F(r) + G} \\
+    &= \overline{E} + P_F(\overline{r}) + \overline{G} \\
+    &= E + \overline{P_F(r)} + \overline{G}
+\end{align*}
+Or $r$ n'est pas un pôle de $\overline{P_F(r)}$ mais $\overline{r}$ est un pôle de $\overline{P_F(r)}$. \\
+De la même manière, comme $r$ n'est pas un pôle de $G$, $\overline{r}$ n'est pas un pôle de $\overline{G}$. \\
+Donc $P_F(\overline{r}) = \overline{P_F(r)}$.
+
 
 \end{document}
