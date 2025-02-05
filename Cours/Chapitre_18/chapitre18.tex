@@ -43,5 +43,24 @@
     Donc $\tilde f \in \mathcal{C}^{n+1}(I, \mathbb{R})$. \\
 \end{itemize}
 
+\setsection{44}
+\section{IAF pour les fonctions à valeurs dans $\mathbb{C}$}
+\begin{tcolorbox}[title=Théorème 18.45, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f\in \mathcal{C}^1([a, b], \mathbb{C})$ et $M$ un réel tel que $|f'| \leq M$ sur $]a, b[$. Alors
+    $$|f(b) - f(a)| \leq M|b - a|$$
+\end{tcolorbox}
+
+\noindent Si $f\in C^1([a, b], \mathbb{R})$, alors : 
+\begin{align*}
+    f(b) - f(a) = \int_{a}^{b} f'(t) \, dt
+\end{align*}
+D'après l'inégalité triangulaire intégrale :
+\begin{align*}
+    |f(b) - f(a)| &= \left| \int_{a}^{b} f'(t) \, dt \right| \\
+    &\leq \int_{a}^{b} |f'(t)| \, dt \\
+    &\leq \int_{a}^{b} M \, dt \\
+    &= M|b - a|
+\end{align*}
+
 
 \end{document}
