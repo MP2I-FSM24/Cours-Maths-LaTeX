@@ -36,5 +36,66 @@ $g$ paramètre la sécante passant par les points $(x, f(x))$ et $(y, f(y))$. \\
     \item On raisonne de la même manière si $t \leq x < y$. 
 \end{itemize}
 
+\section{Inégalités des pentes}
+\begin{tcolorbox}[title=Propostion 19.8, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f:I\to \mathbb{R}$ une fonction définie sur un intervalle $I$. 
+    \begin{enumerate}
+        \item $f$ est convexe si et seulement si pour tout $a \in I$, la fonction $x\mapsto \frac{f(x) - f(a)}{x - a}$ est croissante sur $I\backslash\{a\}$. 
+        \item Si $f$ est convexe, alors pour tout $(a, b, c) \in I^3$ avec $a < b < c$, 
+        \begin{align*}
+            \frac{f(b) - f(a)}{b-a} \leq \frac{f(c) - f(a)}{c-a} \leq \frac{f(c) - f(b)}{c-b}
+        \end{align*}
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $\boxed{\Rightarrow}$ \\
+    On suppose $f$ convexe. Soit $a \in I$ et $x < y$ dans $I\backslash\{a\}$.
+    \begin{itemize}
+        \item On suppose $x < a < y$. D'après (19.7) : 
+        \begin{align*}
+            f(y) \leq \frac{f(a) - f(x)}{a-x} \times (y-a)) + f(a)
+        \end{align*}
+        Donc :
+        \begin{align*}
+            \frac{f(y) - f(a)}{y-a} \geq \frac{f(a) - f(x)}{a-x}
+        \end{align*}
+        \item Si $x < a < y$, d'après (19.7) :
+        \begin{align*}
+            f(y) \geq \frac{f(a) - f(x)}{a-x} \times (y-a) + f(a)
+        \end{align*}
+        Donc :
+        \begin{align*}
+            \frac{f(y) - f(a)}{y-a} \geq \frac{f(a) - f(x)}{a-x}
+        \end{align*}
+        \item Les autres cas s'y ramènent. 
+    \end{itemize} 
+
+    \noindent$\boxed{\Leftarrow}$ \\
+    On suppose que pour tout $a \in I$, $g_a:I\backslash\{a\}\to \mathbb{R}; x\mapsto \frac{f(x) - f(a)}{x - a}$ est croissante. \\
+    Soit $x < y$ et $\lambda \in ]0, 1[$. On pose $a = \lambda y + (1-\lambda)x$. \\
+    $g_a$ est croissante sur $I\backslash\{a\}$, donc :
+    \begin{align*}
+        g_a(x) \leq g_a(y)
+    \end{align*}
+    Donc :
+    \begin{align*}
+        \frac{f(x) - f(a)}{x-a} \leq \frac{f(y) - f(a)}{y-a}
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        x-a &< 0 \text{ et } y-a > 0 \\
+        (f(x) - f(a))(y-a) &\leq (f(y) - f(a))(x-a) \\
+        \text{donc } f(a)(y-x) &\leq f(x)(y-a) - f(y)(x-a) \\
+        \text{soit } f(a) &\leq f(x) \frac{y-a}{y-x} + f(y) \frac{a-x}{y-x} \\
+        &= (1 - \lambda)f(x) + \lambda f(y) \\
+    \end{align*}
+
+    \item Soit $a < b < c$. \\
+    \begin{align*}
+        g_a(b) \leq g_a(c) = g_c(a) \leq g_c(b)
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
