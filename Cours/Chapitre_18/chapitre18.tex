@@ -6,4 +6,42 @@
 \tableofcontents
 \clearpage
 
+\setsection{42}
+\section{Théorème de prolongement de classe $\mathcal{C}^n$ - HP}
+\begin{tcolorbox}[title=Théorème 18.43 - HP, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ un intervalle et $x_0 \in I$. Soit $f$ une fonction définie de classe $\mathcal{C}^n$ sur $I\backslash \{x_0\}$. Si $f^{(n)}$ admet une limite finie en $x_0$, alors $f$ est prolongeable en une fonction de classe $\mathcal{C}^n$ sur $I$.
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On prouve le théorème pour $n=1$. On suppose $f \in \mathcal{C}^1(I\backslash \{x_0\}, \mathbb{R})$ et que $f'$ admet une limite finie en $x_0$. \\
+    On prolonge $f'$ en une fonction $g$ par continuité en $x_0$. Ainsi, $g \in \mathcal{C}^0(I, \mathbb{R})$. \\
+    On remarque que pour tout $x \neq x_0$ : 
+    \begin{align*}
+        f(x) = f(a) + \int_a^x f'(t) \, dt
+    \end{align*}
+    où $a \in I\backslash \{x_0\}$ quelconque. 
+    \begin{align*}
+        f(x) &= \underbrace{f(a) + \int_a^x g(t) \, dt}_{\text{Admet une limite finie quand } x\to x_0} \\
+    \end{align*}
+    Donc $f(x)$ admet également une limite finie quand $x\to x_0$. \\
+    On prolonge alors $f$ par continuité en $\tilde{f}$, de classe $\mathcal{C}^1$ sur $I$. \\
+
+    \item On raisonne par récurrence. Pour $n \in \mathbb{N}$, on pose : 
+    \begin{align*}
+        P(n) : "\text{Pour tout $f \in \mathcal{C}^n(I\backslash \{x_0\}, \mathbb{R})$, si $f^{(n)}$ admet une limite finie en $x_0$, alors $f$ se prolonge en $\tilde{f} \in \mathcal{C}^n(I, \mathbb{R})$}".
+    \end{align*}
+    Pour $n = 0$, c'est le prolongement par continuité. \\
+    Pour $n = 1$, c'est fait. \\
+    On suppose $P(n)$ vraie pour $n \geq 1$. \\
+    Soit $f\in \mathcal{C}^{n+1}(I\backslash \{x_0\}, \mathbb{R})$, etc... \\
+    Donc $f'\in \mathcal{C}^n(I\backslash \{x_0\}, \mathbb{R})$ et $f^{(n)}$ admet une limite finie en $x_0$. \\
+    D'après $P(n)$, on prolonge $f'$ en $g\in \mathcal{C}^n(I, \mathbb{R})$. \\
+    En particulier, $g$ est continue sur $I$. \\
+    Donc $f'$ admet une limite finie en $x_0$. \\
+    On applique $P(1)$. On prolonge $f$ en $\tilde{f}\in \mathcal{C}^{n+1}(I, \mathbb{R})$. \\
+    Or $\tilde{f'} = g \in \mathcal{C}^n(I, \mathbb{R})$. \\
+    Donc $\tilde f \in \mathcal{C}^{n+1}(I, \mathbb{R})$. \\
+\end{itemize}
+
+
 \end{document}
