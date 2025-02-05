@@ -1,0 +1,40 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{18}
+\chapter{Convexité}
+\tableofcontents
+\clearpage
+
+\setsection{6}
+\section{Position du graphe d'une fonction convexe par rapport à ses sécantes}
+\begin{tcolorbox}[title=Propostion 19.7, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f:I\to \mathbb{R}$ une fonction convexe et $(x, y) \in I^2$ avec $x < y$. \\
+    Le graphe de $f$ est situé en-dessous de sa sécante sur l'intervalle $[x, y]$ et au-dessus à l'extérieur, soit sur $I \cap ]-\infty, x] \cup [y, +\infty[$.
+\end{tcolorbox}
+
+\noindent On pose $g:\mathbb{R}\to \mathbb{R}; t\mapsto \frac{f(y) - f(x)}{y - x}(t - x) + f(x)$. \\
+$g$ paramètre la sécante passant par les points $(x, f(x))$ et $(y, f(y))$. \\
+\begin{itemize}
+    \item Sur $[x, y]$, RAF car $f$ est convexe. 
+    \item Soit $t > y$. On pose $\lambda = \frac{y-x}{t-x} \neq 0 \in [0, 1]$. On a : 
+    \begin{align*}
+        \lambda t + (1-\lambda)x &= \frac{y-x}{t-x}t + \left( 1 - \frac{y-x}{t-x}\right)x \\
+        &= \frac{t(y-x) + x(t-y))}{t-x} \\
+        &= y
+    \end{align*}
+    Par convexité de $f$ : 
+    \begin{align*}
+        f(y) &= f(\lambda t + (1-\lambda)x) \\
+        &\leq \lambda f(t) + (1-\lambda)f(x) \\
+        \text{donc } f(t) &\geq \frac{1}{y} f(y) - \left( \frac{1}{y} - 1 \right)f(x) \\
+        &= \frac{t-x}{y-x} f(y) - \left( \frac{t-x}{y-x} - 1 \right)f(x) \\
+        &= \frac{t-x}{y-x} \times (f(y) - f(x)) + f(x) \\
+        &= g(t)
+    \end{align*}
+
+    \item On raisonne de la même manière si $t \leq x < y$. 
+\end{itemize}
+
+
+\end{document}
