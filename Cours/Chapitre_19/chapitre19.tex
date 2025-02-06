@@ -264,5 +264,28 @@ Or le graphe de $f$ est situé au-dessus de sa tangente en $a$, soit :
 \end{align*}
 Donc $f(a)$ est un minimum global de $f$.
 
+\setsection{23}
+\section{Inégalité de Jensen}
+\begin{tcolorbox}[title=Théorème 19.24, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f:I\to \mathbb{R}$ une fonction convexe. Soit $n\geq 2$. Pour tout $(x_1, \ldots, x_n) \in I^n$ et $(\lambda_1, \ldots, \lambda_n) \in [0; 1]^n$ avec $\sum\limits_{k=1}^{n} \lambda_k = 1$, alors
+    $$f \left( \sum_{k=1}^{n} \lambda_k x_k \right) \leq \sum_{k=1}^{n} \lambda_k f(x_k)$$
+\end{tcolorbox}
+
+\noindent Par récurrence. 
+\begin{itemize}
+    \item Pour $n = 2$, RAF (cf. définition)
+    \item On suppose la propriété vraie au rang $n$. \\
+    Soit $(x_1, \ldots, x_{n+1}) \in I^{n+1}, (\lambda_1, \ldots, \lambda_{n+1}) \in [0, 1]^{n+1}$ avec $\sum\limits_{i=1}^{n+1} \lambda_i = 1$. \\
+    Si $\lambda_{n+1} = 0$, on applique directement l'hypothèse au rang $n$ (RAF). \\
+    On suppose $\lambda_{n+1} \neq 0$. On a : 
+    \begin{align*}
+        f \left( \sum_{i=1}^{n+1} \lambda_i x_i \right) &= f \left( \sum_{i=1}^{n-1} \lambda_i x_i + \lambda_n x_n + \lambda_{n+1}x_{n+1} \right) \\
+        &= f \left( \sum_{i=1}^{n-1} \lambda_i x_i + (\lambda_n + \lambda_{n+1}) \times \left( \frac{\lambda_n}{\lambda_n + \lambda_{n+1}}x_n + \frac{\lambda_{n+1}}{\lambda_n + \lambda_{n+1}}x_{n+1} \right) \right) \\
+        &\leq \sum_{i=1}^{n-1} \lambda_i f(x_i) + (\lambda_n + \lambda_{n+1}) \times f\left( \frac{\lambda_n}{\lambda_n + \lambda_{n+1}}x_n + \frac{\lambda_{n+1}}{\lambda_n + \lambda_{n+1}}x_{n+1} \right) \\
+        &\leq \sum_{i=1}^{n-1} \lambda_i f(x_i) + (\lambda_n + \lambda_{n+1}) \times \left( \frac{\lambda_n}{\lambda_n + \lambda_{n+1}}f(x_n) + \frac{\lambda_{n+1}}{\lambda_n + \lambda_{n+1}}f(x_{n+1}) \right) \\
+        &= \sum_{i=1}^{n} \lambda_i f(x_i)
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
