@@ -149,5 +149,47 @@ Comme $a \in ]x, y[$, $a = \lambda y + (1-\lambda)x$ et aussi :
 \end{align*}
 Donc $f$ est convexe (sur $I$). 
 
+\setsection{12}
+\section{Caractérisation des fonctions convexes par les tangentes}
+\begin{tcolorbox}[title=Propostion 19.13, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f:I\to \mathbb{R}$ une fonction dérivable. Alors $f$ est convexe sur $I$ si et seulement si le graphe de $f$ est situé au-dessus de toutes ses tangentes. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+On suppose $f$ convexe. Soit $a \in I$ et soit $\varphi:\mathbb{R}\to \mathbb{R}; t\mapsto f'(a)(t-a) + f(a)$. \\
+On pose $h = f - \varphi \in \mathcal{D}^1(I, \mathbb{R})$ et $h' = f' - f'(a)$. \\
+Or $f$ est convexe donc $f'$ est croissante sur $I$. Donc : 
+\begin{align*}
+    \begin{array}{|c|ccc|}
+        \hline
+        a &  &  &  \\
+        \hline
+        h' & - & 0 & + \\
+        \hline
+        h & \searrow & 0 & \nearrow \\
+        \hline
+        h & \multicolumn{3}{c|}{+} \\
+        \hline
+    \end{array}
+\end{align*}
+
+$\boxed{\Leftarrow}$ \\
+Soit $x < y$ et $a = \lambda y + (1-\lambda)x \in ]x, y[$. \\
+Par hypothèse, le graphe de $f$ est situé au-dessus de sa tangente en $a$. 
+\begin{align*}
+    \forall t \in I, f(t) \geq f'(a)(t-a) + f(a)
+\end{align*}
+En particulier :
+\begin{align*}
+    f(x) &\geq f'(a)(x-a) + f(a) \\
+    f(y) &\geq f'(a)(y-a) + f(a)
+\end{align*}
+Donc : 
+\begin{align*}
+    (y-a)f(x) + (a-x)f(y) &\geq (y-a)f(a) \\
+    \text{donc } f(a) &\leq \frac{y-a}{y-x}f(x) + \frac{a-x}{y-x}f(y) \\
+    &= (1-\lambda)f(x) + \lambda f(y)
+\end{align*}
+
 
 \end{document}
