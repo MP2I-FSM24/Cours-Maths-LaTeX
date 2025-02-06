@@ -114,5 +114,40 @@ Comme $g$ est définie à gauche et à droite de $a$ ($I$ est ouvert) et que $g$
     &\underset{x \to a^-}{\longrightarrow} f(a)
 \end{align*}
 
+\setsection{10}
+\section{Caractérisation des fonctions convexes par les variations de la dérivée}
+\begin{tcolorbox}[title=Théorème 19.11, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f:I\to \mathbb{R}$ une fonction dérivable sur $I$. Alors $f$ est convexe si et seulement si $f'$ est croissante. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+On suppose $f$ convexe. Soit $x < y$. Soit $a$ tel que $x < a < y$. \\
+D'après l'inégalité des pentes ($f$ est convexe), on a : 
+\begin{align*}
+    \frac{f(a) - f(x)}{a-x} \leq \frac{f(y) - f(x)}{y-x} \leq \frac{f(y) - f(a)}{y-a}
+\end{align*}
+En considérant les limiets $a\to x^+$ et $a\to y^-$ et par TCILPPL : 
+\begin{align*}
+    f'(x) \leq \frac{f(y) - f(x)}{y-x} \leq f'(y)
+\end{align*}
+Donc $f'$ est croissante. \\
+
+$\boxed{\Leftarrow}$ \\
+On suppose $f'$ croissante sur $I$. Soit $x < y$. Soit $a\in ]x, y[$. \\
+On applique deux fois le TAF : on choisit $\alpha \in ]x, a[ \text{ et } \beta \in ]a, y[$ tels que :
+\begin{align*}
+    \frac{f(a) - f(x)}{-x+a} &= f'(\alpha) \text{ et } \frac{f(y) - f(a)}{y-a} = f'(\beta) \\
+\end{align*}
+Comme $f'$ est croissante, on a $f'(\alpha) \leq f'(\beta)$, soit :
+\begin{align*}
+    \frac{f(a) - f(x)}{a-x} &\leq \frac{f(y) - f(a)}{y-a} \\
+    \text{donc } f(a) &\leq \frac{a-x}{y-x}f(y) + \frac{y-a}{y-x}f(x) \\
+\end{align*}
+Comme $a \in ]x, y[$, $a = \lambda y + (1-\lambda)x$ et aussi : 
+\begin{align*}
+    f(a) = f(\lambda y + (1-\lambda)x) \leq \lambda f(y) + (1-\lambda)f(x)
+\end{align*}
+Donc $f$ est convexe (sur $I$). 
+
 
 \end{document}
