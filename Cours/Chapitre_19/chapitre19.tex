@@ -209,5 +209,19 @@ Donc :
 \end{align*}
 Donc $f+g$ est convexe.
 
+\section{Composition de fonctions convexes}
+\begin{tcolorbox}[title=Propostion 19.18, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f:I\to J$ et $g:J\to \mathbb{R}$ deux fonctions convexes avec $g$ croissante. Alors $g\circ f$ est convexe sur $I$. 
+\end{tcolorbox}
+
+\noindent Soit $x < y$ et $a = \lambda x + (1-\lambda)y \in ]x, y[$. \\
+On a :
+\begin{align*}
+    f(a) &\leq \lambda f(x) + (1-\lambda)f(y) \\
+    \text{donc } g\circ f(a) &\leq g(\lambda f(x) + (1-\lambda)f(y)) \\
+    &\leq \lambda (g\circ f(x)) + (1-\lambda)(g\circ f(y))
+\end{align*}
+Donc $g\circ f$ est convexe. 
+
 
 \end{document}
