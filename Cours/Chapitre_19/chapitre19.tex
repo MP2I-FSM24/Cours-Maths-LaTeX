@@ -97,5 +97,22 @@ $g$ paramètre la sécante passant par les points $(x, f(x))$ et $(y, f(y))$. \\
     \end{align*}
 \end{enumerate}
 
+\section{Continuité et dérivabilité des fonctions convexes}
+\begin{tcolorbox}[title=Théorème 19.9, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ une fonction convexe sur un intervalle $I$ ouvert. La fonction $f$ est alors continue et possède des dérivées à gauche et à droite en tout point (où les limites osnt envisageables). Pour tout $a \in I$, on a
+    \begin{align*}
+        f'_g(a) \leq f'_d(a)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Pour $a \in I$, on note encore $g_a:I\backslash\{a\}\to \mathbb{R}; x\mapsto \frac{f(x) - f(a)}{x - a}$. \\
+Comme $g$ est définie à gauche et à droite de $a$ ($I$ est ouvert) et que $g$ est croissante sur $I\backslash\{a\}$, d'après le TLM $g$ admet des limites finies à gauche et à droite de $a$ et : 
+\begin{align*}
+    \lim_{a^+} g &= f'_d(a) \geq f'_g(a) = \lim_{a^-} g \\
+    \forall x \neq a, f(x) &= \frac{f(x) - f(a)}{x-a}(x-a) + f(a) \\
+    &\underset{x \to a^+}{\longrightarrow} f(a) \\
+    &\underset{x \to a^-}{\longrightarrow} f(a)
+\end{align*}
+
 
 \end{document}
