@@ -223,5 +223,30 @@ On a :
 \end{align*}
 Donc $g\circ f$ est convexe. 
 
+\setsection{18}
+\section{Réciproque de fonctions convexes}
+\begin{tcolorbox}[title=Propostion 19.19, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f:I\to J$ une fonction convexe bijective avec $I$ ouvert. Alors $g=f^{-1}$ est soit concave, soit convexe sur $J$. 
+\end{tcolorbox}
+
+\noindent Comme $f$ est convexe sur $I$ ouvert, $f$ est continue sur $I$ (19.9). \\
+Or $f$ est bijective, donc $f$ est strictement monotone sur $I$ (15.72). \\
+\begin{itemize}
+    \item Supposons $f$ strictement croissante sur $I$. Soit $x < y$ dans $J = f(I)$. Soit $\lambda \in ]0, 1[$. Alors $g$ est strictement croissante. \\
+    On pose $x = f(a)$ et $y = f(b)$. On a :
+    \begin{align*}
+        f(\lambda a + (1-\lambda)b) &\leq \lambda f(a) + (1-\lambda)f(b) \\
+        &\leq \lambda x + (1-\lambda)y
+    \end{align*}
+    Or $g$ est strictement croissante, donc : 
+    \begin{align*}
+        \lambda g(x) + (1-y) g(y) &= \lambda a + (1-\lambda)b \\
+        &\leq g(\lambda x + (1-\lambda)y)
+    \end{align*}
+    Donc $g$ est concave sur $J$. 
+
+    \item Si $f$ est strictement décroissante (et donc $g$ strictement décroissante), alors $g$ est concave sur $J$. 
+\end{itemize}
+
 
 \end{document}
