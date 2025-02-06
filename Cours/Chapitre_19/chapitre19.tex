@@ -248,5 +248,21 @@ Or $f$ est bijective, donc $f$ est strictement monotone sur $I$ (15.72). \\
     \item Si $f$ est strictement décroissante (et donc $g$ strictement décroissante), alors $g$ est concave sur $J$. 
 \end{itemize}
 
+\section{Extrema des fonctions convexes}
+\begin{tcolorbox}[title=Propostion 19.20, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f$ une fonction convexe définie par un intervalle $I$ ouvert. Alors $f$ admet un minimum global en un point $a$ si et seulement si $a$ est un point critique. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+RAF \\
+
+$\boxed{\Leftarrow}$ \\
+On suppose que $a$ est un point critique. Donc $f'(a) = 0$. \\
+Or le graphe de $f$ est situé au-dessus de sa tangente en $a$, soit : 
+\begin{align*}
+    \forall x \in I, f(x) \geq \underbrace{f'(a)}_{0}(x-a) + f(a) = f(a)
+\end{align*}
+Donc $f(a)$ est un minimum global de $f$.
+
 
 \end{document}
