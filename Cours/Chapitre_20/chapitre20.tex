@@ -1,0 +1,30 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+\setcounter{chapter}{19}
+\chapter{Espace Vectoriels}
+\tableofcontents
+\clearpage
+
+\setsection{1}
+\section{Propriétés du $0$, régularité}
+\begin{tcolorbox}[title=Propostion 20.2, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $E$ un $\mathbb{K}-ev$. Pour tout $x \in E$ :
+    \begin{enumerate}
+        \item $0_{\mathbb{K}}.x = 0_E$
+        \item pour tout $\lambda \in \mathbb{K}$, $\lambda.0_E = 0_E$
+        \item (-1).x = -x
+        \item si $x\neq 0_E$, $$\lambda.x = 0_E \Rightarrow \lambda = 0_{\mathbb{K}}$$
+        \item si $x\neq 0_{\mathbb{K}}$, $$\lambda.x = 0_E \Rightarrow x = 0_E$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $0_{\mathbb{K}}.x = (0_{\mathbb{K}} + 0_{\mathbb{K}}).x = 0_{\mathbb{K}}.x + 0_{\mathbb{K}}.x$. Donc $0_E = 0_{\mathbb{K}}.x$.
+    \item RAS. 
+    \item $x + (-1).x = (1 - 1).x = 0_{\mathbb{K}}.x = 0_E$.
+    \item Par l'absurde, si $\lambda \neq 0_{\mathbb{K}}$, de $\lambda x = 0_E$ on tire $\lambda^{-1} \lambda x = \lambda^{-1} x 0_E$, soit $x = 0_E$. Absurde. 
+    \item Idem. 
+\end{enumerate}
+
+\end{document}
