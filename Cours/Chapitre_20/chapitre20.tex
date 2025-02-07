@@ -83,5 +83,33 @@
     De même pour la dernière. 
 \end{itemize}
 
+\setsection{15}
+\section{Caractérisation des sous-espaces vectoriels}
+\begin{tcolorbox}[title=Théorème 20.16, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un $\mathbb{K}$-espace vectoriel. Un ensemble $F$ est un sous-espace vectoriel de $E$ si et seulement si
+    \begin{enumerate}
+        \item $F \subset E$;
+        \item $0 \in F$;
+        \item $F$ est stable par combinaisons linéaire, ce qui équivaut à 
+        $$\forall (x, y) \in F^2, \forall \lambda\in \mathbb{K}, \lambda x + y \in F.$$
+    \end{enumerate}
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$
+\begin{enumerate}
+    \item Oui. 
+    \item $F$ est un sous-groupe de $E$ donc $0_E \in F$. 
+    \item Pour tout $(x, y) \in F^2$, $\lambda \in \mathbb{K}$, $\lambda .x \in F$ et $y \in F$. Donc $\lambda x + y \in F$.
+\end{enumerate}
+
+$\boxed{\Leftarrow}$ \\
+D'après (3) avec : 
+\begin{itemize}
+    \item $y = 0$ : $\times$ est LCE. 
+    \item $\lambda = 1$ : $+$ est LCI. 
+\end{itemize}
+$0\in F$ et $\lambda = -1$, $F$ est un sous-groupe, donc un groupe abélien.
+RAF pour les 4 dernières propriétés.
+
 
 \end{document}
