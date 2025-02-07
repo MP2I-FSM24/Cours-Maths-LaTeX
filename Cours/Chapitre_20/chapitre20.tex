@@ -48,5 +48,40 @@
     Vérification facile. 
 \end{enumerate}
 
+\section{Transfert de structure}
+\begin{tcolorbox}[title=Lemme 20.11, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace vectoriel sur $\mathbb{K}$, $G$ un ensemble quelconque et $\varphi:E\to G$ une bijection. Alors en définissant sur $G$ une loi interne et un loi externe par
+    $$\forall (x, y, \lambda) \in G \times G \times \mathbb{K}, x + y = \varphi(\varphi^{-1}(x) + \varphi^{-1}(y)) \text{et} \lambda.x = \varphi(\lambda \varphi^{-1}(x)),$$
+    on munit $G$ d'une structure d'espace vectoriel. 
+\end{tcolorbox}
+
+\noindent Vérifions les axiomes. 
+\begin{itemize}
+    \item LCI : 
+    \begin{align*}
+        (x + y) +  &= \varphi(\varphi^{-1}(x+y) + \varphi(z)) \\
+        &= \varphi(\underbrace{\varphi^{-1}(x) + \varphi^{-1}(y) + \varphi^{-1}(z)}_{\text{associativité dans $E$}}) \\
+        &= x + (y + z) \\
+        x + \varphi(0) &= \varphi(\varphi^{-1}(x) + 0) = x \text{ (} \varphi \text{ neutre)} \\
+        x + \varphi(-\varphi^{-1}(x)) &= \varphi(\varphi^{-1}(x) - \varphi^{-1}(x)) = \varphi(0) \\
+        x + y = y + x
+    \end{align*}
+
+    \item 
+    \begin{align*}
+        \lambda.(\mu.x) &= \varphi(\lambda \varphi^{-1}(\mu x)) \\
+        &= \varphi(\lambda \mu \varphi^{-1}(x)) \\
+        &= (\lambda \mu).x \\
+        1.x &= \varphi(1.\varphi^{-1}(x)) \\
+        &= \varphi\circ \varphi^{-1}(x) \\
+        &= x \\
+        (\mu + \lambda).x &= \varphi((\mu + \lambda).\varphi^{-1}(x)) \\
+        &= \varphi(\mu \varphi^{-1}(x) + \lambda \varphi^{-1}(x)) \\
+        &= \varphi(\mu \varphi^{-1}(x)) + \varphi(\lambda \varphi^{-1}(x)) \\
+        &= \mu.x + \lambda.x
+    \end{align*}
+    De même pour la dernière. 
+\end{itemize}
+
 
 \end{document}
