@@ -287,5 +287,28 @@ Donc $f(a)$ est un minimum global de $f$.
     \end{align*}
 \end{itemize}
 
+\section{Exemple - Inégalité arithmético-géométrique}
+\begin{tcolorbox}[title=Exemple 19.25, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $n \geq 1$. Pour tout $(x_1, \ldots, x_n) \in (\mathbb{R}_+^*)^n$
+    $$\frac{n}{\sum\limits_{k=1}^{n} \frac{1}{x_k}} \leq \sqrt[n]{\prod_{k=1}^{n} x_k} \leq \frac{1}{n}\sum_{k=1}^{n} x_k$$
+\end{tcolorbox}
+
+\noindent La fonction logarithme est concave sur $\mathbb{R}_+^*$. Soit $(x_1, \ldots, x_n) \in (\mathbb{R}_+^*)^n$. \\
+On remarque que $\sum\limits_{k=1}^{n} \frac{1}{n} = 1$. D'après l'inégalité de Jensen :
+\begin{align*}
+    \ln \left( \frac{1}{n} \sum_{k=1}^{n} x_k \right) &\geq \frac{1}{n} \sum_{k=1}^{n} \ln(x_k) \\
+    &= \frac{1}{n} \ln \left( \prod_{k=1}^{n} x_k \right) \\
+    &= \ln \left( \sqrt[n]{\prod_{k=1}^{n} x_k} \right) \\
+\end{align*} 
+On compose alors par $\exp$ (strictement croissante). \\
+D'après le résultat précédent appliqué à $\left( \frac{1}{x_1}, \ldots, \frac{1}{x_n} \right)$ : 
+\begin{align*}
+    0 < \frac{1}{\sqrt[n]{\prod\limits_{k=1}^{n} x_k}} = \sqrt[n]{\prod_{k=1}^{n} \frac{1}{x_k}} \leq \frac{1}{n} \sum_{k=1}^{n} \frac{1}{x_k} \\
+\end{align*}
+Donc ($x\mapsto \frac{1}{x}$ est strictement décroissante sur $\mathbb{R}_+^*$) :
+\begin{align*}
+    \frac{n}{\sum\limits_{k=1}^{n} \frac{1}{x_k}} \leq \sqrt[n]{\prod_{k=1}^{n} x_k}
+\end{align*}
+
 
 \end{document}
