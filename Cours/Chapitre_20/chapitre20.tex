@@ -155,5 +155,39 @@ Par définition, $Vect(X) \subset F$. \\
 Or $Vect(X)$ est un sous-espace vectoriel qui contient $X$. Il doit donc contenir les combinaisons linéaiers de $X$ soit $F$. \\
 Donc $\boxed{F = Vect(X)}$.
 
+\setsection{35}
+\section{Opérations sur les sous-espaces vectoriels engendrés}
+\begin{tcolorbox}[title=Propostion 20.36, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $A$ et $B$ deux ensembles. On a
+    \begin{enumerate}
+        \item $A \subset Vect(A)$
+        \item Si $A \subset B$ alors $Vect(A) \subset Vect(B)$. 
+        \item $A = Vect(A)$ si et seulement si $A$ est un espace vectoriel.
+        \item $Vect(Vect(A)) = Vect(A)$.
+        \item $Vect(A \cup \{x\}) = Vect(A)$ si et seulement si $x \in Vect(A)$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item RAF
+    \item RAF (20.24)
+    \item Si $A = \underbrace{Vect(A)}_{\text{sous-espace vectoriel}}$, alors $A$ est un sous-espace vectoriel. \\
+    Si $A$ est un espace vectoriel, par minimalité, $A = Vect(A)$.
+    \item RAF (20.36.3)
+    \item On a toujours $Vect(A \cup \{x\}) \supset Vect(A)$(2 0.36.2) si $Vect(A \cup \{x\}) \subset Vect(A)$. \\
+    Or $x \in Vect(A \cup \{x\})$. \\
+    Donc $x \in Vect(A)$. \\
+    Réciproquement, si $x \in Vect(A)$, d'après (20.34) : 
+    \begin{align*}
+        Vect(A \cup \{x\}) &\subset Vect(A) \\
+    \end{align*}
+    Si $u \in Vect(A \cup \{x\})$, alors : 
+    \begin{align*}
+        u &= \lambda_1 a_1 + \ldots + \lambda_n a_n + \lambda_{n+1} x \\
+        &= \lambda_1 a_1 + \ldots + \lambda_n a_n + \lambda_{n+1} (\mu_1 a'_1 + \ldots + \mu_p a'_p) \\
+        &\in Vect(A)
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
