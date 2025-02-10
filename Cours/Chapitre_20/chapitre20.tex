@@ -127,5 +127,21 @@ Ainsi :
 \end{align*}
 Donc $D_1 \subset D_2$ et par symétrie, $\boxed{D_1 = D_2}$.
 
+\setsection{26}
+\section{Intersection de sous-espaces vectoriels}
+\begin{tcolorbox}[title=Propostion 20.27, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $E$ une espace vectoriel et $(E_i)_{i\in I}$ une famille de sous-espaces vectoriels de $E$. Alors $\bigcap\limits_{i\in I} E_i$ est un sous-espace vectoriel de $E$.
+\end{tcolorbox}
+
+\begin{itemize}
+    \item $\bigcap\limits_{i\in I} E_i \subset E$.
+    \item $\forall i \in I, 0 \in E_i$ donc $0 \in \bigcap\limits_{i\in I} E_i$.
+    \item Soit $(x, y) \in \left[\bigcap\limits_{i \in I} E_i \right]^2, \lambda \in \mathbb{K}$ : 
+    \begin{align*}
+        \forall x \in I, \lambda x + y \in E_i
+    \end{align*}
+    Donc $\lambda x + y \in \bigcap\limits_{i\in I} E_i$.
+\end{itemize}
+
 
 \end{document}
