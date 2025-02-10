@@ -111,5 +111,21 @@ D'après (3) avec :
 $0\in F$ et $\lambda = -1$, $F$ est un sous-groupe, donc un groupe abélien.
 RAF pour les 4 dernières propriétés.
 
+\setsection{21}
+\section{Propostion 20.22}
+\begin{tcolorbox}[title=Propostion 20.22, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $E$ un $\mathbb{K}$-espace vectoriel, $D_1$ et $D_2$ deux droites vectorielles. Alors soit $D_1 \cap D_2 = \{ 0_E \}$, soit $D_1 = D_2$. 
+\end{tcolorbox}
+
+\noindent Par définition, $0_E \in D_1 \cap D_2$. \\
+Supposons $D_1 \cap D_2 \neq \{ 0_E \}$ et fixons $x \in D_1 \cap D_2$ avec $x \neq 0_E$. \\
+Soit $v\in D_1$. Par définition, on écrit $D_1 = \mathbb{K} x_1$ et $D_2 = \mathbb{K} x_2$. \\
+On a donc $v = \alpha x_1$, $x = \lambda_1 x_1 = \lambda_2 x_2$ avec $\lambda_1 \neq 0, \lambda_2 \neq 0$. \\
+Ainsi : 
+\begin{align*}
+    v = \alpha \lambda_1^{-1} \lambda_1 x_1 = \alpha \lambda_1^{-1} x = \alpha \lambda_1^{-1} \lambda_2 x_2 \in D_2
+\end{align*}
+Donc $D_1 \subset D_2$ et par symétrie, $\boxed{D_1 = D_2}$.
+
 
 \end{document}
