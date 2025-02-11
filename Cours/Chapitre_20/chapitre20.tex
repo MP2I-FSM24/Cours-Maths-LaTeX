@@ -260,5 +260,38 @@ Donc :
     \boxed{E \cap F = \{0\}}
 \end{align*}
 
+\setsection{46}
+\section{Unicité de l'écriture de la somme directe}
+\begin{tcolorbox}[title=Remarque 20.47, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    En d'autres termes, la somme est directe si et seulement si tout élément $x$ de $E_1 \oplus \ldots \oplus E_n$ s'écrit de façon unique sous la forme $x = x_1 + \ldots + x_n$. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+On suppose que la somme est directe. \\
+Soit $x \in E_1 \oplus \ldots \oplus E_n$. \\
+On écrit : 
+\begin{align*}
+    x &= x_1 + \ldots + x_n \\
+    &= x'_1 + \ldots + x'_n \\
+    \text{donc } \underbrace{x'_n - x_n}_{\in E_n} &= (\underbrace{x_1 - x'_1}_{\in E_1}) + \ldots + (\underbrace{x_{n-1} - x'_{n-1}}_{\in E_{n-1}}) \in E_n \cap (E_1 + \ldots + E_{n-1}) = \{0\} \\
+    \text{donc } x'_n &= x_n
+\end{align*}
+On poursuit par récurrence. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+On remarque que $0 = 0 + \ldots 0$. \\
+Soit $u \in E_n \cap (E_1 + \ldots + E_{n-1})$. \\
+Donc : 
+\begin{align*}
+    u &= e_n = e_1 + \ldots + e_{n-1} \\
+    \text{donc } e_1 + \ldots + e_{n-1} &= 0
+\end{align*}
+Par unicité : 
+\begin{align*}
+    \forall i \in \llbracket 1, n-1 \rrbracket, e_i &= 0 \\
+    \text{donc } u &= 0
+\end{align*}
+On termine le travail par récurrence. 
+
 
 \end{document}
