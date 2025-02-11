@@ -218,11 +218,47 @@ Par minimalité :
     \end{enumerate}
 \end{tcolorbox}
 
-\setcounter{enumi}{1}
 \begin{enumerate}
+    \setcounter{enumi}{1}
     \item Associativité fournie par la définition. 
     \item (20.39) + (20.43.2)
 \end{enumerate}
+
+\section*{Exemple}
+\noindent Dans $\mathbb{R}^3$, $E = Vect((1, 0, 0))$ et $F = Vect((0, 1, 0), (0, 0, 1))$. \\
+Soit $u \in E \cap F$. \\
+$u = \alpha(1, 0, 0) = \beta(0, 1, 0) + \gamma(0, 0, 1)$. \\
+Donc $(-\alpha, \beta, \gamma) = (0, 0, 0)$. \\
+Donc $\alpha = \beta = \gamma = 0$. \\ \\
+
+\noindent Dans $\mathbb{R}^4$ avec $e_1 = (1, 0, 0, 0)$, $e_2 = (0, 1, 0, 0)$, $e_3 = (0, 0, 1, 0)$ et $e_4 = (0, 0, 0, 1)$. \\
+$E = Vect(e_1 + e_2 + e_3, e_1 + e_2 + e_3 + e_4)$ \\
+$F = Vect(e_1 + e_3, 2e_2 + e_1 - e_4)$ \\
+Soit $u \in E \cap F$. \\
+\begin{align*}
+    u &= \alpha(e_1 + e_2 + e_3) + \beta(e_1 + e_2 + e_3 + e_4) = (\alpha + \beta, \alpha + \beta, \beta) \\
+    &= \gamma(e_1 + e_3) + \delta(2e_2 + e_1 - e_4) = (\gamma + \delta, 2\delta, \gamma, -\delta)
+\end{align*}
+Donc : 
+\begin{align*}
+    &\begin{cases}
+        \alpha + \beta - \gamma - \delta = 0 \\
+        \alpha + \beta - 2\delta = 0 \\
+        \alpha + \beta - \gamma = 0 \\
+        \beta + \delta = 0
+    \end{cases} \\
+    \text{donc } 
+    &\begin{cases}
+        \delta = 0 \text{ ($L_1 - L_3$)} \\
+        \beta = 0 \text{ ($L_4$)} \\
+        \alpha = 0 \text{ ($L_2$)} \\
+        \gamma = 0 \text{ ($L_2$)}
+    \end{cases}
+\end{align*}
+Donc : 
+\begin{align*}
+    \boxed{E \cap F = \{0\}}
+\end{align*}
 
 
 \end{document}
