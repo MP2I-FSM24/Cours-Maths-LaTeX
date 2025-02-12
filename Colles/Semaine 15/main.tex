@@ -1,0 +1,308 @@
+\documentclass[titlepage, twoside]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{subfiles}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{dsfont}
+\usepackage{tikz}
+\usepackage{cancel}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage[dvipsnames]{xcolor}
+
+\geometry{a4paper, left=20mm, right=20mm, top=20mm, bottom=20mm}
+
+\setcounter{tocdepth}{3}
+
+\definecolor{darkgreen}{RGB}{6, 64, 43}
+\definecolor{lightblue}{RGB}{87, 185, 255}
+
+\pagestyle{fancy}
+\fancyhead
+\fancyfoot
+
+\fancyhead[L]{Programme de colle}
+\fancyhead[R]{Axel Montlahuc}
+\fancyfoot[C]{\thepage}
+
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \@starttoc{toc}
+}
+\makeatother
+\renewcommand{\thesection}{\Roman{section}}
+
+\begin{document}
+\chapter*{Programme de colle : semaine 15}
+\tableofcontents
+
+\section{Arithmétique des polynômes}
+\subsection{Questions de cours}
+\subsubsection{Enoncer et démontrer le théorème de la division euclidienne sur $\mathbb{K}[X]$}
+\begin{tcolorbox}[title=Théorème 16.1, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $A \in \mathbb{K}[X]$ et $B \in \mathbb{K}[X]$ non nul, il existe un unique couple de polynômes $(Q,R)$ tel que $A = BQ + R$ avec $\deg R < \deg B$. Le polynôme $Q$ est appelé \textbf{quotient} et $R$ le \textbf{reste}. 
+\end{tcolorbox}
+
+\noindent \underline{Existence :} \\
+On raisonne par récurrence sur le degré de $A$. \\
+\begin{itemize}
+    \item Pour $n = \deg A = 0$. Soit $A \in \mathbb{K}[X]$.
+    \begin{itemize}
+        \item Si $\deg B > 0$, alors $(0, A)$ convient. \\
+        \item Si $\deg B = 0$, le couple $(B^{-1} \times A, 0)$ convient (comme $B$ est constant et non nul), alors $B \in \mathbb{K}^*$ donc inversible). \\
+    \end{itemize}
+
+    \item On suppose le résultat vrai pour tout $A \in \mathbb{K}_n[X]$. \\
+    Soit $A \in \mathbb{K}_{n+1}[X]$ avec $\deg A = n+1$. \\
+    On écrit $A = \underbrace{a}_{\neq 0} X^{n+1} + A_1$ avec $A_1 \in \mathbb{K}_n[X]$. 
+    \begin{itemize}
+        \item Si $\deg A < \deg B$, le couple $(0, A)$ convient. 
+        \item Si $\deg A \geq \deg B$ et on note $b$ le coefficient dominant de $B$ : 
+        \begin{align*}
+            A - ab^{-1} B \times X^{n+1 - \deg B} \in \mathbb{K}_n[X]
+        \end{align*}
+        D'après l'hypothèse de récurrence, on choisit $(Q, R) \in \mathbb{K}[X]^2$ tel que $\deg R < \deg B$ et $A - ab^{-1} B \times X^{n+1 - \deg B} = QB + R$. \\
+        Donc : 
+        \begin{align*}
+            A = \left[ Q + ab^{-1}X^{n+1 - \deg A} \right] \times B + R
+        \end{align*}
+    \end{itemize}
+\end{itemize}
+
+\noindent\underline{Unicité :} \\
+On suppose que $A = BQ + R = BQ_1 + R_1$. \\
+Donc : 
+\begin{align*}
+    B(Q - Q_1) &= R_1 - R \\
+    \text{donc } \underbrace{\deg{(B(Q - Q_1))}}_{\deg{B} + \deg{Q - Q_1}} &= \deg{(R_1 - R)} \\
+    &\leq \max(\deg{R_1}, \deg{R}) \\
+    &< \deg{B} \\
+    \text{donc } \deg{(Q - Q_1)} &< 0 \\
+    \text{donc } Q - Q_1 &= 0 \\
+    \text{puis } R_1 - R = 0
+\end{align*}
+
+\subsubsection{Enoncer et démontrer le théorème de principalité dans $\mathbb{K}[X]$}
+\begin{tcolorbox}[title=Théorème 16.15, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ un idéal de $\mathbb{K}[X]$ non réduit à $\{0\}$. Il existe un unique polynôme unitaire $D$ tel que
+    $$I = D \mathbb{K}[X]$$
+\end{tcolorbox}
+
+\noindent \underline{Existence :} \\
+Soit $I \neq \{0\}$ un idéal. \\
+On note $A = \{ \deg P, P \in I\backslash \{0\} \} \subset \mathbb{N}$. \\
+$A \neq \emptyset$ ($I \neq \{0\}$), d'après la propriété fondamentale de $\mathbb{N}$, $A$ possède un plus petit élément noté $n \geq 0$. \\
+Comme $n \in A$, on choisit $D \in I$ tel que $\deg D = n$. \\
+Comme $I$ est un idéal de $\mathbb{K}[X]$ et que $\mathbb{K} = \mathbb{K}_0[X] \subset \mathbb{K}[X]$, on a : 
+\begin{align*}
+    \forall \alpha \in \mathbb{K}, \alpha D \in I
+\end{align*}
+On peut donc supposer $D$ unitaire. 
+Comme $I$ est un idéal de $\mathbb{K}[X]$, on a : 
+\begin{align*}
+    D \times \mathbb{K}[X] \subset I
+\end{align*}
+Soit $P \in I$. On effectue la division euclidienne de $P$ par $D$ ($\neq 0$) : 
+\begin{align*}
+    P = BD + R
+\end{align*}
+avec $\deg R \subset \deg D$. \\
+Or : 
+\begin{align*}
+    R &= \underbrace{P}_{\in I} - \underbrace{BD}_{\in I} \\
+    &\in I
+\end{align*}
+Par définition de $\deg D = n$, $R = 0$. \\ \\
+
+\noindent \underline{Unicité :} \\
+\begin{align*}
+    I = D \mathbb{K}[X] = J \mathbb{K}[X] \\
+\end{align*}
+avec $D$ et $J$ unitaires. \\
+Or ils sont associés, donc égaux. 
+
+\subsubsection{Enoncer et démontrer la caractérisation des PGCD par les idéaux de $\mathbb{K}[X]$}
+\begin{tcolorbox}[title=Propostion 16.18, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $A$ et $B$ deux polynômes non tous deux nuls. Soit $D \in \mathbb{K}[X]$. Alors $D$ est un PGCD de $A$ et $B$ si et seulement si 
+    $$A \mathbb{K}[X] + B \mathbb{K}[X] = D \mathbb{K}[X].$$
+\end{tcolorbox}
+
+\noindent D'après (16.15), on choisit $F \in \mathbb{K}[X]$ tel que :
+\begin{align*}
+    A \mathbb{K}[X] + B \mathbb{K}[X] = F \mathbb{K}[X]
+\end{align*}
+Soit $D \in \mathbb{K}[X]$. \\ \\
+
+$\boxed{\Rightarrow}$ \\
+On suppose que $D$ est un PGCD. \\
+Donc $D|A$ et $D|B$. \\
+Donc $D|F \text{ (combinaison $F \in A \mathbb{K}[X] + B \mathbb{K}[X]$)}$. \\
+Or $F|A$ et $F|B$ ($A \in F \mathbb{K}[X]$, $B \in F \mathbb{K}[X]$). \\
+Par maximalité de $\deg D$, on a $F$ et $D$ associés. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+\begin{align*}
+    D \mathbb{K}[X] = A \mathbb{K}[X] + B \mathbb{K}[X] = F \mathbb{K}[X]
+\end{align*}
+Donc $D|A$ et $D|B$. \\
+Pour tout diviseur commun $P$ de $A$ et $B$, $P|A$ et $P|B$. \\
+Donc $P|D$ ($D \in A \mathbb{K}[X] + B \mathbb{K}[X])$. \\
+Donc $\deg D$ est maximal pour la divisibilité. 
+
+\subsection{Exercices types}
+\begin{tcolorbox}[title=Exercice 1, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $\left(P_n\right)_{n \in \mathbb{N}}$ la suite de polynômes définie par les relations
+    $$P_0=0, P(1)=1 \text { et } \forall n \in \mathbb{N}, P_{n+2}=X P_{n+1}-P_n$$
+    \begin{enumerate}
+        \item Déterminer $P_2$ et $P_3$.
+        \item Pour tout $n \in \mathbb{N}^*$, déterminer le degré et le coefficient dominant de $P_n$.
+        \item Montrer que pour tout $n \in \mathbb{N}, P_{n+1}^2=1+P_n P_{n+2}$.
+        \item En déduire que pour tout $n \in \mathbb{N}, P_n$ et $P_{n+1}$ sont premiers entre eux.
+        \item Montrer que pour tout $m \in \mathbb{N}$ et pour tout $n \in \mathbb{N}^*$, on a
+        $$P_{m+n}=P_n P_{m+1}-P_{n-1} P_m$$
+        \item Montrer que pour tout $m \in \mathbb{N}$ et tout $n \in \mathbb{N}^*$, on a
+        $$P_{m+n} \wedge P_n=P_n \wedge P_m$$
+        En déduire que
+        $$P_m \wedge P_n=P_n \wedge P_r$$
+        où $r$ est le reste de la division euclidienne de $m$ par $n$.
+        \item Conclure que pour tout $m \in \mathbb{N}$ et tout $n \in \mathbb{N}^*$, on a
+        $$P_n \wedge P_m=P_{n \wedge m}.$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Exercice 2, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Calculer le reste de la division euclidienne de $X^n$ par $(X-1)^4$ pour tout $n \geq 4$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Exemple 3, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $\theta \in \mathbb{R}$ et $n \in \mathbb{N}^*$. On note $P$ le polynôme $(X+1)^n-\mathrm{e}^{2 \mathrm{in} n}$.
+    \begin{enumerate}
+        \item Déterminer les racines de $P$ dans $\mathbb{C}$.
+        \item En déduire que $P$ est scindé à racines simples sur $\mathbb{C}$.
+        \item Simplifier le produit $\prod\limits_{k=0}^{n-1} \sin \left(\theta+\frac{k \pi}{n}\right)$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Exercice 4, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $P \in \mathbb{R}[X]$ tel que pour tout $x \in \mathbb{R}, P(x) \geq 0$.
+    \begin{enumerate}
+        \item Montrer que si $P \neq 0$, alors toute racine réelle de $P$ est de multiplicité paire.
+        \item En déduire que $P=A^2+B^2$, avec $(A, B) \in(\mathbb{R}[X])^2$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\section{Fractions rationnelles}
+\subsection{Questions de cours}
+\subsubsection{Enoncer et démontrer le théorème sur les propriétés du degré}
+\begin{tcolorbox}[title=Théorème 17.13, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $F$ et $G$ deux fractions rationnelles. On a
+    $$\deg(F + G) \leq \max(\deg(F), \deg(G)) \text{ et } \deg(F \times G) = \deg(F) + \deg(G).$$
+    On retrouve les mêmes propriétés que pour les polynômes. 
+\end{tcolorbox}
+
+\noindent Soit $F = \frac{P}{Q}$ et $G = \frac{R}{S}$. 
+\begin{itemize}
+    \item \begin{align*}
+        \deg(F + G) &= \deg(\frac{PS + QR}{QS}) \\
+        &= \deg(PS + QR) - \deg(QS) \\
+        &\leq \max(\deg(PS), \deg(QR)) - \deg(QS) \\
+        &= \max(\deg(PS) - \deg(QS), \deg(QR) - \deg(QS)) \\
+        &= \max\left(\deg \left(\frac{P}{Q}\right), \deg \left(\frac{R}{Q}\right)\right) \\
+        &= \max(\deg(F), \deg(G))
+    \end{align*}
+
+    \item RAS
+\end{itemize}
+
+\subsubsection{Démontrer que si deux fractions rationnelles sont égales sur une partie infinie, alors les fractions rationnelles sont égales. Définir et démontrer l'existence de la partie entière d'une fraction rationnelle}
+\begin{tcolorbox}[title=Théorème 17.19, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $F$ et $G$ deux fractions rationnelles. Si les fonctions rationnelles $\tilde F$ et $\tilde G$ sont égales sur une partie infinie $\mathcal D_F \cap \mathcal D_G$ alors les fractions rationnelles sont égales, i.e. $F = G$. 
+\end{tcolorbox}
+
+\noindent On note $F = \frac{P}{Q}$ et $G = \frac{R}{S}$ avec $P \wedge Q = 1$ et $R \wedge S = 1$. \\
+On a : 
+\begin{align*}
+    \forall x \in \mathcal{D} \subset \mathcal{D}_F \cap \mathcal{D}_G, \tilde F(x) = \tilde G(x)
+\end{align*}
+Soit : 
+\begin{align*}
+    \forall x \in \mathcal{D}, \tilde{P(x)} \times \tilde{S(x)} = \tilde{R(x)} \times \tilde{Q(x)}
+\end{align*}
+Comme $\mathcal{D}$ est infini, d'après le théorème de rigidité, $PS = RQ$, donc $F = G$.
+
+\begin{tcolorbox}[title=Théorème 17.25, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $F \in \mathbb{K}(X)$. Il existe un unique polynôme $Q$ tel que $\deg(F - Q) < 0$. Celui-ci est appelé \textbf{partie entière} de $F$, c'est le quotient dans la division euclidienne du numérateur de $F$ par le dénominateur. 
+\end{tcolorbox}
+
+\noindent \underline{Existence :} \\
+Soit $F = \frac{A}{B}$ avec $A \wedge B = 1$. \\
+Soit la division euclidiene de $A$ par $B$ : 
+\begin{align*}
+    A = BQ + R \text{ avec } \deg(R) < \deg(B)
+\end{align*}
+Donc : 
+\begin{align*}
+    F = \frac{A}{B} = \frac{BQ + R}{B} = Q + \frac{R}{B}
+\end{align*}
+Donc : 
+\begin{align*}
+    \deg(F - Q) = \deg\left(\frac{R}{B}\right) = \deg(R) - \deg(B) < 0
+\end{align*} \\
+
+\noindent \underline{Unicité :} \\
+On suppose que : 
+\begin{align*}
+    F = Q + G = Q_1 + G_1 \text{ avec } (Q_1, G_1) \in \mathbb{K}[X]^2 \text{ et } \deg(G), \deg(G_1) < 0
+\end{align*}
+Donc :
+\begin{align*}
+    Q - Q_1 &= G_1 - G \\
+    \text{donc } \deg(Q - Q_1) &= \deg(G_1 - G) \\
+    &\leq \max(\deg(G_1), \deg(G)) \\
+    &< 0
+\end{align*}
+Or $Q - Q_1 \in \mathbb{K}[X]$, donc $Q = Q_1$. 
+
+\subsubsection{Enoncer et démontrer l'existence d'une décomposition pour une fraction rationnelle de la forme $\frac{A}{TS}$ avec $T$ et $S$ premiers entre eux et $\deg \left( \frac{A}{TS} \right) < 0$}
+\begin{tcolorbox}[title=Théorème 17.31, title filled=false, colframe=orange, colback=orange!10!white]
+    Si $T$ et $S$ sont deux polynômes premiers entre eux et si $\deg \left( \frac{A}{TS} \right) < 0$, alors il existe deux polynômes $U$ et $V$ tels que
+    $$\frac{A}{TS} = \frac{U}{T} + \frac{V}{S} \text{, avec } \deg(U) < \deg(T) \text{ et } \deg(V) < \deg(S).$$
+\end{tcolorbox}
+
+\noindent Comme $T \wedge S = 1$, d'après le théormème de Bézout, on écrit : 
+\begin{align*}
+    CT + DS = 1
+\end{align*}
+Donc : 
+\begin{align*}
+    ACT + DSA = A
+\end{align*}
+Donc : 
+\begin{align*}
+    \frac{A}{TS} &= \frac{ACT + DSA}{TS} \\
+    &= \frac{DA}{T} + \frac{AC}{S}
+\end{align*}
+On écrit la division euclidienne de $DA$ par $T$ et de $AC$ par $S$ :
+\begin{align*}
+    DA &= TQ + U \text{ avec } \deg(U) < \deg(T) \\
+    AC &= SH + V \text{ avec } \deg(V) < \deg(S)
+\end{align*}
+Donc :
+\begin{align*}
+    \frac{A}{TS} = \frac{U}{T} + \frac{V}{S} + Q + H
+\end{align*}
+Ainsi : 
+\begin{align*}
+    \deg (Q + H) &= \deg \left( \frac{A}{TS} - \frac{U}{T} - \frac{V}{S} \right) \\
+    &\leq \max(\ldots, \ldots, \ldots) \\
+    &< 0
+\end{align*}
+Donc $Q + H = 0$. 
+
+
+\end{document}
