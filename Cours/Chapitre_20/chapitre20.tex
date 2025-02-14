@@ -342,11 +342,65 @@ Par hypothèse :
 \end{align*}
 On poursuit le travail par récurrence pour montrer que la somme est directe. \\ \\
 
-$\boxed{3 \Rightarrow 4}$ \\
+$\boxed{3 \Rightarrow 4}$ \\ \\
 RAF : (20.47)
 
 $\boxed{4 \Rightarrow 1, 2}$ \\
 RAF : définition de l'injectivité pour $2$. 
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 20.54, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{enumerate}
+        \item Montrer que la famille $((1, 1), (0, 1))$ est libre. 
+        \item Montrer que la famille $((1, 2, 1), (1, 0, 1), (0, 1, -1))$ est libre. 
+        \item Montrer que la famille $((1, 2, 1), (1, 0, 1), (1, 6, 1))$ est liée. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On suppose $\alpha(1, 1) + \beta(0, 1) = 0$. \\
+    Donc : 
+    \begin{align*}
+        &\begin{cases}
+            \alpha = 0 \\
+            \alpha + \beta = 0
+        \end{cases} \\
+        \text{donc } &\alpha = \beta = 0
+    \end{align*}
+    La famille est libre. 
+
+    \item Par équivalence. Soit $(a, b, c) \in \mathbb{R}^3$. On a :\\
+    \begin{align*}
+        &a(1, 2, 1) + b(1, 0, 1) + c(0, 1, -1) = (0, 0, 0) \\
+        &\Leftrightarrow \begin{cases}
+            a + b &= 0 \\
+            2a + c &= 0 \\
+            a + b - c &= 0
+        \end{cases} \\
+        &\Leftrightarrow \begin{cases}
+            b + a &= 0 \\
+            2a + c &= 0 \\
+            c &= 0
+        \end{cases} \\
+        &\Leftrightarrow a = b = c = 0
+    \end{align*}
+    La famille est libre. 
+
+    \item Avec les mêmes notations : 
+    \begin{align*}
+        &a(1, 2, 1) + b(1, 0, 1) + c(1, 6, 1) = (0, 0, 0) \\
+        &\Leftrightarrow \begin{cases}
+            a + b + c &= 0 \\
+            2a + 6c &= 0 \\
+            a + b + c &= 0
+        \end{cases} \\
+        &\Leftrightarrow \begin{cases}
+            a + b + c &= 0 \\
+            a + 3c &= 0 \\
+        \end{cases}
+    \end{align*}
+    Le système admet des solutions non nulles (par exemple $(-3, 2, 1)$), donc la famille est liée. 
+\end{enumerate}
 
 
 \end{document}
