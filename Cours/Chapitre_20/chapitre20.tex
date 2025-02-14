@@ -293,5 +293,60 @@ Par unicité :
 \end{align*}
 On termine le travail par récurrence. 
 
+\setsection{50}
+\section{Famille libre}
+\begin{tcolorbox}[title=Propostion 20.51, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Une famille $(x_i)_{i\in I}$ de vecteurs de $E$ est \textbf{libre} si une des propriétés équivalentes suivantes est vérifiée :
+    \begin{enumerate}
+        \item Pour toute famille $(\lambda_i)_{i\in I}$ de scalaires de $\mathbb{K}$, à support fini, $\sum\limits_{i\in I} \lambda_i x_i = 0 \Rightarrow \forall i \in I, \lambda_i = 0$.
+        \item Pour tout $x \in Vect((x_i)_{i\in I})$ il existe une \textbf{unique} famille $(\lambda_i)_{i\in I}$ de scalaires de $\mathbb{K}$, à support fini, telle que $x = \sum\limits_{i\in I} \lambda_i x_i$. \\
+        Si de plus, $I = \llbracket 1, n \rrbracket$, les points précédents sont équivalents aux points suivants :
+        \item Les $x_i$ sont non nuls et la somme $\mathbb{K} x_1 \oplus \ldots \oplus \mathbb{K} x_n$ est directe. 
+        \item La fonction $\varphi:\mathbb{K}^n\to E; (\lambda_1, \ldots, \lambda_n) \mapsto \lambda_1 x_1 + \ldots + \lambda_n x_n$ est injective.
+    \end{enumerate}
+\end{tcolorbox}
+
+$\boxed{1 \Rightarrow 2}$ \\
+On écrit, pour tout $x \in Vect((x_i)_{i\in I})$ :
+\begin{align*}
+    x = \sum_{i\in I} \lambda_i x_i &= \sum_{i\in I} \mu_i x_i \\
+    \text{donc } \sum_{i\in I} (\lambda_i - \mu_i) x_i &= 0
+\end{align*}
+Comme $(\lambda_i)$ et ($\mu_i$) sont des familles de sclaires à support fini, $(\lambda_i - \mu_i)$ aussi et d'après (20.51.1) : 
+\begin{align*}
+    \forall i \in I, \lambda_i - \mu_i = 0
+\end{align*}
+
+$\boxed{2 \Rightarrow 1}$ \\
+Soit $\sum\limits_{i\in I} = 0$ avec $(\lambda_i)$ une famille de scalaires à support fini. \\
+Comme : 
+\begin{align*}
+    0 = \sum_{i\in I} 0 x_i
+\end{align*}
+Par unicité :
+\begin{align*}
+    \forall i \in I, \lambda_i = 0
+\end{align*}
+
+$\boxed{1, 2 \Rightarrow 3}$ \\
+Nécessairement, les $x_i$ sont tous non nuls (sinon, on écrit $1 \times x_1 = 0$). \\
+Soit $x \in (\mathbb{K} + \ldots + \mathbb{K} x_{n-1}) \cap \mathbb{K} x_n$. \\
+On écrit :
+\begin{align*}
+    x = \alpha_1 x_1 + \ldots + \alpha_{n-1} x_{n-1} &= \alpha_n x_n \\
+    \text{donc } \alpha_1 x_1 + \ldots + \alpha_{n-1} x_{n-1} - \alpha_n x_n &= 0
+\end{align*}
+Par hypothèse : 
+\begin{align*}
+    \forall i \in \llbracket 1, n \rrbracket, \alpha_i = 0
+\end{align*}
+On poursuit le travail par récurrence pour montrer que la somme est directe. \\ \\
+
+$\boxed{3 \Rightarrow 4}$ \\
+RAF : (20.47)
+
+$\boxed{4 \Rightarrow 1, 2}$ \\
+RAF : définition de l'injectivité pour $2$. 
+
 
 \end{document}
