@@ -402,5 +402,30 @@ RAF : définition de l'injectivité pour $2$.
     Le système admet des solutions non nulles (par exemple $(-3, 2, 1)$), donc la famille est liée. 
 \end{enumerate}
 
+\setsection{57}
+\section{Caractérisation de la liberté pour des familles infinies}
+\begin{tcolorbox}[title=Propostion 20.58, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Une famille $(x_i)_{i\in I}$ est libre si et seulement si toutes ses sous-familles finies sont libres.
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+RAF : (20.57) \\ \\
+
+$\boxed{\Leftarrow}$ \\
+Soit $(\lambda_i)_{i\in I}$ une famille à support fini telle que : \\
+\begin{align}
+    \sum_{i\in I} \lambda_i x_i = 0
+\end{align}
+On choisit $J \subset I$, fini, tel que : 
+\begin{align*}
+    \forall i \in I \backslash J, \lambda_i &= 0 \\
+    \text{donc } \sum_{i\in J} \lambda_i x_i &= 0
+\end{align*}
+Or $(x_i)_{i\in J}$ est libre (finie), donc : 
+\begin{align*}
+    \forall i \in J, \lambda_i &= 0 \\
+    \text{donc } \forall i \in I, \lambda_i &= 0
+\end{align*}
+
 
 \end{document}
