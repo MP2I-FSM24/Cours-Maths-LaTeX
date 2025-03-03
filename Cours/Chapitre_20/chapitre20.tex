@@ -443,5 +443,28 @@ Par hypothèse, $(x_0, \ldots, x_n)$ est libre. \\
 Donc (20.57), $(x_i)_{i\in J}$ est libre. \\
 D'après (20.58), $(x_i)_{i\in \mathbb{N}}$ est libre. 
 
+\section{Ajout d'un élément à une famille libre}
+\begin{tcolorbox}[title=Propostion 20.61, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $(x_i)_{i\in I}$ une famille libre de $E$ et $x_j \in E$ avec $j \not\in I$. La famille $(x_i)_{i\in I \cup \{j\}}$ est libre si et seulement si $x_j \not\in Vect((x_i)_{i\in I})$. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+Si $x_j \in Vect(x_i)_{i\in I}$, alors $(x_i)_{i\in I \cup \{j\}}$ est liée. \\
+En effet, $x_j = \sum\limits_{i\in J} \lambda_i x_i$ avec $J$ fini. \\
+Donc $\sum\limits_{i \in J\cup \{j\}} \lambda_i x_i = 0$ avec $\lambda_j = -1$. \\
+La famille $(x_i)_{i\in J \cup \{j\}}$. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+On suppose que $(x_i)_{i\in J \cup \{j\}}$ est liée. \\
+On choisit une famille de scalaires à support fini $(\lambda_i)_{i\in I \cup \{j\}}$ telle que : 
+\begin{align*}
+    \sum_{i \in I \cup \{j\}} \lambda_i x_i = 0 \text{ et } (\lambda_i) \neq (0) 
+\end{align*}
+Donc : 
+\begin{align*}
+    \lambda_j + x_j + \sum_{i\in I} = 0 
+\end{align*}
+Comme $(x_i)_{i\in I}$ est libre, $\lambda_j \neq 0$ et $x_j = -\sum\limits_{i\in I} \lambda_i \lambda_j^{-1} x_i \in Vect((x_i)_{i\in I})$. 
+
 
 \end{document}
