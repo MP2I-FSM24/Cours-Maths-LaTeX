@@ -427,5 +427,21 @@ Or $(x_i)_{i\in J}$ est libre (finie), donc :
     \text{donc } \forall i \in I, \lambda_i &= 0
 \end{align*}
 
+\setsection{59}
+\section{Caractérisation de la liberté pour les familles infinies indexées par $\mathbb{N}$}
+\begin{tcolorbox}[title=Propostion 20.60, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Une famille $(x_i)_{i\in \mathbb{N}}$ est libre si et seulement si pour tout $n\in \mathbb{N}$, la famille $(x_0, \ldots, x_n)$ est libre. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+Si $(x_i)_{i\in \mathbb{N}}$ est libre, alors (20.58) ses sous-familles finies sont libres, en particulier celles sous la forme $(x_0, \ldots, x_n)$. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+Soit $(x_i)_{i\in J}$ avec $J$ un sous-ensemble fini de $\mathbb{N}$. \\
+Or pose $n = \max J$, donc $J \subset \llbracket 0, n \rrbracket$. \\
+Par hypothèse, $(x_0, \ldots, x_n)$ est libre. \\
+Donc (20.57), $(x_i)_{i\in J}$ est libre. \\
+D'après (20.58), $(x_i)_{i\in \mathbb{N}}$ est libre. 
+
 
 \end{document}
