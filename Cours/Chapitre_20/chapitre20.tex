@@ -479,5 +479,33 @@ Donc (20.61) :
     x \in Vect(\mathcal{F})
 \end{align*}
 
+\section{Caractérisation des sommes directes par la liberté}
+\begin{tcolorbox}[title=Propostion 20.64, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $E_1, \ldots, E_n$ des espaces sous-espaces vectoriels non triviaux de $E$. Alors la somme $E_1 \oplus \ldots \oplus E_n$ est directe si et seulement si tout $n$-uplet $(x_1, \ldots, x_n)$ d'éléments tous non nuls de $E_1 \times \ldots \times E_n$ est une famille libre dans $E$. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+On suppose $\bigoplus\limits_{i=1}^n E_i$. Soit $(x_1, \ldots, x_n) \in E_1 \times \ldots \times E_n, x_i \neq 0$. \\
+Soit $(\lambda_1, \ldots, \lambda_n) \in \mathbb{K}^n$ telle que : 
+\begin{align*}
+    \sum_{i=1}^{n} \lambda_i x_i = 0
+\end{align*}
+En particulier, $\lambda_i x_n = -\sum\limits_{i=1}^{n-1} \lambda_i x_i \in E_n \cap \sum\limits_{i=1}^{n-1} E_i = \{0\}$. 
+Donc $\lambda_n = 0$. On réitère le procédé pour trouver $\lambda_n = \ldots = \lambda_1 = 0$. \\
+Donc $(x_1, \ldots, x_n)$ est libre. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+Soit $x\in E_n \cap \sum E_i$. On écrit $x = x_n = \sum\limits_{i=1}^{n-1} x_i$. \\
+Donc : 
+\begin{align*}
+    x_1 + \ldots + x_{n-1} - x_n = 0
+\end{align*}
+Par hypotèse, on doit avoir : 
+\begin{align*}
+    x_n = x_{n-1} = \ldots = x_1 = 0
+\end{align*}
+Donc $x=0$ et $E_n \cap \left( \sum\limits_{i=1}^{n-1}E_i \right) = \{0\}$. \\
+On réitère le procédé pour montrer que $\bigoplus\limits_{i=1}^n E_i$. 
+
 
 \end{document}
