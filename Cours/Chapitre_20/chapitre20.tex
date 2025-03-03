@@ -505,7 +505,29 @@ Par hypotèse, on doit avoir :
     x_n = x_{n-1} = \ldots = x_1 = 0
 \end{align*}
 Donc $x=0$ et $E_n \cap \left( \sum\limits_{i=1}^{n-1}E_i \right) = \{0\}$. \\
-On réitère le procédé pour montrer que $\bigoplus\limits_{i=1}^n E_i$. 
+On réitère le procédé pour montrer que $\bigoplus\limits_{i=1}^n E_i$.
+
+\section{Somme directes et caractérisation de familles libres}
+\begin{tcolorbox}[title=Propostion 20.65, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    \begin{enumerate}
+        \item Soit $F$ et $G$ deux sous-espaces vectoriels de $E$ tel que $F+G$ soit directe. Alors la concaténation d'une famille libre de $F$ et d'une famille libre d $G$ est une famille libre de $E$. 
+        \item Réciproquement, si $(b_1, \ldots, b_n)$ est une famille libre de $E$, alors $Vect(b_1, \ldots, b_k) \oplus Vect(b_{k+1}, \ldots, b_n)$ est directe. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $(x_1, \ldots, x_k)$ famille libre de $F$. \\
+    $(x_{k+1}, \ldots, x_n)$ famille libre de $G$. \\
+    Soit $(\lambda_i)_{i\in \llbracket 1, n \rrbracket} \in \mathbb{K}^n$ telle que : 
+    \begin{align*}
+        \sum_{i=1}^{n} \lambda_i x_i &= 0 \\
+        \text{donc } \sum_{i=1}^{k} \lambda_i x_i &= -\sum_{i=k+1}^{n} \lambda_i x_i \in F \cap G = \{0\} \\
+        \text{donc } \sum_{i=1}^{k} \lambda_i x_i &= 0 = \sum_{i = k+1}^{n} \lambda_i x_i \\
+        \text{donc } \lambda_i &= 0 \text{ pour } i\in \llbracket 1, k \rrbracket \cup \llbracket k+1, n \rrbracket
+    \end{align*}
+
+    \item RAS
+\end{enumerate}
 
 
 \end{document}
