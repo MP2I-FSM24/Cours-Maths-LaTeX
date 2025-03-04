@@ -41,6 +41,19 @@ Si ils sont tous les deux égaux à $f(a)$, alors $f$ est constante et $f'(c) = 
 Sinon, l'un des deux est différent de $f(a) = f(b)$ et est atteint dans $]a, b[$. \\
 D'après (18.13), $f'(c) = 0$. 
 
+\setsection{20}
+\section{Théorème des accroissements finis}
+\begin{tcolorbox}[title=Théorème 18.21, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f:[a, b]\to \mathbb{R}$, continue sur $[a, b]$ et dérivable sur $]a, b[$. Alors il existe $c\in ]a, b[$ tel que :
+    \begin{align*}
+        f(b) - f(a) = f'(c)(b - a)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $g:[a, b] \to \mathbb{R}; x \mapsto f(x) - f(a) - \frac{f(b) - f(a)}{b - a}(x - a)$. \\
+$g \in \mathcal{C}^0([a, b], \mathbb{R}) \cap \mathcal{D}^1(]a, b[, \mathbb{R})$. \\
+$g(a) = f(a) = g(b)$, donc d'après le théorème de Rolle, on choisit $c\in ]a, b[$ tel que $g'(c) = 0$.
+
 \setsection{42}
 \section{Théorème de prolongement de classe $\mathcal{C}^n$ - HP}
 \begin{tcolorbox}[title=Théorème 18.43 - HP, title filled=false, colframe=orange, colback=orange!10!white]
