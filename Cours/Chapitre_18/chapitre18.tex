@@ -6,6 +6,29 @@
 \tableofcontents
 \clearpage
 
+\setsection{12}
+\section{Condition nécessaire du premier ordre pour l'existence d'un extremum}
+\begin{tcolorbox}[title=Théorème 18.13, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ une fonction définie sur $I$ un intervalle ouvert et $x_0 \in I$. Si $f$ est dérivable en $x_0$ et admet un extremum local en $x_0$, alors $f'(x_0) = 0$. 
+\end{tcolorbox}
+
+\noindent On suppose que $f$ atteint un maximum local en $x_0$. \\
+On choisit $U \in \mathcal V(x_0)$ tel que : 
+\begin{align*}
+    \forall x \in U \cap I, f(x) \leq f(x_0)
+\end{align*}
+En particulier : 
+\begin{align*}
+    \forall x \in U, x > x_0, \frac{f(x) - f(x_0)}{x - x_0} &\leq 0 \\
+    \forall x \in U, x < x_0, \frac{f(x_0) - f(x)}{x_0 - x} &\geq 0
+\end{align*}
+D'après le TCILPPL : 
+\begin{align*}
+    f'_{\text{droite}}(x_0) \leq 0 \text{ et } f'_{\text{gauche}}(x_0) \geq 0
+\end{align*}
+Donc $f$ est dérivable en $x_0$. \\
+Donc $f'_g(x_0) = f'_d(x_0) = 0$. 
+
 \setsection{42}
 \section{Théorème de prolongement de classe $\mathcal{C}^n$ - HP}
 \begin{tcolorbox}[title=Théorème 18.43 - HP, title filled=false, colframe=orange, colback=orange!10!white]
