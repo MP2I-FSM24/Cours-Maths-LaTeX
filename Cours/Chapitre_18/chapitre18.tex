@@ -54,6 +54,40 @@ D'après (18.13), $f'(c) = 0$.
 $g \in \mathcal{C}^0([a, b], \mathbb{R}) \cap \mathcal{D}^1(]a, b[, \mathbb{R})$. \\
 $g(a) = f(a) = g(b)$, donc d'après le théorème de Rolle, on choisit $c\in ]a, b[$ tel que $g'(c) = 0$.
 
+\setsection{36}
+\section{Caractérisation par la dérivée de la variation des fonctions}
+\begin{tcolorbox}[title=Théorème 18.37, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ un intervalle et $f:I\to \mathbb{R}$ une fonction continue sur $I$ et dérivable sur $I \backslash X$, où $X$ est un ensemble fini. Alors : 
+    \begin{enumerate}
+        \item $f$ est croissante sur $I$ si et seulement si pour tout $x\in I\backslash X$, $f'(x) \geq 0$. Si cette inégalité est stricte sauf en un nombre fini de points, alors $f$ est strictement croissante.
+        \item $f$ est décroissante sur $I$ si et seulement si pour tout $x\in I\backslash X$, $f'(x) \leq 0$. Si cette inégalité est stricte sauf en un nombre fini de points, alors $f$ est strictement décroissante.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $\boxed{\Rightarrow}$ \\
+    On suppose $f$ croissante. Soit $a \in I\backslash X$. Soit $x \in I \backslash \{a\}$. On a : 
+    \begin{align*}
+        \frac{f(x) - f(a)}{x - a} \geq 0
+    \end{align*}
+    D'après le TCILPPL, on a $f'(x) \geq 0$. \\
+    $\boxed{\Leftarrow}$ \\
+    On suppose $X \neq 0$. Soit $x < y$ et $f \in \mathcal{C}^0([x, y], \mathbb{R}) \cap \mathcal{D}^1(]x, y[, \mathbb{R})$. \\
+    D'après le TAF, on choisit $c\in ]x, y[$ tel que :
+    \begin{align*}
+        f(y) - f(x) = f'(c)(y - x) \geq 0
+    \end{align*}
+    Supposons $X = \{\alpha\}$ avec $x < \alpha < y$. \\
+    On applique les TAF deux fois sur $[x, \alpha]$ et $[\alpha, y]$. \\ et on choisit $c_1\in ]x, \alpha[$ et $c_2\in ]\alpha, y[$ tel que : 
+    \begin{align*}
+        f(\alpha) - f(x) &= f'(c_1)(\alpha - x) \leq 0 \\
+        f(y) - f(\alpha) &= f'(c_2)(y - \alpha) \leq 0
+    \end{align*}
+    On généralise sans difficulté quand $X$ est fini. \\
+    Si $\varphi = \{x \in I | f'(x) = 0\}$ est fini, on utilise la même méthode, $X \equiv X \cup \varphi$. \\
+    \item RAS
+\end{enumerate}
+
 \setsection{42}
 \section{Théorème de prolongement de classe $\mathcal{C}^n$ - HP}
 \begin{tcolorbox}[title=Théorème 18.43 - HP, title filled=false, colframe=orange, colback=orange!10!white]
