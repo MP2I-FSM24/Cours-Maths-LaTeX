@@ -589,5 +589,24 @@ Soit $k\in I$, on a :
 Or $x_k \not \in Vect((x_i)_{i \neq k})$ car la famille est minimale (20.69). \\
 Donc $\lambda_k = 0$. 
 
+\setsection{77}
+\section{Famille échelonnée en degrés}
+\begin{tcolorbox}[title=Propostion 20.78, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $(P_0, \ldots, P_n)$ est une famille d'éléments de $\mathbb{K}_n[X]$ telle que pour tout $k \in \llbracket 0, n \rrbracket, \deg (P_k) = k$, alors $(P_0, \ldots, P_n)$ est une base de $\mathbb{K}_n[X]$.
+\end{tcolorbox}
+
+\noindent Soit $P \in \mathbb{K}_n[X]$. Soit $(\lambda_0, \ldots, \lambda_n) \in \mathbb{K}^{n+1}$. On a : 
+\begin{align*}
+    &\sum_{i=0}^{n} \lambda_i P_i = P \\
+    &\Leftrightarrow \begin{cases}
+        \lambda_n c_n + \ldots &= a_n \\
+        \vdots \\
+        \lambda_0 c_0 &= a_0
+    \end{cases}
+\end{align*}
+où $c_0, \ldots, c_n$ sont les coefficients dominants de $P_0, \ldots, P_n$ et $P = \sum\limits_{k=0}^{n} a_k X^k$. \\
+Le système est triangulaire supérieur avec une diagonale ne contenant aucun $0$ il est inversible. \\
+Il existe bien une unique famille $(\lambda_0, \ldots, \lambda_n)$ telle que $P = \sum\limits_{i=0}^{n} \lambda_k P_i$.
+
 
 \end{document}
