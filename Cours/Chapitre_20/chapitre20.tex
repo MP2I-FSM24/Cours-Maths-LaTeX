@@ -529,5 +529,32 @@ On réitère le procédé pour montrer que $\bigoplus\limits_{i=1}^n E_i$.
     \item RAS
 \end{enumerate}
 
+\setsection{65}
+\section{Familles génératrices}
+\begin{tcolorbox}[title=Propostion 20.66, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Une famille $(x_i)_{i\in I}$ de vecteurs de $E$ est une famille \textbf{génératrice de $E$} si l'une des propriétés équivalentes est satisfaite : 
+    \begin{enumerate}
+        \item Tout $x\in E$ est une combinaison linéaire des $x_i, i\in I$. 
+        \item $Vect((x_i)_{i\in I}) = E$. \\
+        Si de plus $I = \llbracket 1, n \rrbracket$, les points précédents sont équivalents à : 
+        \item $E = \sum\limits_{i=1}^{n} \mathbb{K} x_i$. 
+        \item La fonction $\varphi: \mathbb{K}^n \to E; (\lambda_1, \ldots, \lambda_n) \mapsto \lambda_1 x_1 + \ldots + \lambda_n x_n$ est surjective.
+    \end{enumerate}
+\end{tcolorbox}
+
+$\boxed{1 \Leftrightarrow 2}$ \\
+RAF, il s'agit des définitions. \\ \\
+
+$\boxed{2 \Leftrightarrow 3}$ \\
+Lorsque $I = \llbracket 1, n \rrbracket$ : 
+\begin{align*}
+    Vect((x_i)_{i\in I}) &= Vect(x_1, \ldots, x_n) \\
+    &= \mathbb{K} x_1 + \ldots + \mathbb{K} x_n \text{ (20.44)}
+\end{align*}
+Donc $2 \Leftrightarrow 3$. \\ \\
+
+$\boxed{3 \Leftrightarrow 4}$ \\
+RAF, il s'agit des définitions.
+
 
 \end{document}
