@@ -574,5 +574,20 @@ RAF, il s'agit des définitions.
 
 \noindent RAF : (20.36.5)
 
+\setsection{70}
+\section{Liberté d'une famille génératrice minimale}
+\begin{tcolorbox}[title=Propostion 20.71, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Une famille génératrice minimale est libre. 
+\end{tcolorbox}
+
+\noindent Soit $(x_i)_{i\in I}$ une famille génératrice minimale. \\
+On suppose $\sum\limits_{i\in I} \lambda_i x_i = 0$ avec $(\lambda_i)_{i\in I}$ une famille de scalaires à support fini. \\
+Soit $k\in I$, on a : 
+\begin{align*}
+    \lambda_k x_k = -\sum_{i\in i \neq k} \lambda_i x_i \in Vect((x_i)_{i\in I \backslash \{k\}})
+\end{align*}
+Or $x_k \not \in Vect((x_i)_{i \neq k})$ car la famille est minimale (20.69). \\
+Donc $\lambda_k = 0$. 
+
 
 \end{document}
