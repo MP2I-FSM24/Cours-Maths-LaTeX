@@ -135,5 +135,19 @@ Donc $\Psi(u + \lambda u', v) = \Psi(u, v) + \lambda \Psi(u', v)$. \\
     \end{align*}
 \end{itemize}
 
+\setsection{22}
+\section{Réciproque d'un isomophisme}
+\begin{tcolorbox}[title=Théorème 12.23, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ un isomorphisme de $E$ vers $F$. Alors $f^{-1}$ est une application linéaire, donc un isomophisme de $F$ vers $E$. 
+\end{tcolorbox}
+
+\noindent On pose $g = f^{-1}$. Soit $(x, y) \in F^2, \lambda \in \mathbb{K}$. 
+\begin{align*}
+    g(x + \lambda y) &= g(f(g(x)) + \lambda f(g(y))) \\
+    &= g(f(g(x)) + \lambda f(g(y))) \\
+    &= g(x) + \lambda g(y)
+\end{align*}
+Donc $g \in \mathcal{L}(F, E)$.
+
 
 \end{document}
