@@ -54,5 +54,28 @@
 \end{align*}
 Donc $g \circ f \in \mathcal{L}(E, G)$.
 
+\setsection{12}
+\section{Bilinéarité de la composition}
+\begin{tcolorbox}[title=Propostion 21.13, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    La composition d'application linéaire est bilinéaire. En termes plus précis, $E$, $F$ et $G$ étant des $\mathbb{K}$-ev, l'application
+    \begin{align*}
+        \Psi : \mathcal{L}(E, F) \times \mathcal{L}(F, G) &\longrightarrow \mathcal{L}(E, G); (u, v) \mapsto v \circ u
+    \end{align*}
+    est une application bilinéaire. 
+\end{tcolorbox}
+
+\noindent D'après la remarque (21.11), $\Psi$ est linéaire à droite. \\
+\begin{align*}
+    \forall u \in \mathcal{L}(E, F), \forall (v, v') \in \mathcal{L}(F, G)^2, \forall \lambda \in \mathbb{K}, \Psi(u, v + \lambda v') &= \Psi(u, v) + \lambda \Psi(u, v')
+\end{align*}
+Soit $(u, u') \in \mathcal{L}(E, F)^2, v \in \mathcal{L}(F, G), \lambda \in \mathbb{K}$. On a :
+\begin{align*}
+    \forall x \in \mathbb{E}, \Psi(u + \lambda u', v)(x) &= v \circ (u + \lambda u')(x) \\
+    &= v(u(x) + \lambda u'(x)) \\
+    &= v(u(x)) + \lambda v(u'(x)) \\
+    &= \Psi(u, v)(x) + \lambda \Psi(u', v)(x)
+\end{align*}
+Donc $\Psi(u + \lambda u', v) = \Psi(u, v) + \lambda \Psi(u', v)$. \\
+
 
 \end{document}
