@@ -109,5 +109,31 @@ Donc $\Psi(u + \lambda u', v) = \Psi(u, v) + \lambda \Psi(u', v)$. \\
     \end{itemize}
 \end{enumerate}
 
+\setsection{20}
+\section{Famille génératrice de $Im(f)$}
+\begin{tcolorbox}[title=Propostion 21.21, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f\in \mathcal{L}(E, F)$ et $(e_i)_{i \in I}$ une famille génératrice de $E$. Alors $(f(e_i)_{i \in I})$ est une famille génératrice de $Im(f)$. \\
+    Soit 
+    \begin{align*}
+        Im(f) &= Vect(f(e_i)_{i \in I})
+    \end{align*}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Pour tout $i \in I, f(e_i) \in Im(f)$. \\
+    Comme $Im(f)$ est un sev : 
+    \begin{align*}
+        Vect(f(e_i)_{i \in I}) \subset Im(f)
+    \end{align*}
+
+    \item Soit $a\in Im(f)$. On choisit $x\in E$ tel que $a = f(x)$. \\
+    Comme $(e_i)_{i \in I}$ est une famille génératrice de $E$, on peut écrit $x = \sum\limits_{i\in I} \lambda_i e_i$ où $(\lambda_i)_{i\in I}$ est à spport fini. 
+    \begin{align*}
+        a &= f\left(\sum_{i\in I} \lambda_i e_i\right) \\
+        &= \sum_{i\in I} \lambda_i f(e_i) \\
+        &\in Vect(f(e_i)_{i \in I})
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
