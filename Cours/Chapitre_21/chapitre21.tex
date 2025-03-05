@@ -6,4 +6,19 @@
 \tableofcontents
 \clearpage
 
+\setsection{3}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 21.4.1, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    L'application de $\mathbb{R}^2$ dans $\mathbb{R}$ définie par $f(x, y) = 2x + 3y$. 
+\end{tcolorbox}
+
+\noindent Soit $((x, y), (x', y'), \lambda) \in (\mathbb{R}^2)^2 \times \mathbb{R}$. On a
+\begin{align*}
+    f((x, y) + \lambda (x', y')) &= f(x + \lambda x', y + \lambda y') \\
+    &= 2(x + \lambda x') + 3(y + \lambda y') \\
+    &= 2x + 3y + \lambda(2x' + 3y') \\
+    &= f(x, y) + \lambda f(x', y').
+\end{align*}
+
+
 \end{document}
