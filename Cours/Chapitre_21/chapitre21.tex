@@ -77,5 +77,37 @@ Soit $(u, u') \in \mathcal{L}(E, F)^2, v \in \mathcal{L}(F, G), \lambda \in \mat
 \end{align*}
 Donc $\Psi(u + \lambda u', v) = \Psi(u, v) + \lambda \Psi(u', v)$. \\
 
+\setsection{15}
+\section{Structure des images directes et réciproques}
+\begin{tcolorbox}[title=Propostion 21.16, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    \begin{enumerate}
+        \item Soit $E'$ un sev de $E$. Alors $f(E')$ est un sev de $F$.
+        \item Soit $F'$ un sev de $F$. Alors $f^{-1}(F')$ est un sev de $E$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{itemize}
+        \item $f(E') \subset F$
+        \item $0 = f(0) \in f(E')$
+        \item Soit $(x, y) \in f(E')^2, \lambda \in \mathbb{K}$. On écrit $x = f(\alpha), y = f(\beta)$ avec $(\alpha, \beta) \in E'^2$. \\
+        \begin{align*}
+            x + \lambda y &= f(\alpha) + \lambda f(\beta) \\
+            &= f(\alpha + \lambda \beta) \\
+            &\in f(E')
+        \end{align*}
+    \end{itemize}
+
+    \item \begin{itemize}
+        \item $f^{-1}(F') \subset E$
+        \item $0 = f(0) \in f^{-1}(F')$
+        \item Soit $(x, y) \in f^{-1}(F')^2, \lambda \in \mathbb{K}$. 
+        \begin{align*}
+            f(x + \lambda y) &= f(x) + \lambda f(y) \in F' \\
+            \text{donc } x + \lambda y &\in f^{-1}(F')
+        \end{align*}
+    \end{itemize}
+\end{enumerate}
+
 
 \end{document}
