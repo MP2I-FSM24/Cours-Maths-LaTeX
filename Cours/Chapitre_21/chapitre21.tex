@@ -228,5 +228,26 @@ Soit $x = f + g \in E$.
 \end{align*}
 Donc $p^2 = p$, donc $p$ est un projecteur.
 
+\setsection{58}
+\section{Diagonalisation d'une symétrie}
+\begin{tcolorbox}[title=Théorème 21.59, title filled=false, colframe=orange, colback=orange!10!white]
+    On suppose que $\mathbb{K}$ n'est pas de caractéristique 2. Soit $s$ une symétrie de $E$. Alors :
+    \begin{align*}
+        E = \ker(s + id_E) \oplus \ker(s - id_E)
+    \end{align*}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Soit $x\in \ker(s - id) \cap \ker(s + id)$. Donc : 
+    \begin{align*}
+        s(x) - x &= 0 \\
+        s(x) + x &= 0 \\
+        \text{donc } 2x &= 0 \\
+        \text{donc } x &= 0
+    \end{align*}
+
+    \item Pour $x \in E$, $x = \frac{1}{2}(\underbrace{x - s(x)}_{\in \ker(s + id)}) + \frac{1}{2}(\underbrace{x + s(x)}_{\in \ker(s - id)})$. \\
+\end{itemize}
+
 
 \end{document}
