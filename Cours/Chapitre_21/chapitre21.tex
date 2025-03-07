@@ -200,5 +200,33 @@ Donc $x = 0$. \\ \\
 Soit $x\in E$, on écrit $x = \underbrace{x - p(x)}_{\in \ker(p)} + \underbrace{p(x)}_{\in Im(p) = \ker(p - id)}$. \\
 Donc $E = \ker(p) \oplus \ker(p - id)$. \\
 
+\setsection{56}
+\section{Caractérisation géométrique des projecteurs}
+\begin{tcolorbox}[title=Théorème 21.57, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $p\in \mathcal{L}(E)$. 
+    \begin{itemize}
+        \item $p$ est un projecteur si, et seulement si, il existe deux sous-espaces vectoriels $F$ et $G$ de $E$ tels que $E = F \oplus G$ et 
+        \begin{align*}
+            \forall f \in F, \forall g \in G, p(f + g) = f. 
+        \end{align*}
+        \item Dans ce cas, $F = Im(p)$ et $G = \ker(p)$.
+        \item Ainsi, un projecteur est une projection géométrique sur $Im(p)$ parallèlement à $\ker(p)$. 
+    \end{itemize}
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+Existence justifiée avec $F = Im(p)$ et $G = \ker(p)$. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+Soit $x = f + g \in E$. 
+\begin{align*}
+    p^2(x) &= p \circ p(f + g) \\
+    &= p(f) \\
+    &= f \\
+    &= p(f + g) \\
+    &= p(x)
+\end{align*}
+Donc $p^2 = p$, donc $p$ est un projecteur.
+
 
 \end{document}
