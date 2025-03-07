@@ -164,5 +164,27 @@ Si $B \in \mathbb{K}[X]$ :
     (PB)(u) &= P(u) \circ B(u) = B(u) \circ 0_{\mathcal{L}(E)} = 0_{\mathcal{L}(E)}
 \end{align*}
 
+\setsection{51}
+\section{Caractérisation de l'image d'un projecteur}
+\begin{tcolorbox}[title=Propostion 21.52, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $p$ un projecteur de $E$. Alors $x\in Im(p)$ si et seulement si $p(x) = x$. Soit : 
+    \begin{align*}
+        Im(p) = \ker(p - id_E)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $p$ un projecteur. Soit $x\in E$. 
+\begin{itemize}
+    \item Si $x\in Im(p)$, on choisit $y\in E$ tel que $x = p(y)$. \\
+    Donc $p(x) = p^2(y) = p(y) = x$.
+    \item Si $p(x) = x$, alors $x\in Im(p)$. 
+    \item \begin{align*}
+        x\in Im(p) &\Leftrightarrow p(x) = x \\
+        &\Leftrightarrow p(x) - x = 0 \\
+        &\Leftrightarrow (p - id)(x) = 0 \\
+        &\Leftrightarrow x\in \ker(p - id)
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
