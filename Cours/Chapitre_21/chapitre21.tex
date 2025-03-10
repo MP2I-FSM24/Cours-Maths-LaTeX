@@ -385,5 +385,36 @@ Donc, car $(f(b_i))_{i\in I}$ est libre, on a :
 Donc $x = 0$. \\
 Donc $f$ est injective. 
 
+\section{Caractérisation de la surjectivité par l'image d'une base}
+\begin{tcolorbox}[title=Propostion 21.69, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f\in \mathcal{L}(E, F)$. Sont équivalentes :
+    \begin{enumerate}
+        \item $f$ est surjective
+        \item l'image de toute famille génératrice de $E$ par $f$ est une famille génératrice de $F$ \\
+        Si de plus $F$ admet au moins une base, les propriétés précédentes sont équivalentes à :
+        \item l'image de toute base de $E$ par $f$ est une famille génératrice de $F$
+        \item il existe une base de $E$ dont l'image par $f$ est une famille génératrice de $F$
+    \end{enumerate}
+\end{tcolorbox}
+
+$\boxed{1 \Rightarrow 2}$ \\
+On suppose $f$ surjective. Soit $\mathcal{F}$ une famille génératrice de $E$. \\
+\begin{align*}
+    \mathcal{F} &= Im(f) = Vect(f(\mathcal{F}))
+\end{align*}
+Donc $f(\mathcal{F})$ est génératrice. \\ \\
+
+$\boxed{2 \Rightarrow 1}$ $\mathcal{F} = (x)_{x\in E}$ \\
+
+$\boxed{2 \Rightarrow 3}$ RAF \\
+
+$\boxed{3 \Rightarrow 4}$ RAF \\
+
+$\boxed{4 \Rightarrow 1}$ \\
+Soit $B$ la base considérée. \\
+\begin{align*}
+    Im(f) = Vect(f(B)) = F
+\end{align*}
+
 
 \end{document}
