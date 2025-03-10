@@ -249,5 +249,38 @@ Donc $p^2 = p$, donc $p$ est un projecteur.
     \item Pour $x \in E$, $x = \frac{1}{2}(\underbrace{x - s(x)}_{\in \ker(s + id)}) + \frac{1}{2}(\underbrace{x + s(x)}_{\in \ker(s - id)})$. \\
 \end{itemize}
 
+\setsection{62}
+\section{Détermination d'une AL par l'image d'une base, ou rigidité}
+\begin{tcolorbox}[title=Propostion 21.63, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Etant donné une base $(b_i)_{i\in I}$ de $E$ et $(f_i)_{i\in I}$ une famille quelconque de $F$, il existe une unique application linéaire $u\in \mathcal{L}(E, F)$ telle que pour tout $i \in I, u(b_i) = f_i$.
+\end{tcolorbox}
+
+\noindent Soit $(b_i)_{i\in I}$ une base de $E$ et $(f_i)_{i\in I}$ une famille de $F$. \\
+Soit $x\in E$. On écrit $x = \sum\limits_{i\in I} \lambda_i b_i$ avec $(\lambda_i)_{i\in I}$ une famille de scalaires à support fini. \\
+On pose $u(x) = \sum\limits_{i\in I} \lambda_i f_i$. On définit bien une application ca les $\lambda_i$ sont uniques. \\
+Montrons que $u\in \mathcal{L}(E, F)$. Soit $(x, y) \in E^2$ et $\alpha \in \mathbb{K}$. \\
+On écrit $x = \sum\limits_{i\in I} \lambda_i b_i$ et $y = \sum\limits_{i\in I} \mu_i b_i$. Ainsi : 
+\begin{align*}
+    x + \alpha y &= \sum_{i\in I} (\lambda_i + \alpha \mu_i) b_i
+\end{align*}
+Par définition : 
+\begin{align*}
+    u(x + \alpha y) &= \sum_{i\in I} (\lambda_i + \alpha \mu_i) f_i \\
+    &= \sum_{i\in I} \lambda_i f_i + \alpha \sum_{i\in I} \mu_i f_i \\
+    &= u(x) + \alpha u(y)
+\end{align*}
+L'existence est prouvée, et si $v\in \mathcal{L}(E, F)$ tel que : 
+\begin{align*}
+    \forall i \in I, v(b_i) = f_i
+\end{align*}
+Le raisonnement précédent impose que : 
+\begin{align*}
+    \forall x \in E, u(x) = v(x)
+\end{align*}
+Soit : 
+\begin{align*}
+    u = v
+\end{align*}
+
 
 \end{document}
