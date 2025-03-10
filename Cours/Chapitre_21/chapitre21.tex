@@ -337,5 +337,53 @@ Soit :
     \end{align*}
 \end{enumerate}
 
+\setsection{67}
+\section{Caractérisation de l'injectivité par l'image d'une base}
+\begin{tcolorbox}[title=Propostion 21.68, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f\in \mathcal{L}(E, F)$. Les propriétés suivantes sont équivalentes : 
+    \begin{enumerate}
+        \item $f$ est injective
+        \item l'image de la famille libre de $E$ par $f$ est une famille libre de $F$ \\
+        Si de plus $E$ admet au moins une base, elles sont aussi équivalentes à : 
+        \item l'image de toute base de $E$ par $f$ est une famille  libre de $F$
+        \item il existe une base de $E$ dont l'image par $f$ est une famille libre de $F$
+    \end{enumerate}
+\end{tcolorbox}
+
+$\boxed{1 \Rightarrow 2}$ \\
+Soit $(x_i)_{i\in I}$ une famille libre de $E$. \\
+On suppose $\sum\limits_{i\in I} \lambda_i f(x_i) = 0$ avec $(\lambda_i)_{i\in I}$ une famille de scalaires à support fini. \\
+Donc : 
+\begin{align*}
+    f\left(\sum_{i\in I} \lambda_i x_i\right) &= 0 \\
+    \text{donc } \sum_{i\in I} \lambda_i x_i &= 0 \\
+    \text{donc } \forall i \in I, \lambda_i &= 0
+\end{align*} \\
+
+$\boxed{2 \Rightarrow 1}$ \\
+On suppose $f$ non injective. Donc $\ker(f) \neq \{0\}$. \\
+Soit $x\neq 0$ tel que $f(x) = 0$. \\
+Or $(x)$ est libre ($x\neq 0$) et $(f(x))$ est liée. \\ \\
+
+\noindent On suppose que $E$ admet une base. \\ \\
+
+$\boxed{2 \Rightarrow 3}$ RAF \\
+
+$\boxed{3 \Rightarrow 4}$ RAF \\
+
+$\boxed{4 \Rightarrow 1}$ \\
+Soit $(b_i)_{i\in I}$ une base de $E$ telle que $(f(b_i))_{i\in I}$ est libre. \\
+Soit $x\in \ker f$. Donc $f(x) = 0$ et $x = \sum\limits_{i\in I} \lambda_i b_i$ avec $(\lambda_i)_{i\in I}$ une famille de scalaires à support fini. \\
+\begin{align*}
+    0 &= f(x) \\
+    &= \sum_{i\in I} \lambda_i f(b_i)
+\end{align*}
+Donc, car $(f(b_i))_{i\in I}$ est libre, on a : 
+\begin{align*}
+    \forall i \in I, \lambda_i &= 0
+\end{align*}
+Donc $x = 0$. \\
+Donc $f$ est injective. 
+
 
 \end{document}
