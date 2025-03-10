@@ -289,6 +289,8 @@ Soit :
         \begin{align*}
             f(1, 0) &= (3, 2) \quad \text{et} \quad f(0, 1) = (2, 1)
         \end{align*}
+
+        \item Montrer que toute application linéaire de $\mathbb{R}^p$ dans $\mathbb{R}^n$ est de la forme $X\mapsto MX$ et décrire $M$ à partir d'une base de $\mathbb{R}^p$. 
     \end{enumerate}
 \end{tcolorbox}
 
@@ -299,6 +301,37 @@ Soit :
         &= xf(1, 0) + yf(0, 1) \\
         &= x(3, 2) + y(2, 1) \\
         &= (3x + 2y, 2x + y)
+    \end{align*}
+
+    \item Soit $f\in \mathcal{L}(\mathbb{R}^p, \mathbb{R}^n)$. \\
+    Soit $(b_1, \ldots, b_p)$ la base canonique de $\mathbb{R}^p$ et $(e_1, \ldots, e_n)$ la base canonique de $\mathbb{R}^n$. \\
+    \begin{align*}
+        \forall j \in \llbracket 1, n \rrbracket, f(b_j) &= \sum_{i=1}^n m_{ij} e_i
+    \end{align*}
+    Soit $X = \begin{pmatrix}
+        x_1 \\
+        \vdots \\
+        x_p
+    \end{pmatrix} \in \mathbb{R}^p$. \\
+    \begin{align*}
+        f(X) &= f\left(\sum_{j=1}^p x_j b_j\right) \\
+        &= \sum_{j=1}^p x_j f(b_j) \\
+        &= \sum_{j=1}^p x_j \sum_{i=1}^n m_{ij} e_i \\
+        &= \sum_{i=1}^n \left(\sum_{j=1}^p m_{ij} x_j\right) e_i \\
+        &= \begin{pmatrix}
+            \sum\limits_{j=1}^p m_{1j} x_j \\
+            \vdots \\
+            \sum\limits_{j=1}^p m_{nj} x_j
+        \end{pmatrix} \\
+        &= \begin{pmatrix}
+            m_{11} & \cdots & m_{1p} \\
+            \vdots & \ddots & \vdots \\
+            m_{n1} & \cdots & m_{np}
+        \end{pmatrix} \begin{pmatrix}
+            x_1 \\
+            \vdots \\
+            x_p
+        \end{pmatrix}
     \end{align*}
 \end{enumerate}
 
