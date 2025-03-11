@@ -6,4 +6,32 @@
 \tableofcontents
 \clearpage
 
+\setsection{2}
+\section{Nombre maximal de vecteurs linéairement indépendants}
+\begin{tcolorbox}[title=Propostion 22.3, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $E$ un $\mathbb{K}$-ev de dimension finie engendré par $n$ éléments. Alors toute partie libre de $E$ possède au plus $n$ éléments. 
+\end{tcolorbox}
+
+\noindent Soit $G$ une famille génératrice de $E$ avec $G = (g_1, \ldots, g_n)$. Soit $\mathcal{L}$ une famille libre de $E$. \\
+Supposons par l'absurde que $|\mathcal{L}| > n$. Pour $k\in \llbracket 1, n \rrbracket$, on note : 
+\begin{align*}
+    P(k): \text{"$E$ est engendré par $n-k$ vecteurs de $G$ et $k$ vecteurs de $\mathcal{L}$"}
+\end{align*}
+Pour $k=0$, la famille convient. \\
+On suppose que pour $k \in \llbracket 0, n-1 \rrbracket$, $E = Vect(\underbrace{g_1, \ldots, g_{n-k}}_{\in G}, \underbrace{l_1, \ldots, l_k}_{\in L})$ \\
+Comme $l_{k+1} \in E$, on écrit $l_{k+1} = \sum\limits_{i=1}^{n-k} \alpha_i g_i + \sum\limits_{i=1}^k \beta_i l_j$. \\
+Comme $\mathcal{L}$ est libre, $l_{k+1} \not\in Vect(l1, \ldots, l_k)$. \\
+Donc il existe $i \in \llbracket 1, n-k \rrbracket, \alpha_i \neq 0$ et quitte à renommer les $g_i$, on peut supposer $\alpha_{n-k} \neq 0$ et ainsi : 
+\begin{align*}
+    g_{n-k} \in Vect(g_1, \ldots, g_{n-k}, l_1, \ldots, l_k, l_n+1)
+\end{align*}
+Ainsi : 
+\begin{align*}
+    E = Vect(g_1, \ldots, g_{n-k}, l_1, \ldots, l_k, l_{k+1})
+\end{align*}
+Par récurrence, $P(k)$ est vraie pour $k\in \llbracket 0, n \rrbracket$, en particulier, $P(n)$ est vraie. \\
+$(l1, \ldots, l_n)$ est une base de $E$. Or $l_{n+1} \in E$ et $(l_1, \ldots, l_{n+1})$ libre. 
+Absurde. 
+
+
 \end{document}
