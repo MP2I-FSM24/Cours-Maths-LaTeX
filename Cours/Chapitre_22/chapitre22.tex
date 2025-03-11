@@ -33,5 +33,25 @@ Par récurrence, $P(k)$ est vraie pour $k\in \llbracket 0, n \rrbracket$, en par
 $(l1, \ldots, l_n)$ est une base de $E$. Or $l_{n+1} \in E$ et $(l_1, \ldots, l_{n+1})$ libre. 
 Absurde. 
 
+\setsection{4}
+\section{Algroithme de la base incomplète}
+\begin{tcolorbox}[title=Théorème 22.5, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E \neq \{0\}$ un $\mathbb{K}$-ev de dimension finie et $\{x_i\}_{1\leq i\leq n}$ une partie génératrice de $E$ dont les $p$ premiers vecteurs sont linéairement indépendants. Dans ces conditions, $E$ possède une base constituée des vecteurs $x_1, \ldots, x_p$ et de certains vecteurs $x_{p+1}, \ldots, x_n$. 
+\end{tcolorbox}
+
+\noindent On utilise l'algorithme suivant : \\
+On initialise $\mathcal{F} = (x_1, \ldots, x_p)$. Pour tout $k \in \llbracket p+1, n \rrbracket$ : 
+\begin{itemize}
+    \item Si $x_k \in Vect(\mathcal{F})$, on laisse $\mathcal{F}$ invariant. 
+    \item Si $x_k \not\in Vect(\mathcal{F})$, on remplace $\mathcal{F}$ par $\mathcal{F} \cup \{x_k\}$.
+\end{itemize}
+L'algorithme s'arrête en temps fini. \\
+La famille $\mathcal{F}$ obtenue est libre, elle est également génératrice car : 
+\begin{align*}
+    \forall i \in \llbracket 1, n \rrbracket, x_i \in \mathcal{F} \text{ ou } x_i \in Vect(\mathcal{F})
+\end{align*}
+Donc $E = Vect(x_i)_{i\in \llbracket 1, n \rrbracket} \subset Vect(\mathcal{F}) \subset E$.
+Donc $\mathcal{F}$ est une base. 
+
 
 \end{document}
