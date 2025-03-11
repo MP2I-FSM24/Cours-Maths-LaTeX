@@ -53,5 +53,23 @@ La famille $\mathcal{F}$ obtenue est libre, elle est également génératrice ca
 Donc $E = Vect(x_i)_{i\in \llbracket 1, n \rrbracket} \subset Vect(\mathcal{F}) \subset E$.
 Donc $\mathcal{F}$ est une base. 
 
+\setsection{7}
+\section{Théorème de la base incomplète}
+\begin{tcolorbox}[title=Théorème 22.8, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E\neq \{0\}$ un $\mathbb{K}$-ev de dimension finie. 
+    \begin{enumerate}
+        \item Toute famille libre de $E$ peut être complétée en une base finie de $E$. 
+        \item De toute famille génératrice de $E$ on peut extraire une base finie de $E$. 
+    \end{enumerate}
+    En particulier, $E$ possède une base finie. 
+\end{tcolorbox}
+
+\noindent Soit $\mathcal{G}$ une famille génératrice finie. 
+\begin{enumerate}
+    \item Soit $\mathcal{L}$ une famille libre. On applique l'algorithme de la base incomplète à $\mathcal{L} \cup \mathcal{G}$ qui fournit une base $B$ de $E$ contenant $\mathcal{L}$. 
+    \item Comme $\mathcal{G}$ est génératrice, on fixe $x \neq 0 \in \mathcal{G}$ comme premier vecteur de $\mathcal{G}$ et on lui applique l'algorithme de la base incomplète. \\
+    La base obtenue est bien constituée de vecteurs de $\mathcal{G}$. 
+\end{enumerate}
+
 
 \end{document}
