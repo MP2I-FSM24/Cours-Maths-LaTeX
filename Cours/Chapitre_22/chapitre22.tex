@@ -76,5 +76,22 @@ Donc $\mathcal{F}$ est une base.
     Si $\mathcal{G}$ est une famille génératrice, elle contient nécessairement une famille génératrice finie. 
 \end{tcolorbox}
 
+\setsection{10}
+\section{Caractérisation de la dimension finie par le cardinal des familles libres}
+\begin{tcolorbox}[title=Corollaire 22.11, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace vectoriel. Alors $E$ est de dimension finie si et seulement si toute famille libre de $E$ est de cardinal fini. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+On suppose $E$ de dimension finie. Donc $E$ possède une famille génératrice à $n$ vecteurs. \\
+Donc les familles libres de $E$ ont un cardinal inférieur à $n$. \\
+Elles sont finies. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+Par contraposée, on suppose $E$ de dimension infinie. \\
+Soit $x\in E$ avec $x\neq 0$. \\
+On pose $x_1 = x$. Comme $E$ est de dimension infinie, on choisit $x_2 \in E \backslash Vect(x_1)$. \\
+On poursuit les raisonnement par récurrence pour obtenir une famille libre $(x_n)_{n\in \mathbb{N}^*}$. \\
+
 
 \end{document}
