@@ -143,5 +143,27 @@ Donc :
     \item Si la famille est libre, c'est une base de $Vect(x_1, \ldots, x_k)$, donc $\dim(Vect(x_1, \ldots, x_k)) = k$.
 \end{itemize}
 
+\setsection{21}
+\section{Dimension d'un sous-espace vectoriel}
+\begin{tcolorbox}[title=Propostion 22.22, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $E$ un $\mathbb{K}$-ev de dimension finie et $F$ un sous-espace vectoriel de $E$. Alors $F$ est de dimension finie et $\dim F \leq \dim E$, avec égalité si et seulement si $F = E$.
+\end{tcolorbox}
+
+\noindent Soit $F$ un sous-espace vectoriel de $E$, avec $E$ de dimension finie. \\
+Ainsi, $F$ est lui-même de dimension finie (22.11). \\
+Si $\mathcal{L}$ est une famille libre de $F$ :
+\begin{align*}
+    |\mathcal{L}| \leq \dim E
+\end{align*}
+Donc (il suffit de prendre pour $\mathcal{L}$ une base de $F$) : 
+\begin{align*}
+    \dim F \leq \dim E
+\end{align*}
+Si $\dim F = \dim E$, alors une base de $F$ est aussi une base de $E$ (22.18). \\
+Ainsi : 
+\begin{align*}
+    F = Vect(B) = E
+\end{align*}
+
 
 \end{document}
