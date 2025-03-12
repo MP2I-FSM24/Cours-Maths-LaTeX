@@ -165,5 +165,55 @@ Ainsi :
     F = Vect(B) = E
 \end{align*}
 
+\section{Formule de Grassmann}
+\begin{tcolorbox}[title=Théorème 22.23, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace vectoriel, $F$ et $G$ deux sous-espaces vectoriels de dimensions finies. Alors $F + G$ est de dimension finie et : 
+    \begin{align*}
+        \dim(F+G) = \dim F + \dim G - \dim F \cap G
+    \end{align*}
+\end{tcolorbox}
+
+\noindent $F \cap G \subset F$, donc $F \cap G$ est de dimension finie. \\
+On note $n = \dim F \cap G$. \\
+On choisit une base $(e_1, \ldots, e_n)$ de $F \cap G$. \\
+On complète cette famille libre en :
+\begin{itemize}
+    \item une base $(e_1, \ldots, e_n, f_1, \ldots, f_p)$ de $F$
+    \item une base $(e_1, \ldots, e_n, g_1, \ldots, g_q)$ de $G$
+\end{itemize}
+Montrons que $(E_1, \ldots, e_n, f_1, \ldots, f_p, g_1, \ldots, g_q)$ est une base de $F+G$. \\
+\begin{align*}
+    F + G &= Vect(e_1, \ldots, e_n, f_1, \ldots, f_p) + Vect(e_1, \ldots, e_n, g_1, \ldots, g_q) \\
+    &= Vect(e_1, \ldots, e_n, f_1, \ldots, f_p, g_1, \ldots, g_q)
+\end{align*}
+La famille génératrice. 
+On suppose : 
+\begin{align*}
+    \sum_{i=1}^{n} \alpha_i e_i + \sum_{i=1}^{p} \beta_i f_i + \sum_{i=1}^{q} \gamma_i g_i = 0
+\end{align*}
+Donc : 
+\begin{align*}
+    \sum_{i=1}^{q} \gamma_i g_i = -\sum_{i=1}^{n} \alpha_i e_i - \sum_{i=1}^{p} \beta_i f_i \in F \cap G
+\end{align*}
+Donc (liberté de $(e_1, \ldots, e_n, g_1, \ldots, g_q)$) : 
+\begin{align*}
+    (\gamma_1, \ldots, \gamma_q) = (0, \ldots, 0)
+\end{align*}
+Puis : 
+\begin{align*}
+    \sum_{i=1}^{n} \alpha_i e_i + \sum_{i=1}^{p} \beta_i f_i = 0
+\end{align*}
+Donc (liberté de $(e_1, \ldots, e_n, f_1, \ldots, f_p)$) : 
+\begin{align*}
+    (\alpha_1, \ldots, \alpha_n) &= (0, \ldots, 0) \\
+    (\beta_1, \ldots, \beta_p) &= (0, \ldots, 0)
+\end{align*}
+Donc : 
+\begin{align*}
+    \dim (F + G) &= n + p + q \\
+    &= n + p + n + q - n \\
+    &= \dim F + \dim G - \dim F \cap G
+\end{align*}
+
 
 \end{document}
