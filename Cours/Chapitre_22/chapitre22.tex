@@ -215,5 +215,25 @@ Donc :
     &= \dim F + \dim G - \dim F \cap G
 \end{align*}
 
+\setsection{26}
+\section{Caractérisation des couples de sous-espaces vectoriels supplémentaires}
+\begin{tcolorbox}[title=Propostion 22.27, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $E$ un espace de dimension finie, $F$ et $G$ deux sous-espaces vectoriels de $F$. Alors $F$ et $G$ sont supplémentaires si et seulement si : 
+    \begin{align*}
+        F \cap G = \{0\} \text{ et } \dim F + \dim G = \dim E
+    \end{align*}
+    si et seulement si : 
+    \begin{align*}
+        F + G = E \text{ et } \dim F + \dim G = \dim E
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    F \text{ et } G \text{ sont supplémentaires} &\text{ ssi } F \oplus G = E \\
+    &\text{ ssi } F \cap G = \{0\} \text{ et } F + G = E \\
+    \text{(} \boxed{\Rightarrow} \text{ 22.26 } \boxed{\Leftarrow} \text{ 22.26, 22.22} \text{)} &\text{ ssi } F \cap G = \{0\} \text{ et } \dim F + \dim G = \dim E \\
+    \text{(} \boxed{\Rightarrow} \text{ 22.26 } \boxed{\Leftarrow} \text{ 22.23} \text{)} &\text{ ssi } F + G = E \text{ et } \dim F + \dim G = \dim E
+\end{align*}
+
 
 \end{document}
