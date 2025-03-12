@@ -313,5 +313,35 @@ Donc :
     &= rg(u(x_i))_{i\in I}
 \end{align*}
 
+\section{Existence et majoration du rang en dimension finie}
+\begin{tcolorbox}[title=Propostion 22.36, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    \begin{itemize}
+        \item Soit $u\in \mathcal{L}(E, F)$. Si $E$ ou $F$ sont de dimension finie, alors $Im(u)$ est également de dimension finie et (avec les conditions adéquates) : 
+        \begin{align*}
+            rg(u) \leq \dim E \text{ ou } rg(u) \leq \dim F
+        \end{align*}
+        \item Avec les conditions appropriées : 
+        \begin{itemize}
+            \item $rg(u) = \dim E$ si et seulement si $u$ est injective
+            \item $rg(u) = \dim F$ si et seulement si $u$ est surjective
+        \end{itemize}
+    \end{itemize}
+\end{tcolorbox}
+
+\noindent On suppose $E$ et $F$ de dimension finie.
+\begin{itemize}
+    \item $Im(u) \subset F$ et $\dim(Im(u)) \leq \dim F$ et $rg(u) = \dim F$ si et seulement si (22.22) $Im(u) = F$ si et seulement si $u$ est surjective.
+    \item Soit $(e_1, \ldots, e_n)$ une base de $E$. \\
+    Comme $(e_1, \ldots, e_n)$ engendre $E$ : 
+    \begin{align*}
+        rg(u) &= rg(u(e_1), \ldots, u(e_n)) \text{ (22.35)} \\
+        &\leq n = \dim E \text{ (22.20)}
+    \end{align*}
+    \begin{align*}
+        rg(u(e_1), \ldots, u(e_n)) = n &\text{ ssi } (u(e_1), \ldots, u(e_n)) \text{ est libre} \\
+        \text{(21.68)} &\text{ ssi } u \text{ est injective} \\
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
