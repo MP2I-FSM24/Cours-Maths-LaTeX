@@ -277,5 +277,29 @@ Donc :
     \end{align*}
 \end{itemize}
 
+\setsection{31}
+\section{Dimension d'espaces isomorphes}
+\begin{tcolorbox}[title=Propostion 22.32, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $E$ et $F$ deux espaces isomorphes. Si l'un des deux est de dimension finie, alors les deux le sont et : 
+    \begin{align*}
+        \dim E = \dim F
+    \end{align*}
+    Réciproquement, si $E$ et $F$ sont de dimension finie avec $\dim E = \dim F$, alors $E$ et $F$ sont isomorphes.
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Si $\dim E = n$, on choisit $B$ une base de $E$. \\
+    Si $f:E\to F$ est un isomorphisme, alors $f(B)$ est une base de $F$. \\
+    Donc $F$ est de dimension finie et $\dim F = |f(B)| = |B| = n = \dim E$. 
+
+    \item On suppose que $\dim E = n = \dim F$. \\
+    Soit $(e_1, \ldots, e_n)$ une base de $E$ et $(f_1, \ldots, f_n)$ une base de $F$. \\
+    On définit (théorème de rigidité) $u \in \mathcal{L}(E, F)$ par : 
+    \begin{align*}
+        \forall i \in \llbracket 1, n \rrbracket, u(e_i) = f_i
+    \end{align*}
+    D'après (21.70), $u$ est un isomorphisme. 
+\end{itemize}
+
 
 \end{document}
