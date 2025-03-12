@@ -249,5 +249,33 @@ Donc :
     $S = Vect(s_1, \ldots, s_q)$ convient. 
 \end{itemize}
 
+\setsection{29}
+\section{Base de $\mathcal{L}(E, F)$}
+\begin{tcolorbox}[title=Propostion 22.30, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $E$ et $F$ sont de dimension finie, la famille $(u_{i, j})_{(i, j)\in I\times J}$ décrite dans l'exemple précédent est une base de $\mathcal{L}(E, F)$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Montrons que $(u_{i, j})$ est libre. \\
+    On suppose $\sum\limits_{(i, j)\in I\times J} \lambda_{i, j} u_{i, j} = 0$. \\
+    \begin{align*}
+        \forall k \in I, \sum_{(i, j)\in I\times J} \lambda_{i, j} u_{i, j}(b_k) &= 0 \\
+        \text{donc } \sum_{(i, j)\in I\times J} \lambda_{i, j} \delta_{i, k} c_j &= 0 \\
+        \text{donc } \sum_{j\in J} \lambda_{k, j} c_j &= 0
+    \end{align*}
+    Par liberté des $(c_j)$, on a :
+    \begin{align*}
+        \forall k \in I, \forall j \in J, \lambda_{k, j} = 0
+    \end{align*}
+
+    \item Montrons que $(u_{i, j})$ est génératrice. \\
+    Soit $f\in \mathcal{L}(E, F)$. \\
+    Pour tout $k \in I$, $f(b_k) = \sum\limits_{j\in J} \lambda_{k, j} c_j$ ($(c_j)$ est une base de $F$). \\
+    Alors : 
+    \begin{align*}
+        f = \sum_{(i, j) \in I \times J} \lambda_{i, j} u_{i, j} \text{ (théorème de rigidité)}
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
