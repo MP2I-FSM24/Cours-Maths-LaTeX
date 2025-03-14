@@ -407,5 +407,19 @@ Donc :
 \noindent Soit $v:S\to Im(u); x\mapsto u(x)$. \\
 D'après (22.40), $v$ est injective et surjective, donc fournit bien un isomorphisme de $S$ sur $Im(u)$.
 
+\setsection{42}
+\section{Théorème du rang}
+\begin{tcolorbox}[title=Théorème 22.43, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace vectoriel de dimension finie et $F$ un espace vectoriel quelconque. Soit $f\in \mathcal{L}(E, F)$. Alors : 
+    \begin{align*}
+        \dim \ker f + rg(f) = \dim E
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Comme $E$ est de dimension finie, $\ker f$ et $Im(f)$ sont de dimension finie. \\
+D'après (22.28), on choisit $S$ un supplémentaire de $\ker f$ dans $E$. \\
+D'après (22.41), $S$ et $Im(f)$ sont isomorphes. \\
+Donc $rg(f) = \dim S = \dim E - \dim \ker f$ (22.28). 
+
 
 \end{document}
