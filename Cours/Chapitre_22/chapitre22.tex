@@ -367,5 +367,37 @@ Donc :
     \end{align*}
 \end{enumerate}
 
+\section{Noyau et image d'une restriction}
+\begin{tcolorbox}[title=Lemme 22.40, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u\in \mathcal{L}(E, F)$ et $E'$ un sous-espace vectoriel de $E$. Soit $v\in \mathcal{L}(E', F)$ la restriction de $u$ à $E'$. Alors :
+    \begin{itemize}
+        \item $\ker v = \ker u \cap E'$
+        \item Si $\ker u + E' = E$, alors $Im(v) = Im(u)$
+    \end{itemize}
+\end{tcolorbox}
+
+\noindent Soit $x\in E$. 
+\begin{itemize}
+    \item \begin{align*}
+        x \in \ker v &\Leftrightarrow \begin{cases}
+            x \in E' \\
+            v(x) = 0
+        \end{cases} \\
+        &\Leftrightarrow \begin{cases}
+            x \in E' \\
+            u(x) = 0
+        \end{cases} \\
+        &\Leftrightarrow x \in \ker u \cap E'
+    \end{align*}
+
+    \item Supposons que $\ker u + E' = E$. On a toujours $Im(v) \subset Im(u)$. \\
+    Soit $y\in Im(u)$. On choisit $x\in E$ tel que $y = u(x)$. \\
+    On écrit $x = \alpha + \beta$ avec $\alpha \in \ker u$ et $\beta \in E'$. \\
+    Ainsi :
+    \begin{align*}
+        y = u(x) = u(\alpha  + \beta) = u(\alpha) + u(\beta) = 0 + v(\beta) \in Im(v)
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
