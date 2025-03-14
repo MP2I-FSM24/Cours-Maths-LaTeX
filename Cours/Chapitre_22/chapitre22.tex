@@ -343,5 +343,29 @@ Donc :
     \end{align*}
 \end{itemize}
 
+\setsection{38}
+\section{Effet d'une composition sur le rang}
+\begin{tcolorbox}[title=Théorème 22.39, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u \in \mathcal{L}(E, F)$ et $v \in \mathcal{L}(F, G)$. Alors :
+    \begin{enumerate}
+        \item $rg(v\circ u) \leq \min(rg(u), rg(v))$
+        \item si $v$ est injective, alors $rg(v\circ u) = rg(u)$
+        \item si $u$ est surjective, alors $rg(v\circ u) = rg(v)$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $Im(v\circ u) \subset Im(v)$ donc $rg(v\circ u) \leq rg(v)$ et $Im(v\circ u) = Im(\left. v \right|_{Im(u)})$ donc : 
+    \begin{align*}
+        rg(v\circ u) = rg(\left. v \right|_{Im(u)}) \leq \dim(Im(u)) = rg(u)
+    \end{align*}
+
+    \item Si $v$ est injective, alors (22.36), $rg(\left. v \right|_{Im(u)}) = \dim(Im(u)) = rg(u)$
+    \item Si $u$ est surjective, alors $Im(u) = F$, et d'aprè (22.39.1) : 
+    \begin{align*}
+        rg(v\circ u) = rg(\left. v \right|_F) = rg(v)
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
