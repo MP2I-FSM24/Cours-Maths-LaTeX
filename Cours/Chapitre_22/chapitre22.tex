@@ -421,5 +421,33 @@ D'après (22.28), on choisit $S$ un supplémentaire de $\ker f$ dans $E$. \\
 D'après (22.41), $S$ et $Im(f)$ sont isomorphes. \\
 Donc $rg(f) = \dim S = \dim E - \dim \ker f$ (22.28). 
 
+\setsection{52}
+\section{Caractérisation par les supplémentaires}
+\begin{tcolorbox}[title=Théorème 22.53, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $H$ un sous-espace vectoriel de $E$. Alors $H$ est un hyperplan de $E$ si et seulement si $H$ admet une droite de $E$ comme supplémentaire. 
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+On suppose que $H$ est un hyperplan de $E$. \\
+Soit $\varphi \in E^*, \varphi \neq 0$ tel que : 
+\begin{align*}
+    H = \ker \varphi
+\end{align*}
+Comme $\varphi \neq 0$, on choisit $x\in E \backslash \ker \varphi$. \\
+On a clairement $H \cap Vect(x) = \{0\}$. \\
+On rappelle que $\varphi(x) \in \mathbb{K}^*$. Soit $v\in E$. \\
+On a : 
+\begin{align*}
+    \varphi(v) = \frac{1}{\varphi(x)} \varphi(\varphi(x)v)
+\end{align*}
+On écrit $v =  \underbrace{v - \frac{\varphi(v)}{\varphi(x)} x}_{\in \ker \varphi} + \underbrace{\frac{\varphi(v)}{\varphi(x)} x}_{\in Vect(x)}$. \\ \\
+
+$\boxed{\Leftarrow}$ \\
+On suppose que $E = H \oplus Vect(x)$. \\
+Soit $v\in E$. On écrit $v = h + \lambda x$. \\
+On lui associe $\varphi(v) = \lambda$. L'application $\varphi$ est bien définie car la décomposition est unique. \\
+Cette application est bien linéaire, dont le noyau est $H$. \\
+Par définition, $H$ est un hyperplan. 
+
 
 \end{document}
