@@ -449,5 +449,48 @@ On lui associe $\varphi(v) = \lambda$. L'application $\varphi$ est bien définie
 Cette application est bien linéaire, dont le noyau est $H$. \\
 Par définition, $H$ est un hyperplan. 
 
+\section{Comparaison de deux équations de $H$}
+\begin{tcolorbox}[title=Propostion 22.54, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $H$ un hyperplan de $E$ d'équation $\varphi \in E^*$. Alors pour tout $\psi \in E^*, \psi(x) \neq 0$ est une équation de $H$ si et seulement si $\psi \neq 0$ et $\psi \in Vect(\varphi)$.
+\end{tcolorbox}
+
+On note $H = \ker \varphi$ avec $\varphi \in E^*$ non nulle. \\
+$\boxed{\Rightarrow}$ \\
+Soit $\psi \in E^*$ non nulle. On suppose $H = \ker \psi$. \\
+Comme $\psi$ est non nulle, on choisit $\alpha\in E$ tel que : 
+\begin{align*}
+    \psi(\alpha) = 0 \text{ dans } \mathbb{K}
+\end{align*}
+Comme $\alpha\not\in\ker \psi$, $\varphi(\alpha) \neq 0$. \\
+On écrit : 
+\begin{align*}
+    \psi(\alpha) = \lambda\psi(x) \text{ avec } \lambda = \frac{\psi(\alpha)}{\varphi(x)} \neq 0
+\end{align*}
+D'après (22.53) : 
+\begin{align*}
+    E = H \oplus Vect(\alpha)
+\end{align*}
+Soit $x\in E, x = h + \mu \alpha$ ($h\in H, \mu \in \mathbb{K}$). 
+\begin{align*}
+    \psi(x) &= \psi(h) + \mu \psi(\alpha) \\
+    &= \mu \lambda \varphi(x) \\
+    &= \lambda \varphi(h + \mu \alpha) \\
+    &= \lambda \varphi(x)
+\end{align*}
+Donc : 
+\begin{align*}
+    \psi = \lambda \varphi \in Vect(\varphi)
+\end{align*} \\ \\
+
+$\boxed{\Leftarrow}$ \\
+si $\psi \in Vect(\varphi)$, on écrit $\psi = \lambda \varphi, \lambda \neq 0$. \\
+Pour $x\in E$ : 
+\begin{align*}
+    x\in H &\Leftrightarrow x\in \ker \varphi \\
+    &\Leftrightarrow \varphi(x) = 0 \\
+    &\Leftrightarrow \lambda \varphi(x) = 0 \\
+    &\Leftrightarrow x\in \ker \psi
+\end{align*}
+
 
 \end{document}
