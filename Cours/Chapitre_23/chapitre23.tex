@@ -6,4 +6,35 @@
 \tableofcontents
 \clearpage
 
+\section{Sous-espace affine}
+\begin{tcolorbox}[title=Définition, title filled=false, colframe=lightpurple, colback=lightpurple!10!white]
+    Soit $E$ un $\mathbb{K}$-espace vectoriel. \\
+    \begin{itemize}
+        \item On appelle \textbf{sous-espace affine de $E$} toute partie $\mathcal{F}$ de $E$ de la forme : 
+        \begin{align*}
+            \mathcal{F} = x + F = \{f + x \mid f \in F\}
+        \end{align*}
+        où $F$ est un sous-espace vectoriel de $E$ et $x$ un vecteur de $E$. \\
+        
+        \item Le sous-espace vectoriel $F$ associé au sous-espace affine $\mathcal{F}$ est unique. On l'appelle \textbf{direction de $\mathcal{F}$} et ses éléments sont appelés les \textbf{vecteurs directeurs de $\mathcal{F}$}. 
+    \end{itemize}
+\end{tcolorbox}
+
+\noindent On suppose que $\mathcal{F} = x_1 + F_1 = x_2 + F_2$. \\
+Soit $y\in F_1$. \\
+On a $y + x_1 \in \mathcal{F}$ donc $y + x_1 = x_2 + y_2$ avec $y_2 \in F_2$. \\
+Or $x_1 \in \mathcal{F}$ donc $x_1 = x_2 + g_2$ avec $g_2 \in F_2$. \\
+Donc : 
+\begin{align*}
+    y &= x_2 - x_1 + y_2 \\
+    &= y_2 - g_2 \\
+    &\in F_2
+\end{align*}
+avec $F_1 \subset F_2$. \\
+Par symétrie : 
+\begin{align*}
+    F_1 = F_2
+\end{align*}
+
+
 \end{document}
