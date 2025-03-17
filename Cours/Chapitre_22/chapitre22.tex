@@ -492,5 +492,41 @@ Pour $x\in E$ :
     &\Leftrightarrow x\in \ker \psi
 \end{align*}
 
+\section{Intersection d'hyperplans}
+\begin{tcolorbox}[title=Théorème 22.55, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace de dimension finie $n$. 
+    \begin{enumerate}
+        \item L'intersection de $m$ hyperplans de $E$ est un sous-espace vectoriel de dimension au moins $n-m$. 
+        \item Réciproquement, tout sous-espace vectoriel $F$ de $E$ de dimension $n-m$ peut s'écrire comme l'intersection de $m$ hyperplans. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Le résulat est vrai pour $m = 1$ (avec égalité). \\
+    Soit $H_1$ et $H_2$ deux hyperplans. \\
+    On a : 
+    \begin{align*}
+        \dim H_1 = \dim H_2 = n-1
+    \end{align*}
+    D'après la formule de Grassmann : 
+    \begin{align*}
+        \dim(H_1 \cap H_2) &= \underbrace{-\dim (H_1 + H_2)}_{\in \{n-1, n\}} + \dim H_1 + \dim H_2 \\
+        &\geq 2n - 2 - n \\
+        &= n-2
+    \end{align*}
+    On poursuit le résultat par récurrence. 
+
+    \item Soit $F \neq \{0\}$ un sous-espace vectoriel de $E$ de dimension $n-m$. \\
+    On fixe une base $(f_1, \ldots, f_{n-m})$ de $F$. On la complète en $(f_1, \ldots, f_{n-m}, f_{n-m+1}, \ldots, f_n)$ une base de $E$. \\
+    Pour tout $k\in \llbracket 1, n \rrbracket$, on note $p_k$ la projection canonique sur la $k$-ième coordonnée. 
+    \begin{align*}
+        p_k \left( \sum_{i=1}^{n} \alpha_i f_i \right) = \alpha_k
+    \end{align*}
+    Par construction, $p_k$ est une forme linéaire, non nulle. 
+    \begin{align*}
+        F = \bigcap_{i=n-m+1}^{n} \ker p_i
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
