@@ -74,5 +74,22 @@ Donc :
     u^{-1}(\{y\}) = x_0 + \ker u
 \end{align*}
 
+\setsection{12}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 23.13, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{itemize}
+        \item L'ensemble des solutions d'une équation différentielle linéaire non homogène de degré $1$ ou $2$.
+        \item L'ensemble des polynômes interpolateurs en un certain nombre de points.
+        \item Equations arithmético-géométrique.  
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item $\{ y \in \mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R}), ay' + b = f \} = u^{-1}(\{f\})$ où $u:\mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R}) \to \mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R}); y \mapsto ay' + by$.
+    \item Soit $(a_1, \ldots, a_n) \in \mathbb{R}^n$ deux à deux distincts et $(b_1, \ldots, b_n) \in \mathbb{R}^n$ quelconques deux à deux distincts. \\
+    $\{ P\in \mathbb{R}[X], \forall i\in \llbracket 1, n \rrbracket, P(a_i) = b_i \} = u^{-1}(\{ (b_1, \ldots, b_n) \})$ où $u:\mathbb{R}[X] \to \mathbb{R}^n; P \mapsto (P(a_1), \ldots, P(a_n))$.	
+    \item $\{ (u_n)\in \mathbb{R}^{\mathbb{N}}, \forall n \geq 0, u_{n+1} = au_n + b \} = u^{-1}(\{ (b)_{n\geq 0} \})$ où $u: \mathbb{R}^{\mathbb{N}} \to \mathbb{R}^{\mathbb{N}}; (u_n) \mapsto (u_{n+1} - au_n)_{n\geq 0}$.
+\end{itemize}
+
 
 \end{document}
