@@ -6,4 +6,36 @@
 \tableofcontents
 \clearpage
 
+\setsection{17}
+\section{Caractérisation de l'équivalence par la négligabilité}
+\begin{tcolorbox}[title=Propostion 24.18, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    On a : 
+    \begin{align*}
+        u_n \sim v_n \Leftrightarrow u_n = v_n + o(v_n)
+    \end{align*}
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+Si $u_n \sim v_n$ à partir d'un certain rang : 
+\begin{align*}
+    u_n = a_n v_n \text{ avec } a_n \underset{n \to +\infty}{\longrightarrow} 1
+\end{align*}
+Ainsi : 
+\begin{align*}
+    u_n &= \underbrace{(a_n - 1)}_{= o(1)} v_n + v_n \\
+    &=_{n\to +\infty} v_n + o(v_n)
+\end{align*} \\
+
+$\boxed{\Leftarrow}$ \\
+Si $u_n = v_n + o(v_n)$, alors à partir d'un certain rang :
+\begin{align*}
+    u_n &= v_n + \epsilon_n v_n \text{ avec } \epsilon_n = o(1) \\
+    &= \underbrace{(1 + \epsilon_n)}_{\underset{n \to +\infty}{\longrightarrow} 1} v_n
+\end{align*}
+Donc : 
+\begin{align*}
+    u_n \sim v_n
+\end{align*}
+
+
 \end{document}
