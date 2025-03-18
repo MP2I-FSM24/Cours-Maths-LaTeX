@@ -55,5 +55,24 @@ Ainsi :
     &= A + F
 \end{align*}
 
+\setsection{10}
+\section{Fibre d'une application linéaire}
+\begin{tcolorbox}[title=Théorème 23.11, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u\in \mathcal{L}(E, F)$ et $y\in F$. Alors $u^{-1}(\{y\})$ est soit vide, soit un sous-espace affine de $E$ et de direction $\ker u$. 
+\end{tcolorbox}
+
+\noindent On suppose que $u^{-1}(\{y\}) \neq \emptyset$. Fixons $x_0 \in u^{-1}(\{y\})$. \\
+Soit $x\in E$. On a : 
+\begin{align*}
+    x\in u^{-1}(\{y\}) &\Leftrightarrow u(x) = y \\
+    &\Leftrightarrow u(x) = u(x_0) \\
+    &\Leftrightarrow x-x_0 \in \ker u \\
+    &\Leftrightarrow x \in x_0 + \ker u
+\end{align*}
+Donc : 
+\begin{align*}
+    u^{-1}(\{y\}) = x_0 + \ker u
+\end{align*}
+
 
 \end{document}
