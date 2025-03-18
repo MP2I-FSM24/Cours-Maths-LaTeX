@@ -37,5 +37,26 @@ Donc :
     u_n \sim v_n
 \end{align*}
 
+\setsection{19}
+\section{Equivalent d'un polynôme}
+\begin{tcolorbox}[title=Propostion 24.20, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $P$ un polynôme de monôme dominant $a_d X^d$. Alors $P(n) \sim a_d n^d$.
+\end{tcolorbox}
+
+\noindent On note $P = \sum\limits_{k=0}^d a_k X^k$. \\
+Pour $k\in \llbracket 0, d-1 \rrbracket$ : 
+\begin{align*}
+    n^k =_{n\to +\infty} o(n^d) \text{ et } a_k n^k =_{n\to +\infty} o(a_d n^d)
+\end{align*}
+Donc :
+\begin{align*}
+    \sum_{k=0}^{d-1} a_k n^k =_{n\to +\infty} o(a_d n^d)
+\end{align*}
+Donc : 
+\begin{align*}
+    P(n) &= a_d n^d + o(a_d n^d) \\
+    &\sim a_d n^d
+\end{align*}
+
 
 \end{document}
