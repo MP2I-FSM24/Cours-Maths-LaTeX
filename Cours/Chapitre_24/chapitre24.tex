@@ -180,5 +180,57 @@ Donc :
     &\sim_{n\to +\infty} \frac{1}{n^2}
 \end{align*}
 
+\section*{Exercice 24.10}
+\begin{tcolorbox}[title=Exercice 24.10, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $u$ la suite définie par $u_0 = \frac{\pi}{2}$ et : 
+    \begin{align*}
+        \forall n\in \mathbb{N}, u_{n+1} = \sin u_n
+    \end{align*}
+    \begin{enumerate}
+        \item Montrer que la suite $u$ est strictement positive, décroissante et de limite nulle. 
+        \item On admet que si $u$ est une suite de limite nulle, alors quand $n$ tend vers $+\infty$, $\sin u_n = u_n - \frac{u_n^3}{6} + o(u_n^3)$. Déterminer le réel $\alpha$ tel que la suite $v_n = u_{n+1}^\alpha - u_n^\alpha$ ait une limite réelle non nulle. En appliquant le lemme de Césaro à la suite $(v_n)$, en déduire un équivalent simple de $(u_n)$, quand $n\to +\infty$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item L'intervalle $[0, \frac{\pi}{2}]$ est stable par la fonction sinus. \\
+    Comme $\sin$ est croissante, la suite $(u_n)$ est monotone. On a $u_1 < u_0$ donc $(u_n)$ est décroissante. \\
+    Par stabilité, $(u_n)$ est positive. \\
+    D'après le théorème de la limite monotone, $(u_n)$ converge vers $\ell \in [0, \frac{\pi}{2}]$. \\
+    D'après le théorème du point fixe, car $\sin$ est continue sur $[0, \frac{\pi}{2}]$, on a $\sin \ell = \ell$. \\
+    En étudiant les variations de $x\mapsto \sin x - x$, on trouve un unique point fixe : $0$. 
+
+    \item Soit $\alpha \in \mathbb{R}^*$. 
+    \begin{align*}
+        v_n &= u_{n+1}^\alpha - u_n^\alpha \\
+        &= \sin^\alpha u_n - u_n^\alpha \\
+        &=_{n\to +\infty} u_n - \frac{u_n^3}{6} + o(u_n^3) - u_n^\alpha \\
+        &=_{n\to +\infty} u_n^\alpha \left(1 - \frac{u_n^2}{6} + o(u_n^2)\right)^\alpha - u_n^\alpha \\
+        &=_{n\to +\infty} u_n^\alpha \left[1 + \alpha \left(-\frac{u_n^2}{6}\right) + o(u_n^2)\right] - u_n^\alpha \\
+        &=_{n\to +\infty} -\alpha \frac{u_n^{2 + \alpha}}{6} + o(u_n^{2 + \alpha})
+    \end{align*}
+    Pour $\alpha = -2$, on a : 
+    \begin{align*}
+        v_n &=_{n\to +\infty} \frac{1}{3} + o(1)
+    \end{align*}
+    D'après le lemme de Césaro : 
+    \begin{align*}
+        \frac{u_n^{-2} - u_0^{-2}}{n} = \frac{1}{n} \sum_{k=1}^{n} v_k \underset{n \to +\infty}{\longrightarrow} \frac{1}{3}
+    \end{align*}
+    Donc :
+    \begin{align*}
+        \frac{u_n^{-2}}{n} &= \frac{u_0^{-2}}{n} + \frac{1}{3} + o(1) \\
+        &\sim \frac{1}{3}
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        u_n^2 &\sim \frac{3}{n}
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        u_n &\sim \sqrt{\frac{3}{n}}
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
