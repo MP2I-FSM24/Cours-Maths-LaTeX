@@ -110,5 +110,23 @@ Donc :
     u_n \underset{n \to +\infty}{\longrightarrow} \frac{1}{18 \sqrt{3}}
 \end{align*}
 
+\setsection{35}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 24.36, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Déterminer un équivalent de $\sin\left(\frac{2}{n}\right)-\sin\left(\frac{1}{n}\right)$. 
+\end{tcolorbox}
+
+\begin{align*}
+    \sin\left(\frac{2}{n}\right) &= \frac{2}{n} + o\left(\frac{2}{n}\right) \\
+    &= \frac{1}{n} + o\left(\frac{1}{n}\right) \\
+    \sin\left(\frac{1}{n}\right) &= \frac{1}{n} + o\left(\frac{1}{n}\right)
+\end{align*}
+Donc : 
+\begin{align*}
+    \sin\left(\frac{2}{n}\right) - \sin\left(\frac{1}{n}\right) &= \frac{2}{n} - \frac{1}{n} + o\left(\frac{1}{n}\right) \\
+    &= \frac{1}{n} + o\left(\frac{1}{n}\right) \\
+    &\sim \frac{1}{n}
+\end{align*}
+
 
 \end{document}
