@@ -146,5 +146,22 @@ Donc :
     &\sim \ln \left(\frac{1}{n}\right)
 \end{align*}
 
+\setsection{45}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 24.46, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $(u_n)$ une suite non nulle de limite nulle. On admet que $\ln (1 + u_n) = u_n - \frac{u_n^2}{2} + o(u_n^2)$, montrer que : 
+    \begin{align*}
+        \exp \left(5n + n^2\ln \left(1 + \frac{1}{n}\right)\right) \sim \frac{e^{6n}}{\sqrt{e}}
+    \end{align*}
+    (au voisinage de $0$).
+\end{tcolorbox}
+
+\begin{align*}
+    \exp \left(5n + n^2 \ln \left(1 + \frac{1}{n}\right)\right) &=_{n\to +\infty} \exp \left(5n + n^2 \left(\frac{1}{n} - \frac{1}{2n^2} + o\left(\frac{1}{n^2}\right)\right)\right) \\
+    &=_{n\to +\infty} \exp \left(6n - \frac{1}{2} + o(1)\right) \\
+    &=_{n\to +\infty} \frac{e^{6n}}{\sqrt{e}} \times e^{o(1)} \\
+    &\sim_{n\to +\infty} \frac{e^{6n}}{\sqrt{e}}
+\end{align*}
+
 
 \end{document}
