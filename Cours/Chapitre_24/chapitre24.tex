@@ -163,5 +163,22 @@ Donc :
     &\sim_{n\to +\infty} \frac{e^{6n}}{\sqrt{e}}
 \end{align*}
 
+\section*{Exercice 24.9}
+\begin{tcolorbox}[title=Exercice 24.9, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Pour tout $n\in \mathbb{N}^*$, on pose $u_n = e^{\frac{1}{n}} - e^{\frac{1}{n+1}}$. Donner un équivalent simple de $u_n$. 
+\end{tcolorbox}
+
+\begin{align*}
+    u_n &= e^{\frac{1}{n}} - e^{\frac{1}{n+1}} \\
+    &= e^{\frac{1}{n}} (1 - e^{\frac{1}{n+1} -\frac{1}{n}}) \\
+    &= e^{\frac{1}{n}} (1 - e^{\frac{1}{n} \frac{1}{1 + \frac{1}{n}} - \frac{1}{n}}) \\
+    &= e^{\frac{1}{n}} (1 - e^{\frac{1}{n}\left[ (1 + \frac{1}{n})^{-1} - 1 \right]}) \\
+    &=_{n\to +\infty} e^{\frac{1}{n}} (1 - e^{\frac{1}{n} \left(-\frac{1}{n} + o\left(\frac{1}{n}\right)\right)}) \\
+    &=_{n\to +\infty} e^{\frac{1}{n}}(1 - e^{-\frac{1}{n^2} + o \left(\frac{1}{n^2}\right)}) \\
+    &=_{n\to +\infty} e^{\frac{1}{n}}(\frac{1}{n^2} + o \left(\frac{1}{n^2}\right)) \\
+    &\sim_{n\to +\infty} \frac{e^{\frac{1}{n}}}{n^2} \\
+    &\sim_{n\to +\infty} \frac{1}{n^2}
+\end{align*}
+
 
 \end{document}
