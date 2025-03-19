@@ -58,5 +58,57 @@ Donc :
     &\sim a_d n^d
 \end{align*}
 
+\setsection{30}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 24.31, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Déterminons : 
+    \begin{align*}
+        \lim_{n\to +\infty} \frac{\left(e^{\frac{1}{n}}-1\right)^3 \left(\sqrt{1+\frac{1}{n}}-1\right)}{\sin\left(\frac{1}{\sqrt{n}}\right)\ln^2\left(\frac{n^2+3}{n^2}\right)\sqrt{3n+1}} 
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On note $u_n$ l'expression de l'exemple. \\
+\underline{But :} trouver un équivalent (simple) de $u_n$. \\
+\begin{itemize}
+    \item \begin{align*}
+        e^{\frac{1}{n}} - 1 &\sim \frac{1}{n} \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        (e^{\frac{1}{n}} - 1)^3 &\sim \frac{1}{n^3} \\	
+    \end{align*}
+
+    \item \begin{align*}
+        \sqrt{1+\frac{1}{n}} - 1 &= (1 + \frac{1}{n})^{\frac{1}{2}} - 1 \\
+        &\sim \frac{1}{2n} 
+    \end{align*}
+
+    \item \begin{align*}
+        \sin\left(\frac{1}{\sqrt{n}}\right) &\sim \frac{1}{\sqrt{n}} \\
+    \end{align*}
+
+    \item \begin{align*}
+        \ln\left(\frac{n^2+3}{n^2}\right) &= \ln\left(1 + \frac{3}{n^2}\right) \\
+        &\sim \frac{3}{n^2} \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \ln^2\left(\frac{n^2+3}{n^2}\right) &\sim \frac{9}{n^4} \\
+    \end{align*}
+    
+    \item \begin{align*}
+        \sqrt{3n+1} &\sim \sqrt{3n} \\
+    \end{align*}
+\end{itemize}
+Donc : 
+\begin{align*}
+    u_n &\sim \frac{\frac{1}{n^3} \times \frac{1}{2n}}{\frac{1}{\sqrt{n}} \times \frac{9}{n^4} \times \sqrt{3n}} \\
+    &= \frac{1}{18 \sqrt{3}}
+\end{align*}
+Donc : 
+\begin{align*}
+    u_n \underset{n \to +\infty}{\longrightarrow} \frac{1}{18 \sqrt{3}}
+\end{align*}
+
 
 \end{document}
