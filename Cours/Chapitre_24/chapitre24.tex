@@ -128,5 +128,23 @@ Donc :
     &\sim \frac{1}{n}
 \end{align*}
 
+\setsection{42}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 24.43, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Trouver un équivalent de $\ln \sin \frac{1}{n}$. 
+\end{tcolorbox}
+\begin{align*}
+    \sin \left(\frac{1}{n}\right) = \frac{1}{n} + o \left(\frac{1}{n}\right)
+\end{align*}
+Donc : 
+\begin{align*}
+    \ln \left( \sin \left(\frac{1}{n}\right) \right) &= \ln \left( \frac{1}{n} + o \left(\frac{1}{n}\right) \right) \\
+    &= \ln \left( \frac{1}{n} \right) + \ln \left(1 + o \left(1\right) \right) \\
+    &= \ln \left(\frac{1}{n}\right) + o(1)  + o(o(1)) \\
+    &= \underbrace{\ln \left(\frac{1}{n}\right)}_{\to -\infty} + o(1) \\
+    &= \ln \left(\frac{1}{n}\right) + o\left(\ln \left(\frac{1}{n}\right)\right) \\
+    &\sim \ln \left(\frac{1}{n}\right)
+\end{align*}
+
 
 \end{document}
