@@ -6,4 +6,231 @@
 \tableofcontents
 \clearpage
 
+\setsection{17}
+\section{Caractérisation de l'équivalence par la négligabilité}
+\begin{tcolorbox}[title=Propostion 24.18, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    On a : 
+    \begin{align*}
+        u_n \sim v_n \Leftrightarrow u_n = v_n + o(v_n)
+    \end{align*}
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+Si $u_n \sim v_n$ à partir d'un certain rang : 
+\begin{align*}
+    u_n = a_n v_n \text{ avec } a_n \underset{n \to +\infty}{\longrightarrow} 1
+\end{align*}
+Ainsi : 
+\begin{align*}
+    u_n &= \underbrace{(a_n - 1)}_{= o(1)} v_n + v_n \\
+    &=_{n\to +\infty} v_n + o(v_n)
+\end{align*} \\
+
+$\boxed{\Leftarrow}$ \\
+Si $u_n = v_n + o(v_n)$, alors à partir d'un certain rang :
+\begin{align*}
+    u_n &= v_n + \epsilon_n v_n \text{ avec } \epsilon_n = o(1) \\
+    &= \underbrace{(1 + \epsilon_n)}_{\underset{n \to +\infty}{\longrightarrow} 1} v_n
+\end{align*}
+Donc : 
+\begin{align*}
+    u_n \sim v_n
+\end{align*}
+
+\setsection{19}
+\section{Equivalent d'un polynôme}
+\begin{tcolorbox}[title=Propostion 24.20, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $P$ un polynôme de monôme dominant $a_d X^d$. Alors $P(n) \sim a_d n^d$.
+\end{tcolorbox}
+
+\noindent On note $P = \sum\limits_{k=0}^d a_k X^k$. \\
+Pour $k\in \llbracket 0, d-1 \rrbracket$ : 
+\begin{align*}
+    n^k =_{n\to +\infty} o(n^d) \text{ et } a_k n^k =_{n\to +\infty} o(a_d n^d)
+\end{align*}
+Donc :
+\begin{align*}
+    \sum_{k=0}^{d-1} a_k n^k =_{n\to +\infty} o(a_d n^d)
+\end{align*}
+Donc : 
+\begin{align*}
+    P(n) &= a_d n^d + o(a_d n^d) \\
+    &\sim a_d n^d
+\end{align*}
+
+\setsection{30}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 24.31, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Déterminons : 
+    \begin{align*}
+        \lim_{n\to +\infty} \frac{\left(e^{\frac{1}{n}}-1\right)^3 \left(\sqrt{1+\frac{1}{n}}-1\right)}{\sin\left(\frac{1}{\sqrt{n}}\right)\ln^2\left(\frac{n^2+3}{n^2}\right)\sqrt{3n+1}} 
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On note $u_n$ l'expression de l'exemple. \\
+\underline{But :} trouver un équivalent (simple) de $u_n$. \\
+\begin{itemize}
+    \item \begin{align*}
+        e^{\frac{1}{n}} - 1 &\sim \frac{1}{n} \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        (e^{\frac{1}{n}} - 1)^3 &\sim \frac{1}{n^3} \\	
+    \end{align*}
+
+    \item \begin{align*}
+        \sqrt{1+\frac{1}{n}} - 1 &= (1 + \frac{1}{n})^{\frac{1}{2}} - 1 \\
+        &\sim \frac{1}{2n} 
+    \end{align*}
+
+    \item \begin{align*}
+        \sin\left(\frac{1}{\sqrt{n}}\right) &\sim \frac{1}{\sqrt{n}} \\
+    \end{align*}
+
+    \item \begin{align*}
+        \ln\left(\frac{n^2+3}{n^2}\right) &= \ln\left(1 + \frac{3}{n^2}\right) \\
+        &\sim \frac{3}{n^2} \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \ln^2\left(\frac{n^2+3}{n^2}\right) &\sim \frac{9}{n^4} \\
+    \end{align*}
+    
+    \item \begin{align*}
+        \sqrt{3n+1} &\sim \sqrt{3n} \\
+    \end{align*}
+\end{itemize}
+Donc : 
+\begin{align*}
+    u_n &\sim \frac{\frac{1}{n^3} \times \frac{1}{2n}}{\frac{1}{\sqrt{n}} \times \frac{9}{n^4} \times \sqrt{3n}} \\
+    &= \frac{1}{18 \sqrt{3}}
+\end{align*}
+Donc : 
+\begin{align*}
+    u_n \underset{n \to +\infty}{\longrightarrow} \frac{1}{18 \sqrt{3}}
+\end{align*}
+
+\setsection{35}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 24.36, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Déterminer un équivalent de $\sin\left(\frac{2}{n}\right)-\sin\left(\frac{1}{n}\right)$. 
+\end{tcolorbox}
+
+\begin{align*}
+    \sin\left(\frac{2}{n}\right) &= \frac{2}{n} + o\left(\frac{2}{n}\right) \\
+    &= \frac{1}{n} + o\left(\frac{1}{n}\right) \\
+    \sin\left(\frac{1}{n}\right) &= \frac{1}{n} + o\left(\frac{1}{n}\right)
+\end{align*}
+Donc : 
+\begin{align*}
+    \sin\left(\frac{2}{n}\right) - \sin\left(\frac{1}{n}\right) &= \frac{2}{n} - \frac{1}{n} + o\left(\frac{1}{n}\right) \\
+    &= \frac{1}{n} + o\left(\frac{1}{n}\right) \\
+    &\sim \frac{1}{n}
+\end{align*}
+
+\setsection{42}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 24.43, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Trouver un équivalent de $\ln \sin \frac{1}{n}$. 
+\end{tcolorbox}
+\begin{align*}
+    \sin \left(\frac{1}{n}\right) = \frac{1}{n} + o \left(\frac{1}{n}\right)
+\end{align*}
+Donc : 
+\begin{align*}
+    \ln \left( \sin \left(\frac{1}{n}\right) \right) &= \ln \left( \frac{1}{n} + o \left(\frac{1}{n}\right) \right) \\
+    &= \ln \left( \frac{1}{n} \right) + \ln \left(1 + o \left(1\right) \right) \\
+    &= \ln \left(\frac{1}{n}\right) + o(1)  + o(o(1)) \\
+    &= \underbrace{\ln \left(\frac{1}{n}\right)}_{\to -\infty} + o(1) \\
+    &= \ln \left(\frac{1}{n}\right) + o\left(\ln \left(\frac{1}{n}\right)\right) \\
+    &\sim \ln \left(\frac{1}{n}\right)
+\end{align*}
+
+\setsection{45}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 24.46, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $(u_n)$ une suite non nulle de limite nulle. On admet que $\ln (1 + u_n) = u_n - \frac{u_n^2}{2} + o(u_n^2)$, montrer que : 
+    \begin{align*}
+        \exp \left(5n + n^2\ln \left(1 + \frac{1}{n}\right)\right) \sim \frac{e^{6n}}{\sqrt{e}}
+    \end{align*}
+    (au voisinage de $0$).
+\end{tcolorbox}
+
+\begin{align*}
+    \exp \left(5n + n^2 \ln \left(1 + \frac{1}{n}\right)\right) &=_{n\to +\infty} \exp \left(5n + n^2 \left(\frac{1}{n} - \frac{1}{2n^2} + o\left(\frac{1}{n^2}\right)\right)\right) \\
+    &=_{n\to +\infty} \exp \left(6n - \frac{1}{2} + o(1)\right) \\
+    &=_{n\to +\infty} \frac{e^{6n}}{\sqrt{e}} \times e^{o(1)} \\
+    &\sim_{n\to +\infty} \frac{e^{6n}}{\sqrt{e}}
+\end{align*}
+
+\section*{Exercice 24.9}
+\begin{tcolorbox}[title=Exercice 24.9, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Pour tout $n\in \mathbb{N}^*$, on pose $u_n = e^{\frac{1}{n}} - e^{\frac{1}{n+1}}$. Donner un équivalent simple de $u_n$. 
+\end{tcolorbox}
+
+\begin{align*}
+    u_n &= e^{\frac{1}{n}} - e^{\frac{1}{n+1}} \\
+    &= e^{\frac{1}{n}} (1 - e^{\frac{1}{n+1} -\frac{1}{n}}) \\
+    &= e^{\frac{1}{n}} (1 - e^{\frac{1}{n} \frac{1}{1 + \frac{1}{n}} - \frac{1}{n}}) \\
+    &= e^{\frac{1}{n}} (1 - e^{\frac{1}{n}\left[ (1 + \frac{1}{n})^{-1} - 1 \right]}) \\
+    &=_{n\to +\infty} e^{\frac{1}{n}} (1 - e^{\frac{1}{n} \left(-\frac{1}{n} + o\left(\frac{1}{n}\right)\right)}) \\
+    &=_{n\to +\infty} e^{\frac{1}{n}}(1 - e^{-\frac{1}{n^2} + o \left(\frac{1}{n^2}\right)}) \\
+    &=_{n\to +\infty} e^{\frac{1}{n}}(\frac{1}{n^2} + o \left(\frac{1}{n^2}\right)) \\
+    &\sim_{n\to +\infty} \frac{e^{\frac{1}{n}}}{n^2} \\
+    &\sim_{n\to +\infty} \frac{1}{n^2}
+\end{align*}
+
+\section*{Exercice 24.10}
+\begin{tcolorbox}[title=Exercice 24.10, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $u$ la suite définie par $u_0 = \frac{\pi}{2}$ et : 
+    \begin{align*}
+        \forall n\in \mathbb{N}, u_{n+1} = \sin u_n
+    \end{align*}
+    \begin{enumerate}
+        \item Montrer que la suite $u$ est strictement positive, décroissante et de limite nulle. 
+        \item On admet que si $u$ est une suite de limite nulle, alors quand $n$ tend vers $+\infty$, $\sin u_n = u_n - \frac{u_n^3}{6} + o(u_n^3)$. Déterminer le réel $\alpha$ tel que la suite $v_n = u_{n+1}^\alpha - u_n^\alpha$ ait une limite réelle non nulle. En appliquant le lemme de Césaro à la suite $(v_n)$, en déduire un équivalent simple de $(u_n)$, quand $n\to +\infty$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item L'intervalle $[0, \frac{\pi}{2}]$ est stable par la fonction sinus. \\
+    Comme $\sin$ est croissante, la suite $(u_n)$ est monotone. On a $u_1 < u_0$ donc $(u_n)$ est décroissante. \\
+    Par stabilité, $(u_n)$ est positive. \\
+    D'après le théorème de la limite monotone, $(u_n)$ converge vers $\ell \in [0, \frac{\pi}{2}]$. \\
+    D'après le théorème du point fixe, car $\sin$ est continue sur $[0, \frac{\pi}{2}]$, on a $\sin \ell = \ell$. \\
+    En étudiant les variations de $x\mapsto \sin x - x$, on trouve un unique point fixe : $0$. 
+
+    \item Soit $\alpha \in \mathbb{R}^*$. 
+    \begin{align*}
+        v_n &= u_{n+1}^\alpha - u_n^\alpha \\
+        &= \sin^\alpha u_n - u_n^\alpha \\
+        &=_{n\to +\infty} u_n - \frac{u_n^3}{6} + o(u_n^3) - u_n^\alpha \\
+        &=_{n\to +\infty} u_n^\alpha \left(1 - \frac{u_n^2}{6} + o(u_n^2)\right)^\alpha - u_n^\alpha \\
+        &=_{n\to +\infty} u_n^\alpha \left[1 + \alpha \left(-\frac{u_n^2}{6}\right) + o(u_n^2)\right] - u_n^\alpha \\
+        &=_{n\to +\infty} -\alpha \frac{u_n^{2 + \alpha}}{6} + o(u_n^{2 + \alpha})
+    \end{align*}
+    Pour $\alpha = -2$, on a : 
+    \begin{align*}
+        v_n &=_{n\to +\infty} \frac{1}{3} + o(1)
+    \end{align*}
+    D'après le lemme de Césaro : 
+    \begin{align*}
+        \frac{u_n^{-2} - u_0^{-2}}{n} = \frac{1}{n} \sum_{k=1}^{n} v_k \underset{n \to +\infty}{\longrightarrow} \frac{1}{3}
+    \end{align*}
+    Donc :
+    \begin{align*}
+        \frac{u_n^{-2}}{n} &= \frac{u_0^{-2}}{n} + \frac{1}{3} + o(1) \\
+        &\sim \frac{1}{3}
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        u_n^2 &\sim \frac{3}{n}
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        u_n &\sim \sqrt{\frac{3}{n}}
+    \end{align*}
+\end{enumerate}
+
+
 \end{document}

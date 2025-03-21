@@ -6,4 +6,90 @@
 \tableofcontents
 \clearpage
 
+\section{Sous-espace affine}
+\begin{tcolorbox}[title=Définition, title filled=false, colframe=lightpurple, colback=lightpurple!10!white]
+    Soit $E$ un $\mathbb{K}$-espace vectoriel. \\
+    \begin{itemize}
+        \item On appelle \textbf{sous-espace affine de $E$} toute partie $\mathcal{F}$ de $E$ de la forme : 
+        \begin{align*}
+            \mathcal{F} = x + F = \{f + x \mid f \in F\}
+        \end{align*}
+        où $F$ est un sous-espace vectoriel de $E$ et $x$ un vecteur de $E$. \\
+        
+        \item Le sous-espace vectoriel $F$ associé au sous-espace affine $\mathcal{F}$ est unique. On l'appelle \textbf{direction de $\mathcal{F}$} et ses éléments sont appelés les \textbf{vecteurs directeurs de $\mathcal{F}$}. 
+    \end{itemize}
+\end{tcolorbox}
+
+\noindent On suppose que $\mathcal{F} = x_1 + F_1 = x_2 + F_2$. \\
+Soit $y\in F_1$. \\
+On a $y + x_1 \in \mathcal{F}$ donc $y + x_1 = x_2 + y_2$ avec $y_2 \in F_2$. \\
+Or $x_1 \in \mathcal{F}$ donc $x_1 = x_2 + g_2$ avec $g_2 \in F_2$. \\
+Donc : 
+\begin{align*}
+    y &= x_2 - x_1 + y_2 \\
+    &= y_2 - g_2 \\
+    &\in F_2
+\end{align*}
+avec $F_1 \subset F_2$. \\
+Par symétrie : 
+\begin{align*}
+    F_1 = F_2
+\end{align*}
+
+\setsection{7}
+\section{Caractérisation des sous-espaces affines par leur direction et leur point}
+\begin{tcolorbox}[title=Théorème 23.8, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace vectoriel sur $\mathbb{K}$, $\mathcal{F}$ un sous-espace affine de $E$ de direction $F$ et $A\in \mathcal{F}$, alors : 
+    \begin{align*}
+        \mathcal{F} = A + F
+    \end{align*}
+\end{tcolorbox}
+
+\noindent $\mathcal{F} = x + F$. Soit $A \in \mathcal{F}$. \\
+Donc $A = x + f, f \in F$. \\
+Donc $A - x \in F$. \\
+Ainsi : 
+\begin{align*}
+    \mathcal{F} &= x + F \\
+    &= (x-A) + A + F \\
+    &= A + F
+\end{align*}
+
+\setsection{10}
+\section{Fibre d'une application linéaire}
+\begin{tcolorbox}[title=Théorème 23.11, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $u\in \mathcal{L}(E, F)$ et $y\in F$. Alors $u^{-1}(\{y\})$ est soit vide, soit un sous-espace affine de $E$ et de direction $\ker u$. 
+\end{tcolorbox}
+
+\noindent On suppose que $u^{-1}(\{y\}) \neq \emptyset$. Fixons $x_0 \in u^{-1}(\{y\})$. \\
+Soit $x\in E$. On a : 
+\begin{align*}
+    x\in u^{-1}(\{y\}) &\Leftrightarrow u(x) = y \\
+    &\Leftrightarrow u(x) = u(x_0) \\
+    &\Leftrightarrow x-x_0 \in \ker u \\
+    &\Leftrightarrow x \in x_0 + \ker u
+\end{align*}
+Donc : 
+\begin{align*}
+    u^{-1}(\{y\}) = x_0 + \ker u
+\end{align*}
+
+\setsection{12}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 23.13, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{itemize}
+        \item L'ensemble des solutions d'une équation différentielle linéaire non homogène de degré $1$ ou $2$.
+        \item L'ensemble des polynômes interpolateurs en un certain nombre de points.
+        \item Equations arithmético-géométrique.  
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item $\{ y \in \mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R}), ay' + b = f \} = u^{-1}(\{f\})$ où $u:\mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R}) \to \mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R}); y \mapsto ay' + by$.
+    \item Soit $(a_1, \ldots, a_n) \in \mathbb{R}^n$ deux à deux distincts et $(b_1, \ldots, b_n) \in \mathbb{R}^n$ quelconques deux à deux distincts. \\
+    $\{ P\in \mathbb{R}[X], \forall i\in \llbracket 1, n \rrbracket, P(a_i) = b_i \} = u^{-1}(\{ (b_1, \ldots, b_n) \})$ où $u:\mathbb{R}[X] \to \mathbb{R}^n; P \mapsto (P(a_1), \ldots, P(a_n))$.	
+    \item $\{ (u_n)\in \mathbb{R}^{\mathbb{N}}, \forall n \geq 0, u_{n+1} = au_n + b \} = u^{-1}(\{ (b)_{n\geq 0} \})$ où $u: \mathbb{R}^{\mathbb{N}} \to \mathbb{R}^{\mathbb{N}}; (u_n) \mapsto (u_{n+1} - au_n)_{n\geq 0}$.
+\end{itemize}
+
+
 \end{document}

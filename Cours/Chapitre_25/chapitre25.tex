@@ -6,4 +6,25 @@
 \tableofcontents
 \clearpage
 
+\setsection{5}
+\section{Caractérisation séquentielle}
+\begin{tcolorbox}[title=Théorème 25.6, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ et $g$ deux fonctions sur $X$ et $a\in \overline{X}$. Alors : 
+    \begin{enumerate}
+        \item $f =_a O(g)$ si et seulement si pour toute suite $(u_n) \underset{n \to +\infty}{\longrightarrow} a$ à valeurs dans $X$, alors $f(u_n) = O(g(u_n))$. 
+        \item $f =_a o(g)$ si et seulement si pour toute suite $(u_n) \underset{n \to +\infty}{\longrightarrow} a$ à valeurs dans $X$, alors $f(u_n) = o(g(u_n))$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{align*}
+        f =_a O(g) &\text{ ssi } \text{il existe $h$ bornée au voisinage de $a$ tel que } f = g \cdot h \\
+        &\text{ ssi } \text{Pour toute suite $(u_n) \in X^{\mathbb{N}}$ avec $u_n\to a$, } f(u_n) = g(u_n) \times w_n \text{ où $(w_n)$ est une suite bornée. } \\
+        &\text{ } \boxed{\Rightarrow} \quad w_n = h(u_n) \text{ ssi bornée} \quad \boxed{\Leftarrow} \quad \text{ Par l'absurde avec (25.5). } \\
+        &\text{ ssi } \text{Pour toute suite $(u_n) \in X^{\mathbb{N}}$ avec $u_n\to a$, } f(u_n) = O(g(u_n)).
+    \end{align*}
+    \item On utilise la caractérisation séquentielle de la limite (nulle). 
+\end{enumerate}
+
+
 \end{document}
