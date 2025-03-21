@@ -37,5 +37,31 @@
 
 \noindent RAS, cf. (16.56)
 
+\setsection{19}
+\section{Formule de Taylor avec reste intégral de l'ordre $n$ au point $a$}
+\begin{tcolorbox}[title=Théorème 25.20, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $a < b$ et $f:[a, b] \to \mathbb{R}$ une fonction de classe $\mathcal{C}^{n+1}([a, b])$ Alors : 
+    \begin{align*}
+        \forall x\in [a, b], f(x) = \sum_{k=0}^{n} \frac{(x-a)^k}{k!} f^{(k)}(a) + \int_{a}^{x} \frac{(x-t)^n}{n!} f^{(n+1)}(t) \, dt
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On raisonne par récurrence sur $n\in \mathbb{N}$. \\
+\begin{itemize}
+    \item On suppose $f\in \mathcal{C}^1([a, b], \mathbb{R})$. On a :
+    \begin{align*}
+        \forall x \in [a, b], \sum_{k=0}^{0} \frac{(x-a)^k}{k!} f^{(k)}(a) + \int_{a}^{x} \frac{(x-t)^0}{0!} f'(t) \, dt &= f(a) + \int_{a}^{x} f'(t) \, dt \\
+        &= f(x)
+    \end{align*}
+
+    \item On suppose le résultat vrai pour $n\in \mathbb{N}$. \\
+    Soit $f\in \mathcal{C}^{n+2}([a, b], \mathbb{R})$. En particulier, $f\in \mathcal{C}^{n+1}([a, b], \mathbb{R})$. On a :
+    \begin{align*}
+        \forall x\in [a, b], f(x) &= \sum_{k=0}^{n} \frac{(x-a)^k}{k!} f^{(k)}(a) + \int_{a}^{x} \frac{(x-t)^n}{n!} f^{(n+1)}(t) \, dt \\
+        &= \sum_{k=0}^{n} \frac{(x-a)^k}{k!} f^{(k)}(a) + \left[ -\frac{(x-t)^{n+1}}{(n+1)!} f^{(n+1)}(t) \right]_a^x + \int_{a}^{x} \frac{(x-t)^{n+1}}{(n+1)!} f^{(n+2)}(t) \, dt \\
+        \text{(IPP) } &= \sum_{k=0}^{n} \frac{(x-a)^k}{k!} f^{(k)}(a) + \int_{a}^{x} \frac{(x-t)^{n+1}}{(n+1)!} f^{(n+2)}(t) \, dt
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
