@@ -63,5 +63,38 @@
     \end{align*}
 \end{itemize}
 
+\setsection{21}
+\section{Formule de Taylor-Lagrange à l'ordre $n$ au point $a$ évaluée en $b$ - Hors Programme}
+\begin{tcolorbox}[title=Théorème 25.22, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $a < b$ deux réels et $f:[a, b] \to \mathbb{R}$ une fonction de classe $\mathcal{C}^n$ sur $[a, b]$ et $n+1$ dérivable sur $]a, b[$. Alors :
+    \begin{align*}
+        \exists c \in ]a, b[, f(b) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (b-a)^k + \frac{(b-a)^{n+1}}{(n+1)!} f^{(n+1)}(c)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On introduit : 
+\begin{align*}
+    g: [a, b] &\to \mathbb{R}; x \mapsto \sum_{k=0}^{n} \frac{f^{(k)}(x)}{k!} (b-x)^k + \frac{(b-x)^{n+1}}{(n+1)!} f^{(n+1)}(x) \text{ avec } A \in \mathbb{R}
+\end{align*}
+On remarque que $g(b) = f(b)$. \\
+On choisit $A$ de telle sorte que $g(a) = f(b)$. \\
+On pose : 
+\begin{align*}
+    A = \frac{-(n+1!)}{(b-a)^{n+1}} \left[ -\sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (b-a)^k + f(b) \right]
+\end{align*}
+Par hypothèse, $g\in \mathcal{C}^0([a, b], \mathbb{R}) \cap \mathcal{D}^1(]a, b[, \mathbb{R})$. \\
+D'après le théorème de Rolle, on choisit $c\in ]a, b[$ tel que $g'(c) = 0$. \\
+Or : 
+\begin{align*}
+    \forall x \in ]a, b[, g'(x) &= \sum_{k=0}^{n} \frac{f^{(k+1)}(x)}{k!} (b-x)^k - \sum_{k=1}^{n} \frac{f^{(k)}(x)}{(k-1)!} (b-x)^{k-1} - A \frac{(b-x)^n}{n!} \\
+    &= \frac{f^{(n+1)}(x)}{n!} (b-x)^n - A \frac{(b-x)^n}{n!}
+\end{align*}
+En particulier : 
+\begin{align*}
+    \frac{A(b-c)^n}{n!} &= \frac{f^{(n+1)}(c)}{n!} (b-c)^n
+\end{align*}
+Or $c \neq b$ donc $A = f^{(n+1)}(c)$. \\
+On conclut avec $f(b) = g(b)$.
+
 
 \end{document}
