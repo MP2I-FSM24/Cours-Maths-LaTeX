@@ -155,7 +155,7 @@ Par définition (avec les $\varepsilon$), on a le résultat souhaité.
     \end{align*}
 \end{tcolorbox}
 
-\noindent $f:x\mapsto \ln(1+x) \in \mathcal{C}^n(]-1, +\infty[, \mathbb{R})$. \\
+\noindent $f:x\mapsto \ln(1+x) \in \mathcal{C}^n(]-1, \infty[, \mathbb{R})$. \\
 \begin{align*}
     \forall x > -1, f'(x) &= \frac{1}{1+x} \\
     \forall k \in \mathbb{N}, \forall x > -1, f^{(k+1)}(x) &= \frac{(-1)^k k!}{(1+x)^{k+1}} \\
@@ -167,6 +167,29 @@ Donc, d'après Taylor-Young :
     &=_{x\to 0} \sum_{k=1}^{n} \frac{(-1)^{k-1}(k-1)!}{k!}x^k + o(x^n) \\
     &=_{x\to 0} \sum_{k=1}^{n} \frac{(-1)^{k-1}}{k}x^k + o(x^n)
 \end{align*}
+
+\section{Développement limité de cosinus et sinus}
+\begin{tcolorbox}[title=Propostion 25.30, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    La formule de Taylor-Young à l'ordre $2n + 2$ pour le sinus et à l'ordre $2n + 1$ pour le cosinus en $0$ donne les égalités suivantes au voisinage de $0$ : 
+    \begin{align*}
+        \sin x &=_{x\to 0} \sum_{k=0}^{n} \frac{(-1)^k x^{2k+1}}{(2k+1)!} + o(x^{2n+2}) \quad \text{ et } \quad \cos x =_{x\to 0} \sum_{k=0}^{n} \frac{(-1)^k x^{2k}}{(2k)!} + o(x^{2n+1}) \\
+    \end{align*}
+\end{tcolorbox}
+
+\noindent $\sin \in \mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R})$
+\begin{align*}
+    \begin{cases}
+        \sin^{(2k)}(0) = 0 \\
+        \sin^{(2k+1)}(0) = 1 \\
+        \sin^{(4k+3)}(0) = -1
+    \end{cases}
+\end{align*}
+Donc : 
+\begin{align*}
+    \sin x &=_{x\to 0} \sum_{k=0}^{2n+2} \frac{\sin^{(k)}(0)}{k!}x^k + o(x^{2n+2}) \\
+    &= \sum_{i=0}^{n} \frac{(-1)^i}{(2i+1)!}x^{2i+1} + o(x^{2n+2})
+\end{align*}
+Idem pour $\cos$.
 
 
 \end{document}
