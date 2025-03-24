@@ -94,7 +94,45 @@ En particulier :
     \frac{A(b-c)^n}{n!} &= \frac{f^{(n+1)}(c)}{n!} (b-c)^n
 \end{align*}
 Or $c \neq b$ donc $A = f^{(n+1)}(c)$. \\
-On conclut avec $f(b) = g(b)$.
+On conclut avec $f(b) = g(a)$.
+
+\setsection{26}
+\section{Formule de Taylor-Young à l'ordre $n$ au point $x_0$}
+\begin{tcolorbox}[title=Théorème 25.27, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ un intervalle ouvert de $\mathbb{R}$, $x_0\in I$ et $f:I \to \mathbb{R}$ une fonction de classe $\mathcal{C}^n$ au voisinage de $x_0$. Alors au voisinage de $x_0$, on a : 
+    \begin{align*}
+        f(x) =_{x\to x_0} \sum_{k=0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + o((x-x_0)^n)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On a $f \in \mathcal{C}^n(I, \mathbb{R}) = \mathcal{C}^{(n-n+1)}(I, \mathbb{R})$. \\
+D'après la formule de Taylor : 
+\begin{align*}
+    f(x) &= \sum_{k=0}^{n-1} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + \int_{x_0}^{x} \frac{(x-t)^{n-1}}{(n-1)!} f^{(n)}(t) \, dt
+\end{align*}
+Montrons que : 
+\begin{align*}
+    \int_{x_0}^{x} \frac{(x-t)^{n-1}}{(n-1)!} f^{(n)}(t) \, dt =_{x\to x_0} \frac{f^{(n)}(x_0)}{n!} (x-x_0)^n + o((x-x_0)^n)
+\end{align*}
+On a : 
+\begin{align*}
+    \int_{x_0}^{x} \frac{(x - t)^{n-1}}{(n-1)!} f^{(n)}(t) \, dt - \frac{f^{(n)}(x_0)(x - x_0)^n}{n!} &= \int_{x_0}^{x} \frac{(x - t)^{n-1}}{(n-1)!} f^{(n)}(t) \, dt - \int_{x_0}^{x} \frac{(x - t)^{n-1}}{(n-1)!} f^{(n)}(x_0) \, dt \\
+    &= \int_{x_0}^{x} \frac{(x - t)^{n-1}}{(n-1)!} [f^{(n)}(t) - f^{(n)}(x_0)] \, dt
+\end{align*}
+Soit $\varepsilon > 0$, on choisit $v\in \mathcal{V}(x_0)$ tel que :
+\begin{align*}
+    \forall x \in v, |f^{(n)}(x) - f^{(n)}(x_0)| \leq \varepsilon
+\end{align*}
+car $f^{(n)} \in \mathcal{C}^0(I, \mathbb{R})$. \\
+Soit $x\in \mathcal{V}, x > x_0$. On a : 
+\begin{align*}
+    \left| \int_{x_0}^{x} \frac{(x - t)^{n-1}}{(n-1)!} [f^{(n)}(t) - f^{(n)}(x_0)] \, dt \right| &\leq \int_{x_0}^{x} \frac{(x - t)^{n-1}}{(n-1)!} |f^{(n)}(t) - f^{(n)}(x_0)| \, dt \\
+    &\leq \varepsilon \int_{x_0}^{x} \frac{(x - t)^{n-1}}{(n-1)!} \, dt \\
+    &\leq \frac{\varepsilon}{(n-1)!} \int_{x_0}^{x} (x - t)^{n-1} \, dt \\
+    &= \frac{\varepsilon(x-x_0)^n}{n!}
+\end{align*}
+Le résultat reste vrai (au signe près) pour $x \leq x_0$. \\
+Par définition (avec les $\varepsilon$), on a le résultat souhaité. 
 
 
 \end{document}
