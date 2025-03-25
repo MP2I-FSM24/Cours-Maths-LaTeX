@@ -338,5 +338,26 @@ Puis on effectue un changment de variable : $x = x_0 + h$.
     &=_{x\to 0} T_n(PQ)(x) + o(x^n)
 \end{align*}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 25.57, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{enumerate}
+        \item $\frac{\cos x}{1 + x} =_{x\to 0} 1 - x + \frac{x^2}{2} - \frac{x^3}{2} + o(x^3)$
+        \item $(e^x)^2 =_{x\to 0} 1 + 2x + 2x^2 + \frac{4x^3}{3} + o(x^3)$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{align*}
+        \frac{\cos x}{1 + x} &= \cos x \times (1 + x)^{-1} \\
+        &=_{x\to 0} (1 - \frac{x^2}{2} + o(x^2))(1 - x + x^2 - x^3 + o(x^3)) \\
+        &=_{x\to 0} 1 - x + \frac{x^2}{2} - \frac{x^3}{2} + o(x^3)
+    \end{align*}
+
+    \item \begin{align*}
+        (e^x)^2 &=_{x\to 0} (1 + x + \frac{x^2}{2} + \frac{x^3}{6} + o(x^3))^2 \\
+        &=_{x\to 0} 1 + 2x + 2x^2 + \frac{4x^3}{3} + o(x^3)
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
