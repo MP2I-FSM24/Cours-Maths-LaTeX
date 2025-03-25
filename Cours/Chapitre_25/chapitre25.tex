@@ -191,5 +191,31 @@ Donc :
 \end{align*}
 Idem pour $\cos$.
 
+\setsection{39}
+\section{Unicité du DL}
+\begin{tcolorbox}[title=Théorème 25.40, title filled=false, colframe=orange, colback=orange!10!white]
+    Si $f$ admet un développement limité à l'ordre $n$ au voisinage de $x_0$, alors ce développement est unique. 
+\end{tcolorbox}
+
+\noindent On suppose que : 
+\begin{align*}
+    f(x) &=_{x\to x_0} \sum_{k=0}^{n} a_k (x - x_0)^k + o((x - x_0)^n) \\
+    &=_{x\to x_0} \sum_{k=0}^{n} b_k (x - x_0)^k + o((x - x_0)^n) 
+\end{align*}
+On suppose par l'absurde que les développements sont différents. \\
+On note $p = \min (k \mid a_k \neq b_k)$. \\
+Or : 
+\begin{align*}
+    \sum_{k=0}^{n} a_k (x - x_0)^k &=_{x\to x_0} \sum_{k=0}^{n} b_k (x - x_0)^k + o((x - x_0)^n)
+\end{align*}
+Donc : 
+\begin{align*}
+    \sum_{k=p}^{n} a_k(x - x_0)^k &=_{x\to x_0} + o((x - x_0)^n) \\
+    \text{donc } a_p (x - x_0)^p + \sum_{k=p+1}^{n} a_k(x - x_0)^k &=_{x\to x_0} b_p(x - x_0)^p + \sum_{k=p+1}^{n} b_k(x - x_0)^k + o((x - x_0)^n) \\
+    \text{donc } a_p (x - x_0)^p &=_{x\to x_0} b_p(x - x_0)^p + o((x - x_0)^n) \\
+    \text{donc } a_p &= b_p + o(1)
+\end{align*}
+Absurde car $a_p \neq b_p$.
+
 
 \end{document}
