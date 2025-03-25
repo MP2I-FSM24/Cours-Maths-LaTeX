@@ -301,5 +301,22 @@ Absurde car $a_p \neq b_p$.
     \end{align*}
 \end{enumerate}
 
+\setsection{49}
+\section{Forme normalisée d'un DL au voisinage de $0$}
+\begin{tcolorbox}[title=Propostion 25.50, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f$ une fonction définie au voisinage de $x_0$, admettant à l'ordre $n$ un DL non nul. Alors il existe un unique entier $m \leq n$ tel que pour $h$ au voisinage de $0$ on ait : 
+    \begin{align*}
+        f(x_0 + h) =_{x\to x_0} h^m(a_0 + a_1 h + \ldots + a_{n-m} h^{n-m}) + o(h^{n-m})
+    \end{align*}
+    avec $a_0 \neq 0$. Il s'agit de la \textbf{forme normalisée} du DL à l'ordre $n$ de $f$ au voisinage de $x_0$. 
+\end{tcolorbox}
+
+\begin{align*}
+    f(x) &=_{x\to x_0} \sum_{k=0}^{n} a_k (x - x_0)^k + o((x - x_0)^n) \\
+    &=_{x\to x_0} \sum_{k=m}^{n} a_k (x - x_0)^k + o((x - x_0)^k) \\
+    &=_{x\to x_0} (x - x_0)^m \left( \sum_{k=0}^{n-m} a_{k+m} (x - x_0)^k + o((x - x_0)^{n-m}) \right)
+\end{align*}
+Puis on effectue un changment de variable : $x = x_0 + h$.
+
 
 \end{document}
