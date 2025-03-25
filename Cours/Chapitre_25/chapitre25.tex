@@ -246,5 +246,38 @@ Absurde car $a_p \neq b_p$.
     \item Même raisonnement pour $f$ impaire.
 \end{itemize}
 
+\section{Remarque}
+\begin{tcolorbox}[title=Remarque 25.42, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item L'existence d'un DL à l'ordre $n$ en $x_0$ n'implique pas l'existence de la dérivée $n$-ième de $f$ en $x_0$. Ainsi, tous les DL ne sont pas obtenus par la formule de Taylor-Young. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{itemize}
+    \setcounter{enumi}{1}
+    \item Si $f$ admet un DL en $x_0$, on a : 
+    \begin{align*}
+        f(x) &=_{x\to x_0} a + o(1)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        f(x) - a \underset{x \to x_0}{\longrightarrow} 0
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        f(x) \underset{x \to x_0}{\longrightarrow} a
+    \end{align*}
+    Néecssairement, $a = f(x_0)$ et $f$ est continue en $x_0$. \\
+    Si $f$ admet un DL en $x_0$, on a : 
+    \begin{align*}
+        f(x) &=_{x\to x_0} f(x_0) + a (x - x_0) + o(x - x_0)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \frac{f(x) - f(x_0)}{x - x_0} =_{x\to x_0} a + o(1) \underset{x \to x_0}{\longrightarrow} a
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
