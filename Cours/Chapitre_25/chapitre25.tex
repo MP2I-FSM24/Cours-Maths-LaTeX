@@ -217,5 +217,34 @@ Donc :
 \end{align*}
 Absurde car $a_p \neq b_p$.
 
+\section{DL de fonctions paires ou impaires}
+\begin{tcolorbox}[title=Propostion 25.41, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f$ une fonction admettant un DL à l'ordre $n$ au voisinage de $0$. Alors : 
+    \begin{itemize}
+        \item si $f$ est paire, son DL n'est constitué que de monômes de degré pair. 
+        \item si $f$ est impaire, son DL n'est constitué que de monômes de degré impair. 
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On suppose $f$ paire et : 
+    \begin{align*}
+        f(x) &=_{x\to 0} \sum_{k=0}^{n} a_k x^k + o(x^n) \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        f(-x) &=_{x\to 0} \sum_{k=0}^{n} a_k (-1)^kx^k + o(x^n) \\
+    \end{align*}
+    Par unicité du DL : 
+    \begin{align*}
+        \forall k \in \llbracket 0, n \rrbracket, a_k = (-1)^k a_k
+    \end{align*}
+    Donc pour $k$ impair : 
+    \begin{align*}
+        a_k = 0
+    \end{align*}
+    \item Même raisonnement pour $f$ impaire.
+\end{itemize}
+
 
 \end{document}
