@@ -318,5 +318,25 @@ Absurde car $a_p \neq b_p$.
 \end{align*}
 Puis on effectue un changment de variable : $x = x_0 + h$.
 
+\setsection{55}
+\section{Produit de DL}
+\begin{tcolorbox}[title=Propostion 25.56, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f$ et $g$ deux fonctions définies sur un voisinage de $0$ et $P$ et $Q$ deux polynômes de degré au plus $n$. Si au voisinage de $0$ : 
+    \begin{align*}
+        f(x) &=_{x\to 0} P(x) + o(x^n) \quad \text{ et } \quad g(x) =_{x\to 0} Q(x) + o(x^n)
+    \end{align*}
+    Alors : 
+    \begin{align*}
+        (fg)(x) =_{x\to 0} T_n(PQ)(x) + o(x^n)
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    f(x)g(x) &=_{x\to 0} (P(x) + o(x^n))(Q(x) + o(x^n)) \\
+    &=_{x\to 0} P(x)Q(x) + P(x)o(x^n) + Q(x)o(x^n) + o(x^n)o(x^n) \\
+    &=_{x\to 0} P(x)Q(x) + o(x^n) \\
+    &=_{x\to 0} T_n(PQ)(x) + o(x^n)
+\end{align*}
+
 
 \end{document}
