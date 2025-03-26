@@ -537,5 +537,44 @@ Donc :
     \end{align*}
 \end{enumerate}
 
+\setsection{69}
+\section{Primitiver un DL}
+\begin{tcolorbox}[title=Propostion 25.70, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f$ une fonction dérivable au voisinage de $0$, dont la dérivée admet un DL à l'ordre $n-1$ au voisinage de $0$, donné par : 
+    \begin{align*}
+        f'(x) \underset{x\to 0}{=} a_0 + a_1 x + \cdots + a_{n-1} x^{n-1} + o(x^{n-1})
+    \end{align*}
+    Alors $f$ admet au voisinage de $0$ un DL à l'ordre $n$ donné par :
+    \begin{align*}
+        f(x) \underset{x\to 0}{=} f(0) + a_0 x + \frac{a_1}{2} x^2 + \cdots + \frac{a_{n-1}}{n} x^n + o(x^n)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On pose $g:x\mapsto f(x) - f(0) - \sum\limits_{k=0}^{n-1} \frac{a_k x^{k+1}}{k+1} \in \mathcal{D}^1(\mathcal{U}, \mathbb{R})$ avec $\mathcal{U} \in \mathcal{V}(0)$. \\
+on remarque que $g(0) = 0$ et en appliquant le TAF sur $\mathcal{U}$ : \\
+Pour $x\in \mathcal{U}$, il existe $c_x$ tel que : $\begin{cases}
+    0 < c_x < x \\
+    \text{OU} \\
+    x < c_x < 0
+\end{cases}$ vérifiant : 
+\begin{align*}
+    g(x) = g(x) - g(0) = x \times g'(c_x)
+\end{align*}
+Par théorème d'encadrement :
+\begin{align*}
+    c_x \underset{x \to 0}{\longrightarrow} 0
+\end{align*}
+Or par construction : 
+\begin{align*}
+    g'(x) &\underset{x\to 0}{=} o(x^{n-1}) \\
+    \text{donc } g'(c_x) &\underset{x\to 0}{=} o(c_x^{n-1}) \\
+    &= o(x^{n-1}) \text{ car } c_x \underset{x\to 0}{=} O(x)
+\end{align*}
+Donc : 
+\begin{align*}
+    g(x) &\underset{x\to 0}{=} x \times o(x^{n-1}) \\
+    &\underset{x\to 0}{=} o(x^n)
+\end{align*}
+
 
 \end{document}
