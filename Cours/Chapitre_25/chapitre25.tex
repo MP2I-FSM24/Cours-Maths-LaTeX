@@ -647,5 +647,24 @@ En posant $a_k = \frac{f^{(k)}(0)}{k!}$, on obtient le résultat souhaité.
     &\underset{x\to +\infty}{=} 1 - \frac{1}{x} - \frac{1}{x^2} + \frac{2}{x^3} + o \left( \frac{1}{x^3} \right)
 \end{align*}
 
+\setsection{77}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 25.78, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{enumerate}
+        \item $\frac{e^x - 1}{\cos x - 1} \underset{x\to 0}{=} \frac{-2}{x} - 1 - \frac{1}{2}x + o(x)$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{align*}
+        \frac{e^x - 1}{\cos x - 1} &\underset{x\to 0}{=} \frac{x + \frac{x^2}{2} + \frac{x^3}{6} + o(x^3)}{-\frac{x^2}{2} + \frac{x^4}{24} + o(x^4)} \\
+        &\underset{x\to 0}{=} \frac{1 + \frac{x}{2} + \frac{x^2}{6} + o(x^2)}{-\frac{x}{2} + \frac{x^3}{24} + o(x^3)} \\
+        &\underset{x\to 0}{=} -\frac{2}{x} \times \frac{1 + \frac{x}{2} + \frac{x^2}{6} + o(x^2)}{1 - \frac{x^2}{12} + o(x^2)} \\
+        &\underset{x\to 0}{=}  -\frac{2}{x} \times \left[ 1 + \frac{x}{2} + \frac{x^2}{6} + o(x^2) \right] \left[ 1 + \frac{x^2}{12} + o(x^2) \right] \\
+        &\underset{x\to 0}{=} -\frac{2}{x} \left[ 1 + \frac{x}{2} + \frac{x^2}{4} + o(x^2) \right] \\
+        &\underset{x\to 0}{=} -\frac{2}{x} - 1 - \frac{1}{2}x + o(x)
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
