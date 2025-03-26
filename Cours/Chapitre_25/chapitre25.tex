@@ -631,5 +631,21 @@ Donc :
 \end{align*}
 En posant $a_k = \frac{f^{(k)}(0)}{k!}$, on obtient le résultat souhaité. 
 
+\setsection{74}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 25.75, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On a : 
+    \begin{align*}
+        \frac{x^2 - 1}{x^2 + x + 1} \underset{x\to +\infty}{=} 1 - \frac{1}{x} - \frac{1}{x^2} + \frac{2}{x^3} + o\left( \frac{1}{x^3} \right)
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \frac{x^2 - 1}{x^2 + x + 1} &= \frac{1 - \frac{1}{x^2}}{1 + \frac{1}{x} + \frac{1}{x^2}} \\
+    &\underset{x\to +\infty}{=} \left( 1 - \frac{1}{x^2} \right) \left[ 1 - \left[ \frac{1}{x} + \frac{1}{x^2} \right] + \left[ \frac{1}{x} + \frac{1}{x^2} \right]^2 - \left[ \frac{1}{x} + \frac{1}{x^2} \right]^3 + o \left( \frac{1}{x^3} \right) \right] \\
+    &\underset{x\to +\infty}{=} \left( 1 - \frac{1}{x^2} \right) \left( 1 - \frac{1}{x} + \frac{1}{x^3} + o \left( \frac{1}{x^3} \right) \right) \\
+    &\underset{x\to +\infty}{=} 1 - \frac{1}{x} - \frac{1}{x^2} + \frac{2}{x^3} + o \left( \frac{1}{x^3} \right)
+\end{align*}
+
 
 \end{document}
