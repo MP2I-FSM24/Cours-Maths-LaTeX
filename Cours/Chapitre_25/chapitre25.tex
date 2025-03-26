@@ -450,5 +450,51 @@ Avec la notation $Q = \sum\limits_{k=0}^{n} b_k X^k$, on a :
     \end{align*}
 \end{enumerate}
 
+\setsection{62}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 25.63, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que $f:x\mapsto x \cos x$ est injective sur un voisinage de $0$ et trouver un DL à l'ordre 3 d'une réciproque locale (on doit trouver $f^{-1}(x) \underset{x\to 0}{=}  x + \frac{x^3}{2} + o(x^3)$).
+\end{tcolorbox}
+
+\noindent $f\in \mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R})$. 
+\begin{align*}
+    f(x) &\underset{x\to 0}{=} x \left( 1 - \frac{x^2}{2} + o(x^2) \right) \\
+    &\underset{x\to 0}{=} x - \frac{x^3}{2} + o(x^3)
+\end{align*}
+En particulier, $f'(0) = 1$, donc $f' > 0$ sur un voisinage de $0$ car $f\in \mathcal{C}^1(\mathbb{R}, \mathbb{R})$, donc $f$ est strictement croissante sur un voisinage de $0$, où elle est surjective. \\
+$f$ induit une bijection $\tilde{f}: u\to f(u)$. On note $f^{-1}:f(u)\to u$ la bijection réciproque induite par $\tilde{f}$. \\
+Comme $\tilde f$ ne s'annule pas sur $u$, d'après le théorème de la bijection dérivable, $f^{-1} \in \mathcal{C}^{\infty}(f(u), u)$. \\
+Donc en particulier $f^{-1}$ possède un $\text{DL}_3(f(0))$. \\
+On a : 
+\begin{align*}
+    f^{-1}(x) &\underset{x\to 0}{=} a_0 + a_1 x + a_2 x^2 + a_3 x^3 + o(x^3) \\
+\end{align*}
+Comme $f^{-1}(f(0)) = 0$, $a_0 = 0$. \\
+Enfin : 
+\begin{align*}
+    x &= f^{-1} \circ f(x) \\
+    &\underset{x\to 0}{=} f^{-1} \circ f(x) + o(x^3) \\
+    &\underset{x\to 0}{=} a_1 \left( x - \frac{x^3}{2} + o(x^3) \right) + a_2 (x + O(x^3))^2 + a_3 (x + O(x^3))^3 + o(x^3) \\
+    &\underset{x\to 0}{=} a_1 x + a_2 x^2 + \left( -\frac{a_1}{2} + a_3 \right) x^3 + o(x^3)
+\end{align*}
+Par unicité des DL : 
+\begin{align*}
+    \begin{cases}
+        a_1 = 1 \\
+        a_2 = 0 \\
+        -\frac{a_1}{2} + a_3 = 0
+    \end{cases}
+    \text{ donc }
+    \begin{cases}
+        a_1 = 1 \\
+        a_2 = 0 \\
+        a_3 = \frac{1}{2}
+    \end{cases}
+\end{align*}
+Donc : 
+\begin{align*}
+    f^{-1}(x) &\underset{x\to 0}{=} x + \frac{x^3}{2} + o(x^3)
+\end{align*}
+
 
 \end{document}
