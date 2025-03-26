@@ -611,5 +611,25 @@ Donc :
     \end{align*}
 \end{enumerate}
 
+\setsection{73}
+\section{Dérivation d'un DL}
+\begin{tcolorbox}[title=Propostion 25.74, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f$ une fonction de classe $\mathcal{C}^n$ au voisinage de $0$, admettant (donc) un DL à l'ordre $n$ en $0$ : 
+    \begin{align*}
+        f(x) \underset{x\to 0}{=} a_0 + a_1 x + \cdots + a_n x^n + o(x^n)
+    \end{align*}
+    Alors $f'$ admet un DL à l'ordre $n-1$ en $0$, égal à : 
+    \begin{align*}
+        f'(x) \underset{x\to 0}{=} a_1 + 2a_2 x + \cdots + n a_n x^{n-1} + o(x^{n-1})
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On applique la formule de Taylor-Young à $f$ et $f'$ : 
+\begin{align*}
+    f(x) &\underset{x\to 0}{=} \sum_{k=0}^{n} \frac{f^{(k)}(0)}{k!} x^k + o(x^k) \\
+    &\underset{x\to 0}{=} \sum_{k=0}^{n-1} \frac{f^{(k)}(0)}{k!} x^k + o(x^{n-1})
+\end{align*}
+En posant $a_k = \frac{f^{(k)}(0)}{k!}$, on obtient le résultat souhaité. 
+
 
 \end{document}
