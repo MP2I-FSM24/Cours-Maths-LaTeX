@@ -576,5 +576,40 @@ Donc :
     &\underset{x\to 0}{=} o(x^n)
 \end{align*}
 
+\setsection{71}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 25.72, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{enumerate}
+        \item Donner le DL de $\arctan x$ et $\arccos x$ à tout ordre. 
+        \item On peut faire la même chose avec $Argth(x)$, $Argsh(x)$ et $Argch(x)$.
+        \item Montrer que $\arctan \left( \frac{x^2 + 1}{x - 2} \right) \underset{x\to 0}{=} -\arctan \frac{1}{2} - \frac{1}{5}x - \frac{12}{25} x^2 - \frac{56}{375}x^3 + o(x^3)$. 
+        \item Voir l'exercice E-2 pour $\arcsin$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On pose $f = \arctan$. 
+    \begin{align*}
+        \forall x \in \mathbb{R}, f'(x) &= \frac{1}{1 + x^2}
+        \text{donc } f'(x) &\underset{x\to 0}{=} \sum_{k=0}^{n} (-1)^k x^{2k} + o(x^{2n}) \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        f(x) &\underset{x\to 0}{=} f(0) + \sum_{k=0}^{n} (-1)^k \frac{x^{2k+1}}{2k+1} + o(x^{2n+1}) \\
+    \end{align*}
+    On pose $f = \arccos \in \mathcal{D}^1(]-1, 1[, \mathbb{R})$ et : 
+    \begin{align*}
+        \forall x\in ]-1, 1[, f'(x) &= -\frac{1}{\sqrt{1 - x^2}} \\
+        \text{donc } f(x) &\underset{x\to 0}{=} -1 - \sum_{k=0}^{n} \frac{\left( -\frac{1}{2} \right) \left( -\frac{1}{2} - 1 \right) \cdots \left( -\frac{1}{2} - k+1 \right)}{k!} (-1)^k x^{2k} + o(x^{2n}) \\
+        &\underset{x\to 0}{=} -\sum_{k=0}^{n} \frac{(-1)^k (2k)!}{2^{k} k! 2^k k!} (-1)^k x^{2k} + o(x^{2n}) \\
+        &\underset{x\to 0}{=} -\sum_{k=0}^{n} \frac{(2k)!}{2^{2k} (k!)^2} x^{2k} + o(x^{2n}) \\
+        &\underset{x\to 0}{=} -\sum_{k=0}^{n} \frac{1}{2^{2k}} \binom{2k}{k} x^{2k} + o(x^{2n})
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        f(x) &\underset{x\to 0}{=} \underbrace{f(0)}_{\frac{\pi}{2}} - \sum_{k=0}^{n} \frac{1}{(2k+1) 2^{2k}} \binom{2k}{k} x^{2k+1} + o(x^{2n+1})
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
