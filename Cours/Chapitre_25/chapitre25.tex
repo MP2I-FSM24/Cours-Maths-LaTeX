@@ -402,5 +402,27 @@ Avec la notation $Q = \sum\limits_{k=0}^{n} b_k X^k$, on a :
     &=_{x\to 0} T_n(Q\circ P)(x) + o(x^n)
 \end{align*}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 25.59, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{enumerate}
+        \item $e^{\sin x} \underset{x\to 0}{=} 1 + x + \frac{x^2}{2} + o(x^3)$
+        \item $e^{\cos x - 1} \underset{x\to 0}{=} 1 - \frac{x^2}{2} + \frac{x^4}{6} + o(x^4)$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{align*}
+        e^{\sin x} &\underset{x\to 0}{=} e^{x - \frac{x^3}{6} + o(x^3)} \\
+        &\underset{x\to 0}{=} 1 + \left( x - \frac{x^3}{6} + o(x^3) \right) + \frac{1}{2} \left( x - \frac{x^3}{6} + o(x^3) \right)^2 + \frac{1}{6} \left( x - \frac{x^3}{6} + o(x^3)^3 \right)^3 + o(x^3) \\
+        &\underset{x\to 0}{=} 1 + \left( x - \frac{x^3}{6} + o(x^3) \right) + \frac{1}{2} (x + O(x^3))^2 + \frac{1}{6} (x + O(x^3))^3 + o(x^3) \\
+        &\underset{x\to 0}{=} 1 + x + \frac{1}{2} x^2 + o(x^3)
+    \end{align*}
+
+    \item \begin{align*}
+        e^{\cos x - 1} &\underset{x\to 0}{=} 1 + \left( -\frac{X^2}{2} + \frac{x^4}{4!} + o(x^4) \right) + \frac{1}{2} \left( -\frac{x^2}{2} + O(x^4) \right)^2 + o(x^4) \\
+        &\underset{x\to 0}{=} 1 - \frac{1}{2} x^2 + \frac{1}{6} x^4 + o(x^4)
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
