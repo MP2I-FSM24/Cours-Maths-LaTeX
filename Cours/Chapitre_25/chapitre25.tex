@@ -375,5 +375,32 @@ Puis on effectue un changment de variable : $x = x_0 + h$.
     \end{align*}
 \end{enumerate}
 
+\section{Composition de DL}
+\begin{tcolorbox}[title=Propostion 25.59, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f$ et $g$ deux fonctions définies au voisinage de $0$ avec $f(0) = 0$. Si $P$ et $Q$ sont des développements limités de $f$ et $g$ en $0$ à l'ordre $n$, alors $T_n(Q\circ P)$ est un DL en $0$ de $g\circ f$ à l'ordre $n$ : 
+    \begin{align*}
+        g \circ f(x) =_{x\to 0} T_n(Q\circ P)(x) + o(x^n)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On suppose que : 
+\begin{align*}
+    f(x) &=_{x\to 0} P(x) + o(x^n) \\
+    g(x) &=_{x\to 0} Q(x) + o(x^n)
+\end{align*}
+Comme $f(0) = 0$, on a $P(0) = 0$. \\
+\begin{align*}
+    g \circ f(x) &=_{x\to 0} Q(f(x)) + o(x^n) \\
+\end{align*}
+Avec la notation $Q = \sum\limits_{k=0}^{n} b_k X^k$, on a :
+\begin{align*}
+    g\circ f(x) &=_{x\to 0} \sum_{k=0}^{n} b_k f(x)^k + o(f(x)^n) \\
+    &=_{x\to 0} \sum_{k=0}^{n} b_k (P(x) + o(x^n))^k + o((P(x) + o(x^n))^n) \\
+    &=_{x\to 0} \sum_{k=0}^{n} [b_k (P(x))^k + \underbrace{o(x^n)}_{P(x) =_{x\to 0} O(1)}] + o(\underbrace{P(x)^k}_{P(x) =_{x\to 0 = O(x)}}) \\
+    &=_{x\to 0} \sum_{k=0}^{n} b_k P(x)^k + o(x^n) \\
+    &=_{x\to 0} Q\circ P(x) + o(x^n) \\
+    &=_{x\to 0} T_n(Q\circ P)(x) + o(x^n)
+\end{align*}
+
 
 \end{document}
