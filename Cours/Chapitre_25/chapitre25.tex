@@ -496,5 +496,20 @@ Donc :
     f^{-1}(x) &\underset{x\to 0}{=} x + \frac{x^3}{2} + o(x^3)
 \end{align*}
 
+\setsection{64}
+\section{DL d'un inverse}
+\begin{tcolorbox}[title=Propostion 25.65, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $g$ une fonction définie sur un voisinage de $0$ et ne s'annulant pas en $0$. Si $g$ admet un DL donné par le polynôme $P$ en $0$ à l'ordre $n$, alors $\frac{1}{g}$ et $\frac{1}{P}$ aussi et les DL à l'ordre $n$ en $0$ de $\frac{1}{g}$ et $\frac{1}{P}$ sont identiques. Autrement dit, si $P$ et $Q$ sont deux polynômes de $\mathbb{R}_n[X]$ avec $g(0) \neq 0$ et $g(x) \underset{x\to 0}{=} P(x) + o(x^n)$, alors : 
+    \begin{align*}
+        \frac{1}{g(x)} \underset{x\to 0}{=} Q(x) + o(x^n) \Leftrightarrow \frac{A}{P(x)} \underset{x\to 0}{=} Q(x) + o(x^n)
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \frac{1}{g(x)} - \frac{1}{P(x)} &= \frac{P(x) - g(x)}{P(x)g(x)} \\
+    &\underset{x\to 0}{=} o(x^n) \times O(1) \\
+    &\underset{x\to 0}{=} o(x^n)
+\end{align*}
+
 
 \end{document}
