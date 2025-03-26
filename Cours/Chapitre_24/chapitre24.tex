@@ -23,7 +23,7 @@ Si $u_n \sim v_n$ à partir d'un certain rang :
 Ainsi : 
 \begin{align*}
     u_n &= \underbrace{(a_n - 1)}_{= o(1)} v_n + v_n \\
-    &=_{n\to +\infty} v_n + o(v_n)
+    &\underset{n\to +\infty}{=} v_n + o(v_n)
 \end{align*} \\
 
 $\boxed{\Leftarrow}$ \\
@@ -46,11 +46,11 @@ Donc :
 \noindent On note $P = \sum\limits_{k=0}^d a_k X^k$. \\
 Pour $k\in \llbracket 0, d-1 \rrbracket$ : 
 \begin{align*}
-    n^k =_{n\to +\infty} o(n^d) \text{ et } a_k n^k =_{n\to +\infty} o(a_d n^d)
+    n^k \underset{n\to +\infty}{=} o(n^d) \text{ et } a_k n^k \underset{n\to +\infty}{=} o(a_d n^d)
 \end{align*}
 Donc :
 \begin{align*}
-    \sum_{k=0}^{d-1} a_k n^k =_{n\to +\infty} o(a_d n^d)
+    \sum_{k=0}^{d-1} a_k n^k \underset{n\to +\infty}{=} o(a_d n^d)
 \end{align*}
 Donc : 
 \begin{align*}
@@ -157,9 +157,9 @@ Donc :
 \end{tcolorbox}
 
 \begin{align*}
-    \exp \left(5n + n^2 \ln \left(1 + \frac{1}{n}\right)\right) &=_{n\to +\infty} \exp \left(5n + n^2 \left(\frac{1}{n} - \frac{1}{2n^2} + o\left(\frac{1}{n^2}\right)\right)\right) \\
-    &=_{n\to +\infty} \exp \left(6n - \frac{1}{2} + o(1)\right) \\
-    &=_{n\to +\infty} \frac{e^{6n}}{\sqrt{e}} \times e^{o(1)} \\
+    \exp \left(5n + n^2 \ln \left(1 + \frac{1}{n}\right)\right) &\underset{n\to +\infty}{=} \exp \left(5n + n^2 \left(\frac{1}{n} - \frac{1}{2n^2} + o\left(\frac{1}{n^2}\right)\right)\right) \\
+    &\underset{n\to +\infty}{=} \exp \left(6n - \frac{1}{2} + o(1)\right) \\
+    &\underset{n\to +\infty}{=} \frac{e^{6n}}{\sqrt{e}} \times e^{o(1)} \\
     &\sim_{n\to +\infty} \frac{e^{6n}}{\sqrt{e}}
 \end{align*}
 
@@ -173,9 +173,9 @@ Donc :
     &= e^{\frac{1}{n}} (1 - e^{\frac{1}{n+1} -\frac{1}{n}}) \\
     &= e^{\frac{1}{n}} (1 - e^{\frac{1}{n} \frac{1}{1 + \frac{1}{n}} - \frac{1}{n}}) \\
     &= e^{\frac{1}{n}} (1 - e^{\frac{1}{n}\left[ (1 + \frac{1}{n})^{-1} - 1 \right]}) \\
-    &=_{n\to +\infty} e^{\frac{1}{n}} (1 - e^{\frac{1}{n} \left(-\frac{1}{n} + o\left(\frac{1}{n}\right)\right)}) \\
-    &=_{n\to +\infty} e^{\frac{1}{n}}(1 - e^{-\frac{1}{n^2} + o \left(\frac{1}{n^2}\right)}) \\
-    &=_{n\to +\infty} e^{\frac{1}{n}}(\frac{1}{n^2} + o \left(\frac{1}{n^2}\right)) \\
+    &\underset{n\to +\infty}{=} e^{\frac{1}{n}} (1 - e^{\frac{1}{n} \left(-\frac{1}{n} + o\left(\frac{1}{n}\right)\right)}) \\
+    &\underset{n\to +\infty}{=} e^{\frac{1}{n}}(1 - e^{-\frac{1}{n^2} + o \left(\frac{1}{n^2}\right)}) \\
+    &\underset{n\to +\infty}{=} e^{\frac{1}{n}}(\frac{1}{n^2} + o \left(\frac{1}{n^2}\right)) \\
     &\sim_{n\to +\infty} \frac{e^{\frac{1}{n}}}{n^2} \\
     &\sim_{n\to +\infty} \frac{1}{n^2}
 \end{align*}
@@ -204,14 +204,14 @@ Donc :
     \begin{align*}
         v_n &= u_{n+1}^\alpha - u_n^\alpha \\
         &= \sin^\alpha u_n - u_n^\alpha \\
-        &=_{n\to +\infty} u_n - \frac{u_n^3}{6} + o(u_n^3) - u_n^\alpha \\
-        &=_{n\to +\infty} u_n^\alpha \left(1 - \frac{u_n^2}{6} + o(u_n^2)\right)^\alpha - u_n^\alpha \\
-        &=_{n\to +\infty} u_n^\alpha \left[1 + \alpha \left(-\frac{u_n^2}{6}\right) + o(u_n^2)\right] - u_n^\alpha \\
-        &=_{n\to +\infty} -\alpha \frac{u_n^{2 + \alpha}}{6} + o(u_n^{2 + \alpha})
+        &\underset{n\to +\infty}{=} u_n - \frac{u_n^3}{6} + o(u_n^3) - u_n^\alpha \\
+        &\underset{n\to +\infty}{=} u_n^\alpha \left(1 - \frac{u_n^2}{6} + o(u_n^2)\right)^\alpha - u_n^\alpha \\
+        &\underset{n\to +\infty}{=} u_n^\alpha \left[1 + \alpha \left(-\frac{u_n^2}{6}\right) + o(u_n^2)\right] - u_n^\alpha \\
+        &\underset{n\to +\infty}{=} -\alpha \frac{u_n^{2 + \alpha}}{6} + o(u_n^{2 + \alpha})
     \end{align*}
     Pour $\alpha = -2$, on a : 
     \begin{align*}
-        v_n &=_{n\to +\infty} \frac{1}{3} + o(1)
+        v_n &\underset{n\to +\infty}{=} \frac{1}{3} + o(1)
     \end{align*}
     D'après le lemme de Césaro : 
     \begin{align*}

@@ -11,14 +11,14 @@
 \begin{tcolorbox}[title=Théorème 25.6, title filled=false, colframe=orange, colback=orange!10!white]
     Soit $f$ et $g$ deux fonctions sur $X$ et $a\in \overline{X}$. Alors : 
     \begin{enumerate}
-        \item $f =_a O(g)$ si et seulement si pour toute suite $(u_n) \underset{n \to +\infty}{\longrightarrow} a$ à valeurs dans $X$, alors $f(u_n) = O(g(u_n))$. 
-        \item $f =_a o(g)$ si et seulement si pour toute suite $(u_n) \underset{n \to +\infty}{\longrightarrow} a$ à valeurs dans $X$, alors $f(u_n) = o(g(u_n))$.
+        \item $f \underset{a}{=} O(g)$ si et seulement si pour toute suite $(u_n) \underset{n \to +\infty}{\longrightarrow} a$ à valeurs dans $X$, alors $f(u_n) = O(g(u_n))$. 
+        \item $f \underset{a}{=} o(g)$ si et seulement si pour toute suite $(u_n) \underset{n \to +\infty}{\longrightarrow} a$ à valeurs dans $X$, alors $f(u_n) = o(g(u_n))$.
     \end{enumerate}
 \end{tcolorbox}
 
 \begin{enumerate}
     \item \begin{align*}
-        f =_a O(g) &\text{ ssi } \text{il existe $h$ bornée au voisinage de $a$ tel que } f = g \cdot h \\
+        f \underset{a}{=} O(g) &\text{ ssi } \text{il existe $h$ bornée au voisinage de $a$ tel que } f = g \cdot h \\
         &\text{ ssi } \text{Pour toute suite $(u_n) \in X^{\mathbb{N}}$ avec $u_n\to a$, } f(u_n) = g(u_n) \times w_n \text{ où $(w_n)$ est une suite bornée. } \\
         &\text{ } \boxed{\Rightarrow} \quad w_n = h(u_n) \text{ ssi bornée} \quad \boxed{\Leftarrow} \quad \text{ Par l'absurde avec (25.5). } \\
         &\text{ ssi } \text{Pour toute suite $(u_n) \in X^{\mathbb{N}}$ avec $u_n\to a$, } f(u_n) = O(g(u_n)).
@@ -101,7 +101,7 @@ On conclut avec $f(b) = g(a)$.
 \begin{tcolorbox}[title=Théorème 25.27, title filled=false, colframe=orange, colback=orange!10!white]
     Soit $I$ un intervalle ouvert de $\mathbb{R}$, $x_0\in I$ et $f:I \to \mathbb{R}$ une fonction de classe $\mathcal{C}^n$ au voisinage de $x_0$. Alors au voisinage de $x_0$, on a : 
     \begin{align*}
-        f(x) =_{x\to x_0} \sum_{k=0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + o((x-x_0)^n)
+        f(x) \underset{x\to x_0}{=} \sum_{k=0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + o((x-x_0)^n)
     \end{align*}
 \end{tcolorbox}
 
@@ -112,7 +112,7 @@ D'après la formule de Taylor :
 \end{align*}
 Montrons que : 
 \begin{align*}
-    \int_{x_0}^{x} \frac{(x-t)^{n-1}}{(n-1)!} f^{(n)}(t) \, dt =_{x\to x_0} \frac{f^{(n)}(x_0)}{n!} (x-x_0)^n + o((x-x_0)^n)
+    \int_{x_0}^{x} \frac{(x-t)^{n-1}}{(n-1)!} f^{(n)}(t) \, dt \underset{x\to x_0}{=} \frac{f^{(n)}(x_0)}{n!} (x-x_0)^n + o((x-x_0)^n)
 \end{align*}
 On a : 
 \begin{align*}
@@ -139,7 +139,7 @@ Par définition (avec les $\varepsilon$), on a le résultat souhaité.
 \begin{tcolorbox}[title=Propostion 25.28, title filled=false, colframe=lightblue, colback=lightblue!10!white]
     La formule de Taylor-Young à l'ordre $n$ en $0$ de l'exponentielle donne l'égalité suivante au voisinage de $0$ :
     \begin{align*}
-        e^x=_{x\to 0} \sum_{k=0}^{n} \frac{x^k}{k!} + o(x^n)
+        e^x\underset{x\to 0}{=} \sum_{k=0}^{n} \frac{x^k}{k!} + o(x^n)
     \end{align*}
 \end{tcolorbox}
 
@@ -151,7 +151,7 @@ Par définition (avec les $\varepsilon$), on a le résultat souhaité.
 \begin{tcolorbox}[title=Propostion 25.29, title filled=false, colframe=lightblue, colback=lightblue!10!white]
     La formule de Taylor-Young à l'ordre $n$ en $0$ de $x\mapsto \ln (1 + x)$ donne l'égalité suivante au voisinage de $1$ :
     \begin{align*}
-        \ln (1 + x) =_{x\to 0} \sum_{k=1}^{n} \frac{(-1)^{k-1}x^k}{k} + o(x^n)
+        \ln (1 + x) \underset{x\to 0}{=} \sum_{k=1}^{n} \frac{(-1)^{k-1}x^k}{k} + o(x^n)
     \end{align*}
 \end{tcolorbox}
 
@@ -163,16 +163,16 @@ Par définition (avec les $\varepsilon$), on a le résultat souhaité.
 \end{align*}
 Donc, d'après Taylor-Young :
 \begin{align*}
-    f(x) &=_{x\to 0} \sum_{k=1}^{n} \frac{f^{(k)}(0)}{k!}x^k + o(x^n) \\
-    &=_{x\to 0} \sum_{k=1}^{n} \frac{(-1)^{k-1}(k-1)!}{k!}x^k + o(x^n) \\
-    &=_{x\to 0} \sum_{k=1}^{n} \frac{(-1)^{k-1}}{k}x^k + o(x^n)
+    f(x) &\underset{x\to 0}{=} \sum_{k=1}^{n} \frac{f^{(k)}(0)}{k!}x^k + o(x^n) \\
+    &\underset{x\to 0}{=} \sum_{k=1}^{n} \frac{(-1)^{k-1}(k-1)!}{k!}x^k + o(x^n) \\
+    &\underset{x\to 0}{=} \sum_{k=1}^{n} \frac{(-1)^{k-1}}{k}x^k + o(x^n)
 \end{align*}
 
 \section{Développement limité de cosinus et sinus}
 \begin{tcolorbox}[title=Propostion 25.30, title filled=false, colframe=lightblue, colback=lightblue!10!white]
     La formule de Taylor-Young à l'ordre $2n + 2$ pour le sinus et à l'ordre $2n + 1$ pour le cosinus en $0$ donne les égalités suivantes au voisinage de $0$ : 
     \begin{align*}
-        \sin x &=_{x\to 0} \sum_{k=0}^{n} \frac{(-1)^k x^{2k+1}}{(2k+1)!} + o(x^{2n+2}) \quad \text{ et } \quad \cos x =_{x\to 0} \sum_{k=0}^{n} \frac{(-1)^k x^{2k}}{(2k)!} + o(x^{2n+1}) \\
+        \sin x &\underset{x\to 0}{=} \sum_{k=0}^{n} \frac{(-1)^k x^{2k+1}}{(2k+1)!} + o(x^{2n+2}) \quad \text{ et } \quad \cos x \underset{x\to 0}{=} \sum_{k=0}^{n} \frac{(-1)^k x^{2k}}{(2k)!} + o(x^{2n+1}) \\
     \end{align*}
 \end{tcolorbox}
 
@@ -186,7 +186,7 @@ Donc, d'après Taylor-Young :
 \end{align*}
 Donc : 
 \begin{align*}
-    \sin x &=_{x\to 0} \sum_{k=0}^{2n+2} \frac{\sin^{(k)}(0)}{k!}x^k + o(x^{2n+2}) \\
+    \sin x &\underset{x\to 0}{=} \sum_{k=0}^{2n+2} \frac{\sin^{(k)}(0)}{k!}x^k + o(x^{2n+2}) \\
     &= \sum_{i=0}^{n} \frac{(-1)^i}{(2i+1)!}x^{2i+1} + o(x^{2n+2})
 \end{align*}
 Idem pour $\cos$.
@@ -199,20 +199,20 @@ Idem pour $\cos$.
 
 \noindent On suppose que : 
 \begin{align*}
-    f(x) &=_{x\to x_0} \sum_{k=0}^{n} a_k (x - x_0)^k + o((x - x_0)^n) \\
-    &=_{x\to x_0} \sum_{k=0}^{n} b_k (x - x_0)^k + o((x - x_0)^n) 
+    f(x) &\underset{x\to x_0}{=} \sum_{k=0}^{n} a_k (x - x_0)^k + o((x - x_0)^n) \\
+    &\underset{x\to x_0}{=} \sum_{k=0}^{n} b_k (x - x_0)^k + o((x - x_0)^n) 
 \end{align*}
 On suppose par l'absurde que les développements sont différents. \\
 On note $p = \min (k \mid a_k \neq b_k)$. \\
 Or : 
 \begin{align*}
-    \sum_{k=0}^{n} a_k (x - x_0)^k &=_{x\to x_0} \sum_{k=0}^{n} b_k (x - x_0)^k + o((x - x_0)^n)
+    \sum_{k=0}^{n} a_k (x - x_0)^k &\underset{x\to x_0}{=} \sum_{k=0}^{n} b_k (x - x_0)^k + o((x - x_0)^n)
 \end{align*}
 Donc : 
 \begin{align*}
-    \sum_{k=p}^{n} a_k(x - x_0)^k &=_{x\to x_0} + o((x - x_0)^n) \\
-    \text{donc } a_p (x - x_0)^p + \sum_{k=p+1}^{n} a_k(x - x_0)^k &=_{x\to x_0} b_p(x - x_0)^p + \sum_{k=p+1}^{n} b_k(x - x_0)^k + o((x - x_0)^n) \\
-    \text{donc } a_p (x - x_0)^p &=_{x\to x_0} b_p(x - x_0)^p + o((x - x_0)^n) \\
+    \sum_{k=p}^{n} a_k(x - x_0)^k &\underset{x\to x_0}{=} + o((x - x_0)^n) \\
+    \text{donc } a_p (x - x_0)^p + \sum_{k=p+1}^{n} a_k(x - x_0)^k &\underset{x\to x_0}{=} b_p(x - x_0)^p + \sum_{k=p+1}^{n} b_k(x - x_0)^k + o((x - x_0)^n) \\
+    \text{donc } a_p (x - x_0)^p &\underset{x\to x_0}{=} b_p(x - x_0)^p + o((x - x_0)^n) \\
     \text{donc } a_p &= b_p + o(1)
 \end{align*}
 Absurde car $a_p \neq b_p$.
@@ -229,11 +229,11 @@ Absurde car $a_p \neq b_p$.
 \begin{itemize}
     \item On suppose $f$ paire et : 
     \begin{align*}
-        f(x) &=_{x\to 0} \sum_{k=0}^{n} a_k x^k + o(x^n) \\
+        f(x) &\underset{x\to 0}{=} \sum_{k=0}^{n} a_k x^k + o(x^n) \\
     \end{align*}
     Donc : 
     \begin{align*}
-        f(-x) &=_{x\to 0} \sum_{k=0}^{n} a_k (-1)^kx^k + o(x^n) \\
+        f(-x) &\underset{x\to 0}{=} \sum_{k=0}^{n} a_k (-1)^kx^k + o(x^n) \\
     \end{align*}
     Par unicité du DL : 
     \begin{align*}
@@ -258,7 +258,7 @@ Absurde car $a_p \neq b_p$.
     \setcounter{enumi}{2}
     \item Si $f$ admet un $\text{DL}_0$ en $x_0$, on a : 
     \begin{align*}
-        f(x) &=_{x\to x_0} a + o(1)
+        f(x) &\underset{x\to x_0}{=} a + o(1)
     \end{align*}
     Donc : 
     \begin{align*}
@@ -271,11 +271,11 @@ Absurde car $a_p \neq b_p$.
     Néecssairement, $a = f(x_0)$ et $f$ est continue en $x_0$. \\
     Si $f$ admet un $\text{DL}_1$ en $x_0$, on a : 
     \begin{align*}
-        f(x) &=_{x\to x_0} f(x_0) + a (x - x_0) + o(x - x_0)
+        f(x) &\underset{x\to x_0}{=} f(x_0) + a (x - x_0) + o(x - x_0)
     \end{align*}
     Donc : 
     \begin{align*}
-        \frac{f(x) - f(x_0)}{x - x_0} =_{x\to x_0} a + o(1) \underset{x \to x_0}{\longrightarrow} a
+        \frac{f(x) - f(x_0)}{x - x_0} \underset{x\to x_0}{=} a + o(1) \underset{x \to x_0}{\longrightarrow} a
     \end{align*}
 \end{enumerate}
 
@@ -291,8 +291,8 @@ Absurde car $a_p \neq b_p$.
     \setcounter{enumi}{1}
     \item \begin{align*}
         f(t) - \left( 1 - \frac{t^2}{2} \right) &= \cos t - 1 + \frac{t^2}{2} + t^3 \sin \frac{1}{t} \\
-        &=_{t\to 0} o(t^2) + t^2 \times t \sin \frac{1}{t} \\
-        &=_{t\to 0} o(t^2)
+        &\underset{t\to 0}{=} o(t^2) + t^2 \times t \sin \frac{1}{t} \\
+        &\underset{t\to 0}{=} o(t^2)
     \end{align*}
     Donc $f$ admet bien un $\text{DL}_2$ en $0$, donc un $\text{DL}_1$ en $0$, donc est dérivable en $0$ (et donc sur $\mathbb{R}$ par théorème d'opérations). 
     \begin{align*}
@@ -306,15 +306,15 @@ Absurde car $a_p \neq b_p$.
 \begin{tcolorbox}[title=Propostion 25.50, title filled=false, colframe=lightblue, colback=lightblue!10!white]
     Soit $f$ une fonction définie au voisinage de $x_0$, admettant à l'ordre $n$ un DL non nul. Alors il existe un unique entier $m \leq n$ tel que pour $h$ au voisinage de $0$ on ait : 
     \begin{align*}
-        f(x_0 + h) =_{x\to x_0} h^m(a_0 + a_1 h + \ldots + a_{n-m} h^{n-m}) + o(h^{n-m})
+        f(x_0 + h) \underset{x\to x_0}{=} h^m(a_0 + a_1 h + \ldots + a_{n-m} h^{n-m}) + o(h^{n-m})
     \end{align*}
     avec $a_0 \neq 0$. Il s'agit de la \textbf{forme normalisée} du DL à l'ordre $n$ de $f$ au voisinage de $x_0$. 
 \end{tcolorbox}
 
 \begin{align*}
-    f(x) &=_{x\to x_0} \sum_{k=0}^{n} a_k (x - x_0)^k + o((x - x_0)^n) \\
-    &=_{x\to x_0} \sum_{k=m}^{n} a_k (x - x_0)^k + o((x - x_0)^k) \\
-    &=_{x\to x_0} (x - x_0)^m \left( \sum_{k=0}^{n-m} a_{k+m} (x - x_0)^k + o((x - x_0)^{n-m}) \right)
+    f(x) &\underset{x\to x_0}{=} \sum_{k=0}^{n} a_k (x - x_0)^k + o((x - x_0)^n) \\
+    &\underset{x\to x_0}{=} \sum_{k=m}^{n} a_k (x - x_0)^k + o((x - x_0)^k) \\
+    &\underset{x\to x_0}{=} (x - x_0)^m \left( \sum_{k=0}^{n-m} a_{k+m} (x - x_0)^k + o((x - x_0)^{n-m}) \right)
 \end{align*}
 Puis on effectue un changment de variable : $x = x_0 + h$.
 
@@ -323,55 +323,55 @@ Puis on effectue un changment de variable : $x = x_0 + h$.
 \begin{tcolorbox}[title=Propostion 25.56, title filled=false, colframe=lightblue, colback=lightblue!10!white]
     Soit $f$ et $g$ deux fonctions définies sur un voisinage de $0$ et $P$ et $Q$ deux polynômes de degré au plus $n$. Si au voisinage de $0$ : 
     \begin{align*}
-        f(x) &=_{x\to 0} P(x) + o(x^n) \quad \text{ et } \quad g(x) =_{x\to 0} Q(x) + o(x^n)
+        f(x) &\underset{x\to 0}{=} P(x) + o(x^n) \quad \text{ et } \quad g(x) \underset{x\to 0}{=} Q(x) + o(x^n)
     \end{align*}
     Alors : 
     \begin{align*}
-        (fg)(x) =_{x\to 0} T_n(PQ)(x) + o(x^n)
+        (fg)(x) \underset{x\to 0}{=} T_n(PQ)(x) + o(x^n)
     \end{align*}
 \end{tcolorbox}
 
 \begin{align*}
-    f(x)g(x) &=_{x\to 0} (P(x) + o(x^n))(Q(x) + o(x^n)) \\
-    &=_{x\to 0} P(x)Q(x) + P(x)o(x^n) + Q(x)o(x^n) + o(x^n)o(x^n) \\
-    &=_{x\to 0} P(x)Q(x) + o(x^n) \\
-    &=_{x\to 0} T_n(PQ)(x) + o(x^n)
+    f(x)g(x) &\underset{x\to 0}{=} (P(x) + o(x^n))(Q(x) + o(x^n)) \\
+    &\underset{x\to 0}{=} P(x)Q(x) + P(x)o(x^n) + Q(x)o(x^n) + o(x^n)o(x^n) \\
+    &\underset{x\to 0}{=} P(x)Q(x) + o(x^n) \\
+    &\underset{x\to 0}{=} T_n(PQ)(x) + o(x^n)
 \end{align*}
 
 \section{Exemple}
 \begin{tcolorbox}[title=Exemple 25.57, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
     \begin{enumerate}
-        \item $\frac{\cos x}{1 + x} =_{x\to 0} 1 - x + \frac{x^2}{2} - \frac{x^3}{2} + o(x^3)$
-        \item $(e^x)^2 =_{x\to 0} 1 + 2x + 2x^2 + \frac{4x^3}{3} + o(x^3)$
+        \item $\frac{\cos x}{1 + x} \underset{x\to 0}{=} 1 - x + \frac{x^2}{2} - \frac{x^3}{2} + o(x^3)$
+        \item $(e^x)^2 \underset{x\to 0}{=} 1 + 2x + 2x^2 + \frac{4x^3}{3} + o(x^3)$
     \end{enumerate}
 \end{tcolorbox}
 
 \begin{enumerate}
     \item \begin{align*}
         \frac{\cos x}{1 + x} &= \cos x \times (1 + x)^{-1} \\
-        &=_{x\to 0} (1 - \frac{x^2}{2} + o(x^2))(1 - x + x^2 - x^3 + o(x^3)) \\
-        &=_{x\to 0} 1 - x + \frac{x^2}{2} - \frac{x^3}{2} + o(x^3)
+        &\underset{x\to 0}{=} (1 - \frac{x^2}{2} + o(x^2))(1 - x + x^2 - x^3 + o(x^3)) \\
+        &\underset{x\to 0}{=} 1 - x + \frac{x^2}{2} - \frac{x^3}{2} + o(x^3)
     \end{align*}
 
     \item \begin{align*}
-        (e^x)^2 &=_{x\to 0} (1 + x + \frac{x^2}{2} + \frac{x^3}{6} + o(x^3))^2 \\
-        &=_{x\to 0} 1 + 2x + 2x^2 + \frac{4x^3}{3} + o(x^3)
+        (e^x)^2 &\underset{x\to 0}{=} (1 + x + \frac{x^2}{2} + \frac{x^3}{6} + o(x^3))^2 \\
+        &\underset{x\to 0}{=} 1 + 2x + 2x^2 + \frac{4x^3}{3} + o(x^3)
     \end{align*}
 \end{enumerate}
 
 \section{Exemple}
 \begin{tcolorbox}[title=Exemple 25.58, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
     \begin{enumerate}
-        \item $(\sin x - x)(\cos x - 1) =_{x\to 0} \frac{x^5}{12} - \frac{x^7}{90} + o(x^8)$
+        \item $(\sin x - x)(\cos x - 1) \underset{x\to 0}{=} \frac{x^5}{12} - \frac{x^7}{90} + o(x^8)$
     \end{enumerate}
 \end{tcolorbox}
 
 \begin{enumerate}
     \item \begin{align*}
-        (\sin x - x)(\cos x - 1) &=_{x\to 0} \left( -\frac{x^3}{6} + \frac{x^5}{120} + o(x^6) \right) \left( -\frac{x^2}{2} + \frac{x^4}{24} + o(x^5) \right) \\
-        &=_{x\to 0} \frac{x^5}{12} + \left( \frac{-1}{2 \times 5!} - \frac{1}{3!4!} \right) x^7 + o(x^8) \\
-        &=_{x\to 0} \frac{x^5}{12} - \frac{1}{5 \times 3 \times 3!} x^7 + o(x^8) \\
-        &=_{x\to 0} \frac{x^5}{12} - \frac{x^7}{90} + o(x^8)
+        (\sin x - x)(\cos x - 1) &\underset{x\to 0}{=} \left( -\frac{x^3}{6} + \frac{x^5}{120} + o(x^6) \right) \left( -\frac{x^2}{2} + \frac{x^4}{24} + o(x^5) \right) \\
+        &\underset{x\to 0}{=} \frac{x^5}{12} + \left( \frac{-1}{2 \times 5!} - \frac{1}{3!4!} \right) x^7 + o(x^8) \\
+        &\underset{x\to 0}{=} \frac{x^5}{12} - \frac{1}{5 \times 3 \times 3!} x^7 + o(x^8) \\
+        &\underset{x\to 0}{=} \frac{x^5}{12} - \frac{x^7}{90} + o(x^8)
     \end{align*}
 \end{enumerate}
 
@@ -379,27 +379,27 @@ Puis on effectue un changment de variable : $x = x_0 + h$.
 \begin{tcolorbox}[title=Propostion 25.59, title filled=false, colframe=lightblue, colback=lightblue!10!white]
     Soit $f$ et $g$ deux fonctions définies au voisinage de $0$ avec $f(0) = 0$. Si $P$ et $Q$ sont des développements limités de $f$ et $g$ en $0$ à l'ordre $n$, alors $T_n(Q\circ P)$ est un DL en $0$ de $g\circ f$ à l'ordre $n$ : 
     \begin{align*}
-        g \circ f(x) =_{x\to 0} T_n(Q\circ P)(x) + o(x^n)
+        g \circ f(x) \underset{x\to 0}{=} T_n(Q\circ P)(x) + o(x^n)
     \end{align*}
 \end{tcolorbox}
 
 \noindent On suppose que : 
 \begin{align*}
-    f(x) &=_{x\to 0} P(x) + o(x^n) \\
-    g(x) &=_{x\to 0} Q(x) + o(x^n)
+    f(x) &\underset{x\to 0}{=} P(x) + o(x^n) \\
+    g(x) &\underset{x\to 0}{=} Q(x) + o(x^n)
 \end{align*}
 Comme $f(0) = 0$, on a $P(0) = 0$. \\
 \begin{align*}
-    g \circ f(x) &=_{x\to 0} Q(f(x)) + o(x^n) \\
+    g \circ f(x) &\underset{x\to 0}{=} Q(f(x)) + o(x^n) \\
 \end{align*}
 Avec la notation $Q = \sum\limits_{k=0}^{n} b_k X^k$, on a :
 \begin{align*}
-    g\circ f(x) &=_{x\to 0} \sum_{k=0}^{n} b_k f(x)^k + o(f(x)^n) \\
-    &=_{x\to 0} \sum_{k=0}^{n} b_k (P(x) + o(x^n))^k + o((P(x) + o(x^n))^n) \\
-    &=_{x\to 0} \sum_{k=0}^{n} [b_k (P(x))^k + \underbrace{o(x^n)}_{P(x) =_{x\to 0} O(1)}] + o(\underbrace{P(x)^k}_{P(x) =_{x\to 0 = O(x)}}) \\
-    &=_{x\to 0} \sum_{k=0}^{n} b_k P(x)^k + o(x^n) \\
-    &=_{x\to 0} Q\circ P(x) + o(x^n) \\
-    &=_{x\to 0} T_n(Q\circ P)(x) + o(x^n)
+    g\circ f(x) &\underset{x\to 0}{=} \sum_{k=0}^{n} b_k f(x)^k + o(f(x)^n) \\
+    &\underset{x\to 0}{=} \sum_{k=0}^{n} b_k (P(x) + o(x^n))^k + o((P(x) + o(x^n))^n) \\
+    &\underset{x\to 0}{=} \sum_{k=0}^{n} [b_k (P(x))^k + \underbrace{o(x^n)}_{P(x) \underset{x\to 0}{=} O(1)}] + o(\underbrace{P(x)^k}_{P(x) \underset{x\to 0}{=} = O(x)}) \\
+    &\underset{x\to 0}{=} \sum_{k=0}^{n} b_k P(x)^k + o(x^n) \\
+    &\underset{x\to 0}{=} Q\circ P(x) + o(x^n) \\
+    &\underset{x\to 0}{=} T_n(Q\circ P)(x) + o(x^n)
 \end{align*}
 
 \section{Exemple}
