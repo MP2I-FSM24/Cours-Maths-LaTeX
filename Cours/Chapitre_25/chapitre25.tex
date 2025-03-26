@@ -511,5 +511,31 @@ Donc :
     &\underset{x\to 0}{=} o(x^n)
 \end{align*}
 
+\setsection{66}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 25.67, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{enumerate}
+        \item (archi classique) : $\frac{1}{\cos x} \underset{x\to 0}{=} 1 + \frac{x^2}{2} + \frac{5x^4}{24} + \frac{61x^6}{720} + o(x^7)$
+        \item (archi classique) : $\tan x \underset{x\to 0}{=} x + \frac{x^3}{3} + \frac{2x^5}{15}  \frac{17x^7}{315} + \frac{62x^9}{2835} + o(x^{10})$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{align*}
+        \frac{1}{\cos x} &\underset{x\to 0}{=} \frac{1}{1 - \frac{x^2}{2} + \frac{x^4}{4!} + \frac{x^6}{6!} + O(x^8)} \\
+        &\underset{x\to 0}{=} 1 - \left[ -\frac{x^2}{2} + \frac{x^4}{4!} - \frac{x^6}{6!} + O(x^8) \right] + \left[ -\frac{x^2}{2} + \frac{x^4}{4!} + O(x^6) \right]^2 - \left[ -\frac{x^2}{2} + O(x^4) \right]^3 + O(x^8) \\
+        &\underset{x\to 0}{=} 1 + \frac{x^2}{2} + \left[ -\frac{1}{4!} + \frac{1}{4} \right] x^4 + \left[ \frac{1}{6!} - \frac{1}{4!} + \frac{1}{8} \right] x^6 + O(x^8) \\
+        &\underset{x\to 0}{=} 1 + \frac{x^2}{2} + \frac{5x^4}{24} + \frac{61x^6}{720} + O(x^8)
+    \end{align*}
+
+    \item A l'ordre 5 :
+    \begin{align*}
+        \tan x &= \frac{\sin x}{\cos x} \\
+        &= \left( x - \frac{x^3}{6} + \frac{x^5}{5!} + o(x^5) \right) \left( 1 + \frac{x^2}{2} + \frac{5x^4}{24} + o(x^4) \right) \\
+        &\underset{x\to 0}{=} x + \frac{x^3}{3} + \left( \frac{5}{4!} - \frac{1}{12} + \frac{1}{5!} \right) x^5 + o(x^5) \\
+        &\underset{x\to 0}{=} x + \frac{x^3}{3} + \frac{2x^5}{15} + o(x^5)
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
