@@ -668,7 +668,7 @@ En posant $a_k = \frac{f^{(k)}(0)}{k!}$, on obtient le résultat souhaité.
 
 \setsection{84}
 \section{Exemple}
-\begin{tcolorbox}[title=Exemple, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+\begin{tcolorbox}[title=Exemple 25.85, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
     Montrer que la parabole d'équation $y = ex^2 + \frac{e}{2}x + \frac{e}{24}$ est asymptote à la courbe de $f:x\mapsto x^2 \left( 1 + \frac{1}{x} \right)^{x+1}$ et que la courbe de $f$ est située au-dessus de sa courbe asymptote (le terme d'ordre 1 est $\frac{e}{48}$).
 \end{tcolorbox}
 
@@ -680,6 +680,52 @@ En posant $a_k = \frac{f^{(k)}(0)}{k!}$, on obtient le résultat souhaité.
     &\underset{x\to +\infty}{=} ex^2 \left[ 1 + \left[ \frac{1}{2x} - \frac{1}{6x^2} + \frac{1}{12x^3} + o \left( \frac{1}{x^3} \right) \right] + \frac{1}{2} \left[ \frac{1}{2x} - \frac{1}{6x^2} + O \left( \frac{1}{x^3} \right) \right]^2 + \frac{1}{6} \left[ \frac{1}{2x} + O \left( \frac{1}{x^2} \right) \right]^3 + o \left( \frac{1}{x^3} \right) \right] \\
     &\underset{x\to +\infty}{=} ex^2 + \frac{e}{2}x - \frac{e}{24} + \frac{e}{48x} + o \left( \frac{1}{x} \right)
 \end{align*}
+
+\section*{Exercice 11}
+\begin{tcolorbox}[title=Exercice 25.11, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $f$ la fonction $x\mapsto x + \ln (1 + x)$ sur $]-1, +\infty[$.
+    \begin{enumerate}
+        \item Montrer que $f$ est bijective de $]-1, +\infty[$ sur son image (que l'on précisera). 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $f$ est strictement croissante et continue donc d'après le théorème de la bijection continue, $f$ induit une bijection de $]-1, +\infty[$ sur $]\lim_{x\to -1} f(x), \lim_{x\to +\infty} f(x)[ = \mathbb{R}$. \\
+    \item $f\in \mathcal{C}^{\infty}(]-1, +\infty[, \mathbb{R})$ et : 
+    \begin{align*}
+        \forall x\in ]-1, +\infty[, f'(x) &= 1 + \frac{1}{1+x} \\
+    \end{align*}
+    D'après le TBD, $f^{-1} \in \mathcal{C}^{\infty}(\mathbb{R}, ]-1, +\infty[)$ donc possède un $\text{DL}_3$ en $0$. \\
+    Or : 
+    \begin{align*}
+        f(0) = 0 \text{ et } f(x) \underset{x\to 0}{=} 2x - \frac{1}{2}x^2 + \frac{1}{3}x^3 + o(x^3)
+    \end{align*}
+    On note $f^{-1}(x) \underset{x\to 0}{=} a_1 x + a_2 x^2 + a_3 x^3 + o(x^3)$. \\
+    Or : 
+    \begin{align*}
+        x &= f^{-1} \circ f(x) \\
+        &\underset{x\to 0}{=} a_1 \left( 2x - \frac{1}{2}x^2 + \frac{1}{3}x^3 + o(x^3) \right) + a_2 \left( 2x - \frac{1}{2}x^2 + \frac{1}{3}x^3 + o(x^3) \right)^2 + a_3 \left( 2x - \frac{1}{2}x^2 + \frac{1}{3}x^3 + o(x^3) \right)^3 + o(x^3) \\
+        &\underset{x\to 0}{=} 2a_1 x + \left( -\frac{a_1}{2} + 4a_2 \right) x^2 + \left( \frac{a_1}{3} - 2a_2 + 8a_3 \right) x^3 + o(x^3)
+    \end{align*}
+    Par unicité du $\text{DL}_3(0)$ : 
+    \begin{align*}
+        \begin{cases}
+            2a_1 &= 1 \\
+            -\frac{a_1}{2} + 4a_2 &= 0 \\
+            \frac{a_1}{3} - 2a_2 + 8a_3 &= 0
+        \end{cases}
+        \text{ donc }
+        \begin{cases}
+            a_1 &= \frac{1}{2} \\
+            a_2 &= \frac{1}{16} \\
+            a_3 &= -\frac{1}{192}
+        \end{cases}
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        f^{-1}(x) \underset{x\to 0}{=} \frac{x}{2} + \frac{x^2}{16} - \frac{x^3}{192} + o(x^3)
+    \end{align*}
+\end{enumerate}
 
 
 \end{document}
