@@ -666,5 +666,20 @@ En posant $a_k = \frac{f^{(k)}(0)}{k!}$, on obtient le résultat souhaité.
     \end{align*}
 \end{enumerate}
 
+\setsection{84}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que la parabole d'équation $y = ex^2 + \frac{e}{2}x + \frac{e}{24}$ est asymptote à la courbe de $f:x\mapsto x^2 \left( 1 + \frac{1}{x} \right)^{x+1}$ et que la courbe de $f$ est située au-dessus de sa courbe asymptote (le terme d'ordre 1 est $\frac{e}{48}$).
+\end{tcolorbox}
+
+\begin{align*}
+    f(x) &= x^2 \left( 1 + \frac{1}{x} \right)^{x+1} \\
+    &= x^2 \exp \left( (x+1) \ln \left( 1 + \frac{1}{x} \right) \right) \\
+    &\underset{x\to +\infty}{=} x^2 \exp \left( (x+1) \left( \frac{1}{x} - \frac{1}{2x^2} + \frac{1}{3x^2} - \frac{1}{4x^4} + o \left( \frac{1}{x^4} \right) \right) \right) \\
+    &\underset{x\to +\infty}{=} x^2 \exp \left( 1 + \frac{1}{2x} - \frac{1}{6x^2} + \frac{1}{12x^3} + o \left( \frac{1}{x^3} \right) \right) \\
+    &\underset{x\to +\infty}{=} ex^2 \left[ 1 + \left[ \frac{1}{2x} - \frac{1}{6x^2} + \frac{1}{12x^3} + o \left( \frac{1}{x^3} \right) \right] + \frac{1}{2} \left[ \frac{1}{2x} - \frac{1}{6x^2} + O \left( \frac{1}{x^3} \right) \right]^2 + \frac{1}{6} \left[ \frac{1}{2x} + O \left( \frac{1}{x^2} \right) \right]^3 + o \left( \frac{1}{x^3} \right) \right] \\
+    &\underset{x\to +\infty}{=} ex^2 + \frac{e}{2}x - \frac{e}{24} + \frac{e}{48x} + o \left( \frac{1}{x} \right)
+\end{align*}
+
 
 \end{document}
