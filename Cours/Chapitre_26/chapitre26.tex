@@ -12,9 +12,23 @@
     L'image d'une fonction en escalier est un ensemble fini. En particulier, une fonction en escalier est bornée. 
 \end{tcolorbox}
 
-\noindent Si $v = \{ v_0, \ldots, v_n \}$ est une subdivision associée à $f$, alors : 
+\noindent Si $v = \{ \sigma_0, \ldots, \sigma_n \}$ est une subdivision associée à $f$, alors : 
 \begin{align*}
     |Im(f)| &\leq \underbrace{n}_{\text{valeurs sur chaque intervalle ouvert}} + \underbrace{n + 1}_{\text{valeurs de } f(v_i)} = 2n + 1
 \end{align*}
+
+\setsection{13}
+\section{Subdivision commune}
+\begin{tcolorbox}[title=Lemme 26.14, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ et $g$ deux fonctions en escalier. Il existe une subdivision commune associée à $f$ et $g$. 
+\end{tcolorbox}
+
+\noindent Si $\sigma$ est une subdivision associée à $f$ et $\tau$ est une subdivision associée à $g$ : 
+\begin{align*}
+    \sigma \cup \tau &\leq \sigma \\
+    &\leq \tau
+\end{align*}
+Donc $\sigma \cup \tau$ est une subdivision commune associée à $f$ et $g$.
+
 
 \end{document}
