@@ -37,5 +37,30 @@ Donc $\sigma \cup \tau$ est une subdivision commune associée à $f$ et $g$.
 
 \noindent PRAS (26.14)
 
+\setsection{16}
+\section{Théorème}
+\begin{tcolorbox}[title=Théorème 26.17, title filled=false, colframe=orange, colback=orange!10!white]
+    Pour toutes subdivisions $\sigma$ et $\tau$ associées à $f$, on a : 
+    \begin{align*}
+        I(f, \sigma) &= I(f, \tau)
+    \end{align*}
+    Autrement dit, la quantité $I(f, \sigma)$ est indépendante du choix de la subdivision associée. 
+\end{tcolorbox}
+
+\noindent Dans un premier temps, on suppose $\tau \subset \sigma$. \\
+Notons : 
+\begin{align*}
+    \tau &= \{ \tau_0, \ldots, \tau_n \} \\
+    &= \{ v_{i_0}, \ldots, v_{i_n} \}
+\end{align*}
+On note $f_k$ la valeur constante de $f$ sur $]\tau_k, \tau_{k+1}[$ et ainsi : 
+\begin{align*}
+    I(f, \tau) &= \sum_{k=0}^{n-1} (\sigma_{i_{k+1}} - \sigma_{i_k}) f_k \\
+    &= \sum_{k=0}^{n-1} \left[ \sum_{p=i_k}^{i_{k+1} - 1} (\sigma_{p+1} - \sigma_p) \right] f_k \\
+    &= \sum_{k=0}^{n-1} \sum_{p=i_k}^{i_{k+1} - 1} (\sigma_{p+1} - \sigma_p) f_p \\
+    &= \sum_{p=0}^{i_n - 1} (\sigma_{p+1} - \sigma_p) f_p \\
+    &= I(f, \sigma)
+\end{align*}
+
 
 \end{document}
