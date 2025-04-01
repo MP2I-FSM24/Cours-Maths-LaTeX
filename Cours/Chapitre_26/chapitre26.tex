@@ -114,5 +114,51 @@ On obtient la croissance par linéarité.
 
 \noindent Si $\sigma$ est associée à $f$, elle reste associée à $|f|$ et ensuite on utilise l'inégalité triangulaire classique avec (26.20). 
 
+\setsection{35}
+\section{Théorème}
+\begin{tcolorbox}[title=Théorème 26.36, title filled=false, colframe=orange, colback=orange!10!white]
+    $f$ est intégrable si et seulement si $I_-(f)$ et $I_+(f)$ existent et si $I_-(f) = I_+(f)$.
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+On suppose $f$ intégrable. Donc $Esc_+(f)$ et $Esc_-(f)$ ne sont pas vides. \\
+En particulier $A_+(f) \neq \emptyset$ est minoré et $A_-(f) \neq \emptyset$ est majoré. \\
+D'après la propriété fondamentale de $\mathbb{R}$, $I_-(f)$ et $I_+(f)$ sont bien définis. \\
+Soit $\epsilon > 0$, on choisit $(h, g) \in Esc_-(f) \times Esc_+(f)$ tel que : 
+\begin{align*}
+    \int_{a}^{b} (g - h)(x) \,dx < \epsilon
+\end{align*}
+Donc : 
+\begin{align*}
+   I_+ \leq \int_{a}^{b} g(x) \,dx < \int_{a}^{b} h(x) \,dx + \epsilon \leq I_- + \epsilon \\
+\end{align*}
+Donc : 
+\begin{align*}
+    I_+ \leq I_- + \epsilon
+\end{align*}
+Donc :
+\begin{align*}
+    I_+ \leq I_-
+\end{align*}
+Donc : 
+\begin{align*}
+    I_+ = I_-
+\end{align*} \\
+
+$\boxed{\Leftarrow}$ \\
+On suppose $I_+ = I_-$. \\
+Soit $\epsilon > 0$. \\
+$I_+ + \frac{\epsilon}{2}$ ne minore pas $A_+$. \\
+$I_- - \frac{\epsilon}{2}$ ne majore pas $A_-$. \\
+On choisit donc $h\in Esc_-$ et $g\in Esc_+$ telles que : 
+\begin{align*}
+    \int_{a}^{b} g(x) \,dx &< I_+ + \frac{\epsilon}{2} \\
+    \int_{a}^{b} h(x) \,dx &> I_- - \frac{\epsilon}{2}
+\end{align*}
+Donc :
+\begin{align*}
+    \int_{a}^{b} (g(x) - h(x)) \,dx < I_+ - I_- + \epsilon = \epsilon 
+\end{align*}
+
 
 \end{document}
