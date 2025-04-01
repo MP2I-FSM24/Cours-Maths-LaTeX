@@ -160,5 +160,35 @@ Donc :
     \int_{a}^{b} (g(x) - h(x)) \,dx < I_+ - I_- + \epsilon = \epsilon 
 \end{align*}
 
+\setsection{41}
+\section{Intégrabilité des fonctions monotones}
+\begin{tcolorbox}[title=Théorème 26.42, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ une fonction monotone sur $[a, b]$. Alors $f$ est intégrable sur $[a, b]$. 
+\end{tcolorbox}
+
+\noindent On suppose $f$ croissante. Alors $f$ est bornée (minorée par $f(a)$, majorée par $f(b)$). \\
+Pour tout $n\in \mathbb{N}^*$, on note $\sigma_n$ la subdivision régulière de $[a, b]$ à $n$ pas. 
+\begin{align*}
+    \forall k\in \llbracket 0, n \rrbracket, \sigma_k^{(n)} = a + \frac{(b-a)}{n}k
+\end{align*}
+On définit $h_n \in Esc_-(f)$ et $g_n \in Esc_+(f)$ par :
+\begin{align*}
+    \begin{cases}
+        \forall x\in ]\sigma_k^{(n)}, \sigma_{k+1}^{(n)}[, g_n(x) &= f(\sigma_{k+1}^{(n)}) \\
+        g_n(a) = f(a) \\
+    \end{cases}
+     \\
+     \begin{cases}
+        \forall x\in [\sigma_k^{(n)}, \sigma_{k+1}^{(n)}[, h_n(x) &= f(\sigma_k^{(n)}) \\
+        h_n(b) = f(b) \\
+     \end{cases}
+\end{align*}
+\begin{align*}
+    \int_{a}^{b} (g_n - h_n) &= \sum_{k=0}^{n-1} \frac{b-a}{n} \times (f(\sigma_{k+1}^{(n)}) - f(\sigma_k^{(n)})) \\
+    &= \frac{b-a}{n} (f(b) - f(a)) \\
+    &\underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+D'après (26.41), $f$ est intégrable. 
+
 
 \end{document}
