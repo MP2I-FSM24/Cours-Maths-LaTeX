@@ -412,5 +412,18 @@ Donc :
     \frac{F(x) - F(a)}{x - a} \underset{x \to a}{\longrightarrow} f(a)
 \end{align*}
 
+\setsection{65}
+\section{Limite}
+\begin{tcolorbox}[title=Propostion 26.66, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Pour toute fonction $f\in \mathcal{C}^0([a, b], \mathbb{R})$ : 
+    \begin{align*}
+        \int_{a}^{b} f(t) \,dt &= \lim_{x\to b^-} \int_{a}^{x} f(t) \,dt \quad\text{ et }\quad \int_{a}^{b} f(t) \,dt = \lim_{x\to a^+} \int_{x}^{b} f(t) \,dt
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On fixe $a$ et on pose $F:x\mapsto \int_{a}^{x} f(t) \,dt$. \\
+Donc $F\in \mathcal{C}^0([a, b], \mathbb{R})$. \\
+Donc $F(b) = \lim\limits_{x\to b} F(x)$. 
+
 
 \end{document}
