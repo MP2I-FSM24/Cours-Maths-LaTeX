@@ -306,5 +306,38 @@ Sur chaque intervalle $]\sigma_i, \sigma_{i+1}[$, $f$ se prolonge par continuit�
 Donc $f_i$ est intégrable sur $[\sigma_i, \sigma_{i+1}]$ et $f_i$ et $\left. f\right|_{[\sigma_i, \sigma_{i+1}]}$ sont égales presque partout, donc $\left. f\right|_{[\sigma_i, \sigma_{i+1}]}$ est intégrable sur $[\sigma_i, \sigma_{i+1}]$. \\
 D'après la relation de Chasles, $f$ est intégrable sur $[a, b]$. 
 
+\setsection{60}
+\section{Norme}
+\begin{tcolorbox}[title=Propostion 26.61, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Pour toute fonction $f$ et $g$ bornées sur un même segment $[a, b]$, on a : 
+    \begin{align*}
+        ||f + g||_{\infty} &\leq ||f||_{\infty} + ||g||_{\infty} \\
+    \end{align*}
+    et si $\lambda \in \mathbb{R}$, alors : 
+    \begin{align*}
+        ||\lambda f||_{\infty} &= |\lambda| \times ||f||_{\infty} \\
+    \end{align*}
+    Enfin : 
+    \begin{align*}
+        ||f||_{\infty} = 0 \Leftrightarrow f = 0
+    \end{align*}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item D'après l'inégalité triangulaire : 
+    \begin{align*}
+        \forall x [a, b], |f(x) + g(x)| &\leq |f(x)| + |g(x)| \\
+        &\leq ||f||_{\infty} + ||g||_{\infty}
+    \end{align*}
+    Par définition : 
+    \begin{align*}
+        ||f + g||_{\infty} \leq ||f||_{\infty} + ||g||_{\infty}
+    \end{align*}
+    \item RAF
+    \item Si $f = 0$, $||f||_{\infty} = 0$. \\
+    Si $||f||_{\infty} = 0$, alors $\forall x\in [a, b], |f(x)| = 0$. \\
+    Donc $f = 0$. 
+\end{itemize}
+
 
 \end{document}
