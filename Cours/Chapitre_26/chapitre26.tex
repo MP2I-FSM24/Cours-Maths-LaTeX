@@ -339,5 +339,78 @@ D'après la relation de Chasles, $f$ est intégrable sur $[a, b]$.
     Donc $f = 0$. 
 \end{itemize}
 
+\setsection{62}
+\section{Densité}
+\begin{tcolorbox}[title=Théorème 26.63, title filled=false, colframe=orange, colback=orange!10!white]
+    \begin{itemize}
+        \item Soit $f$ une fonction continue sur $[a, b]$. Alors il existe une suite de fonctions en escalier $(\varphi_n)_{n\in \mathbb{N}}$ telle que :
+        \begin{align*}
+            ||f - \varphi_n||_{\infty} &\underset{n \to +\infty}{\longrightarrow} 0
+        \end{align*}
+        \item Soit $f$ une fonction continue par morceaux sur $[a, b]$ alors il existe une suite de fonctions en escalier $(\varphi_n)_{n\in \mathbb{N}}$ telle que :
+        \begin{align*}
+            ||f - \varphi_n||_{\infty} &\underset{n \to +\infty}{\longrightarrow} 0
+        \end{align*}
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Soit $f\in \mathcal{C}^0([a, b], \mathbb{R})$, donc $f$ est uniformément continue sur $[a, b]$. \\
+    Soit $\epsilon > 0$, on choisit $\eta > 0$ module de continuité uniforme associé à $\epsilon$. \\
+    Soit $n\in \mathbb{N}^*$, on introduit la subdivision régulière $\sigma^{(n)}$ de $[a, b]$. \\
+    On choisit $n$ tel que $\frac{b-a}{n} < \eta$. \\
+    Pour tout $k\in \llbracket 0, n-1 \rrbracket$, $f$ est continue sur $[\sigma_k^{(n)}, \sigma_{k+1}^{(n)}]$ donc y atteint ses bornes (max) $M_k$. On définit $\varphi_n \in Esc([a, b], \mathbb{R})$ par :
+    \begin{itemize}
+        \item si $x\in [\sigma_k^{(n)}, \sigma_{k+1}^{(n)}[$, alors $\varphi_n(x) = M_k$ \\
+        \item $\varphi_n(b) = f(b)$
+    \end{itemize}
+    Par construction, pour tout $x\in [a, b]$ : 
+    \begin{align*}
+        |f(x) - \varphi_n(x)| \leq \epsilon
+    \end{align*}
+    Donc :
+    $$||f - \varphi_n||_{\infty} \leq \epsilon$$
+    Par définition :
+    $$||f - \varphi_n||_{\infty} \underset{n \to +\infty}{\longrightarrow} 0$$
+    \item Si $f\in \mathcal{CM}([a, b], \mathbb{R})$, et $\sigma$ une subdivision associée à $f$, on applique le résultat précédent sur chaque intervalle $[\sigma_i, \sigma_{i+1}]$. \\
+\end{itemize}
+
+\section{Théorème fondamental du calcul intégral}
+\begin{tcolorbox}[title=Théorème 26.64, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ une fonction continue sur un intervalle $I$. Soit $x_0\in I$. Alors l'application : 
+    \begin{align*}
+        x\mapsto \int_{x_0}^{x} f(t) \,dt
+    \end{align*}
+    est l'unique primitive de $f$ sur $I$ qui s'annule en $x_0$. \\
+\end{tcolorbox}
+
+\noindent Notons $F:x\mapsto \int_{x_0}^{x} f(t) \,dt$, bien définie car $f$ est continue sur $I$. \\
+$F(x_0) = 0$. \\
+Montrons que $F$ est une primitive de $f$ sur $I$. \\
+Soit $a\in I$ et soit $x\neq a$. 
+\begin{align*}
+    \frac{F(x) - F(a)}{x - a} = \frac{1}{x - a} \int_{a}^{x} f(t) \,dt
+\end{align*}
+Donc : 
+\begin{align*}
+    \frac{F(x) - F(a)}{x - a} - f(a) &= \frac{1}{x - a} \int_{a}^{x} f(t) \,dt - \frac{1}{x - a} \int_{a}^{x} f(a) \,dt \\
+    &= \frac{1}{x - a} \int_{a}^{x} (f(t) - f(a)) \,dt
+\end{align*}
+Soit $\epsilon > 0$, par continuité de $f$ en $a$, on choisit $\eta > 0$ tel que : 
+\begin{align*}
+    \forall x\in I, |x - a| < \eta \Rightarrow |f(x) - f(a)| < \epsilon
+\end{align*}
+On suppose $x > a$ et $x - a < \eta$, d'après l'inégalité triangulaire, on a : \\
+\begin{align*}
+    \left| \frac{F(x) - F(a)}{x - a} - f(a) \right| &\leq \frac{1}{x - a} \int_{a}^{x} |f(t) - f(a)| \,dt \\
+    &\leq \frac{1}{x - a} \int_{a}^{x} \epsilon \,dt \\
+    &= \epsilon
+\end{align*}
+Cela reste valable si $x < a$ et $|x - a| < \eta$. \\
+Donc : 
+\begin{align*}
+    \frac{F(x) - F(a)}{x - a} \underset{x \to a}{\longrightarrow} f(a)
+\end{align*}
+
 
 \end{document}
