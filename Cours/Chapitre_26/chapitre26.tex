@@ -294,5 +294,17 @@ Donc $\left. f \right|_{]\sigma_i, \sigma_{i+1}[}$ est également bornée. \\
 Donc $\left. f \right|_{[a, b] \backslash \{\sigma_0, \ldots, \sigma_n\}}$ est bornée. \\
 Donc $f$ est bornée sur $[a, b]$ car $f$ est définie sur chaque $\sigma_i$. 
 
+\setsection{57}
+\section{Intégrabilité des fonctions continues par morceaux}
+\begin{tcolorbox}[title=Théorème 26.58, title filled=false, colframe=orange, colback=orange!10!white]
+    Toute fonction continue par morceaux sur le segment $[a, b]$ est intégrable. 
+\end{tcolorbox}
+
+\noindent Soit $f\in \mathcal{CM}([a, b], \mathbb{R})$. \\
+Soit $\sigma$ une subdivision associée à $f$. \\
+Sur chaque intervalle $]\sigma_i, \sigma_{i+1}[$, $f$ se prolonge par continuité en $f_i$ sur $[\sigma_i, \sigma_{i+1}]$. \\
+Donc $f_i$ est intégrable sur $[\sigma_i, \sigma_{i+1}]$ et $f_i$ et $\left. f\right|_{[\sigma_i, \sigma_{i+1}]}$ sont égales presque partout, donc $\left. f\right|_{[\sigma_i, \sigma_{i+1}]}$ est intégrable sur $[\sigma_i, \sigma_{i+1}]$. \\
+D'après la relation de Chasles, $f$ est intégrable sur $[a, b]$. 
+
 
 \end{document}
