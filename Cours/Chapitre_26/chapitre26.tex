@@ -252,5 +252,32 @@ Donc :
     I_-(f) = \int_{a}^{b} f \geq 0
 \end{align*}
 
+\setsection{50}
+\section{Inégalité triangulaire intégrale}
+\begin{tcolorbox}[title=Propostion 26.51, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f$ une fonction intégrable sur $[a, b]$, alors $|f|$ est intégrable sur $[a, b]$ et : 
+    \begin{align*}
+        \left| \int_{a}^{b} f(x) \,dx \right| \leq \int_{a}^{b} |f(x)| \,dx
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On suppose $f$ intégrable sur $[a, b]$. \\
+On choisit $(\varphi_n, \theta_n)$ associé à $f$ (26.39). \\
+Comme : 
+\begin{align*}
+    \forall x\in [a, b], ||f(x)| - |\varphi_n(x)|| \leq |f(x) - \varphi_n(x)| \leq \theta_n(x)
+\end{align*}
+Alors ($|\varphi_n|, \theta_n)$ est associée à $|f|$. Par conséquent, $|f|$ est intégrable sur $[a, b]$. On a : 
+\begin{align*}
+    \int_{a}^{b} f(x) \,dx = \lim_{n\to +\infty} \int_{a}^{b} |\varphi_n(x)| \,dx
+\end{align*}
+Or, d'après (26.26) :
+\begin{align*}
+    \left| \int_{a}^{b} \varphi_n(x) \,dx \right| \leq \int_{a}^{b} |\varphi_n(x)| \,dx
+\end{align*}
+Donc, d'arpès le TCILPPL : 
+\begin{align*}
+    \left| \int_{a}^{b} f(x) \,dx \right| \leq \int_{a}^{b} |f(x)| \,dx
+\end{align*}
 
 \end{document}
