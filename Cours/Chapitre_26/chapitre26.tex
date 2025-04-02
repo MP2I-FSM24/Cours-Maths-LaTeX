@@ -280,4 +280,19 @@ Donc, d'arpès le TCILPPL :
     \left| \int_{a}^{b} f(x) \,dx \right| \leq \int_{a}^{b} |f(x)| \,dx
 \end{align*}
 
+\setsection{55}
+\section{Bornitude des fonctions continues par morceaux}
+\begin{tcolorbox}[title=Propostion 26.56, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Les fonctions continues par morceaux sur un segment $[a, b]$ sont bornées.
+\end{tcolorbox}
+
+\noindent Soit $f$ continue par morceaux sur $[a, b]$. \\
+Soit $\sigma$ une subdivision associée. \\
+Comme $f$ est continue sur $]\sigma_i, \sigma_{i+1}[$ et que $f$ possède des limites finies en $\sigma_i^+$ et $\sigma_{i+1}^-$, $f$ se prolonge par continuité en $f_i$ sur $[\sigma_i, \sigma_{i+1}]$. \\
+D'après le théorème des bornes atteintes, $f_i$ est bornée. \\
+Donc $\left. f \right|_{]\sigma_i, \sigma_{i+1}[}$ est également bornée. \\
+Donc $\left. f \right|_{[a, b] \backslash \{\sigma_0, \ldots, \sigma_n\}}$ est bornée. \\
+Donc $f$ est bornée sur $[a, b]$ car $f$ est définie sur chaque $\sigma_i$. 
+
+
 \end{document}
