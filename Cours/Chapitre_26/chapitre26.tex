@@ -440,6 +440,45 @@ $F:x\mapsto \int_{a}^{x} f(t) \,dt$ est dérivable sur $[a, b]$ avec $F' = f \ge
 Or $F(a) = 0 = F(b)$. \\
 Donc $F = 0$, puis $f = F' = 0$. 
 
+\section{Somme de Riemann}
+\begin{tcolorbox}[title=Théorème 26.70, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ une fonction continue sur $[a, b]$. Alors : 
+    \begin{align*}
+        \int_{a}^{b} f(x) \,dx = \lim_{n\to +\infty} \frac{b - a}{n} \sum_{k=0}^{n-1} f\left(a + k\frac{(b-a)}{n}\right) = \lim_{n\to +\infty} \sum_{k=1}^{n} \frac{b-a}{n} f\left(a + k\frac{(b-a)}{n}\right) 
+    \end{align*}
+    Plus généralement, soit pour tout $n\in \mathbb{N}, \sigma^{(n)} = (\sigma^{(n)}_k)_{k\in \llbracket 0, n \rrbracket}$ une subdivision et supposons que la suite des pas vérifie : 
+    \begin{align*}
+        p(\sigma^{(n)}) \underset{n \to +\infty}{\longrightarrow} 0
+    \end{align*}
+    et soit pour tout $n\in \mathbb{N}$ et tout $k\in \llbracket 0, \ell_n - 1 \rrbracket$, $x_{n,k}$ un élément de $[\sigma_k^{(n)}, \sigma_{k+1}^{(n)}]$. Alors :
+    \begin{align*}
+        \int_{a}^{b} f(x) \,dx = \lim_{n\to +\infty} \sum_{k=0}^{n-1} (\sigma_{k+1}^{(n)} - \sigma_k^{(n)}) f(x_{n,k}) 
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $\epsilon > 0$, on choisit $\eta$ un module de continuité uniforme pour $f$ d'après le théorème de Heine. \\
+On définit, pour tout $n\in \mathbb{N}^*, \varphi_n \in Esc([a, b], \mathbb{R})$ par : 
+\begin{itemize}
+    \item pour $x\in [\sigma_k^{(n)}, \sigma_{k+1}^{(n)}[$, $\varphi_n(x) = f(x_{n,k})$
+    \item $\varphi_n(b) = f(b)$
+\end{itemize}
+Or $p(\sigma^{(n)}) \underset{n \to +\infty}{\longrightarrow} 0$. On choisit $N\in \mathbb{N}$ tel que : 
+\begin{align*}
+    \forall n\geq N, p(\sigma^{(n)}) < \eta
+\end{align*}
+Pour $n\geq N$ : 
+\begin{align*}
+    |f(x) - \varphi_n(x)| \leq \epsilon
+\end{align*}
+Par définition : 
+\begin{align*}
+    ||f - \varphi_n||_{\infty} \longrightarrow 0
+\end{align*}
+Donc : 
+\begin{align*}
+    \int_{a}^{b} f(x) \,dx = \lim_{n\to +\infty} \int_{a}^{b} \varphi_n(x) \,dx
+\end{align*}
+Puis (26.18). 
 
 
 \end{document}
