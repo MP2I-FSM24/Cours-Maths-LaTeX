@@ -230,5 +230,27 @@ Par définition :
 
 \noindent cf. annexe
 
+\setsection{48}
+\section{Croissance et positivité de l'intégrale}
+\begin{tcolorbox}[title=Propostion 20.49, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f$ et $g$ deux fonction intégrables sur $[a, b]$ (avec $a \leq b$) telles que pour tout $x\in [a, b], f(x) \leq g(x)$. Alors : 
+    \begin{align*}
+        \int_{a}^{b} f(x) \,dx &\leq \int_{a}^{b} g(x) \,dx
+    \end{align*}
+    En particulier, si $f$ est intégrable sur $[a, b]$ et positive, alors :
+    \begin{align*}
+        \int_{a}^{b} f(x) \,dx &\geq 0
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Si $f\geq 0$, alors $0\in Esc_-(f)$. \\
+\begin{align*}
+    \int_{a}^{b} 0 = 0 \in A_-(f)
+\end{align*}
+Donc :
+\begin{align*}
+    I_-(f) = \int_{a}^{b} f \geq 0
+\end{align*}
+
 
 \end{document}
