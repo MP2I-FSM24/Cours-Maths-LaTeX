@@ -174,7 +174,7 @@ Pour tout $n\in \mathbb{N}^*$, on note $\sigma_n$ la subdivision régulière de 
 On définit $h_n \in Esc_-(f)$ et $g_n \in Esc_+(f)$ par :
 \begin{align*}
     \begin{cases}
-        \forall x\in ]\sigma_k^{(n)}, \sigma_{k+1}^{(n)}[, g_n(x) &= f(\sigma_{k+1}^{(n)}) \\
+        \forall x\in ]\sigma_k^{(n)}, \sigma_{k+1}^{(n)}], g_n(x) &= f(\sigma_{k+1}^{(n)}) \\
         g_n(a) = f(a) \\
     \end{cases}
      \\
@@ -189,6 +189,46 @@ On définit $h_n \in Esc_-(f)$ et $g_n \in Esc_+(f)$ par :
     &\underset{n \to +\infty}{\longrightarrow} 0
 \end{align*}
 D'après (26.41), $f$ est intégrable. 
+
+\section{Intégrabilité des fonctions continues}
+\begin{tcolorbox}[title=Théorème 26.43, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f$ une fonction continue sur $[a, b]$. Alors $f$ est intégrable sur $[a, b]$.
+\end{tcolorbox}
+
+\noindent Soit $f\in \mathcal{C}^0([a, b], \mathbb{R})$. \\
+Comme $[a, b]$ est un segment, $f$ est uniformément continue sur $[a, b]$ d'après le theorème de Heine. \\
+Soit $\epsilon > 0$. On choisit $\eta > 0$ tel que : 
+\begin{align*}
+    \forall (x, y) \in [a, b]^2, |x - y| < \eta \Rightarrow |f(x) - f(y)| < \epsilon
+\end{align*}
+Soit $\sigma^{(n)}$ la subsdivision régulière de $[a, b]$ à $n$ pas ($n \geq 1$). \\
+On choisit $n$ tel que $\frac{b-a}{n} < \eta$. \\
+Pour $k\in \llbracket 0, n-1 \rrbracket$, $f$ est continue sur $[\sigma_k^{(n)}, \sigma_{k+1}^{(n)}]$ donc $y$ atteint ses bornes ($[\sigma_k^{(n)}, \sigma_{k+1}^{(n)}]$ est compact/théorème des bornes atteintes). \\
+On note alors $m_k$ et $M_k$ respesctivement les minimum et maximum sur $[\sigma_k^{(n)}, \sigma_{k+1}^{(n)}]$. \\
+On pose alors $h_n$ et $g_n$. \\
+\begin{itemize}
+    \item Pour $x\in [\sigma_k^{(n)}, \sigma_{k+1}^{(n)}[, h_n(x) = m_k$ et $g_n(x) = M_k$. \\
+    \item $h_n(b) = g_n(b) = f(b)$
+\end{itemize}
+Par construction, $h_n \in Esc_-(f)$ et $g_n \in Esc_+(f)$, et : 
+\begin{align*}
+    \int_{a}^{b} (g_n - h_n) = \sum_{k=0}^{n-1} (\sigma_{k+1}^{(n)} - \sigma_k^{(n)}) (M_k - m_k) < \sum_{k=0}^{n-1} (\sigma_{k+1}^{(n)} - \sigma_k^{(n)}) \times \epsilon = \epsilon \times (b - a) \\
+\end{align*}
+Par définition : 
+\begin{align*}
+    \int_{a}^{b} (g_n - h_n)  \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+
+\setsection{45}
+\section{Relation de Chasles}
+\begin{tcolorbox}[title=Propostion 26.46, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit une fonction $f$ définie sur $[a, b]$ et $c\in ]a, b[$. Alors $f$ est intégrable sur $[a, b]$ si et suelement si $f$ est intégrable sur $[a, c]$ et $[c, b]$ et dans ce cas : 
+    \begin{align*}
+        \int_{a}^{b} f(x) \,dx &= \int_{a}^{c} f(x) \,dx + \int_{c}^{b} f(x) \,dx
+    \end{align*}
+\end{tcolorbox}
+
+\noindent cf. annexe
 
 
 \end{document}
