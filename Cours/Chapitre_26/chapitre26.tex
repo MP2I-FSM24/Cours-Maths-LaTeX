@@ -425,5 +425,21 @@ Donc :
 Donc $F\in \mathcal{C}^0([a, b], \mathbb{R})$. \\
 Donc $F(b) = \lim\limits_{x\to b} F(x)$. 
 
+\setsection{68}
+\section{Intégrale nulle d'une fonction positive et continue}
+\begin{tcolorbox}[title=Propostion 26.69, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $f:[a, b]\to \mathbb{R}$ une fonction continue et positive, avec $a < b$. Alors : 
+    \begin{align*}
+        \int_{a}^{b} f(t) \,dt = 0 \Leftrightarrow f = 0
+    \end{align*}
+\end{tcolorbox}
+
+$\boxed{\Rightarrow}$ \\
+$f$ est continue et positive, donc d'après le TFCI : \\
+$F:x\mapsto \int_{a}^{x} f(t) \,dt$ est dérivable sur $[a, b]$ avec $F' = f \geq 0$ donc $F$ est croissante sur $[a, b]$. \\
+Or $F(a) = 0 = F(b)$. \\
+Donc $F = 0$, puis $f = F' = 0$. 
+
+
 
 \end{document}
