@@ -480,5 +480,23 @@ Donc :
 \end{align*}
 Puis (26.18). 
 
+\setsection{71}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 26.72, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On montre que : 
+    \begin{align*}
+        \sum_{k=1}^{n} \frac{1}{n+k} \underset{n \to +\infty}{\longrightarrow} \ln 2
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \sum_{k=1}^{n} \frac{1}{n+k} = \frac{1}{n} \sum_{k=1}^{n} \frac{1}{1 + \frac{4}{n}} = \frac{1}{n} \sum_{k=1}^{n} f(\frac{k}{n})
+\end{align*}
+avec $f:x\mapsto \frac{1}{1 + x}\in \mathcal{C}^0([0, 1], \mathbb{R})$.
+Donc TSR : 
+\begin{align*}
+    \sum_{k=1}^{n} \frac{1}{n+k} \underset{n \to +\infty}{\longrightarrow} \int_{0}^{1} f(x) \,dx = \int_{0}^{1} \frac{1}{1+x} \,dx = \ln(2) - \ln(1) = \ln(2)
+\end{align*} 
+
 
 \end{document}
