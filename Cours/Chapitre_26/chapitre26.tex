@@ -545,5 +545,35 @@ Donc : $$\int_{a}^{b} g_r(t) \,dt = r \quad \text{et} \quad \int_{a}^{b} g_i(t) 
     \left| \int_{a}^{b} f(t) \,dt \right| = r = \int_{a}^{b} g_r(t) \,dt = \left| \int_{a}^{b} g_r(t) \right| \underbrace{\leq}_{\text{IT sur $\mathbb{R}$}} \int_{a}^{b} |g_r(t)| \,dt \underbrace{\leq}_{\text{croissance de l'I}} \int_{a}^{b} |g(t)| = \int_{a}^{b} |f(t)| \,dt \\ 
 \end{align*}
 
+\section*{Exercice 17}
+\begin{tcolorbox}[title=Exercice 26.17, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $f$ et $g$ deux fonctions continues sur $\mathbb{R}$ telles que pour tout $x\in \mathbb{R}$, on ait : 
+    \begin{align*}
+        f(x) = \int_{0}^{x} g(t) \,dt \quad \text{et} \quad g(x) = \int_{0}^{x} f(t) \,dt
+    \end{align*}
+    Montrer que $f = g = 0$.
+\end{tcolorbox}
+
+\noindent D'après le TFCI, $(f, g)\in \mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R})$
+\begin{align*}
+    f'' = f \quad \text{et} \quad g'' = g
+\end{align*}
+D'après le chapitre 7, on choisit $(a, b, c, d)\in \mathbb{R}^4$ tel que : 
+\begin{align*}
+    \begin{cases}
+        f:x\mapsto a e^x + b e^{-x} \\
+        g:x\mapsto c e^x + d e^{-x}
+    \end{cases}
+\end{align*}
+Or $f' = g$ donc $a = c$ et $b = d$ par liberté de $(x\mapsto e^{x}, x\mapsto e^{-x})$. \\
+\begin{align*}
+    f(0) &= 0 = g(0) \\
+    \text{donc } a &= b = c = d = 0
+\end{align*}
+Donc : 
+\begin{align*}
+    f = g = 0
+\end{align*}
+
 
 \end{document}
