@@ -523,7 +523,27 @@ avec $f:x\mapsto \frac{1}{1 + x}\in \mathcal{C}^0([0, 1], \mathbb{R})$.
 Donc TSR : 
 \begin{align*}
     \sum_{k=1}^{n} \frac{1}{n+k} \underset{n \to +\infty}{\longrightarrow} \int_{0}^{1} f(x) \,dx = \int_{0}^{1} \frac{1}{1+x} \,dx = \ln(2) - \ln(1) = \ln(2)
-\end{align*} 
+\end{align*}
+
+\setsection{74}
+\section{Inégalité triangulaire intégrale dans $\mathbb{C}$}
+\begin{tcolorbox}[title=Théorème 26.75, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f:[a, b]\to \mathbb{C}$ intégrable, avec $a < b$. Alors $|f|$ est aussi intégrable et : 
+    \begin{align*}
+        \left| \int_{a}^{b} f(t) \,dt \right| \leq \int_{a}^{b} |f(t)| \,dt
+    \end{align*}
+\end{tcolorbox}
+
+On décompose $\int_{a}^{b} f(t) \,dt = re^{i\theta}$ avec $r\geq 0$ et $\theta\in \mathbb{R}$. \\
+Par opération, $|f|$ est intégrable. \\
+On pose $g = e^{-i\theta} \times f$. \\
+Par linéarité : $$\int_{a}^{b} g(t) \,dt = e^{-i\theta} \int_{a}^{b} f(t) \,dt = r$$
+On décompose $g = g_r + ig_i$. \\
+Par définition : $$\int_{a}^{b} g(t) \,dt = \int_{a}^{b} g_r(t) \,dt + i \int_{a}^{b} g_i(t) \,dt$$
+Donc : $$\int_{a}^{b} g_r(t) \,dt = r \quad \text{et} \quad \int_{a}^{b} g_i(t) \,dt = 0$$
+\begin{align*}
+    \left| \int_{a}^{b} f(t) \,dt \right| = r = \int_{a}^{b} g_r(t) \,dt = \left| \int_{a}^{b} g_r(t) \right| \underbrace{\leq}_{\text{IT sur $\mathbb{R}$}} \int_{a}^{b} |g_r(t)| \,dt \underbrace{\leq}_{\text{croissance de l'I}} \int_{a}^{b} |g(t)| = \int_{a}^{b} |f(t)| \,dt \\ 
+\end{align*}
 
 
 \end{document}
