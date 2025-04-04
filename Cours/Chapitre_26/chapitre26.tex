@@ -425,7 +425,34 @@ Donc :
 Donc $F\in \mathcal{C}^0([a, b], \mathbb{R})$. \\
 Donc $F(b) = \lim\limits_{x\to b} F(x)$. 
 
-\setsection{68}
+\setsection{67}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 26.68, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    La fonction $\varphi:x\mapsto \int_{0}^{x} \exp (xt^2) \,dt$ est définie et dérivable sur $\mathbb{R}^*$, de dérivée : 
+    \begin{align*}
+        x\mapsto \frac{3e{x^3}}{2} - \frac{1}{2x} \int_{0}^{x} \exp (xt^2) \,dt
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Pour $x > 0$ : 
+\begin{align*}
+    \varphi(x) = \int_{0}^{x} \exp (xt^2) \,dt = \int_{0}^{1} \exp (xt^2) \,dt + \int_{1}^{x} e^{xt^2} \,dt
+\end{align*}
+On effectue le changement de variable $u^2 = xt^2$, soit $u = \sqrt{x} t$ donc $du = \sqrt{x} \,dt$. \\
+Si $t = 0$, $u = 0$. \\
+Si $t = x$, $u = x^{\frac{3}{2}}$. 
+\begin{align*}
+    \varphi(x) &= \frac{1}{\sqrt{x}} \int_{0}^{x^{\frac{3}{2}}} e^{u^2} \,du \\
+    &= \frac{1}{\sqrt{x}} F(x^{\frac{3}{2}}) \\
+\end{align*}
+avec d'après le TFCI $F:x\mapsto \int_{0}^{x} e^{u^2} \,du \in \mathcal{C}^1(\mathbb{R}, \mathbb{R})$. \\
+Par opération, $\varphi$ est dérivable sur $\mathbb{R}_+^*$ et : 
+\begin{align*}
+    \varphi'(x) &= -\frac{1}{2x \sqrt{x}} F(x^{\frac{3}{2}}) + \frac{3}{2} F'(x^{\frac{3}{2}}) \\
+    &= -\frac{1}{2x} \int_{0}^{x} e^{xt^2} \,dt + \frac{3}{2} e^{x^{3}}
+\end{align*}
+Pour $x < 0$, on effectue le changement de variable $u^2 = -xt^2$, soit $u = \sqrt{-x} t$ et on suit la méthode principale. 
+
 \section{Intégrale nulle d'une fonction positive et continue}
 \begin{tcolorbox}[title=Propostion 26.69, title filled=false, colframe=lightblue, colback=lightblue!10!white]
     Soit $f:[a, b]\to \mathbb{R}$ une fonction continue et positive, avec $a < b$. Alors : 
