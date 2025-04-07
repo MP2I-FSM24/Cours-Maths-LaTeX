@@ -575,5 +575,24 @@ Donc :
     f = g = 0
 \end{align*}
 
+\section{Lemme de Riemann-Lesbegue}
+\begin{tcolorbox}[title=Lemme 26.7, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $f:[a, b] \to \mathcal{C}$. On suppose que $f\in \mathcal{C}^1([a, b], \mathbb{R})$, alors :
+    \begin{align*}
+        \int_{a}^{b} f(x)e^{int} \,dt \underset{n \to +\infty}{\longrightarrow} 0
+    \end{align*}
+\end{tcolorbox}
+
+\noindent $f\in \mathcal{C}^1([a, b], \mathbb{R})$. \\
+Par IPP ($f\in \mathcal{C}^1([a, b], \mathbb{R})$, $t\mapsto \frac{e^{int}}{in}\in \mathcal{C}^1([a, b], \mathbb{C})$) :
+\begin{align*}
+    \int_{a}^{b} f(x) e^{int} \,dt &= \left[ \frac{f(x) e^{int}}{in} \right]_a^b - \frac{1}{in} \int_{a}^{b} f'(x) e^{int} \,dt \\
+    &= \frac{f(b) e^{inb} - f(a) e^{ina}}{in} - \frac{1}{in} \int_{a}^{b} f'(x) e^{int} \,dt
+\end{align*}
+D'après l'inégalité triangulaire :
+\begin{align*}
+    \frac{1}{in} \left| \int_{a}^{b} f'(x) e^{int} \,dt \right| &\leq \frac{1}{in} \int_{a}^{b} |f'(x)| \,dt
+\end{align*}
+
 
 \end{document}
