@@ -47,5 +47,30 @@ Ainsi $(S_n)$ converge si et seulement si $(S_n')$ converge.
     u_n = S_n - S_{n-1} &= \ell - \ell = 0
 \end{align*}
 
+\setsection{15}
+\section{Théorème de comparaison des séries à termes positifs}
+\begin{tcolorbox}[title=Théorème 27.16, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sum u_n$ et $\sum v_n$ deux séries à termes positifs telles qu'il existe $N\in \mathbb{N}$ tel que pour tout $n\geq N$ : 
+    \begin{align*}
+        0\leq u_n \leq v_n
+    \end{align*}
+    Alors : 
+    \begin{itemize}
+        \item Si $\sum v_n$ converge, alors $\sum u_n$ converge aussi. 
+        \item Si $\sum u_n$ diverge (vers $+\infty$ donc), alors $\sum v_n$ diverge aussi (vers $+\infty$ donc).
+    \end{itemize}
+    De plus, si la divergence est grossière pour $\sum u_n$, elle l'est aussi pour $\sum v_n$. 
+\end{tcolorbox}
+
+\noindent En utilisant les notations du (27.11), on peut supposer que : 
+\begin{align*}
+    \forall n \geq 0, 0\leq u_n \leq v_n
+\end{align*}
+Puis : 
+\begin{align*}
+    \forall n \geq 0, 0\leq S_n \leq S_n'
+\end{align*}
+On utilise alors le théroème de comparaison sur les suites. 
+
 
 \end{document}
