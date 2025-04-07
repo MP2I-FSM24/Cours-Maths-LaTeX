@@ -6,4 +6,21 @@
 \tableofcontents
 \clearpage
 
+\setsection{5}
+\section{Série géométrique}
+\begin{tcolorbox}[title=Théorème 27.6, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $a\in \mathbb{C}$. La série $\sum a^n$ converge si et seulement si $|a|<1$. Dans ce cas : 
+    \begin{align*}
+        \sum_{n=0}^{+\infty} a^n = \frac{1}{1-a}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $n\in \mathbb{N}$. 
+\begin{align*}
+    S_n = \sum_{k=0}^{n} a^k &= \frac{1-a^{n+1}}{1-a} \text{ ($a\neq 1$)} \\
+    &\underset{n \to +\infty}{\longrightarrow} \frac{1}{1-a} \text{ ($|a|<1$)}
+\end{align*}
+La série converge et $\sum\limits_{n\geq 0} a^n = \frac{1}{1-a}$. 
+
+
 \end{document}
