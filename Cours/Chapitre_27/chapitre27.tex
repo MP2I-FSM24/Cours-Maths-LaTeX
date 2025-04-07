@@ -22,5 +22,20 @@
 \end{align*}
 La série converge et $\sum\limits_{n\geq 0} a^n = \frac{1}{1-a}$. 
 
+\setsection{10}
+\section{Deux séries de termes généraux égaux presque partout}
+\begin{tcolorbox}[title=Propostion 27.11, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $(u_n)$ et $(v_n)$ ne diffèrent que d'un nombre fini de termes, alors $\sum u_n$ et $\sum v_n$ sont de même nature. 
+\end{tcolorbox}
+
+\noindent On note $A = \{ n\in \mathbb{N}, u_n \neq v_n \}$. Supposons $A\neq \emptyset$. \\
+D'après les hypothèses, $A$ est majoré donc possède un maximum $N$ d'après la propriété fondamentale de $\mathbb{N}$. \\
+On note $(S_n)$ et $(S_n')$ les sommes partielles associée à $\sum u_n$ et $\sum v_n$. \\
+Pour $n \geq N$ : 
+\begin{align*}
+    S_n = S_n' + K \text{ où } K = \sum_{k\in A} (u_k - v_k) \text{ (constant)}
+\end{align*}
+Ainsi $(S_n)$ converge si et seulement si $(S_n')$ converge. 
+
 
 \end{document}
