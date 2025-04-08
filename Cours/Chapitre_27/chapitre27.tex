@@ -154,17 +154,34 @@ D'après le TLM :
     \item Si $\lim\limits_{n\to +\infty} \int_{n_0}^{n+1} f(t) \,dt\in \mathbb{R}_+$, alors $\sum (f_n)$ converge.
 \end{itemize}
 
-\section*{Exercice 27.1}
-\begin{tcolorbox}[title=Exercice, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+\section*{Exercice 1}
+\begin{tcolorbox}[title=Exercice 27.1, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
     En utilisant le théorème de comparaison, déterminer la nature de la série de terme général $u_n = \left( \frac{1}{n} \right)^{1 + \frac{1}{n}}$. 
 \end{tcolorbox}
 
 \begin{align*}
     u_n &= \left( \frac{1}{n} \right)^{1 + \frac{1}{n}} \\
-    &= \frac{1}{n} e^{\frac{1}{n^2} + o \left( \frac{1}{n^2} \right)} \\
+    &= \frac{1}{n} e^{o(1)} \\
     &\geq \frac{1}{2n} \text{ à partir d'un certain rang}
 \end{align*}
 Par comparaison des séries à termes positifs, $\sum u_n$ diverge.
+
+\section*{Exercice 2}
+\begin{tcolorbox}[title=Exercice 27.2, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    En utilisant un théorème de comparaison par domination ou négligabilité, déterminer la nature de la série de terme général :
+    \begin{align*}
+        u_n &= \frac{e - \left( 1 + \frac{1}{n} \right)^n}{n^{\frac{3}{2}} - \lfloor n^{\frac{3}{2}} \rfloor + n}
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    u_n &= \frac{e - \left( 1 + \frac{1}{n} \right)^n}{n^{\frac{3}{2}} - \lfloor n^{\frac{3}{2}} \rfloor + n} \\
+    &\underset{n\to +\infty}{=} \frac{e - \exp \left( n \ln \left( 1 + \frac{1}{n} \right) \right)}{O(1) + n} \\
+    &\underset{n\to +\infty}{=} \frac{e - \exp \left( 1 - \frac{1}{2n} + o \left( \frac{1}{n} \right) \right)}{n + o(n)} \\
+    &\underset{n\to +\infty}{=} \frac{e - e \times \exp \left( -\frac{1}{2n} + o \left( \frac{1}{n} \right) \right)}{n + o(n)} \\
+    &\underset{n\to +\infty}{=} \frac{e - e \left( 1 - \frac{1}{2} + o \left( \frac{1}{n} \right) \right)}{n + o(n)} 
+\end{align*}
+Par comparaison par $\sim$, $\sum u_n$ est convergent. 
 
 
 \end{document}
