@@ -101,5 +101,26 @@ On utilise alors le théroème de comparaison sur les suites.
     Donc, $\sum Re(u_n)$ et $\sum Im(u_n)$ sont absolument convergentes (27.15) donc convergent, puis par combinaison linéaire (27.16) $\sum u_n$ converge. 
 \end{itemize}
 
+\setsection{22}
+\section{Comparaison des séries par domination ou négligabilité}
+\begin{tcolorbox}[title=Théorème 27.33, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sum u_n$ une série à termes quelconques et $\sum v_n$ une série à termes positifs telles que $u_n = O(v_n)$ (ou $u_n = o(v_n)$). Alors : 
+    \begin{itemize}
+        \item La convergence de $\sum v_n$ entraîne la convergence absolue de $\sum u_n$. 
+        \item La divergence de $\sum u_n$ (celle de $\sum |u_n|$ suffit) entraîne la divergence de $\sum v_n$.
+    \end{itemize}
+\end{tcolorbox}
+
+\noindent On suppose $u_n = O(v_n)$ avec $v_n \geq 0$. 
+\begin{itemize}
+    \item On suppose que $\sum v_n$ converge. On a $|u_n| = O(v_n)$ donc à partir d'un certain rang : 
+    \begin{align*}
+        0 \leq |u_n| \leq M v_n
+    \end{align*}
+    D'après le théorème de comparaison par majoration des séries à termes positifs, $\sum |u_n|$ converge donc $\sum u_n$ converge.
+
+    \item Si $\sum |u_n|$ diverge, par comparaison par minoration des séries à termes positifs, $\sum v_n$ diverge. 
+\end{itemize}
+
 
 \end{document}
