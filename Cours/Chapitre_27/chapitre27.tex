@@ -273,5 +273,33 @@ Par comparaison par $\sim$, $\sum u_n$ est convergent.
     Par comparaison série intégrale, $\sum \frac{1}{n \ln^{\beta} n}$ converge. 
 \end{itemize}
 
+\setsection{34}
+\section{Règle d'Alembert - Hors Programme}
+\begin{tcolorbox}[title=Théorème 27.35 - HP, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sum u_n$ à termes quelconques non nuls. On suppose que $\left( \left| \frac{u_{n+1}}{u_n} \right| \right)$ admet une liite (finie) $\ell$. Alors : 
+    \begin{enumerate}
+        \item si $0\leq \ell < 1$, alors $\sum u_n$ converge absolument
+        \item si $\ell > 1$, alors $\sum u_n$ diverge grossièrement
+        \item si $\ell = 1$, on ne peut rien dire
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item \begin{align*}
+        \left| \frac{u_{n+1}}{u_n} \right| \underset{n \to +\infty}{\longrightarrow} \ell\in [0, 1[]
+    \end{align*}
+    A partir d'un rang $n_0$ : 
+    \begin{align*}
+        \left| \frac{u_{n+1}}{u_n} \right| \leq \frac{\ell + 1}{2}
+    \end{align*}
+    On a directement : 
+    \begin{align*}
+        0 \leq |u_n| \leq \underbrace{\left( \frac{\ell + 1}{2} \right)^{n - n_0} \times |u_{n_0}|}_{\text{terme général d'une série géométrique de raison $\frac{\ell + 1}{2}$}}
+    \end{align*}
+    Par comparaison des séries à termes positifs, $\sum u_n$ est absolument convergente donc convergente. 
+    \item Même raisonnement si $\ell > 1$. 
+    \item $\frac{1}{n^2}$ et $\frac{1}{n}$ fournissent des contre-exemples. 
+\end{itemize}
+
 
 \end{document}
