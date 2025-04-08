@@ -183,5 +183,48 @@ Par comparaison des séries à termes positifs, $\sum u_n$ diverge.
 \end{align*}
 Par comparaison par $\sim$, $\sum u_n$ est convergent. 
 
+\setsection{28}
+\section{Nature des séries de Riemann}
+\begin{tcolorbox}[title=Théorème 27.29, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\alpha\in \mathbb{R}$. La série de Riemann $\sum \frac{1}{n^{\alpha}}$ converge si et seulement si $\alpha > 1$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Si $\alpha < 0$, la divergence est grossière. 
+    \item On a montré que $\sum \frac{1}{n}$ diverge.
+    \item Si $\alpha\in ]0, 1]$ : 
+    \begin{align*}
+        0 < \frac{1}{n} < \frac{1}{n^{\alpha}}
+    \end{align*}
+    Donc $\sum \frac{1}{n^{\alpha}}$ diverge d'après le théorème de comparaison des séries à termes positifs. 
+    \item Soit $\alpha > 1$, $t\mapsto \frac{1}{t^{\alpha}}$ est décoroissante et positive sur $[1, +\infty[$. \\
+    Pour $x\geq 1$ : 
+    \begin{align*}
+        \int_{1}^{x} \frac{1}{t^{\alpha}} \,dt &= \left[ \frac{1}{(-\alpha + 1)t^{\alpha - 1}} \right]_1^x \\
+        &= \frac{1}{(1 - \alpha)x^{\alpha - 1}} - \frac{1}{(1 - \alpha)} \\
+        &\underset{x\to +\infty}{\longrightarrow} \frac{1}{1 - \alpha}
+    \end{align*}
+    Par comparaison série intégrale, $\sum \frac{1}{n^{\alpha}}$ converge.
+\end{itemize}
+
+\section{Nature des séries exponentielles}
+\begin{tcolorbox}[title=Théorème 27.30, title filled=false, colframe=orange, colback=orange!10!white]
+    Pour tout $x\in \mathbb{R}$, la série exponentielle $\sum\limits_{n\geq 0} \frac{x^n}{n!}$ est absolument convergente et sa somme vaut $e^x$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Pour tout $x\in \mathbb{R}$ : 
+    \begin{align*}
+        \frac{x^n}{n!} = o \left( \frac{1}{n^2} \right)
+    \end{align*}
+    Par comparaison par domination à une série de Riemann de paramètre $2 > 1$, $\sum\limits_{n\geq 0} \frac{x^n}{n!}$ est absolument convergente. 
+
+    \item Soit $x\in \mathbb{R}, \exp \in \mathcal{C}^{\infty}(\mathbb{R}, \mathbb{R})$, on applique la formule de Taylor avec reste intégral : \\
+    Pour tout $n\in \mathbb{N}$ : 
+    \begin{align*}
+        e^x = \sum_{k=0}^{n} \frac{x^k}{k!} + \int_{0}^{x} \frac{(x-t)^n}{n!} e^t \,dt
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
