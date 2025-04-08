@@ -72,5 +72,34 @@ Puis :
 \end{align*}
 On utilise alors le théroème de comparaison sur les suites. 
 
+\setsection{19}
+\section{Convergence absolue entraîne convergence}
+\begin{tcolorbox}[title=Théorème 27.20, title filled=false, colframe=orange, colback=orange!10!white]
+    Toute série réelle ou complexe absolument convergente est convergente. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On suppose que $(u_n)\in \mathbb{R}^{\mathbb{N}}$, avec $\sum |u_n|$ convergente. \\
+    On pose, pour tout $n\in \mathbb{N}$ :
+    \begin{align*}
+        u_n^+ = \max(u_n, 0) \geq 0 \text{ et } u_n^- = \max(-u_n, 0) \geq 0
+    \end{align*}
+    Ainsi, $u_n = u_n^+ - u_n^-$. \\
+    Or, pour tout $n$ : 
+    \begin{align*}
+        0 &\leq u_n^+ \leq |u_n| \\
+        0 &\leq u_n^- \leq |u_n|
+    \end{align*}
+    Par comparaison des séries à termes positifs, $\sum u_n^+$ et $\sum u_n^-$ convergent et par linéarité (27.16) $\sum u_n$ converge. 
+
+    \item On suppose que $(u_n)\in \mathbb{C}^{\mathbb{N}}$, avec $\sum |u_n|$ convergente. \\
+    Alors : 
+    \begin{align*}
+        \forall n\in \mathbb{N}, |Re(u_n)| &\leq |u_n| \\
+        |Im(u_n)| &\leq |u_n|
+    \end{align*}
+    Donc, $\sum Re(u_n)$ et $\sum Im(u_n)$ sont absolument convergentes (27.15) donc convergent, puis par combinaison linéaire (27.16) $\sum u_n$ converge. 
+\end{itemize}
+
 
 \end{document}
