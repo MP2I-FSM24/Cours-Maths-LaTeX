@@ -224,6 +224,12 @@ Par comparaison par $\sim$, $\sum u_n$ est convergent.
     \begin{align*}
         e^x = \sum_{k=0}^{n} \frac{x^k}{k!} + \int_{0}^{x} \frac{(x-t)^n}{n!} e^t \,dt
     \end{align*}
+    On pose $M = \max (1, e^x)$. 
+    \begin{align*}
+        \left| \int_{0}^{x} \frac{(x - t)^n e^t}{n!} \,dt \right| &\leq \pm \int_{0}^{x} \frac{(x - t)^n}{n!} M \,dt \\
+        &= M \frac{|x|^{n+1}}{(n+1)!} \\
+        &\underset{n \to +\infty}{\longrightarrow} 0
+    \end{align*}
 \end{itemize}
 
 
