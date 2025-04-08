@@ -130,5 +130,29 @@ On utilise alors le théroème de comparaison sur les suites.
 \noindent Si $u_n \underset{n\to +\infty}{\sim} v_n$, alors $u_n \underset{n\to +\infty}{=} O(v_n)$ et $v_n \underset{n\to +\infty}{=} O(u_n)$. \\
 On conclut avec (27.23). 
 
+\section{Théorème de comparaison entre série et intégrale}
+\begin{tcolorbox}[title=Théorème 27.25, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $a\in \mathbb{R}$ et soit $f:[a; +\infty[\to \mathbb{R}$ une fonction décroissante et positive. Alors $\sum f(n)$ converge si et seulement si $\int_a^{+\infty} f(t) \,dt$ converge aussi (i.e. $\lim_{x\to +\infty} \int_{a}^{x} f(t) \,dt$ existe et est finie).
+\end{tcolorbox}
+
+\noindent D'après le TLM ($f\geq 0$), $\lim\limits_{x\to +\infty} \int_{a}^{x} f(t) \,dt$ existe dans $\mathbb{R}\cup \{+\infty\}$ et : 
+\begin{align*}
+    \lim_{x\to +\infty} \int_{a}^{x} f(t) \,dt &= \lim_{n\to +\infty} \int_{a}^{n} f(t) \,dt
+\end{align*}
+Soit $n_0\in \mathbb{N}$ avec $n_0 \geq a$. $\int_{a}^{+\infty} f(t) \,dt$ et $\int_{n_0}^{+\infty} f(t) \,dt$ sont de même nature. \\
+Comme $f$ est décroissante, pour tout $n\geq n_0$ : 
+\begin{align*}
+    f(n+1) \leq \int_{n}^{n+1} f(t) \,dt \leq f(n)
+\end{align*}
+Donc par Chasles : 
+\begin{align*}
+    \underbrace{\sum_{k=n_0}^{n} f(k+1)}_{\sum\limits_{k=n_0}^{n+1} f(k) - f(n_0)} &\leq \int_{n_0}^{n+1} f(t) \,dt \leq \sum_{k=n_0}^{n} f(k)
+\end{align*}
+D'après le TLM : 
+\begin{itemize}
+    \item Si $\sum (f_n)$ converge, alors $\lim\limits_{n\to +\infty} \int_{n_0}^{n+1} f(t) \,dt\in \mathbb{R}_+$. 
+    \item Si $\lim\limits_{n\to +\infty} \int_{n_0}^{n+1} f(t) \,dt\in \mathbb{R}_+$, alors $\sum (f_n)$ converge.
+\end{itemize}
+
 
 \end{document}
