@@ -103,7 +103,7 @@ On utilise alors le théroème de comparaison sur les suites.
 
 \setsection{22}
 \section{Comparaison des séries par domination ou négligabilité}
-\begin{tcolorbox}[title=Théorème 27.33, title filled=false, colframe=orange, colback=orange!10!white]
+\begin{tcolorbox}[title=Théorème 27.23, title filled=false, colframe=orange, colback=orange!10!white]
     Soit $\sum u_n$ une série à termes quelconques et $\sum v_n$ une série à termes positifs telles que $u_n = O(v_n)$ (ou $u_n = o(v_n)$). Alors : 
     \begin{itemize}
         \item La convergence de $\sum v_n$ entraîne la convergence absolue de $\sum u_n$. 
@@ -121,6 +121,14 @@ On utilise alors le théroème de comparaison sur les suites.
 
     \item Si $\sum |u_n|$ diverge, par comparaison par minoration des séries à termes positifs, $\sum v_n$ diverge. 
 \end{itemize}
+
+\section{Comparaison des séries à termes positifs par équivalence}
+\begin{tcolorbox}[title=Théorème 27.24, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sum u_n$ et $\sum v_n$ deux séries à termes positifs. Si $u_n \underset{n\to +\infty}{\sim} v_n$, alors les séries $\sum u_n$ et $\sum v_n$ sont de même nature.
+\end{tcolorbox}
+
+\noindent Si $u_n \underset{n\to +\infty}{\sim} v_n$, alors $u_n \underset{n\to +\infty}{=} O(v_n)$ et $v_n \underset{n\to +\infty}{=} O(u_n)$. \\
+On conclut avec (27.23). 
 
 
 \end{document}
