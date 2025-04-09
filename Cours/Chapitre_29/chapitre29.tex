@@ -35,5 +35,40 @@ Pour $\sigma, \xi \in \mathcal{S}_n$ :
     &= \epsilon(\xi) \times \epsilon(\sigma)
 \end{align*}
 
+\setsection{34}
+\section{Décomposition d'une transposition à l'aide des $\tau_i$}
+\begin{tcolorbox}[title=Propostion 29.35, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    soit $1\leq i < j\leq n$ et $\tau = (i, j)$. Alors : 
+    \begin{align*}
+        \tau = \tau_{j-1} \circ \cdots \circ \tau_{i+1} \circ \tau_i \circ \tau_{i+1} \circ \cdots \circ \tau_{j-1}
+    \end{align*}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Si $k>j$, alors pour tout $p\in \llbracket i, j-1 \rrbracket$, $\tau_p(k) = k$. \\
+    Donc $\sigma(k) = k$. \\
+    Cela reste vrai si $k < i$. 
+    \item On a :
+    \begin{align*} 
+        \sigma(i) &= \tau_{j-1}\circ \tau_{j-2} \circ \cdots \circ \tau_{i+1} \circ \tau_i \\
+        &= \tau_{j-1}\circ \cdots \circ \tau_{i+1}(i+1) \\
+        &= \tau_{j-1}(j-1) \\
+        &= j \\
+        \sigma(j) &= \tau_{j-1}\circ\cdots\tau_i\circ\cdots\circ\tau_{j-1}(j) \\
+        &= \tau_{j-1}\circ\cdots\tau_i\circ\cdots\tau_{j-2}(j-1) \\
+        &= \tau_{j-1}\circ\cdots\tau_i(i+1) \\
+        &= \tau_{j-1}\circ\cdots\tau_{i+1}(i) \\
+        &= i
+    \end{align*}
+    \item Si $i < k < j$, alors : 
+    \begin{align*}
+        \sigma(k) &= \tau_{j-1}\circ\cdots\circ\tau_i\circ\cdots\tau_k(k) \\
+        &= \tau_{j-1}\circ\cdots\circ\tau_i\circ\cdots\tau_{k-1}(k+1) \\
+        &= \tau_{j-1}\circ\cdots\circ\tau_k(k+1) \\
+        &= \tau_{j-1}\circ\cdots\tau_{k+1}(k) \\
+        &= k
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
