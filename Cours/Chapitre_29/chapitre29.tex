@@ -20,4 +20,20 @@
     \item La seconde égalité est justifiée d'après (28.23). 
 \end{itemize}
 
+\setsection{28}
+\section{Propriété fondamentale de la signature}
+\begin{tcolorbox}[title=Théorème 29.29, title filled=false, colframe=orange, colback=orange!10!white]
+    La signature est un morphisme de groupe de $(\mathcal{S}_n, \circ)$ dans $(\{-1, 1\}, \times)$. 
+\end{tcolorbox}
+
+Montrons que $\epsilon(\sigma \circ \xi) = \epsilon(\sigma) \times \epsilon(\xi)$. \\
+Pour $\sigma, \xi \in \mathcal{S}_n$ : 
+\begin{align*}
+    \epsilon(\sigma\circ\xi) &= \frac{\prod\limits_{1\leq i < j\leq n} (\sigma\circ\xi(j) - \sigma\circ\xi(i))}{\prod\limits_{1\leq i < j\leq n} (j - i)} \times \frac{\prod\limits_{1\leq i < j\leq n} (\xi(j) - \xi(i))}{\prod\limits_{1\leq i < j\leq n} (\xi(j) - \xi(i))} \\
+    &= \epsilon(\xi) \times \prod_{X\in \mathcal{P}(\llbracket 1, n \rrbracket)} \tau_\sigma (\xi(X)) \\
+    &= \epsilon(\xi) \times \prod_{X\in \mathcal{P}(\llbracket 1, n \rrbracket)} \tau_\sigma (X) \\
+    &= \epsilon(\xi) \times \epsilon(\sigma)
+\end{align*}
+
+
 \end{document}
