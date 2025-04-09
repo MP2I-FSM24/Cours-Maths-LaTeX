@@ -361,5 +361,62 @@ Donc $(S_n)$ converge, donc $\sum (-1)^n a_n$ converge.
     \end{align*}
 \end{enumerate}
 
+\setsection{43}
+\section{Critère d'Abel - Hors Programme}
+\begin{tcolorbox}[title=Théorème 27.44 - HP, title filled=false, colframe=orange, colback=orange!10!white]
+    \begin{enumerate}
+        \item Soit $\sum a_n b_n$ une série telle que $(a_n)$ soit une suite réelle positive décoroissante de limite nulle, et telle que la suite $(B_n)$ des sommes partielles de $\sum b_n$ soit bornée ($(b_n)$ est une suite complexe ou réelle). Alors $\sum a_n b_n$ converge.
+        \item Les suites $(b_n)$ définies par $b_n = e^{ina}, \cos (an), \sin (an)$ remplissent les conditions requises, lorsque $a\neq 0\pmod{2\pi}$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On note $(S_n)$ la suite des sommes partielles associées à $\sum a_n b_n$. \\
+    On convient que $B_{-1} = 0$. Pour $n\geq 0$ : 
+    \begin{align*}
+        S_n &= \sum_{k=0}^{n} a_k b_k \\
+        &= \sum_{k=0}^{n} a_k (B_k - B_{k-1})
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        S_n &= \sum_{k=0}^{n} a_k B_k - \sum_{k=0}^{n} a_k B_{k-1} \\
+        &= \sum_{k=0}^{n} a_k B_k - \sum_{k=0}^{n-1} a_{k+1} B_k \\ 
+        &= a_n B_n + \sum_{k=0}^{n-1} (a_k - a_{k+1}) B_k
+    \end{align*}
+    \begin{itemize}
+        \item On a : 
+        \begin{align*}
+            a_n b_n \underset{n \to +\infty}{\longrightarrow} 0 \text{ ($a_n \to 0$ et $(B_n)$ bornée)}
+        \end{align*}
+        \item \begin{align*}
+            \sum_{k=0}^{n-1} |(a_k - a_{k+1}) B_k| &= \sum_{k=0}^{n-1} (a_k - a_{k+1}) |B_k| \text{ ($a_n$ décroissante)} \\
+            \leq M \sum_{k=0}^{n-1} (a_k - a_{k+1}) \text{ ($(B_n)$ bornée)} \\
+            &= M (a_0 - a_n) \\
+            &\leq M a_0
+        \end{align*}
+        Donc $\sum (a_k - a_{k+1}) B_k$ est absolument convergente donc convergente. \\
+        Donc $(\sum_{k=0}^{n-1} (a_k - a_{k+1}) B_k)$ admet une limite finie. \\
+        Donc $(S_n)$ converge. \\
+        Donc $\sum a_n b_n$ converge.
+    \end{itemize}
+
+    \item \begin{itemize}
+        \item Soit $a\neq 0 \pmod{2\pi}$, on note $(b_n) = (e^{ina})$. \\
+        Pour $n\geq 0$ : 
+        \begin{align*}
+            B_n &= \sum_{k=0}^{n} b_k = \sum_{k=0}^{n} e^{ika} = \frac{1 - e^{i(n+1)a}}{1 - e^{ia}} \text{ ($e^{ia} \neq 1$)}
+        \end{align*}
+        Donc : 
+        \begin{align*}
+            |B_n| \leq \frac{2}{|1 - e^{ia}|}
+        \end{align*}
+
+        \item Si $a = 0 \pmod{2\pi}$ : 
+        \begin{align*}
+            B_n \underset{n \to +\infty}{\longrightarrow} +\infty \text{ ($B_n = n+1$)}
+        \end{align*}
+    \end{itemize}
+\end{enumerate}
+
 
 \end{document}
