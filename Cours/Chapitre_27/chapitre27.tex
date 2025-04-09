@@ -301,5 +301,33 @@ Par comparaison par $\sim$, $\sum u_n$ est convergent.
     \item $\frac{1}{n^2}$ et $\frac{1}{n}$ fournissent des contre-exemples. 
 \end{itemize}
 
+\setsection{38}
+\section{Critère spécial des séries alternées}
+\begin{tcolorbox}[title=Théorème 27.39, title filled=false, colframe=orange, colback=orange!10!white]
+    Toute série alternée est convergente. 
+\end{tcolorbox}
+
+\noindent Soit $\sum (-1)^n a_n$ une série alternée. Ainsi, $a_n \geq 0$ pour tout $n\geq 0$. $(a_n)$ est décroissante et $a_n \underset{n \to +\infty}{\longrightarrow} 0$. \\
+On note $(S_n)$ la suite des sommes partielles associée à cette série. Montrons que $(S_{2n})$ et $(S_{2n + 1})$ sont adjacentes. 
+\begin{itemize}
+    \item \begin{align*}
+        \forall n\geq 0, S_{2n+1} - S_{2n} &= (-1)^{2n+1} a_{2n+1}  \\
+        &\underset{n \to +\infty}{\longrightarrow} 0
+    \end{align*}
+    \item Pour $n\geq 0$ : 
+    \begin{align*}
+        S_{2n+3} - S_{2n+1} &= (-1)^{2n+3} a_{2n+3} + (-1)^{2n+2} a_{2n+2} \\
+        &= a_{2n+2} - a_{2n+3} \\
+        &\geq 0
+    \end{align*}
+    \item \begin{align*}
+        S_{2n+2} - S_{2n} &= (-1)^{2n+2} a_{2n+2} + (-1)^{2n+1} a_{2n+1} \\
+        &= a_{2n+1} - a_{2n+2} \\
+        &\leq 0
+    \end{align*}
+\end{itemize}
+Les suites $(S_{2n+1})$ et $(S_{2n})$ sont adjacentes, donc elles convergent vers une limite commune. \\
+Donc $(S_n)$ converge, donc $\sum (-1)^n a_n$ converge.
+
 
 \end{document}
