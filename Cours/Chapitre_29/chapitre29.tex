@@ -6,4 +6,18 @@
 \tableofcontents
 \clearpage
 
+\setsection{25}
+\section{Lemme 26}
+\begin{tcolorbox}[title=Lemme 29.26, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sigma\in \mathcal{S}_n$. On a : 
+    \begin{align*}
+        \left| \prod_{1\leq i < j \leq n} (\sigma(i) - \sigma(j)) \right| = \prod_{X\in \mathcal{P}_2(\llbracket 1, n \rrbracket)} \delta_{\sigma} (X) = \prod_{1\leq i < j \leq n} (j - i)
+    \end{align*}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item La première égalité est justifiée car on a une bijection entre $\{ (i, j) \mid 1 \leq i < j \leq n \}$ et $\mathcal{P}_2(\llbracket 1, n \rrbracket)$. 
+    \item La seconde égalité est justifiée d'après (28.23). 
+\end{itemize}
+
 \end{document}
