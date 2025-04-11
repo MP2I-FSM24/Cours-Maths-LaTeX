@@ -105,7 +105,7 @@ Pour $\sigma, \xi \in \mathcal{S}_n$ :
 
 \setsection{39}
 \section{Effet de la conjugaison sur un cycle}
-\begin{tcolorbox}[title=Théorème 28.40, title filled=false, colframe=orange, colback=orange!10!white]
+\begin{tcolorbox}[title=Théorème 29.40, title filled=false, colframe=orange, colback=orange!10!white]
     Soit $\sigma\in \mathcal{S}_n$ et $\begin{pmatrix}
         a_1 & \cdots & a_k
     \end{pmatrix}$ un cycle. Alors : 
@@ -124,8 +124,33 @@ Pour $\sigma, \xi \in \mathcal{S}_n$ :
     \end{pmatrix} \circ \sigma^{-1}(i) = \sigma\circ \sigma^{-1}(i) = i$. 
     \item Si $\sigma^{-1}(i) = a_j$, alors $\sigma\circ \begin{pmatrix}
         a_1 & \cdots & a_k
-    \end{pmatrix} \circ \sigma^{-1}(i) =  \sigma(a_{j+1})$
+    \end{pmatrix} \circ \sigma^{-1}(i) =  \sigma(a_{j+1})$. 
 \end{itemize}
+
+\section{Corollaire 29.41}
+\begin{tcolorbox}[title=Corollaire 29.41, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\varphi:\mathcal{S}_n\to \{ -1, 1 \}$ un morphisme. Soit $\alpha\in \{ 1-, 1 \}$. S'il existe une transposition $\tau_0$ telle que $\varphi(\tau_0) = \alpha$, alors pour toute transposition $\tau$, on a $\varphi(\tau) = \alpha$. \\
+    Ainsi, $\varphi$ prend une valeur constante sur les transpositions.
+\end{tcolorbox}
+
+Par conjugaison. Soit $\tau_0 = \begin{pmatrix}
+    i & j
+\end{pmatrix}$ et $\tau = \begin{pmatrix}
+    k & l
+\end{pmatrix}$. \\
+On a : 
+\begin{align*}
+    \tau = \sigma \circ \tau_0 \circ \sigma^{-1}
+\end{align*}
+avec $\sigma = \begin{pmatrix}
+    i & k & j & l
+\end{pmatrix}$. Alors : 
+\begin{align*}
+    \varphi(\tau) &= \varphi(\sigma \circ \tau_0 \circ \sigma^{-1}) \\
+    &= \varphi(\sigma) \times \varphi(\tau_0) \times \varphi(\sigma^{-1}) \\
+    &= \varphi(\tau_0) \times \varphi(\sigma)^2 \\
+    &= \varphi(\tau_0)
+\end{align*}
 
 
 \end{document}
