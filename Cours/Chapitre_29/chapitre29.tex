@@ -173,5 +173,30 @@ Soit $\sigma\in \mathcal{S}_n$. D'après (29.37), $\sigma = \tau_1\circ \cdots \
     Donc $\varphi = \epsilon$.
 \end{itemize}
 
+\setsection{51}
+\section{Décomposition en cycle d'une permutation}
+\begin{tcolorbox}[title=Théorème 29.52, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sigma$ une permutation de $\mathcal{S}_n$. A permutation près des facteurs, il existe une unique décomposition de $\sigma$ en produit de cycle à supports disjoints. 
+    \begin{align*}
+        \sigma = C_1\circ \cdots\circ C_k
+    \end{align*}
+    telles que les supports des cycles forment un partition de $\llbracket 1, n \rrbracket$. De plus, l'unique cycle de cette décomposition contenant $x$ est égale à $C_x$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item \underline{Existence :} On note $\{ \overline{C_1}, \ldots, \overline{C_k} \} = \llbracket 1, n \rrbracket / \equiv_\sigma$. \\
+    On note (29.49) $c_i$ la permutation induite par $\sigma$ sur $\overline{C_i}$ ($C_i = \begin{pmatrix}
+        p & \sigma(p) & \cdots & \sigma^{j}(p) \\
+    \end{pmatrix}$). \\
+    On pose $\varphi = C_1 \circ \ldots \circ C_k$. \\
+    Soit $i\in \llbracket 1, n \rrbracket$, alors $i\in \overline{C_q}$ avec $q\in \llbracket 1, k \rrbracket$. \\
+    D'après (29.51), $\varphi(i) = C_q(i) = \sigma(i)$. \\
+    Donc $\varphi = \sigma$. 
+    \item \underline{Unicité :} On suppose que $\sigma = C_1 \circ \ldots \circ C_k = U_1 \circ \ldots \circ U_q$. \\
+    Soit $i\in \llbracket 1, n \rrbracket$. $i\in supp(C_1) \in supp(U_1)$ (quitte à permuter les rôles). \\
+    On a donc $\sigma(i) = C_1(i) = U_1(i)$ et $\sigma^2(i) = C_1^2(i) = U_1^2(i)$ et .... \\
+    Donc $C_1 = U_1$. 
+\end{itemize}
+
 
 \end{document}
