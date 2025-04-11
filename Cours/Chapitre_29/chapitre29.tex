@@ -103,5 +103,29 @@ Pour $\sigma, \xi \in \mathcal{S}_n$ :
     \end{itemize}
 \end{itemize}
 
+\setsection{39}
+\section{Effet de la conjugaison sur un cycle}
+\begin{tcolorbox}[title=Théorème 28.40, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sigma\in \mathcal{S}_n$ et $\begin{pmatrix}
+        a_1 & \cdots & a_k
+    \end{pmatrix}$ un cycle. Alors : 
+    \begin{align*}
+        \sigma\circ \begin{pmatrix}
+            a_1 & \cdots & a_k
+        \end{pmatrix} \circ \sigma^{-1} = \begin{pmatrix}
+            \sigma(a_1) & \cdots & \sigma(a_k)
+        \end{pmatrix}
+    \end{align*}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Si $\sigma^{-1}(i) \not\in \{a_1, \ldots, a_n\}$ alors $\sigma\circ \begin{pmatrix}
+        a_1 & \cdots & a_k
+    \end{pmatrix} \circ \sigma^{-1}(i) = \sigma\circ \sigma^{-1}(i) = i$. 
+    \item Si $\sigma^{-1}(i) = a_j$, alors $\sigma\circ \begin{pmatrix}
+        a_1 & \cdots & a_k
+    \end{pmatrix} \circ \sigma^{-1}(i) =  \sigma(a_{j+1})$
+\end{itemize}
+
 
 \end{document}
