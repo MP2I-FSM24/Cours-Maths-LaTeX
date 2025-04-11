@@ -152,5 +152,26 @@ avec $\sigma = \begin{pmatrix}
     &= \varphi(\tau_0)
 \end{align*}
 
+\section{Unicité de la signature}
+\begin{tcolorbox}[title=Théorème 29.42, title filled=false, colframe=orange, colback=orange!10!white]
+    La signature est l'unique morphisme de groupe non trivial de $\mathcal{S}_n$ dans $\{-1, 1\}$. 
+\end{tcolorbox}
+
+Soit $\varphi$ un morphismede groupes de $\mathcal{S}_n$ dans $\{\pm 1\}$. \\
+Soit $\sigma\in \mathcal{S}_n$. D'après (29.37), $\sigma = \tau_1\circ \cdots \circ \tau_k$. 
+\begin{itemize}
+    \item Si la valeur prise par $\varphi$ sur les transpositions et $1$ (29.40), alors : 
+    \begin{align*}
+        \varphi(\sigma) = \prod_{i=1}^{k} \varphi(\tau_i) = 1
+    \end{align*}
+    Donc $\varphi$ est triviale. 
+
+    \item Si la valeur prise par $\varphi$ sur les transpositions est $-1$ (29.41), alors :
+    \begin{align*}
+        \varphi(0) = \prod_{i=1}^{k} \varphi(\tau_i) = (-1)^k = \epsilon(\sigma)
+    \end{align*}
+    Donc $\varphi = \epsilon$.
+\end{itemize}
+
 
 \end{document}
