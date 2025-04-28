@@ -298,5 +298,27 @@ Soit $i_j\in \{ i_1, \ldots, i_k \}$. ($j\neq k$) \\
     &= (-1)^{n - c(\sigma)}
 \end{align*}
 
+\setsection{68}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 29.69, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Calculer la signature de la permutation suivante : 
+    \begin{align*}
+        \sigma = \begin{pmatrix}
+            1 & 2 & 3 & \cdots & n & n+1 & n+2 & \cdots & 2n \\
+            2 & 4 & 6 & \cdots & 2n & 1 & 3 & \cdots & 2n-1
+        \end{pmatrix}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Pour chaque $i\in \llbracket 1, n \rrbracket$, le couple $(i, k+n)$ donne une inversion avec $k\in \llbracket 1, i \rrbracket$. \\
+On dénombre donc : 
+\begin{align*}
+    \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+\end{align*}
+Donc : 
+\begin{align*}
+    \epsilon(\sigma) &= (-1)^{\frac{n(n+1)}{2}} \\
+\end{align*}
+
 
 \end{document}
