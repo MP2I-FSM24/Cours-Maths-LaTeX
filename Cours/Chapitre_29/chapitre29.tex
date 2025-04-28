@@ -265,7 +265,7 @@ Soit $i_j\in \{ i_1, \ldots, i_k \}$. ($j\neq k$) \\
 \end{itemize}
 
 \section{Signature d'un cycle}
-\begin{tcolorbox}[title=Propostion 28.63, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+\begin{tcolorbox}[title=Propostion 29.63, title filled=false, colframe=lightblue, colback=lightblue!10!white]
     Soit $C$ un cucle et $\ell(C)$ sa longueur. Alors : 
     \begin{align*}
         \epsilon(C) = (-1)^{\ell(C) - 1}
@@ -279,6 +279,23 @@ Soit $i_j\in \{ i_1, \ldots, i_k \}$. ($j\neq k$) \\
     \end{pmatrix}) \\
     &= (-1)^{k-1} \\
     &= (-1)^{\ell(C) - 1}
+\end{align*}
+
+\section{Détermination de $\epsilon$ par le type cyclique}
+\begin{tcolorbox}[title=Théorème 29.64, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sigma$ une permutation de $\mathcal{S}_n$ et $c(\sigma)$ le nombre de parts dans son support cyclique (ou de façon équivalente dans son type cyclique). Alors : 
+    \begin{align*}
+        \epsilon(\sigma) = (-1)^{n - c(\sigma)}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $\sigma = C_1\circ \cdots\circ C_{c(\sigma)}$. On a : 
+\begin{align*}
+    \epsilon(0) &= \prod_{i=1}^{c(\sigma)} \epsilon(C_i) \text{ ($\epsilon$ morphisme)} \\
+    &= \prod_{i=1}^{c(\sigma)} (-1)^{\ell(C_i) - 1} \text{ (29.63)} \\
+    &= (-1)^{\sum\limits_{i=1}^{c(\sigma)} [\ell(C_i) - 1]} \\
+    &= (-1)^{\sum\limits_{i=1}^{c(\sigma)} \ell(C_i) - c(\sigma)} \\
+    &= (-1)^{n - c(\sigma)}
 \end{align*}
 
 
