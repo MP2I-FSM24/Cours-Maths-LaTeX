@@ -264,5 +264,22 @@ Soit $i_j\in \{ i_1, \ldots, i_k \}$. ($j\neq k$) \\
     \end{align*}
 \end{itemize}
 
+\section{Signature d'un cycle}
+\begin{tcolorbox}[title=Propostion 28.63, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $C$ un cucle et $\ell(C)$ sa longueur. Alors : 
+    \begin{align*}
+        \epsilon(C) = (-1)^{\ell(C) - 1}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Avec ce qui précède : 
+\begin{align*}
+    \epsilon(\sigma) &= \prod_{j=2}^{k} \epsilon(\begin{pmatrix}
+        i_1 & i_j
+    \end{pmatrix}) \\
+    &= (-1)^{k-1} \\
+    &= (-1)^{\ell(C) - 1}
+\end{align*}
+
 
 \end{document}
