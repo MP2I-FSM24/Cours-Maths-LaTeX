@@ -198,5 +198,71 @@ Soit $\sigma\in \mathcal{S}_n$. D'après (29.37), $\sigma = \tau_1\circ \cdots \
     Donc $C_1 = U_1$. 
 \end{itemize}
 
+\setsection{61}
+\section{Décomposition d'un cycle en transpositions}
+\begin{tcolorbox}[title=Lemme 29.62, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $(i_1, \ldots, i_k)$ des entiers deux à deux distincts de $\llbracket 1, n \rrbracket$. Alors : 
+    \begin{align*}
+        \begin{pmatrix}
+            i_1 & i_2 & \cdots & i_k
+        \end{pmatrix} = \begin{pmatrix}
+            i_1 & i_k
+        \end{pmatrix} \circ \begin{pmatrix}
+            i_1 & i_{k-1}
+        \end{pmatrix} \circ \cdots \circ \begin{pmatrix}
+            i_1 & i_2
+        \end{pmatrix}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On note $\sigma = \begin{pmatrix}
+    i_1 & i_k
+\end{pmatrix} \cdots \begin{pmatrix}
+    i_1 & i_2
+\end{pmatrix}$. \\
+Soit $p\not\in \{ i_1, \ldots, i_k \}$. On a bien $\sigma(p) = p$. \\
+Soit $i_j\in \{ i_1, \ldots, i_k \}$. ($j\neq k$) \\
+\begin{itemize}
+    \item \begin{align*}
+        \sigma(i_1) &= \begin{pmatrix}
+            i_1 & i_k
+        \end{pmatrix} \cdots \begin{pmatrix}
+            i_1 & i_2
+        \end{pmatrix}(i_1) \\
+        &= \begin{pmatrix}
+            i_1 & i_k
+        \end{pmatrix} \cdots \begin{pmatrix}
+            i_1 & i_3
+        \end{pmatrix}(i_2) \\
+        &= i_2
+    \end{align*}
+
+    \item \begin{align*}
+        \sigma(i_j) &= \begin{pmatrix}
+            i_1 & i_k
+        \end{pmatrix} \cdots \begin{pmatrix}
+            i_1 & i_2
+        \end{pmatrix}(i_j) \\
+        &= \begin{pmatrix}
+            i_1 & i_k
+        \end{pmatrix} \cdots \begin{pmatrix}
+            i_1 & i_{j}
+        \end{pmatrix}(i_j) \\
+        &= \begin{pmatrix}
+            i_1 & i_k
+        \end{pmatrix} \cdots \begin{pmatrix}
+            i_1 & i_{j+1}
+        \end{pmatrix}(i_1) \\
+        &= i_{j+1}
+    \end{align*}
+    
+    \item \begin{align*}
+        \sigma(i_k) &= \begin{pmatrix}
+            i_1 & i_k
+        \end{pmatrix} (i_k) \\
+        &= i_1
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
