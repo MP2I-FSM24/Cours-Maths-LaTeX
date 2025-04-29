@@ -136,5 +136,39 @@ $\varphi(0, 1) = (0, 1, 1) = (1, 1, 1) - (1, 1, 0)$ \\
     \end{pmatrix}
 \end{align*}
 
+\section{Calcul matriciel de l'image d'un vecteur par une application linéaire}
+\begin{tcolorbox}[title=Théorème 28.19, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E\neq \{0\}$ et $F\neq \{0\}$ deux $\mathbb{K}$-ev de dimension finie $p$ et $n$, $e$ une base de $E$ et $f$ une base de $F$, $u\in \mathcal{L}(E, F)$ et $x\in E$. Alors : 
+    \begin{align*}
+        \underbrace{Mat_f(u(x))}_{(n,1)} = \underbrace{Mat_{e,f}(u)}_{(n,p)} \underbrace{Mat_e(x)}_{(p,1)}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On note $e = (e_1, \ldots, e_p)$, $f = (f_1, \ldots, f_n)$ et $Mat_{e,f}(u) = M = (m_{ij})_{1\leq i\leq n, 1\leq j\leq p}$ \\
+Soit $x\in E$. On écrit $m = \sum\limits_{j=1}^{p} \alpha_j e_j$. Par conséquent : \begin{align*}
+    Mat_e(x) = \begin{pmatrix}
+    \alpha_1 \\
+    \vdots \\
+    \alpha_p
+\end{pmatrix}
+\end{align*}
+et :
+\begin{align*}
+    u(x) &= u(\sum_{j=1}^{p} \alpha_j e_j) \\
+    &= \sum_{j=1}^{p} \alpha_j u(e_j) \\
+    &= \sum_{j=1}^{p} \alpha_j \sum_{i=1}^{n} m_{ij} f_i \\
+    &= \sum_{i=1}^{n} \left[ \sum_{j=1}^{p} m_{ij} \alpha_j \right] f_i \\
+    &= \sum_{i=1}^{n} [M\times Mat_e(x)]_i f_i \\
+\end{align*}
+Donc : 
+\begin{align*}
+    Mat_f(u(x)) &= \begin{pmatrix}
+        [M\times Mat_e(x)]_1 \\
+        \vdots \\
+        [M\times Mat_e(x)]_n
+    \end{pmatrix} \\
+    &= M \times Mat_e(x)
+\end{align*}
+
 
 \end{document}
