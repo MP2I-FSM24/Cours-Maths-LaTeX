@@ -84,4 +84,25 @@ Si et seulement si $(C_1, \ldots, C_n)$ est une base de $\mathbb{K}^n$ (28.5). \
 Si et seulement si $^tA$ est inversible (11.42). \\
 Si et seulement si $(L_1, \ldots, L_n)$ est une base de $\mathbb{K}^n$. \\
 
+\setsection{12}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.13, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $T$ l'endomorphisme $P\mapsto X^2 P'' + P(1)$ de $\mathbb{R}_3[X]$ et $\mathcal{B}_3$ la base canonique de $\mathbb{R}_3[X]$. Déterminer $Mat_{\mathcal{B}_3}(T)$. 
+\end{tcolorbox}
+
+\begin{align*}
+    \mathcal{B} &= (1, X, X^2, X^3) \\
+    T(1) &= 1 \\
+    T(X) &= 1 \\
+    T(X^2) &= 2X^2 + 1 \\
+    T(X^3) &= 6X^2 + 1 \\
+    Mat_{\mathcal{B}}(T) &= \begin{pmatrix}
+        1 & 1 & 1 & 1 \\
+        0 & 0 & 0 & 0 \\
+        0 & 0 & 2 & 0 \\
+        0 & 0 & 0 & 6
+    \end{pmatrix}
+\end{align*}
+
+
 \end{document}
