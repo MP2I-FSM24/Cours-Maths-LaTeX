@@ -67,5 +67,21 @@ $Mat_{\mathcal{B}}(\mathcal{F}) = \begin{pmatrix}
     1 & 2 & 1
 \end{pmatrix}$ est triangulaire inférieure avec une diagonale ne contenant aucun $0$ : elle est donc inversible. Donc $\mathcal{F}$ est une base de $\mathbb{R}_2[X]$, donc libre. 
 
+\setsection{8}
+\section{Caractérisation des matrices inversibles au moyeu de leur lignes et colonnes}
+\begin{tcolorbox}[title=Théorème 28.9, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $A\in \mathcal{M}_n(\mathbb{K})$. Les assertions suivantes sont équivalentes : 
+    \begin{itemize}
+        \item $A$ est inversible
+        \item la famille des colonnes de $A$ est une base de $\mathbb{K}^n$ (ce qui revient à dire qu'elle est libre ou génératrice)
+        \item la famille des lignes de $A$ est une base de $\mathbb{K}^n$ (ce qui revient à dire qu'elle est libre ou génératrice)
+    \end{itemize}
+\end{tcolorbox}
+
+\noindent Soit $A\in \mathcal{M}_n(\mathbb{K})$. On note $C_1, \ldots, C_n$ les colonnes de $A$, $L_1, \ldots, L_n$ les lignes de $A$, $\mathcal{B}_n$ la base canonique de $\mathbb{K}^n$. \\
+$A$ est inersible si et seulement si $Mat_{\mathcal{B}_n}(C_1, \ldots, C_n)$ est inversible (28.8). \\
+Si et seulement si $(C_1, \ldots, C_n)$ est une base de $\mathbb{K}^n$ (28.5). \\
+Si et seulement si $^tA$ est inversible (11.42). \\
+Si et seulement si $(L_1, \ldots, L_n)$ est une base de $\mathbb{K}^n$. \\
 
 \end{document}
