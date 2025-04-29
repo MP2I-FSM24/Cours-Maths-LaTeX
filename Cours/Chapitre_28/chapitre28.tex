@@ -113,7 +113,28 @@ Si et seulement si $(L_1, \ldots, L_n)$ est une base de $\mathbb{K}^n$. \\
     \end{pmatrix}$. 
 \end{tcolorbox}
 
-$\hat{A}:\mathbb{R}^3\to \mathbb{R}^2; (x, y, z)\mapsto (x + z, 2x + y)$-
+\noindent $\hat{A}:\mathbb{R}^3\to \mathbb{R}^2; (x, y, z)\mapsto (x + z, 2x + y)$
+
+\setsection{17}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.18, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $\varphi$ l'application canoniquement associée à la matrice $\begin{pmatrix}
+        1 & 0 \\
+        1 & 1 \\
+        -1 & 1
+    \end{pmatrix}$, $\mathcal{B}_2'$ la base $((0,1),(1,0))$ de $\mathbb{R}^2$, $\mathcal{B}_3'$ la base $((1,1,1),(1,1,0),(1,0,0))$. Déterminer $Mat_{\mathcal{B}_2', \mathcal{B}_3'}(\varphi)$ 
+\end{tcolorbox}
+
+\noindent $\varphi:\mathbb{R}^2\to \mathbb{R}^3:(x,y)\mapsto (x, x+y, -x+y)$. \\
+$\varphi(1, 0) = (1, 1, -1) = -(1, 1, 1) + 2(1, 1, .)$ \\
+$\varphi(0, 1) = (0, 1, 1) = (1, 1, 1) - (1, 1, 0)$ \\
+\begin{align*}
+    Mat_{\mathcal{B}_2', \mathcal{B}_3'}(\varphi) &= \begin{pmatrix}
+        1 & -1 \\
+        0 & 2 \\
+        -1 & 0
+    \end{pmatrix}
+\end{align*}
 
 
 \end{document}
