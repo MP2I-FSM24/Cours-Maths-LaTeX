@@ -55,5 +55,17 @@ Ainsi :
 \end{align*}
 En conclusion, $\mathcal{F}$ est une base si et seulement si $\ker M = \{0\}$, si et seulement si $M$ est inversible. 
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.6, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que la famille $(X^2 + 3X + 1, 2X^2 + X, x^2)$ de $\mathbb{R}[X]$ est libre. 
+\end{tcolorbox}
+
+\noindent On note $\mathcal{B} = (1, X, X^2)$. \\
+$Mat_{\mathcal{B}}(\mathcal{F}) = \begin{pmatrix}
+    1 & 0 & 0 \\
+    3 & 1 & 0 \\
+    1 & 2 & 1
+\end{pmatrix}$ est triangulaire inférieure avec une diagonale ne contenant aucun $0$ : elle est donc inversible. Donc $\mathcal{F}$ est une base de $\mathbb{R}_2[X]$, donc libre. 
+
 
 \end{document}
