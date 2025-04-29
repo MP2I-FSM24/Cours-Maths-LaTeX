@@ -6,4 +6,54 @@
 \tableofcontents
 \clearpage
 
+\setsection{4}
+\section{Interprétation vectorielle de l'inversibilité, cas des familles de vecteurs}
+\begin{tcolorbox}[title=Théorème 28.5, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un $\mathbb{K}$-ev de dimension finie $n\neq 0$, $\mathcal{B}$ une base de $E$, $\mathcal{F}$ une famille de $n$ vecteurs de $E$. Alors $\mathcal{F}$ est une base de $E$ si et seulement si $Mat_{\mathcal{B}}(\mathcal{F})$ est inversible.
+\end{tcolorbox}
+
+\noindent Soit $\mathcal{F} = (x_1, \ldots, x_n)$ une famille de vecteurs et $\mathcal{B} = (b_1, \ldots, b_n)$ une base de $E$. \\
+On note $M = Mat_{\mathcal{B}}(\mathcal{F}) = (m_{ij})_{1\leq i,j\leq n}$. Ainsi :
+\begin{align*}
+    \forall j\in \llbracket 1, n \rrbracket, x_j = \sum_{i=1}^n m_{ij} b_i
+\end{align*}
+$\mathcal{F}$ est une base de $E$ si et seulement si $\mathcal{F}$ est libre (car $|\mathcal{F}| = \dim E$), si et seulement si : 
+\begin{align*}
+    \forall (\lambda_1, \ldots, \lambda_n)\in \mathbb{K}^n, \sum_{j=1}^n \lambda_j x_j = 0 \Rightarrow \forall j\in \llbracket 1, n \rrbracket, \lambda_j = 0
+\end{align*}
+Or pour $(\lambda_1, \ldots, \lambda_n)\in \mathbb{K}^n$ : 
+\begin{align*}
+    \sum_{j=1}^{n} \lambda_j x_j &= \sum_{j=1}^n \lambda_j \sum_{i=1}^n m_{ij} b_i \\
+    &= \sum_{i=1}^{n} \left( \sum_{j=1}^n m_{ij} \lambda_j \right) b_i \\
+    &= \sum_{i=1}^{n} \left[ M \begin{pmatrix}
+        \lambda_1 \\
+        \vdots \\
+        \lambda_n
+    \end{pmatrix} \right]_i b_i
+\end{align*}
+Ainsi : 
+\begin{align*}
+    \sum_{j=1}^{n} \lambda_j x_j = 0 &\Leftrightarrow \left[ \forall i\in \llbracket 1, n \rrbracket, \left[ M \begin{pmatrix}
+        \lambda_1 \\
+        \vdots \\
+        \lambda_n
+    \end{pmatrix} \right]_i = 0 \right] \\
+    &\Leftrightarrow M \begin{pmatrix}
+        \lambda_1 \\
+        \vdots \\
+        \lambda_n
+    \end{pmatrix} = \begin{pmatrix}
+        0 \\
+        \vdots \\
+        0
+    \end{pmatrix} \\
+    &\Leftrightarrow \begin{pmatrix}
+        \lambda_1 \\
+        \vdots \\
+        \lambda_n
+    \end{pmatrix} \in \ker M
+\end{align*}
+En conclusion, $\mathcal{F}$ est une base si et seulement si $\ker M = \{0\}$, si et seulement si $M$ est inversible. 
+
+
 \end{document}
