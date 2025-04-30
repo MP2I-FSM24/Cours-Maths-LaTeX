@@ -528,5 +528,21 @@ Par construction :
     \end{pmatrix}
 \end{align*}
 
+\setsection{32}
+\section{Rang d'une application linéaire, rang d'une matrice}
+\begin{tcolorbox}[title=Propostion 28.33, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $u\in \mathcal{L}(E, F)$, où $E$ et $F$ sont deux espaces vectoriels de dimensions finies non nulles. Soit $e$ et $f$ deux bases quelconques, respectivement de $E$ et $F$. Alors : 
+    \begin{align*}
+        \operatorname{rg} u = \operatorname{rg} \operatorname{Mat}_{e,f}(u)
+    \end{align*}
+\end{tcolorbox}
+
+On note $e = (e_i)$. 
+\begin{align*}
+    \operatorname{rg} \dim \operatorname{Vect}((u(e_i)))
+    &= \dim \operatorname{Vect} ((C_i)) \\
+    &= \operatorname{rg} \operatorname{Mat}_{e,f}(u)
+\end{align*}
+
 
 \end{document}
