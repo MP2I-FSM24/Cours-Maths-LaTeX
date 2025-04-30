@@ -544,5 +544,20 @@ On note $e = (e_i)$.
     &= \operatorname{rg} \operatorname{Mat}_{e,f}(u)
 \end{align*}
 
+\setsection{34}
+\section{Invariance du rang par une matrice inversible}
+\begin{tcolorbox}[title=Propostion 28.35, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $M\in \mathcal{M}_{n,p}(\mathbb{K}), P\in \operatorname{GL}_n(\mathbb{K}), R\in \operatorname{GL}_p(\mathbb{K})$, alors : 
+    \begin{align*}
+        \operatorname{rg}(PMR) = \operatorname{rg} M
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $\hat M, \hat P, \hat R$ les applications canoniquement associées à $M, P, R$. \\
+$\hat P, \hat R$ sont des isomorphismes ($P\in \operatorname{GL}_n(\mathbb{K})$ et $R\in \operatorname{GL}_p(\mathbb{K})$). Ainsi :
+\begin{align*}
+    \operatorname{rg} (PMR) &= \operatorname{rg} (\hat P\circ \hat M\circ \hat R) = \operatorname{rg} (\hat M) = \operatorname{rg} M
+\end{align*}
+
 
 \end{document}
