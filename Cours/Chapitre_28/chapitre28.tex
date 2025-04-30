@@ -504,5 +504,29 @@ Si $x_1 = x_j$ avec $x\neq j$, $M$ possède deux lignes identiques, donc $M\not\
     \end{align*}
 \end{itemize}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.29, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $E$ et $F$ deux $\mathbb{K}$-ev de dimensions finies non nulles et $u\in \mathcal{L}(E, F)$ de rang $r$. \\
+    Montrer qu'il existe une base $e$ de $E$ et une base $f$ de $F$ telles que $\operatorname{Mat}_{e,f}(u) = J_r$, où $J_r = \begin{pmatrix}
+        I_r & 0 \\
+        0 & 0
+    \end{pmatrix}$. 
+\end{tcolorbox}
+
+\noindent Comme $\operatorname{rg} u = r$, $\dim \ker u = p - r$ ($p = \dim E$). \\
+Soit $S$ un supplémentaire de $\ker u$ dans $E$. \\
+$\dim S = r$. Soit $e = (e_1, \ldots, e_r, e_{r+1}, \ldots, e_p)$ une base adaptée à $E = S\oplus \ker u$. \\
+$(u(e_1), \ldots, u(e_r))$ est une base de $\operatorname{Im} u$, donc libre dans $F$, que l'on complète en une base $f$ de $F$. \\
+Par construction : 
+\begin{align*}
+    \operatorname{Mat}_{e,f}(u) = \begin{pmatrix}
+        1 & \cdots & \cdots & \cdots & 0 \\
+        0 & \ddots & \cdots & \vdots & 0 \\
+        0 & \vdots & 1 & \vdots & 0 \\
+        0 & \vdots & \cdots & \ddots & 0 \\
+        0 & \cdots & \cdots & \cdots & 0 \\
+    \end{pmatrix}
+\end{align*}
+
 
 \end{document}
