@@ -440,5 +440,30 @@ Donc :
 \end{align*}
 Donc $\ker(\omega + id) = Vect(1 + X + X^3, X^2 + X^3)$. 
 
+\section{CNS d'inversibilité d'une matrice de Vandermonde}
+\begin{tcolorbox}[title=Théorème 28.23, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $(x_1, \ldots, x_n)\in \mathbb{K}^n$. On appelle \textbf{matrice de Vandermonde de $x_1, \ldots, x_n$} la matrice $(x_i^{j-1})_{1\leq i,j\leq n}$. \\
+    Cette matrice est inversible si et seulement si les scalaires $x_1, \ldots, x_n$ sont ditincts deux à deux. 
+\end{tcolorbox}
+
+\begin{align*}
+    M = (x_i^{j-1})_{1\leq i,j\leq n} &= \begin{pmatrix}
+        1 & x_1 & \cdots & x_1^{n-1} \\
+        \vdots & \vdots & & \vdots \\
+        1 & x_n & \cdots & x_n^{n-1}
+    \end{pmatrix}
+\end{align*}
+On définit $\varphi:\mathbb{R}_{n-1}[X]\to \mathbb{R}^n; P\mapsto (P(x_1), \ldots, P(x_n))$. \\
+On suppose que tous les $x_i$ sont distincts deux à deux. \\
+Si $P\in \ker\varphi$, $P$ possède (au moins) $n$ racines distinctes, or $\deg P\leq n-1$ donc par rigidité, $P = 0$. \\
+Donc $\varphi$ est injective ($\varphi\in \mathcal{L}(\mathbb{R}_{n-1}[X], \mathbb{R}^n)$). \\
+Donc $\varphi$ est un isomorphisme ($\dim \mathbb{R}_{n-1}[X] = \dim \mathbb{R}^n$). \\
+Or, en notant $\mathcal{B}_1$ et $\mathcal{B}_2$ les bases canoniques de $\mathbb{R}_{n-1}[X]$ et $\mathbb{R}^n$ : 
+\begin{align*}
+    Mat_{\mathcal{B}_1, \mathcal{B}_2}(\varphi) = M
+\end{align*}
+Donc $M$ est inversible (28.21). \\
+Si $x_1 = x_j$ avec $x\neq j$, $M$ possède deux lignes identiques, donc $M\not\in GL_n(\mathbb{K})$ (28.9). \\
+
 
 \end{document}
