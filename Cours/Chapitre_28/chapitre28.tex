@@ -465,5 +465,44 @@ Or, en notant $\mathcal{B}_1$ et $\mathcal{B}_2$ les bases canoniques de $\mathb
 Donc $M$ est inversible (28.21). \\
 Si $x_1 = x_j$ avec $x\neq j$, $M$ possède deux lignes identiques, donc $M\not\in GL_n(\mathbb{K})$ (28.9). \\
 
+\setsection{27}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.28, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $E$ un $\mathbb{K}$-ev de dimension $3$ et $u\in \mathcal{L}(E)$. On suppose que $u$ est donc nilpotent d'indice $2$. \\
+    Montrer que dans une certaine base, $u$ a pour matrice $\begin{pmatrix}
+        0 & 0 & 1 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+    \end{pmatrix}$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item D'après le théroème du rang : 
+    \begin{align*}
+        \underbrace{\dim \ker u}_{\geq 1} + \underbrace{\operatorname{rg} u}_{\geq 1} = 3
+    \end{align*}
+    Comme $u^2 = 0$, $\operatorname{Im} u \subset \ker u$. \\
+    On a nécessairement $\operatorname{rg} u = 1$ et $\dim \ker u = 2$. \\
+
+    \item Soit $x\in E$ tel que $u(x) \neq 0$. Or $u(x)\in \ker u$ et $\dim \ker u = 2$, on complète donc $(u(x), y)$ en une base de $\ker u$. 
+    
+    \item La famille $(y, x, u(x))$ est libre : 
+    \begin{align*}
+        ay + bx + cu(x) &= 0 \\
+        \text{donc } bu(x) &= 0 \\
+        \text{donc } b &= 0 \\
+        \text{donc } ay + cu(x) &= 0 \\
+        \text{donc } a = c &= 0 \text{ car } (y, u(x)) \text{ est libre}
+    \end{align*}
+    $(y, x, u(x))$ est de cardinal $3 = \dim E$, donc est une base de $E$ et : 
+    \begin{align*}
+        \operatorname{Mat}_{(u(x), y, x)}(u) &= \begin{pmatrix}
+            0 & 0 & 1 \\
+            0 & 0 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix}
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
