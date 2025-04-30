@@ -264,5 +264,59 @@ On a :
     \end{align*}
 \end{itemize}
 
+\section{Lien entre produit matriciel et composition d'applications linéaires}
+\begin{tcolorbox}[title=Théorème 28.21, title filled=false, colframe=orange, colback=orange!10!white]
+    \begin{enumerate}
+        \item Soit $E$ et $F$ deux $\mathbb{K}$-ev de dimensions finies non nulles $p$ et $n$ respectivement. L'application $u:Mat_{e,f}(u)$ est un isomorphisme entre $\mathcal{L}(E, F)$  et $\mathcal{M}_{n,p}(\mathbb{K})$.
+        \item Soit $E$, $F$ et $G$ trois $\mathbb{K}$-ev de dimensions non nulles et de bases respectives $e$, $f$ et $g$. Soit $u\in \mathcal{L}(E, F)$ et $v\in \mathcal{L}(F, G)$. Alors : 
+        \begin{align*}
+            Mat_{e,g}(v\circ u) = Mat_{f,g}(v) \times Mat_{e,f}(u)
+        \end{align*}
+        \item Soit $E$ et $F$ deux $\mathbb{K}$-ev de même dimensions finies et non nulles. Soit $e$ une base de $E$, $f$ une base de $F$ et $u\in \mathcal{L}(E, F)$. Alors $u$ est un isomorphisme entre $E$ et $F$ si et seulement si $Mat_{e,f}(u)$ est inversible. Dans ce cas on a :
+        \begin{align*}
+            Mat_{f,e}(u^{-1}) = Mat_{e,f}(u)^{-1}
+        \end{align*}
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Le théorème de rigidité (21.63) justifie que l'application $u\mapsto Mat_{e,f}(u)$ est bijective. \\
+    Par construction, elle est bien linéaire. 
+
+    \item Soit $x\in F$. 
+    \begin{align*}
+        Mat_{e,g}(v\circ u)Mat_e(x) &= Mat_g(v\circ u(x)) \\
+        &= Mat_g(v(u(x))) \\
+        &= Mat_{f,g}(v)Mat_f(u(x)) \\
+        &= Mat_{f,g}(v)Mat_{e,f}(u)Mat_e(x)
+    \end{align*}
+    Nécessairement : 
+    \begin{align*}
+        Mat_{e,g}(v\circ u) &= Mat_{f,g}(v)Mat_{e,f}(u)
+    \end{align*}
+
+    \item \begin{align*}
+        Mat_{e,f}(u) \times Mat_{f,e}(u^{-1}) &= Mat_{f}(u\circ u^{-1}) \\
+        &= Mat_f(id)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        Mat_{e,f}(u)\in GL_n(\mathbb{K})
+    \end{align*}
+    On note $P = M^{-1}$. D'après le premier point, on note $\sigma$ l'unique élément de $\mathcal{L}(F, E)$ tel que $Mat_{f,e}(\sigma) = P$. \\
+    On a : 
+    \begin{align*}
+        Id = MP = Mat_{e,f}(u)\times Mat_{f,e}(v) = Mat_f(u\circ v)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        u\circ v = id
+    \end{align*}
+    Donc ($E$ est de dimension finie) :
+    \begin{align*}
+        u^{-1} = v
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
