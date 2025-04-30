@@ -318,5 +318,127 @@ On a :
     \end{align*}
 \end{enumerate}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.22, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que l'endomorphisme $\omega$ de $\mathbb{R}_3[X]$ dont la matrice dans la base canonique de $\mathbb{R}_3[X]$ est :
+    \begin{align*}
+        \Omega = \begin{pmatrix}
+            0 & 0 & 1 & -1 \\
+            -1 & 1 & 1 & -1 \\
+            0 & 2 & 1 & -2 \\
+            -1 & 2 & 1 & -2
+        \end{pmatrix}
+    \end{align*}
+    est la symétrie par rapport à $Vect(X^3 + X^2 + X, X^2 + 1)$ parallèlement à $Vect(X^3 + X + 1, X^3 + X^2)$. 
+\end{tcolorbox}
+
+\begin{align*}
+    \Omega^2 &= \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix} \\
+    (\Omega - I_4)X &= \begin{pmatrix}
+        -1 & 0 & 1 & -1 \\
+        -1 & 0 & 1 & -1 \\
+        0 & 2 & 0 & -2 \\
+        -1 & 2 & 0 & -3
+    \end{pmatrix} \begin{pmatrix}
+        a \\
+        b \\
+        c \\
+        d
+    \end{pmatrix} = \begin{pmatrix}
+        -a + c - d \\
+        -a + c - d \\
+        2b - 2d \\
+        -a + 2b + c - 3d
+    \end{pmatrix}
+\end{align*}
+\begin{align*}
+    (\Omega - I_4)X = 0 &\Leftrightarrow \begin{cases}
+        a - c + d &= 0 \\
+        b - d &= 0 \\
+        -a + 2b + c - 3d &= 0 \\
+    \end{cases} \\
+    &\Leftrightarrow \begin{cases}
+        a - c + d &= 0 \\
+        b - d &= 0
+    \end{cases} \\
+    &\Leftrightarrow \begin{cases}
+        a &= c - d \\
+        b &= d
+    \end{cases} \\
+    &\Leftrightarrow c \begin{pmatrix}
+        1 \\
+        0 \\
+        1 \\
+        0
+    \end{pmatrix} + d \begin{pmatrix}
+        -1 \\
+        1 \\
+        0 \\
+        1\end{pmatrix}
+\end{align*}
+Donc $\ker(\Omega - I_4) = Vect\left(\begin{pmatrix}
+    1 \\
+    0 \\
+    1 \\
+    0
+\end{pmatrix}, \begin{pmatrix}
+    -1 \\
+    1 \\
+    0 \\
+    1
+\end{pmatrix}\right)$ \\
+Donc $\ker(\omega - id) = Vect(1 + X^2, -1 + X + X^3)$. 
+\begin{align*}
+    (\Omega + I_4)X &= \begin{pmatrix}
+        1 & 0 & 1 & -1 \\
+        -1 & 2 & 1 & -1 \\
+        0 & 2 & 2 & -2 \\
+        -1 & 2 & 1 & -1
+    \end{pmatrix} \begin{pmatrix}
+        a \\
+        b \\
+        c \\
+        d
+    \end{pmatrix} = \begin{pmatrix}
+        a + c - d \\
+        -a + 2b + c - d \\
+        2b + 2c - 2d \\
+        -a + 2b + c - d
+    \end{pmatrix}
+\end{align*}
+Donc : 
+\begin{align*}
+    (\Omega + I_4)X = 0 &\Leftrightarrow \begin{cases}
+        a + c - d &= 0 \\
+        b + c - d &= 0
+    \end{cases} \\
+    &\Leftrightarrow \begin{cases}
+        a = b = -c + d
+    \end{cases} \\
+    &\Leftrightarrow X = \begin{pmatrix}
+        -c + d \\
+        -c + d \\
+        c \\
+        d
+    \end{pmatrix} \\
+    &\Leftrightarrow X\in Vect\left(\begin{pmatrix}
+        -1 \\
+        -1 \\
+        1 \\
+        0
+    \end{pmatrix}, \begin{pmatrix}
+        1 \\
+        1 \\
+        0 \\
+        1
+    \end{pmatrix}\right)
+\end{align*}
+Donc $\ker(\omega + id) = Vect(1 + X + X^3, X^2 + X^3)$. 
+
 
 \end{document}
