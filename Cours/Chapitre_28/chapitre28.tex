@@ -170,5 +170,99 @@ Donc :
     &= M \times Mat_e(x)
 \end{align*}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.20, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $f$ l'endomorphisme de $\mathbb{R}_2[X]$ de matrice $\begin{pmatrix}
+        3 & 3 & 6 \\
+        0 & 1 & 2 \\
+        0 & 2 & 4
+    \end{pmatrix}$ dans la base canonique. \\
+    Montrer que $Im(f) = Vect(3, 2X^2 + X)$ et $\ker f = Vect(X^2 - 2X)$. 
+\end{tcolorbox}
+
+On a : 
+\begin{align*}
+    f:\mathbb{R}_2[X]\to \mathbb{R}_2[X]; aX^2 + bX + c &\mapsto (4a + 2b)X^2 + (2a + b)X + (6a + 3b + 3c) \\
+    \hat f:\mathbb{R}^3 \to \mathbb{R}^3; (c, b, a) &\mapsto (3c + 3b + 6a, b + 2a, 2b + 4a)
+\end{align*}
+\begin{itemize}
+    \item Soit $X = \begin{pmatrix}
+        x \\
+        y \\
+        z
+    \end{pmatrix}\in \mathbb{R}^3$ : 
+    \begin{align*}
+        MX = 0 &\Leftrightarrow \begin{pmatrix}
+            3x + 3y + 6z \\
+            y + 2z \\
+            2y + 4z
+        \end{pmatrix} = \begin{pmatrix}
+            0 \\
+            0 \\
+            0
+        \end{pmatrix} \\
+        &\Leftrightarrow \begin{cases}
+            x + y + 2z &= 0 \\
+            y + 2z &= 0
+        \end{cases} \\
+        &\Leftrightarrow \begin{cases}
+            x &= 0 \\
+            y &= -2z \\
+        \end{cases} \\
+        &\Leftrightarrow X = \begin{pmatrix}
+            0 \\
+            -2z \\
+            z
+        \end{pmatrix} \\
+        &\Leftrightarrow X\in Vect\left(\begin{pmatrix}
+            0 \\
+            -2 \\
+            1
+        \end{pmatrix}\right)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \ker M = Vect\left(\begin{pmatrix}
+            0 \\
+            -2 \\
+            1
+        \end{pmatrix}\right)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \ker f &= Vect(X^2 - 2X) \\
+        &= Vect(-2X + 1)
+    \end{align*}
+
+    \item \begin{align*}
+        Im(M) &= Vect\left(\begin{pmatrix}
+            3 \\
+            0 \\
+            0
+        \end{pmatrix}, \begin{pmatrix}
+            3 \\
+            1 \\
+            2
+        \end{pmatrix}, \begin{pmatrix}
+            6 \\
+            2 \\
+            4
+        \end{pmatrix}\right) \\
+        &= Vect\left(\begin{pmatrix}
+            1 \\
+            0 \\
+            0
+        \end{pmatrix}, \begin{pmatrix}
+            0 \\
+            1 \\
+            2
+        \end{pmatrix}\right) \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        Im(f) &= Vect(1 + X + 2X^2)
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
