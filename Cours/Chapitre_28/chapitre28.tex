@@ -676,5 +676,23 @@ Donc $(x, y) = (\cos\theta x + \sin\theta y) u_\theta + (-\sin\theta x + \cos\th
     &= P_{f'}^f \operatorname{Mat}_{e, f}(u) P_{e}^{e'}
 \end{align*}
 
+\setsection{46}
+\section{Exemple fondamental}
+\begin{tcolorbox}[title=Propostion 28.47, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Deux matrices de $\mathcal{M}_{n,p}(\mathbb{K})$ sont équivalentes si et seulement si elles ont le même rang. Cela revient à dire que toute matrice de $\mathcal{M}_{n,p}(\mathbb{K})$ est équivalente à $J_r$. 
+\end{tcolorbox}
+
+\noindent Soit $M\in \mathcal{M}_{n,p}(\mathbb{K})$ de rang $r$. \\
+Soit $u\in \mathcal{L}(\mathbb{K}^p, \mathbb{K}^n)$ l'application canoniquement associée à $M$. \\
+Donc $\operatorname{rg} u = r$. \\
+D'après (28.29), on choisit une base $e$ de $\mathbb{K}^p$ et $f$ de $\mathbb{K}^n$ telles que :
+\begin{align*}
+    \operatorname{Mat}_{e,f}(u) &= J_r
+\end{align*}
+D'après (28.44), $M$ et $\operatorname{Mat}_{e,f}(u)$ sont équivalentes, soit : 
+\begin{align*}
+    M\sim J_r
+\end{align*}
+
 
 \end{document}
