@@ -706,5 +706,24 @@ Et $^tA = tP J_r {^tQ^{-1}}$. \\
 Donc $^tA\sim J_r$. \\
 Donc $\operatorname{rg} {^tA} = \operatorname{rg} A$. 
 
+\setsection{51}
+\section{Rang d'une matrice extraite}
+\begin{tcolorbox}[title=Propostion 28.52, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Pour toute matrice $B$ extraite de $A$, on a $\operatorname{rg} B \leq \operatorname{rg} A$. Le rang de $A$ est la taille maximale des matrices inversibles que l'on peut extraire de $A$. 
+\end{tcolorbox}
+\noindent Extraire une matrice $B$ de $A$ revient à supprimer des colonnes et des lignes de $A$. \\
+On note $C$ la matrice intermédiaire en supprimant les colonnes de $A$. \\
+Ainsi, $B$ s'obtient à partir de $C$ en supprimant les lignes de $C$. \\
+Par définition (28.30), $\operatorname{rg} C \leq \operatorname{rg} A$. \\
+Puis (28.49), $\operatorname{rg} B \leq \operatorname{rg} C$. \\
+On note $r$ le rang de $A$. \\
+D'après (28.30), il existe $r$ colonnes de $A$ linéairement indépendantes. \\
+Soit $C$ la matrice extraite de $A$, constituée de ses vecteurs colonnes. \\
+En particulier, $\operatorname{rg} C = r$. \\
+D'après (28.49), il existe $r$ vecteurs lignes de $C$, libres. \\
+On note $B$ la matrice (extraite de $C$) constituée de ces vecteurs lignes. \\
+On a $\operatorname{rg} B = r$ et $B\in \mathcal{M}_r(\mathbb{K})$. \\
+Donc $B\in \operatorname{GL}_r(\mathbb{K})$ (28.9). 
+
 
 \end{document}
