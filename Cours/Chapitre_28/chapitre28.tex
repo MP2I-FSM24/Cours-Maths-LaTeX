@@ -559,5 +559,37 @@ $\hat P, \hat R$ sont des isomorphismes ($P\in \operatorname{GL}_n(\mathbb{K})$ 
     \operatorname{rg} (PMR) &= \operatorname{rg} (\hat P\circ \hat M\circ \hat R) = \operatorname{rg} (\hat M) = \operatorname{rg} M
 \end{align*}
 
+\setsection{36}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.37, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Déterminer le rang de $\begin{pmatrix}
+        1 & 2 & 1 \\
+        1 & 3 & 2 \\
+        2 & 1 & -1
+    \end{pmatrix}$. 
+\end{tcolorbox}
+
+\begin{align*}
+    \begin{pmatrix}
+        1 & 2 & 1 \\
+        1 & 3 & 2 \\
+        2 & 1 & -1
+    \end{pmatrix} &\sim \begin{pmatrix}
+        1 & 2 & 1 \\
+        0 & 1 & 1 \\
+        0 & -3 & -3
+    \end{pmatrix} \\
+    &\sim \begin{pmatrix}
+        1 & 2 & 1 \\
+        0 & 1 & 1 \\
+        0 & 0 & 0
+    \end{pmatrix}
+\end{align*}
+Le rang de cette matrice est $2$ donc $\operatorname{rg} \begin{pmatrix}
+    1 & 2 & 1 \\
+    1 & 3 & 2 \\
+    2 & 1 & -1
+\end{pmatrix} = 2$. 
+
 
 \end{document}
