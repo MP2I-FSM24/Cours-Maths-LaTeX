@@ -591,5 +591,33 @@ Le rang de cette matrice est $2$ donc $\operatorname{rg} \begin{pmatrix}
     2 & 1 & -1
 \end{pmatrix} = 2$. 
 
+\section{Matrice de changement d'une base à une autre}
+\begin{tcolorbox}[title=Théorème 28.38, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace vectoriel de dimension finie non nulle, et $e$, $f$ et $g$ trois bases de $E$. On appelle \textbf{matrice de passage de $e$ à $f$} la matrice :
+    \begin{align*}
+        \operatorname{Mat}_{e}(f) = \operatorname{Mat}_{f,e}(id_E
+    \end{align*}
+    Cette matrice est souvent notée $P_e^f$ (ou quelques fois $P_{e\to f}$). De plus :
+    \begin{enumerate}
+        \item $P_e^f$ est inversible, d'inverse $P_f^e$.
+        \item $P_e^f\times P_f^g = P_e^g$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On a $P_e^f = \operatorname{Mat}_{f,e}(\operatorname{id})$. \\
+    Donc ($id$ est inversible) : 
+    \begin{align*}
+        (P_e^f)^{-1} = \operatorname{Mat}_{e,f}(\operatorname{id}^{-1}) = \operatorname{Mat}_{e,f}(\operatorname{id}) = P_f^e
+    \end{align*}
+
+    \item \begin{align*}
+        P_e^f\times P_f^g &= \operatorname{Mat}_{f,e}(\operatorname{id})\times \operatorname{Mat}_{g,f}(\operatorname{id}) \\
+        &= \operatorname{Mat}_{g,e}(\operatorname{id}\circ \operatorname{id}) \text{ (28.21)} \\
+        &= \operatorname{Mat}_{g,e}(\operatorname{id}) \\
+        &= P_e^g
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
