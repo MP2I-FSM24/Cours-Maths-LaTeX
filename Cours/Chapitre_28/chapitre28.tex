@@ -619,5 +619,48 @@ Le rang de cette matrice est $2$ donc $\operatorname{rg} \begin{pmatrix}
     \end{align*}
 \end{enumerate}
 
+\setsection{40}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.41, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $\theta \in \mathbb{R}$ fixé. Notons $e=(i, j)$ la base canonique de $\mathbb{R}^2$ et posons
+    \begin{align*}
+        \begin{cases}
+            u_\theta=\cos (\theta) i+\sin (\theta) j \\
+            v_\theta=-\sin (\theta) i+\cos (\theta) j
+        \end{cases}
+    \end{align*}
+    La matrice de la famille $\left(u_\theta, v_\theta\right)$ dans la base $(i, j)$ est :
+    \begin{align*}
+        \operatorname{Mat}_{(i, j)}\left(u_\theta, v_\theta\right)=\begin{pmatrix}
+        \cos \theta & -\sin \theta \\
+        \sin \theta & \cos \theta
+        \end{pmatrix}
+    \end{align*}
+    Comme le déterminant de cette matrice vaut $1$ (et donc non nul), alors $b_\theta = (u_\theta, v_\theta)$ est une base de $\mathbb{R}^2$. \\
+    Si $u = (x, y)\in \mathbb{R}^2$, déterminer les coordonnées de $u$ dans la nouvelle base $b_\theta$.
+\end{tcolorbox}
+
+\begin{align*}
+    P^{-1} = \begin{pmatrix}
+        \cos\theta & \sin\theta \\
+        -\sin\theta & \cos\theta
+    \end{pmatrix}
+\end{align*}
+Soit $(x, y)\in \mathbb{R}^2, X = \begin{pmatrix}
+    x \\
+    y
+\end{pmatrix} = \operatorname{Mat}_e((x, y))$. \\
+On note $X' = \operatorname{Mat}_{(u_\theta, v_\theta)}((x, y))$. \\
+D'après la formule de changement de base : 
+\begin{align*}
+    X &= PX' \\
+    \text{donc } X' &= P^{-1}X \\
+    &= \begin{pmatrix}
+        \cos\theta x & \sin\theta y \\
+        -\sin\theta x & \cos\theta y
+    \end{pmatrix}
+\end{align*}
+Donc $(x, y) = (\cos\theta x + \sin\theta y) u_\theta + (-\sin\theta x + \cos\theta y)v_\theta$. 
+
 
 \end{document}
