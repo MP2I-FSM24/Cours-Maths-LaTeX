@@ -662,5 +662,19 @@ D'après la formule de changement de base :
 \end{align*}
 Donc $(x, y) = (\cos\theta x + \sin\theta y) u_\theta + (-\sin\theta x + \cos\theta y)v_\theta$. 
 
+\section{Changement de bases pour une application linéaire}
+\begin{tcolorbox}[title=Théorème 28.42, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ et $F$ deux espaces vectoriels de dimensions finies non nulles, $e$ et $e'$ deux bases de $E$, $f$ et $f'$ deux bases de $F$ et $u\in \mathcal{L}(E, F)$. Alors :
+    \begin{align*}
+        \operatorname{Mat_{e', f'}(u)} = P_{f'}^f \operatorname{Mat_{e,f}(u)} P_{e}^{e'}
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \operatorname{Mat}_{e', f'}(u) &= \operatorname{Mat}_{e', f'}(\operatorname{id}_F\circ u\circ \operatorname{id}_E) \\
+    &= \operatorname{Mat}_{f, f'}(\operatorname{id}) \times \operatorname{Mat}_{e, f}(u) \times \operatorname{Mat}_{e', e}(\operatorname{id}) \\
+    &= P_{f'}^f \operatorname{Mat}_{e, f}(u) P_{e}^{e'}
+\end{align*}
+
 
 \end{document}
