@@ -320,5 +320,21 @@ Donc :
     \epsilon(\sigma) &= (-1)^{\frac{n(n+1)}{2}} \\
 \end{align*}
 
+\section*{Exercice 4}
+\noindent Soit $g\in G$. On note $\varphi_g:G\to G; h\mapsto gh$. \\
+On a $\varphi_g\in S(G)$ car $\varphi_g$ est bijective de réciproque $\varphi_g^{-1}$. \\
+On note $\varphi:G\to S(G); g\mapsto \varphi_g$. \\
+On a évidemment pour tout $(g, k)\in G^2$ : 
+\begin{align*}
+    \varphi(g \times k) = \varphi_g \circ \varphi_k
+\end{align*}
+Donc $\varphi$ est un morphisme de groupe. \\
+Si $g\in \ker \varphi$, $\varphi(g) = \operatorname{id}$, donc : 
+\begin{align*}
+    \forall h\in G, \varphi_g(h) &= h \\
+    \text{donc } g &= 1_G
+\end{align*}
+Donc $G$ est isomorphe à $\operatorname{Im} \varphi$, qui est un sous-groupe de $S(G)$. 
+
 
 \end{document}
