@@ -6,4 +6,796 @@
 \tableofcontents
 \clearpage
 
+\setsection{4}
+\section{Interprétation vectorielle de l'inversibilité, cas des familles de vecteurs}
+\begin{tcolorbox}[title=Théorème 28.5, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un $\mathbb{K}$-ev de dimension finie $n\neq 0$, $\mathcal{B}$ une base de $E$, $\mathcal{F}$ une famille de $n$ vecteurs de $E$. Alors $\mathcal{F}$ est une base de $E$ si et seulement si $Mat_{\mathcal{B}}(\mathcal{F})$ est inversible.
+\end{tcolorbox}
+
+\noindent Soit $\mathcal{F} = (x_1, \ldots, x_n)$ une famille de vecteurs et $\mathcal{B} = (b_1, \ldots, b_n)$ une base de $E$. \\
+On note $M = Mat_{\mathcal{B}}(\mathcal{F}) = (m_{ij})_{1\leq i,j\leq n}$. Ainsi :
+\begin{align*}
+    \forall j\in \llbracket 1, n \rrbracket, x_j = \sum_{i=1}^n m_{ij} b_i
+\end{align*}
+$\mathcal{F}$ est une base de $E$ si et seulement si $\mathcal{F}$ est libre (car $|\mathcal{F}| = \dim E$), si et seulement si : 
+\begin{align*}
+    \forall (\lambda_1, \ldots, \lambda_n)\in \mathbb{K}^n, \sum_{j=1}^n \lambda_j x_j = 0 \Rightarrow \forall j\in \llbracket 1, n \rrbracket, \lambda_j = 0
+\end{align*}
+Or pour $(\lambda_1, \ldots, \lambda_n)\in \mathbb{K}^n$ : 
+\begin{align*}
+    \sum_{j=1}^{n} \lambda_j x_j &= \sum_{j=1}^n \lambda_j \sum_{i=1}^n m_{ij} b_i \\
+    &= \sum_{i=1}^{n} \left( \sum_{j=1}^n m_{ij} \lambda_j \right) b_i \\
+    &= \sum_{i=1}^{n} \left[ M \begin{pmatrix}
+        \lambda_1 \\
+        \vdots \\
+        \lambda_n
+    \end{pmatrix} \right]_i b_i
+\end{align*}
+Ainsi : 
+\begin{align*}
+    \sum_{j=1}^{n} \lambda_j x_j = 0 &\Leftrightarrow \left[ \forall i\in \llbracket 1, n \rrbracket, \left[ M \begin{pmatrix}
+        \lambda_1 \\
+        \vdots \\
+        \lambda_n
+    \end{pmatrix} \right]_i = 0 \right] \\
+    &\Leftrightarrow M \begin{pmatrix}
+        \lambda_1 \\
+        \vdots \\
+        \lambda_n
+    \end{pmatrix} = \begin{pmatrix}
+        0 \\
+        \vdots \\
+        0
+    \end{pmatrix} \\
+    &\Leftrightarrow \begin{pmatrix}
+        \lambda_1 \\
+        \vdots \\
+        \lambda_n
+    \end{pmatrix} \in \ker M
+\end{align*}
+En conclusion, $\mathcal{F}$ est une base si et seulement si $\ker M = \{0\}$, si et seulement si $M$ est inversible. 
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.6, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que la famille $(X^2 + 3X + 1, 2X^2 + X, x^2)$ de $\mathbb{R}[X]$ est libre. 
+\end{tcolorbox}
+
+\noindent On note $\mathcal{B} = (1, X, X^2)$. \\
+$Mat_{\mathcal{B}}(\mathcal{F}) = \begin{pmatrix}
+    1 & 0 & 0 \\
+    3 & 1 & 0 \\
+    1 & 2 & 1
+\end{pmatrix}$ est triangulaire inférieure avec une diagonale ne contenant aucun $0$ : elle est donc inversible. Donc $\mathcal{F}$ est une base de $\mathbb{R}_2[X]$, donc libre. 
+
+\setsection{8}
+\section{Caractérisation des matrices inversibles au moyeu de leur lignes et colonnes}
+\begin{tcolorbox}[title=Théorème 28.9, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $A\in \mathcal{M}_n(\mathbb{K})$. Les assertions suivantes sont équivalentes : 
+    \begin{itemize}
+        \item $A$ est inversible
+        \item la famille des colonnes de $A$ est une base de $\mathbb{K}^n$ (ce qui revient à dire qu'elle est libre ou génératrice)
+        \item la famille des lignes de $A$ est une base de $\mathbb{K}^n$ (ce qui revient à dire qu'elle est libre ou génératrice)
+    \end{itemize}
+\end{tcolorbox}
+
+\noindent Soit $A\in \mathcal{M}_n(\mathbb{K})$. On note $C_1, \ldots, C_n$ les colonnes de $A$, $L_1, \ldots, L_n$ les lignes de $A$, $\mathcal{B}_n$ la base canonique de $\mathbb{K}^n$. \\
+$A$ est inersible si et seulement si $Mat_{\mathcal{B}_n}(C_1, \ldots, C_n)$ est inversible (28.8). \\
+Si et seulement si $(C_1, \ldots, C_n)$ est une base de $\mathbb{K}^n$ (28.5). \\
+Si et seulement si $^tA$ est inversible (11.42). \\
+Si et seulement si $(L_1, \ldots, L_n)$ est une base de $\mathbb{K}^n$. \\
+
+\setsection{12}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.13, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $T$ l'endomorphisme $P\mapsto X^2 P'' + P(1)$ de $\mathbb{R}_3[X]$ et $\mathcal{B}_3$ la base canonique de $\mathbb{R}_3[X]$. Déterminer $Mat_{\mathcal{B}_3}(T)$. 
+\end{tcolorbox}
+
+\begin{align*}
+    \mathcal{B} &= (1, X, X^2, X^3) \\
+    T(1) &= 1 \\
+    T(X) &= 1 \\
+    T(X^2) &= 2X^2 + 1 \\
+    T(X^3) &= 6X^2 + 1 \\
+    Mat_{\mathcal{B}}(T) &= \begin{pmatrix}
+        1 & 1 & 1 & 1 \\
+        0 & 0 & 0 & 0 \\
+        0 & 0 & 2 & 0 \\
+        0 & 0 & 0 & 6
+    \end{pmatrix}
+\end{align*}
+
+\setsection{14}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.15, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Déterminer l'application canoniquement associée à $\begin{pmatrix}
+        1 & 0 & 1 \\
+        2 & 1 & 0
+    \end{pmatrix}$. 
+\end{tcolorbox}
+
+\noindent $\hat{A}:\mathbb{R}^3\to \mathbb{R}^2; (x, y, z)\mapsto (x + z, 2x + y)$
+
+\setsection{17}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.18, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $\varphi$ l'application canoniquement associée à la matrice $\begin{pmatrix}
+        1 & 0 \\
+        1 & 1 \\
+        -1 & 1
+    \end{pmatrix}$, $\mathcal{B}_2'$ la base $((0,1),(1,0))$ de $\mathbb{R}^2$, $\mathcal{B}_3'$ la base $((1,1,1),(1,1,0),(1,0,0))$. Déterminer $Mat_{\mathcal{B}_2', \mathcal{B}_3'}(\varphi)$ 
+\end{tcolorbox}
+
+\noindent $\varphi:\mathbb{R}^2\to \mathbb{R}^3:(x,y)\mapsto (x, x+y, -x+y)$. \\
+$\varphi(1, 0) = (1, 1, -1) = -(1, 1, 1) + 2(1, 1, .)$ \\
+$\varphi(0, 1) = (0, 1, 1) = (1, 1, 1) - (1, 1, 0)$ \\
+\begin{align*}
+    Mat_{\mathcal{B}_2', \mathcal{B}_3'}(\varphi) &= \begin{pmatrix}
+        1 & -1 \\
+        0 & 2 \\
+        -1 & 0
+    \end{pmatrix}
+\end{align*}
+
+\section{Calcul matriciel de l'image d'un vecteur par une application linéaire}
+\begin{tcolorbox}[title=Théorème 28.19, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E\neq \{0\}$ et $F\neq \{0\}$ deux $\mathbb{K}$-ev de dimension finie $p$ et $n$, $e$ une base de $E$ et $f$ une base de $F$, $u\in \mathcal{L}(E, F)$ et $x\in E$. Alors : 
+    \begin{align*}
+        \underbrace{Mat_f(u(x))}_{(n,1)} = \underbrace{Mat_{e,f}(u)}_{(n,p)} \underbrace{Mat_e(x)}_{(p,1)}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On note $e = (e_1, \ldots, e_p)$, $f = (f_1, \ldots, f_n)$ et $Mat_{e,f}(u) = M = (m_{ij})_{1\leq i\leq n, 1\leq j\leq p}$ \\
+Soit $x\in E$. On écrit $m = \sum\limits_{j=1}^{p} \alpha_j e_j$. Par conséquent : \begin{align*}
+    Mat_e(x) = \begin{pmatrix}
+    \alpha_1 \\
+    \vdots \\
+    \alpha_p
+\end{pmatrix}
+\end{align*}
+et :
+\begin{align*}
+    u(x) &= u(\sum_{j=1}^{p} \alpha_j e_j) \\
+    &= \sum_{j=1}^{p} \alpha_j u(e_j) \\
+    &= \sum_{j=1}^{p} \alpha_j \sum_{i=1}^{n} m_{ij} f_i \\
+    &= \sum_{i=1}^{n} \left[ \sum_{j=1}^{p} m_{ij} \alpha_j \right] f_i \\
+    &= \sum_{i=1}^{n} [M\times Mat_e(x)]_i f_i \\
+\end{align*}
+Donc : 
+\begin{align*}
+    Mat_f(u(x)) &= \begin{pmatrix}
+        [M\times Mat_e(x)]_1 \\
+        \vdots \\
+        [M\times Mat_e(x)]_n
+    \end{pmatrix} \\
+    &= M \times Mat_e(x)
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.20, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $f$ l'endomorphisme de $\mathbb{R}_2[X]$ de matrice $\begin{pmatrix}
+        3 & 3 & 6 \\
+        0 & 1 & 2 \\
+        0 & 2 & 4
+    \end{pmatrix}$ dans la base canonique. \\
+    Montrer que $Im(f) = Vect(3, 2X^2 + X)$ et $\ker f = Vect(X^2 - 2X)$. 
+\end{tcolorbox}
+
+On a : 
+\begin{align*}
+    f:\mathbb{R}_2[X]\to \mathbb{R}_2[X]; aX^2 + bX + c &\mapsto (4a + 2b)X^2 + (2a + b)X + (6a + 3b + 3c) \\
+    \hat f:\mathbb{R}^3 \to \mathbb{R}^3; (c, b, a) &\mapsto (3c + 3b + 6a, b + 2a, 2b + 4a)
+\end{align*}
+\begin{itemize}
+    \item Soit $X = \begin{pmatrix}
+        x \\
+        y \\
+        z
+    \end{pmatrix}\in \mathbb{R}^3$ : 
+    \begin{align*}
+        MX = 0 &\Leftrightarrow \begin{pmatrix}
+            3x + 3y + 6z \\
+            y + 2z \\
+            2y + 4z
+        \end{pmatrix} = \begin{pmatrix}
+            0 \\
+            0 \\
+            0
+        \end{pmatrix} \\
+        &\Leftrightarrow \begin{cases}
+            x + y + 2z &= 0 \\
+            y + 2z &= 0
+        \end{cases} \\
+        &\Leftrightarrow \begin{cases}
+            x &= 0 \\
+            y &= -2z \\
+        \end{cases} \\
+        &\Leftrightarrow X = \begin{pmatrix}
+            0 \\
+            -2z \\
+            z
+        \end{pmatrix} \\
+        &\Leftrightarrow X\in Vect\left(\begin{pmatrix}
+            0 \\
+            -2 \\
+            1
+        \end{pmatrix}\right)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \ker M = Vect\left(\begin{pmatrix}
+            0 \\
+            -2 \\
+            1
+        \end{pmatrix}\right)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \ker f &= Vect(X^2 - 2X) \\
+        &= Vect(-2X + 1)
+    \end{align*}
+
+    \item \begin{align*}
+        Im(M) &= Vect\left(\begin{pmatrix}
+            3 \\
+            0 \\
+            0
+        \end{pmatrix}, \begin{pmatrix}
+            3 \\
+            1 \\
+            2
+        \end{pmatrix}, \begin{pmatrix}
+            6 \\
+            2 \\
+            4
+        \end{pmatrix}\right) \\
+        &= Vect\left(\begin{pmatrix}
+            1 \\
+            0 \\
+            0
+        \end{pmatrix}, \begin{pmatrix}
+            0 \\
+            1 \\
+            2
+        \end{pmatrix}\right) \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        Im(f) &= Vect(1 + X + 2X^2)
+    \end{align*}
+\end{itemize}
+
+\section{Lien entre produit matriciel et composition d'applications linéaires}
+\begin{tcolorbox}[title=Théorème 28.21, title filled=false, colframe=orange, colback=orange!10!white]
+    \begin{enumerate}
+        \item Soit $E$ et $F$ deux $\mathbb{K}$-ev de dimensions finies non nulles $p$ et $n$ respectivement. L'application $u:Mat_{e,f}(u)$ est un isomorphisme entre $\mathcal{L}(E, F)$  et $\mathcal{M}_{n,p}(\mathbb{K})$.
+        \item Soit $E$, $F$ et $G$ trois $\mathbb{K}$-ev de dimensions non nulles et de bases respectives $e$, $f$ et $g$. Soit $u\in \mathcal{L}(E, F)$ et $v\in \mathcal{L}(F, G)$. Alors : 
+        \begin{align*}
+            Mat_{e,g}(v\circ u) = Mat_{f,g}(v) \times Mat_{e,f}(u)
+        \end{align*}
+        \item Soit $E$ et $F$ deux $\mathbb{K}$-ev de même dimensions finies et non nulles. Soit $e$ une base de $E$, $f$ une base de $F$ et $u\in \mathcal{L}(E, F)$. Alors $u$ est un isomorphisme entre $E$ et $F$ si et seulement si $Mat_{e,f}(u)$ est inversible. Dans ce cas on a :
+        \begin{align*}
+            Mat_{f,e}(u^{-1}) = Mat_{e,f}(u)^{-1}
+        \end{align*}
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Le théorème de rigidité (21.63) justifie que l'application $u\mapsto Mat_{e,f}(u)$ est bijective. \\
+    Par construction, elle est bien linéaire. 
+
+    \item Soit $x\in F$. 
+    \begin{align*}
+        Mat_{e,g}(v\circ u)Mat_e(x) &= Mat_g(v\circ u(x)) \\
+        &= Mat_g(v(u(x))) \\
+        &= Mat_{f,g}(v)Mat_f(u(x)) \\
+        &= Mat_{f,g}(v)Mat_{e,f}(u)Mat_e(x)
+    \end{align*}
+    Nécessairement : 
+    \begin{align*}
+        Mat_{e,g}(v\circ u) &= Mat_{f,g}(v)Mat_{e,f}(u)
+    \end{align*}
+
+    \item \begin{align*}
+        Mat_{e,f}(u) \times Mat_{f,e}(u^{-1}) &= Mat_{f}(u\circ u^{-1}) \\
+        &= Mat_f(id)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        Mat_{e,f}(u)\in GL_n(\mathbb{K})
+    \end{align*}
+    On note $P = M^{-1}$. D'après le premier point, on note $\sigma$ l'unique élément de $\mathcal{L}(F, E)$ tel que $Mat_{f,e}(\sigma) = P$. \\
+    On a : 
+    \begin{align*}
+        Id = MP = Mat_{e,f}(u)\times Mat_{f,e}(v) = Mat_f(u\circ v)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        u\circ v = id
+    \end{align*}
+    Donc ($E$ est de dimension finie) :
+    \begin{align*}
+        u^{-1} = v
+    \end{align*}
+\end{enumerate}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.22, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que l'endomorphisme $\omega$ de $\mathbb{R}_3[X]$ dont la matrice dans la base canonique de $\mathbb{R}_3[X]$ est :
+    \begin{align*}
+        \Omega = \begin{pmatrix}
+            0 & 0 & 1 & -1 \\
+            -1 & 1 & 1 & -1 \\
+            0 & 2 & 1 & -2 \\
+            -1 & 2 & 1 & -2
+        \end{pmatrix}
+    \end{align*}
+    est la symétrie par rapport à $Vect(X^3 + X^2 + X, X^2 + 1)$ parallèlement à $Vect(X^3 + X + 1, X^3 + X^2)$. 
+\end{tcolorbox}
+
+\begin{align*}
+    \Omega^2 &= \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix} \\
+    (\Omega - I_4)X &= \begin{pmatrix}
+        -1 & 0 & 1 & -1 \\
+        -1 & 0 & 1 & -1 \\
+        0 & 2 & 0 & -2 \\
+        -1 & 2 & 0 & -3
+    \end{pmatrix} \begin{pmatrix}
+        a \\
+        b \\
+        c \\
+        d
+    \end{pmatrix} = \begin{pmatrix}
+        -a + c - d \\
+        -a + c - d \\
+        2b - 2d \\
+        -a + 2b + c - 3d
+    \end{pmatrix}
+\end{align*}
+\begin{align*}
+    (\Omega - I_4)X = 0 &\Leftrightarrow \begin{cases}
+        a - c + d &= 0 \\
+        b - d &= 0 \\
+        -a + 2b + c - 3d &= 0 \\
+    \end{cases} \\
+    &\Leftrightarrow \begin{cases}
+        a - c + d &= 0 \\
+        b - d &= 0
+    \end{cases} \\
+    &\Leftrightarrow \begin{cases}
+        a &= c - d \\
+        b &= d
+    \end{cases} \\
+    &\Leftrightarrow c \begin{pmatrix}
+        1 \\
+        0 \\
+        1 \\
+        0
+    \end{pmatrix} + d \begin{pmatrix}
+        -1 \\
+        1 \\
+        0 \\
+        1\end{pmatrix}
+\end{align*}
+Donc $\ker(\Omega - I_4) = Vect\left(\begin{pmatrix}
+    1 \\
+    0 \\
+    1 \\
+    0
+\end{pmatrix}, \begin{pmatrix}
+    -1 \\
+    1 \\
+    0 \\
+    1
+\end{pmatrix}\right)$ \\
+Donc $\ker(\omega - id) = Vect(1 + X^2, -1 + X + X^3)$. 
+\begin{align*}
+    (\Omega + I_4)X &= \begin{pmatrix}
+        1 & 0 & 1 & -1 \\
+        -1 & 2 & 1 & -1 \\
+        0 & 2 & 2 & -2 \\
+        -1 & 2 & 1 & -1
+    \end{pmatrix} \begin{pmatrix}
+        a \\
+        b \\
+        c \\
+        d
+    \end{pmatrix} = \begin{pmatrix}
+        a + c - d \\
+        -a + 2b + c - d \\
+        2b + 2c - 2d \\
+        -a + 2b + c - d
+    \end{pmatrix}
+\end{align*}
+Donc : 
+\begin{align*}
+    (\Omega + I_4)X = 0 &\Leftrightarrow \begin{cases}
+        a + c - d &= 0 \\
+        b + c - d &= 0
+    \end{cases} \\
+    &\Leftrightarrow \begin{cases}
+        a = b = -c + d
+    \end{cases} \\
+    &\Leftrightarrow X = \begin{pmatrix}
+        -c + d \\
+        -c + d \\
+        c \\
+        d
+    \end{pmatrix} \\
+    &\Leftrightarrow X\in Vect\left(\begin{pmatrix}
+        -1 \\
+        -1 \\
+        1 \\
+        0
+    \end{pmatrix}, \begin{pmatrix}
+        1 \\
+        1 \\
+        0 \\
+        1
+    \end{pmatrix}\right)
+\end{align*}
+Donc $\ker(\omega + id) = Vect(1 + X + X^3, X^2 + X^3)$. 
+
+\section{CNS d'inversibilité d'une matrice de Vandermonde}
+\begin{tcolorbox}[title=Théorème 28.23, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $(x_1, \ldots, x_n)\in \mathbb{K}^n$. On appelle \textbf{matrice de Vandermonde de $x_1, \ldots, x_n$} la matrice $(x_i^{j-1})_{1\leq i,j\leq n}$. \\
+    Cette matrice est inversible si et seulement si les scalaires $x_1, \ldots, x_n$ sont ditincts deux à deux. 
+\end{tcolorbox}
+
+\begin{align*}
+    M = (x_i^{j-1})_{1\leq i,j\leq n} &= \begin{pmatrix}
+        1 & x_1 & \cdots & x_1^{n-1} \\
+        \vdots & \vdots & & \vdots \\
+        1 & x_n & \cdots & x_n^{n-1}
+    \end{pmatrix}
+\end{align*}
+On définit $\varphi:\mathbb{R}_{n-1}[X]\to \mathbb{R}^n; P\mapsto (P(x_1), \ldots, P(x_n))$. \\
+On suppose que tous les $x_i$ sont distincts deux à deux. \\
+Si $P\in \ker\varphi$, $P$ possède (au moins) $n$ racines distinctes, or $\deg P\leq n-1$ donc par rigidité, $P = 0$. \\
+Donc $\varphi$ est injective ($\varphi\in \mathcal{L}(\mathbb{R}_{n-1}[X], \mathbb{R}^n)$). \\
+Donc $\varphi$ est un isomorphisme ($\dim \mathbb{R}_{n-1}[X] = \dim \mathbb{R}^n$). \\
+Or, en notant $\mathcal{B}_1$ et $\mathcal{B}_2$ les bases canoniques de $\mathbb{R}_{n-1}[X]$ et $\mathbb{R}^n$ : 
+\begin{align*}
+    Mat_{\mathcal{B}_1, \mathcal{B}_2}(\varphi) = M
+\end{align*}
+Donc $M$ est inversible (28.21). \\
+Si $x_1 = x_j$ avec $x\neq j$, $M$ possède deux lignes identiques, donc $M\not\in GL_n(\mathbb{K})$ (28.9). \\
+
+\setsection{27}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.28, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $E$ un $\mathbb{K}$-ev de dimension $3$ et $u\in \mathcal{L}(E)$. On suppose que $u$ est donc nilpotent d'indice $2$. \\
+    Montrer que dans une certaine base, $u$ a pour matrice $\begin{pmatrix}
+        0 & 0 & 1 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+    \end{pmatrix}$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item D'après le théroème du rang : 
+    \begin{align*}
+        \underbrace{\dim \ker u}_{\geq 1} + \underbrace{\operatorname{rg} u}_{\geq 1} = 3
+    \end{align*}
+    Comme $u^2 = 0$, $\operatorname{Im} u \subset \ker u$. \\
+    On a nécessairement $\operatorname{rg} u = 1$ et $\dim \ker u = 2$. \\
+
+    \item Soit $x\in E$ tel que $u(x) \neq 0$. Or $u(x)\in \ker u$ et $\dim \ker u = 2$, on complète donc $(u(x), y)$ en une base de $\ker u$. 
+    
+    \item La famille $(y, x, u(x))$ est libre : 
+    \begin{align*}
+        ay + bx + cu(x) &= 0 \\
+        \text{donc } bu(x) &= 0 \\
+        \text{donc } b &= 0 \\
+        \text{donc } ay + cu(x) &= 0 \\
+        \text{donc } a = c &= 0 \text{ car } (y, u(x)) \text{ est libre}
+    \end{align*}
+    $(y, x, u(x))$ est de cardinal $3 = \dim E$, donc est une base de $E$ et : 
+    \begin{align*}
+        \operatorname{Mat}_{(u(x), y, x)}(u) &= \begin{pmatrix}
+            0 & 0 & 1 \\
+            0 & 0 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix}
+    \end{align*}
+\end{itemize}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.29, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $E$ et $F$ deux $\mathbb{K}$-ev de dimensions finies non nulles et $u\in \mathcal{L}(E, F)$ de rang $r$. \\
+    Montrer qu'il existe une base $e$ de $E$ et une base $f$ de $F$ telles que $\operatorname{Mat}_{e,f}(u) = J_r$, où $J_r = \begin{pmatrix}
+        I_r & 0 \\
+        0 & 0
+    \end{pmatrix}$. 
+\end{tcolorbox}
+
+\noindent Comme $\operatorname{rg} u = r$, $\dim \ker u = p - r$ ($p = \dim E$). \\
+Soit $S$ un supplémentaire de $\ker u$ dans $E$. \\
+$\dim S = r$. Soit $e = (e_1, \ldots, e_r, e_{r+1}, \ldots, e_p)$ une base adaptée à $E = S\oplus \ker u$. \\
+$(u(e_1), \ldots, u(e_r))$ est une base de $\operatorname{Im} u$, donc libre dans $F$, que l'on complète en une base $f$ de $F$. \\
+Par construction : 
+\begin{align*}
+    \operatorname{Mat}_{e,f}(u) = \begin{pmatrix}
+        1 & \cdots & \cdots & \cdots & 0 \\
+        0 & \ddots & \cdots & \vdots & 0 \\
+        0 & \vdots & 1 & \vdots & 0 \\
+        0 & \vdots & \cdots & \ddots & 0 \\
+        0 & \cdots & \cdots & \cdots & 0 \\
+    \end{pmatrix}
+\end{align*}
+
+\setsection{32}
+\section{Rang d'une application linéaire, rang d'une matrice}
+\begin{tcolorbox}[title=Propostion 28.33, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $u\in \mathcal{L}(E, F)$, où $E$ et $F$ sont deux espaces vectoriels de dimensions finies non nulles. Soit $e$ et $f$ deux bases quelconques, respectivement de $E$ et $F$. Alors : 
+    \begin{align*}
+        \operatorname{rg} u = \operatorname{rg} \operatorname{Mat}_{e,f}(u)
+    \end{align*}
+\end{tcolorbox}
+
+On note $e = (e_i)$. 
+\begin{align*}
+    \operatorname{rg} \dim \operatorname{Vect}((u(e_i)))
+    &= \dim \operatorname{Vect} ((C_i)) \\
+    &= \operatorname{rg} \operatorname{Mat}_{e,f}(u)
+\end{align*}
+
+\setsection{34}
+\section{Invariance du rang par une matrice inversible}
+\begin{tcolorbox}[title=Propostion 28.35, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $M\in \mathcal{M}_{n,p}(\mathbb{K}), P\in \operatorname{GL}_n(\mathbb{K}), R\in \operatorname{GL}_p(\mathbb{K})$, alors : 
+    \begin{align*}
+        \operatorname{rg}(PMR) = \operatorname{rg} M
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $\hat M, \hat P, \hat R$ les applications canoniquement associées à $M, P, R$. \\
+$\hat P, \hat R$ sont des isomorphismes ($P\in \operatorname{GL}_n(\mathbb{K})$ et $R\in \operatorname{GL}_p(\mathbb{K})$). Ainsi :
+\begin{align*}
+    \operatorname{rg} (PMR) &= \operatorname{rg} (\hat P\circ \hat M\circ \hat R) = \operatorname{rg} (\hat M) = \operatorname{rg} M
+\end{align*}
+
+\setsection{36}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.37, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Déterminer le rang de $\begin{pmatrix}
+        1 & 2 & 1 \\
+        1 & 3 & 2 \\
+        2 & 1 & -1
+    \end{pmatrix}$. 
+\end{tcolorbox}
+
+\begin{align*}
+    \begin{pmatrix}
+        1 & 2 & 1 \\
+        1 & 3 & 2 \\
+        2 & 1 & -1
+    \end{pmatrix} &\sim \begin{pmatrix}
+        1 & 2 & 1 \\
+        0 & 1 & 1 \\
+        0 & -3 & -3
+    \end{pmatrix} \\
+    &\sim \begin{pmatrix}
+        1 & 2 & 1 \\
+        0 & 1 & 1 \\
+        0 & 0 & 0
+    \end{pmatrix}
+\end{align*}
+Le rang de cette matrice est $2$ donc $\operatorname{rg} \begin{pmatrix}
+    1 & 2 & 1 \\
+    1 & 3 & 2 \\
+    2 & 1 & -1
+\end{pmatrix} = 2$. 
+
+\section{Matrice de changement d'une base à une autre}
+\begin{tcolorbox}[title=Théorème 28.38, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace vectoriel de dimension finie non nulle, et $e$, $f$ et $g$ trois bases de $E$. On appelle \textbf{matrice de passage de $e$ à $f$} la matrice :
+    \begin{align*}
+        \operatorname{Mat}_{e}(f) = \operatorname{Mat}_{f,e}(id_E
+    \end{align*}
+    Cette matrice est souvent notée $P_e^f$ (ou quelques fois $P_{e\to f}$). De plus :
+    \begin{enumerate}
+        \item $P_e^f$ est inversible, d'inverse $P_f^e$.
+        \item $P_e^f\times P_f^g = P_e^g$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On a $P_e^f = \operatorname{Mat}_{f,e}(\operatorname{id})$. \\
+    Donc ($id$ est inversible) : 
+    \begin{align*}
+        (P_e^f)^{-1} = \operatorname{Mat}_{e,f}(\operatorname{id}^{-1}) = \operatorname{Mat}_{e,f}(\operatorname{id}) = P_f^e
+    \end{align*}
+
+    \item \begin{align*}
+        P_e^f\times P_f^g &= \operatorname{Mat}_{f,e}(\operatorname{id})\times \operatorname{Mat}_{g,f}(\operatorname{id}) \\
+        &= \operatorname{Mat}_{g,e}(\operatorname{id}\circ \operatorname{id}) \text{ (28.21)} \\
+        &= \operatorname{Mat}_{g,e}(\operatorname{id}) \\
+        &= P_e^g
+    \end{align*}
+\end{enumerate}
+
+\setsection{40}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.41, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $\theta \in \mathbb{R}$ fixé. Notons $e=(i, j)$ la base canonique de $\mathbb{R}^2$ et posons
+    \begin{align*}
+        \begin{cases}
+            u_\theta=\cos (\theta) i+\sin (\theta) j \\
+            v_\theta=-\sin (\theta) i+\cos (\theta) j
+        \end{cases}
+    \end{align*}
+    La matrice de la famille $\left(u_\theta, v_\theta\right)$ dans la base $(i, j)$ est :
+    \begin{align*}
+        \operatorname{Mat}_{(i, j)}\left(u_\theta, v_\theta\right)=\begin{pmatrix}
+        \cos \theta & -\sin \theta \\
+        \sin \theta & \cos \theta
+        \end{pmatrix}
+    \end{align*}
+    Comme le déterminant de cette matrice vaut $1$ (et donc non nul), alors $b_\theta = (u_\theta, v_\theta)$ est une base de $\mathbb{R}^2$. \\
+    Si $u = (x, y)\in \mathbb{R}^2$, déterminer les coordonnées de $u$ dans la nouvelle base $b_\theta$.
+\end{tcolorbox}
+
+\begin{align*}
+    P^{-1} = \begin{pmatrix}
+        \cos\theta & \sin\theta \\
+        -\sin\theta & \cos\theta
+    \end{pmatrix}
+\end{align*}
+Soit $(x, y)\in \mathbb{R}^2, X = \begin{pmatrix}
+    x \\
+    y
+\end{pmatrix} = \operatorname{Mat}_e((x, y))$. \\
+On note $X' = \operatorname{Mat}_{(u_\theta, v_\theta)}((x, y))$. \\
+D'après la formule de changement de base : 
+\begin{align*}
+    X &= PX' \\
+    \text{donc } X' &= P^{-1}X \\
+    &= \begin{pmatrix}
+        \cos\theta x & \sin\theta y \\
+        -\sin\theta x & \cos\theta y
+    \end{pmatrix}
+\end{align*}
+Donc $(x, y) = (\cos\theta x + \sin\theta y) u_\theta + (-\sin\theta x + \cos\theta y)v_\theta$. 
+
+\section{Changement de bases pour une application linéaire}
+\begin{tcolorbox}[title=Théorème 28.42, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ et $F$ deux espaces vectoriels de dimensions finies non nulles, $e$ et $e'$ deux bases de $E$, $f$ et $f'$ deux bases de $F$ et $u\in \mathcal{L}(E, F)$. Alors :
+    \begin{align*}
+        \operatorname{Mat_{e', f'}(u)} = P_{f'}^f \operatorname{Mat_{e,f}(u)} P_{e}^{e'}
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \operatorname{Mat}_{e', f'}(u) &= \operatorname{Mat}_{e', f'}(\operatorname{id}_F\circ u\circ \operatorname{id}_E) \\
+    &= \operatorname{Mat}_{f, f'}(\operatorname{id}) \times \operatorname{Mat}_{e, f}(u) \times \operatorname{Mat}_{e', e}(\operatorname{id}) \\
+    &= P_{f'}^f \operatorname{Mat}_{e, f}(u) P_{e}^{e'}
+\end{align*}
+
+\setsection{46}
+\section{Exemple fondamental}
+\begin{tcolorbox}[title=Propostion 28.47, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Deux matrices de $\mathcal{M}_{n,p}(\mathbb{K})$ sont équivalentes si et seulement si elles ont le même rang. Cela revient à dire que toute matrice de $\mathcal{M}_{n,p}(\mathbb{K})$ est équivalente à $J_r$. 
+\end{tcolorbox}
+
+\noindent Soit $M\in \mathcal{M}_{n,p}(\mathbb{K})$ de rang $r$. \\
+Soit $u\in \mathcal{L}(\mathbb{K}^p, \mathbb{K}^n)$ l'application canoniquement associée à $M$. \\
+Donc $\operatorname{rg} u = r$. \\
+D'après (28.29), on choisit une base $e$ de $\mathbb{K}^p$ et $f$ de $\mathbb{K}^n$ telles que :
+\begin{align*}
+    \operatorname{Mat}_{e,f}(u) &= J_r
+\end{align*}
+D'après (28.44), $M$ et $\operatorname{Mat}_{e,f}(u)$ sont équivalentes, soit : 
+\begin{align*}
+    M\sim J_r
+\end{align*}
+
+\section{Invariance du rang par transposition}
+\begin{tcolorbox}[title=Théorème 28.48, title filled=false, colframe=orange, colback=orange!10!white]
+    Pour tout $A\in \mathcal{M}_{n,p}(\mathbb{K})$, on a $\operatorname{rg} {^tA} = \operatorname{rg} A$. 
+\end{tcolorbox}
+
+\noindent En effet car $^t(J_r) = J_r$. \\
+Ainsi, $A\sim J_r$. \\
+Alors $A = Q^{-1}J_r P$. \\
+Et $^tA = tP J_r {^tQ^{-1}}$. \\
+Donc $^tA\sim J_r$. \\
+Donc $\operatorname{rg} {^tA} = \operatorname{rg} A$. 
+
+\setsection{51}
+\section{Rang d'une matrice extraite}
+\begin{tcolorbox}[title=Propostion 28.52, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Pour toute matrice $B$ extraite de $A$, on a $\operatorname{rg} B \leq \operatorname{rg} A$. Le rang de $A$ est la taille maximale des matrices inversibles que l'on peut extraire de $A$. 
+\end{tcolorbox}
+\noindent Extraire une matrice $B$ de $A$ revient à supprimer des colonnes et des lignes de $A$. \\
+On note $C$ la matrice intermédiaire en supprimant les colonnes de $A$. \\
+Ainsi, $B$ s'obtient à partir de $C$ en supprimant les lignes de $C$. \\
+Par définition (28.30), $\operatorname{rg} C \leq \operatorname{rg} A$. \\
+Puis (28.49), $\operatorname{rg} B \leq \operatorname{rg} C$. \\
+On note $r$ le rang de $A$. \\
+D'après (28.30), il existe $r$ colonnes de $A$ linéairement indépendantes. \\
+Soit $C$ la matrice extraite de $A$, constituée de ses vecteurs colonnes. \\
+En particulier, $\operatorname{rg} C = r$. \\
+D'après (28.49), il existe $r$ vecteurs lignes de $C$, libres. \\
+On note $B$ la matrice (extraite de $C$) constituée de ces vecteurs lignes. \\
+On a $\operatorname{rg} B = r$ et $B\in \mathcal{M}_r(\mathbb{K})$. \\
+Donc $B\in \operatorname{GL}_r(\mathbb{K})$ (28.9). 
+
+\setsection{56}
+\section{Invariance du rang et de la trace par similitude}
+\begin{tcolorbox}[title=Propostion 28.57, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Deux matrices semblables ont même rang et même trace. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Deux matrices semblables sont équivalentes (28.54) et ont le même rang (28.47). 
+    \item Si $B = P^{-1}AP$, alors :
+    \begin{align*}
+        \operatorname{tr} B &= \operatorname{tr} (P^{-1}AP) \\
+        &= \operatorname{tr} (APP^{-1}) \\
+        &= \operatorname{tr} (A)
+    \end{align*}
+\end{itemize}
+La trace est et le rang sont des invariants de similitude. 
+
+\setsection{59}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.60, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Les matrices $\begin{pmatrix}
+        0 & 1 & 1 \\
+        0 & 0 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}$, $\begin{pmatrix}
+        1 & 0 & 0 \\
+        1 & 0 & 1 \\
+        0 & 0 & 0
+    \end{pmatrix}$ et $\begin{pmatrix}
+        0 & 4 & 2 \\
+        0 & 0 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}$ sont semblables. 
+\end{tcolorbox}
+
+\noindent On note $u$ l'endomorphisme canoniquement associé à $A$. En notant $e = (e_1, e_2, e_3)$ la base canonique de $\mathbb{R}^3$, on a : 
+\begin{align*}
+    u(e_1) &= 0 \\
+    u(e_2) &= e_1 \\
+    u(e_3) &= e_1 + e_3
+\end{align*}
+En posant $f = (e_3, e_1, e_2)$ on obtient $B = \operatorname{Mat}_f(u)$. \\
+En posant $g = (\frac{1}{2}e_1, 2e_2, e_3)$ on obtient $C = \operatorname{Mat}_g(u)$. \\
+D'après l'exemple fondamental, $A$, $B$ et $C$ sont semblables. 
+
+\setsection{62}
+\section{Opération sur la trace}
+\begin{tcolorbox}[title=Propostion 28.63, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    La trace est linéaire. De plus, pour tout $(u, v)\in \mathcal{L}(E)^2$, on a $\operatorname{tr}(u\circ v) = \operatorname{tr}(v\circ u)$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Linéarité : RAF
+    \item Pseudo-commutativité : RAF
+\end{itemize}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.64, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie non nulle, et $p$ un projecteur de $E$. Alors $\operatorname{tr} p = \operatorname{rg} p$. 
+\end{tcolorbox}
+
+\noindent Soit $p\in \mathcal{L}(E)$ un projecteur. 
+\begin{align*}
+    E = \operatorname{Im} p \oplus \ker p
+\end{align*}
+Dans une base adaptée à cette décomposition :
+\begin{align*}
+    \operatorname{Mat}(p)  &= J_r \\
+    r &= \operatorname{rg} p \\
+    \text{or } \operatorname{tr} J_r = \operatorname{tr} p &= r \\
+\end{align*}
+
+
 \end{document}
