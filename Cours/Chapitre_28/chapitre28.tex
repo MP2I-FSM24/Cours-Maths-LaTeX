@@ -742,5 +742,33 @@ Donc $B\in \operatorname{GL}_r(\mathbb{K})$ (28.9).
 \end{itemize}
 La trace est et le rang sont des invariants de similitude. 
 
+\setsection{59}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 28.60, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Les matrices $\begin{pmatrix}
+        0 & 1 & 1 \\
+        0 & 0 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}$, $\begin{pmatrix}
+        1 & 0 & 0 \\
+        1 & 0 & 1 \\
+        0 & 0 & 0
+    \end{pmatrix}$ et $\begin{pmatrix}
+        0 & 4 & 2 \\
+        0 & 0 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}$ sont semblables. 
+\end{tcolorbox}
+
+\noindent On note $u$ l'endomorphisme canoniquement associé à $A$. En notant $e = (e_1, e_2, e_3)$ la base canonique de $\mathbb{R}^3$, on a : 
+\begin{align*}
+    u(e_1) &= 0 \\
+    u(e_2) &= e_1 \\
+    u(e_3) &= e_1 + e_3
+\end{align*}
+En posant $f = (e_3, e_1, e_2)$ on obtient $B = \operatorname{Mat}_f(u)$. \\
+En posant $g = (\frac{1}{2}e_1, 2e_2, e_3)$ on obtient $C = \operatorname{Mat}_g(u)$. \\
+D'après l'exemple fondamental, $A$, $B$ et $C$ sont semblables. 
+
 
 \end{document}
