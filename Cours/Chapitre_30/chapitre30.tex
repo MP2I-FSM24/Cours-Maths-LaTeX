@@ -6,4 +6,40 @@
 \tableofcontents
 \clearpage
 
+\setsection{3}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 30.4, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On considrèe l'application : 
+    \begin{align*}
+        \delta:\mathbb{K}^2 \times \mathbb{K}^2\to \mathbb{K}; ((a, b), (c, d)) \mapsto ad - bc
+    \end{align*}
+    Montrer que cette application est bien $2$-linéaire. 
+\end{tcolorbox}
+
+\begin{align*}
+    \delta \left( \begin{pmatrix}
+        a \\ b
+    \end{pmatrix}, \begin{pmatrix}
+        c \\ d
+    \end{pmatrix} + \lambda \begin{pmatrix}
+        c' \\ d'
+    \end{pmatrix} \right) &= \delta \left( \begin{pmatrix}
+        a \\ b
+    \end{pmatrix}, \begin{pmatrix}
+        c + \lambda c' \\ d + \lambda d'
+    \end{pmatrix} \right) \\
+    &= a(d + \lambda d') - b(c + \lambda c') \\
+    &= ad - bc + \lambda(ad' - bc') \\
+    &= \delta \left( \begin{pmatrix}
+        a \\ b
+    \end{pmatrix}, \begin{pmatrix}
+        c \\ d
+    \end{pmatrix} \right) + \lambda \delta \left( \begin{pmatrix}
+        a \\ b
+    \end{pmatrix}, \begin{pmatrix}
+        c' \\ d'
+    \end{pmatrix} \right)
+\end{align*}
+
+
 \end{document}
