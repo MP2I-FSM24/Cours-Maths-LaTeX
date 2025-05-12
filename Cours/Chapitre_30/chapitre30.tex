@@ -41,5 +41,17 @@
     \end{pmatrix} \right)
 \end{align*}
 
+\setsection{10}
+\section{Détermination d'une application n-linéaire sur une base}
+\begin{tcolorbox}[title=Propostion 30.11, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit pour tout $i\in \llbracket 1, n \rrbracket$, $(e_{i,j})_{1\leq j\leq d}$ une base de $E_i$ et pour tout $(j_1, \ldots, j_n)\in \llbracket 1, d_1 \rrbracket \times \cdots \times \llbracket 1, d_n \rrbracket$, $f_{j_1, \ldots, j_n}\in F$. \\
+    Alors il existe une unique application $n$-linéaire $f:E_1\times \cdots \times E_n\to F$ telle que : 
+    \begin{align*}
+        \forall (j_1, \ldots, j_n)\in \llbracket 1, d_1 \rrbracket \times \cdots \times \llbracket 1, d_n \rrbracket, \varphi(e_{1,j_1}, \ldots, e_{n,j_n}) = f_{j_1, \ldots, j_n}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Si $(e_{i,j})_{1\leq j\leq d}$ est une base de $E_i$ alors $((e_{1, 2}, 0, \ldots, 0, \ldots, e_{1, d}, 0, \ldots, 0), \ldots, (0, \ldots, 0, e_{n, 1}, \ldots, (0, \ldots, 0, e_{n, d})))$ est une base de $E_1\times \cdots \times E_n$. (22.16), théorème de rigidité. 
+
 
 \end{document}
