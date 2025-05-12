@@ -68,5 +68,42 @@ Soit $\sigma\in S_n$. On écrit $\sigma = \tau_1\circ \cdots \circ\tau_k$ avec $
     &= \varepsilon(\sigma) \varphi(x_1, \ldots, x_n)
 \end{align*}
 
+\section{Une forme alternée change de signe par transposition}
+\begin{tcolorbox}[title=Lemme 30.19, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\varphi$ une forme alternée. Alors pour tout $(x_1, \ldots, x_n)\in E^n$ et tout $(i, j)\in \llbracket 1, n \rrbracket^2$ avec $i\neq j$ :
+    \begin{align*}
+        \varphi(x_1, \ldots, x_i, \ldots, x_j, \ldots, x_n) = -\varphi(x_1, \ldots, x_j, \ldots, x_i, \ldots, x_n)
+    \end{align*}
+    Cela revient à dire que pour toute transposition $\tau\in S_n$, on a :
+    \begin{align*}
+        \varphi(x_1, \ldots, x_n) = -\varepsilon(\tau)\varphi(x_{\tau_1}, \ldots, x_{\tau_n})
+    \end{align*}
+    Réciproquement, si cette condition est satisfaite et si $\mathbb{K}$ n'est pas de caractéristique $2$, alors $\varphi$ est alternée.
+\end{tcolorbox}
+
+\noindent Soit $\varphi$ alternée. \\
+Soit $(x_1, \ldots, x_n)\in E^n$. \\
+\begin{align*}
+    0 &= \varphi(x_1, \ldots, x_i + x_j, \ldots, x_j + x_i, \ldots, x_n) \\
+    &= \varphi(x_1, \ldots, x_i, \ldots, x_i, \ldots, x_n) \\
+    &+ \varphi(x_1, \ldots, x_i, \ldots, x_j, \ldots, x_n) \\
+    &+ \varphi(x_1, \ldots, x_j, \ldots, x_i, \ldots, x_n) \\
+    &+ \varphi(x_1, \ldots, x_j, \ldots, x_i, \ldots, x_n) \\
+    &= \varphi(x_1, \ldots, x_j, \ldots, x_n) + \varphi(x_1, \ldots, x_j, \ldots, x_i, \ldots, x_n) \\
+\end{align*}
+On suppose que $\operatorname{carac}(\mathbb{K}) \neq 2$. \\
+On a :
+\begin{align*}
+    \varphi(x_1, \ldots, x_i, \ldots, x_i, \ldots, x_n) &= \varphi(x_1, \ldots, x_i, \ldots, x_i, \ldots, x_n) \text{ (antisymétrie)} \\
+\end{align*}
+Donc : 
+\begin{align*}
+    2\varphi(x_1, \ldots, x_i, \ldots, x_i, \ldots, x_n) &= 0
+\end{align*}
+Donc : 
+\begin{align*}
+    \varphi(x_1, \ldots, x_i, \ldots, x_i, \ldots, x_n) &= 0
+\end{align*}
+
 
 \end{document}
