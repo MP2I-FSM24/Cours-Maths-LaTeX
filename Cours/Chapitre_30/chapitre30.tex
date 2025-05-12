@@ -53,5 +53,20 @@
 
 \noindent Si $(e_{i,j})_{1\leq j\leq d}$ est une base de $E_i$ alors $((e_{1, 2}, 0, \ldots, 0, \ldots, e_{1, d}, 0, \ldots, 0), \ldots, (0, \ldots, 0, e_{n, 1}, \ldots, (0, \ldots, 0, e_{n, d})))$ est une base de $E_1\times \cdots \times E_n$. (22.16), théorème de rigidité. 
 
+\setsection{17}
+\section{Caractérisation par les transpositions}
+\begin{tcolorbox}[title=Lemme 30.18, title filled=false, colframe=orange, colback=orange!10!white]
+    Pour qu'une forme $f$ soit antisymétrique, il faut et il suffit que l'échange de deux variables quelconques provoque un changement de signe. 
+\end{tcolorbox}
+
+\noindent Par hypothèse, si $\tau$ est une transposition alors $\varphi(x_{\tau_1}, \ldots, x_{\tau_n}) = -\varepsilon(\tau)(x_1, \ldots, x_n)$. \\
+Soit $\sigma\in S_n$. On écrit $\sigma = \tau_1\circ \cdots \circ\tau_k$ avec $\tau_i$ des transpositions. Alors : 
+\begin{align*}
+    \varphi(x_{\sigma_1}, \ldots, x_{\sigma_n}) &= \varphi(x_{\tau_1\circ\cdots\circ\tau_k(1)}, \ldots, x_{\tau_1\circ\cdots\circ\tau_k(n)}) \\
+    &= \varepsilon(\tau_1) \varphi(x_{\tau_2\circ\cdots\circ\tau_k(1)}, \ldots, x_{\tau_2\circ\cdots\circ\tau_k(n)}) \\
+    &= \varepsilon(\tau_1\circ \cdots \circ \tau_k) \varphi(x_1, \ldots, x_n) \\
+    &= \varepsilon(\sigma) \varphi(x_1, \ldots, x_n)
+\end{align*}
+
 
 \end{document}
