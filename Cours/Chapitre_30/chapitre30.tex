@@ -229,5 +229,40 @@ En particulier :
 Si $\mathcal{F}$ n'est pas une base, alors elle est liée ($|\mathcal{F}| = n$) \\
 Donc $\operatorname{det}_\mathcal{B}(\mathcal{F}) = 0$ (30.21). 
 
+\setsection{35}
+\section{Déterminant d'un produit}
+\begin{tcolorbox}[title=Théorème 30.36, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $A$ et $B$ dans $\mathcal{M}_n(\mathbb{K})$. Alors : 
+    \begin{align*}
+        \operatorname{det}(AB) = \operatorname{det}(A) \operatorname{det}(B) = \operatorname{det}(BA)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $A, B$ dans $\mathcal{M}_n(\mathbb{K})$. On note $A_1, \ldots, A_n$ les colonnes de $A$ et $B_1, \ldots, B_n$ les colonnes de $B$. \\
+On considère l'application : 
+$$\varphi: (\mathbb{K}^n)^n\to \mathbb{K};(X_1, \ldots, X_n)\mapsto \operatorname{det}_{\mathcal{B_C}}(AX_1, \ldots, AX_n)$$
+$\varphi$ est une forme $n$-linéaire alternée. \\
+On choisit donc $\lambda\in \mathbb{K}$ tel que $\varphi = \lambda \operatorname{det}_{\mathcal{B}_C}$
+On a : 
+\begin{align*}
+    \varphi(\mathcal{B}_C) &= \lambda \operatorname{det}_{\mathcal{B}_C}(\mathcal{B}_C) \\
+    &= \lambda \\
+    &= \operatorname{det}_{\mathcal{B}_C} \left( A \begin{pmatrix}
+        1 \\ 0 \\ \vdots \\ 0
+    \end{pmatrix}, \ldots, A \begin{pmatrix}
+        0 \\ 0 \\ \vdots \\ 1
+    \end{pmatrix} \right) \\
+    &= \operatorname{det}_{\mathcal{B}_C}(A_1, \ldots, A_n) \\
+    &= \operatorname{det}(A)
+\end{align*}
+Ainsi $\varphi = \operatorname{det}(A) \operatorname{det}_{\mathcal{B}_C}$. \\
+Donc : 
+\begin{align*}
+    \operatorname{det}(A) \operatorname{det}(B) &= \operatorname{det}(A) \operatorname{det}_{\mathcal{B}_C}(\mathcal{B}_1, \ldots, \mathcal{B}_n) \\
+    &= \varphi(\mathcal{B}_1, \ldots, \mathcal{B}_n) \\
+    &= \operatorname{det}_{\mathcal{B}_C}(AB_1, \ldots, AB_n) \\
+    &= \operatorname{det} (AB)
+\end{align*}
+
 
 \end{document}
