@@ -201,5 +201,23 @@ $((a, b), (c, d))\in (E)^2$.
     &= \sum_{\tau\in \mathcal{S}_n} \epsilon(\tau) a_{1, \tau(1)} \cdots a_{n, \tau(n)}
 \end{align*}
 
+\setsection{27}
+\section{Effet d'un changement de base sur le déterminant}
+\begin{tcolorbox}[title=Propostion 30.28, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\mathcal{B}$ et $\mathcal{B}'$ deux bases de $E$. Alors : 
+    \begin{align*}
+        \underset{\mathcal{B}}{\operatorname{det}} = \underset{\mathcal{B}}{\operatorname{det} (\mathcal{B}')} \times  \underset{\mathcal{B}'}{\operatorname{det}} 
+    \end{align*}
+\end{tcolorbox}
+
+\noindent D'après le corollaire (30.27), on écrit : 
+\begin{align*}
+    \underset{\mathcal{B}'}{\operatorname{det}} = \lambda \underset{\mathcal{B}}{\operatorname{det}} \text{ avec } \lambda\in \mathbb{K}
+\end{align*}
+En particulier : 
+\begin{align*}
+    \operatorname{det}_{\mathcal{B}'}(\mathcal{B}) = \lambda \operatorname{det}_{\mathcal{B}}(\mathcal{B}) = \lambda
+\end{align*}
+
 
 \end{document}
