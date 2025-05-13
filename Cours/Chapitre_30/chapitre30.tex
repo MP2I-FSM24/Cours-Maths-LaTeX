@@ -158,5 +158,23 @@ Soit $\psi$ une forme $n$-linéaire alternée. On pose $\lambda = \psi(e_1, \ldo
     Donc $\psi = \lambda\varphi$.
 \end{itemize}
 
+\setsection{24}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 30.25, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On considère $E = \mathbb{R}^2$, muni de sa base canonique $e = (e_1, e_2) = ((1, 0), (0, 1))$. Soit $((a, b), (c, d))\in E^2$. Montrer que : 
+    \begin{align*}
+        \underset{e}{\operatorname{det}}((a, b), (c, d))= ad - bc
+    \end{align*}
+\end{tcolorbox}
+
+\noindent $e = ((1, 0), (0, 1))$. \\
+$((a, b), (c, d))\in (E)^2$. 
+\begin{align*}
+    \operatorname{det}_e((a, b), (c, d)) &= \operatorname{det}_e(ae_1 + be_2, ce_1 + de_2) \\
+    &= ac\times \cancel{\operatorname{det}_e(e_1, e_1)} + ad\times \operatorname{det}_e(e_1, e_2) + bc\times \operatorname{det}_e(e_2, e_1) + bd\times \cancel{\operatorname{det}_e(e_2, e_2)} \\
+    &= ad \times \operatorname{det}_e(e_1, e_2) - bc \times \operatorname{det}_e(e_1, e_2) \\
+    &= (ad - bc)
+\end{align*}
+
 
 \end{document}
