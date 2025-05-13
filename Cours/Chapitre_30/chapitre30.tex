@@ -176,5 +176,30 @@ $((a, b), (c, d))\in (E)^2$.
     &= (ad - bc)
 \end{align*}
 
+\section{Description du déterminant par les coordonnées}
+\begin{tcolorbox}[title=Théorème 30.26, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace vectoriel de dimension $n$ non nulle et $\mathcal{B} = (e_1, \ldots, e_n)$ une base de $E$. Soit $(x_1, \ldots, x_n)$ une famille d'éléments de $E$, dont les coordonnées sont : 
+    \begin{align*}
+        \forall j\in \llbracket 1, n \rrbracket, x_j = \sum_{i=1}^{n} a_{i, j} e_i \quad \text{donc} \quad \operatorname{Mat}_{\mathcal{B}}(x_j) = \begin{pmatrix}
+            a_{1, j} \\
+            \vdots \\
+            a_{n, j}
+        \end{pmatrix}
+    \end{align*}
+    On a alors : 
+    \begin{align*}
+        \underset{\mathcal{B}}{\operatorname{det}}(x_1, \ldots, x_n) = \sum_{\sigma\in \mathcal{S}_n} \varepsilon(\sigma) a_{\sigma(1), 1} \cdots a_{\sigma(n), n} = \sum_{\tau\in \mathcal{S}_n} \varepsilon(\tau) a_{1, \tau(1)} \cdots a_{n, \tau(n)}
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \operatorname{det}_{\mathcal{B}}(x_1, \ldots, x_n) &= \operatorname{det}_{\mathcal{B}} \left( \sum_{i=1}^{n} a_{i_1, 1} e_{i_1}, \ldots, \sum_{i=1}^{n} a_{i_n, n} e_{i_n} \right) \\
+    &= \sum_{i_1=1}^{n} \cdots \sum_{i_n=1}^{n} a_{i_1, 1} \cdots a_{i_n, n} \operatorname{det}_{\mathcal{B}}(e_{i_1}, \ldots, e_{i_n}) \text{ (multilinéarité)} \\
+    &= \sum_{\{i_1, \ldots, i_n\} = \llbracket 1, n \rrbracket} a_{i_1, 1} \cdots a_{i_n, n} \operatorname{det}_{\mathcal{B}}(e_{i_1}, \ldots, e_{i_n}) \text{ (alternance)} \\
+    &= \sum_{\sigma\in \mathcal{S}_n} a_{\sigma(1), 1} \cdots a_{\sigma(n), n} \underbrace{\operatorname{det}_{\mathcal{B}}(e_{\sigma(1)}, \ldots, e_{\sigma(n)})}_{= \varepsilon(\sigma)} \text{ (reformulation)} \\
+    &= \sum_{\sigma\in \mathcal{S}_n} \varepsilon(\sigma) a_{1, \sigma^{-1}(1)} \cdots a_{n, \sigma^{-1}(n)} \\
+    &= \sum_{\tau\in \mathcal{S}_n} \epsilon(\tau) a_{1, \tau(1)} \cdots a_{n, \tau(n)}
+\end{align*}
+
 
 \end{document}
