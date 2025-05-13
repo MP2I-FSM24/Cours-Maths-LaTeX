@@ -124,5 +124,39 @@ Donc :
     &= \sum_{i=2}^{n} \lambda_i \varphi(x_i, x_2, \ldots, x_n)
 \end{align*}
 
+\section{Forme $n$-linéaire d'un espace de dimension $n$}
+\begin{tcolorbox}[title=Théorème 30.22, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace vectoriel de dimension $n$ non nulle et $(e_1, \ldots, e_n)$ une base de $E$. 
+    \begin{enumerate}
+        \item Il existe une unique forme $n$-linéaire $\varphi$ sur $E$ telle que $\varphi(e_1, \ldots, e_n) = 1$.
+        \item Cette forme $n$-linéaire est entièrement décrite sur les vecteurs de la base par : 
+        \begin{align*}
+            \begin{cases}
+                \varphi(e_{i_1}, \ldots, e_{i_n}) = 0 & \text{s'il existe } j\neq k \text{ tel que } i_j = i_k \\
+                \varphi(e_{\sigma(1)}, \ldots, e_{\sigma(n)}) = \varepsilon(\sigma) & \text{où } \sigma\in \mathcal{S}_n
+            \end{cases}
+        \end{align*}
+        \item Toute autre forme $n$-linéaire alternée sur $E$ est de la forme $\lambda \varphi$, où $\lambda\in \mathbb{K}$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\boxed{1, 2} \\
+On utilise le théorème de rigidité des applications $n$-linéaires (30.11) en fixant l'image de chaque $(e_{i_1}, \ldots, e_{i_n})$ avec $(i_1, \ldots, i_n)\in \llbracket 1, n \rrbracket^n$. 
+\begin{itemize}
+    \item $\varphi(e_{i_1}, \ldots, e_{i_n}) = 0$ s'il existe $i_j - i_k$ avec $j\neq k$.
+    \item $\varphi(\underbrace{e_{\sigma(1)}, \ldots, e_{\sigma(n)}}_{(i_1, \ldots, i_n) \text{ fournit alors une permutation }\sigma\in \mathcal{S}_n}) = \varepsilon(\sigma) \times \underbrace{1}_{\varphi(e_1, \ldots, e_n)}$.
+\end{itemize}
+Le théorème nous fournit l'existence de la forme alternée et l'unicité. \\ \\
+
+\boxed{3} \\
+Soit $\psi$ une forme $n$-linéaire alternée. On pose $\lambda = \psi(e_1, \ldots, e_n)$. 
+\begin{itemize}
+    \item si $\lambda = 0$, par alternance (et anitsymétrie) on a $\psi(e_{i_1}, \ldots, e_{i_n}) = 0$ pour tout $i_1, \ldots, i_n$. \\
+    Par rigidité, $\psi = 0 = 0\times \varphi$. 
+    \item si $\lambda\neq 0$, alors $\frac{1}{\lambda}\psi(_1, \ldots, e_n) = 1$. \\
+    Par unicité (1), $\frac{1}{\lambda}\psi = \varphi$. \\
+    Donc $\psi = \lambda\varphi$.
+\end{itemize}
+
 
 \end{document}
