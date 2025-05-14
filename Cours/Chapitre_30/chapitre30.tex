@@ -576,5 +576,36 @@ Soit :
     \operatorname{det}(T) &= \operatorname{det}(B) \operatorname{det}(A)
 \end{align*}
 
+\setsection{56}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 30.57, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Déterminer la comatrice de $M = \begin{pmatrix}
+        1 & 2 & -1 \\
+        0 & 2 & 1 \\
+        -1 & 0 & 3
+    \end{pmatrix}$. 
+\end{tcolorbox}
+
+\begin{align*}
+    \Delta_{11}(M) &= \begin{vmatrix}
+        2 & 1 \\
+        0 & 3
+    \end{vmatrix} = 6 \\
+    \Delta_{12}(M) &= \begin{vmatrix}
+        0 & 1 \\
+        -1 & 3
+    \end{vmatrix} = 1 \\
+    \Delta_{13}(M) &= \begin{vmatrix}
+        0 & 2 \\
+        -1 & 0
+    \end{vmatrix} = 2 \\
+    \Delta_{21}(M) &= \cdots \\
+    \operatorname{Com}(M) &= \begin{pmatrix}
+        6 & -1 & 2 \\
+        -6 & 2 & -2 \\
+        4 & -1 & 2
+    \end{pmatrix}
+\end{align*}
+
 
 \end{document}
