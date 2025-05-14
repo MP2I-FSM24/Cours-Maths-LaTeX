@@ -357,5 +357,27 @@ D'après la formule sur les coefficients (30.34) :
     &= \sigma(\operatorname{id}) \prod_{i=1}^{n} t_{ii} 
 \end{align*}
 
+\setsection{46}
+\section{Détrminant des matrices de codage des opérations}
+\begin{tcolorbox}[title=Lemme 30.47, title filled=false, colframe=orange, colback=orange!10!white]
+    On a : 
+    \begin{align*}
+        \operatorname{det}(P_{ij}) = -1, \quad \operatorname{det}(Q_i(\lambda)) = \lambda \quad \text{et} \quad \operatorname{det}(R_{ij}(\lambda)) = 1
+    \end{align*}
+\end{tcolorbox}
+
+\noindent $Q_i(\lambda)$ et $R_{ij}(\lambda)$ sont triangulaires. \\
+D'après (30.45) : 
+\begin{align*}
+    \operatorname{det}(Q_{i}(\lambda)) &= \lambda \\
+    \operatorname{det}(R_{ij}(\lambda)) &= 1 \\
+    \operatorname{det}(P_{ij}) &= \operatorname{det}_{\mathcal{B}_C}(C_1, \ldots, C_j, \ldots, C_i, \ldots, C_n) \\
+    &= \operatorname{det}_{\mathcal{B}_C}(C_{\tau_{ij}(1)}, \ldots, C_{\tau_{ij}(n)}) \text{ où } \tau_{ij} = \begin{pmatrix}
+        i & j
+    \end{pmatrix} \\
+    &= \varepsilon(\tau_{ij}) \operatorname{det}_{\mathcal{B}_C}(C_1, \ldots, C_n) \\
+    &= -1
+\end{align*}
+
 
 \end{document}
