@@ -607,5 +607,44 @@ Soit :
     \end{pmatrix}
 \end{align*}
 
+\section{Développement suivant une colonne}
+\begin{tcolorbox}[title=Théorème 30.58, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $M = (m_{ij})_{1\leq i, j\leq n}\in \mathcal{M}_n(\mathbb{K})$ et $j\in \llbracket 1, n \rrbracket$, alors : 
+    \begin{align*}
+        \operatorname{det}(M) &= \sum_{i=1}^{n} (-1)^{i+j} m_{ij} \Delta_{ij}(M)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On note $(E_1, \ldots, E_n)$ la base canonique de $\mathbb{K}^n$. \\
+On note $M_1, \ldots, M_n$ les colonnes de $M$. \\
+Par hypothèses : 
+\begin{align*}
+    M_j = \sum_{i=1}^{n} m_{ij} E_i
+\end{align*}
+Ainsi : 
+\begin{align*}
+    \operatorname{det}(M) &= \operatorname{det}_{\mathcal{B}_C}(M_1, \ldots, M_n) \\
+    &= \operatorname{det}_{\mathcal{B}_C} \left( M_1, \ldots, \sum_{i=1}^{n} m_{ij} E_i, \ldots, M_n \right) \\
+    &= \sum_{i=1}^{n} m_{ij} \operatorname{det}_{\mathcal{B}_C}(M_1, \ldots, E_i, \ldots, M_n) \\
+    &= \sum_{i=1}^{n} (-1)^{j-1} m_{ij} \operatorname{det}_{\mathcal{B}_C}(E_i, \ldots, M_n) \\
+    &= \sum_{i=1}^{n} (-1)^{j-1}m_{ij} \begin{vmatrix}
+        0 & & & \\
+        \vdots & & & \\
+        1 & M_1 & \cdots & M_{n} \\
+        \vdots & & & \\
+        0 & & &
+    \end{vmatrix} \\
+    &= \sum_{i=1}^{n} (-1)^{j-1} (-1)^{i-1} m_{ij} \begin{vmatrix}
+        1 & m_{i1} & \cdots & m_{in} \\
+        0 & m_{11} & \cdots & m_{1n} \\
+        \vdots & \vdots & \vdots & \vdots \\
+        0 & m_{i-1, 1} & \cdots & m_{i-1, n} \\
+        0 & m_{i+1, 1} & \cdots & m_{i+1, n} \\
+        \vdots & \vdots & \vdots & \vdots \\
+        0 & m_{n, 1} & \cdots & m_{n, n}
+    \end{vmatrix} \\
+    &= \sum_{i=1}^{n} (-1)^{j+1} m_{ij} \Delta_{ij} \\ 
+\end{align*}
+
 
 \end{document}
