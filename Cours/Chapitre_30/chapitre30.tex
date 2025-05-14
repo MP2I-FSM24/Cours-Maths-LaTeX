@@ -404,7 +404,9 @@ D'après (30.45) :
         1 & -2 & 1 & 0 \\
         2 & 1 & 0 & 1 \\
         0 & 0 & 1 & 1
-    \end{vmatrix} \\ 
+    \end{vmatrix}
+\end{align*}
+\begin{align*}
     &= -\begin{vmatrix}
         1 & 0 & 1 & 1 \\
         0 & -2 & 0 & -1 \\
@@ -416,9 +418,7 @@ D'après (30.45) :
         0 & 1 & -2 & -1 \\
         0 & -2 & 0 & -1 \\
         0 & 0 & 1 & 1
-    \end{vmatrix}
-\end{align*}
-\begin{align*}
+    \end{vmatrix} \\
     &= \begin{vmatrix}
         1 & 0 & 1 & 1 \\
         0 & 1 & -2 & -1 \\
@@ -474,6 +474,106 @@ D'après (30.45) :
         & & & 1
     \end{vmatrix} \\
     &= (a+n-1)(a-1)^{n-1}
+\end{align*}
+
+\section{Déterminant d'une matrice triangulaire par blocs}
+\begin{tcolorbox}[title=Propostion 30.52, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $T$ une matrice triangulaire par blocs, c'est-à-dire de la forme : 
+    \begin{align*}
+        T = \begin{pmatrix}
+            A_1 & \times & \cdots & \times \\
+            0 & \ddots &  & \vdots \\
+            \vdots & \ddots & \ddots & \times \\
+            0 & \cdots & 0 & A_k
+        \end{pmatrix}
+    \end{align*}
+    où les $A_i$ sont des matrices carrées. Alors : 
+    \begin{align*}
+        \operatorname{det}(T) = \prod_{i=1}^{k} \operatorname{det}(A_i)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On montre le résultat dans le cas où $T = \begin{pmatrix}
+    A & C \\
+    0 & B
+\end{pmatrix}$. \\
+On généralisera alors par récurrence et transposée. \\
+Soit $(A_1, \ldots, A_n)$ les colonnes de $A$ et $(B_1, \ldots, B_p)$ les lignes de $B$. \\
+On définit : 
+\begin{align*}
+    \varphi:&(\mathbb{K}^n)^n \to \mathbb{K} \\
+    &(X_1, \ldots, X_n) \mapsto \begin{vmatrix}
+        X_1 & \cdots & X_n & C \\
+        0 & \cdots & 0 & B
+    \end{vmatrix}
+\end{align*}
+$\varphi$ est une forme $n$-linéaire alternée. \\
+Donc on choisit $\lambda\in \mathbb{K}$ tel que : 
+\begin{align*}
+    \varphi = \lambda \operatorname{det}_{\mathcal{B}_n}
+\end{align*}
+Donc : 
+\begin{align*}
+    \varphi(\mathcal{B}_n) &= \lambda \operatorname{det}_{\mathcal{B}_n}(\mathcal{B}_n) \\
+    &= \lambda
+\end{align*}
+On cherche donc : 
+\begin{align*}
+    \varphi(\mathcal{B}_n) &= \begin{vmatrix}
+        1 & & C \\
+        & \ddots & \\
+        & & B
+    \end{vmatrix}
+\end{align*}
+On définit : 
+\begin{align*}
+    \psi:&(\mathbb{K}^p)^p \to \mathbb{K} \\
+    &(Y_1, \ldots, Y_p) \mapsto \begin{vmatrix}
+        1 & & & C \\
+        & \ddots & & \\
+        & & 1 & Y_1 \\
+        & & & \vdots \\
+        & & & Y_p
+    \end{vmatrix}
+\end{align*}
+$\psi$ est une forme $p$-linéaire alternée donc on choisit $\alpha\in \mathbb{K}$ tel que : 
+\begin{align*}
+    \psi = \alpha \operatorname{det}_{\mathcal{B}_p}
+\end{align*}
+On a : 
+\begin{align*}
+    \alpha &= \psi(\mathcal{B}_p) \\
+    &= \begin{vmatrix}
+        1 & & & & & \\
+        & \ddots & & & & \\
+        & & 1 & & & \\
+        0 & & & 1 & & \\
+        0 & 0 & & & \ddots \\
+        0 & 0 & 0 & & & 1
+    \end{vmatrix} \\
+    &= 1
+\end{align*}
+Ainsi : 
+\begin{align*}
+    \psi = \operatorname{det}_{\mathbb{B}_p}
+\end{align*}
+Donc : 
+\begin{align*}
+    \lambda &= \varphi(\mathcal{B}_n) \\
+    &= \psi(B_1, \ldots, B_p) \\
+    &= \operatorname{det}(B)
+\end{align*}
+Donc : 
+\begin{align*}
+    \varphi = \operatorname{det}(B) \times \operatorname{det}_{\mathcal{B}_n}
+\end{align*}
+Donc : 
+\begin{align*}
+    \varphi(A_1, \ldots, A_n) &= \operatorname{det}(B) \operatorname{det}_{\mathcal{B}_n}(A_1, \ldots, A_n)
+\end{align*}
+Soit : 
+\begin{align*}
+    \operatorname{det}(T) &= \operatorname{det}(B) \operatorname{det}(A)
 \end{align*}
 
 
