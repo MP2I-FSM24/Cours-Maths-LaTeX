@@ -379,5 +379,58 @@ D'après (30.45) :
     &= -1
 \end{align*}
 
+\setsection{49}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 30.50, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Calculer : 
+    \begin{align*}
+        \begin{vmatrix}
+            1 & -2 & 1 & 0 \\
+            1 & 0 & 1 & 1 \\
+            2 & 1 & 0 & 1 \\
+            0 & 0 & 1 & 1
+        \end{vmatrix}
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \begin{vmatrix}
+        1 & -2 & 1 & 0 \\
+        1 & 0 & 1 & 1 \\
+        2 & 1 & 0 & 1 \\
+        0 & 0 & 1 & 1
+    \end{vmatrix} &= -\begin{vmatrix}
+        1 & 0 & 1 & 1 \\
+        1 & -2 & 1 & 0 \\
+        2 & 1 & 0 & 1 \\
+        0 & 0 & 1 & 1
+    \end{vmatrix} \\ 
+    &= -\begin{vmatrix}
+        1 & 0 & 1 & 1 \\
+        0 & -2 & 0 & -1 \\
+        0 & 1 & -2 & -1 \\
+        0 & 0 & 1 & 1
+    \end{vmatrix} \\
+    &= \begin{vmatrix}
+        1 & 0 & 1 & 1 \\
+        0 & 1 & -2 & -1 \\
+        0 & -2 & 0 & -1 \\
+        0 & 0 & 1 & 1
+    \end{vmatrix} \\
+    &= \begin{vmatrix}
+        1 & 0 & 1 & 1 \\
+        0 & 1 & -2 & -1 \\
+        0 & 0 & -4 & -3 \\
+        0 & 0 & 1 & 1
+    \end{vmatrix} \\
+    &= -\begin{vmatrix}
+        1 & 0 & 1 & 1 \\
+        0 & 1 & -2 & -1 \\
+        0 & 0 & 1 & 1 \\
+        0 & 0 & 0 & 1
+    \end{vmatrix} \\
+    &= -1
+\end{align*}
+
 
 \end{document}
