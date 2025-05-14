@@ -322,5 +322,23 @@ Donc :
 
 \noindent Si $\mathcal{B}$ et $\mathcal{B}'$ sont deux bases de $E$, alors $\operatorname{Mat}_{\mathcal{B}}(f)$ et $\operatorname{Mat}_{\mathcal{B}'}(f)$ sont semblables, donc elles ont le même déterminant (30.37). 
 
+\setsection{43}
+\section{Déterminant et conjugaison}
+\begin{tcolorbox}[title=Propostion 30.44, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\psi:E\to F$ un isomorphisme d'espaces vectoriels de dimension finie non nulles et $u\in \mathcal{L}(E)$. Alors :
+    \begin{align*}
+        \operatorname{det}(\underbrace{\psi\circ u\circ \psi^{-1}}_{\in \mathcal{L}(F)}) = \operatorname{det}(u)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $e$ une base de $E$ et $f$ une base de $F$. 
+\begin{align*}
+    \operatorname{det}(\psi\circ u\circ \psi^{-1}) &= \operatorname{det}(\operatorname{Mat}_f(\psi\circ u\circ \psi^{-1})) \text{ (30.42)} \\
+    &= \operatorname{det}(\operatorname{Mat}_{e,f}(\psi)\times \operatorname{Mat}_e(u)\times \operatorname{Mat}_{f,e}(\psi^{-1})) \text{ (28.42)} \\
+    &= \operatorname{det}(\operatorname{Mat}_{e,f}(\psi)) \times \operatorname{det}(\operatorname{Mat}_e(u)) \times \operatorname{det}(\operatorname{Mat}_{f,e}(\psi^{-1})) \text{ (30.36)} \\
+    &= \operatorname{det}(\underbrace{\operatorname{Mat}_{\psi}\times \operatorname{Mat}_{f, e}(\psi^{-1})}_{I_n}) \times \operatorname{det}(\operatorname{Mat}_e(u)) \text{ (30.36)} \\
+    &= \operatorname{det}(\operatorname{Mat}_e(u)) \\
+\end{align*}
+
 
 \end{document}
