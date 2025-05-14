@@ -416,7 +416,9 @@ D'après (30.45) :
         0 & 1 & -2 & -1 \\
         0 & -2 & 0 & -1 \\
         0 & 0 & 1 & 1
-    \end{vmatrix} \\
+    \end{vmatrix}
+\end{align*}
+\begin{align*}
     &= \begin{vmatrix}
         1 & 0 & 1 & 1 \\
         0 & 1 & -2 & -1 \\
@@ -430,6 +432,48 @@ D'après (30.45) :
         0 & 0 & 0 & 1
     \end{vmatrix} \\
     &= -1
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 30.51, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Calculer pour $a\in \mathbb{R}$ : 
+    \begin{align*}
+        \begin{vmatrix}
+            a & 1 & \cdots & 1 \\
+            1 & \ddots & \ddots & \vdots \\
+            \vdots & \ddots & \ddots & 1 \\
+            1 & \cdots & 1 & a
+        \end{vmatrix}
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \Delta_n(a) &= \begin{vmatrix}
+        a & 1 & \cdots & 1 \\
+        1 & \ddots & \ddots & \vdots \\
+        \vdots & \ddots & \ddots & 1 \\
+        1 & \cdots & 1 & a
+    \end{vmatrix} \\
+    &= \begin{vmatrix}
+        a & 1 & \cdots & \cdots & 1 \\
+        1-a & a-1 & 0 & \cdots & 0 \\
+        1-a & 0 & \ddots & \ddots & \vdots \\
+        \vdots & \ddots & \ddots & \ddots & \vdots \\
+        1-a & 0 & \cdots & 0 & a-1
+    \end{vmatrix} \\
+    &= (a-1)^{n-1} \begin{vmatrix}
+        a & 1 & \cdots & \cdots & 1 \\
+        -1 & 1 & 0 & \cdots & 0 \\
+        \vdots & \ddots & \ddots & \ddots & \vdots \\
+        -1 & 1 & \cdots & \cdots & 1
+    \end{vmatrix} \\
+    &= (a-1)^{n-1} \begin{vmatrix}
+        a+n-1 & 1 & \cdots & 1 \\
+        & 1 & & \\
+        & & \ddots & \\
+        & & & 1
+    \end{vmatrix} \\
+    &= (a+n-1)(a-1)^{n-1}
 \end{align*}
 
 
