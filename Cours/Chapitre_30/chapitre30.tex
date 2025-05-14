@@ -340,5 +340,22 @@ Donc :
     &= \operatorname{det}(\operatorname{Mat}_e(u)) \\
 \end{align*}
 
+\section{Déterminant d'une matrice triangulaire}
+\begin{tcolorbox}[title=Propostion 30.45, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Le déterminant d'une matrice triangulaire est égal au produit de ses coefficients diagonaux. 
+\end{tcolorbox}
+
+\noindent Soit $T$ une matrice triangulaire supérieure (on passe à la transposée sinon). \\
+Ainsi : 
+\begin{align*}
+    \forall (i, j)\in \llbracket 1, n \rrbracket^2, i > j \Rightarrow t_{i, j} = 0
+\end{align*}
+D'après la formule sur les coefficients (30.34) : 
+\begin{align*}
+    \operatorname{det}(T) &= \sum_{\sigma\in \mathcal{S}_n} \varepsilon(\sigma) \prod_{i=1}^{n} t_{\sigma(i), i} \\
+    &= \sum_{\sigma\in \mathcal{S}_n, \sigma(i) \leq i \equiv \operatorname{id}} \varepsilon(\sigma) \prod_{i=1}^{n} t_{\sigma(i), i} \\
+    &= \sigma(\operatorname{id}) \prod_{i=1}^{n} t_{ii} 
+\end{align*}
+
 
 \end{document}
