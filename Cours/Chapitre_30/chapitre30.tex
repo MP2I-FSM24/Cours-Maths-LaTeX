@@ -695,5 +695,33 @@ On considère le déterminant suivant (on a remplacé la ligne $j$ par $i$) :
     \end{vmatrix} \underset{\text{développement de la ligne $j$}}{=} \sum_{k=1}^{n} (-1)^{k+j} m_{ik} \Delta_{jk}(M)
 \end{align*}
 
+\setsection{62}
+\section{Cramer}
+\begin{tcolorbox}[title=Corollaire 30.63, title filled=false, colframe=orange, colback=orange!10!white]
+    Le système $AX = B$ d'inconnue $X = \begin{pmatrix}
+        x_1 \\
+        \vdots \\
+        x_n
+    \end{pmatrix}$, avec $A\in \mathcal{M}_n(\mathbb{K}), B\in \mathcal{M}_{n+1}(\mathbb{K})$ admet une unique solution si et seulement si $\operatorname{det}(A)\neq 0$. \\
+    Si $A_1, \ldots, A_n$ sont les colonnes de $A$, cette solution est donnée par :
+    \begin{align*}
+        \forall k\in \llbracket 1, n \rrbracket, x_k = \frac{\operatorname{det}(A_1, \ldots, A_{k-1}, B, A_{k+1}, \ldots, A_n)}{\operatorname{det}(A)}
+    \end{align*}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Le système admet une unique solution si et seulement si $A$ est inversible, c'est-à-dire $\operatorname{det}(A)\neq 0$. 
+    \item On suppose $A$ inversible. Si $AX = B$, alors $X = A^{-1}B = \frac{1}{\operatorname{det}(A)} {^t \operatorname{Com}(A)B}$. \\
+    Soit $k\in \llbracket 1, n \rrbracket$. \\
+    \begin{align*}
+        x_k &= X_{k, 1} \\
+        &= \frac{1}{\operatorname{det}(A)} [^t \operatorname{Com}(A)B]_{k, 1} \\
+        &= \frac{1}{\operatorname{det}(A)} \sum_{i=1}^{n} [^t \operatorname{Com}(A)]_{k, i} B_{i, 1} \\
+        &= \frac{1}{\operatorname{det}(A)} \sum_{i=1}^{n} \operatorname{Com}(A)_{ik} b_i \\
+        &= \frac{1}{\operatorname{det}(A)} \sum_{i=1}^{n} (-1)^{i+k} b_i \Delta_{ik}(A) \\
+        &= \frac{\operatorname{det}(A_1, \ldots, A_{k-1}, B, A_{k+1}, \ldots, A_n)}{\operatorname{det}(A)} \text{ (développement de la $k$-ième colonne)} \\
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
