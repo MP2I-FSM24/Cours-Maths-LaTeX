@@ -723,5 +723,63 @@ On considère le déterminant suivant (on a remplacé la ligne $j$ par $i$) :
     \end{align*}
 \end{itemize}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 30.64, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Calculer le déterminant de la matrice suivante, avec $a\neq b$ dans $\mathbb{K}$ : 
+    \begin{align*}
+        \begin{pmatrix}
+            a+b & a & 0 & \cdots & 0 \\
+            b & \ddots & \ddots & \ddots & \vdots \\
+            0 & \ddots & \ddots & \ddots & 0 \\
+            \vdots & \ddots & \ddots & \ddots & a \\
+            0 & \cdots & 0 & b & a+b
+        \end{pmatrix}\in \mathcal{M}_n(\mathbb{K})
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \Delta_n = \begin{vmatrix}
+        a+b & a & 0 & \cdots & 0 \\
+        b & \ddots & \ddots & \ddots & \vdots \\
+        0 & \ddots & \ddots & \ddots & 0 \\
+        \vdots & \ddots & \ddots & \ddots & a \\
+        0 & \cdots & 0 & b & a+b
+    \end{vmatrix}
+\end{align*}
+Convention : $\Delta_1 = a+b$. \\
+On a $\Delta_2 = \begin{vmatrix}
+    a+b & a \\
+    b & a+b
+\end{vmatrix} = a^2 + ab + b^2$. \\
+Soit $n\geq 3$ : 
+\begin{align*}
+    \Delta_n &= (a+b) \begin{vmatrix}
+            a+b & a & 0 & \cdots & 0 \\
+            b & \ddots & \ddots & \ddots & \vdots \\
+            0 & \ddots & \ddots & \ddots & 0 \\
+            \vdots & \ddots & \ddots & \ddots & a \\
+            0 & \cdots & 0 & b & a+b
+        \end{vmatrix}_{n-1} -b \begin{vmatrix}
+            a & 0 & \cdots & \cdots & 0 \\
+            b & a+b & a & \cdots & \vdots \\
+            0 & \ddots & \ddots & \ddots & 0 \\
+            \vdots & \ddots & \ddots & \ddots & a \\
+            0 & \cdots & 0 & b & a+b
+        \end{vmatrix}_{n-1} \\
+        &= (a+b) \Delta_{n-1} - ba \Delta_{n-2}
+\end{align*}
+$(\Delta_n)_{n\geq 0}$ vérifie une relation de récurrence linéaire d'ordre 2. \\
+L'équation caractéristique associée est : 
+\begin{align*}
+    r^2 - (a+b)r + ab = 0
+\end{align*}
+Cette équation admet $a$ et $b$ comme racines distinctes. \\
+D'après le cours, on choisit $(\alpha, \beta)\in \mathbb{K}^2$ tel que :
+\begin{align*}
+    \forall n\geq 0, \Delta_n = \alpha a^n + \beta b^n
+\end{align*}
+Les conditions initiales imposent $\alpha + \beta = 1$ et $\alpha a + \beta b = a+b$. \\
+Donc $\alpha = \frac{a}{a-b}$ et $\beta = \frac{b}{b-a}$.
+
 
 \end{document}
