@@ -643,8 +643,18 @@ Ainsi :
         \vdots & \vdots & \vdots & \vdots \\
         0 & m_{n, 1} & \cdots & m_{n, n}
     \end{vmatrix} \\
-    &= \sum_{i=1}^{n} (-1)^{j+1} m_{ij} \Delta_{ij} \\ 
+    &= \sum_{i=1}^{n} (-1)^{j+1} m_{ij} \Delta_{ij} \\
 \end{align*}
+
+\section{Développement selon une ligne}
+\begin{tcolorbox}[title=Théorème 30.59, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $M = (m_{ij})\in \mathcal{M}_n(\mathbb{K})$ et $j\in \llbracket 1, n \rrbracket$, alors :
+    \begin{align*}
+        \operatorname{det}(M) &= \sum_{j=1}^{n} (-1)^{i+j} m_{ij} \Delta_{ij}(M)
+    \end{align*}
+\end{tcolorbox}
+
+\noindent $\operatorname{det}(M) = \operatorname{det}(^tM)$ et on utilise (30.58). 
 
 
 \end{document}
