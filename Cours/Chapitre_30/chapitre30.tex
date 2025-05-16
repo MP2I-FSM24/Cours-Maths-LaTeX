@@ -656,5 +656,44 @@ Ainsi :
 
 \noindent $\operatorname{det}(M) = \operatorname{det}(^tM)$ et on utilise (30.58). 
 
+\setsection{60}
+\section{Expression de l'inverse de la comatrice, Cayley}
+\begin{tcolorbox}[title=Corollaire 30.61, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $M\in \mathcal{M}_n(\mathbb{K})$. Alors : 
+    \begin{align*}
+        M^t \operatorname{Com}(M) = {^t}\operatorname{Com}(M)M \operatorname{det}(M) I_n
+    \end{align*}
+    En particulier, $M$ est inversible si et seulement si $\operatorname{det}(M)\neq 0$ et dans ce cas : 
+    \begin{align*}
+        M^{-1} = \frac{1}{\operatorname{det}(M)} {^t \operatorname{Com}(M)}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent On montre seulement $M{^t \operatorname{Com}(M)} = \operatorname{det}(M) I_n$. \\
+Soit $(i, j)\in \llbracket 1, n \rrbracket^2$. \\
+\begin{align*}
+    [M{^t \operatorname{Com}(M)}]_{ij} &= \sum_{j=1}^{n} M_{ik} [^t \operatorname{Com}(M)]_{ji} \\
+    &= \sum_{j=1}^{n} M_{ij} \operatorname{Com}(M)_{ij} \\
+    &= \sum_{j=1}^{n} M_{ij} (-1)^{i+j} \Delta_{ij}(M) \\
+    &= \operatorname{det}(M) \text{ (formule du développement)}
+\end{align*}
+On suppose que $i\neq j$. En reprenant les étapes précédentes : 
+\begin{align*}
+    [M{^t \operatorname{Com}(M)}]_{ij} &= \sum_{k=1}^{n} M_{ik} \operatorname{Com}(M)_{jk} \\
+    &= \sum_{k=1}^{n} (-1)^{j+k} M_{ik} \Delta_{jk}(M) 
+\end{align*}
+On considère le déterminant suivant (on a remplacé la ligne $j$ par $i$) : 
+\begin{align*}
+    \begin{vmatrix}
+        m_{11} & \cdots & m_{1n} \\
+        \vdots & & \vdots \\
+        m_{i1} & \cdots & m_{in} \\
+        \vdots & & \vdots \\
+        m_{i1} & \cdots & m_{in} \\
+        \vdots & & \vdots \\
+        m_{n1} & \cdots & m_{nn}
+    \end{vmatrix} \underset{\text{développement de la ligne $j$}}{=} \sum_{k=1}^{n} (-1)^{k+j} m_{ik} \Delta_{jk}(M)
+\end{align*}
+
 
 \end{document}
