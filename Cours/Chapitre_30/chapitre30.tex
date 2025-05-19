@@ -781,5 +781,43 @@ D'après le cours, on choisit $(\alpha, \beta)\in \mathbb{K}^2$ tel que :
 Les conditions initiales imposent $\alpha + \beta = 1$ et $\alpha a + \beta b = a+b$. \\
 Donc $\alpha = \frac{a}{a-b}$ et $\beta = \frac{b}{b-a}$.
 
+\setsection{70}
+\section{Déterminant de Vandermonde}
+\begin{tcolorbox}[title=Propostion 30.71, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Le déterminant de Vandermonde est donné par :
+    \begin{align*}
+        V(x_1, \ldots, x_n) = \prod_{1\leq i\leq j\leq n} (x_j - x_i) 
+    \end{align*}
+    Ainsi on retrouve qu'une matrice de Vandermonde est inversible si et seulement si tous les scalaires $x_1, \ldots, x_n$ sont deux à deux distincts.
+\end{tcolorbox}
+
+\begin{itemize}
+    \item S'il existe $i\neq j$ tel que $x_i = x_j$ : 
+    \begin{align*}
+        V(x_1, \ldots, x_n) &= 0
+    \end{align*}
+    \item Supposons désormais que les $x_i$ sont distincts deux à deux. \\
+    On considère : 
+    \begin{align*}
+        \varphi&:\mathbb{C}\to \mathbb{C} \\
+        &x\mapsto V(x_1, \ldots, x_n)
+    \end{align*}
+    D'après le caractère polynomial du déterminant, $\varphi$ est une fonction polynomiale de degré inférieur ou égal à $n-1$ et dont le coefficient de degré $n-1$ est $V(x_1, \ldots, x_{n-1}) \neq 0$ (28.23) (par développment par la dernière colonne). \\
+    Or : 
+    \begin{align*}
+        \forall i\in \llbracket 1, n-1 \rrbracket, \varphi(x_i) &= 0
+    \end{align*}
+    D'après le cours sur les polynômes, $\varphi$ est scindé et : 
+    \begin{align*}
+        \forall x\in \mathbb{C}, \varphi(x) &= V(x_1, \ldots, x_{n-1}) \prod_{i=1}^{n-1} (x-x_i)
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        V(x_1, \ldots, x_n) &= V(x_1, \ldots, x_{n-1}) \prod_{i=1}^{n-1} (x_n-x_i)
+    \end{align*}
+    On termine par récurrence. \\
+    La formule reste vraie si les $x_i$ ne sont pas tous distincts. 
+\end{itemize}
+
 
 \end{document}
