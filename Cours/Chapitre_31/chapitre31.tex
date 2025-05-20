@@ -6,4 +6,21 @@
 \tableofcontents
 \clearpage
 
+\setsection{11}
+\section{Exemple : parcours d'une fourmi}
+\begin{tcolorbox}[title=Exemple 31.12, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    La fourmi Donald se promène sur un grillage du plan de taille $2\times p$ dont chaque arête est de longueur $1$. Combien de chemins de longueur minimale peut-elle emprunter pour gagner le point d'arrivée depuis son point de départ ?
+\end{tcolorbox}
+
+\noindent Compter ce nombre de chemins revient à dénombrer le nombre de mots de $p+2$ lettres contenant exactement $p$ lettres $D$ et $2$ lettres $B$. \\
+Pour constuire un tel mot, il suffit de choisir la place des deux $B$. \\
+On a $p+1$ choix pour le premier $B$. \\
+Pour chaque choix de position $k\in \llbracket 1, p+1\rrbracket$, il reste $p+2-k$ choix pour le second $B$. \\
+Le nombbre de choix possible final est donc : 
+\begin{align*}
+    \sum_{k=1}^{p+1} (p+2-k) &= \sum_{k=1}^{p+1} k \\
+    &= \frac{(p+1)(p+2)}{2} 
+\end{align*}
+
+
 \end{document}
