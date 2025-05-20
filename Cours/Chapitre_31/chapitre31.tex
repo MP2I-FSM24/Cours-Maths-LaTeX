@@ -77,5 +77,19 @@ Aut total : $4\times 26^3$ possibilités.
     \item En choisissant arbitrairement la place d'une personne (par exemple Jack), il suffit de compléter par un $(n-1)$-arrangement d'un ensemble à $n-1$ éléments, soit $(n-1)!$ choix. 
 \end{itemize}
 
+\setsection{37}
+\section{Nombre de combinaisons}
+\begin{tcolorbox}[title=Propostion 31.38, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $p\in \mathbb{N}$ et notons $n = |E|$. Il y a $\binom{n}{p}$ $p$-combinaisons de $E$.
+\end{tcolorbox}
+
+\noindent Pour construire une $p$-combinaison : 
+\begin{itemize}
+    \item On choisit un $p$-arrangement de $E$ : $\frac{n!}{(n-p)!}$ possiblités. 
+    \item On choisit l'ensemble des éléments qui constituent cet arrangement. \\
+    Or toute permutation du $p$-arrangement conduit à la même combinaison. Il y a donc $|S_p| = p!$ arrangements qui donne la même combinaison (il n'y en a pas d'autres). \\
+    On a donc $\frac{n!}{(n-p)!p!}$ $p$-combinaisons. 
+\end{itemize}
+
 
 \end{document}
