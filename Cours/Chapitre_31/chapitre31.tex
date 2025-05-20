@@ -31,5 +31,16 @@ Le nombbre de choix possible final est donc :
 \noindent\underline{Etape 2 :} On choisit $y\in \llbracket 1, n \rrbracket\setminus\{x\}$, soit $n-1$ choix. \\
 Au total $n(n-1)$ choix (principe des bergers). 
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.20, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    A partir d'un alphabet de $p$ lettres, combien de mots de $n$ lettres peut-on former qui ne contiennent jamais deux lettres identiques consécutives ?
+\end{tcolorbox}
+
+\noindent\underline{Etape 1 :} On choisit la première lettre : $p$ possibilités. \\
+\noindent\underline{Etape 2 :} On choisit la deuxième lettre : $p-1$ possibilités. \\
+\noindent\underline{Etape 3 :} On choisit la troisième lettre : $p-1$ possibilités. \\
+...\\
+Au total : $p(p-1)^{n-1}$ possibilités. 
+
 
 \end{document}
