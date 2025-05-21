@@ -6,4 +6,287 @@
 \tableofcontents
 \clearpage
 
+\setsection{11}
+\section{Exemple : parcours d'une fourmi}
+\begin{tcolorbox}[title=Exemple 31.12, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    La fourmi Donald se promène sur un grillage du plan de taille $2\times p$ dont chaque arête est de longueur $1$. Combien de chemins de longueur minimale peut-elle emprunter pour gagner le point d'arrivée depuis son point de départ ?
+\end{tcolorbox}
+
+\noindent Compter ce nombre de chemins revient à dénombrer le nombre de mots de $p+2$ lettres contenant exactement $p$ lettres $D$ et $2$ lettres $B$. \\
+Pour constuire un tel mot, il suffit de choisir la place des deux $B$. \\
+On a $p+1$ choix pour le premier $B$. \\
+Pour chaque choix de position $k\in \llbracket 1, p+1\rrbracket$, il reste $p+2-k$ choix pour le second $B$. \\
+Le nombbre de choix possible final est donc : 
+\begin{align*}
+    \sum_{k=1}^{p+1} (p+2-k) &= \sum_{k=1}^{p+1} k \\
+    &= \frac{(p+1)(p+2)}{2} 
+\end{align*}
+
+\setsection{18}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.19, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Combien y-a-t-il de couples $(x, y)$ dans $\llbracket 1, n \rrbracket^2$ avec $x\neq y$ ?
+\end{tcolorbox}
+\noindent\underline{Etape 1 :} On choisit $x\in \llbracket 1, n \rrbracket$, soit $n$ choix. \\
+\noindent\underline{Etape 2 :} On choisit $y\in \llbracket 1, n \rrbracket\setminus\{x\}$, soit $n-1$ choix. \\
+Au total $n(n-1)$ choix (principe des bergers). 
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.20, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    A partir d'un alphabet de $p$ lettres, combien de mots de $n$ lettres peut-on former qui ne contiennent jamais deux lettres identiques consécutives ?
+\end{tcolorbox}
+
+\noindent\underline{Etape 1 :} On choisit la première lettre : $p$ possibilités. \\
+\noindent\underline{Etape 2 :} On choisit la deuxième lettre : $p-1$ possibilités. \\
+\noindent\underline{Etape 3 :} On choisit la troisième lettre : $p-1$ possibilités. \\
+...\\
+Au total : $p(p-1)^{n-1}$ possibilités. 
+
+\setsection{26}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.27, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    De combien de façon peut-on tirer $5$ cartes successivement avec remise dans un jeu de $52$ cartes ?
+\end{tcolorbox}
+
+\noindent Il s'agit de compter le nombre de $5$-listes d'un ensemble de cardinal $52$, soit $52^5$ possibilités. 
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.28, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Combien y-a-t-il de mots de $7$ lettres contenant le mot "OUPS" ?
+\end{tcolorbox}
+
+\noindent\underline{Etape 1 :} Choix de la place du mot "OUPS" : $4$ choix possibles. \\
+\noindent\underline{Etape 2 :} On complète avec un mot de $3$ lettres. \\ Cela revient à compter le nombre de $3$-listes d'un ensemble à $26$ éléments : $26^3$ possibilités. \\
+Aut total : $4\times 26^3$ possibilités.
+
+\setsection{31}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.32, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    De combien de façon peut-on tirer $5$ cartes successivement sans remise dans un jeu de $52$ cartes ?
+\end{tcolorbox}
+
+\noindent Cela revient à compter le nombre de $5$-arrangements d'un ensemble de cardinal $52$, soit $\frac{52!}{(52-5)!}$. 
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.33, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    De combien de façons peut-on asseoir $n$ personnes sur un banc rectiligne ? Autour d'une table ronde ?
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Sur un banc rectiligne, cela revient à calculer le nombre de $n$-arrangements d'un ensemble de cardinal $n$, soit $n!$ choix.
+    \item En choisissant arbitrairement la place d'une personne (par exemple Jack), il suffit de compléter par un $(n-1)$-arrangement d'un ensemble à $n-1$ éléments, soit $(n-1)!$ choix. 
+\end{itemize}
+
+\setsection{37}
+\section{Nombre de combinaisons}
+\begin{tcolorbox}[title=Propostion 31.38, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $p\in \mathbb{N}$ et notons $n = |E|$. Il y a $\binom{n}{p}$ $p$-combinaisons de $E$.
+\end{tcolorbox}
+
+\noindent Pour construire une $p$-combinaison : 
+\begin{itemize}
+    \item On choisit un $p$-arrangement de $E$ : $\frac{n!}{(n-p)!}$ possiblités. 
+    \item On choisit l'ensemble des éléments qui constituent cet arrangement. \\
+    Or toute permutation du $p$-arrangement conduit à la même combinaison. Il y a donc $|S_p| = p!$ arrangements qui donne la même combinaison (il n'y en a pas d'autres). \\
+    On a donc $\frac{n!}{(n-p)!p!}$ $p$-combinaisons. 
+\end{itemize}
+
+\setsection{39}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.40, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    De combien de façon peut-on tirer $5$ cartes simultanément dans un jeu de $52$ cartes ?
+\end{tcolorbox}
+
+\noindent Il s'agit de compter le nombre de $5$-combinaisons d'un ensemble de cardinal $52$. Il y en a $\binom{52}{5}$.
+
+\section{$k$-listes strictement croissantes de $\llbracket 1, n \rrbracket$}
+\begin{tcolorbox}[title=Théorème 31.41, title filled=false, colframe=orange, colback=orange!10!white]
+    Pour tout $k\in \llbracket 1, n \rrbracket$, il existe $\binom{n}{k}$ familles d'entiers $(i_1, \ldots, i_k)$ pour lesquelles $1\leq i_1 < \cdots < i_k \leq n$.
+\end{tcolorbox}
+
+\noindent Pour tout ensemble à $k$ éléments de $\llbracket 1, n \rrbracket$ distincts, il existe une unique manière de les ordonner. Réciproquement tout $k$-uplet $(i_1, \ldots, i_k)$ avec $1\leq i_1 < \cdots < i_k \leq n$ fournit un sous-ensemble à $k$ eléments distincts de $\llbracket 1, n \rrbracket$. Il y a donc en tout $\binom{n}{k}$ familles recherchées. 
+
+\setsection{42}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.43, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Combien le mot "BOROROS" a-t-il d'anagrammes ?
+\end{tcolorbox}
+
+\noindent Construire un anagramme de "BOROROS" c'est construire un mot de 7 lettres composé de $1$ B, $3$ O, $2$ R et $1$ S. \\
+\noindent\underline{Etape 1 :} $\binom{7}{1}$ choix pour la place de B. \\
+\noindent\underline{Etape 2 :} $\binom{6}{3}$ choix pour la place des O. \\
+\noindent\underline{Etape 3 :} $\binom{3}{2}$ choix pour la place des R. \\
+\noindent\underline{Etape 4 :} $\binom{1}{1}$ choix pour la place de S. \\
+Au total : 
+\begin{align*}
+    \binom{7}{1} \binom{6}{3} \binom{3}{2} \binom{1}{1} &= 7 \times \frac{6!}{3!3!} \times \frac{3!}{2!} \\
+    &= 7 \times 5 \times 4 \times 3
+\end{align*}
+
+\setsection{44}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.45, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Un jeu de tarot contient 78 cartes : 
+    \begin{itemize}
+        \item 21 atouts
+        \item 1 excuse
+        \item 14 cartes de chaque couleur (coeur, pique, trèfle, carreau)
+    \end{itemize}
+    Combien de tirages simultanés de 6 cartes d'un tel jeu peut-on obtenir contenant 2 atouts et 4 trèfles ? Et ensuite, contenant exactement un atout et au moins 3 as ?
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Pour construire une telle main : \\
+    \underline{Etape 1 :} $\binom{21}{2}$ choix pour les atouts. \\
+    \underline{Etape 2 :} $\binom{14}{4}$ choix pour les trèfles. \\
+    Au total $\binom{21}{2} \binom{14}{4}$ mains possibles. 
+    \item $\binom{21}{1} \binom{4}{3} \binom{78-21-4}{2} + \binom{21}{1} \binom{4}{4}\binom{78-21-4}{1}$.  
+\end{itemize}
+
+\setsection{47}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.48, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{enumerate}
+        \item Soit $A = \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 \\
+            0 & 0 & 0 & 1 & 0 & 0 \\
+            0 & 7 & 8 & 0 & 0 & 0 \\
+            1 & 1 & 1 & 1 & 1 & 1
+        \end{pmatrix}$. De combien de façons peut-on extraire la matrice $\begin{pmatrix}
+            0 & 0 & 0
+        \end{pmatrix}$ de $A$ ?
+        \item Soit $A = \begin{pmatrix}
+            0 & 1 & 1 & 1 & 1 \\
+            1 & 1 & 0 & 1 & 1 \\
+            1 & 1 & 1 & 0 & 1 \\
+            1 & 1 & 1 & 1 & 1 \\
+            1 & 1 & 0 & 1 & 1
+        \end{pmatrix}$. De combien de façons peut-on extraire la matrice $\binom{1}{1}$ de $A$ ?
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \underline{Disjonctions de cas :}
+    Si on extrait par rapport à la deuxième ligne : $\binom{5}{3}$. \\
+    Si on extrait par rapport à la troisième ligne : $\binom{4}{3}$. \\
+    Au total : $\binom{5}{3} + \binom{4}{3}$ choix possibles. 
+
+    \item Avec le même principe : 
+    \begin{align*}
+        \binom{4}{2} + \binom{5}{2} + \binom{3}{2} + \binom{4}{2} + \binom{5}{2}
+    \end{align*}
+\end{enumerate}
+
+\section{Nombre de parties d'un ensemble fini}
+\begin{tcolorbox}[title=Théorème 31.49, title filled=false, colframe=orange, colback=orange!10!white]
+    On a : 
+    \begin{align*}
+        |\mathcal{P}(E)| &= 2^{|E|}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent\underline{Méthode 1 :} \\
+\begin{align*}
+    |\mathcal{P}(E)| &= \sum_{k=0}^{|E|} |\mathcal{P}_k(E)| \\
+    &= \sum_{k=0}^{|E|} \binom{|E|}{k} \\
+    &= 2^{|E|} \text{ (binôme)} 
+\end{align*}
+\noindent\underline{Méthode 2 :} \\
+On liste les éléments de $E = \{ e_1, \ldots, e_n \}$. \\
+Toute partie de $E$ peut-être codée de mainère unique par un mot de $n$ lettres à partir de l'alphabet $\{0, 1\}$ de manière suivante : 
+\begin{align*}
+    \underbrace{0}_{e_1\not\in A} \space \underbrace{1}_{e_2\in A} \space \cdots \space \underbrace{\_}_{1 \text{ si } e_i\in A, 0 \text{ sinon}} \space \cdots 
+\end{align*}
+Donc $|\mathcal{P}(E)| = 2^n$.
+
+\setsection{50}
+\section{Exemple : formule du capitaine}
+\begin{tcolorbox}[title=Exemple 31.51, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Pour tous entiers $n\in \mathbb{N}^*$ et $p\in \mathbb{N}^*$ avec $n\geq p$, on a :
+    \begin{align*}
+        p\binom{n}{p} &= n\binom{n-1}{p-1}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Dans une classe de $n$ élèves, on décide de composer des équipes de $p$ élèbes dont un capitaine désigné. \\
+\underline{Méthode 1 :} \\
+\begin{align*}
+    \underbrace{\binom{n}{1}}_{\text{choix du capitaine}}\times \underbrace{\binom{n-1}{p-1}}_{\text{choix des autres élèves}}
+\end{align*}
+\underline{Méthode 2 :} \\
+\begin{align*}
+    \underbrace{\binom{n}{p}}_{\text{choix de l'équipe}}\times \underbrace{\binom{p}{1}}_{\text{choix du capitaine}}
+\end{align*}
+On a par double comptage :
+\begin{align*}
+    \binom{n}{1} \binom{n-1}{p-1} &= \binom{n}{p} \binom{p}{1}
+\end{align*}
+Soit : 
+\begin{align*}
+    n\binom{n-1}{p-1} &= p\binom{n}{p}
+\end{align*}
+
+\setsection{52}
+\section{Exemple : formule de Pascal}
+\begin{tcolorbox}[title=Exemple 31.53, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Pour tout $n\in \mathbb{N}^*, p\in \mathbb{N}^*$ avec $p\leq n$, on a : 
+    \begin{align*}
+        \binom{n}{p-1} + \binom{n}{p} &= \binom{n+1}{p}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Pour construire une partie à $p$ éléments, on peut commencer par fixer un élément quelconque $e\in E$. Puis : 
+\begin{itemize}
+    \item constuire une partie contenant $e$ : $\binom{n}{p-1}$ possibilités.
+    \item construrie une partie qui ne contient pas $e$ : $\binom{n}{p}$ possibilités.
+\end{itemize}
+Par double comptage : 
+\begin{align*}
+    \binom{n}{p-1} + \binom{n}{p} &= \binom{n+1}{p}
+\end{align*}
+
+\section*{Exercice 1}
+\begin{align*}
+    \underbrace{2n}_{\text{choix de la première boule}} \times \underbrace{n}_{\text{choix d'une parité différente}}\times (n-1)(n-1) \cdots 1 = 2(n!)^2
+\end{align*}
+
+\section*{Exercice 3}
+\begin{enumerate}
+    \item \begin{align*}
+        \binom{n}{n'} \binom{p}{p'}
+    \end{align*}
+    \item \begin{align*}
+        \sum_{p'=1}^{p} \sum_{n'=1}^{n} \binom{n}{n'} \binom{p}{p'} &= \left( \sum_{p'=1}^{p} \binom{p}{p'} \right) \left( \sum_{n'=1}^{n} \binom{n}{n'} \right) \\
+        &= (2^p-1)(2^n-1)
+    \end{align*}
+\end{enumerate}
+
+\section*{Exercice 6}
+\noindent Construire une tell permutation revient à construire une bijection de $\llbracket 3, n \rrbracket$ sur $\llbracket 4, n \rrbracket \cup \{1\}$. \\
+Il y en a $(n-2)!$. 
+
+\section*{Exercice 9}
+\noindent On code toute configuration de la manière suivante : on associe à une boule la lettre $0$ et à une urne la lettre $|$. \\
+Réciproquement, à tout mot de $p+n-1$ lettres coumposées d'exactement $n-1$ lettres $|$ et $p$ lettres $0$. \\
+Au total, il y a $\binom{n+p-1}{p}$ configurations. 
+
+\section*{Exercice 10}
+\noindent On dénombre le nombre d'équipes de $n$ joueurs choisis parmi $p$ attaquants et $q$ défenseurs. \\
+On distingue alors selon le nombre $k$ d'attaquants choisis. 
+
+\section*{Exercice 14}
+\begin{enumerate}
+    \item $\binom{32}{5}$
+    \item \begin{enumerate}
+        \item $\binom{4}{4}\binom{32-4}{1}$
+        \item $\binom{8}{1}\binom{4}{4}\binom{32-4}{1}$
+        \item $\binom{8}{1}\binom{4}{3}\binom{7}{1}\binom{4}{2}$
+        \item $\frac{1}{2}\binom{8}{1}\binom{4}{3}\binom{7}{1}\binom{4}{1}\binom{6}{1}\binom{4}{1} = \binom{8}{1}\binom{4}{3}\binom{7}{2}\binom{4}{1}\binom{4}{1}$
+        \item $\binom{4}{1}\binom{4}{1}$
+        \item $\binom{4}{1}\binom{8}{5} - \binom{4}{1}\binom{4}{1}$
+        \item $\binom{3}{2}\binom{7}{3}$ (sans roi de coeur)
+    \end{enumerate}
+\end{enumerate}
+
+
 \end{document}
