@@ -245,7 +245,21 @@ Par double comptage :
     \binom{n}{p-1} + \binom{n}{p} &= \binom{n+1}{p}
 \end{align*}
 
+\section*{Exercice 1}
+\begin{align*}
+    \underbrace{2n}_{\text{choix de la première boule}} \times \underbrace{n}_{\text{choix d'une parité différente}}\times (n-1)(n-1) \cdots 1 = 2(n!)^2
+\end{align*}
 
+\section*{Exercice 2}
+\begin{enumerate}
+    \item \begin{align*}
+        \binom{n}{n'} \binom{p}{p'}
+    \end{align*}
+    \item \begin{align*}
+        \sum_{p'=1}^{p} \sum_{n'=1}^{n} \binom{n}{n'} \binom{p}{p'} &= \left( \sum_{p'=1}^{p} \binom{p}{p'} \right) \left( \sum_{n'=1}^{n} \binom{n}{n'} \right) \\
+        &= (2^p-1)(2^n-1)
+    \end{align*}
+\end{enumerate}
 
 
 \end{document}
