@@ -123,5 +123,25 @@ Au total :
     &= 7 \times 5 \times 4 \times 3
 \end{align*}
 
+\setsection{44}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.45, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Un jeu de tarot contient 78 cartes : 
+    \begin{itemize}
+        \item 21 atouts
+        \item 1 excuse
+        \item 14 cartes de chaque couleur (coeur, pique, trèfle, carreau)
+    \end{itemize}
+    Combien de tirages simultanés de 6 cartes d'un tel jeu peut-on obtenir contenant 2 atouts et 4 trèfles ? Et ensuite, contenant exactement un atout et au moins 3 as ?
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Pour construire une telle main : \\
+    \underline{Etape 1 :} $\binom{21}{2}$ choix pour les atouts. \\
+    \underline{Etape 2 :} $\binom{14}{4}$ choix pour les trèfles. \\
+    Au total $\binom{21}{2} \binom{14}{4}$ mains possibles. 
+    \item $\binom{21}{1} \binom{4}{3} \binom{78-21-4}{2} + \binom{21}{1} \binom{4}{4}\binom{78-21-4}{1}$.  
+\end{itemize}
+
 
 \end{document}
