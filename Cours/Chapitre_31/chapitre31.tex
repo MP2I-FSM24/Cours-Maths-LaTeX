@@ -106,5 +106,22 @@ Aut total : $4\times 26^3$ possibilités.
 
 \noindent Pour tout ensemble à $k$ éléments de $\llbracket 1, n \rrbracket$ distincts, il existe une unique manière de les ordonner. Réciproquement tout $k$-uplet $(i_1, \ldots, i_k)$ avec $1\leq i_1 < \cdots < i_k \leq n$ fournit un sous-ensemble à $k$ eléments distincts de $\llbracket 1, n \rrbracket$. Il y a donc en tout $\binom{n}{k}$ familles recherchées. 
 
+\setsection{42}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.43, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Combien le mot "BOROROS" a-t-il d'anagrammes ?
+\end{tcolorbox}
+
+\noindent Construire un anagramme de "BOROROS" c'est construire un mot de 7 lettres composé de $1$ B, $3$ O, $2$ R et $1$ S. \\
+\noindent\underline{Etape 1 :} $\binom{7}{1}$ choix pour la place de B. \\
+\noindent\underline{Etape 2 :} $\binom{6}{3}$ choix pour la place des O. \\
+\noindent\underline{Etape 3 :} $\binom{3}{2}$ choix pour la place des R. \\
+\noindent\underline{Etape 4 :} $\binom{1}{1}$ choix pour la place de S. \\
+Au total : 
+\begin{align*}
+    \binom{7}{1} \binom{6}{3} \binom{3}{2} \binom{1}{1} &= 7 \times \frac{6!}{3!3!} \times \frac{3!}{2!} \\
+    &= 7 \times 5 \times 4 \times 3
+\end{align*}
+
 
 \end{document}
