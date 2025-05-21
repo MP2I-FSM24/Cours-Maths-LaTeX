@@ -177,5 +177,27 @@ Au total :
     \end{align*}
 \end{enumerate}
 
+\section{Nombre de parties d'un ensemble fini}
+\begin{tcolorbox}[title=Théorème 31.49, title filled=false, colframe=orange, colback=orange!10!white]
+    On a : 
+    \begin{align*}
+        |\mathcal{P}(E)| &= 2^{|E|}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent\underline{Méthode 1 :} \\
+\begin{align*}
+    |\mathcal{P}(E)| &= \sum_{k=0}^{|E|} |\mathcal{P}_k(E)| \\
+    &= \sum_{k=0}^{|E|} \binom{|E|}{k} \\
+    &= 2^{|E|} \text{ (binôme)} 
+\end{align*}
+\noindent\underline{Méthode 2 :} \\
+On liste les éléments de $E = \{ e_1, \ldots, e_n \}$. \\
+Toute partie de $E$ peut-être codée de mainère unique par un mot de $n$ lettres à partir de l'alphabet $\{0, 1\}$ de manière suivante : 
+\begin{align*}
+    \underbrace{0}_{e_1\not\in A} \space \underbrace{1}_{e_2\in A} \space \cdots \space \underbrace{\_}_{1 \text{ si } e_i\in A, 0 \text{ sinon}} \space \cdots 
+\end{align*}
+Donc $|\mathcal{P}(E)| = 2^n$.
+
 
 \end{document}
