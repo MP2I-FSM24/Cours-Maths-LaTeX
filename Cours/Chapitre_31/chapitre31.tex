@@ -143,5 +143,39 @@ Au total :
     \item $\binom{21}{1} \binom{4}{3} \binom{78-21-4}{2} + \binom{21}{1} \binom{4}{4}\binom{78-21-4}{1}$.  
 \end{itemize}
 
+\setsection{47}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 31.48, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    \begin{enumerate}
+        \item Soit $A = \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 \\
+            0 & 0 & 0 & 1 & 0 & 0 \\
+            0 & 7 & 8 & 0 & 0 & 0 \\
+            1 & 1 & 1 & 1 & 1 & 1
+        \end{pmatrix}$. De combien de façons peut-on extraire la matrice $\begin{pmatrix}
+            0 & 0 & 0
+        \end{pmatrix}$ de $A$ ?
+        \item Soit $A = \begin{pmatrix}
+            0 & 1 & 1 & 1 & 1 \\
+            1 & 1 & 0 & 1 & 1 \\
+            1 & 1 & 1 & 0 & 1 \\
+            1 & 1 & 1 & 1 & 1 \\
+            1 & 1 & 0 & 1 & 1
+        \end{pmatrix}$. De combien de façons peut-on extraire la matrice $\binom{1}{1}$ de $A$ ?
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \underline{Disjonctions de cas :}
+    Si on extrait par rapport à la deuxième ligne : $\binom{5}{3}$. \\
+    Si on extrait par rapport à la troisième ligne : $\binom{4}{3}$. \\
+    Au total : $\binom{5}{3} + \binom{4}{3}$ choix possibles. 
+
+    \item Avec le même principe : 
+    \begin{align*}
+        \binom{4}{2} + \binom{5}{2} + \binom{3}{2} + \binom{4}{2} + \binom{5}{2}
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
