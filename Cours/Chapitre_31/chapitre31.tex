@@ -199,5 +199,32 @@ Toute partie de $E$ peut-être codée de mainère unique par un mot de $n$ lettr
 \end{align*}
 Donc $|\mathcal{P}(E)| = 2^n$.
 
+\setsection{50}
+\section{Exemple : formule du capitaine}
+\begin{tcolorbox}[title=Exemple 31.51, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Pour tous entiers $n\in \mathbb{N}^*$ et $p\in \mathbb{N}^*$ avec $n\geq p$, on a :
+    \begin{align*}
+        p\binom{n}{p} &= n\binom{n-1}{p-1}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Dans une classe de $n$ élèves, on décide de composer des équipes de $p$ élèbes dont un capitaine désigné. \\
+\underline{Méthode 1 :} \\
+\begin{align*}
+    \underbrace{\binom{n}{1}}_{\text{choix du capitaine}}\times \underbrace{\binom{n-1}{p-1}}_{\text{choix des autres élèves}}
+\end{align*}
+\underline{Méthode 2 :} \\
+\begin{align*}
+    \underbrace{\binom{n}{p}}_{\text{choix de l'équipe}}\times \underbrace{\binom{p}{1}}_{\text{choix du capitaine}}
+\end{align*}
+On a par double comptage :
+\begin{align*}
+    \binom{n}{1} \binom{n-1}{p-1} &= \binom{n}{p} \binom{p}{1}
+\end{align*}
+Soit : 
+\begin{align*}
+    n\binom{n-1}{p-1} &= p\binom{n}{p}
+\end{align*}
+
 
 \end{document}
