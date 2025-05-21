@@ -226,5 +226,26 @@ Soit :
     n\binom{n-1}{p-1} &= p\binom{n}{p}
 \end{align*}
 
+\setsection{52}
+\section{Exemple : formule de Pascal}
+\begin{tcolorbox}[title=Exemple 31.53, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Pour tout $n\in \mathbb{N}^*, p\in \mathbb{N}^*$ avec $p\leq n$, on a : 
+    \begin{align*}
+        \binom{n}{p-1} + \binom{n}{p} &= \binom{n+1}{p}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Pour construire une partie à $p$ éléments, on peut commencer par fixer un élément quelconque $e\in E$. Puis : 
+\begin{itemize}
+    \item constuire une partie contenant $e$ : $\binom{n}{p-1}$ possibilités.
+    \item construrie une partie qui ne contient pas $e$ : $\binom{n}{p}$ possibilités.
+\end{itemize}
+Par double comptage : 
+\begin{align*}
+    \binom{n}{p-1} + \binom{n}{p} &= \binom{n+1}{p}
+\end{align*}
+
+
+
 
 \end{document}
