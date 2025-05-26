@@ -4,6 +4,24 @@
 \setcounter{chapter}{31}
 \chapter{Espaces probabilisés finis}
 \tableofcontents
-\clearpage
+\newpage
+
+\setsection{18}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.19, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Une urne contient $3$ boules blanches et $5$ boules noires. On en tire simultanément $4$ boules. Avec quelle probabilité n'a-t-on tiré que des boules noires ?
+\end{tcolorbox}
+
+\noindent Sans perte de généralité, on peut numéroter les boules de $1$ à $8$, les $3$ premières boules sont blanches et les $5$ suivantes noires. \\
+On note $X$ la variable alétoire donnant la $4$-combinaison des boules obtenues. \\
+$$X\hookrightarrow \mathcal{U}(P_4 \llbracket 1, 8 \rrbracket)$$
+En notant $A$ "on ne tire que des boules noires", on a :
+\begin{align*}
+    A &= (X\in P_4 \llbracket 4, 8 \rrbracket) \\
+    P(A) &= P(X\in P_4 \llbracket 4, 8 \rrbracket) \\
+    &= \frac{|P_4 \llbracket 4, 8 \rrbracket|}{|P_4 \llbracket 1, 8 \rrbracket|} \\
+    &= \frac{\binom{5}{4}}{\binom{8}{4}}
+\end{align*}
+
 
 \end{document}
