@@ -23,5 +23,24 @@ En notant $A$ "on ne tire que des boules noires", on a :
     &= \frac{\binom{5}{4}}{\binom{8}{4}}
 \end{align*}
 
+\setsection{24}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.25, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On choisit un entier $X$ au hasard entre $-3$ et $3$. Quelle est la loi de la variable $X^2 + 1$ ?
+\end{tcolorbox}
+$$X\hookrightarrow \mathcal{U}(\llbracket -3, 3 \rrbracket)$$
+$$(X^2 + 1)(\omega) = \{ 1, 2, 5, 10 \}$$
+Et : 
+\begin{align*}
+    P(X^2 + 1 = 1) &= P(X = 0) \\
+    &= \frac{1}{7} \\
+    P(X^2 + 1 = 2) &= P(X = -1) + P(X = 1) \\
+    &= \frac{2}{7} \\
+    P(X^2 + 1 = 5) &= P(X = -2) + P(X = 2) \\
+    &= \frac{2}{7} \\
+    P(X^2 + 1 = 10) &= P(X = -3) + P(X = 3) \\
+    &= \frac{2}{7}
+\end{align*}
+
 
 \end{document}
