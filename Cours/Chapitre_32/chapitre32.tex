@@ -69,5 +69,27 @@ Et :
 \end{align*}
 On applique (32.12) pour avoir l'existence de $P$. 
 
+\setsection{29}
+\section{Probabilité conditionnelle}
+\begin{tcolorbox}[title=Théorème 32.30, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit ( $\Omega, P$ ) un espace probabilisé fini et $B \in \mathcal{P}(\Omega)$ pour lequel $P(B)>0$. Pour tout $A \in \mathcal{P}(\Omega)$, le réel
+    $$
+    P(A \mid B)=P_B(A)=\frac{P(A \cap B)}{P(B)}
+    $$
+    est appelé la probabilité conditionnelle de $A$ sachant $B$. L'application $P_B$ est alors une probabilité sur $\Omega$, appelée sa probabilité conditionnelle sachant $B$.
+\end{tcolorbox}
+
+\begin{itemize}
+    \item \begin{align*}
+        P_B(\Omega) = \frac{P(\Omega \cap B)}{P(B)} = \frac{P(B)}{P(B)} = 1
+    \end{align*}
+    \item \begin{align*}
+        P_B(A\sqcup C) &= \frac{P(B \cap (A \sqcup C))}{P(B)} \\
+        &= \frac{P(B\cap A)\sqcup (B\cap C))}{P(B)} \\
+        &= \frac{P(B\cap A)}{P(B)} + \frac{P(B\cap C)}{P(B)} \\
+        &= P_B(A) + P_B(C)
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
