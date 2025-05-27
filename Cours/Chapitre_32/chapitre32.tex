@@ -140,5 +140,30 @@ D'après la formule des probabilités totales :
     \end{align*}
 \end{enumerate}
 
+\setsection{34}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.35, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Juge au tribunal, je dois juger de la culpabilité d'une compagnie de taxis bleus. Un soir de brouillard, un taxi a percuté un piéton qui traversait la rue dans son bon droit, puis a pris la fuite. Un témoin affirme que le taxi était bien bleu et c'est sur la base de ce témoignage que le procès a été instruit. Or dans la ville, deux compagnies de taxis se partagent le marché. La compagnie des taxis bleus et la compagnie des taxis verts. Toutefois, les taxis vert dominent le marché au sens où $90 \%$ des taxis dans la ville sont verts.
+    On demande au témoin d'effectuer des tests de reconnaissance des couleurs pour mesurer la fiabilité de son témoignage. Il s'avère qu'il est fiable dans $90 \%$ des cas pour la couleur bleue et $80 \%$ des cas pour la couleur verte. Dois-je condamner ou non la compagnie des taxis bleus ?
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On note $B$ : "le taxi coupable est bleu"
+    \item On note $T_B$ : "le témoin pense que le taxi coupable est bleu"
+\end{itemize}
+On souhaite calculer $P(B \mid T_B)$. 
+\begin{itemize}
+    \item $P(B) = 0.1$
+    \item $P(T_B \mid B) = 0.9$
+    \item $P(\overline{T_B} \mid \overline{B}) = 0.8$
+\end{itemize}
+On a : 
+\begin{align*}
+    P(B\mid T_B) &= \frac{P(T_B \mid B)\times P(B)}{P(T_B\mid B)P(B) + P(T_B \mid \overline{B})P(\overline{B})} \\
+    &= \frac{0.9 \times 0.1}{0.9 \times 0.1 + (1 - 0.8) \times 0.9} \\
+    &= \frac{9}{9 + 2\times 9} \\
+    &= \frac{1}{3}
+\end{align*}
+
 
 \end{document}
