@@ -120,5 +120,25 @@ D'après la formule des probabilités totales :
     &= \frac{14}{39} \times \frac{3}{8} + \frac{15}{39} \times \frac{5}{8}
 \end{align*}
 
+\section{Formule de Bayes}
+\begin{tcolorbox}[title=Théorème 32.33, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $(\Omega, P)$ un espace probabilisé fini et $B \in \mathcal{P}(\Omega)$ pour lequel $P(B)>0$.
+    \begin{enumerate}
+        \item Pour tout $A \in \mathcal{P}(\Omega)$, si $P(A)>0$, alors
+        $$P_B(A)=\frac{P_A(B) P(A)}{P(B)}$$
+        \item Soit $\left\{A_1, \ldots, A_n\right\}$ un système complet d'événements de $\Omega$ de probabilités strictement positives. Alors
+        $$\forall j \in \llbracket 1, n \rrbracket, P_B\left(A_j\right)=\frac{P_{A_j}(B) P\left(A_j\right)}{\sum\limits_{i=1} P_{A_i}(B) P\left(A_i\right)}$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{align*}
+        P(A)P(B) = P(A\cap B) = P(B) P(A \mid B)
+    \end{align*}
+    \item \begin{align*}
+        P(A_j \mid B) &= \frac{P(A_j)P(B\mid A_j)}{\sum\limits_{i=1} P(A_i)P(B\mid A_i)} \text{ (probas totales)}
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
