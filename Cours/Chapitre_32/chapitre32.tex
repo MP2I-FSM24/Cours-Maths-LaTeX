@@ -165,5 +165,19 @@ On a :
     &= \frac{1}{3}
 \end{align*}
 
+\setsection{36}
+\section{Formule des probabilités composées}
+\begin{tcolorbox}[title=Théorème 32.37, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $(\Omega, P)$ un espace probabilisé fini et $(A_1, \ldots, A_n)\in \mathcal{P}(\Omega)^n$ pour lesquels $P(A_1\cap\cdots\cap A_{n-1})>0$, alors : 
+    \begin{align*}
+        P(A_1 \cap \cdots \cap A_n) &= P(A_1)\times P_{A_1}(A_2)\times \cdots \times P_{A_1\cap\cdots\cap A_{n-1}}(A_n)
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \prod_{i=1}^{n} P(A_k\mid A_1\ldots A_{k-1}) &= \prod_{k=1}^{n} \frac{P(A_1 \cap \cdots \cap A_{k-1}\cap A_k)}{p(A_1\cap \cdots\cap A_{k-1})} \\
+    &= P(A_1\cap \cdots \cap A_n)
+\end{align*}
+
 
 \end{document}
