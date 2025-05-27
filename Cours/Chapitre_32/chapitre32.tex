@@ -91,5 +91,21 @@ On applique (32.12) pour avoir l'existence de $P$.
     \end{align*}
 \end{itemize}
 
+\section{Formule des probabilités totales}
+\begin{tcolorbox}[title=Théorème 32.31, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit ( $\Omega, P$ ) un espace probabilisé fini et $\left\{A_1, \ldots, A_n\right\}$ un système complet d'événements de $\Omega$ de probabilités strictement positives. Alors, pour tout $B \in \mathcal{P}(\Omega)$ :
+    $$P(B)=\sum_{i=1}^n P_{A_i}(B) P\left(A_i\right)$$
+\end{tcolorbox}
+
+\noindent Soit $B\in P(\Omega)$. On a : 
+\begin{align*}
+    P(B) &= P(B\cap \Omega) \\
+    &= P(B\cap \bigsqcup_{i=1}^{n} A_i) \\
+    &= P(\bigsqcup_{i=1}^{n} (B\cap A_i)) \\
+    &= \sum_{i=1}^{n} P(B\cap A_i) \\
+    &= \sum_{i=1}^{n} P(B \mid A_i)P(A_i)
+\end{align*}
+Avec $P(A_i) > 0$ pour définir les probabilités conditionnelles. 
+
 
 \end{document}
