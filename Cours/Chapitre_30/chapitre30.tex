@@ -819,5 +819,33 @@ Donc $\alpha = \frac{a}{a-b}$ et $\beta = \frac{b}{b-a}$.
     La formule reste vraie si les $x_i$ ne sont pas tous distincts. 
 \end{itemize}
 
+\section*{Notion d'orientation}
+\noindent Notons $P$ l'ensemble des bases de $E$ (ev de dimension $n$).
+
+\begin{tcolorbox}[title=Définition, title filled=false, colframe=lightpurple, colback=lightpurple!10!white]
+    \begin{align*}
+        (B, B') \in P^2, B\sim B' \equiv \operatorname{det}_{B}(B') > 0
+    \end{align*}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item $\operatorname{det}_{B}(B) = 1, B\sim B$
+    \item Si $B\sim B'$, $\operatorname{det}_{B}(B') > 0$. 
+    Or $\operatorname{det}_{B'}(B) = \frac{1}{\operatorname{det}_{B}(B')}$. \\
+    Donc $B'\sim B$. 
+    \item Si $B\sim B'$ et $B'\sim B''$, alors :
+    $\operatorname{det}_{B}(B') > 0$ et $\operatorname{det}_{B'}(B'') > 0$. \\
+    Donc $\operatorname{det}_{B}(B') \operatorname{det}_{B'}(B'') = \operatorname{det}_B(B'') > 0$. \\
+    Donc $B\sim B''$. 
+\end{itemize}
+$\sim$ est une relation d'équivalence. \\
+$\boxed{|P\slash\sim| = 2}$ 
+\begin{center}
+    \begin{tikzpicture}
+        \filldraw[color=black!50, fill=white!50, very thick] (2.5,0) ellipse (2.5 and 1.5) node[anchor=west, align=center]{base canonique\\bases directes} node[anchor=east]{bases indirectes};
+        \draw[black, thick] (2.5,1.5) -- (2.5,-1.5);
+    \end{tikzpicture}
+\end{center}
+
 
 \end{document}
