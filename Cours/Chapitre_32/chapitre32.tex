@@ -107,5 +107,18 @@ On applique (32.12) pour avoir l'existence de $P$.
 \end{align*}
 Avec $P(A_i) > 0$ pour définir les probabilités conditionnelles. 
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.32, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Dans une classe de 40 étudiants (25 filles et 15 garçons), le professeur principal se propose de désigner brutalement deux délégués provisoires. Il prend une liste de la classe, ferme les yeux et pointe au hasard un premier nom avec la pointe du stylo puis de même avec un deuxième. Avec quelle probabilité le deuxième nom tiré est celui d'un garçon ?
+\end{tcolorbox}
+
+\noindent On note $G_i$ : "le $i$-ème nom tiré est celui d'un garçon". \\
+$\{ G_1, \overline{G_1} \}$ forme un système complet d'évènements de probabilités strictement positives. \\
+D'après la formule des probabilités totales : 
+\begin{align*}
+    P(G_2) &= P(G_2 \mid G_1) \times P(G_1) + P(G_2 \mid \overline{G_1}) \times P(\overline{G_1}) \\
+    &= \frac{14}{39} \times \frac{3}{8} + \frac{15}{39} \times \frac{5}{8}
+\end{align*}
+
 
 \end{document}
