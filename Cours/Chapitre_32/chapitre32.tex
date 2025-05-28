@@ -199,5 +199,22 @@ On a :
     Donc $A$ et $\overline{B}$ sont indépendants. 
 \end{itemize}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.44, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Le concept d'indépendance va maintenant nous permettre de définir une loi usuelle très importante en pratique : la loi binomiale. Intéressons-nous pour cela à la répétition $n$ fois indépendamment d'une expérience aléatoire à deux issues, disons « favorable » et « défavorable >> de probabilité $p$ pour la première. Quelle est la loi du nombre $X$ d'issues favorables?
+\end{tcolorbox}
+
+\noindent $X(\Omega) = \llbracket 0, n \rrbracket$ \\
+Pour tout $i\in \llbracket 1, n \rrbracket, F_i$ : "la $i$-ème issue est favorable". \\
+Soit $k\in \llbracket 0, n \rrbracket$. \\
+\begin{align*}
+    (X = k) &= \bigsqcup_{I\in P_k (\llbracket 1, n \rrbracket)} \left( \bigcap_{i\in I} F_i \bigcap_{i\not\in I} \overline{F_i} \right) \\
+    P(X = k) &= \sum_{I\in P_k(\llbracket 1, n \rrbracket)} P\left(\bigcap_{i\in I} F_i  \cap \bigcap_{i\not\in I} \overline{F_i}\right) \\
+    &= \sum_{I\in P_k(\llbracket 1, n \rrbracket)} \prod_{i\in I}{P(F_i)} \prod_{i\not\in I}{P(\overline{F_i})} \text{ (indépendance)} \\
+    &= \sum_{I\in P_k(\llbracket 1, n \rrbracket)} p^{|I|} (1-p)^{n - |I|} \\
+    &= p^k (1-p)^{n-k} |P_k(\llbracket 1, n \rrbracket)| \\
+    &= \binom{n}{k} p^k (1-p)^{n-k}
+\end{align*}
+
 
 \end{document}
