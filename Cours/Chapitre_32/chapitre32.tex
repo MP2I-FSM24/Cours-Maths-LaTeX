@@ -179,5 +179,25 @@ On a :
     &= P(A_1\cap \cdots \cap A_n)
 \end{align*}
 
+\setsection{42}
+\section{Indépendance et complémentarité}
+\begin{tcolorbox}[title=Théorème 32.43, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $(\Omega, P)$ un espace probabilisé fini et $A_1, \ldots, A_n\in \mathcal{P}(\Omega)$. Si $A_1, \ldots, A_n$ sont indépendants, les évènements $A_1^0, \ldots, A_n^0$ le sont aussi, pour tout $A_1^0\in \{A_1, \overline{A_1}\}, \ldots, A_n^0\in \{A_n, \overline{A_n}\}$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On s'occupe du cas $n=2$. \\
+    On généralise ensuite par récurrence. 
+    \item Soit $A, B$ deux évènements indépendants. \\
+    \begin{align*}
+        P(A\cap \overline{B}) &= P(A\setminus B) \\
+        &= P(A) - P(A\cap B) \\
+        &= P(A) - P(A)P(B) \\
+        &= P(A)(1 - P(B)) \\
+        &= P(A)P(\overline{B})
+    \end{align*}
+    Donc $A$ et $\overline{B}$ sont indépendants. 
+\end{itemize}
+
 
 \end{document}
