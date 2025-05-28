@@ -269,5 +269,28 @@ $(X_1\times \cdots \times X_n)(\Omega) = P(X_1 = 1 \text{ et } \cdots \text{ et 
     &= \prod_{k=1}^{n} p_k
 \end{align*}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.54, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Un jeu de $32$ cartes a été malicieusement truqué. On y a remplacé une autre carte que l'as de pique par un deuxième as de pique. On répète $n$ fois avec remise l'expérience consistant à tirer $4$ cartes. À partir de quelle valeur de $n$ la probabilité de déceler la supercherie est-elle supérieure ou égale à $0.9$ ?
+\end{tcolorbox}
+
+\noindent Soit $X$ la variable aléatoire donnant la $4$-combinaison de cartes. On peut numéroter les cartes de $1$ à $32$, où $1$ et $2$ sont les as de pique. \\
+$X\hookrightarrow \mathcal{U}(P_4 \llbracket 1, 32 \rrbracket)$. \\
+On a :
+\begin{align*}
+    P(\{ 1, 2 \}\subset X) &= \frac{\binom{32}{2}}{\binom{32}{4}} \\
+    &= \frac{29\times 30}{2} \times \frac{4!28!}{32!} \\
+    &= \frac{3}{248}
+\end{align*}
+Sur $n$ tirages successifs. La probabilité $p$ de déceler la supercherie est : 
+\begin{align*}
+    p = 1 - \left(\frac{245}{248}\right)^n
+\end{align*}
+On a alors : 
+\begin{align*}
+    p \geq 0.9 &\Leftrightarrow \left(\frac{245}{248}\right)^n \leq 0.1 \\
+    &\Leftrightarrow n \geq \frac{\ln 0.1}{\ln 245 - \ln 248}
+\end{align*}
+
 
 \end{document}
