@@ -255,5 +255,19 @@ $X\hookrightarrow \mathcal{B}(5, \frac{4}{6})$.
     &= \frac{1}{4}
 \end{align*}
 
+\setsection{52}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple , title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $\left(p_1, \ldots, p_n\right) \in[0 ; 1]^n$ et $X_1, \ldots, X_n$ des variables aléatoires indépendantes de lois respectives $\mathcal{B}\left(p_1\right), \ldots, \mathcal{B}\left(p_n\right)$, alors $X_1 \times \cdots \times X_n \hookrightarrow \mathcal{B}\left(p_1 \times \cdots \times p_n\right)$.
+\end{tcolorbox}
+
+\noindent $X_i\hookrightarrow \mathbb{B}(p_i) : P(X_i = 1) = p_i$ ($P(X_i = 0) = 1 - p_i$). \\
+$(X_1\times \cdots \times X_n)(\Omega) = P(X_1 = 1 \text{ et } \cdots \text{ et } X_n = 1)$. 
+\begin{align*}
+    P(X_1\cdots X_n = 1) &= P(X_1 = 1 \text{ et } \cdots \text{ et } X_n = 1) \\
+    &= \prod_{k=1}^{n} ¨(X_k = 1) \\
+    &= \prod_{k=1}^{n} p_k
+\end{align*}
+
 
 \end{document}
