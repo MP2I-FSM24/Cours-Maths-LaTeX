@@ -292,5 +292,19 @@ On a alors :
     &\Leftrightarrow n \geq \frac{\ln 0.1}{\ln 245 - \ln 248}
 \end{align*}
 
+\section{Indépendance des images de variables aléatoires indépendantes par des fonctions}
+\begin{tcolorbox}[title=Théorème 32.55, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit ( $\Omega, P$ ) un espace probabilisé fini, $E$ et $F$ deux ensembles, $X_1, \ldots, X_n$ des variables aléatoires sur $\Omega$ et $f:\left(X_1, \ldots, X_m\right)(\Omega) \rightarrow E$ et $g:\left(X_{m+1}, \ldots, X_n\right)(\Omega) \rightarrow F$ deux fonctions. Si $X_1, \ldots, X_n$ sont indépendantes, alors $f\left(X_1, \ldots, X_m\right)$ et $g\left(X_{m+1}, \ldots, X_n\right)$ le sont aussi. 
+\end{tcolorbox}
+
+\noindent On prouve le théorème dans le cas $X, Y$ indépendantes. \\
+Soit $f:X(\Omega)\to E$ et $g:Y(\Omega)\to F$. \\
+Soit $a\in f \circ X(\Omega)$ et $b\in g \circ Y(\Omega)$. 
+\begin{align*}
+    P(f\circ X = a \text{ et } g\circ Y = b) &= P(X\in f^{-1}(\{a\})) \text{ et } Y\in g^{-1}(\{b\})) \\
+    &= P(X\in f^{-1}(\{a\})) \times P(Y\in g^{-1}(\{b\})) \\
+    &= P(f\circ X = a) \times P(g\circ Y = b)
+\end{align*}
+
 
 \end{document}
