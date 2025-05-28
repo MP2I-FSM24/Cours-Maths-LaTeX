@@ -228,5 +228,21 @@ $X\hookrightarrow \mathcal{B}(5, \frac{4}{6})$.
     P(X = 3) &= \binom{5}{3} \left(\frac{2}{3}\right)^3 \left(\frac{1}{3}\right)^2
 \end{align*}
 
+\setsection{49}
+\section{Une propriété des couples de variables aléatoires indépendantes}
+\begin{tcolorbox}[title=Théorème 32.50, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit ( $\Omega, P$ ) un espace probailisé fini et $X$ et $Y$ deux variables aléatoires sur $\Omega$. Si $X$ et $Y$ sont indépendantes, alors pour toute parties $A$ de $X(\Omega)$ et $B$ de $Y(\Omega)$, les événements $(X \in A)$ et $(Y \in B)$ sont indépendantes, i.e. :
+    $$P(X \in A \text { et } Y \in B)=P(X \in A) \times P(Y \in B)$$
+\end{tcolorbox}
+
+\noindent $A = \{ a_1, \ldots, a_n \}, B = \{ b_1, \ldots, b_m \}$.
+\begin{align*}
+    P(X\in A \text{ et } Y\in B) &= P \left( \bigsqcup_{1\leq i\leq n, 1\leq j\leq p} (X = a_i) \text{ et } (Y = b_j) \right) \\
+    &= \sum_{1\leq i\leq n, 1\leq j\leq p} P(X = a_i \text{ et } Y = b_j) \\
+    &= \sum_{1\leq i\leq n, 1\leq j\leq p} P(X = a_i) P(Y = b_j) \\
+    &= \sum_{1\leq i\leq n} P(X = a_i) \sum_{1\leq j\leq p} P(Y = b_j) \\
+    &= P(X \in A) P(Y \in B)
+\end{align*}
+
 
 \end{document}
