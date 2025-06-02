@@ -324,5 +324,44 @@ Donc :
     P(X = x) &= \sum_{y\in Y(\Omega)} P(X = x \text{ et } Y = y)
 \end{align*}
 
+\setsection{62}
+\section{Loi uniforme et produit cartésien}
+\begin{tcolorbox}[title=Théorème 32.63, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ et $F$ deux ensembles finis et $X$ et $Y$ deux variables aléatoires définies sur un même espace probabilisé fini. Les assertions suivantes sont équivalentes :
+    \begin{enumerate}
+        \item $(X, Y) \hookrightarrow \mathcal{U}(E \times F)$;
+        \item $X$ et $Y$ sont indépendantes et $X \hookrightarrow \mathcal{U}(E)$ et $Y \hookrightarrow \mathcal{U}(F)$.
+    \end{enumerate}
+Cet énoncé se généralise sans difficulté au cas d'un nombre fini de variables aléatoires.
+\end{tcolorbox}
+
+$\boxed{1\Rightarrow 2}$ \\
+On suppose que $(X, Y) \hookrightarrow \mathcal{U}(E \times F)$. \\
+Soit $x\in X(\Omega)$. 
+\begin{align*}
+    P(X = x) &= \sum_{y\in Y(\Omega)} P(X = x \text{ et } Y = y) \text{ (32.61)} \\
+    &= \sum_{y\in Y(\Omega)} \frac{1}{|E\times F|} \\
+    &= |F| \times \frac{1}{|E\times F|} \\
+    &= \frac{1}{|E|}
+\end{align*}
+Donc $X \hookrightarrow \mathcal{U}(E)$. \\
+De la même manière, $Y \hookrightarrow \mathcal{U}(F)$. \\
+Comme : 
+\begin{align*}
+    \forall (x, y)\in E\times F, P(X = x \text{ et } Y = y) &= \frac{1}{|E\times F|} \\
+    &= \frac{1}{|E|} \times \frac{1}{|F|} \\
+    &= P(X = x) \times P(Y = y)
+\end{align*}
+Donc $X$ et $Y$ sont indépendantes. \\
+
+$\boxed{2\Rightarrow 1}$ \\
+Soit $(x, y)\in E\times F$. 
+\begin{align*}
+    P(X = x \text{ et } Y = y) &= P(X = x) \times P(Y = y) \text{ (indépendance)} \\
+    &= \frac{1}{|E|} \times \frac{1}{|F|} \\
+    &= \frac{1}{|E\times F|}
+\end{align*}
+Donc $(X, Y) \hookrightarrow \mathcal{U}(E\times F)$.
+
 
 \end{document}
