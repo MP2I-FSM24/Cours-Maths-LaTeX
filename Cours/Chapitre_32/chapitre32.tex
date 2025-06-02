@@ -306,5 +306,23 @@ Soit $a\in f \circ X(\Omega)$ et $b\in g \circ Y(\Omega)$.
     &= P(f\circ X = a) \times P(g\circ Y = b)
 \end{align*}
 
+\setsection{60}
+\section{Calcul des lois marginales à partir de la loi conjointe}
+\begin{tcolorbox}[title=Théorème 32.61, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ et $Y$ deux variables aléatoires sur $\Omega$. La loi conjointe $P_{(X, Y)}$ du couple ( $X, Y$ ) détermine entièrement ses lois marginales $P_X$ et $P_Y$. Plus précisément, pour tout $x \in X(\Omega)$
+    $$P(X=x)=\sum_{y \in Y(\Omega)} P(X=x \text { et } Y=y)$$
+    et pour tout $y \in Y(\Omega)$,
+    $$P(Y=y)=\sum_{x \in X(\Omega)} P(X=x \text { et } Y=y)$$
+\end{tcolorbox}
+
+\noindent Soit $x\in X(\Omega)$. On a :
+\begin{align*}
+    (X = x) &= \bigsqcup_{y\in Y(\Omega)} (X = x \text{ et } Y = y) \\
+\end{align*}
+Donc : 
+\begin{align*}
+    P(X = x) &= \sum_{y\in Y(\Omega)} P(X = x \text{ et } Y = y)
+\end{align*}
+
 
 \end{document}
