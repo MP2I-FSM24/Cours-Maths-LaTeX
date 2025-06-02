@@ -391,5 +391,33 @@ Soit $j\in \llbracket 1, 6 \rrbracket$.
 \end{align*}
 etc.
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.67, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Dans un centre d'appel, un employé effectue $n$ appels téléphoniques vers $n$ correspondants distincts dont chacun décroche avec une probabilité $p$. 
+    \begin{itemize}
+        \item On note $N_1$ le nombre de correspondants qui ont décroché. Quelle est donc la loi de $N_1$ ? Réponse sans calcul : $N_1 \hookrightarrow \mathcal{B}(n, p)$ car les appels sont indépendants et la probabilité d'obtenir un correspondant ne dépend pas du correspondant choisi.
+        \item L'employé rappelle un peu plus tard les $n-N_1$ correspondants qui n'ont pas décroché lors de sa première série d'appels. On note $N_2$ le nombre de ces correspondants qui décrochent cette fois et $N$ le nombre total des correspondants qui ont décroché. Quelle est la loi de $N$ ?
+    \end{itemize}
+\end{tcolorbox}
+
+\noindent $N_1 \hookrightarrow \mathcal{B}(n, p)$. \\
+$(N_2\mid N_1 = k) \hookrightarrow \mathcal{B}(n-k, p)$. \\
+$N(\Omega) = \llbracket 0, n \rrbracket$. \\
+Soit $i\in \llbracket 0, n \rrbracket$.
+\begin{align*}
+    P(N = i) &= \sum_{k=0}^{n} P(N_2 = i \mid N_1 = k)P(N_1 = k) \\
+    &= \sum_{k=0}^{i} P(N_2 = i - k \text{ et } N_1 = k) \\
+    &= \sum_{k=0}^{i} P(N_2 = i - k \mid N_1 = k)P(N_1 = k) \\
+    &= \sum_{k=0}^{i} \binom{n-k}{i-k} p^{i-k} (1-p)^{n-i} \times \binom{n}{k} p^k (1-p)^{n-k} \\
+    &= \sum_{k=0}^{i} \binom{n-k}{i-k} \binom{n}{k} p^i (1-p)^{2n-i-k} \\
+    &= \sum_{k=0}^{i} \frac{(n-k)!}{(n-i)!(i-k)!} \frac{n!i!}{k!(n-k)!i!} p^i (1-p)^{2n-i-k} \\
+    &= \sum_{k=0}^{i} \binom{i}{k}\binom{n}{i} p^i (1-p)^{2n-i-k} \\
+    &= \binom{n}{i} p^i (1-p)^{2i} \sum_{k=0}^{n} \binom{i}{k} \left(\frac{1}{1-p}\right)^k \\
+    &= \binom{n}{i} p^i (1-p)^{2n-i} \left(1 + \frac{p}{1-p}\right)^i \\
+    &= \binom{n}{i} \frac{p^i (i-p)^{2n-1}(2-p)^i}{(1-p)^{i}} \\
+    &= \binom{n}{i} (p^2 + 2p)^i (1 - 2p + p^2)^{n-i}
+\end{align*}
+$N\hookrightarrow \mathcal{B}(n, 2p-p^2)$.
+
 
 \end{document}
