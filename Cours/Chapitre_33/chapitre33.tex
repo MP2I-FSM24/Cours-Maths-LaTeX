@@ -173,5 +173,40 @@
     &= E(XY)
 \end{align*}
 
+\setsection{12}
+\section{Propriétés de la variance}
+\begin{tcolorbox}[title=Propostion 33.13, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $X$ une variable aléatoire réelle.
+    \begin{enumerate}
+        \item $\mathrm{V}(X)=\mathrm{E}\left(X^2\right)-\mathrm{E}(X)^2$.
+        \item $\mathrm{V}(X)=0 \Leftrightarrow P(X=\mathrm{E}(X))=1$. On dit dans ce cas que $X$ est presque sûrement constante.
+        \item Pour tout $(a, b) \in \mathbb{R}^2$, on a
+        $$\mathrm{V}(a x+b)=a^2 \mathrm{~V}(X)$$
+    \end{enumerate}
+    En particulier, si $\sigma(X)>0$, la variable $\frac{X-\mathrm{E}(X)}{\sigma(X)}$ est centrée réduite.
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{align*}
+        V(X) &= E((X - E(X))^2) \\
+        &= E(X^2 - 2X E(X) + E(X)^2) \\
+        &= E(X^2) - 2E(X)E(X) + E(X)^2 \\
+        &= E(X^2) - E(X)^2
+    \end{align*}
+
+    \item \begin{align*}
+        V(X) = 0 &\Leftrightarrow E((X - E(X))^2) = 0 \\
+        \text{(fonction de transfert)\quad}&\Leftrightarrow \sum_{x\in X(\Omega)} P(X=x) (x - E(X))^2 = 0 \\
+        &\Leftrightarrow \forall x\in X(\Omega)\setminus \{E(X)\}, P(X=x) = 0 \\
+        &= P(X = E(X)) = 1
+    \end{align*}
+
+    \item \begin{align*}
+        V(aX + b) &= E((aX + b - E(aX + b))^2) \\
+        &= E(a^2(X-E(X))) \text{ (linéarité)} \\
+        &= a^2 V(X) \text{ (linéarité)}
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
