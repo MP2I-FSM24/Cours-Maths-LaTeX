@@ -208,5 +208,43 @@
     \end{align*}
 \end{enumerate}
 
+\setsection{14}
+\section{Propriétés de la covariance}
+\begin{tcolorbox}[title=Propostion 33.15, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    On a :
+    \begin{enumerate}
+        \item $\mathrm{V}(X)=\operatorname{cov}(X, X)$ et $\operatorname{cov}(X, Y)=\operatorname{cov}(Y, X)$.
+        \item $\operatorname{cov}(X, Y)=\mathrm{E}(X Y)-\mathrm{E}(X) \mathrm{E}(Y)$
+        \item $\mathrm{V}(X+Y)=\mathrm{V}(X)+2 \cdot \operatorname{cov}(X, Y)+\mathrm{V}(Y)$.
+        \item Si $X$ et $Y$ sont indépendantes, alors $\operatorname{cov}(X, Y)=0$ et $\mathrm{V}(X+Y)=\mathrm{V}(X)+\mathrm{V}(Y)$.
+    \end{enumerate}
+    Les assertions 3 et 4 se généralisent au cas de variables aléatoires réelles $X_1, \ldots, X_n$ sur $\Omega$. Dans ce cas :
+    $$\mathrm{V}\left(\sum_{i=1}^n X_i\right)=\sum_{i=1}^n \mathrm{~V}\left(X_i\right)+2 \sum_{1 \leq i<j \leq n} \operatorname{cov}\left(X_i, X_j\right)$$
+    Si $X_1, \ldots, X_n$ sont (seulement) deux à deux indépendantes, alors
+    $$\mathrm{V}\left(\sum_{i=1}^n X_i\right)=\sum_{i=1}^n \mathrm{~V}\left(X_i\right)$$
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item RAF
+    \item \begin{align*}
+        \operatorname{cov}(X, Y) &= E((X - E(X))(Y - E(Y))) \\
+        &= E(XY - E(X)Y - E(Y)X + E(X) E(Y)) \\
+        &= E(XY) - E(X)E(Y)
+    \end{align*}
+    \item \begin{align*}
+        V(X+Y) &= E((X + Y - E(X + Y))^2) \\
+        &= E((X - E(X)) + (Y - E(Y)))^2 \\
+        &= V(X) + 2 \operatorname{cov}(X, Y) + V(Y)
+    \end{align*}
+    \item On suppose que $X$ et $Y$ sont indépendantes, donc :
+    \begin{align*}
+        E(XY) &= E(X)E(Y)
+    \end{align*}
+    Puis, par (2) :
+    \begin{align*}
+        \operatorname{cov}(X, Y) &= 0
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
