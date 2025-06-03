@@ -4,6 +4,475 @@
 \setcounter{chapter}{31}
 \chapter{Espaces probabilisés finis}
 \tableofcontents
-\clearpage
+\newpage
+
+\setsection{18}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.19, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Une urne contient $3$ boules blanches et $5$ boules noires. On en tire simultanément $4$ boules. Avec quelle probabilité n'a-t-on tiré que des boules noires ?
+\end{tcolorbox}
+
+\noindent Sans perte de généralité, on peut numéroter les boules de $1$ à $8$, les $3$ premières boules sont blanches et les $5$ suivantes noires. \\
+On note $X$ la variable alétoire donnant la $4$-combinaison des boules obtenues. \\
+$$X\hookrightarrow \mathcal{U}(P_4 \llbracket 1, 8 \rrbracket)$$
+En notant $A$ "on ne tire que des boules noires", on a :
+\begin{align*}
+    A &= (X\in P_4 \llbracket 4, 8 \rrbracket) \\
+    P(A) &= P(X\in P_4 \llbracket 4, 8 \rrbracket) \\
+    &= \frac{|P_4 \llbracket 4, 8 \rrbracket|}{|P_4 \llbracket 1, 8 \rrbracket|} \\
+    &= \frac{\binom{5}{4}}{\binom{8}{4}}
+\end{align*}
+
+\setsection{24}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.25, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On choisit un entier $X$ au hasard entre $-3$ et $3$. Quelle est la loi de la variable $X^2 + 1$ ?
+\end{tcolorbox}
+$$X\hookrightarrow \mathcal{U}(\llbracket -3, 3 \rrbracket)$$
+$$(X^2 + 1)(\omega) = \{ 1, 2, 5, 10 \}$$
+Et : 
+\begin{align*}
+    P(X^2 + 1 = 1) &= P(X = 0) \\
+    &= \frac{1}{7} \\
+    P(X^2 + 1 = 2) &= P(X = -1) + P(X = 1) \\
+    &= \frac{2}{7} \\
+    P(X^2 + 1 = 5) &= P(X = -2) + P(X = 2) \\
+    &= \frac{2}{7} \\
+    P(X^2 + 1 = 10) &= P(X = -3) + P(X = 3) \\
+    &= \frac{2}{7}
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.26, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On choisit un entier $X$ au hasard entre $1$ et $2n$. Quelle est la loi de $(-1)^X$ ?
+\end{tcolorbox}
+
+\begin{align*}
+    X &\hookrightarrow \mathcal{U}(\llbracket 1, 2n \rrbracket) \\
+    (-1)^X &\hookrightarrow \{-1, 1\} \\
+    P((-1)^X = 1) &= P(X \text{ pair}) \\
+    &= \frac{n}{2n} \\
+    &= \frac{1}{2} \\
+    &= P((-1)^X = -1)
+\end{align*}
+
+\setsection{27}
+\section{Définition implicite d'un espace probabilisé par la donnée d'une loi de variable aléatoire}
+\begin{tcolorbox}[title=Théorème 32.28, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E = \{ x_1, \ldots, x_r \}$ un ensemble et $p_1, \ldots, p_r\in [0, 1]$ des réels pour lesquels $\sum\limits_{i=1}^{r} p_i = 1$. Il existe alors un espace probabilisé ($\Omega, P$) et une variable aléatoire $X$ sur $\Omega$, d'image $E$, pour lesquels pour tout $i\in \llbracket 1, r \rrbracket$ :
+    \begin{align*}
+        P(X = x_i) &= p_i
+    \end{align*}
+\end{tcolorbox}
+\begin{align*}
+    \omega = E \text{ et } X = \operatorname{id}
+\end{align*}
+On applique (32.12) pour avoir l'existence de $P$. 
+
+\setsection{29}
+\section{Probabilité conditionnelle}
+\begin{tcolorbox}[title=Théorème 32.30, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit ( $\Omega, P$ ) un espace probabilisé fini et $B \in \mathcal{P}(\Omega)$ pour lequel $P(B)>0$. Pour tout $A \in \mathcal{P}(\Omega)$, le réel
+    $$
+    P(A \mid B)=P_B(A)=\frac{P(A \cap B)}{P(B)}
+    $$
+    est appelé la probabilité conditionnelle de $A$ sachant $B$. L'application $P_B$ est alors une probabilité sur $\Omega$, appelée sa probabilité conditionnelle sachant $B$.
+\end{tcolorbox}
+
+\begin{itemize}
+    \item \begin{align*}
+        P_B(\Omega) = \frac{P(\Omega \cap B)}{P(B)} = \frac{P(B)}{P(B)} = 1
+    \end{align*}
+    \item \begin{align*}
+        P_B(A\sqcup C) &= \frac{P(B \cap (A \sqcup C))}{P(B)} \\
+        &= \frac{P(B\cap A)\sqcup (B\cap C))}{P(B)} \\
+        &= \frac{P(B\cap A)}{P(B)} + \frac{P(B\cap C)}{P(B)} \\
+        &= P_B(A) + P_B(C)
+    \end{align*}
+\end{itemize}
+
+\section{Formule des probabilités totales}
+\begin{tcolorbox}[title=Théorème 32.31, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit ( $\Omega, P$ ) un espace probabilisé fini et $\left\{A_1, \ldots, A_n\right\}$ un système complet d'événements de $\Omega$ de probabilités strictement positives. Alors, pour tout $B \in \mathcal{P}(\Omega)$ :
+    $$P(B)=\sum_{i=1}^n P_{A_i}(B) P\left(A_i\right)$$
+\end{tcolorbox}
+
+\noindent Soit $B\in P(\Omega)$. On a : 
+\begin{align*}
+    P(B) &= P(B\cap \Omega) \\
+    &= P(B\cap \bigsqcup_{i=1}^{n} A_i) \\
+    &= P(\bigsqcup_{i=1}^{n} (B\cap A_i)) \\
+    &= \sum_{i=1}^{n} P(B\cap A_i) \\
+    &= \sum_{i=1}^{n} P(B \mid A_i)P(A_i)
+\end{align*}
+Avec $P(A_i) > 0$ pour définir les probabilités conditionnelles. 
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.32, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Dans une classe de 40 étudiants (25 filles et 15 garçons), le professeur principal se propose de désigner brutalement deux délégués provisoires. Il prend une liste de la classe, ferme les yeux et pointe au hasard un premier nom avec la pointe du stylo puis de même avec un deuxième. Avec quelle probabilité le deuxième nom tiré est celui d'un garçon ?
+\end{tcolorbox}
+
+\noindent On note $G_i$ : "le $i$-ème nom tiré est celui d'un garçon". \\
+$\{ G_1, \overline{G_1} \}$ forme un système complet d'évènements de probabilités strictement positives. \\
+D'après la formule des probabilités totales : 
+\begin{align*}
+    P(G_2) &= P(G_2 \mid G_1) \times P(G_1) + P(G_2 \mid \overline{G_1}) \times P(\overline{G_1}) \\
+    &= \frac{14}{39} \times \frac{3}{8} + \frac{15}{39} \times \frac{5}{8}
+\end{align*}
+
+\section{Formule de Bayes}
+\begin{tcolorbox}[title=Théorème 32.33, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $(\Omega, P)$ un espace probabilisé fini et $B \in \mathcal{P}(\Omega)$ pour lequel $P(B)>0$.
+    \begin{enumerate}
+        \item Pour tout $A \in \mathcal{P}(\Omega)$, si $P(A)>0$, alors
+        $$P_B(A)=\frac{P_A(B) P(A)}{P(B)}$$
+        \item Soit $\left\{A_1, \ldots, A_n\right\}$ un système complet d'événements de $\Omega$ de probabilités strictement positives. Alors
+        $$\forall j \in \llbracket 1, n \rrbracket, P_B\left(A_j\right)=\frac{P_{A_j}(B) P\left(A_j\right)}{\sum\limits_{i=1} P_{A_i}(B) P\left(A_i\right)}$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{align*}
+        P(A)P(B) = P(A\cap B) = P(B) P(A \mid B)
+    \end{align*}
+    \item \begin{align*}
+        P(A_j \mid B) &= \frac{P(A_j)P(B\mid A_j)}{\sum\limits_{i=1} P(A_i)P(B\mid A_i)} \text{ (probas totales)}
+    \end{align*}
+\end{enumerate}
+
+\setsection{34}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.35, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Juge au tribunal, je dois juger de la culpabilité d'une compagnie de taxis bleus. Un soir de brouillard, un taxi a percuté un piéton qui traversait la rue dans son bon droit, puis a pris la fuite. Un témoin affirme que le taxi était bien bleu et c'est sur la base de ce témoignage que le procès a été instruit. Or dans la ville, deux compagnies de taxis se partagent le marché. La compagnie des taxis bleus et la compagnie des taxis verts. Toutefois, les taxis vert dominent le marché au sens où $90 \%$ des taxis dans la ville sont verts.
+    On demande au témoin d'effectuer des tests de reconnaissance des couleurs pour mesurer la fiabilité de son témoignage. Il s'avère qu'il est fiable dans $90 \%$ des cas pour la couleur bleue et $80 \%$ des cas pour la couleur verte. Dois-je condamner ou non la compagnie des taxis bleus ?
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On note $B$ : "le taxi coupable est bleu"
+    \item On note $T_B$ : "le témoin pense que le taxi coupable est bleu"
+\end{itemize}
+On souhaite calculer $P(B \mid T_B)$. 
+\begin{itemize}
+    \item $P(B) = 0.1$
+    \item $P(T_B \mid B) = 0.9$
+    \item $P(\overline{T_B} \mid \overline{B}) = 0.8$
+\end{itemize}
+On a : 
+\begin{align*}
+    P(B\mid T_B) &= \frac{P(T_B \mid B)\times P(B)}{P(T_B\mid B)P(B) + P(T_B \mid \overline{B})P(\overline{B})} \\
+    &= \frac{0.9 \times 0.1}{0.9 \times 0.1 + (1 - 0.8) \times 0.9} \\
+    &= \frac{9}{9 + 2\times 9} \\
+    &= \frac{1}{3}
+\end{align*}
+
+\setsection{36}
+\section{Formule des probabilités composées}
+\begin{tcolorbox}[title=Théorème 32.37, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $(\Omega, P)$ un espace probabilisé fini et $(A_1, \ldots, A_n)\in \mathcal{P}(\Omega)^n$ pour lesquels $P(A_1\cap\cdots\cap A_{n-1})>0$, alors : 
+    \begin{align*}
+        P(A_1 \cap \cdots \cap A_n) &= P(A_1)\times P_{A_1}(A_2)\times \cdots \times P_{A_1\cap\cdots\cap A_{n-1}}(A_n)
+    \end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \prod_{i=1}^{n} P(A_k\mid A_1\ldots A_{k-1}) &= \prod_{k=1}^{n} \frac{P(A_1 \cap \cdots \cap A_{k-1}\cap A_k)}{p(A_1\cap \cdots\cap A_{k-1})} \\
+    &= P(A_1\cap \cdots \cap A_n)
+\end{align*}
+
+\setsection{42}
+\section{Indépendance et complémentarité}
+\begin{tcolorbox}[title=Théorème 32.43, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $(\Omega, P)$ un espace probabilisé fini et $A_1, \ldots, A_n\in \mathcal{P}(\Omega)$. Si $A_1, \ldots, A_n$ sont indépendants, les évènements $A_1^0, \ldots, A_n^0$ le sont aussi, pour tout $A_1^0\in \{A_1, \overline{A_1}\}, \ldots, A_n^0\in \{A_n, \overline{A_n}\}$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On s'occupe du cas $n=2$. \\
+    On généralise ensuite par récurrence. 
+    \item Soit $A, B$ deux évènements indépendants. \\
+    \begin{align*}
+        P(A\cap \overline{B}) &= P(A\setminus B) \\
+        &= P(A) - P(A\cap B) \\
+        &= P(A) - P(A)P(B) \\
+        &= P(A)(1 - P(B)) \\
+        &= P(A)P(\overline{B})
+    \end{align*}
+    Donc $A$ et $\overline{B}$ sont indépendants. 
+\end{itemize}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.44, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Le concept d'indépendance va maintenant nous permettre de définir une loi usuelle très importante en pratique : la loi binomiale. Intéressons-nous pour cela à la répétition $n$ fois indépendamment d'une expérience aléatoire à deux issues, disons « favorable » et « défavorable >> de probabilité $p$ pour la première. Quelle est la loi du nombre $X$ d'issues favorables?
+\end{tcolorbox}
+
+\noindent $X(\Omega) = \llbracket 0, n \rrbracket$ \\
+Pour tout $i\in \llbracket 1, n \rrbracket, F_i$ : "la $i$-ème issue est favorable". \\
+Soit $k\in \llbracket 0, n \rrbracket$. \\
+\begin{align*}
+    (X = k) &= \bigsqcup_{I\in P_k (\llbracket 1, n \rrbracket)} \left( \bigcap_{i\in I} F_i \bigcap_{i\not\in I} \overline{F_i} \right) \\
+    P(X = k) &= \sum_{I\in P_k(\llbracket 1, n \rrbracket)} P\left(\bigcap_{i\in I} F_i  \cap \bigcap_{i\not\in I} \overline{F_i}\right) \\
+    &= \sum_{I\in P_k(\llbracket 1, n \rrbracket)} \prod_{i\in I}{P(F_i)} \prod_{i\not\in I}{P(\overline{F_i})} \text{ (indépendance)} \\
+    &= \sum_{I\in P_k(\llbracket 1, n \rrbracket)} p^{|I|} (1-p)^{n - |I|} \\
+    &= p^k (1-p)^{n-k} |P_k(\llbracket 1, n \rrbracket)| \\
+    &= \binom{n}{k} p^k (1-p)^{n-k}
+\end{align*}
+
+\setsection{47}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.48, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On lance $5$ fois un dé équilibré à $6$ faces dont $2$ blanches et $4$ noires. Avec quelle probabilité obtient-on exactement $3$ fois une face noire ?
+\end{tcolorbox}
+
+\noindent Soit $X$ le nombre de faces noires obtenues. \\
+$X\hookrightarrow \mathcal{B}(5, \frac{4}{6})$. 
+\begin{align*}
+    P(X = 3) &= \binom{5}{3} \left(\frac{2}{3}\right)^3 \left(\frac{1}{3}\right)^2
+\end{align*}
+
+\setsection{49}
+\section{Une propriété des couples de variables aléatoires indépendantes}
+\begin{tcolorbox}[title=Théorème 32.50, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit ( $\Omega, P$ ) un espace probailisé fini et $X$ et $Y$ deux variables aléatoires sur $\Omega$. Si $X$ et $Y$ sont indépendantes, alors pour toute parties $A$ de $X(\Omega)$ et $B$ de $Y(\Omega)$, les événements $(X \in A)$ et $(Y \in B)$ sont indépendantes, i.e. :
+    $$P(X \in A \text { et } Y \in B)=P(X \in A) \times P(Y \in B)$$
+\end{tcolorbox}
+
+\noindent $A = \{ a_1, \ldots, a_n \}, B = \{ b_1, \ldots, b_m \}$.
+\begin{align*}
+    P(X\in A \text{ et } Y\in B) &= P \left( \bigsqcup_{1\leq i\leq n, 1\leq j\leq p} (X = a_i) \text{ et } (Y = b_j) \right) \\
+    &= \sum_{1\leq i\leq n, 1\leq j\leq p} P(X = a_i \text{ et } Y = b_j) \\
+    &= \sum_{1\leq i\leq n, 1\leq j\leq p} P(X = a_i) P(Y = b_j) \\
+    &= \sum_{1\leq i\leq n} P(X = a_i) \sum_{1\leq j\leq p} P(Y = b_j) \\
+    &= P(X \in A) P(Y \in B)
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.51, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On lance un dé à $6$ faces $2$ fois et on note $X_1$ (resp. $X_2$) la face obtenue au premier (resp. au second) lancer. Avec quelle probabilité obtient-on els deux fois une face impaire ?
+\end{tcolorbox}
+
+\noindent $X_1$ et $X_2$ sont indépendants. \\
+\begin{align*}
+    P(X_1 \text{ et } X_2 \text{ impairs}) &= P(X_1 \text{ impair}) \times P(X_2 \text{ impair}) \\
+    &= \frac{1}{4}
+\end{align*}
+
+\setsection{52}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple , title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $\left(p_1, \ldots, p_n\right) \in[0 ; 1]^n$ et $X_1, \ldots, X_n$ des variables aléatoires indépendantes de lois respectives $\mathcal{B}\left(p_1\right), \ldots, \mathcal{B}\left(p_n\right)$, alors $X_1 \times \cdots \times X_n \hookrightarrow \mathcal{B}\left(p_1 \times \cdots \times p_n\right)$.
+\end{tcolorbox}
+
+\noindent $X_i\hookrightarrow \mathbb{B}(p_i) : P(X_i = 1) = p_i$ ($P(X_i = 0) = 1 - p_i$). \\
+$(X_1\times \cdots \times X_n)(\Omega) = P(X_1 = 1 \text{ et } \cdots \text{ et } X_n = 1)$. 
+\begin{align*}
+    P(X_1\cdots X_n = 1) &= P(X_1 = 1 \text{ et } \cdots \text{ et } X_n = 1) \\
+    &= \prod_{k=1}^{n} ¨(X_k = 1) \\
+    &= \prod_{k=1}^{n} p_k
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.54, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Un jeu de $32$ cartes a été malicieusement truqué. On y a remplacé une autre carte que l'as de pique par un deuxième as de pique. On répète $n$ fois avec remise l'expérience consistant à tirer $4$ cartes. À partir de quelle valeur de $n$ la probabilité de déceler la supercherie est-elle supérieure ou égale à $0.9$ ?
+\end{tcolorbox}
+
+\noindent Soit $X$ la variable aléatoire donnant la $4$-combinaison de cartes. On peut numéroter les cartes de $1$ à $32$, où $1$ et $2$ sont les as de pique. \\
+$X\hookrightarrow \mathcal{U}(P_4 \llbracket 1, 32 \rrbracket)$. \\
+On a :
+\begin{align*}
+    P(\{ 1, 2 \}\subset X) &= \frac{\binom{32}{2}}{\binom{32}{4}} \\
+    &= \frac{29\times 30}{2} \times \frac{4!28!}{32!} \\
+    &= \frac{3}{248}
+\end{align*}
+Sur $n$ tirages successifs. La probabilité $p$ de déceler la supercherie est : 
+\begin{align*}
+    p = 1 - \left(\frac{245}{248}\right)^n
+\end{align*}
+On a alors : 
+\begin{align*}
+    p \geq 0.9 &\Leftrightarrow \left(\frac{245}{248}\right)^n \leq 0.1 \\
+    &\Leftrightarrow n \geq \frac{\ln 0.1}{\ln 245 - \ln 248}
+\end{align*}
+
+\section{Indépendance des images de variables aléatoires indépendantes par des fonctions}
+\begin{tcolorbox}[title=Théorème 32.55, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit ( $\Omega, P$ ) un espace probabilisé fini, $E$ et $F$ deux ensembles, $X_1, \ldots, X_n$ des variables aléatoires sur $\Omega$ et $f:\left(X_1, \ldots, X_m\right)(\Omega) \rightarrow E$ et $g:\left(X_{m+1}, \ldots, X_n\right)(\Omega) \rightarrow F$ deux fonctions. Si $X_1, \ldots, X_n$ sont indépendantes, alors $f\left(X_1, \ldots, X_m\right)$ et $g\left(X_{m+1}, \ldots, X_n\right)$ le sont aussi. 
+\end{tcolorbox}
+
+\noindent On prouve le théorème dans le cas $X, Y$ indépendantes. \\
+Soit $f:X(\Omega)\to E$ et $g:Y(\Omega)\to F$. \\
+Soit $a\in f \circ X(\Omega)$ et $b\in g \circ Y(\Omega)$. 
+\begin{align*}
+    P(f\circ X = a \text{ et } g\circ Y = b) &= P(X\in f^{-1}(\{a\})) \text{ et } Y\in g^{-1}(\{b\})) \\
+    &= P(X\in f^{-1}(\{a\})) \times P(Y\in g^{-1}(\{b\})) \\
+    &= P(f\circ X = a) \times P(g\circ Y = b)
+\end{align*}
+
+\setsection{60}
+\section{Calcul des lois marginales à partir de la loi conjointe}
+\begin{tcolorbox}[title=Théorème 32.61, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ et $Y$ deux variables aléatoires sur $\Omega$. La loi conjointe $P_{(X, Y)}$ du couple ( $X, Y$ ) détermine entièrement ses lois marginales $P_X$ et $P_Y$. Plus précisément, pour tout $x \in X(\Omega)$
+    $$P(X=x)=\sum_{y \in Y(\Omega)} P(X=x \text { et } Y=y)$$
+    et pour tout $y \in Y(\Omega)$,
+    $$P(Y=y)=\sum_{x \in X(\Omega)} P(X=x \text { et } Y=y)$$
+\end{tcolorbox}
+
+\noindent Soit $x\in X(\Omega)$. On a :
+\begin{align*}
+    (X = x) &= \bigsqcup_{y\in Y(\Omega)} (X = x \text{ et } Y = y) \\
+\end{align*}
+Donc : 
+\begin{align*}
+    P(X = x) &= \sum_{y\in Y(\Omega)} P(X = x \text{ et } Y = y)
+\end{align*}
+
+\setsection{62}
+\section{Loi uniforme et produit cartésien}
+\begin{tcolorbox}[title=Théorème 32.63, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ et $F$ deux ensembles finis et $X$ et $Y$ deux variables aléatoires définies sur un même espace probabilisé fini. Les assertions suivantes sont équivalentes :
+    \begin{enumerate}
+        \item $(X, Y) \hookrightarrow \mathcal{U}(E \times F)$;
+        \item $X$ et $Y$ sont indépendantes et $X \hookrightarrow \mathcal{U}(E)$ et $Y \hookrightarrow \mathcal{U}(F)$.
+    \end{enumerate}
+Cet énoncé se généralise sans difficulté au cas d'un nombre fini de variables aléatoires.
+\end{tcolorbox}
+
+$\boxed{1\Rightarrow 2}$ \\
+On suppose que $(X, Y) \hookrightarrow \mathcal{U}(E \times F)$. \\
+Soit $x\in X(\Omega)$. 
+\begin{align*}
+    P(X = x) &= \sum_{y\in Y(\Omega)} P(X = x \text{ et } Y = y) \text{ (32.61)} \\
+    &= \sum_{y\in Y(\Omega)} \frac{1}{|E\times F|} \\
+    &= |F| \times \frac{1}{|E\times F|} \\
+    &= \frac{1}{|E|}
+\end{align*}
+Donc $X \hookrightarrow \mathcal{U}(E)$. \\
+De la même manière, $Y \hookrightarrow \mathcal{U}(F)$. \\
+Comme : 
+\begin{align*}
+    \forall (x, y)\in E\times F, P(X = x \text{ et } Y = y) &= \frac{1}{|E\times F|} \\
+    &= \frac{1}{|E|} \times \frac{1}{|F|} \\
+    &= P(X = x) \times P(Y = y)
+\end{align*}
+Donc $X$ et $Y$ sont indépendantes. \\
+
+$\boxed{2\Rightarrow 1}$ \\
+Soit $(x, y)\in E\times F$. 
+\begin{align*}
+    P(X = x \text{ et } Y = y) &= P(X = x) \times P(Y = y) \text{ (indépendance)} \\
+    &= \frac{1}{|E|} \times \frac{1}{|F|} \\
+    &= \frac{1}{|E\times F|}
+\end{align*}
+Donc $(X, Y) \hookrightarrow \mathcal{U}(E\times F)$.
+
+\setsection{65}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.66, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On lance deux fois un dé équilibré à 6 faces. La valeur obtenue au premier (resp. deuxième) lancer est notée $X_1$ (resp $X_2$ ). Les variables aléatoires $X_1$ et $X_2$ sont deux variables aléatoires indépendantes de loi uniforme sur $\llbracket 1,6 \rrbracket$, mais on pourrait dire de façon équivalente, comme nous l'avons vu plus haut, que le couple ( $X_1, X_2$ ) suit la loi uniforme sur $\llbracket 1,6 \rrbracket^2$. Déterminer la loi de la somme $S=X_1+X_2$, la loi conditionnelle de $X_1$ sachant $(S=4)$ et la loi de l'écart $E=\left|X_1-X_2\right|$.
+\end{tcolorbox}
+
+\noindent $S(\Omega) = \llbracket 2, 12 \rrbracket$. \\
+Soit $i\in \llbracket 2, 12 \rrbracket$. 
+\begin{align*}
+    P(S = i) &= P(X_1 + X_2 = i) \\
+    &= \sum_{k=1}^{i} P(X_1 = k \text{ et } X_2 = i - k) \\
+    &= \sum_{k=1}^{i-1} P(X_1 = k) P(X_2 = i - k) \\
+    &= \sum_{k=\max(1, i-6)}^{\min(i-1, 6)} P(X_1 = k) P(X_2 = i - k) \\
+    &= \min(i-1, 6) - \max(1, i-6)
+\end{align*}
+Soit $j\in \llbracket 1, 6 \rrbracket$. 
+\begin{align*}
+    P(X_1 = 4 \mid S = 4) &= P(X_1 = 5 \mid S = 4) = P(X_1 = 6 \mid S = 4) = 0 \\
+    P(X_1 = j \mid S = 4) &= \frac{P(X_1 = j \text{ et } S = 4)}{P(S = 4)} \\
+    &= \frac{P(X_1 = j \text{ et } X_2 = 4 - j)}{P(S = 4)} \\
+    &= \frac{\frac{1}{36}}{\frac{3-1+1}{36}} \\
+    &= \frac{1}{3} \\
+    E(\Omega) &= \llbracket 0, 5 \rrbracket \\
+    P(E = 0) &= \sum_{k=1}^{n} P(X_1 = X_2 = k) \\
+    &= \frac{1}{6}
+\end{align*}
+etc.
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 32.67, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Dans un centre d'appel, un employé effectue $n$ appels téléphoniques vers $n$ correspondants distincts dont chacun décroche avec une probabilité $p$. 
+    \begin{itemize}
+        \item On note $N_1$ le nombre de correspondants qui ont décroché. Quelle est donc la loi de $N_1$ ? Réponse sans calcul : $N_1 \hookrightarrow \mathcal{B}(n, p)$ car les appels sont indépendants et la probabilité d'obtenir un correspondant ne dépend pas du correspondant choisi.
+        \item L'employé rappelle un peu plus tard les $n-N_1$ correspondants qui n'ont pas décroché lors de sa première série d'appels. On note $N_2$ le nombre de ces correspondants qui décrochent cette fois et $N$ le nombre total des correspondants qui ont décroché. Quelle est la loi de $N$ ?
+    \end{itemize}
+\end{tcolorbox}
+
+\noindent $N_1 \hookrightarrow \mathcal{B}(n, p)$. \\
+$(N_2\mid N_1 = k) \hookrightarrow \mathcal{B}(n-k, p)$. \\
+$N(\Omega) = \llbracket 0, n \rrbracket$. \\
+Soit $i\in \llbracket 0, n \rrbracket$.
+\begin{align*}
+    P(N = i) &= \sum_{k=0}^{n} P(N_2 = i \mid N_1 = k)P(N_1 = k) \\
+    &= \sum_{k=0}^{i} P(N_2 = i - k \text{ et } N_1 = k) \\
+    &= \sum_{k=0}^{i} P(N_2 = i - k \mid N_1 = k)P(N_1 = k) \\
+    &= \sum_{k=0}^{i} \binom{n-k}{i-k} p^{i-k} (1-p)^{n-i} \times \binom{n}{k} p^k (1-p)^{n-k} \\
+    &= \sum_{k=0}^{i} \binom{n-k}{i-k} \binom{n}{k} p^i (1-p)^{2n-i-k} \\
+    &= \sum_{k=0}^{i} \frac{(n-k)!}{(n-i)!(i-k)!} \frac{n!i!}{k!(n-k)!i!} p^i (1-p)^{2n-i-k} \\
+    &= \sum_{k=0}^{i} \binom{i}{k}\binom{n}{i} p^i (1-p)^{2n-i-k} \\
+    &= \binom{n}{i} p^i (1-p)^{2i} \sum_{k=0}^{n} \binom{i}{k} \left(\frac{1}{1-p}\right)^k \\
+    &= \binom{n}{i} p^i (1-p)^{2n-i} \left(1 + \frac{p}{1-p}\right)^i \\
+    &= \binom{n}{i} \frac{p^i (i-p)^{2n-1}(2-p)^i}{(1-p)^{i}} \\
+    &= \binom{n}{i} (p^2 + 2p)^i (1 - 2p + p^2)^{n-i}
+\end{align*}
+$N\hookrightarrow \mathcal{B}(n, 2p-p^2)$.
+
+\section{Somme de variables aléatoires indépendantes de lois binomiales}
+\begin{tcolorbox}[title=Théorème 32.68, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $p \in[0 ; 1]$ et $n$ et $m$ deux entiers naturels non nuls et $X, Y, X_1, \ldots, X_n$ des variables aléatoires définies sur un même espace probabilisé fini.
+    \begin{enumerate}
+        \item Si $X \hookrightarrow \mathcal{B}(m, p)$ et $Y \hookrightarrow \mathcal{B}(n, p)$ et si $X$ et $Y$ sont indépendantes alors
+        $$X+Y \hookrightarrow \mathcal{B}(m+n, p)$$
+        \item  Si pour tout $i \in \llbracket 1, n \rrbracket, X_i \hookrightarrow \mathcal{B}(p)$ et si $X_1, \ldots, X_n$ sont indépendantes, alors
+        $$\sum_{i=1}^n X_i \hookrightarrow \mathcal{B}(n, p)$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $(X + Y)(\Omega) = \llbracket 0, n + m \rrbracket$. \\
+    Soit $k\in \llbracket 0, n + m \rrbracket$.
+    \begin{align*}
+        P(X + Y = k) &= \sum_{i=0}^{k} P(X = i \text{ et } Y = k - i) \\
+        &= \sum_{i=0}^{k} P(X = i) P(Y = k - i) \text{ (indépendance)} \\
+        &= \sum_{i=0}^{k} \binom{m}{i} p^i (1-p)^{m-i} \binom{n}{k-i} p^{k-i} (1-p)^{n-k+i}
+    \end{align*}
+    $X\hookrightarrow \mathcal{B}(m, p)$ et $Y\hookrightarrow \mathcal{B}(n, p)$. 
+    \begin{align*}
+        P(X + Y = k) &= p^k (1-p)^{m+n-k} \sum_{i=0}^{k} \binom{m}{i} \binom{n}{k-i} \\
+        &= p^k (1-p)^{m+n-k} \binom{m+n}{k} \text{ (Vandermonde)}
+    \end{align*}
+    Donc $X + Y \hookrightarrow \mathcal{B}(m+n, p)$.
+
+    \item Si $X_i \hookrightarrow \mathcal{B}(p)$, alors $X_i\hookrightarrow \mathcal{B}(1, p)$ et on conclut avec $\boxed{1.}$. 
+\end{enumerate}
+
+\section{Existence d'une famille finie de variables aléatoires de lois prescrites}
+\begin{tcolorbox}[title=Théorème 32.69, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E=\left\{x_1, \ldots, x_r\right\}$ et $F=\left\{y_1, \ldots, y_s\right\}$ deux ensembles et $p_1, \ldots, p_r, q_1, \ldots, q_s$ des réels de $[0 ; 1]$ pour lesquels
+    $$\sum_{i=1}^r p_i=1 \text { et } \sum_{i=1}^s q_i=1$$
+    Il existe alors un espace probabilisé $(\Omega, P)$ et des variables aléatoires indépendantes $X$ et $Y$ sur $\Omega$ pour lesquelles pour tout $i \in \llbracket 1, r \rrbracket$ et tout $j \in \llbracket 1, s \rrbracket, P\left(X=x_i\right)=p_i$ et $P\left(Y=y_j\right)=q_j$.
+    Cet énoncé se généralise sans difficulité au cas d'un nombre fini de variables aléatoires.
+\end{tcolorbox}
+
+\noindent On remarque que ($I = \llbracket 1, r \rrbracket, J = \llbracket 1, s \rrbracket$). 
+\begin{align*}
+    \sum_{(i, j) \in I \times J} p_i q_j &= \left( \sum_{i=1}^{r} p_i \right) \left( \sum_{j=1}^{s} q_j \right) \\
+    &= 1
+\end{align*}
+D'après (32.28), il existe $z:\Omega\to E\times F$ tel que : 
+\begin{align*}
+    \forall (i, j) \in I \times J, P(z = x_i y_j) &= p_i q_j
+\end{align*}
+En notant $z = (X, Y)$, on vérifie : 
+\begin{align*}
+    \forall i\in I, P(X = x_i) &= \sum_{j=1}^{s} P(X = X_i \text{ et } Y = y_j) \\
+    &= \sum_{j=1}^{s} P(z = (x_i, y_j)) \\
+    &= \sum_{j=1}^{s} p_i q_j \\
+    &= p_i \sum_{j=1}^{s} q_j \\
+    &= p_i
+\end{align*}
+
 
 \end{document}
