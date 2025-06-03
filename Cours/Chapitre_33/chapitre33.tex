@@ -139,5 +139,25 @@
     &= \sum_{x\in X(\Omega)} P(X=x) f(x)
 \end{align*}
 
+\setsection{9}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 33.10, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $X$ une variable aléatoire suivant une loi unifore sur $\llbracket 1, n \rrbracket$. Donner un équivalent simple de $E(X)$ et de $E(X^2)$. 
+\end{tcolorbox}
+
+\noindent $X\hookrightarrow \mathcal{U}(\llbracket 1, n \rrbracket)$. 
+\begin{itemize}
+    \item \begin{align*}
+        E(X) &= \frac{1}{n} \sum_{k=1}^{n} k \\
+        &= \frac{n+1}{2} \\
+        &\underset{n\to +\infty}{\sim} \frac{n}{2}
+    \end{align*}
+    \item \begin{align*}
+        E(X^2) &= \sum_{k=1}^{n} \frac{1}{n} k^2 \\
+        &= \frac{(n+1)(2n+1)}{6} \\
+        &\underset{n\to +\infty}{\sim} \frac{n^2}{3}
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
