@@ -419,5 +419,34 @@ Soit $i\in \llbracket 0, n \rrbracket$.
 \end{align*}
 $N\hookrightarrow \mathcal{B}(n, 2p-p^2)$.
 
+\section{Somme de variables aléatoires indépendantes de lois binomiales}
+\begin{tcolorbox}[title=Théorème 32.68, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $p \in[0 ; 1]$ et $n$ et $m$ deux entiers naturels non nuls et $X, Y, X_1, \ldots, X_n$ des variables aléatoires définies sur un même espace probabilisé fini.
+    \begin{enumerate}
+        \item Si $X \hookrightarrow \mathcal{B}(m, p)$ et $Y \hookrightarrow \mathcal{B}(n, p)$ et si $X$ et $Y$ sont indépendantes alors
+        $$X+Y \hookrightarrow \mathcal{B}(m+n, p)$$
+        \item  Si pour tout $i \in \llbracket 1, n \rrbracket, X_i \hookrightarrow \mathcal{B}(p)$ et si $X_1, \ldots, X_n$ sont indépendantes, alors
+        $$\sum_{i=1}^n X_i \hookrightarrow \mathcal{B}(n, p)$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $(X + Y)(\Omega) = \llbracket 0, n + m \rrbracket$. \\
+    Soit $k\in \llbracket 0, n + m \rrbracket$.
+    \begin{align*}
+        P(X + Y = k) &= \sum_{i=0}^{k} P(X = i \text{ et } Y = k - i) \\
+        &= \sum_{i=0}^{k} P(X = i) P(Y = k - i) \text{ (indépendance)} \\
+        &= \sum_{i=0}^{k} \binom{m}{i} p^i (1-p)^{m-i} \binom{n}{k-i} p^{k-i} (1-p)^{n-k+i}
+    \end{align*}
+    $X\hookrightarrow \mathcal{B}(m, p)$ et $Y\hookrightarrow \mathcal{B}(n, p)$. 
+    \begin{align*}
+        P(X + Y = k) &= p^k (1-p)^{m+n-k} \sum_{i=0}^{k} \binom{m}{i} \binom{n}{k-i} \\
+        &= p^k (1-p)^{m+n-k} \binom{m+n}{k} \text{ (Vandermonde)}
+    \end{align*}
+    Donc $X + Y \hookrightarrow \mathcal{B}(m+n, p)$.
+
+    \item Si $X_i \hookrightarrow \mathcal{B}(p)$, alors $X_i\hookrightarrow \mathcal{B}(1, p)$ et on conclut avec $\boxed{1.}$. 
+\end{enumerate}
+
 
 \end{document}
