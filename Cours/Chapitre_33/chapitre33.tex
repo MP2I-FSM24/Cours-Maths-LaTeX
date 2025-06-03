@@ -6,4 +6,315 @@
 \tableofcontents
 \clearpage
 
+\setsection{2}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 33.3, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Un dé à 6 faces numérotées de 1 à 6 a été truqué de telle sorte que les faces 1,2 et 3 tombent avec une probabilité $\frac{1}{6}$, les faces 4 et 5 avec une probabilité $\frac{1}{12}$ et 6 avec une probabilité de $\frac{1}{3}$. Quelle numéro obtient-on en moyenne?
+\end{tcolorbox}
+
+\begin{align*}
+    E(X) &= 1\times \frac{1}{6} + 2\times \frac{1}{6} + 3\times \frac{1}{6} + 4\times \frac{1}{12} + 5\times \frac{1}{12} + 6\times \frac{1}{3} \\
+    &= \frac{45}{12} \\
+    &= \frac{15}{4}
+\end{align*}
+
+\section{Espérance des lois usuelles}
+\begin{tcolorbox}[title=Théorème 33.4, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ une variable aléatoire réelle sur $\Omega$.
+    \begin{enumerate}
+        \item Variable aléatoire constante : si $X$ est constante de valeur $m$, alors $\mathrm{E}(X)=m$.
+        \item Loi uniforme : si $E=\left\{x_1, \ldots, x_n\right\}$ est une partie de $\mathbb{R}$ et si $X \hookrightarrow \mathcal{U}(E)$, alors $\mathrm{E}(X)$ est la moyenne naturelle des valeurs $x_1, \ldots, x_n$ de $X$ :
+        $$\mathrm{E}(X)=\frac{1}{n} \sum_{k=1}^n x_k$$
+        \item Loi de Bernoulli : soit $p \in[0 ; 1]$. Si $X \hookrightarrow \mathcal{B}(p)$, alors $\mathrm{E}(X)=p$.
+        \item Exemple fondamental : pour tout événement $A \in \mathcal{P}(\Omega), \mathrm{E}\left(\mathbb{1}_A\right)=P(A)$.
+        \item Loi binomiale : soit $n \in \mathbb{N}^*$ et $p \in[0 ; 1]$. Si $X \hookrightarrow \mathcal{B}(n, p)$, alors $\mathrm{E}(X)=n p$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Si $X(\Omega) = \{m\}, P(X=m)=1$ et $E(X) = 1\times m = m$. 
+    \item Si $X\hookrightarrow \mathcal{U}(\{x_1, \ldots, x_n\}$ alors : 
+    \begin{align*}
+        \forall i\in \llbracket 1, n \rrbracket, P(X = x_i) = \frac{1}{n}
+    \end{align*}
+    Donc :
+    \begin{align*}
+        E(X) &= \sum_{k=1}^{n} P(X = x_k) x_k \\
+        &= \frac{1}{n} \sum_{k=1}^{n} x_k
+    \end{align*}
+    \item Si $X\hookrightarrow \mathcal{B}(p)$ alors :
+    \begin{align*}
+        E(X) &= 1\times p + 0\times (1-p) \\
+        &= p
+    \end{align*}
+    \item Si $A\subset \Omega$, alors : 
+    \begin{align*}
+        \mathbb{1}_A\hookrightarrow \mathcal{B}(P(A)) \text{ (32.21)}
+    \end{align*}
+    Donc (3) $E(\mathbb{1}_A) = P(A)$.
+    \item Par définition : 
+    \begin{align*}
+        E(X) &= \sum_{k=0}^{n} P(X = k) k \\
+        &= \sum_{k=0}^{n} k \binom{n}{k} p^k (1-p)^{n-k}
+    \end{align*}
+    \underline{Première méthode :} \\
+    Soit $Q = (1-p + Y)^n\in \mathbb{R}[Y]$. 
+    \begin{align*}
+        Q &= \sum_{k=0}^{n} \binom{n}{k} (1-p)^{n-k} Y^k
+        \text{donc } Q' &= \sum_{k=1}^{n} k \binom{n}{k} (1-p)^{n-k} Y^{k-1} \\
+        \text{donc } YQ' &= \sum_{k=0}^{n} k \binom{n}{k} (1-p)^{n-k} Y^k
+    \end{align*}
+    Par ailleurs $YQ' = n(1-p + Y)^{n-1}$. \\
+    En évaluant les deux expressions en $p$, on obtient l'expression voulue : 
+    \begin{align*}
+        E(X) &= \sum_{k=0}^{n} k \binom{n}{k} p^k (1-p)^{n-k} = np
+    \end{align*}
+    \underline{Deuxième méthode :} \\
+    On poursuit le calcul de $E(X)$ en utilisant la formule du capitaine. \\
+    \underline{Troisième méthode :} \\
+    En utilisant la linéarité de l'espérance. 
+\end{enumerate}
+
+\section{Propriétés de l'espérance}
+\begin{tcolorbox}[title=Propostion 33.5, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $X$ et $Y$ deux variables aléatoires réelles sur $\Omega$.
+    \begin{enumerate}
+        \item Reformulation : $\mathrm{E}(X)=\sum_{\omega \in \Omega} P(\{\omega\}) X(\omega)$.
+        \item Linéarité : pour tout $(\lambda, \mu) \in \mathbb{R}^2, \mathrm{E}(\lambda X+\mu Y)=\lambda \mathrm{E}(X)+\mu \mathrm{E}(Y)$.
+        \item Positivité : si $X \geq 0$, alors $\mathrm{E}(X) \geq 0$.
+        \item Croissance : si $X \leq Y$, alors $\mathrm{E}(X) \leq \mathrm{E}(Y)$.
+        \item Inégalité triangulaire : $|\mathrm{E}(X)| \leq \mathrm{E}(|X|)$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On rappelle qe $\{(X=x)\}_{x\in X(\Omega)}$ est un SCE. \\
+    Ainsi : 
+    \begin{align*}
+        E(X) &= \sum_{x\in X(\Omega)} P(X=x) x \\
+        &= \sum_{x\in X(\Omega)} \left[ \sum_{\omega\in (X=x)} P(X = \omega) \right] x \\
+        &= \sum_{\omega\in \Omega} P(\{\omega\}) X(\omega)
+    \end{align*}
+    \item \begin{align*}
+        E(\lambda X+\mu Y) &= \sum_{\omega\in \Omega} P(\{\omega\}) (\lambda X(\omega)+\mu Y(\omega)) \\
+        &= \lambda \sum_{\omega\in \Omega} P(\{\omega\}) X(\omega) + \mu \sum_{\omega\in \Omega} P(\{\omega\}) Y(\omega) \\
+        &= \lambda E(X) + \mu E(Y)
+    \end{align*}
+    \item Si $X\geq 0$, alors : 
+    \begin{align*}
+        E(X) &= \sum_{\omega\in \Omega} \underbrace{P(\{\omega\})}_{\geq 0} \underbrace{X(\omega)}_{\geq 0} \\
+        &\geq 0
+    \end{align*}
+    \item RAS (2 + 3)
+    \item \begin{align*}
+        |E(X)| &= \left| \sum_{\omega\in \Omega} P(\{\omega\}) X(\omega) \right| \\
+        &\leq \sum_{\omega\in \Omega} P(\{\omega\}) |X(\omega)| \\
+        &= E(|X|)
+    \end{align*}
+\end{enumerate}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 33.7, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Qu'obtient-on en moyenne quand on lance deux fois un dé à 6 faces et qu'on additionne les résultats obtenus ?
+\end{tcolorbox}
+
+\noindent $X_1, X_2 \hookrightarrow \mathcal{U}(P(\llbracket 1, 6 \rrbracket))$. 
+\begin{align*}
+    E(X_1 + X_2) &= E(X_1) + E(X_2) \\
+    &= 2\times \frac{1}{6} \sum_{k=1}^{6} k \\
+    &= 7
+\end{align*}
+
+\section{Formule de transfert}
+\begin{tcolorbox}[title=Théorème 33.8, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ une variable aléatoire sur $\Omega$ et $f: X(\Omega) \rightarrow \mathbb{R}$ une fonction. L'espérance de $f(X)$ est entièrement déterminée par $f$ et la loi de $X$ :
+    $$\mathrm{E}(f(X))=\sum_{x \in X(\Omega)} P(X=x) f(x)$$
+\end{tcolorbox}
+
+\noindent $\{(X = x)\}_{x\in X(\Omega)}$ est un SCE. 
+\begin{align*}
+    E(f(X)) &= \sum_{x\in X(\Omega)} P(\{\omega\}) f(X(\omega)) \\
+    &= \sum_{x\in X(\Omega)} \left( \sum_{\omega\in (X=x)} P(\{w\}) f(X(\omega)) \right) \\
+    &= \sum_{x\in X(\Omega)} \left( \sum_{\omega\in (X = x)} P(\{w\}) \right) f(x) \\
+    &= \sum_{x\in X(\Omega)} P(X=x) f(x)
+\end{align*}
+
+\setsection{9}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 33.10, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $X$ une variable aléatoire suivant une loi unifore sur $\llbracket 1, n \rrbracket$. Donner un équivalent simple de $E(X)$ et de $E(X^2)$. 
+\end{tcolorbox}
+
+\noindent $X\hookrightarrow \mathcal{U}(\llbracket 1, n \rrbracket)$. 
+\begin{itemize}
+    \item \begin{align*}
+        E(X) &= \frac{1}{n} \sum_{k=1}^{n} k \\
+        &= \frac{n+1}{2} \\
+        &\underset{n\to +\infty}{\sim} \frac{n}{2}
+    \end{align*}
+    \item \begin{align*}
+        E(X^2) &= \sum_{k=1}^{n} \frac{1}{n} k^2 \\
+        &= \frac{(n+1)(2n+1)}{6} \\
+        &\underset{n\to +\infty}{\sim} \frac{n^2}{3}
+    \end{align*}
+\end{itemize}
+
+\section{Espérance du produit de deux variables aléatoires réelles indépendantes}
+\begin{tcolorbox}[title=Théorème 33.11, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ et $Y$ deux variables aléatoires réelles sur $\Omega$. Si $X$ et $Y$ sont indépendantes, alors
+    $$\mathrm{E}(X Y)=\mathrm{E}(X) \mathrm{E}(Y)$$
+    Ce résultat s'étend naturellement à un nombre fini quelconque de variables aléatoires réelles indépendantes.
+\end{tcolorbox}
+
+\begin{align*}
+    E(x)E(Y) &= \left( \sum_{x\in X(\Omega)} P(X=x) x \right) \left( \sum_{y\in Y(\Omega)} P(Y=y) y \right) \\
+    &= \sum_{(x, y)\in X(\Omega) \times Y(\Omega)} P(X=x) P(Y=y) x y \\
+    &= \sum_{(x, y)\in X(\Omega) \times Y(\Omega)} P(X=x \text{ et } Y=y) x y \text{ (indépendance)} \\
+    &= E(XY)
+\end{align*}
+
+\setsection{12}
+\section{Propriétés de la variance}
+\begin{tcolorbox}[title=Propostion 33.13, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $X$ une variable aléatoire réelle.
+    \begin{enumerate}
+        \item $\mathrm{V}(X)=\mathrm{E}\left(X^2\right)-\mathrm{E}(X)^2$.
+        \item $\mathrm{V}(X)=0 \Leftrightarrow P(X=\mathrm{E}(X))=1$. On dit dans ce cas que $X$ est presque sûrement constante.
+        \item Pour tout $(a, b) \in \mathbb{R}^2$, on a
+        $$\mathrm{V}(a x+b)=a^2 \mathrm{~V}(X)$$
+    \end{enumerate}
+    En particulier, si $\sigma(X)>0$, la variable $\frac{X-\mathrm{E}(X)}{\sigma(X)}$ est centrée réduite.
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \begin{align*}
+        V(X) &= E((X - E(X))^2) \\
+        &= E(X^2 - 2X E(X) + E(X)^2) \\
+        &= E(X^2) - 2E(X)E(X) + E(X)^2 \\
+        &= E(X^2) - E(X)^2
+    \end{align*}
+
+    \item \begin{align*}
+        V(X) = 0 &\Leftrightarrow E((X - E(X))^2) = 0 \\
+        \text{(fonction de transfert)\quad}&\Leftrightarrow \sum_{x\in X(\Omega)} P(X=x) (x - E(X))^2 = 0 \\
+        &\Leftrightarrow \forall x\in X(\Omega)\setminus \{E(X)\}, P(X=x) = 0 \\
+        &= P(X = E(X)) = 1
+    \end{align*}
+
+    \item \begin{align*}
+        V(aX + b) &= E((aX + b - E(aX + b))^2) \\
+        &= E(a^2(X-E(X))) \text{ (linéarité)} \\
+        &= a^2 V(X) \text{ (linéarité)}
+    \end{align*}
+\end{enumerate}
+
+\setsection{14}
+\section{Propriétés de la covariance}
+\begin{tcolorbox}[title=Propostion 33.15, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    On a :
+    \begin{enumerate}
+        \item $\mathrm{V}(X)=\operatorname{cov}(X, X)$ et $\operatorname{cov}(X, Y)=\operatorname{cov}(Y, X)$.
+        \item $\operatorname{cov}(X, Y)=\mathrm{E}(X Y)-\mathrm{E}(X) \mathrm{E}(Y)$
+        \item $\mathrm{V}(X+Y)=\mathrm{V}(X)+2 \cdot \operatorname{cov}(X, Y)+\mathrm{V}(Y)$.
+        \item Si $X$ et $Y$ sont indépendantes, alors $\operatorname{cov}(X, Y)=0$ et $\mathrm{V}(X+Y)=\mathrm{V}(X)+\mathrm{V}(Y)$.
+    \end{enumerate}
+    Les assertions 3 et 4 se généralisent au cas de variables aléatoires réelles $X_1, \ldots, X_n$ sur $\Omega$. Dans ce cas :
+    $$\mathrm{V}\left(\sum_{i=1}^n X_i\right)=\sum_{i=1}^n \mathrm{~V}\left(X_i\right)+2 \sum_{1 \leq i<j \leq n} \operatorname{cov}\left(X_i, X_j\right)$$
+    Si $X_1, \ldots, X_n$ sont (seulement) deux à deux indépendantes, alors
+    $$\mathrm{V}\left(\sum_{i=1}^n X_i\right)=\sum_{i=1}^n \mathrm{~V}\left(X_i\right)$$
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item RAF
+    \item \begin{align*}
+        \operatorname{cov}(X, Y) &= E((X - E(X))(Y - E(Y))) \\
+        &= E(XY - E(X)Y - E(Y)X + E(X) E(Y)) \\
+        &= E(XY) - E(X)E(Y)
+    \end{align*}
+    \item \begin{align*}
+        V(X+Y) &= E((X + Y - E(X + Y))^2) \\
+        &= E((X - E(X)) + (Y - E(Y)))^2 \\
+        &= V(X) + 2 \operatorname{cov}(X, Y) + V(Y)
+    \end{align*}
+    \item On suppose que $X$ et $Y$ sont indépendantes, donc :
+    \begin{align*}
+        E(XY) &= E(X)E(Y)
+    \end{align*}
+    Puis, par (2) :
+    \begin{align*}
+        \operatorname{cov}(X, Y) &= 0
+    \end{align*}
+\end{enumerate}
+
+\section{Variance des lois usuelles}
+\begin{tcolorbox}[title=Théorème 33.16, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ une variable aléatoire réelle et $p \in[0 ; 1]$.
+    \begin{enumerate}
+        \item $\quad$ Si $X \hookrightarrow \mathcal{B}(p)$ alors $\mathrm{V}(X)=p(1-p)$.
+        \item $\quad$ Si $X \hookrightarrow \mathcal{B}(n, p)$, alors $\mathrm{V}(X)=n p(1-p)$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Si $X \hookrightarrow \mathcal{B}(p)$, alors $X^2\hookrightarrow B(p)$. 
+    \begin{align*}
+        V(X) &= E(X^2) - E(X)^2 = p - p^2 = p(1-p)
+    \end{align*}
+    \item Si $X_i\hookrightarrow \mathcal{B}(p)$ avec $X_1, \ldots, X_n$ indépendantes, alors : 
+    \begin{align*}
+        V(X_1 + \cdots + X_n) &= \sum_{k=1}^{n} V(X_k) \text{ (indépendance)} \\
+        &= \sum_{k=1}^{n} p(1-p) \text{ (1)} \\
+        &= np(1-p)
+    \end{align*}
+\end{enumerate}
+
+\section{Inégalité de Markov}
+\begin{tcolorbox}[title=Théorème 33.17, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ une variable aléatoire réelle. Pour tout $a>0$, on a
+    $$P(|X| \geq a) \leq \frac{\mathrm{E}(|X|)}{a}$$
+\end{tcolorbox}
+
+\noindent On remarque que : 
+\begin{align*}
+    \mathbb{1}_{(|X|\geq a)} a \leq \mathbb{1}_{(|X|\geq a)}|X| \leq |X|
+\end{align*}
+Par croissance de l'espérance : 
+\begin{align*}
+    a P(|X|\geq a) = a E(\mathbb{1}_{(|X|\geq a)}) \leq E(|X|)
+\end{align*}
+
+\setsection{18}
+\section{Inégalité de Bienaymé-Tchebychev}
+\begin{tcolorbox}[title=Théorème 33.19, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ une variable aléatoire réelle. Pour tout $a>0$, on a
+    $$P(|X-\mathrm{E}(X)| \geq a) \leq \frac{\mathrm{V}(X)}{a^2}$$
+\end{tcolorbox}
+
+\begin{align*}
+    P(|X - E(X)|) = P((X - E(X))^2 \geq a^2) &\leq \frac{E((X-E(X))^2)}{a^2} \text{ (Markov)} \\
+    &= \frac{V(X)}{a^2}
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 33.20, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On dispose d'une pièce éventuellement truquée dont la probabilité d'obtention de pile est notée $p$. Pour connaître $p$, on lance cette pièce $n$ fois et on note $F$ la fréquence d'apparition de pile ainsi obtenue. À partir que quelle valeur de $n$ la probabilité pour que $F$ soit une approximation de $p$ à $10^{-2}$ est-elle supérieure à $0.9$ ?
+\end{tcolorbox}
+
+\noindent On note $X$ la variable aléatoire réelle correspondant au nombre de piles obtenus. \\
+Ainsi $F = \frac{X}{n}$. 
+\begin{align*}
+    P(|F - p| \geq 10^{-2}) \leq 0.9 &\Leftrightarrow 1 - P(|F - p| > 10^{-2}) \geq 0.9 \\
+    &\Leftrightarrow P(|F - p| > 10^{-2}) \leq 0.1 \\
+    &\Leftrightarrow P(|X - np| \geq 10^{-2} n) \leq 0.1
+\end{align*}
+Or $X\hookrightarrow \mathcal{B}(n, p)$. \\
+D'après l'inégalité de Bienaymé-Tchebychev :
+\begin{align*}
+    P(|X - E(X)| > n \times 10^{-2}) &< \frac{V(X)}{n^2\times 10^{-4}} \\
+    &= \frac{n(1-p)p}{n^2\times 10^{-4}} \\
+    &\leq \frac{1}{4n\times 10^{-4}}
+\end{align*}
+Pour $n\geq \frac{10^5}{4}$, on a bien $P(|F-p|\leq 10^{-2}) \geq 0.9$.
+
+
 \end{document}
