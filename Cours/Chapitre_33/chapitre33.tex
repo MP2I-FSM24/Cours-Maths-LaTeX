@@ -246,5 +246,27 @@
     \end{align*}
 \end{enumerate}
 
+\section{Variance des lois usuelles}
+\begin{tcolorbox}[title=Théorème 33.16, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ une variable aléatoire réelle et $p \in[0 ; 1]$.
+    \begin{enumerate}
+        \item $\quad$ Si $X \hookrightarrow \mathcal{B}(p)$ alors $\mathrm{V}(X)=p(1-p)$.
+        \item $\quad$ Si $X \hookrightarrow \mathcal{B}(n, p)$, alors $\mathrm{V}(X)=n p(1-p)$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Si $X \hookrightarrow \mathcal{B}(p)$, alors $X^2\hookrightarrow B(p)$. 
+    \begin{align*}
+        V(X) &= E(X^2) - E(X)^2 = p - p^2 = p(1-p)
+    \end{align*}
+    \item Si $X_i\hookrightarrow \mathcal{B}(p)$ avec $X_1, \ldots, X_n$ indépendantes, alors : 
+    \begin{align*}
+        V(X_1 + \cdots + X_n) &= \sum_{k=1}^{n} V(X_k) \text{ (indépendance)} \\
+        &= \sum_{k=1}^{n} p(1-p) \text{ (1)} \\
+        &= np(1-p)
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
