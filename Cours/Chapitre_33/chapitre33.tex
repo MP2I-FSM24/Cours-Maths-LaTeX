@@ -75,5 +75,43 @@
     En utilisant la linéarité de l'espérance. 
 \end{enumerate}
 
+\section{Propriétés de l'espérance}
+\begin{tcolorbox}[title=Propostion 33.5, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $X$ et $Y$ deux variables aléatoires réelles sur $\Omega$.
+    \begin{enumerate}
+        \item Reformulation : $\mathrm{E}(X)=\sum_{\omega \in \Omega} P(\{\omega\}) X(\omega)$.
+        \item Linéarité : pour tout $(\lambda, \mu) \in \mathbb{R}^2, \mathrm{E}(\lambda X+\mu Y)=\lambda \mathrm{E}(X)+\mu \mathrm{E}(Y)$.
+        \item Positivité : si $X \geq 0$, alors $\mathrm{E}(X) \geq 0$.
+        \item Croissance : si $X \leq Y$, alors $\mathrm{E}(X) \leq \mathrm{E}(Y)$.
+        \item Inégalité triangulaire : $|\mathrm{E}(X)| \leq \mathrm{E}(|X|)$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On rappelle qe $\{(X=x)\}_{x\in X(\Omega)}$ est un SCE. \\
+    Ainsi : 
+    \begin{align*}
+        E(X) &= \sum_{x\in X(\Omega)} P(X=x) x \\
+        &= \sum_{x\in X(\Omega)} \left[ \sum_{\omega\in (X=x)} P(X = \omega) \right] x \\
+        &= \sum_{\omega\in \Omega} P(\{\omega\}) X(\omega)
+    \end{align*}
+    \item \begin{align*}
+        E(\lambda X+\mu Y) &= \sum_{\omega\in \Omega} P(\{\omega\}) (\lambda X(\omega)+\mu Y(\omega)) \\
+        &= \lambda \sum_{\omega\in \Omega} P(\{\omega\}) X(\omega) + \mu \sum_{\omega\in \Omega} P(\{\omega\}) Y(\omega) \\
+        &= \lambda E(X) + \mu E(Y)
+    \end{align*}
+    \item Si $X\geq 0$, alors : 
+    \begin{align*}
+        E(X) &= \sum_{\omega\in \Omega} \underbrace{P(\{\omega\})}_{\geq 0} \underbrace{X(\omega)}_{\geq 0} \\
+        &\geq 0
+    \end{align*}
+    \item RAS (2 + 3)
+    \item \begin{align*}
+        |E(X)| &= \left| \sum_{\omega\in \Omega} P(\{\omega\}) X(\omega) \right| \\
+        &\leq \sum_{\omega\in \Omega} P(\{\omega\}) |X(\omega)| \\
+        &= E(|X|)
+    \end{align*}
+\end{enumerate}
+
 
 \end{document}
