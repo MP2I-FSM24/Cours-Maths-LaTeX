@@ -448,5 +448,31 @@ $N\hookrightarrow \mathcal{B}(n, 2p-p^2)$.
     \item Si $X_i \hookrightarrow \mathcal{B}(p)$, alors $X_i\hookrightarrow \mathcal{B}(1, p)$ et on conclut avec $\boxed{1.}$. 
 \end{enumerate}
 
+\section{Existence d'une famille finie de variables aléatoires de lois prescrites}
+\begin{tcolorbox}[title=Théorème 32.69, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E=\left\{x_1, \ldots, x_r\right\}$ et $F=\left\{y_1, \ldots, y_s\right\}$ deux ensembles et $p_1, \ldots, p_r, q_1, \ldots, q_s$ des réels de $[0 ; 1]$ pour lesquels
+    $$\sum_{i=1}^r p_i=1 \text { et } \sum_{i=1}^s q_i=1$$
+    Il existe alors un espace probabilisé $(\Omega, P)$ et des variables aléatoires indépendantes $X$ et $Y$ sur $\Omega$ pour lesquelles pour tout $i \in \llbracket 1, r \rrbracket$ et tout $j \in \llbracket 1, s \rrbracket, P\left(X=x_i\right)=p_i$ et $P\left(Y=y_j\right)=q_j$.
+    Cet énoncé se généralise sans difficulité au cas d'un nombre fini de variables aléatoires.
+\end{tcolorbox}
+
+\noindent On remarque que ($I = \llbracket 1, r \rrbracket, J = \llbracket 1, s \rrbracket$). 
+\begin{align*}
+    \sum_{(i, j) \in I \times J} p_i q_j &= \left( \sum_{i=1}^{r} p_i \right) \left( \sum_{j=1}^{s} q_j \right) \\
+    &= 1
+\end{align*}
+D'après (32.28), il existe $z:\Omega\to E\times F$ tel que : 
+\begin{align*}
+    \forall (i, j) \in I \times J, P(z = x_i y_j) &= p_i q_j
+\end{align*}
+En notant $z = (X, Y)$, on vérifie : 
+\begin{align*}
+    \forall i\in I, P(X = x_i) &= \sum_{j=1}^{s} P(X = X_i \text{ et } Y = y_j) \\
+    &= \sum_{j=1}^{s} P(z = (x_i, y_j)) \\
+    &= \sum_{j=1}^{s} p_i q_j \\
+    &= p_i \sum_{j=1}^{s} q_j \\
+    &= p_i
+\end{align*}
+
 
 \end{document}
