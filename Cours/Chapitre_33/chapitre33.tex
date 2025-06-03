@@ -18,5 +18,62 @@
     &= \frac{15}{4}
 \end{align*}
 
+\section{Espérance des lois usuelles}
+\begin{tcolorbox}[title=Théorème 33.4, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ une variable aléatoire réelle sur $\Omega$.
+    \begin{enumerate}
+        \item Variable aléatoire constante : si $X$ est constante de valeur $m$, alors $\mathrm{E}(X)=m$.
+        \item Loi uniforme : si $E=\left\{x_1, \ldots, x_n\right\}$ est une partie de $\mathbb{R}$ et si $X \hookrightarrow \mathcal{U}(E)$, alors $\mathrm{E}(X)$ est la moyenne naturelle des valeurs $x_1, \ldots, x_n$ de $X$ :
+        $$\mathrm{E}(X)=\frac{1}{n} \sum_{k=1}^n x_k$$
+        \item Loi de Bernoulli : soit $p \in[0 ; 1]$. Si $X \hookrightarrow \mathcal{B}(p)$, alors $\mathrm{E}(X)=p$.
+        \item Exemple fondamental : pour tout événement $A \in \mathcal{P}(\Omega), \mathrm{E}\left(\mathbb{1}_A\right)=P(A)$.
+        \item Loi binomiale : soit $n \in \mathbb{N}^*$ et $p \in[0 ; 1]$. Si $X \hookrightarrow \mathcal{B}(n, p)$, alors $\mathrm{E}(X)=n p$. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item Si $X(\Omega) = \{m\}, P(X=m)=1$ et $E(X) = 1\times m = m$. 
+    \item Si $X\hookrightarrow \mathcal{U}(\{x_1, \ldots, x_n\}$ alors : 
+    \begin{align*}
+        \forall i\in \llbracket 1, n \rrbracket, P(X = x_i) = \frac{1}{n}
+    \end{align*}
+    Donc :
+    \begin{align*}
+        E(X) &= \sum_{k=1}^{n} P(X = x_k) x_k \\
+        &= \frac{1}{n} \sum_{k=1}^{n} x_k
+    \end{align*}
+    \item Si $X\hookrightarrow \mathcal{B}(p)$ alors :
+    \begin{align*}
+        E(X) &= 1\times p + 0\times (1-p) \\
+        &= p
+    \end{align*}
+    \item Si $A\subset \Omega$, alors : 
+    \begin{align*}
+        \mathbb{1}_A\hookrightarrow \mathcal{B}(P(A)) \text{ (32.21)}
+    \end{align*}
+    Donc (3) $E(\mathbb{1}_A) = P(A)$.
+    \item Par définition : 
+    \begin{align*}
+        E(X) &= \sum_{k=0}^{n} P(X = k) k \\
+        &= \sum_{k=0}^{n} k \binom{n}{k} p^k (1-p)^{n-k}
+    \end{align*}
+    \underline{Première méthode :} \\
+    Soit $Q = (1-p + Y)^n\in \mathbb{R}[Y]$. 
+    \begin{align*}
+        Q &= \sum_{k=0}^{n} \binom{n}{k} (1-p)^{n-k} Y^k
+        \text{donc } Q' &= \sum_{k=1}^{n} k \binom{n}{k} (1-p)^{n-k} Y^{k-1} \\
+        \text{donc } YQ' &= \sum_{k=0}^{n} k \binom{n}{k} (1-p)^{n-k} Y^k
+    \end{align*}
+    Par ailleurs $YQ' = n(1-p + Y)^{n-1}$. \\
+    En évaluant les deux expressions en $p$, on obtient l'expression voulue : 
+    \begin{align*}
+        E(X) &= \sum_{k=0}^{n} k \binom{n}{k} p^k (1-p)^{n-k} = np
+    \end{align*}
+    \underline{Deuxième méthode :} \\
+    On poursuit le calcul de $E(X)$ en utilisant la formule du capitaine. \\
+    \underline{Troisième méthode :} \\
+    En utilisant la linéarité de l'espérance. 
+\end{enumerate}
+
 
 \end{document}
