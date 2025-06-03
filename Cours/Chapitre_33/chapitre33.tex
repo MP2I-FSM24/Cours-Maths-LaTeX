@@ -159,5 +159,19 @@
     \end{align*}
 \end{itemize}
 
+\section{Espérance du produit de deux variables aléatoires réelles indépendantes}
+\begin{tcolorbox}[title=Théorème 33.11, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ et $Y$ deux variables aléatoires réelles sur $\Omega$. Si $X$ et $Y$ sont indépendantes, alors
+    $$\mathrm{E}(X Y)=\mathrm{E}(X) \mathrm{E}(Y)$$
+    Ce résultat s'étend naturellement à un nombre fini quelconque de variables aléatoires réelles indépendantes.
+\end{tcolorbox}
+
+\begin{align*}
+    E(x)E(Y) &= \left( \sum_{x\in X(\Omega)} P(X=x) x \right) \left( \sum_{y\in Y(\Omega)} P(Y=y) y \right) \\
+    &= \sum_{(x, y)\in X(\Omega) \times Y(\Omega)} P(X=x) P(Y=y) x y \\
+    &= \sum_{(x, y)\in X(\Omega) \times Y(\Omega)} P(X=x \text{ et } Y=y) x y \text{ (indépendance)} \\
+    &= E(XY)
+\end{align*}
+
 
 \end{document}
