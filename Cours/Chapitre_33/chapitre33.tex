@@ -283,5 +283,17 @@ Par croissance de l'espérance :
     a P(|X|\geq a) = a E(\mathbb{1}_{(|X|\geq a)}) \leq E(|X|)
 \end{align*}
 
+\setsection{18}
+\section{Inégalité de Bienaymé-Tchebychev}
+\begin{tcolorbox}[title=Théorème 33.19, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ une variable aléatoire réelle. Pour tout $a>0$, on a
+    $$P(|X-\mathrm{E}(X)| \geq a) \leq \frac{\mathrm{V}(X)}{a^2}$$
+\end{tcolorbox}
+
+\begin{align*}
+    P(|X - E(X)|) = P((X - E(X))^2 \geq a^2) &\leq \frac{E((X-E(X))^2)}{a^2} \text{ (Markov)} \\
+    &= \frac{V(x)}{a^2}
+\end{align*}
+
 
 \end{document}
