@@ -125,5 +125,19 @@
     &= 7
 \end{align*}
 
+\section{Formule de transfert}
+\begin{tcolorbox}[title=Théorème 33.8, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ une variable aléatoire sur $\Omega$ et $f: X(\Omega) \rightarrow \mathbb{R}$ une fonction. L'espérance de $f(X)$ est entièrement déterminée par $f$ et la loi de $X$ :
+    $$\mathrm{E}(f(X))=\sum_{x \in X(\Omega)} P(X=x) f(x)$$
+\end{tcolorbox}
+
+\noindent $\{(X = x)\}_{x\in X(\Omega)}$ est un SCE. 
+\begin{align*}
+    E(f(X)) &= \sum_{x\in X(\Omega)} P(\{\omega\}) f(X(\omega)) \\
+    &= \sum_{x\in X(\Omega)} \left( \sum_{\omega\in (X=x)} P(\{w\}) f(X(\omega)) \right) \\
+    &= \sum_{x\in X(\Omega)} \left( \sum_{\omega\in (X = x)} P(\{w\}) \right) f(x) \\
+    &= \sum_{x\in X(\Omega)} P(X=x) f(x)
+\end{align*}
+
 
 \end{document}
