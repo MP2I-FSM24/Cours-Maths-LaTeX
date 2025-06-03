@@ -292,8 +292,29 @@ Par croissance de l'espérance :
 
 \begin{align*}
     P(|X - E(X)|) = P((X - E(X))^2 \geq a^2) &\leq \frac{E((X-E(X))^2)}{a^2} \text{ (Markov)} \\
-    &= \frac{V(x)}{a^2}
+    &= \frac{V(X)}{a^2}
 \end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 33.20, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On dispose d'une pièce éventuellement truquée dont la probabilité d'obtention de pile est notée $p$. Pour connaître $p$, on lance cette pièce $n$ fois et on note $F$ la fréquence d'apparition de pile ainsi obtenue. À partir que quelle valeur de $n$ la probabilité pour que $F$ soit une approximation de $p$ à $10^{-2}$ est-elle supérieure à $0.9$ ?
+\end{tcolorbox}
+
+\noindent On note $X$ la variable aléatoire réelle correspondant au nombre de piles obtenus. \\
+Ainsi $F = \frac{X}{n}$. 
+\begin{align*}
+    P(|F - p| \geq 10^{-2}) \leq 0.9 &\Leftrightarrow 1 - P(|F - p| > 10^{-2}) \geq 0.9 \\
+    &\Leftrightarrow P(|F - p| > 10^{-2}) \leq 0.1 \\
+    &\Leftrightarrow P(|X - np| \geq 10^{-2} n) \leq 0.1
+\end{align*}
+Or $X\hookrightarrow \mathcal{B}(n, p)$. \\
+D'après l'inégalité de Bienaymé-Tchebychev :
+\begin{align*}
+    P(|X - E(X)| > n \times 10^{-2}) &< \frac{V(X)}{n^2\times 10^{-4}} \\
+    &= \frac{n(1-p)p}{n^2\times 10^{-4}} \\
+    &\leq \frac{1}{4n\times 10^{-4}}
+\end{align*}
+Pour $n\geq \frac{10^5}{4}$, on a bien $P(|F-p|\leq 10^{-2}) \geq 0.9$.
 
 
 \end{document}
