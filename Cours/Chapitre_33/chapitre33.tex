@@ -268,5 +268,20 @@
     \end{align*}
 \end{enumerate}
 
+\section{Inégalité de Markov}
+\begin{tcolorbox}[title=Théorème 33.17, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $X$ une variable aléatoire réelle. Pour tout $a>0$, on a
+    $$P(|X| \geq a) \leq \frac{\mathrm{E}(|X|)}{a}$$
+\end{tcolorbox}
+
+\noindent On remarque que : 
+\begin{align*}
+    \mathbb{1}_{(|X|\geq a)} a \leq \mathbb{1}_{(|X|\geq a)}|X| \leq |X|
+\end{align*}
+Par croissance de l'espérance : 
+\begin{align*}
+    a P(|X|\geq a) = a E(\mathbb{1}_{(|X|\geq a)}) \leq E(|X|)
+\end{align*}
+
 
 \end{document}
