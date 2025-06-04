@@ -77,5 +77,21 @@
     La forme est définie positive. 
 \end{itemize}
 
+\setsection{13}
+\section{Identités remarquables}
+\begin{tcolorbox}[title=Propostion 34.14, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Pour tout $(x, y) \in E^2$, on a :
+    $$\|x+y\|^2=\|x\|^2+2\langle x, y\rangle+\|y\|^2$$
+    et
+    $$\langle x+y, x-y\rangle=\|x\|^2-\|y\|^2$$
+\end{tcolorbox}
+
+\begin{align*}
+    \|x+y\|^2 &= \langle x+y, x+y\rangle \\
+    &= \langle x, x\rangle + \langle x, y\rangle + \langle y, x\rangle + \langle y, y\rangle \text{ (bilinéarité)} \\
+    &= \|x\|^2 + 2\langle x, y\rangle + \|y\|^2 \text{ (symétrie)}
+\end{align*}
+Idem pour la seconde identité. 
+
 
 \end{document}
