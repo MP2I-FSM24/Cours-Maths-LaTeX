@@ -21,5 +21,61 @@
     \item $^tXX = \sum\limits_{k=1}^{n} x_k^2 \geq 0$ et $\sum\limits_{k=1}^{n} x_k^2 = 0 \Leftrightarrow \forall k\in \llbracket 1, n \rrbracket, x_k = 0 \Leftrightarrow x = 0$
 \end{itemize}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple , title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que 
+    \begin{align*}
+        (X, Y) \mapsto {^tX} \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix} Y
+    \end{align*}
+    est un exemple de produit scalaire sur $\mathbb{R}^2$ distinct du produit scalaire usuel. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item bilinéarité : RAF
+    \item Pour $X, Y\in \mathbb{R}^2, {^tX}\begin{pmatrix}
+        2 & 1 \\
+        1 & 2
+    \end{pmatrix} Y\in \mathbb{R}$, donc : 
+    \begin{align*}
+        ^tX \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix} Y &= {^t \left( {^t}X \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix} Y \right)} \\
+        &= ^tY {^t \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix}} X \\
+        &= {^tY} \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix} X
+    \end{align*}
+    On a : 
+    \begin{align*}
+        {^tX} \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix} X &= \begin{pmatrix}
+            x & y
+        \end{pmatrix} \begin{pmatrix}
+            2x + y \\
+            x + 2y
+        \end{pmatrix} \\
+        &= 2x^2 + 2xy + 2y^2 \\
+        &= \underbrace{2(x^2 + xy + y^2)}_{\geq 0 \text{ car } x^2 + xy + y^2 \geq |xy|}
+    \end{align*}
+    En particulier, si $^tX \begin{pmatrix}
+        2 & 1 \\
+        1 & 2
+    \end{pmatrix} X = 0$ alors $|xy| = 0$, puis $x = y = 0$. \\
+    La forme est définie positive. 
+\end{itemize}
+
 
 \end{document}
