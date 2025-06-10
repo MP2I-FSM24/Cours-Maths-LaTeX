@@ -229,5 +229,28 @@ Donc $\\| \frac{1}{\sqrt{2}}(1, 0)\| = 1$ \\
 On a $\| (1, -2)\| = \sqrt{6}$ \\
 Et $\langle (1, 0), (1, -2)\rangle = 0$. 
 
+\setsection{22}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.23, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    La famille des fonctions $t \mapsto \sin (n t)$, où $n \in \mathbb{N}$ est orthonormale dans $\mathcal{C}([0 ; 2 \pi], \mathbb{R})$ pour le produit scalaire
+    $$(f, g) \mapsto \frac{1}{\pi} \int_0^{2 \pi} f(t) g(t) \,dt$$
+\end{tcolorbox}
+
+\noindent On note pour $n\in \mathbb{N}$, $f_n: [0 ; 2\pi] \to \mathbb{R};x\mapsto \sin(nx)$. \\
+Soit $p\neq n$. \\
+\begin{align*}
+    \langle f_p, f_n \rangle &= \frac{1}{\pi} \int_{0}^{2\pi} f_n(t) f_p(t) \,dt \\
+    &= \frac{1}{\pi} \int_{0}^{2\pi} \sin(nt) \sin(pt) \,dt \\
+    &= \frac{1}{2\pi} \int_{0}^{2\pi} (\cos((n-m)t) - \cos((n+m)t) \,dt \\
+    &= \frac{1}{2\pi} \left[ \frac{1}{n-p} \sin((n-p)t) - \frac{1}{n+p}\sin((n+p)t) \right]^{2\pi}_0 \text{ ($n\neq p$)} \\
+    &= 0
+\end{align*}
+Si $n = p$ alors : 
+\begin{align*}
+    \|f_n\| &= \frac{1}{2\pi} \int_{0}^{2\pi} (1 - \cos(2nt)) \,dt \\
+    &= 1
+\end{align*}
+Donc $(f_n)$ est bien une famille orthonormée. 
+
 
 \end{document}
