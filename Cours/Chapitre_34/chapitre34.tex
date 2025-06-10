@@ -184,5 +184,23 @@ On applique l'inégalité de Cauchy-Schwarz aux vecteurs $\begin{pmatrix}
     &= \sqrt{n} \sqrt{\sum_{k=1}^{n} x_k^2} \\
 \end{align*}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.18, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $a$ et $b$ deux réels tels que $a<b$. Pour tout $f \in \mathcal{C}^1([a ; b], \mathbb{R})$, on a
+    $$f(b)^2-f(a)^2 \leq 2 \sqrt{\int_a^b f(t)^2 \,dt} \sqrt{\int_a^b f^{\prime}(t)^2 \,dt}$$
+\end{tcolorbox}
+
+\noindent On munit $\mathcal{C}^0([a, b], \mathbb{R})$ du produit scalaire usuel : 
+\begin{align*}
+    \forall (f, g)\in \mathcal{C}^0([a, b], \mathbb{R})^, \langle f, g \rangle &= \int_{a}^{b} f(t) g(t) \,dt
+\end{align*}
+On applique l'inégalité de Cauchy-Schwarz aux vecteurs $f$ et $f'$ : 
+\begin{align*}
+    \|f\|\times \|f'\| &\geq |\langle f, f'\rangle| \\
+    &= \left| \int_{a}^{b} f(t) f'(t) \,dt \right| \\
+    &= \left| \left[ \frac{f^2(t)}{2} \right]_a^b \right| \\
+    &= \left|  \frac{f(b)^2 - f(a)^2}{2} \right|
+\end{align*}
+
 
 \end{document}
