@@ -264,5 +264,32 @@ Donc $(f_n)$ est bien une famille orthonormée.
 \end{align*}
 Si $f$ est paire et $g$ impaire, alors $fg$ est impaire et ainsi $\langle f, g \rangle = 0$. 
 
+\section{Propriétés des familles orthogonales}
+\begin{tcolorbox}[title=Théorème 34.25, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace préhilbertien réel.
+    \begin{enumerate}
+        \item Théorème de Pythagore : pour tout $(x, y) \in E^2, x$ et $y$ sont orthogonaux ssi $\|x+y\|^2=\|x\|^2+\|y\|^2$. De surcro ${ }^{\wedge}$ it, si $\left(x_1, \ldots, x_n\right)$ est une famille orthogonale de vecteurs de $E$, alors
+        $$\left\|\sum_{k=1}^n x_k\right\|^2=\sum_{k=1}^n\left\|x_k\right\|^2$$
+        \item Toute famille orthogonale de vecteurs non nuls de $E$ est libre. En particulier, si $E$ est de dimension finie $n$ non nulle, toute famille orthogonale de $n$ vecteurs est une base orthogonale.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item RAF
+    \item Soit $(e_i)_{i\in I}$ une famille orthogonale. Soit $(\lambda_i)_{i\in I}$ une famille de scalaires à support fini. On suppose en outre que : 
+    \begin{align*}
+        \forall i\in I, e_i\neq 0
+    \end{align*}
+    On suppose que $\sum\limits_{i\in I} \lambda_i e_i = 0$. \\
+    Soit $j\in I$. 
+    \begin{align*}
+        \langle \sum_{i\in I} \lambda_i e_i, e_j \rangle &= 0 \\
+        &= \sum_{i\in I} \lambda_i \underbrace{\langle e_i, e_j \rangle}_{= 0 \text{ pour } i\neq j} \\
+        \text{donc } \lambda_j \| e_j \|^2 &= 0 \\
+        \text{donc } \lambda_j &= 0
+    \end{align*}
+    Donc la famille est libre. 
+\end{enumerate}
+
 
 \end{document}
