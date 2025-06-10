@@ -211,5 +211,23 @@ On applique l'inégalité de Cauchy-Schwarz aux vecteurs $f$ et $f'$ :
 \indent \boxed{\Rightarrow} RAF \\
 \indent \boxed{\Leftarrow} Si $x$ est orthogonal à tout vecteur de $E$, alors $x\bot x$, donc $\|x\|^2 = 0$, donc $x = 0$. 
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.21, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Exemple 34.21 Montrer que pour le produit scalaire
+    $$
+(X, Y) \mapsto^t X\begin{pmatrix}
+    2 & 1 \\
+    1 & 2
+    \end{pmatrix} Y
+    $$
+    sur $\mathbb{R}^2$, la base canonique n'est pas orthormale, mais la famille $\left(\frac{1}{\sqrt{2}}(1,0), \frac{1}{\sqrt{6}}(1,-2)\right)$ l'est.
+\end{tcolorbox}
+
+\noindent $\| (1, 0)\| = \sqrt{2} = \| (0, 1)\|$ \\
+$\langle (1, 0), (0, 1)\rangle = 1$ \\
+Donc $\\| \frac{1}{\sqrt{2}}(1, 0)\| = 1$ \\
+On a $\| (1, -2)\| = \sqrt{6}$ \\
+Et $\langle (1, 0), (1, -2)\rangle = 0$. 
+
 
 \end{document}
