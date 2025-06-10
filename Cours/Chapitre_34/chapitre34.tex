@@ -107,5 +107,55 @@ Idem pour la seconde identité.
     &= \lambda^2 \|x\|^2
 \end{align*}
 
+\section{Inégalité de Cauchy-Schwarz, inégalité triangulaire}
+\begin{tcolorbox}[title=Théorème 34.16, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace préhilbertien réel et $x$ et $y$ dans $E$.
+    \begin{itemize}
+        \item Inégalité de Cauchy-Schwarz :
+        $$|\langle x, y\rangle| \leq\|x\| \times\|y\|$$
+        avec égalité si et seulement si $x$ et $y$ sont colinéaires.
+        \item Inégalité triangulaire :
+        $$\|\|x\|-\| y\|\|\leq\| x+y\| \leq\|x\|+\|y\|$$
+        l'inégalité de droite est une égalité si et seulement si $x$ et $y$ sont positivement colinéaires.
+        \item Inégalité triangulaire, version distance :
+        $$|d(x, y)-d(y, z)| \leq d(y, z) \leq d(x, y)+d(y, z)$$
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Si $x = 0$, l'inégalité est vérifiée pour tout $y\in E$. \\
+    On suppose $x\neq 0$. On considère, pour $y\in E$ fixé : 
+    \begin{align*}
+        \varphi:\mathbb{R}\to \mathbb{R}; t&\mapsto \|tx + y\|^2 \\
+        &= \langle tx+y, tx+y\rangle \\
+        &= t^2 \|x\|^2 + 2t\langle x, y\rangle + \|y\|^2
+    \end{align*}
+    $f$ est une fonction polynomiale de degré $2$ ($\|x|\neq 0$) positive donc de discriminant $\Delta \leq 0$. \\
+    Or $\Delta = 4\langle x, y\rangle^2 - 4\|x\|^2\|y\|^2$. D'où le résultat. \\
+    Si $\Delta = 0$, alors $f$ s'annule une unique fois en $t_0$. On a alors $\|t_0 x + y\|^2 = 0$. \\
+    Donc $t_0 x + y = 0$. \\
+    Donc $(x, y)$ est liée. \\
+    Réciproquement, si $(x, y)$ est liée, alors $y = t_0 x$ ($x\neq 0$) et on a encore $f(t_0) = 0$. 
+
+    \item Pour $(x, y)\in E^2$ : 
+    \begin{align*}
+        \|x+y\| \leq \|x\| + \|y\| &\Leftrightarrow \|x+y\|^2\leq (\|x\| + \|y\|)^2 \\
+        &\Leftrightarrow \|x\|^2 + 2\langle x, y\rangle + \|y\|^2 \leq \|x\|^2 + 2\|x\|\|y\| + \|y\|^2 \\
+        &\Leftrightarrow \langle x, y\rangle \leq \|x\|\|y\|
+    \end{align*}
+    La dernière assertion est vraie d'après l'inégalité de Cauchy-Schwarz, la première l'est tout autant. \\
+    RAS pour l'inégalité généralisée. \\
+    Si $\|x+y\| = \|x\| + \|y\|$, le cas d'égalité de Cauchy-Schwarz affirme que (par ex) : 
+    \begin{align*}
+        y = \alpha x, \alpha\in \mathbb{R}
+    \end{align*}
+    Mais alors (en supposant $x \neq 0$) : 
+    \begin{align*}
+        \| 1 + \alpha\| \|x\| = \|x + y\| = (1 + |\alpha|) \|x\|
+    \end{align*}
+    Donc $|1 + \alpha| = 1 + |\alpha|$. \\
+    Nécessairement, $\alpha\geq 0$
+\end{itemize}
+
 
 \end{document}
