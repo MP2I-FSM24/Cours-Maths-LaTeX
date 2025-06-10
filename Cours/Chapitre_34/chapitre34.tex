@@ -291,5 +291,23 @@ Si $f$ est paire et $g$ impaire, alors $fg$ est impaire et ainsi $\langle f, g \
     Donc la famille est libre. 
 \end{enumerate}
 
+\section{Coordonnées dans une base orthonormale}
+\begin{tcolorbox}[title=Théorème 34.26, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace euclidien de dimension non nulle et $\left(e_1, \ldots, e_n\right)$ une base orthonormale de $E$, et $x \in E$. Alors
+    $$x=\sum_{k=1}^n\left\langle x, e_k\right\rangle e_k$$
+    Autrement dit, les coordonnées de $x$ dans la base $\left(e_1, \ldots, e_n\right)$ sont $\left(\left\langle x, e_1\right\rangle, \ldots,\left\langle x, e_n\right\rangle\right)$.
+\end{tcolorbox}
+
+\noindent Comme $(e_k)_{k\in \llbracket 1, n \rrbracket}$ est une base, tout $x\in E$ s'écrit : 
+\begin{align*}
+    x = \sum_{i=1}^{n} \lambda_i e_i
+\end{align*}
+Soit $j\in \llbracket 1, n \rrbracket$ : 
+\begin{align*}
+    \langle x, e_j \rangle &= \langle \sum_{i=1}^{n} \lambda_i e_i, e_j \rangle \\
+    &= \sum_{i=1}^{n} \lambda_i \langle e_i, e_j \rangle \\
+    &= \lambda_j 
+\end{align*}
+
 
 \end{document}
