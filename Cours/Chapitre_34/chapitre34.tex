@@ -157,5 +157,32 @@ Idem pour la seconde identité.
     Nécessairement, $\alpha\geq 0$
 \end{itemize}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.17, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Pour tout $\left(x_1, \ldots, x_n\right) \in \mathbb{R}^n$,
+    $$\left(\sum_{k=1}^n x_k\right)^2 \leq n \sum_{k=1}^n x_k^2$$
+    avec égalité si et seulement si $x_1 = \cdots = x_n$.
+\end{tcolorbox}
+
+\noindent On munit $E = \mathbb{R}^n$ de son produit scalaire canonique. \\
+On applique l'inégalité de Cauchy-Schwarz aux vecteurs $\begin{pmatrix}
+    x_1 \\ \vdots \\ x_n
+\end{pmatrix}$ et $\begin{pmatrix}
+    1 \\ \vdots \\ 1
+\end{pmatrix}$. 
+\begin{align*}
+    \left| \left\langle \begin{pmatrix}
+        x_1 \\ \vdots \\ x_n
+    \end{pmatrix}, \begin{pmatrix}
+        1 \\ \vdots \\ 1
+    \end{pmatrix} \right\rangle \right| &\leq \left\| \begin{pmatrix}
+        x_1 \\ \vdots \\ x_n
+    \end{pmatrix} \right\| \left\| \begin{pmatrix}
+        1 \\ \vdots \\ 1
+    \end{pmatrix} \right\| \\
+    \left| \sum_{k=1}^{n} 1\times x_k \right| &\leq \sqrt{\sum_{k=1}^{n} x_k^2} \sqrt{\sum_{k=1}^{n} 1^2} \\
+    &= \sqrt{n} \sqrt{\sum_{k=1}^{n} x_k^2} \\
+\end{align*}
+
 
 \end{document}
