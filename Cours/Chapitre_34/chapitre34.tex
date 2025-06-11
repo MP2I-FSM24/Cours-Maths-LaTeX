@@ -344,5 +344,45 @@ Soit $(A, B)\in \mathcal{M}_n(\mathbb{R})^2$.
     &= N(A)^2N(B)^2
 \end{align*}
 
+\section*{Exercice 7}
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item RAF d'après la définition d'un produit scalaire. 
+        \item Pour $u\in E$, on note $f_u:E\to \mathbb{R}; x\mapsto \langle u, x\rangle$ et on note $f:E\to E^*; u\mapsto f_u$. \\
+        On a $\dim(E^*) = \dim(E)$ donc $f$ est surjective. \\
+        Soit $u\in\ker f$. Donc : 
+        \begin{align*}
+            \forall x\in E, \langle u, x\rangle &= 0
+        \end{align*}
+        Donc $u = 0_E$. \\
+        Donc $f$ est injective. \\
+        Donc $f$ est bijective. 
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item On munit $\mathbb{R}_n[X]$ (de dimension finie) du produit scalaire : 
+        \begin{align*}
+            \forall (P, Q)\in \mathbb{R}_n[X]^2, \langle P, Q\rangle &= \int_{0}^{1} P(t) Q(t) \,dt
+        \end{align*}
+        On note $\varphi:\mathbb{R}_n[X]\to \mathbb{R}; P\mapsto P(0)$. \\
+        Ainsi, $\varphi\in \mathbb{R}_n[X]^*$. \\
+        D'après (1.b), il existe un unique $A\in \mathbb{R}_n[x]$ tel que :
+        \begin{align*}
+            \forall P\in \mathbb{R}_n[X]: \varphi(P) = \langle A, P\rangle
+        \end{align*}
+        \item Par l'absurde, supposons qu'il existe $A\neq 0\in \mathbb{R}_n[X]$ tel que : 
+        \begin{align*}
+            \forall P\in \mathbb{R}[X], \int_{0}^{1} P(t) A(t) \,dt = P(0)
+        \end{align*}
+        Pour tout $k\in \mathbb{N}^*, \int_{0}^{1} t^k A(t) \,dt = 0$. \\
+        En particulier, $\int_{0}^{1} t A(t) \,dt = 0$. \\
+        Donc $t\mapsto tA(t)$ doit s'annuler sur $]0, 1[$. \\
+        Donc $A$ possède au moins une racine sur $]0, 1[$. \\
+        Notons $r_1, \ldots, r_k$ les racines de $A$ sur $]0, 1]$. ($k\leq n$) \\
+        On pose $P = X \prod_{i\in \llbracket 1, k \rrbracket}(X - r_i)\in \mathbb{R}_{n+1}[X]$. \\
+        On a $\int_{0}^{1} \underbrace{P(t)A(t)}_{\text{de signe constant}} \,dt = P(0) = 0$. \\
+        Donc $PA = 0$. Absurde. 
+    \end{enumerate}
+\end{enumerate}
+
 
 \end{document}
