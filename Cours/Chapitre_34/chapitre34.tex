@@ -327,6 +327,46 @@ Ainsi :
     &= \sum_{i=1}^{n} x_i y_i
 \end{align*}
 
+\section{Algorithme d'orthonormalisation de Gram-Schmidt}
+\begin{tcolorbox}[title=Théorème 34.28, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace préhilbertien réel et $\left(e_1, \ldots, e_n\right)$ une famille libre de $E$. On peut transformer $\left(e_1, \ldots, e_n\right)$ en une famille orthonormale de $\left(u_1, \ldots, u_n\right)$ de $E$ telle que
+    $$\forall k \in \llbracket 1, n \rrbracket, \operatorname{Vect}\left(e_1, \ldots, e_k\right)=\operatorname{Vect}\left(u_1, \ldots, u_k\right) .$$
+    Les vecteurs $u_1, \ldots, u_n$ peuvent être construits de proche en proche depuis $u_1$ jusqu'à $u_n$ et pour tout $k \in \llbracket 1, n \rrbracket$, on n'a que deux choix possibles pour $u_k$ :
+    $$\pm \frac{e_k-\sum\limits_{i=1}^{k-1}\left\langle e_k, u_i\right\rangle u_i}{\left\|e_k-\sum\limits_{i=1}^{k-1}\left\langle e_k, u_i\right\rangle u_i\right\|}$$
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Nécessairement, $u_1 = \pm \frac{e_1}{\|e_1\|}$ pour que $u_1$ soit unitaire et $\operatorname{Vect}(e_1) = \operatorname{Vect}(u_1)$.
+    \item Supposons construits $(u_1, \ldots, u_k)$, $k\leq n-1$ vérifiant :
+    \begin{itemize}
+        \item $Vect(u_1, \ldots, u_k) = \operatorname{Vect}(e_1, \ldots, e_k)$
+        \item $(u_1, \ldots, u_k)$ est une famille orthornormale
+    \end{itemize}
+    Soit $v\in E$. Ccomme $\operatorname{Vect}(e_1, \ldots, e_{k+1}) = \operatorname{Vect}(e_1, \ldots, e_k) \oplus \operatorname{Vect}(e_{k+1}) = \operatorname{Vect}(u_1, \ldots, u_k) \oplus \operatorname{Vect}(e_{k+1})$. \\
+    Si $v\in \operatorname{Vect}(e_1, \ldots, e_{k+1})$, on a alors : 
+    \begin{align*}
+        v = \sum_{i=1}^{k} \lambda_i u_i + \mu_{k+1} e_{k+1}
+    \end{align*}
+    On a : 
+    \begin{align*}
+        \operatorname{Vect}(e_1, \ldots, e_{k+1}) = \operatorname{Vect}(u_1, \ldots, u_k, v) \Leftrightarrow \lambda_{k+1}\neq 0
+    \end{align*}
+    On suppose désormais $\lambda_{k+1}\neq 0$. \\
+    On a $(u_1 ,\ldots, u_k, v)$ une familel orthogonale si et seulement si : 
+    \begin{align*}
+        \forall i\in \llbracket 1, k \rrbracket, \langle u_i, v \rangle &= 0 \\
+        \text{ssi. } \forall i\in \llbracket 1, k \rrbracket, 0 &= \langle u_1, \sum_{p=1}^{k} \lambda_p u_p + \lambda_{k+1} e_{k+1} \rangle \\
+        &= \sum_{p=1}^{k} \lambda_p \langle u_i, u_p \rangle + \lambda_{k+1} \langle u_i, e_{k+1} \rangle \\
+        &= \lambda_i + \lambda_{k+1} \langle u_i, e_{k+1} \rangle \\
+        \text{ssi. } \forall i\in \llbracket 1, k \rrbracket, \lambda_i &= -\lambda_{k+1} \langle u_i, e_{k+1} \rangle \\
+        \text{ssi. } v &= \lambda_{k+1} (e_{k+1} - \sum_{i=1}^{k} \langle u_i, e_k\rangle u_i)
+    \end{align*}
+    Ainsi, $(u_1, \ldots, u_{k+1})$ est orthonormée avec $\operatorname{Vect}(u_1, \ldots, u_{k+1}) = \operatorname{Vect}(e_1, \ldots, e_{k+1})$ si et seulement si : 
+    \begin{align*}
+        u_{k+1} &= \pm \frac{e_{k+1} - \sum\limits_{i=1}^{k} \langle e_{k+1}, u_i\rangle u_i}{\|e_{k+1} - \sum\limits_{i=1}^{k} \langle e_{k+1}, u_i\rangle u_i\|}
+    \end{align*}
+\end{itemize}
+
 \section*{Exercice 6}
 \noindent D'après le cours : 
 \begin{align*}
