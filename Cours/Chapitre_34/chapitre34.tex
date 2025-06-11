@@ -508,6 +508,70 @@ Ainsi :
     Donc $v = 0$. 
 \end{enumerate}
 
+\setsection{48}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.49, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $F$ le sous-espace vectoriel Vect( $\sin , \cos )$ de $\mathcal{C}([0 ; 2 \pi], \mathbb{R})$. Montrer que le projeté orthogonal de l'identité sur $F$ pour le produit scalaire
+    $$(f, g) \mapsto \int_0^{2 \pi} f(t) g(t) \mathrm{d} t$$
+est la fonction $t \mapsto-2 \sin t$.
+\end{tcolorbox}
+
+\noindent \underline{Première Méthode :} \\
+\begin{itemize}
+    \item\begin{align*}
+        \|\sin\|^2 &= \int_{0}^{2\pi} \sin^2(t) \,dt = \pi \\
+        &= \int_{0}^{2\pi} \frac{1 - \cos(2t)}{2} \,dt \\
+        &= \pi \\
+        &= \|\cos\|^2 
+    \end{align*}
+    \item \begin{align*}
+        \langle \cos, \sin\rangle &= \int_{0}^{2\pi} \sin(t)\cos(t) \,dt \\
+        &= \frac{1}{2} \int_{0}^{2\pi} \sin(2t) \,dt \\
+        &= 0
+    \end{align*}
+    On note $f_1 = \frac{1}{\sqrt{\pi}}\sin$ et $f_2 = \frac{1}{\sqrt{\pi}}\cos$. \\
+    $(f_1, f_2)$ est une base orthonormée de $F$. \\
+    D'après le cours : 
+    \begin{align*}
+        P_F(\operatorname{id}) &= \langle \operatorname{id}, f_1 \rangle f_1 + \langle \operatorname{id}, f_2\rangle f_2
+    \end{align*}
+    Or :
+    \begin{align*}
+        \langle \operatorname{id}, \sin\rangle &= \int_{0}^{2\pi} \sin(t) \,dt \\
+        &= \left[ -t\cos(t) \right]_0^{2\pi} + \int_0^{2\pi} \cos(t) \,dt \\
+        &= -2\pi \\
+        \langle \operatorname{id}, \cos\rangle &= \int_{0}^{2\pi} t\cos(t) \,dt \\
+        &= \left[ t\sin(t) \right]_0^{2\pi} - \int_0^{2\pi} \sin(t) \,dt \\
+        &= 0
+    \end{align*}
+    Ainsi : 
+    \begin{align*}
+        P_F(\operatorname{id}) &= \langle \operatorname{id}, \frac{\sin}{\sqrt{\pi}}\angle \frac{\sin}{\sqrt{\pi}} \\
+        &= -2\sin
+    \end{align*}
+    \underline{Deuxième Méthode :} \\
+    $P_F(\operatorname{id})\in \operatorname{Vect}(\sin, \cos)$. \\
+    On écrit donc : 
+    \begin{align*}
+        P_F(\operatorname{id}) &= a\sin + b\cos
+    \end{align*}
+    Or : 
+    \begin{align*}
+        \operatorname{id} - P_F(\operatorname{id}) \in F &\Leftrightarrow \begin{cases}
+            \langle \operatorname{id} - P_F(\operatorname{id}), \sin\rangle = 0 \\
+            \langle \operatorname{id} - P_F(\operatorname{id}), \cos\rangle = 0
+        \end{cases} \\
+        &\Leftrightarrow \begin{cases}
+            \langle \operatorname{id}, \sin\rangle - a\|\sin\|^2 - b\langle \sin, \cos\rangle = 0 \\
+            \langle \operatorname{id}, \cos\rangle - a\langle \sin, \cos\rangle - b\|\cos\|^2 = 0
+        \end{cases} \\
+        &\Leftrightarrow \begin{cases}
+            -2\pi - a\pi - b\times 0 = 0 \\
+            0 - a\times 0 + b\pi = 0
+        \end{cases}
+    \end{align*}
+\end{itemize}
+
 \section*{Exercice 6}
 \noindent D'après le cours : 
 \begin{align*}
