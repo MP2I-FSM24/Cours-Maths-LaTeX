@@ -1,4 +1,5 @@
 \documentclass[../main.tex]{subfiles}
+\usepackage{mathabx}
 
 \begin{document}
 \setcounter{chapter}{33}
@@ -458,6 +459,53 @@ Ainsi :
         \langle t, u \rangle &= \sum_{i\in I} \lambda_i \langle t, x_i\rangle = 0
     \end{align*}
     Donc $t\in \operatorname{Vect}(X)^\bot$.
+\end{enumerate}
+
+\setsection{37}
+\section{Supplémentaire orthogonal d'un sous-espace vectoriel de dimension finie}
+\begin{tcolorbox}[title=Théorème 34.38, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace préhilbertien réel et $F$ un sous-espace vectoriel de dimension finie de $E$.
+    \begin{enumerate}
+        \item $\quad F^{\perp}$ est l'unique supplémentaire de $F$ dans $E$ orthogonal à $F$. On l'appelle le supplémentaire orthogonal de $F$ dans $E$.
+        \item $\quad F^{\perp \perp}=F$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \underline{Existence :} \\
+    On remarque que la propriété est vraie pour $F = \{x\}$. \\
+    On suppose $F\neq\{0_E\}$. \\
+    Comme $F$ est de dimension finie non nulle il possède une base orthonormée notée $(e_1, \ldots, e_n)$. \\
+    Soit $x\in E$, on décompose $x = \underbrace{x - \sum_{k=1}^{n} \langle x, e_k\rangle e_k}_{:= v} + \underbrace{\sum_{k=1}^{n} \langle x, e_k\rangle e_k}_{\in F}$. \\
+    Or pour tout $i\in \llbracket 1, n \rrbracket$ : 
+    \begin{align*}
+        \langle v, e_i\rangle &= \langle x - \sum_{k=1}^{n} \langle x, e_k\rangle e_k, e_i\rangle \\
+        &= \langle x, e_i\rangle - \sum_{k=1}^{n} \langle x, e_k\rangle \langle e_k, e_i\rangle \\
+        &= \langle x, e_i\rangle - \langle x, e_i\rangle \\
+        &= 0 
+    \end{align*}
+    Donc $v\in F^\bot$. \\
+    \underline{Unicité :} \\
+    On suppose que $F\obot G = F\obot F^\bot$. \\
+    Par définition, $G\subset F^\bot$. \\
+    Soit $t\in F^\bot$. \\
+    On décompose $t = f + g$. 
+    \begin{align*}
+        \|f\|^2 &= \langle f, f\rangle \\
+        &= \langle f, t-g\rangle \\
+        &= \langle f, t\rangle - \langle f, g\rangle \\
+        &= 0
+    \end{align*}
+    \item On sait que $F\subset (F^\bot)^\bot$. \\
+    Soit $x\in (F^\bot)^\bot$. \\
+    D'après (1), $x = f + v$ avec $f\in F, v\in F^\bot$. \\
+    Or : 
+    \begin{align*}
+        \|v\|^2 = \langle v, v\rangle &= \langle v, x-f\rangle \\
+        &= \langle v, x\rangle - \langle v, f\rangle \\
+        &= 0
+    \end{align*}
+    Donc $v = 0$. 
 \end{enumerate}
 
 \section*{Exercice 6}
