@@ -309,5 +309,40 @@ Soit $j\in \llbracket 1, n \rrbracket$ :
     &= \lambda_j 
 \end{align*}
 
+\section{Expression du produit scalaire et de la norme dans une base orthonormale}
+\begin{tcolorbox}[title=Théorème 34.27, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E \neq\left\{0_E\right\}$ un espace euclidien et $(x, y) \in E^2$ de coordonnées respectives $X=\left(x_1, \ldots, x_n\right)$ et $Y=\left(y_1, \ldots, y_n\right)$ dans une certaine base orthonormale de $E$. Alors
+    $$\langle x, y\rangle=\sum_{k=1}^n x_k y_k={ }^{\mathrm{t}} X Y \quad \text { et } \quad\|x\|^2=\sum_{k=1}^n x_k^2={ }^{\mathrm{t}} X X$$
+\end{tcolorbox}
+
+\noindent Soit $(e_i)_{1\leq i\leq n}$ une base orthonormale de $E$. Pour $(x, y)\in E^2$ : 
+\begin{align*}
+    x &= \sum_{i=1}^{n} \langle x, e_i\rangle e_i \\
+    y &= \sum_{i=1}^{n} \langle y, e_i\rangle e_i
+\end{align*}
+Ainsi :
+\begin{align*}
+    \langle x, y\rangle &= \langle \sum_{i=1}^{n} \langle x, e_i\rangle e_i, \sum_{j=1}^{n} \langle y, e_j\rangle e_j \rangle \\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n} x_i y_j \langle e_i, e_j\rangle \\
+    &= \sum_{i=1}^{n} x_i y_i
+\end{align*}
+
+\section*{Exercice 6}
+\noindent D'après le cours : 
+\begin{align*}
+    \varphi&:\mathcal{M}_n(\mathbb{R})^2\to \mathbb{R} \\
+    &(A, B)\mapsto \operatorname{tr}({^tAB})
+\end{align*}
+définit un produit scalaire dont $N$ est la norme associée. \\
+Soit $(A, B)\in \mathcal{M}_n(\mathbb{R})^2$. 
+\begin{align*}
+    N(AB)^2 &= \operatorname{tr}({^tAB}AB) \\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n} (AB)_{ji}^2 \\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n} \left[ \sum_{k=1}^{n} A_{jk} B_{ki} \right]^2 \\
+    &\leq \sum_{i=1}^{n} \sum_{j=1}^{n} \left[ \sum_{k=1}^{} A_{jk}^2 \right]\times \left[ \sum_{p=1}^{n} B_{pi}^2 \right] \text{ (Cauchy-Schwarz)} \\
+    &= \left( \sum_{i=1}^{n} \sum_{p=1}^{n} B_{pi}^2 \right) \times \left( \sum_{j=1}^{n} \sum_{k=1}^{n} A_{jk}^2 \right) \\
+    &= N(A)^2N(B)^2
+\end{align*}
+
 
 \end{document}
