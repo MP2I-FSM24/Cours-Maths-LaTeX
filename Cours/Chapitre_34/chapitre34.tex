@@ -367,6 +367,99 @@ Ainsi :
     \end{align*}
 \end{itemize}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.29, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Sur $\mathbb{R}[X]$, la famille $\left(1, \sqrt{3}(2 X-1), \sqrt{5}\left(6 X^2-6 X+1\right)\right)$ est orthonormale pour le produit scalaire
+    $$(P, Q) \mapsto \int_0^1 P(t) Q(t) \mathrm{d} t$$
+\end{tcolorbox}
+
+\noindent On orthonormalise $(1, X, X^2) = (P_0, P_1, P_2)$ avec Gram-Schmidt. 
+\begin{itemize}
+    \item $\|P_0\| = 1$ donc on pose $V_0 = P_0$. 
+    \item Soit $\tilde{V_1} = X + aV_0$
+    \begin{align*}
+        \langle \tilde{V_1}, V_0\rangle &= \langle X, V_0\rangle + a\|V_0\|^2 = \frac{1}{2} + a
+    \end{align*}
+    On pose donc $\tilde{V_1} = X - \frac{1}{2}$. On a : 
+    \begin{align*}
+        \|\tilde{V_1}\|^2 &= \int_{0}^{1} (t - \frac{1}{2})^2 \,dt \\
+        &= \frac{1}{3} - \frac{1}{2} + \frac{1}{4} \\
+        &= \frac{1}{12}
+    \end{align*}
+    On pose $V_1 = \frac{\tilde{V_1}}{\|V_1\|} = \sqrt{12}(X - \frac{1}{2}) = \sqrt{3}(2X - 1)$. \\
+    On pose $\tilde{V_2} = X^2 + aV_1 + bV_0$. \\
+    On a : 
+    \begin{align*}
+        \langle \tilde{V_2}, V_1\rangle &= \langle X^2, V_1\rangle + a\|V_1\|^2 \\
+        &= \sqrt{3} \int_{0}^{1} t^2(2t-1) \,dt + a \\
+        &= \frac{\sqrt{3}}{6} + a \\
+        \langle \tilde{V_2}, V_0\rangle &= \langle X^2, V_0\rangle + b\|V_0\|^2 \\
+        &= \frac{1}{3} + b
+    \end{align*}
+    On pose : 
+    \begin{align*}
+        \tilde{V_2} &= X^2 - \frac{\sqrt{3}}{6} \sqrt{3}(2X-1) - \frac{1}{3} \\
+        &= X^2 - X + \frac{1}{6} \\
+        \|\tilde{V_2}\|^2 &= \int_{0}^{1} (t^2 - t + \frac{1}{6})^2 \,dt \\
+        &= \frac{1}{5} + \frac{1}{3} + \frac{1}{36} - \frac{1}{2} + \frac{1}{9} - \frac{1}{6} \\
+        &= \frac{1}{180}
+    \end{align*}
+    On pose : 
+    \begin{align*}
+        V_2 &= \sqrt{180}(X^2 - X + \frac{1}{6}) \\
+        &= \sqrt{5}(6X^2 - 6X + 1)
+    \end{align*}
+\end{itemize}
+
+\setsection{33}
+\section{Propriétés de l'orthogonal d'une partie}
+\begin{tcolorbox}[title=Propostion 34.34, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Avec les mêmes hypothèses que la définition précédente : 
+    \begin{enumerate}
+        \item $X^\bot$ est un sous-espace vectoriel de $E$, orthogonal à $X$. 
+        \item Si $X$ est un sous-espace vectoriel de $E$, orthogonal à $X$. 
+        \item Si $X\subset Y$ alors $Y^\bot \subset X^\bot$.
+        \item On a $X^\bot = \operatorname{Vect}(X)^\bot$ et $X\subset (X^\bot)^\bot$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $X^\bot \bot X$. \\
+    \begin{itemize}
+        \item $X^\bot\subset E$
+        \item $0\in X^\bot$
+        \item Si $(t, u)\in (X^\bot)^2$ et $\alpha\in \mathbb{R}$ : 
+        \begin{align*}
+            \forall x\in X, \langle t + \alpha u, x\rangle &= \langle t, x\rangle + \alpha \langle u, x\rangle \\
+            &= 0
+        \end{align*}
+        Donc $t + \alpha u\in X^\bot$. \\
+        Donc $X^\bot$ est bien un sous-espace vectoriel de $E$. 
+    \end{itemize}
+    \item On suppose $X$ un sous-espace vectoriel de $E$. \\
+    Soit $X\in X\cap X^\bot$ donc $x\bot x$ donc $x = 0_E$. \\
+    Donc $X\cap X^\bot = \{0_E\}$. 
+    \item Soit $X\subset Y$ et $t\in Y^\bot$. \\
+    Donc : 
+    \begin{align*}
+        \forall x\in Y, \langle x, t\rangle &= 0 \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \forall x\in X, \langle x, t\rangle = 0
+    \end{align*}
+    Donc $t\in X^\bot$. 
+    \item Comme $X\subset \operatorname{Vect}(X)$, on a : 
+    \begin{align*}
+        \operatorname{Vect}(X)^\bot \subset X^\bot
+    \end{align*}
+    Soit $t\in X^\bot$. Soit $u = \sum\limits_{i\in I} \lambda_i x_i\in \operatorname{Vect}(X)$ ($X_i\in X$ et $(\lambda_i)$ famille à support fini). 
+    \begin{align*}
+        \langle t, u \rangle &= \sum_{i\in I} \lambda_i \langle t, x_i\rangle = 0
+    \end{align*}
+    Donc $t\in \operatorname{Vect}(X)^\bot$.
+\end{enumerate}
+
 \section*{Exercice 6}
 \noindent D'après le cours : 
 \begin{align*}
