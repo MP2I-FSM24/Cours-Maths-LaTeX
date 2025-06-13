@@ -585,6 +585,36 @@ Or $H^\bot = \operatorname{Vect}(a) = \operatorname{Vect}\left(\frac{a}{\|a\|}\r
     &= \frac{\langle x, a\rangle a}{\|a\|^2}
 \end{align*}
 
+\setsection{52}
+\section{Distance à un sous-espace vectoriel de dimension finie}
+\begin{tcolorbox}[title=Théorème 34.53, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace préhilbertien réel, $F$ un sous-espace vectoriel de dimension finie et $x \in E$. On note $p$ la projection orthogonale sur $F$.
+    \begin{enumerate}
+        \item On a
+        $$d(x, F)=\|x-p(x)\|=d(x, p(x))$$
+        La distance de $x$ à $F$ est donc atteinte et est donc un minimum. Le minimum est donc atteint en projetant $x$ orthogonalement sur $F$.
+        \item Par ailleurs
+        $$d(x, F)^2=\|x\|^2-\|p(x)\|^2$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\noindent Comme $F$ est un espace vectoriel de dimension finie, $p$ est bien définie. \\
+Soit $f\in F$. On écrit : 
+\begin{align*}
+    \|x - f\|^2 &= \|\underbrace{x - p(x)}_{\in F^\bot} + \underbrace{p(x) - f}_{\in F}\|^2 \\
+    &= \|x - p(x)\|^2 + \|p(x) - f\|^2 \text{ (Pythagore)} \\
+    &\geq\|x - p(x)\|^2
+\end{align*}
+Donc $\|x - f\| \geq \|x - p(x)\|^2$. \\
+Donc $\|x - f\|\geq \|x - p(x)\|$ ($t\mapsto\sqrt{t}$ est croissante). \\
+Par définition de la borne inférieure : 
+\begin{align*}
+    d(x, F) \geq \|x - p(x)\|
+\end{align*}
+Or $p(x)\in F$ donc $\|x - p(x)\|\in \{d(x, f), f\in F\}$. \\
+Donc $d(x, F) = \|x - p(x)\|$. \\
+La dernière égalité provient du théorème de Pythagore. 
+
 \section*{Exercice 6}
 \noindent D'après le cours : 
 \begin{align*}
