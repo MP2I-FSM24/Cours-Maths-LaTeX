@@ -117,5 +117,54 @@ Donc (Chapitre 9) :
 \end{align*}
 ($a\geq 0, b\geq 0$ et $\sup A, \sup B$ existent). 
 
+\setsection{13}
+\section{Sommation par paquets}
+\begin{tcolorbox}[title=Théorème 35.14, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ un ensemble quelconque et $I=\bigsqcup\limits_{k \in K} I_k$ un recouvrement disjoint de $I$. Soit $a=\left(a_i\right)_{i \in I}$ une famille d'éléments de $\overline{\mathbb{R}}_{+}$. Alors
+    $$\sum_{i \in I} a_i=\sum_{k \in K}\left(\sum_{i \in I_k} a_i\right)$$
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Montrons que $\sum\limits_{i\in I} a_i\leq \sum\limits_{k\in K}\left(\sum\limits_{i\in I_k} a_i\right)$ : \\
+    Soit $J\in \mathcal{P}_f(I)$. \\
+    Pour tout $k\in K$, on note $J_k = J\cap I_k$. \\
+    Ainsi, $J_k\in \mathcal{P}_f(I_k)$ et :
+    \begin{align*}
+        \bigsqcup_{k\in K} J_k &= \bigsqcup_{k\in K} (J\cap I_k) \\
+        &= J\cap \bigsqcup_{k\in K} I_k \\
+        &= J\cap I \\
+        &= J
+    \end{align*}
+    On pose également $L = \{k\in K, J_k\neq\emptyset \}$. \\
+    Alors $L\in \mathcal{P}_f(K)$ et :
+    \begin{align*}
+        \bigsqcup_{k\in L} J_k &= \bigsqcup_{k\in K} J_k = J
+    \end{align*}
+    Les ensembles étant finis :
+    \begin{align*}
+        \sum_{i\in J} a_i = \sum_{k\in L} \sum_{i\in J_k} a_i\leq \sum_{k\in L}\sum_{i\in I_k} a_i \leq \sum_{k\in K} \sum_{i\in I_k} a_i
+    \end{align*}
+    Par définition de la borne supérieure : 
+    \begin{align*}
+        \sum_{i\in I} a_i \leq \sum_{k\in K}\sum_{i\in I_k} a_i
+    \end{align*}
+
+    \item On prouve $\sum\limits_{k\in K}\sum\limits_{i\in I_k} a_i\leq \sum\limits_{i\in I} a_i$. \\
+    Soit $L\in \mathcal{P}_f(K)$. \\
+    Soit, pour $k\in L, J_k\in \mathcal{P}_f(I_k)$. 
+    $\bigsqcup_{k\in L} J_k$ est donc une partie finie de $I$. \\
+    \begin{align*}
+        \underbrace{\sum_{k\in L}\sum_{i\in J_k} a_i}_{\text{car } \bigsqcup J_k \text{ est fini}} \leq \sum_{i\in I} a_i
+    \end{align*}
+\end{itemize}
+En utilisant un nombre fini de fois la définition de la borne supérieure : 
+\begin{align*}
+    \sum_{k\in L}\sum_{i\in I_k} a_i \leq \sum_{i\in I} a_i
+\end{align*}
+Toujours par définition de la borne supérieure : 
+\begin{align*}
+    \sum_{k\in K}\sum_{i\in I_k} a_i \leq \sum_{i\in I} a_i 
+\end{align*}
+
 
 \end{document}
