@@ -615,6 +615,22 @@ Or $p(x)\in F$ donc $\|x - p(x)\|\in \{d(x, f), f\in F\}$. \\
 Donc $d(x, F) = \|x - p(x)\|$. \\
 La dernière égalité provient du théorème de Pythagore. 
 
+\section{Distance à un hyperplan affine}
+\begin{tcolorbox}[title=Théorème 34.54, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace euclidien, $\mathcal{H}$ un hyperplan affine passant par $A$ et de vecteur normal unitaire $a$. Pour tout $M \in E$, on a
+    $$d(M, \mathcal{H})=|\langle\overrightarrow{A M}, a\rangle|$$
+\end{tcolorbox}
+
+\noindent On note $H$ la direction de $\mathcal{H}$. 
+\begin{align*}
+    d(M, \mathcal{H}) &= d(M, A + H) \\
+    &= d(M - A, H) \\
+    &= d(\vec{AM}, H) \\
+    &= \|\vec{AM} - P_H(\vec{AM})\| \text{ (34.53)} \\
+    &= \|\langle \vec{AM}, a\rangle a\| \text{ (34.50)} \\
+    &= |\langle \vec{AM}, a\rangle| \text{ (a unitaire)}
+\end{align*}
+
 \section*{Exercice 6}
 \noindent D'après le cours : 
 \begin{align*}
