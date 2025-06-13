@@ -1,9 +1,692 @@
 \documentclass[../main.tex]{subfiles}
+\usepackage{mathabx}
 
 \begin{document}
 \setcounter{chapter}{33}
 \chapter{Espaces préhilbertiens réels}
 \tableofcontents
 \clearpage
+
+\setsection{3}
+\section{Produit scalaire canonique sur $\mathbb{R}^n$}
+\begin{tcolorbox}[title=Théorème 34.4, title filled=false, colframe=orange, colback=orange!10!white]
+    L'application
+    $$\mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R} ;(X, Y) \mapsto{ }^{\mathrm{t}} X Y=\sum_{k=1}^n x_k y_k$$
+    est un produit scalaire sur $\mathbb{R}^n$, appelé produit scalaire canonique.
+\end{tcolorbox}
+
+\noindent Pour $X, Y \in \mathbb{R}^n$ :
+\begin{itemize}
+    \item $^tXY\in \mathbb{R}$ donc ${^tY}X = ^t({^tX}Y) = {^tX}Y$
+    \item bilinéarité : RAF
+    \item $^tXX = \sum\limits_{k=1}^{n} x_k^2 \geq 0$ et $\sum\limits_{k=1}^{n} x_k^2 = 0 \Leftrightarrow \forall k\in \llbracket 1, n \rrbracket, x_k = 0 \Leftrightarrow x = 0$
+\end{itemize}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple , title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que 
+    \begin{align*}
+        (X, Y) \mapsto {^tX} \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix} Y
+    \end{align*}
+    est un exemple de produit scalaire sur $\mathbb{R}^2$ distinct du produit scalaire usuel. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item bilinéarité : RAF
+    \item Pour $X, Y\in \mathbb{R}^2, {^tX}\begin{pmatrix}
+        2 & 1 \\
+        1 & 2
+    \end{pmatrix} Y\in \mathbb{R}$, donc : 
+    \begin{align*}
+        ^tX \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix} Y &= {^t \left( {^t}X \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix} Y \right)} \\
+        &= ^tY {^t \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix}} X \\
+        &= {^tY} \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix} X
+    \end{align*}
+    On a : 
+    \begin{align*}
+        {^tX} \begin{pmatrix}
+            2 & 1 \\
+            1 & 2
+        \end{pmatrix} X &= \begin{pmatrix}
+            x & y
+        \end{pmatrix} \begin{pmatrix}
+            2x + y \\
+            x + 2y
+        \end{pmatrix} \\
+        &= 2x^2 + 2xy + 2y^2 \\
+        &= \underbrace{2(x^2 + xy + y^2)}_{\geq 0 \text{ car } x^2 + xy + y^2 \geq |xy|}
+    \end{align*}
+    En particulier, si $^tX \begin{pmatrix}
+        2 & 1 \\
+        1 & 2
+    \end{pmatrix} X = 0$ alors $|xy| = 0$, puis $x = y = 0$. \\
+    La forme est définie positive. 
+\end{itemize}
+
+\setsection{13}
+\section{Identités remarquables}
+\begin{tcolorbox}[title=Propostion 34.14, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Pour tout $(x, y) \in E^2$, on a :
+    $$\|x+y\|^2=\|x\|^2+2\langle x, y\rangle+\|y\|^2$$
+    et
+    $$\langle x+y, x-y\rangle=\|x\|^2-\|y\|^2$$
+\end{tcolorbox}
+
+\begin{align*}
+    \|x+y\|^2 &= \langle x+y, x+y\rangle \\
+    &= \langle x, x\rangle + \langle x, y\rangle + \langle y, x\rangle + \langle y, y\rangle \text{ (bilinéarité)} \\
+    &= \|x\|^2 + 2\langle x, y\rangle + \|y\|^2 \text{ (symétrie)}
+\end{align*}
+Idem pour la seconde identité. 
+
+\section{Proposition 34.15 bis}
+\begin{tcolorbox}[title=Propostion 34.15 bis, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\|.\|$ une norme euclidienne. Soit $x\in E, \lambda\in \mathbb{R}$. 
+    \begin{itemize}
+        \item $\|\lambda x\| = |\lambda|\|x\|$
+        \item $\|x\| = 0 \Leftrightarrow x = 0$
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{align*}
+    \|\lambda x\|^2 &= \langle \lambda x, \lambda x\rangle \\
+    &= \lambda^2 \|x\|^2
+\end{align*}
+
+\section{Inégalité de Cauchy-Schwarz, inégalité triangulaire}
+\begin{tcolorbox}[title=Théorème 34.16, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace préhilbertien réel et $x$ et $y$ dans $E$.
+    \begin{itemize}
+        \item Inégalité de Cauchy-Schwarz :
+        $$|\langle x, y\rangle| \leq\|x\| \times\|y\|$$
+        avec égalité si et seulement si $x$ et $y$ sont colinéaires.
+        \item Inégalité triangulaire :
+        $$\|\|x\|-\| y\|\|\leq\| x+y\| \leq\|x\|+\|y\|$$
+        l'inégalité de droite est une égalité si et seulement si $x$ et $y$ sont positivement colinéaires.
+        \item Inégalité triangulaire, version distance :
+        $$|d(x, y)-d(y, z)| \leq d(y, z) \leq d(x, y)+d(y, z)$$
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Si $x = 0$, l'inégalité est vérifiée pour tout $y\in E$. \\
+    On suppose $x\neq 0$. On considère, pour $y\in E$ fixé : 
+    \begin{align*}
+        \varphi:\mathbb{R}\to \mathbb{R}; t&\mapsto \|tx + y\|^2 \\
+        &= \langle tx+y, tx+y\rangle \\
+        &= t^2 \|x\|^2 + 2t\langle x, y\rangle + \|y\|^2
+    \end{align*}
+    $f$ est une fonction polynomiale de degré $2$ ($\|x|\neq 0$) positive donc de discriminant $\Delta \leq 0$. \\
+    Or $\Delta = 4\langle x, y\rangle^2 - 4\|x\|^2\|y\|^2$. D'où le résultat. \\
+    Si $\Delta = 0$, alors $f$ s'annule une unique fois en $t_0$. On a alors $\|t_0 x + y\|^2 = 0$. \\
+    Donc $t_0 x + y = 0$. \\
+    Donc $(x, y)$ est liée. \\
+    Réciproquement, si $(x, y)$ est liée, alors $y = t_0 x$ ($x\neq 0$) et on a encore $f(t_0) = 0$. 
+
+    \item Pour $(x, y)\in E^2$ : 
+    \begin{align*}
+        \|x+y\| \leq \|x\| + \|y\| &\Leftrightarrow \|x+y\|^2\leq (\|x\| + \|y\|)^2 \\
+        &\Leftrightarrow \|x\|^2 + 2\langle x, y\rangle + \|y\|^2 \leq \|x\|^2 + 2\|x\|\|y\| + \|y\|^2 \\
+        &\Leftrightarrow \langle x, y\rangle \leq \|x\|\|y\|
+    \end{align*}
+    La dernière assertion est vraie d'après l'inégalité de Cauchy-Schwarz, la première l'est tout autant. \\
+    RAS pour l'inégalité généralisée. \\
+    Si $\|x+y\| = \|x\| + \|y\|$, le cas d'égalité de Cauchy-Schwarz affirme que (par ex) : 
+    \begin{align*}
+        y = \alpha x, \alpha\in \mathbb{R}
+    \end{align*}
+    Mais alors (en supposant $x \neq 0$) : 
+    \begin{align*}
+        \| 1 + \alpha\| \|x\| = \|x + y\| = (1 + |\alpha|) \|x\|
+    \end{align*}
+    Donc $|1 + \alpha| = 1 + |\alpha|$. \\
+    Nécessairement, $\alpha\geq 0$
+\end{itemize}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.17, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Pour tout $\left(x_1, \ldots, x_n\right) \in \mathbb{R}^n$,
+    $$\left(\sum_{k=1}^n x_k\right)^2 \leq n \sum_{k=1}^n x_k^2$$
+    avec égalité si et seulement si $x_1 = \cdots = x_n$.
+\end{tcolorbox}
+
+\noindent On munit $E = \mathbb{R}^n$ de son produit scalaire canonique. \\
+On applique l'inégalité de Cauchy-Schwarz aux vecteurs $\begin{pmatrix}
+    x_1 \\ \vdots \\ x_n
+\end{pmatrix}$ et $\begin{pmatrix}
+    1 \\ \vdots \\ 1
+\end{pmatrix}$. 
+\begin{align*}
+    \left| \left\langle \begin{pmatrix}
+        x_1 \\ \vdots \\ x_n
+    \end{pmatrix}, \begin{pmatrix}
+        1 \\ \vdots \\ 1
+    \end{pmatrix} \right\rangle \right| &\leq \left\| \begin{pmatrix}
+        x_1 \\ \vdots \\ x_n
+    \end{pmatrix} \right\| \left\| \begin{pmatrix}
+        1 \\ \vdots \\ 1
+    \end{pmatrix} \right\| \\
+    \left| \sum_{k=1}^{n} 1\times x_k \right| &\leq \sqrt{\sum_{k=1}^{n} x_k^2} \sqrt{\sum_{k=1}^{n} 1^2} \\
+    &= \sqrt{n} \sqrt{\sum_{k=1}^{n} x_k^2} \\
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.18, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $a$ et $b$ deux réels tels que $a<b$. Pour tout $f \in \mathcal{C}^1([a ; b], \mathbb{R})$, on a
+    $$f(b)^2-f(a)^2 \leq 2 \sqrt{\int_a^b f(t)^2 \,dt} \sqrt{\int_a^b f^{\prime}(t)^2 \,dt}$$
+\end{tcolorbox}
+
+\noindent On munit $\mathcal{C}^0([a, b], \mathbb{R})$ du produit scalaire usuel : 
+\begin{align*}
+    \forall (f, g)\in \mathcal{C}^0([a, b], \mathbb{R})^, \langle f, g \rangle &= \int_{a}^{b} f(t) g(t) \,dt
+\end{align*}
+On applique l'inégalité de Cauchy-Schwarz aux vecteurs $f$ et $f'$ : 
+\begin{align*}
+    \|f\|\times \|f'\| &\geq |\langle f, f'\rangle| \\
+    &= \left| \int_{a}^{b} f(t) f'(t) \,dt \right| \\
+    &= \left| \left[ \frac{f^2(t)}{2} \right]_a^b \right| \\
+    &= \left|  \frac{f(b)^2 - f(a)^2}{2} \right|
+\end{align*}
+
+\setsection{19}
+\section{Vecteur orthogonal à tout vecteur}
+\begin{tcolorbox}[title=Théorème 34.20, title filled=false, colframe=orange, colback=orange!10!white]
+    Dans un espace préhilbertien réel, le vecteur nul est le seul vecteur orthogonal à tout vecteur. 
+\end{tcolorbox}
+
+\indent \boxed{\Rightarrow} RAF \\
+\indent \boxed{\Leftarrow} Si $x$ est orthogonal à tout vecteur de $E$, alors $x\bot x$, donc $\|x\|^2 = 0$, donc $x = 0$. 
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.21, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Exemple 34.21 Montrer que pour le produit scalaire
+    $$
+(X, Y) \mapsto^t X\begin{pmatrix}
+    2 & 1 \\
+    1 & 2
+    \end{pmatrix} Y
+    $$
+    sur $\mathbb{R}^2$, la base canonique n'est pas orthormale, mais la famille $\left(\frac{1}{\sqrt{2}}(1,0), \frac{1}{\sqrt{6}}(1,-2)\right)$ l'est.
+\end{tcolorbox}
+
+\noindent $\| (1, 0)\| = \sqrt{2} = \| (0, 1)\|$ \\
+$\langle (1, 0), (0, 1)\rangle = 1$ \\
+Donc $\\| \frac{1}{\sqrt{2}}(1, 0)\| = 1$ \\
+On a $\| (1, -2)\| = \sqrt{6}$ \\
+Et $\langle (1, 0), (1, -2)\rangle = 0$. 
+
+\setsection{22}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.23, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    La famille des fonctions $t \mapsto \sin (n t)$, où $n \in \mathbb{N}$ est orthonormale dans $\mathcal{C}([0 ; 2 \pi], \mathbb{R})$ pour le produit scalaire
+    $$(f, g) \mapsto \frac{1}{\pi} \int_0^{2 \pi} f(t) g(t) \,dt$$
+\end{tcolorbox}
+
+\noindent On note pour $n\in \mathbb{N}$, $f_n: [0 ; 2\pi] \to \mathbb{R};x\mapsto \sin(nx)$. \\
+Soit $p\neq n$. \\
+\begin{align*}
+    \langle f_p, f_n \rangle &= \frac{1}{\pi} \int_{0}^{2\pi} f_n(t) f_p(t) \,dt \\
+    &= \frac{1}{\pi} \int_{0}^{2\pi} \sin(nt) \sin(pt) \,dt \\
+    &= \frac{1}{2\pi} \int_{0}^{2\pi} (\cos((n-m)t) - \cos((n+m)t) \,dt \\
+    &= \frac{1}{2\pi} \left[ \frac{1}{n-p} \sin((n-p)t) - \frac{1}{n+p}\sin((n+p)t) \right]^{2\pi}_0 \text{ ($n\neq p$)} \\
+    &= 0
+\end{align*}
+Si $n = p$ alors : 
+\begin{align*}
+    \|f_n\| &= \frac{1}{2\pi} \int_{0}^{2\pi} (1 - \cos(2nt)) \,dt \\
+    &= 1
+\end{align*}
+Donc $(f_n)$ est bien une famille orthonormée. 
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.24, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Dans $\mathcal{C}([-1 ; 1], \mathbb{R})$, l'ensemble des fonctions paires et l'ensemble des fonctions impaires sont deux sous-espaces vectoriels orthogonaux pour le produit scalaire
+    $$(f, g) \mapsto \int_{-1}^1 f(t) g(t) \,dt$$
+\end{tcolorbox}
+
+\noindent D'après le chapitre 4, si $f$ est impaire : 
+\begin{align*}
+    \int_{-1}^{1} f(t) \,dt = 0
+\end{align*}
+Si $f$ est paire et $g$ impaire, alors $fg$ est impaire et ainsi $\langle f, g \rangle = 0$. 
+
+\section{Propriétés des familles orthogonales}
+\begin{tcolorbox}[title=Théorème 34.25, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace préhilbertien réel.
+    \begin{enumerate}
+        \item Théorème de Pythagore : pour tout $(x, y) \in E^2, x$ et $y$ sont orthogonaux ssi $\|x+y\|^2=\|x\|^2+\|y\|^2$. De surcro ${ }^{\wedge}$ it, si $\left(x_1, \ldots, x_n\right)$ est une famille orthogonale de vecteurs de $E$, alors
+        $$\left\|\sum_{k=1}^n x_k\right\|^2=\sum_{k=1}^n\left\|x_k\right\|^2$$
+        \item Toute famille orthogonale de vecteurs non nuls de $E$ est libre. En particulier, si $E$ est de dimension finie $n$ non nulle, toute famille orthogonale de $n$ vecteurs est une base orthogonale.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item RAF
+    \item Soit $(e_i)_{i\in I}$ une famille orthogonale. Soit $(\lambda_i)_{i\in I}$ une famille de scalaires à support fini. On suppose en outre que : 
+    \begin{align*}
+        \forall i\in I, e_i\neq 0
+    \end{align*}
+    On suppose que $\sum\limits_{i\in I} \lambda_i e_i = 0$. \\
+    Soit $j\in I$. 
+    \begin{align*}
+        \langle \sum_{i\in I} \lambda_i e_i, e_j \rangle &= 0 \\
+        &= \sum_{i\in I} \lambda_i \underbrace{\langle e_i, e_j \rangle}_{= 0 \text{ pour } i\neq j} \\
+        \text{donc } \lambda_j \| e_j \|^2 &= 0 \\
+        \text{donc } \lambda_j &= 0
+    \end{align*}
+    Donc la famille est libre. 
+\end{enumerate}
+
+\section{Coordonnées dans une base orthonormale}
+\begin{tcolorbox}[title=Théorème 34.26, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace euclidien de dimension non nulle et $\left(e_1, \ldots, e_n\right)$ une base orthonormale de $E$, et $x \in E$. Alors
+    $$x=\sum_{k=1}^n\left\langle x, e_k\right\rangle e_k$$
+    Autrement dit, les coordonnées de $x$ dans la base $\left(e_1, \ldots, e_n\right)$ sont $\left(\left\langle x, e_1\right\rangle, \ldots,\left\langle x, e_n\right\rangle\right)$.
+\end{tcolorbox}
+
+\noindent Comme $(e_k)_{k\in \llbracket 1, n \rrbracket}$ est une base, tout $x\in E$ s'écrit : 
+\begin{align*}
+    x = \sum_{i=1}^{n} \lambda_i e_i
+\end{align*}
+Soit $j\in \llbracket 1, n \rrbracket$ : 
+\begin{align*}
+    \langle x, e_j \rangle &= \langle \sum_{i=1}^{n} \lambda_i e_i, e_j \rangle \\
+    &= \sum_{i=1}^{n} \lambda_i \langle e_i, e_j \rangle \\
+    &= \lambda_j 
+\end{align*}
+
+\section{Expression du produit scalaire et de la norme dans une base orthonormale}
+\begin{tcolorbox}[title=Théorème 34.27, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E \neq\left\{0_E\right\}$ un espace euclidien et $(x, y) \in E^2$ de coordonnées respectives $X=\left(x_1, \ldots, x_n\right)$ et $Y=\left(y_1, \ldots, y_n\right)$ dans une certaine base orthonormale de $E$. Alors
+    $$\langle x, y\rangle=\sum_{k=1}^n x_k y_k={ }^{\mathrm{t}} X Y \quad \text { et } \quad\|x\|^2=\sum_{k=1}^n x_k^2={ }^{\mathrm{t}} X X$$
+\end{tcolorbox}
+
+\noindent Soit $(e_i)_{1\leq i\leq n}$ une base orthonormale de $E$. Pour $(x, y)\in E^2$ : 
+\begin{align*}
+    x &= \sum_{i=1}^{n} \langle x, e_i\rangle e_i \\
+    y &= \sum_{i=1}^{n} \langle y, e_i\rangle e_i
+\end{align*}
+Ainsi :
+\begin{align*}
+    \langle x, y\rangle &= \langle \sum_{i=1}^{n} \langle x, e_i\rangle e_i, \sum_{j=1}^{n} \langle y, e_j\rangle e_j \rangle \\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n} x_i y_j \langle e_i, e_j\rangle \\
+    &= \sum_{i=1}^{n} x_i y_i
+\end{align*}
+
+\section{Algorithme d'orthonormalisation de Gram-Schmidt}
+\begin{tcolorbox}[title=Théorème 34.28, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace préhilbertien réel et $\left(e_1, \ldots, e_n\right)$ une famille libre de $E$. On peut transformer $\left(e_1, \ldots, e_n\right)$ en une famille orthonormale de $\left(u_1, \ldots, u_n\right)$ de $E$ telle que
+    $$\forall k \in \llbracket 1, n \rrbracket, \operatorname{Vect}\left(e_1, \ldots, e_k\right)=\operatorname{Vect}\left(u_1, \ldots, u_k\right) .$$
+    Les vecteurs $u_1, \ldots, u_n$ peuvent être construits de proche en proche depuis $u_1$ jusqu'à $u_n$ et pour tout $k \in \llbracket 1, n \rrbracket$, on n'a que deux choix possibles pour $u_k$ :
+    $$\pm \frac{e_k-\sum\limits_{i=1}^{k-1}\left\langle e_k, u_i\right\rangle u_i}{\left\|e_k-\sum\limits_{i=1}^{k-1}\left\langle e_k, u_i\right\rangle u_i\right\|}$$
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Nécessairement, $u_1 = \pm \frac{e_1}{\|e_1\|}$ pour que $u_1$ soit unitaire et $\operatorname{Vect}(e_1) = \operatorname{Vect}(u_1)$.
+    \item Supposons construits $(u_1, \ldots, u_k)$, $k\leq n-1$ vérifiant :
+    \begin{itemize}
+        \item $Vect(u_1, \ldots, u_k) = \operatorname{Vect}(e_1, \ldots, e_k)$
+        \item $(u_1, \ldots, u_k)$ est une famille orthornormale
+    \end{itemize}
+    Soit $v\in E$. Ccomme $\operatorname{Vect}(e_1, \ldots, e_{k+1}) = \operatorname{Vect}(e_1, \ldots, e_k) \oplus \operatorname{Vect}(e_{k+1}) = \operatorname{Vect}(u_1, \ldots, u_k) \oplus \operatorname{Vect}(e_{k+1})$. \\
+    Si $v\in \operatorname{Vect}(e_1, \ldots, e_{k+1})$, on a alors : 
+    \begin{align*}
+        v = \sum_{i=1}^{k} \lambda_i u_i + \mu_{k+1} e_{k+1}
+    \end{align*}
+    On a : 
+    \begin{align*}
+        \operatorname{Vect}(e_1, \ldots, e_{k+1}) = \operatorname{Vect}(u_1, \ldots, u_k, v) \Leftrightarrow \lambda_{k+1}\neq 0
+    \end{align*}
+    On suppose désormais $\lambda_{k+1}\neq 0$. \\
+    On a $(u_1 ,\ldots, u_k, v)$ une familel orthogonale si et seulement si : 
+    \begin{align*}
+        \forall i\in \llbracket 1, k \rrbracket, \langle u_i, v \rangle &= 0 \\
+        \text{ssi. } \forall i\in \llbracket 1, k \rrbracket, 0 &= \langle u_1, \sum_{p=1}^{k} \lambda_p u_p + \lambda_{k+1} e_{k+1} \rangle \\
+        &= \sum_{p=1}^{k} \lambda_p \langle u_i, u_p \rangle + \lambda_{k+1} \langle u_i, e_{k+1} \rangle \\
+        &= \lambda_i + \lambda_{k+1} \langle u_i, e_{k+1} \rangle \\
+        \text{ssi. } \forall i\in \llbracket 1, k \rrbracket, \lambda_i &= -\lambda_{k+1} \langle u_i, e_{k+1} \rangle \\
+        \text{ssi. } v &= \lambda_{k+1} (e_{k+1} - \sum_{i=1}^{k} \langle u_i, e_k\rangle u_i)
+    \end{align*}
+    Ainsi, $(u_1, \ldots, u_{k+1})$ est orthonormée avec $\operatorname{Vect}(u_1, \ldots, u_{k+1}) = \operatorname{Vect}(e_1, \ldots, e_{k+1})$ si et seulement si : 
+    \begin{align*}
+        u_{k+1} &= \pm \frac{e_{k+1} - \sum\limits_{i=1}^{k} \langle e_{k+1}, u_i\rangle u_i}{\|e_{k+1} - \sum\limits_{i=1}^{k} \langle e_{k+1}, u_i\rangle u_i\|}
+    \end{align*}
+\end{itemize}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.29, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Sur $\mathbb{R}[X]$, la famille $\left(1, \sqrt{3}(2 X-1), \sqrt{5}\left(6 X^2-6 X+1\right)\right)$ est orthonormale pour le produit scalaire
+    $$(P, Q) \mapsto \int_0^1 P(t) Q(t) \mathrm{d} t$$
+\end{tcolorbox}
+
+\noindent On orthonormalise $(1, X, X^2) = (P_0, P_1, P_2)$ avec Gram-Schmidt. 
+\begin{itemize}
+    \item $\|P_0\| = 1$ donc on pose $V_0 = P_0$. 
+    \item Soit $\tilde{V_1} = X + aV_0$
+    \begin{align*}
+        \langle \tilde{V_1}, V_0\rangle &= \langle X, V_0\rangle + a\|V_0\|^2 = \frac{1}{2} + a
+    \end{align*}
+    On pose donc $\tilde{V_1} = X - \frac{1}{2}$. On a : 
+    \begin{align*}
+        \|\tilde{V_1}\|^2 &= \int_{0}^{1} (t - \frac{1}{2})^2 \,dt \\
+        &= \frac{1}{3} - \frac{1}{2} + \frac{1}{4} \\
+        &= \frac{1}{12}
+    \end{align*}
+    On pose $V_1 = \frac{\tilde{V_1}}{\|V_1\|} = \sqrt{12}(X - \frac{1}{2}) = \sqrt{3}(2X - 1)$. \\
+    On pose $\tilde{V_2} = X^2 + aV_1 + bV_0$. \\
+    On a : 
+    \begin{align*}
+        \langle \tilde{V_2}, V_1\rangle &= \langle X^2, V_1\rangle + a\|V_1\|^2 \\
+        &= \sqrt{3} \int_{0}^{1} t^2(2t-1) \,dt + a \\
+        &= \frac{\sqrt{3}}{6} + a \\
+        \langle \tilde{V_2}, V_0\rangle &= \langle X^2, V_0\rangle + b\|V_0\|^2 \\
+        &= \frac{1}{3} + b
+    \end{align*}
+    On pose : 
+    \begin{align*}
+        \tilde{V_2} &= X^2 - \frac{\sqrt{3}}{6} \sqrt{3}(2X-1) - \frac{1}{3} \\
+        &= X^2 - X + \frac{1}{6} \\
+        \|\tilde{V_2}\|^2 &= \int_{0}^{1} (t^2 - t + \frac{1}{6})^2 \,dt \\
+        &= \frac{1}{5} + \frac{1}{3} + \frac{1}{36} - \frac{1}{2} + \frac{1}{9} - \frac{1}{6} \\
+        &= \frac{1}{180}
+    \end{align*}
+    On pose : 
+    \begin{align*}
+        V_2 &= \sqrt{180}(X^2 - X + \frac{1}{6}) \\
+        &= \sqrt{5}(6X^2 - 6X + 1)
+    \end{align*}
+\end{itemize}
+
+\setsection{33}
+\section{Propriétés de l'orthogonal d'une partie}
+\begin{tcolorbox}[title=Propostion 34.34, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Avec les mêmes hypothèses que la définition précédente : 
+    \begin{enumerate}
+        \item $X^\bot$ est un sous-espace vectoriel de $E$, orthogonal à $X$. 
+        \item Si $X$ est un sous-espace vectoriel de $E$, orthogonal à $X$. 
+        \item Si $X\subset Y$ alors $Y^\bot \subset X^\bot$.
+        \item On a $X^\bot = \operatorname{Vect}(X)^\bot$ et $X\subset (X^\bot)^\bot$
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item $X^\bot \bot X$. \\
+    \begin{itemize}
+        \item $X^\bot\subset E$
+        \item $0\in X^\bot$
+        \item Si $(t, u)\in (X^\bot)^2$ et $\alpha\in \mathbb{R}$ : 
+        \begin{align*}
+            \forall x\in X, \langle t + \alpha u, x\rangle &= \langle t, x\rangle + \alpha \langle u, x\rangle \\
+            &= 0
+        \end{align*}
+        Donc $t + \alpha u\in X^\bot$. \\
+        Donc $X^\bot$ est bien un sous-espace vectoriel de $E$. 
+    \end{itemize}
+    \item On suppose $X$ un sous-espace vectoriel de $E$. \\
+    Soit $X\in X\cap X^\bot$ donc $x\bot x$ donc $x = 0_E$. \\
+    Donc $X\cap X^\bot = \{0_E\}$. 
+    \item Soit $X\subset Y$ et $t\in Y^\bot$. \\
+    Donc : 
+    \begin{align*}
+        \forall x\in Y, \langle x, t\rangle &= 0 \\
+    \end{align*}
+    Donc : 
+    \begin{align*}
+        \forall x\in X, \langle x, t\rangle = 0
+    \end{align*}
+    Donc $t\in X^\bot$. 
+    \item Comme $X\subset \operatorname{Vect}(X)$, on a : 
+    \begin{align*}
+        \operatorname{Vect}(X)^\bot \subset X^\bot
+    \end{align*}
+    Soit $t\in X^\bot$. Soit $u = \sum\limits_{i\in I} \lambda_i x_i\in \operatorname{Vect}(X)$ ($X_i\in X$ et $(\lambda_i)$ famille à support fini). 
+    \begin{align*}
+        \langle t, u \rangle &= \sum_{i\in I} \lambda_i \langle t, x_i\rangle = 0
+    \end{align*}
+    Donc $t\in \operatorname{Vect}(X)^\bot$.
+\end{enumerate}
+
+\setsection{37}
+\section{Supplémentaire orthogonal d'un sous-espace vectoriel de dimension finie}
+\begin{tcolorbox}[title=Théorème 34.38, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace préhilbertien réel et $F$ un sous-espace vectoriel de dimension finie de $E$.
+    \begin{enumerate}
+        \item $\quad F^{\perp}$ est l'unique supplémentaire de $F$ dans $E$ orthogonal à $F$. On l'appelle le supplémentaire orthogonal de $F$ dans $E$.
+        \item $\quad F^{\perp \perp}=F$.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item \underline{Existence :} \\
+    On remarque que la propriété est vraie pour $F = \{x\}$. \\
+    On suppose $F\neq\{0_E\}$. \\
+    Comme $F$ est de dimension finie non nulle il possède une base orthonormée notée $(e_1, \ldots, e_n)$. \\
+    Soit $x\in E$, on décompose $x = \underbrace{x - \sum_{k=1}^{n} \langle x, e_k\rangle e_k}_{:= v} + \underbrace{\sum_{k=1}^{n} \langle x, e_k\rangle e_k}_{\in F}$. \\
+    Or pour tout $i\in \llbracket 1, n \rrbracket$ : 
+    \begin{align*}
+        \langle v, e_i\rangle &= \langle x - \sum_{k=1}^{n} \langle x, e_k\rangle e_k, e_i\rangle \\
+        &= \langle x, e_i\rangle - \sum_{k=1}^{n} \langle x, e_k\rangle \langle e_k, e_i\rangle \\
+        &= \langle x, e_i\rangle - \langle x, e_i\rangle \\
+        &= 0 
+    \end{align*}
+    Donc $v\in F^\bot$. \\
+    \underline{Unicité :} \\
+    On suppose que $F \oplus\bot G = F \oplus\bot F^\bot$. \\
+    Par définition, $G\subset F^\bot$. \\
+    Soit $t\in F^\bot$. \\
+    On décompose $t = f + g$. 
+    \begin{align*}
+        \|f\|^2 &= \langle f, f\rangle \\
+        &= \langle f, t-g\rangle \\
+        &= \langle f, t\rangle - \langle f, g\rangle \\
+        &= 0
+    \end{align*}
+    \item On sait que $F\subset (F^\bot)^\bot$. \\
+    Soit $x\in (F^\bot)^\bot$. \\
+    D'après (1), $x = f + v$ avec $f\in F, v\in F^\bot$. \\
+    Or : 
+    \begin{align*}
+        \|v\|^2 = \langle v, v\rangle &= \langle v, x-f\rangle \\
+        &= \langle v, x\rangle - \langle v, f\rangle \\
+        &= 0
+    \end{align*}
+    Donc $v = 0$. 
+\end{enumerate}
+
+\setsection{48}
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.49, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    On note $F$ le sous-espace vectoriel Vect( $\sin , \cos )$ de $\mathcal{C}([0 ; 2 \pi], \mathbb{R})$. Montrer que le projeté orthogonal de l'identité sur $F$ pour le produit scalaire
+    $$(f, g) \mapsto \int_0^{2 \pi} f(t) g(t) \mathrm{d} t$$
+est la fonction $t \mapsto-2 \sin t$.
+\end{tcolorbox}
+
+\noindent \underline{Première Méthode :} \\
+\begin{itemize}
+    \item\begin{align*}
+        \|\sin\|^2 &= \int_{0}^{2\pi} \sin^2(t) \,dt = \pi \\
+        &= \int_{0}^{2\pi} \frac{1 - \cos(2t)}{2} \,dt \\
+        &= \pi \\
+        &= \|\cos\|^2 
+    \end{align*}
+    \item \begin{align*}
+        \langle \cos, \sin\rangle &= \int_{0}^{2\pi} \sin(t)\cos(t) \,dt \\
+        &= \frac{1}{2} \int_{0}^{2\pi} \sin(2t) \,dt \\
+        &= 0
+    \end{align*}
+    On note $f_1 = \frac{1}{\sqrt{\pi}}\sin$ et $f_2 = \frac{1}{\sqrt{\pi}}\cos$. \\
+    $(f_1, f_2)$ est une base orthonormée de $F$. \\
+    D'après le cours : 
+    \begin{align*}
+        P_F(\operatorname{id}) &= \langle \operatorname{id}, f_1 \rangle f_1 + \langle \operatorname{id}, f_2\rangle f_2
+    \end{align*}
+    Or :
+    \begin{align*}
+        \langle \operatorname{id}, \sin\rangle &= \int_{0}^{2\pi} \sin(t) \,dt \\
+        &= \left[ -t\cos(t) \right]_0^{2\pi} + \int_0^{2\pi} \cos(t) \,dt \\
+        &= -2\pi \\
+        \langle \operatorname{id}, \cos\rangle &= \int_{0}^{2\pi} t\cos(t) \,dt \\
+        &= \left[ t\sin(t) \right]_0^{2\pi} - \int_0^{2\pi} \sin(t) \,dt \\
+        &= 0
+    \end{align*}
+    Ainsi : 
+    \begin{align*}
+        P_F(\operatorname{id}) &= \langle \operatorname{id}, \frac{\sin}{\sqrt{\pi}}\angle \frac{\sin}{\sqrt{\pi}} \\
+        &= -2\sin
+    \end{align*}
+    \underline{Deuxième Méthode :} \\
+    $P_F(\operatorname{id})\in \operatorname{Vect}(\sin, \cos)$. \\
+    On écrit donc : 
+    \begin{align*}
+        P_F(\operatorname{id}) &= a\sin + b\cos
+    \end{align*}
+    Or : 
+    \begin{align*}
+        \operatorname{id} - P_F(\operatorname{id}) \in F &\Leftrightarrow \begin{cases}
+            \langle \operatorname{id} - P_F(\operatorname{id}), \sin\rangle = 0 \\
+            \langle \operatorname{id} - P_F(\operatorname{id}), \cos\rangle = 0
+        \end{cases} \\
+        &\Leftrightarrow \begin{cases}
+            \langle \operatorname{id}, \sin\rangle - a\|\sin\|^2 - b\langle \sin, \cos\rangle = 0 \\
+            \langle \operatorname{id}, \cos\rangle - a\langle \sin, \cos\rangle - b\|\cos\|^2 = 0
+        \end{cases} \\
+        &\Leftrightarrow \begin{cases}
+            -2\pi - a\pi - b\times 0 = 0 \\
+            0 - a\times 0 + b\pi = 0
+        \end{cases}
+    \end{align*}
+\end{itemize}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 34.50, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $E$ un espace euclidien de dimension finie non nulle et $H$ un hyperplan de $E$ de vecteur normal $a$. On note $p$ la projection orthogonale sur $H$. Montrer que pour tout $x \in E$,
+    $$p(x)=x-\frac{\langle x, a\rangle a}{\|a\|^2}$$
+\end{tcolorbox}
+
+\noindent En notant $q$ la projection orthogonale sur $H^\bot$. \\
+Or $H^\bot = \operatorname{Vect}(a) = \operatorname{Vect}\left(\frac{a}{\|a\|}\right)$. 
+\begin{align*}
+    q(x) &= \langle x, \frac{a}{\|a\|}\rangle \frac{a}{\|a\|} \\
+    &= \frac{\langle x, a\rangle a}{\|a\|^2}
+\end{align*}
+
+\setsection{52}
+\section{Distance à un sous-espace vectoriel de dimension finie}
+\begin{tcolorbox}[title=Théorème 34.53, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace préhilbertien réel, $F$ un sous-espace vectoriel de dimension finie et $x \in E$. On note $p$ la projection orthogonale sur $F$.
+    \begin{enumerate}
+        \item On a
+        $$d(x, F)=\|x-p(x)\|=d(x, p(x))$$
+        La distance de $x$ à $F$ est donc atteinte et est donc un minimum. Le minimum est donc atteint en projetant $x$ orthogonalement sur $F$.
+        \item Par ailleurs
+        $$d(x, F)^2=\|x\|^2-\|p(x)\|^2$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\noindent Comme $F$ est un espace vectoriel de dimension finie, $p$ est bien définie. \\
+Soit $f\in F$. On écrit : 
+\begin{align*}
+    \|x - f\|^2 &= \|\underbrace{x - p(x)}_{\in F^\bot} + \underbrace{p(x) - f}_{\in F}\|^2 \\
+    &= \|x - p(x)\|^2 + \|p(x) - f\|^2 \text{ (Pythagore)} \\
+    &\geq\|x - p(x)\|^2
+\end{align*}
+Donc $\|x - f\| \geq \|x - p(x)\|^2$. \\
+Donc $\|x - f\|\geq \|x - p(x)\|$ ($t\mapsto\sqrt{t}$ est croissante). \\
+Par définition de la borne inférieure : 
+\begin{align*}
+    d(x, F) \geq \|x - p(x)\|
+\end{align*}
+Or $p(x)\in F$ donc $\|x - p(x)\|\in \{d(x, f), f\in F\}$. \\
+Donc $d(x, F) = \|x - p(x)\|$. \\
+La dernière égalité provient du théorème de Pythagore. 
+
+\section{Distance à un hyperplan affine}
+\begin{tcolorbox}[title=Théorème 34.54, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $E$ un espace euclidien, $\mathcal{H}$ un hyperplan affine passant par $A$ et de vecteur normal unitaire $a$. Pour tout $M \in E$, on a
+    $$d(M, \mathcal{H})=|\langle\overrightarrow{A M}, a\rangle|$$
+\end{tcolorbox}
+
+\noindent On note $H$ la direction de $\mathcal{H}$. 
+\begin{align*}
+    d(M, \mathcal{H}) &= d(M, A + H) \\
+    &= d(M - A, H) \\
+    &= d(\vec{AM}, H) \\
+    &= \|\vec{AM} - P_H(\vec{AM})\| \text{ (34.53)} \\
+    &= \|\langle \vec{AM}, a\rangle a\| \text{ (34.50)} \\
+    &= |\langle \vec{AM}, a\rangle| \text{ (a unitaire)}
+\end{align*}
+
+\section*{Exercice 6}
+\noindent D'après le cours : 
+\begin{align*}
+    \varphi&:\mathcal{M}_n(\mathbb{R})^2\to \mathbb{R} \\
+    &(A, B)\mapsto \operatorname{tr}({^tAB})
+\end{align*}
+définit un produit scalaire dont $N$ est la norme associée. \\
+Soit $(A, B)\in \mathcal{M}_n(\mathbb{R})^2$. 
+\begin{align*}
+    N(AB)^2 &= \operatorname{tr}({^tAB}AB) \\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n} (AB)_{ji}^2 \\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n} \left[ \sum_{k=1}^{n} A_{jk} B_{ki} \right]^2 \\
+    &\leq \sum_{i=1}^{n} \sum_{j=1}^{n} \left[ \sum_{k=1}^{} A_{jk}^2 \right]\times \left[ \sum_{p=1}^{n} B_{pi}^2 \right] \text{ (Cauchy-Schwarz)} \\
+    &= \left( \sum_{i=1}^{n} \sum_{p=1}^{n} B_{pi}^2 \right) \times \left( \sum_{j=1}^{n} \sum_{k=1}^{n} A_{jk}^2 \right) \\
+    &= N(A)^2N(B)^2
+\end{align*}
+
+\section*{Exercice 7}
+\begin{enumerate}
+    \item \begin{enumerate}
+        \item RAF d'après la définition d'un produit scalaire. 
+        \item Pour $u\in E$, on note $f_u:E\to \mathbb{R}; x\mapsto \langle u, x\rangle$ et on note $f:E\to E^*; u\mapsto f_u$. \\
+        On a $\dim(E^*) = \dim(E)$ donc $f$ est surjective. \\
+        Soit $u\in\ker f$. Donc : 
+        \begin{align*}
+            \forall x\in E, \langle u, x\rangle &= 0
+        \end{align*}
+        Donc $u = 0_E$. \\
+        Donc $f$ est injective. \\
+        Donc $f$ est bijective. 
+    \end{enumerate}
+    \item \begin{enumerate}
+        \item On munit $\mathbb{R}_n[X]$ (de dimension finie) du produit scalaire : 
+        \begin{align*}
+            \forall (P, Q)\in \mathbb{R}_n[X]^2, \langle P, Q\rangle &= \int_{0}^{1} P(t) Q(t) \,dt
+        \end{align*}
+        On note $\varphi:\mathbb{R}_n[X]\to \mathbb{R}; P\mapsto P(0)$. \\
+        Ainsi, $\varphi\in \mathbb{R}_n[X]^*$. \\
+        D'après (1.b), il existe un unique $A\in \mathbb{R}_n[x]$ tel que :
+        \begin{align*}
+            \forall P\in \mathbb{R}_n[X]: \varphi(P) = \langle A, P\rangle
+        \end{align*}
+        \item Par l'absurde, supposons qu'il existe $A\neq 0\in \mathbb{R}_n[X]$ tel que : 
+        \begin{align*}
+            \forall P\in \mathbb{R}[X], \int_{0}^{1} P(t) A(t) \,dt = P(0)
+        \end{align*}
+        Pour tout $k\in \mathbb{N}^*, \int_{0}^{1} t^k A(t) \,dt = 0$. \\
+        En particulier, $\int_{0}^{1} t A(t) \,dt = 0$. \\
+        Donc $t\mapsto tA(t)$ doit s'annuler sur $]0, 1[$. \\
+        Donc $A$ possède au moins une racine sur $]0, 1[$. \\
+        Notons $r_1, \ldots, r_k$ les racines de $A$ sur $]0, 1]$. ($k\leq n$) \\
+        On pose $P = X \prod_{i\in \llbracket 1, k \rrbracket}(X - r_i)\in \mathbb{R}_{n+1}[X]$. \\
+        On a $\int_{0}^{1} \underbrace{P(t)A(t)}_{\text{de signe constant}} \,dt = P(0) = 0$. \\
+        Donc $PA = 0$. Absurde. 
+    \end{enumerate}
+\end{enumerate}
+
 
 \end{document}
