@@ -6,4 +6,31 @@
 \tableofcontents
 \clearpage
 
+\setsection{1}
+\section{Reformulation}
+\begin{tcolorbox}[title=Propostion 35.2, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\sum a_n$ une séries à termes positifs. Alors $\sum_{n \geq 0} a_n$ est bien définie dans $\overline{\mathbb{R}}_{+}$et
+    $$\sum_{n \geq 0} a_n=\sup \left\{\sum_{k \in J} a_k, J \in \mathcal{P}_f(\mathbb{N})\right\}$$
+\end{tcolorbox}
+
+\noindent En notant, pour $n\in \mathbb{N}, S_n = \sum\limits_{k=0}^{n} a_k$, on a : 
+\begin{align*}
+    S_n \underset{n \to +\infty}{\longrightarrow} \sum_{k\geq 0}^{a_k} 
+\end{align*}
+Or pour tout $n\in \mathbb{N}, S_n\in \left\{ \sum_{k\in J} a_k\mid J\in \mathcal{P}_f(\mathbb{N}) \right\}$. \\
+Donc $\sum_{k\geq 0} a_k \leq \sup \left\{ \sum_{k\in J} a_k\mid J\in \mathcal{P}_f(\mathbb{N}) \right\} = S$. \\
+Par ailleurs, pour $J\in \mathcal{P}_f(\mathbb{N})$, on pose $N = \max J$ et $J\subset \llbracket 0, N \rrbracket$ et : 
+\begin{align*}
+    \sum_{k\in J} a_k  \leq \sum_{k=0}^{N} a_k \leq \sum_{k>0} a_k 
+\end{align*}
+Par définition de la borne supérieure : 
+\begin{align*}
+    S \leq \sum_{k\geq 0} a_k
+\end{align*}
+Donc : 
+\begin{align*}
+    \sum_{k\geq 0} a_k = S
+\end{align*}
+
+
 \end{document}
