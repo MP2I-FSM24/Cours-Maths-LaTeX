@@ -68,5 +68,24 @@ Par définition :
     \item Théorème de la Limite Monotone
 \end{enumerate}
 
+\setsection{9}
+\section{Invariance de la somme d'une série à termes positifs par permutation des termes}
+\begin{tcolorbox}[title=Corollaire 35.10, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sum a_n$ une série à termes positifs et $\sigma \in S_{\mathbb{N}}$. Alors
+    $$\sum_{n=0}^{+\infty} a_n=\sum_{n=0}^{+\infty} a_{\sigma(n)}$$
+    Cette égalité reste vraie dans $\overline{\mathbb{R}}_{+}$.
+\end{tcolorbox}
+
+\noindent Soit $\sigma\in \mathcal{S}_\mathbb{N}$. \\
+$\sigma$ induit une bijection $\mathcal{P}_f(\mathbb{N})\to \mathcal{P}_f(\mathbb{N});J\mapsto \sigma(J)$ de $\left\{ \sum_{i\in J}| J\in \mathcal{P}_f(\mathbb{N}) \right\}$ sur $\left\{ \sum_{i\in I} a_{\sigma(i)}\mid J\in \mathcal{P}_f(\mathbb{N}) \right\}$. \\
+Ces deux ensembles ont donc la même borne supérieure. Donc : 
+\begin{align*}
+    \sum_{i\in \mathbb{N}} a_i = \sum_{i\in \mathbb{N}} a_{\sigma(i)} 
+\end{align*}
+Soit : 
+\begin{align*}
+    \sum_{i=0}^{+\infty} a_i = \sum_{i=0}^{+\infty} a_{\sigma(i)} \text{ (35.8)}
+\end{align*}
+
 
 \end{document}
