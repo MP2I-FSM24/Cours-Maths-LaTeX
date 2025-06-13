@@ -166,5 +166,17 @@ Toujours par définition de la borne supérieure :
     \sum_{k\in K}\sum_{i\in I_k} a_i \leq \sum_{i\in I} a_i 
 \end{align*}
 
+\setsection{15}
+\section{Théorème de Fubini positif}
+\begin{tcolorbox}[title=Corollaire 35.16, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ et $J$ deux ensembles quelconques et $\left(a_{i, j}\right)_{(i, j) \in I \times J}$ une famille de réels positifs. Alors
+    $$\sum_{i \in I} \sum_{j \in J} a_{i, j}=\sum_{(i, j) \in I \times J} a_{i, j}=\sum_{j \in J} \sum_{i \in I} a_{i, j}$$
+\end{tcolorbox}
+
+\begin{align*}
+    \bigsqcup_{j\in J} I\times \{j\} = I\times J = \bigsqcup_{i\in I} \{i\} \times J
+\end{align*}
+On conclut avec le théorème de sommation par paquets. 
+
 
 \end{document}
