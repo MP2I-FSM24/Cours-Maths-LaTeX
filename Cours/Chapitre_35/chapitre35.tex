@@ -32,5 +32,26 @@ Donc :
     \sum_{k\geq 0} a_k = S
 \end{align*}
 
+\setsection{4}
+\section{Croissance de la somme}
+\begin{tcolorbox}[title=Propostion 35.5, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\left(a_i\right)_{i \in I}$ et $\left(b_i\right)_{i \in I}$ deux familles à valeurs dans $\overline{\mathbb{R}}_{+}$. Si pour tout $i \in I, a_i \leq b_i$, alors
+    $$\sum_{i \in I} a_i \leq \sum_{i \in I} b_i$$
+\end{tcolorbox}
+
+\noindent Soit $J\in \mathcal{P}_f(I)$. Comme : 
+\begin{align*}
+    \forall i\in J, a_i\leq b_i
+\end{align*}
+Alors : 
+\begin{align*}
+    \sum_{i\in j} a_i \leq \sumç{i\in J} b_i \leq \sum_{i\in I} b_i
+\end{align*}
+$\sum\limits_{i\in I} b_i$ est un majorant de $\left\{ \sum_{i\in J} a_i\mid J\in \mathcal{P}_f(I) \right\}$. \\
+Par définition : 
+\begin{align*}
+    \sum_{i\in I} a_i \leq \sum_{i\in I} b_i
+\end{align*}
+
 
 \end{document}
