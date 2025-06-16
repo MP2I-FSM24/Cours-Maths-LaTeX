@@ -231,5 +231,34 @@ Or :
 \end{align*}
 D'après le TCSATTPE, la somme est finie si et seulement si $\alpha > 4$.
 
+\setsection{24}
+\section{Caractérisation de la sommabilité par les parties réelles et imaginaires, parties positives et négatives}
+\begin{tcolorbox}[title=Théorème 35.5, title filled=false, colframe=orange, colback=orange!10!white]
+    \begin{enumerate}
+        \item Soit $\left(a_i\right)_{i \in I}$ une famille de réels. Alors $\left(a_i\right)_{i \in I}$ est sommable si et seulement si $\left(a_i^{+}\right)_{i \in I}$ et $\left(a_i^{-}\right)_{i \in I}$ le sont. 
+        \item Soit $\left(a_i\right)_{i \in I}$ une famille de complexes. Alors $\left(a_i\right)_{i \in I}$ est sommable si et seulement si $\left(\operatorname{Re}\left(a_i\right)\right)_{i \in I}$ et $\left(\operatorname{Im}\left(a_i\right)\right)_{i \in I}$ le sont.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On rappelle que : 
+    \begin{align*}
+        \forall i\in I, a_i = a_i^{+} - a_i^{-}
+    \end{align*}
+    et : 
+    \begin{align*}
+        \forall i\in I, 0&\leq a_i^+\leq |a_i| \\
+        0&\leq a_i^- \leq |a_i|
+    \end{align*}
+    Si $(a_i)$ est sommable, alors $\left(a_i^{+}\right)_{i \in I}$ et $\left(a_i^{-}\right)_{i \in I}$ le sont aussi (35.24). \\
+    Par ailleurs, d'après l'inégalité triangulaire : 
+    \begin{align*}
+        \forall i\in I, |a_i| \leq a_i^{+} + a_i^{-}
+    \end{align*}
+    Donc si $\left(a_i^{+}\right)_{i \in I}$ et $\left(a_i^{-}\right)_{i \in I}$ sont sommables, alors $(a_i)$ est sommable (35.24) et (35.13). 
+
+    \item Démonstration similaire. 
+\end{enumerate}
+
 
 \end{document}
