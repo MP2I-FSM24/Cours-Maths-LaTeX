@@ -180,7 +180,7 @@ On conclut avec le théorème de sommation par paquets.
 
 \section{Exemple}
 \begin{tcolorbox}[title=Exemple 35.17, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
-    Montrer que $\sum_{n\geq 2} (\zeta(n)-1) = 1$. 
+    Montrer que $\sum\limits_{n\geq 2} (\zeta(n)-1) = 1$. 
 \end{tcolorbox}
 
 \noindent $\left( \frac{1}{k^n} \right)_{n\geq 2, k\geq 2}$ est une famille de $\mathbb{R}_+$. 
@@ -210,6 +210,26 @@ On conclut avec le théorème de sommation par paquets.
     &= \sum_{k\geq 1} \frac{1}{2^{k-1}} \\
     &= 2
 \end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.19, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Pour quelles valeurs de $\alpha\in \mathbb{R}$ la somme $\sum\limits_{p, q\in \mathbb{N}^*} \frac{pq}{(p+q)^\alpha}$ est-elle réelle ?
+\end{tcolorbox}
+
+\noindent $\left( \frac{pq}{(p+q)^\alpha} \right)_{p, q\geq 1}$ est une famille de réels positifs. 
+\begin{align*}
+    \sum_{p\geq 1, q\geq 1} \frac{pq}{(p+q)^\alpha} &= \sum_{d\geq 1} \sum_{p=0}^{d} \frac{p(d-p)}{d^\alpha} \text{ (sommation par paquets)} \\
+    &= \sum_{d\geq 2} \sum_{p=0}^{d} \frac{p(d-p)}{d^\alpha} \\
+    &= \sum_{d\geq 2} \sum_{p=0}^{d} \left( \frac{p}{d^{\alpha - 1}} - \frac{p^2}{d^\alpha} \right) \\
+    &= \sum_{d\geq 2} \left( \frac{d(d+1)}{2d^{\alpha - 1}} - \frac{d(d+1)(2d+1)}{6d^{\alpha - 1}} \right) \text{ (sommes usuelles)} \\
+    &= \sum_{d\geq 2} \frac{d+1}{d^{\alpha - 1}} (3d - 2d - 1) \\
+    &= \sum_{d\geq 2} \frac{d^2 - 1}{6d^{\alpha - 1}}
+\end{align*}
+Or : 
+\begin{align*}
+    \frac{d^2 - 1}{6d^{\alpha - 1}} &\sim \frac{1}{6d^{\alpha - 3}} 
+\end{align*}
+D'après le TCSATTPE, la somme est finie si et seulement si $\alpha > 4$.
 
 
 \end{document}
