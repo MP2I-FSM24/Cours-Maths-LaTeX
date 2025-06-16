@@ -193,5 +193,23 @@ On conclut avec le théorème de sommation par paquets.
     &= 1 \text{ (télescopage)}
 \end{align*}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.18, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que :
+    \begin{align*}
+        \sum_{n\geq 1} \frac{n}{2^n} = 2
+    \end{align*}
+\end{tcolorbox}
+
+\noindent $\left( \frac{1}{2^n} \right)_{1\leq k\leq n}$ est une famille de $\mathbb{R}_+$.
+\begin{align*}
+    \sum_{n\geq 1} \frac{n}{2^n} &= \sum_{n\geq 1} \sum_{k=1}^{n} \frac{1}{2^k} \\
+    &= \sum_{1\leq k\leq n} \frac{1}{2^n} \\
+    &= \sum_{k\geq 1} \left( \sum_{n\geq k} \frac{1}{2^n} \right) \text{ (Fubini positif)} \\
+    &= \sum_{k\geq 1} \frac{1}{2^k} \frac{1}{1 - \frac{1}{2}} \text{ (progresion géométrique)} \\
+    &= \sum_{k\geq 1} \frac{1}{2^{k-1}} \\
+    &= 2
+\end{align*}
+
 
 \end{document}
