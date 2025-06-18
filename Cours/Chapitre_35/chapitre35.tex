@@ -571,6 +571,7 @@ D'après le théorème de sommation par paquets :
 D'après la règle d'Alembert, la série est absolument convergente pour tout $z\neq 0$. \\
 Pour $z=0, e(0) = 1$. 
 
+\setsection{42}
 \section{Propriété fondamentale de la série exponentielle}
 \begin{tcolorbox}[title=Théorème 35.43, title filled=false, colframe=orange, colback=orange!10!white]
     Soit $z$ et $z'$ deux complexes. On a : 
@@ -580,6 +581,26 @@ Pour $z=0, e(0) = 1$.
 \end{tcolorbox}
 
 \noindent Produit de Cauchy. 
+
+\setsection{45}
+\section{Corollaire}
+\begin{tcolorbox}[title=Corollaire 35.46, title filled=false, colframe=orange, colback=orange!10!white]
+    Pour tout $z\in \mathbb{C}$, on a $e(z) = e^z$, soit : 
+    \begin{align*}
+        e^z = \sum_{n\geq 0} \frac{z^n}{n!}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $z = x + iy\in \mathbb{C}, x, y\in \mathbb{R}$. 
+\begin{align*}
+    e(z) &= e(x + iy) \\
+    &= e(x) e(iy) \text{ (35.43)} \\
+    &= e(x) \sum_{n\geq 0} \frac{(iy)^n}{n!} \text{ (35.45)} \\
+    &= e^x \left( \sum_{n\geq 0} \frac{(-1)^n y^{2n}}{(2n)!} + i\sum_{n\geq 0} \frac{(-1)^ny^{2n+1}}{(2n+1)!} \right) \\
+    &= e^x \left( \cos(y) + i\sin(y) \right) \text{ (35.45)} \\
+    &= e^x e^{iy} \\
+    &= e^z
+\end{align*}
 
 
 \end{document}
