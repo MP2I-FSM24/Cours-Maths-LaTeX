@@ -526,5 +526,21 @@ On a :
     &= -\frac{1}{2}
 \end{align*}
 
+\section{Produit de Cauchy}
+\begin{tcolorbox}[title=Théorème 35.38, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sum_{n \geq 0} a_n$ et $\sum_{n \geq 0} b_n$ deux séries absolument convergentes. Soit, pour tout $n \in \mathbb{N}$ :
+    $$c_n=\sum_{k=0}^n a_k b_{n-k}$$
+    Alors $\sum_{n \geq 0} c_n$ est absolument convergente et :
+    $$\sum_{n \geq 0} c_n=\left(\sum_{n \geq 0} a_n\right)\left(\sum_{n \geq 0} b_n\right)$$
+\end{tcolorbox}
+
+\noindent La famille des $(a_i b_j)_{i\geq 0, j\geq 0}$ est sommable (35.38). \\
+D'après le théorème de sommation par paquets : 
+\begin{align*}
+    \left( \sum_{n\geq 0} a_n \right) \left( \sum_{n\geq 0} b_n \right) &= \sum_{i\geq 0, j\geq 0} a_i b_j \text{ (35.33)} \\
+    &= \sum_{n\geq 0} \sum_{i+j = n} a_i b_j \\
+    &= \sum_{n\geq 0} c_n
+\end{align*}
+
 
 \end{document}
