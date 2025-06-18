@@ -484,5 +484,30 @@ Ce qui permet de conclure :
     \end{align*}
 \end{itemize}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.36, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que $\sum\limits_{n\geq 1} \frac{(-1)^n}{n}\sum\limits_{k\geq n} \frac{1}{k(k+1)} = -\frac{\pi^2}{12}$. 
+\end{tcolorbox}
+
+\noindent On note $(a_{n, k}) = \left( \frac{(-1)^n}{nk(k+1)} \right)_{1\leq n\leq k}$. 
+\begin{align*}
+    \sum_{1\leq n\leq k} |a_{n, k}| &= \sum_{1\leq n\leq k} \frac{1}{nk(k+1)} \\
+    &= \sum_{n\geq 1} \frac{1}{n} \sum_{k\geq n} \frac{1}{k(k+1)} \\
+    &= \sum_{n\geq 1} \frac{1}{n} \sum_{k\geq n} \left( \frac{1}{k} - \frac{1}{k+1} \right) \\
+    &= \sum_{n\geq 1} \frac{1}{n^2} \\
+    &= \zeta(2) \\
+    &< +\infty 
+\end{align*}
+La famille est donc sommable. \\
+On a alors : 
+\begin{align*}
+    \sum_{1\leq n\leq k} a_{n, k} &= \sum_{n\geq 1} \frac{(-1)^n}{n} \sum_{k\geq n} \frac{1}{k(k+1)} \\
+    &= \sum_{n\geq 1} \frac{(-1)^n}{n^2} \\
+    &= \sum_{n\geq 1} \frac{1}{4n^2} - \sum_{n\geq 0} \frac{1}{(2n+1)^2} \\
+    &= \frac{1}{4} \zeta(2) - \sum_{n\geq 1} \frac{1}{n^2} + \sum_{n\geq 1} \frac{1}{(2n)^2} \\
+    &= -\frac{1}{2} \zeta(2) \\
+    &= -\frac{\pi^2}{12}
+\end{align*}
+
 
 \end{document}
