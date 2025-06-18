@@ -509,5 +509,22 @@ On a alors :
     &= -\frac{\pi^2}{12}
 \end{align*}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.37, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $z\in \mathbb{C}$. Montrer que $\sum\limits_{k\geq 1}\sum\limits_{n\geq k+1} \frac{e^{\frac{2ik\pi}{n}}}{2^n} = -\frac{1}{2}$. 
+\end{tcolorbox}
+
+\noindent On note $(a_{n, k}) = \left( \frac{e^{\frac{2ik\pi}{n}}}{2^n} \right)_{1\leq k\leq n}$. \\
+On a : 
+\begin{align*}
+    \sum_{1\leq k\leq n} |a_{n, k}| &= \sum_{n\geq 2} \sum_{k=1}^{n-1} \frac{1}{2^n} \text{ (Fubini positif)} \\
+    &= \sum_{n\geq 2} \frac{n-1}{2^n} \\
+    &< +\infty \text{ (car $\frac{n-1}{2^n} = O\left(\frac{1}{n^2}\right)$)} \\
+    \sum_{k\geq 1} \sum_{n\geq n+1} \frac{e^{\frac{2ik\pi}{n}}}{2^n} &= \sum_{n\geq 2} \frac{1}{2^n} \sum_{k=1}^{n-1} e^{\frac{2ik\pi}{n}} \text{ (Fubini positif)} \\
+    &= \sum_{n\geq 2} \frac{1}{2^n} \times (-1) \\
+    &= - \frac{1}{4} \frac{1}{1 - \frac{1}{2}} \\
+    &= -\frac{1}{2}
+\end{align*}
+
 
 \end{document}
