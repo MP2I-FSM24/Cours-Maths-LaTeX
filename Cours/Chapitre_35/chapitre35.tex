@@ -542,5 +542,18 @@ D'après le théorème de sommation par paquets :
     &= \sum_{n\geq 0} c_n
 \end{align*}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.39, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que pour tout $x\in ]-1; 1[, \sum\limits_{n\geq 1} nx^{n-1} = \frac{1}{(1-x)^2}$.
+\end{tcolorbox}
+
+\noindent Soit $|x| < 1$. 
+\begin{align*}
+    \frac{1}{(1 - x)^2} &= \frac{1}{1 - x} \times \frac{1}{1 - x} \\
+    &= \left( \sum_{k\geq 0} x^k \right) \left( \sum_{k\geq 0} x^k \right) \\
+    &= \sum_{n\geq 0} \sum_{k=0}^{n} x^k x^{n-k} \text{ (produit de Cauchy)} \\
+    &= \sum_{n\geq 0} (n+1) x^n
+\end{align*}
+
 
 \end{document}
