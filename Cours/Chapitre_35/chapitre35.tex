@@ -555,5 +555,21 @@ D'après le théorème de sommation par paquets :
     &= \sum_{n\geq 0} (n+1) x^n
 \end{align*}
 
+\setsection{40}
+\section{Convergence de la série exponentielle}
+\begin{tcolorbox}[title=Théorème 35.41, title filled=false, colframe=orange, colback=orange!10!white]
+    La série exponentielle est absolument convergente pour tout paramètre $z\in \mathbb{C}$. La somme définit une fonction notée : 
+    \begin{align*}
+        e(z) &= \sum_{n\geq 0} \frac{z^n}{n!}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Comme pour tout $n\geq 0, z\neq 0$ : 
+\begin{align*}
+    \frac{\frac{|z^{n+1}|}{(n+1)!}}{\frac{|z^n|}{n!}} &= \frac{|z|}{n+1} \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+D'après la règle d'Alembert, la série est absolument convergente pour tout $z\neq 0$. \\
+Pour $z=0, e(0) = 1$. 
+
 
 \end{document}
