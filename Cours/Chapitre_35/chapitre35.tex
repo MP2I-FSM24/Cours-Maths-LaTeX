@@ -418,6 +418,10 @@ Ce qui permet de conclure :
 \end{itemize}
 
 \setsection{32}
+\begin{tcolorbox}[title=Théorème 35.33, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\left(a_i\right)_{i \in I}$ et $\left(b_j\right)_{j \in J}$ deux familles sommables. Alors $\left(a_i b_j\right)_{(i, j) \in I \times J}$ est sommable et
+    $$\sum_{(i, j) \in I \times J} a_i b_j=\left(\sum_{i \in I} a_i\right)\left(\sum_{j \in J} b_j\right)$$
+\end{tcolorbox}
 \section{Produit de familles sommables}
 \begin{itemize}
     \item \underline{Sommabilité :} On note $c_{ij} = a_i b_j$ pour tout $(i, j)\in I\times J$. \\
@@ -444,6 +448,18 @@ Ce qui permet de conclure :
         &= \left( \sum_{i\in I} a_i \right) \left( \sum_{j\in J} b_j \right) \text{ (35.28)}
     \end{align*}
 \end{itemize}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.34, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que la famille $\left( \frac{\sin (p+q)}{p^2q^2} \right)_{p, q\in \mathbb{N}^*}$ est sommable. 
+\end{tcolorbox}
+
+\begin{align*}
+    \sum_{p\geq 1, q\geq 1} \left| \frac{\sin (p+q)}{p^2q^2} \right| &\leq \sum_{p\geq 1} \frac{1}{p^2q^2} \\
+    &= \left( \sum_{p\geq 1} \frac{1}{p^2} \right) \left( \sum_{q\geq 1} \frac{1}{q^2} \right) \text{ (Fubini positif)} \\
+    &= \zeta(2)^2 \\
+    &< +\infty
+\end{align*}
 
 
 \end{document}
