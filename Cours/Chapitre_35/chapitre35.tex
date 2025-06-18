@@ -386,5 +386,36 @@ Ce qui permet de conclure :
     M = |S|
 \end{align*}
 
+\setsection{30}
+\section{Associativité pour les familles sommables}
+\begin{tcolorbox}[title=Théorème 35.31, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\left(I_k\right)_{k \in K}$ un recouvrement disjoint de $I$. Soit $a=\left(a_i\right)_{i \in I}$ une famille de réels ou de complexes. Alors $a$ est sommable si et seulement chaque $\left(a_i\right)_{i \in I_k}$ est sommable de somme $s_k$ et de somme absolue $t_k$ et si la famille $\left(t_k\right)_{k \in K}$ est sommable. Dans ce cas, $\left(s_k\right)$ est également sommable et
+    $$\sum_{i \in I} a_i=\sum_{k \in K} s_k=\sum_{k \in K} \sum_{i \in I_k} a_i$$
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On traite la sommabilité. \\
+    D'après le théorème de sommation par paquets dans le cas positif (35.14) : 
+    \begin{align*}
+        \sum_{i\in I} a_i &= \sum_{k\in K} \sum_{i\in I_k} |a_i| = \sum_{k\in K} t_k \text{ (notations (35.31))}
+    \end{align*}i
+    \begin{itemize}
+        \item Si $\sum_{i\in I} |a_i| < +\infty$ alors : 
+        \begin{align*}
+            \sum_{k\in K}\sum_{i\in t_k} |a_i| < +\infty
+        \end{align*}
+        Donc $(t_k)$ est sommable. \\
+        Et $(a_i)_{i\in I_k}$ est sommable. 
+        \item Si $(a_i)_{i\in I_k}$ est sommable pour tout $k\in K$ et $(t_k)_{k\in K}$ est sommable, alors :
+        \begin{align*}
+            \sum_{k\in K} t_k < +\infty
+        \end{align*}
+        Donc : 
+        \begin{align*}
+            \sum_{i\in I} |a_i| < +\infty
+        \end{align*}
+    \end{itemize}
+\end{itemize}
+
 
 \end{document}
