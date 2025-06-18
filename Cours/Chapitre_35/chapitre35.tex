@@ -417,5 +417,33 @@ Ce qui permet de conclure :
     \end{itemize}
 \end{itemize}
 
+\setsection{32}
+\section{Produit de familles sommables}
+\begin{itemize}
+    \item \underline{Sommabilité :} On note $c_{ij} = a_i b_j$ pour tout $(i, j)\in I\times J$. \\
+    On écrit $I\times J = \bigsqcup\limits_{i\in I} \{i\}\times J$. \\
+    On pose, pour $i\in I$ : 
+    \begin{align*}
+        t_i &= \sum_{j\in J} |c_{ij}| \\
+        &= \sum_{j\in J} |a_i||b_j| \\
+        &= |a_i| \times \sum_{j\in J} |b_j| \text{ (presque linéarité)} \\
+        &< +\infty \text{ ($(b_j)$ est sommable)}
+    \end{align*}
+    Par ailleurs : 
+    \begin{align*}
+        \sum_{i\in I} t_i &= \sum_{i\in I} |a_i| \times \underbrace{\left( \sum_{j\in J} \right)}_{\in \mathbb{R}_+} \\
+        &= \left( \sum_{j\in J} |b_j| \right) \times \sum_{i\in I} |a_i| \\
+        &< +\infty
+    \end{align*}
+    D'après le théorème de sommation par paquets (35.31), la famille $(c_{ij})_{(i, j)\in I\times J}$ est sommable. 
+
+    \item \underline{Somme :}
+    \begin{align*}
+        \sum_{(i, j)\in I\times J} c_{ij} &= \sum_{i\in I} \sum_{j\in J} a_i b_j \text{ (35.28)} \\
+        &= \sum_{i\in I} a_i \left( \sum_{j\in J} b_j \right) \\
+        &= \left( \sum_{i\in I} a_i \right) \left( \sum_{j\in J} b_j \right) \text{ (35.28)}
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
