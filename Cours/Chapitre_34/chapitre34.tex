@@ -688,5 +688,44 @@ Soit $(A, B)\in \mathcal{M}_n(\mathbb{R})^2$.
     \end{enumerate}
 \end{enumerate}
 
+\section*{Exercice 10}
+\begin{itemize}
+    \item Soit $e = (e_1, \ldots, e_n), \mathcal{B} = (b_1, \ldots, b_n)$ deux bases orthonormales de $E$. \\
+    On pose $P = P^e_b$. Simplifions $^tPP$. \\
+    On note $E_1, \ldots, E_n$ les colonnes de $P$. \\
+    Soit $(i, j)\in \llbracket 1, n \rrbracket^2$ : 
+    \begin{align*}
+        [^tPP]_{ij} &= {^t}E_i E_j \\
+        &= \langle e_i, b_j\rangle \text{ ($b$ orthonormée)} \\
+        &= \delta_{ij} \text{ ($e$ orthonormale)}
+    \end{align*}
+    Ainsi : 
+    \begin{align*}
+        ^tPP = I_n
+    \end{align*}
+    \item Réciproquement si $b$ est toujours orthonormée, si $^tPP = I_n$ alors $e$ est une base orhtonormée. 
+    \item Si $^tPP = I_n$, alors $\operatorname{det} P = \pm 1$. 
+    \item Retour à l'exercice. Soit $B$ une base orthonormée. \\
+    Soit $(x_1, \ldots, x_n)\in E^n$. 
+    \begin{itemize}
+        \item Si ($x_1, \ldots, x_n)$ est liée, l'inégalité est vérifiée ($\operatorname{det}_{\mathcal{B}} (x_1, \ldots, x_n) = 0$)
+        \item On suppose donc que $(x_1, \ldots, x_n)$ est libre, donc une base de $E$. \\
+        On orthonormalise cette pas par le procédé de Gram-Schmidt. On noté $e$ la base obtenue. \\
+        On a : 
+        \begin{align*}
+            P^\mathcal{F}_\mathcal{B} &= P^e_\mathcal{B} P^\mathcal{F}_e \text{ (changement de bases)}
+        \end{align*}
+        avec $\operatorname{det} (P^e_\mathcal{B}) = \pm 1$, $P^\mathcal{F}_e$ triangulaire supérieure (avec une diagonale strictaire positive si on choisit avec un plus dans Gram-Schmidt). 
+        \begin{align*}
+            |\operatorname{det}_{\mathcal{B}} (\mathcal{F})| &= |\operatorname{det} (P_\mathcal{B}^\mathcal{F})| \\
+            &= |\operatorname{det} (P^e_\mathcal{B})| \times |\operatorname{det} (P^\mathcal{F}_e)| \\
+            &= |\operatorname{det} (P^\mathcal{F}_e)| \\
+            &= \left| \prod_{k=1}^{n} \langle x_k, e_k\rangle \right| \\
+            &\leq \prod_{k=1}^{n} \|x_k\| \|e_k\| \text{ (Cauchy-Schwarz)} \\
+            &= \prod_{k=1}^{n} \|x_k\|
+        \end{align*}
+    \end{itemize}
+\end{itemize}
+
 
 \end{document}

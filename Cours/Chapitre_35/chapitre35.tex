@@ -6,4 +6,601 @@
 \tableofcontents
 \clearpage
 
+\setsection{1}
+\section{Reformulation}
+\begin{tcolorbox}[title=Propostion 35.2, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\sum a_n$ une séries à termes positifs. Alors $\sum_{n \geq 0} a_n$ est bien définie dans $\overline{\mathbb{R}}_{+}$et
+    $$\sum_{n \geq 0} a_n=\sup \left\{\sum_{k \in J} a_k, J \in \mathcal{P}_f(\mathbb{N})\right\}$$
+\end{tcolorbox}
+
+\noindent En notant, pour $n\in \mathbb{N}, S_n = \sum\limits_{k=0}^{n} a_k$, on a : 
+\begin{align*}
+    S_n \underset{n \to +\infty}{\longrightarrow} \sum_{k\geq 0}^{a_k} 
+\end{align*}
+Or pour tout $n\in \mathbb{N}, S_n\in \left\{ \sum_{k\in J} a_k\mid J\in \mathcal{P}_f(\mathbb{N}) \right\}$. \\
+Donc $\sum_{k\geq 0} a_k \leq \sup \left\{ \sum_{k\in J} a_k\mid J\in \mathcal{P}_f(\mathbb{N}) \right\} = S$. \\
+Par ailleurs, pour $J\in \mathcal{P}_f(\mathbb{N})$, on pose $N = \max J$ et $J\subset \llbracket 0, N \rrbracket$ et : 
+\begin{align*}
+    \sum_{k\in J} a_k  \leq \sum_{k=0}^{N} a_k \leq \sum_{k>0} a_k 
+\end{align*}
+Par définition de la borne supérieure : 
+\begin{align*}
+    S \leq \sum_{k\geq 0} a_k
+\end{align*}
+Donc : 
+\begin{align*}
+    \sum_{k\geq 0} a_k = S
+\end{align*}
+
+\setsection{4}
+\section{Croissance de la somme}
+\begin{tcolorbox}[title=Propostion 35.5, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\left(a_i\right)_{i \in I}$ et $\left(b_i\right)_{i \in I}$ deux familles à valeurs dans $\overline{\mathbb{R}}_{+}$. Si pour tout $i \in I, a_i \leq b_i$, alors
+    $$\sum_{i \in I} a_i \leq \sum_{i \in I} b_i$$
+\end{tcolorbox}
+
+\noindent Soit $J\in \mathcal{P}_f(I)$. Comme : 
+\begin{align*}
+    \forall i\in J, a_i\leq b_i
+\end{align*}
+Alors : 
+\begin{align*}
+    \sum_{i\in j} a_i \leq \sumç{i\in J} b_i \leq \sum_{i\in I} b_i
+\end{align*}
+$\sum\limits_{i\in I} b_i$ est un majorant de $\left\{ \sum_{i\in J} a_i\mid J\in \mathcal{P}_f(I) \right\}$. \\
+Par définition : 
+\begin{align*}
+    \sum_{i\in I} a_i \leq \sum_{i\in I} b_i
+\end{align*}
+
+\setsection{7}
+\section{Lien avec les séries à termes positifs}
+\begin{tcolorbox}[title=Propostion 35.8, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\sum a_n$ une séries à termes positifs.
+    \begin{enumerate}
+        \item On a $\sum_{n=0}^{+\infty} a_n=\sum_{n \in \mathbb{N}} a_n$ (le terme de gauche correspond à la somme de la série tandis que le terme de droite à la somme de la famille sommable). 
+        \item En particulier, $\sum a_n$ converge si et seulement si la famille $\left(a_n\right)_{n \in \mathbb{N}}$ est sommable. 
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item (35.2)
+    \item Théorème de la Limite Monotone
+\end{enumerate}
+
+\setsection{9}
+\section{Invariance de la somme d'une série à termes positifs par permutation des termes}
+\begin{tcolorbox}[title=Corollaire 35.10, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sum a_n$ une série à termes positifs et $\sigma \in S_{\mathbb{N}}$. Alors
+    $$\sum_{n=0}^{+\infty} a_n=\sum_{n=0}^{+\infty} a_{\sigma(n)}$$
+    Cette égalité reste vraie dans $\overline{\mathbb{R}}_{+}$.
+\end{tcolorbox}
+
+\noindent Soit $\sigma\in \mathcal{S}_\mathbb{N}$. \\
+$\sigma$ induit une bijection $\mathcal{P}_f(\mathbb{N})\to \mathcal{P}_f(\mathbb{N});J\mapsto \sigma(J)$ de $\left\{ \sum_{i\in J}| J\in \mathcal{P}_f(\mathbb{N}) \right\}$ sur $\left\{ \sum_{i\in I} a_{\sigma(i)}\mid J\in \mathcal{P}_f(\mathbb{N}) \right\}$. \\
+Ces deux ensembles ont donc la même borne supérieure. Donc : 
+\begin{align*}
+    \sum_{i\in \mathbb{N}} a_i = \sum_{i\in \mathbb{N}} a_{\sigma(i)} 
+\end{align*}
+Soit : 
+\begin{align*}
+    \sum_{i=0}^{+\infty} a_i = \sum_{i=0}^{+\infty} a_{\sigma(i)} \text{ (35.8)}
+\end{align*}
+
+\setsection{11}
+\section{Restriction}
+\begin{tcolorbox}[title=Propostion 35.12, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $(a_i)_{i \in I}$ une famille d'éléments de $\overline{\mathbb{R}}_{+}$. Soit $J\subset I$, alors : 
+    \begin{align*}
+        \sum_{i\in J} a_i \leq \sum_{i\in I} a_i
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Comme $\mathcal{P}_f(J)\subset \mathcal{P}_f(I)$ :
+\begin{align*}
+    \left\{ \sum_{j\in K} a_j\mid K\in \mathcal{P}_f(J) \right\} \subset \left\{ \sum_{j\in K} a_j\mid K\in \mathcal{P}_f(I) \right\}
+\end{align*}
+Donc (Chapitre 9) : 
+\begin{align*}
+    \sum_{i\in J} a_i \leq \sum_{i\in I} a_i
+\end{align*}
+
+\section{Preque linéarité}
+\begin{tcolorbox}[title=Propostion 35.13, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\left(a_i\right)$ et $\left(b_i\right)$ deux familles d'éléments de $\overline{\mathbb{R}}_{+}$et $(\lambda, \mu) \in \overline{\mathbb{R}}_{+}^2$. On a
+    $$\sum_{i \in I}\left(\lambda a_i+\mu b_i\right)=\lambda \sum_{i \in I} a_i+\mu \sum_{i \in I} b_i$$
+\end{tcolorbox}
+
+\noindent On rappelle (Chapitre 9) que : 
+\begin{align*}
+    \sup(aA + bB) = a\sup A + b\sup B
+\end{align*}
+($a\geq 0, b\geq 0$ et $\sup A, \sup B$ existent). 
+
+\setsection{13}
+\section{Sommation par paquets}
+\begin{tcolorbox}[title=Théorème 35.14, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ un ensemble quelconque et $I=\bigsqcup\limits_{k \in K} I_k$ un recouvrement disjoint de $I$. Soit $a=\left(a_i\right)_{i \in I}$ une famille d'éléments de $\overline{\mathbb{R}}_{+}$. Alors
+    $$\sum_{i \in I} a_i=\sum_{k \in K}\left(\sum_{i \in I_k} a_i\right)$$
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Montrons que $\sum\limits_{i\in I} a_i\leq \sum\limits_{k\in K}\left(\sum\limits_{i\in I_k} a_i\right)$ : \\
+    Soit $J\in \mathcal{P}_f(I)$. \\
+    Pour tout $k\in K$, on note $J_k = J\cap I_k$. \\
+    Ainsi, $J_k\in \mathcal{P}_f(I_k)$ et :
+    \begin{align*}
+        \bigsqcup_{k\in K} J_k &= \bigsqcup_{k\in K} (J\cap I_k) \\
+        &= J\cap \bigsqcup_{k\in K} I_k \\
+        &= J\cap I \\
+        &= J
+    \end{align*}
+    On pose également $L = \{k\in K, J_k\neq\emptyset \}$. \\
+    Alors $L\in \mathcal{P}_f(K)$ et :
+    \begin{align*}
+        \bigsqcup_{k\in L} J_k &= \bigsqcup_{k\in K} J_k = J
+    \end{align*}
+    Les ensembles étant finis :
+    \begin{align*}
+        \sum_{i\in J} a_i = \sum_{k\in L} \sum_{i\in J_k} a_i\leq \sum_{k\in L}\sum_{i\in I_k} a_i \leq \sum_{k\in K} \sum_{i\in I_k} a_i
+    \end{align*}
+    Par définition de la borne supérieure : 
+    \begin{align*}
+        \sum_{i\in I} a_i \leq \sum_{k\in K}\sum_{i\in I_k} a_i
+    \end{align*}
+
+    \item On prouve $\sum\limits_{k\in K}\sum\limits_{i\in I_k} a_i\leq \sum\limits_{i\in I} a_i$. \\
+    Soit $L\in \mathcal{P}_f(K)$. \\
+    Soit, pour $k\in L, J_k\in \mathcal{P}_f(I_k)$. 
+    $\bigsqcup_{k\in L} J_k$ est donc une partie finie de $I$. \\
+    \begin{align*}
+        \underbrace{\sum_{k\in L}\sum_{i\in J_k} a_i}_{\text{car } \bigsqcup J_k \text{ est fini}} \leq \sum_{i\in I} a_i
+    \end{align*}
+\end{itemize}
+En utilisant un nombre fini de fois la définition de la borne supérieure : 
+\begin{align*}
+    \sum_{k\in L}\sum_{i\in I_k} a_i \leq \sum_{i\in I} a_i
+\end{align*}
+Toujours par définition de la borne supérieure : 
+\begin{align*}
+    \sum_{k\in K}\sum_{i\in I_k} a_i \leq \sum_{i\in I} a_i 
+\end{align*}
+
+\setsection{15}
+\section{Théorème de Fubini positif}
+\begin{tcolorbox}[title=Corollaire 35.16, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $I$ et $J$ deux ensembles quelconques et $\left(a_{i, j}\right)_{(i, j) \in I \times J}$ une famille de réels positifs. Alors
+    $$\sum_{i \in I} \sum_{j \in J} a_{i, j}=\sum_{(i, j) \in I \times J} a_{i, j}=\sum_{j \in J} \sum_{i \in I} a_{i, j}$$
+\end{tcolorbox}
+
+\begin{align*}
+    \bigsqcup_{j\in J} I\times \{j\} = I\times J = \bigsqcup_{i\in I} \{i\} \times J
+\end{align*}
+On conclut avec le théorème de sommation par paquets. 
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.17, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que $\sum\limits_{n\geq 2} (\zeta(n)-1) = 1$. 
+\end{tcolorbox}
+
+\noindent $\left( \frac{1}{k^n} \right)_{n\geq 2, k\geq 2}$ est une famille de $\mathbb{R}_+$. 
+\begin{align*}
+    \sum_{n\geq 2} \left( \sum_{k\geq 1} \frac{1}{k^n} - 1 \right) &= \sum_{n\geq 2} \left( \sum_{k\geq 2} \frac{1}{k^n} \right) \\
+    &= \sum_{k\geq 2} \left( \sum_{n\geq 2} \frac{1}{k^n} \right) \text{ (Fubini positif)} \\
+    &= \sum_{k\geq 2} \left( \frac{1}{k^2} \frac{1}{1 - \frac{1}{k}} \right) \text{ (progresion géométrique)} \\
+    &= \sum_{k\geq 2} \frac{1}{k^2 - k} \\
+    &= \sum_{k\geq 2} \left( \frac{1}{k-1} - \frac{1}{k} \right) \text{ (DES)} \\
+    &= 1 \text{ (télescopage)}
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.18, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que :
+    \begin{align*}
+        \sum_{n\geq 1} \frac{n}{2^n} = 2
+    \end{align*}
+\end{tcolorbox}
+
+\noindent $\left( \frac{1}{2^n} \right)_{1\leq k\leq n}$ est une famille de $\mathbb{R}_+$.
+\begin{align*}
+    \sum_{n\geq 1} \frac{n}{2^n} &= \sum_{n\geq 1} \sum_{k=1}^{n} \frac{1}{2^k} \\
+    &= \sum_{1\leq k\leq n} \frac{1}{2^n} \\
+    &= \sum_{k\geq 1} \left( \sum_{n\geq k} \frac{1}{2^n} \right) \text{ (Fubini positif)} \\
+    &= \sum_{k\geq 1} \frac{1}{2^k} \frac{1}{1 - \frac{1}{2}} \text{ (progresion géométrique)} \\
+    &= \sum_{k\geq 1} \frac{1}{2^{k-1}} \\
+    &= 2
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.19, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Pour quelles valeurs de $\alpha\in \mathbb{R}$ la somme $\sum\limits_{p, q\in \mathbb{N}^*} \frac{pq}{(p+q)^\alpha}$ est-elle réelle ?
+\end{tcolorbox}
+
+\noindent $\left( \frac{pq}{(p+q)^\alpha} \right)_{p, q\geq 1}$ est une famille de réels positifs. 
+\begin{align*}
+    \sum_{p\geq 1, q\geq 1} \frac{pq}{(p+q)^\alpha} &= \sum_{d\geq 1} \sum_{p=0}^{d} \frac{p(d-p)}{d^\alpha} \text{ (sommation par paquets)} \\
+    &= \sum_{d\geq 2} \sum_{p=0}^{d} \frac{p(d-p)}{d^\alpha} \\
+    &= \sum_{d\geq 2} \sum_{p=0}^{d} \left( \frac{p}{d^{\alpha - 1}} - \frac{p^2}{d^\alpha} \right) \\
+    &= \sum_{d\geq 2} \left( \frac{d(d+1)}{2d^{\alpha - 1}} - \frac{d(d+1)(2d+1)}{6d^{\alpha - 1}} \right) \text{ (sommes usuelles)} \\
+    &= \sum_{d\geq 2} \frac{d+1}{d^{\alpha - 1}} (3d - 2d - 1) \\
+    &= \sum_{d\geq 2} \frac{d^2 - 1}{6d^{\alpha - 1}}
+\end{align*}
+Or : 
+\begin{align*}
+    \frac{d^2 - 1}{6d^{\alpha - 1}} &\sim \frac{1}{6d^{\alpha - 3}} 
+\end{align*}
+D'après le TCSATTPE, la somme est finie si et seulement si $\alpha > 4$.
+
+\setsection{24}
+\section{Caractérisation de la sommabilité par les parties réelles et imaginaires, parties positives et négatives}
+\begin{tcolorbox}[title=Théorème 35.5, title filled=false, colframe=orange, colback=orange!10!white]
+    \begin{enumerate}
+        \item Soit $\left(a_i\right)_{i \in I}$ une famille de réels. Alors $\left(a_i\right)_{i \in I}$ est sommable si et seulement si $\left(a_i^{+}\right)_{i \in I}$ et $\left(a_i^{-}\right)_{i \in I}$ le sont. 
+        \item Soit $\left(a_i\right)_{i \in I}$ une famille de complexes. Alors $\left(a_i\right)_{i \in I}$ est sommable si et seulement si $\left(\operatorname{Re}\left(a_i\right)\right)_{i \in I}$ et $\left(\operatorname{Im}\left(a_i\right)\right)_{i \in I}$ le sont.
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{enumerate}
+    \item On rappelle que : 
+    \begin{align*}
+        \forall i\in I, a_i = a_i^{+} - a_i^{-}
+    \end{align*}
+    et : 
+    \begin{align*}
+        \forall i\in I, 0&\leq a_i^+\leq |a_i| \\
+        0&\leq a_i^- \leq |a_i|
+    \end{align*}
+    Si $(a_i)$ est sommable, alors $\left(a_i^{+}\right)_{i \in I}$ et $\left(a_i^{-}\right)_{i \in I}$ le sont aussi (35.24). \\
+    Par ailleurs, d'après l'inégalité triangulaire : 
+    \begin{align*}
+        \forall i\in I, |a_i| \leq a_i^{+} + a_i^{-}
+    \end{align*}
+    Donc si $\left(a_i^{+}\right)_{i \in I}$ et $\left(a_i^{-}\right)_{i \in I}$ sont sommables, alors $(a_i)$ est sommable (35.24) et (35.13). 
+
+    \item Démonstration similaire. 
+\end{enumerate}
+
+\setsection{26}
+\section{Caractérisation de la somme par les $\epsilon$}
+\begin{tcolorbox}[title=Propostion 35.27, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\left(a_i\right)_{i \in I} \in \ell(I)$ et $S \in \mathbb{C}$. Les assertions suivantes sont équivalentes:
+    \begin{enumerate}
+        \item $S=\sum\limits_{i \in I} a_i$
+        \item pour tout $\epsilon>0$, il existe $J_\epsilon \in \mathcal{P}_f(I)$ tel que pour tout $K \in \mathcal{P}_f(I)$ avec $J_\epsilon \subset K$ : 
+        $$\left|S-\sum_{i \in K} a_i\right| \leq \epsilon$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\boxed{\Rightarrow} \\
+On suppose que $S = \sum\limits_{i\in I} a_i$ (avec $(a_i)$ une famille de réels). \\
+On décompose : 
+\begin{align*}
+    \forall i\in I, a_i = a_i^{+} - a_i^{-}
+\end{align*}
+Et : 
+\begin{align*}
+    S = \sum_{i\in I} a_i^+ - \sum_{i\in I} a_i^- = S^+ - S^-
+\end{align*}
+On note également : 
+\begin{align*}
+    A_+ &= \left\{ \sum_{i\in J} a_i^+ \mid J\in \mathcal{P}_f(I) \right\} \\
+    A_- &= \left\{ \sum_{i\in J} a_i^- \mid J\in \mathcal{P}_f(I) \right\}
+\end{align*}
+Soit $\epsilon > 0$. \\
+$S^+ - \frac{\epsilon}{2}$ ne majore pas $A_+$, on choisit $J_{\epsilon}^+\in \mathcal{P}_f(I)$ tel que :
+\begin{align*}
+    S^+ - \frac{\epsilon}{2} < \sum_{i\in J_\epsilon^+} a_i^+
+\end{align*}
+Pour les mêmes raisons, on choisit $J_{\epsilon}^-\in \mathcal{P}_f(I)$ tel que :
+\begin{align*}
+    S^- - \frac{\epsilon}{2} < \sum_{i\in J_\epsilon^-} a_i^-
+\end{align*}
+Pour tout $K\in \mathcal{P}_f(I)$ avec $K\supset J_\epsilon = J_\epsilon^+ \cup J_\epsilon^-$. 
+\begin{align*}
+    S^+ - \frac{\epsilon}{2} &< \sum_{i\in J_\epsilon^+} a_i^+ \leq \sum_{i\in K} a_i^+ \\
+    S^- - \frac{\epsilon}{2} &< \sum_{i\in J_\epsilon^-} a_i^- \leq \sum_{i\in K} a_i^-
+\end{align*}
+Et ainsi : 
+\begin{align*}
+    \left| S - \sum_{i\in K} a_i \right| &= \left| S^+ - \sum_{i\in K} a_i^+ - S^- + \sum_{i\in K} a_i^- \right| \\
+    &\leq \left| S^+ - \sum_{i\in K} a_i^+ \right| + \left| S^- - \sum_{i\in K} a_i^- \right| \\
+    &\leq \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+    &= \epsilon
+\end{align*}
+
+\boxed{\Leftarrow} \\
+SUpposons qu'il existe $S$ et $S'$ vérifiant la condition 2. Alors pour tout $\epsilon > 0$, n notant $J_\epsilon$ l'ensemble de l'assertion : 
+\begin{align*}
+    |S - S'| &= |S - \sum_{i\in J_\epsilon} a_i + \sum_{i\in J_\epsilon} a_i - S'| \\
+    &\leq 2\epsilon
+\end{align*}
+Donc $S = S'$. 
+
+\section{Linéarité}
+\begin{tcolorbox}[title=Théorème 35.28, title filled=false, colframe=orange, colback=orange!10!white]
+    L'ensemble $\ell^1(I)$ est un $\mathbb{C}$-espace vectoriel et $(a_i)_{i \in I} \to \sum_{i\in I} a_i$ est une forme linéaire sur $\ell^1(I)$. 
+\end{tcolorbox}
+
+\noindent Soit $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$. 
+\begin{itemize}
+    \item \begin{itemize}
+        \item $\ell^1(I)\subset \mathbb{K}^I$. 
+        \item Soit $(a_i), (b_i)$ dans $\ell^1(I)$, $(\lambda, \mu) \in \mathbb{K}^2$. On a : 
+        \begin{align*}
+            \sum_{i\in I} |\lambda a_i + \mu b_i| &\leq \sum_{i\in I} |\lambda| |a_i| + |\mu| |b_i| \\
+            &\leq |\lambda| \sum_{i\in I} |a_i| + |\mu| \sum_{i\in I} |b_i| \\
+            &< +\infty
+        \end{align*}
+        Donc $(\lambda a_i + \mu b_i)_{i \in I} \in \ell^1(I)$.
+    \end{itemize}
+    \item Soit $\epsilon > 0$. Soit $J_\epsilon^a\in \mathcal{P}_f(I)$ tel que : 
+    \begin{align*}
+        \forall K\in \mathcal{P}_f(I), K > J_\epsilon^a, \left| \sum_{i\in I} a_i - \sum_{i\in K} a_i \right| < \epsilon
+    \end{align*}
+    On pose $J_\epsilon = J_\epsilon^a \cup J_\epsilon^b$. \\
+    On a alors, pour $K\in \mathcal{P}_f(I), K > J_\epsilon$ :
+    \begin{align*}
+        \left| \lambda\sum_{i\in I} a_i + \mu\sum_{i\in I} b_i - \sum_{i\in K} (\lambda a_i + \mu b_i) \right| &= \left| \lambda \sum_{i\in I} a_i - \lambda \sum_{i\in K} a_i + \mu\sum_{i\in I} b_i - \mu\sum_{i\in K} b_i \right| \\
+        &\leq |\lambda| \left| \sum_{i\in I} a_i - \sum_{i\in K} a_i \right| + |\mu| \left| \sum_{i\in I} b_i - \sum_{i\in K} b_i \right| \\
+        &\leq (|\lambda| + |\mu|) \epsilon
+    \end{align*}
+    D'après (35.27), on a donc : 
+    \begin{align*}
+        \sum_{i\in I} (\lambda a_i + \mu b_i) = \lambda\sum_{i\in I} a_i + \mu\sum_{i\in I} b_i
+    \end{align*}
+\end{itemize}
+
+\section{Intégalité triangulaire}
+\begin{tcolorbox}[title=Propostion 25.29, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $\left(a_i\right)_{i \in I}$ est une famille sommable de complexes, alors
+    $$\left|\sum_{i \in I} a_i\right| \leq \sum_{i \in I}\left|a_i\right|$$
+\end{tcolorbox}
+
+\noindent On suppose que $(a_i)_{i\in I}\in \ell^1(I)(I, \mathbb{R})$. \\
+On écrit donc : 
+\begin{align*}
+    \forall i\in I, a_i &= a_i^{+} - a_i^{-} \\
+    |a_i| &= a_i^{+} + a_i^{-}
+\end{align*}
+Et ainsi : 
+\begin{align*}
+    \left| \sum_{i\in I} a_i \right| &= \left| \sum_{i\in I} a_i^+ - \sum_{i\in I} a_i^- \right| \\
+    &\leq \sum_{i\in I} a_i^+ + \sum_{i\in I} a_i^- \text{ (Inégalité triangulaire sur $\mathbb{R}$)} \\
+    &= \sum_{i\in I} (a_i^+ + a_i^-) \text{ (presque linéarité)} \\
+    &= \sum_{i\in I} |a_i|
+\end{align*}
+On suppose que $(a_i)_{i\in I}\in \ell^1(I)(I, \mathbb{C})$. \\
+Soit $J\in \mathcal{P}_f(I)$ : 
+\begin{align*}
+    \left| \sum_{i\in J} a_i \right| &\leq \sum_{i\in J} |a_i| \\
+    &\leq \sum_{i\in I} |a_i|
+\end{align*}
+On note $M = \sup \left\{ \left| \sum\limits_{i\in J} a_i \right|\mid J\in \mathcal{P}_f(I) \right\}$ de tele sorte que $M\leq \sum\limits_{i\in I} |a_i|$. \\
+Montrons que $M = \left| \sum\limits_{i\in I} a_i \right| = |S|$. \\
+Pour $\epsilon > 0$, on choisit $J_{\epsilon}\in \mathcal{P}_f(I)$ tel que pour tout $K\in \mathcal{P}_f(I)$, $K\supset J_{\epsilon}$ : 
+\begin{align*}
+    \left| |S| - \left| \sum_{i\in K} \right| \right| \leq \left| S - \sum_{i\in K} a_i \right| < \epsilon
+\end{align*}
+Ce qui permet de conclure : 
+\begin{align*}
+    M = |S|
+\end{align*}
+
+\setsection{30}
+\section{Associativité pour les familles sommables}
+\begin{tcolorbox}[title=Théorème 35.31, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\left(I_k\right)_{k \in K}$ un recouvrement disjoint de $I$. Soit $a=\left(a_i\right)_{i \in I}$ une famille de réels ou de complexes. Alors $a$ est sommable si et seulement chaque $\left(a_i\right)_{i \in I_k}$ est sommable de somme $s_k$ et de somme absolue $t_k$ et si la famille $\left(t_k\right)_{k \in K}$ est sommable. Dans ce cas, $\left(s_k\right)$ est également sommable et
+    $$\sum_{i \in I} a_i=\sum_{k \in K} s_k=\sum_{k \in K} \sum_{i \in I_k} a_i$$
+\end{tcolorbox}
+
+\begin{itemize}
+    \item On traite la sommabilité. \\
+    D'après le théorème de sommation par paquets dans le cas positif (35.14) : 
+    \begin{align*}
+        \sum_{i\in I} a_i &= \sum_{k\in K} \sum_{i\in I_k} |a_i| = \sum_{k\in K} t_k \text{ (notations (35.31))}
+    \end{align*}i
+    \begin{itemize}
+        \item Si $\sum_{i\in I} |a_i| < +\infty$ alors : 
+        \begin{align*}
+            \sum_{k\in K}\sum_{i\in t_k} |a_i| < +\infty
+        \end{align*}
+        Donc $(t_k)$ est sommable. \\
+        Et $(a_i)_{i\in I_k}$ est sommable. 
+        \item Si $(a_i)_{i\in I_k}$ est sommable pour tout $k\in K$ et $(t_k)_{k\in K}$ est sommable, alors :
+        \begin{align*}
+            \sum_{k\in K} t_k < +\infty
+        \end{align*}
+        Donc : 
+        \begin{align*}
+            \sum_{i\in I} |a_i| < +\infty
+        \end{align*}
+    \end{itemize}
+\end{itemize}
+
+\setsection{32}
+\begin{tcolorbox}[title=Théorème 35.33, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\left(a_i\right)_{i \in I}$ et $\left(b_j\right)_{j \in J}$ deux familles sommables. Alors $\left(a_i b_j\right)_{(i, j) \in I \times J}$ est sommable et
+    $$\sum_{(i, j) \in I \times J} a_i b_j=\left(\sum_{i \in I} a_i\right)\left(\sum_{j \in J} b_j\right)$$
+\end{tcolorbox}
+\section{Produit de familles sommables}
+\begin{itemize}
+    \item \underline{Sommabilité :} On note $c_{ij} = a_i b_j$ pour tout $(i, j)\in I\times J$. \\
+    On écrit $I\times J = \bigsqcup\limits_{i\in I} \{i\}\times J$. \\
+    On pose, pour $i\in I$ : 
+    \begin{align*}
+        t_i &= \sum_{j\in J} |c_{ij}| \\
+        &= \sum_{j\in J} |a_i||b_j| \\
+        &= |a_i| \times \sum_{j\in J} |b_j| \text{ (presque linéarité)} \\
+        &< +\infty \text{ ($(b_j)$ est sommable)}
+    \end{align*}
+    Par ailleurs : 
+    \begin{align*}
+        \sum_{i\in I} t_i &= \sum_{i\in I} |a_i| \times \underbrace{\left( \sum_{j\in J} \right)}_{\in \mathbb{R}_+} \\
+        &= \left( \sum_{j\in J} |b_j| \right) \times \sum_{i\in I} |a_i| \\
+        &< +\infty
+    \end{align*}
+    D'après le théorème de sommation par paquets (35.31), la famille $(c_{ij})_{(i, j)\in I\times J}$ est sommable. 
+
+    \item \underline{Somme :}
+    \begin{align*}
+        \sum_{(i, j)\in I\times J} c_{ij} &= \sum_{i\in I} \sum_{j\in J} a_i b_j \text{ (35.28)} \\
+        &= \sum_{i\in I} a_i \left( \sum_{j\in J} b_j \right) \\
+        &= \left( \sum_{i\in I} a_i \right) \left( \sum_{j\in J} b_j \right) \text{ (35.28)}
+    \end{align*}
+\end{itemize}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.34, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que la famille $\left( \frac{\sin (p+q)}{p^2q^2} \right)_{p, q\in \mathbb{N}^*}$ est sommable. 
+\end{tcolorbox}
+
+\begin{align*}
+    \sum_{p\geq 1, q\geq 1} \left| \frac{\sin (p+q)}{p^2q^2} \right| &\leq \sum_{p\geq 1} \frac{1}{p^2q^2} \\
+    &= \left( \sum_{p\geq 1} \frac{1}{p^2} \right) \left( \sum_{q\geq 1} \frac{1}{q^2} \right) \text{ (Fubini positif)} \\
+    &= \zeta(2)^2 \\
+    &< +\infty
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.35, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que pour tout $z\in \mathbb{C}$, la famille $(z^{ij})_{i, j\in N^*}$ est sommable si et seulement si $|z|<1$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Si $|z|< 1$ : 
+    \begin{align*}
+        \sum_{i\geq 1, j\geq 1} |z|^{ij} &= \sum_{i\geq 1} \sum_{j\geq 1} |z^i|^j \text{ (Fubini positif)} \\
+        &= \sum_{i\geq 1} |z|^i \frac{1}{1 - |z|^i} \text{ ($|z^i|\neq 1$)} \\
+        &= \sum_{i\geq 1} \sum_{i\geq 1} \frac{|z|^i}{1 - |z|^i} \\
+        &\leq \sum_{i\geq 1} \frac{|z|^i}{1 - |z|} \text{ ($|z|<1$)} \\
+        &= \frac{|z|}{(1 - |z|)^2}
+    \end{align*}
+
+    \item Si $|z|\geq 1$ :
+    \begin{align*}
+        \sum_{i\geq 1, j\geq 1} |z|^{ij} &= \sum_{i\geq 1} \sum_{j\geq 1} |z^i|^j \\
+        &= \sum_{i\geq 1} +\infty \text{ ($|z^i|\geq 1$)} \\
+        &= +\infty
+    \end{align*}
+\end{itemize}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.36, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que $\sum\limits_{n\geq 1} \frac{(-1)^n}{n}\sum\limits_{k\geq n} \frac{1}{k(k+1)} = -\frac{\pi^2}{12}$. 
+\end{tcolorbox}
+
+\noindent On note $(a_{n, k}) = \left( \frac{(-1)^n}{nk(k+1)} \right)_{1\leq n\leq k}$. 
+\begin{align*}
+    \sum_{1\leq n\leq k} |a_{n, k}| &= \sum_{1\leq n\leq k} \frac{1}{nk(k+1)} \\
+    &= \sum_{n\geq 1} \frac{1}{n} \sum_{k\geq n} \frac{1}{k(k+1)} \\
+    &= \sum_{n\geq 1} \frac{1}{n} \sum_{k\geq n} \left( \frac{1}{k} - \frac{1}{k+1} \right) \\
+    &= \sum_{n\geq 1} \frac{1}{n^2} \\
+    &= \zeta(2) \\
+    &< +\infty 
+\end{align*}
+La famille est donc sommable. \\
+On a alors : 
+\begin{align*}
+    \sum_{1\leq n\leq k} a_{n, k} &= \sum_{n\geq 1} \frac{(-1)^n}{n} \sum_{k\geq n} \frac{1}{k(k+1)} \\
+    &= \sum_{n\geq 1} \frac{(-1)^n}{n^2} \\
+    &= \sum_{n\geq 1} \frac{1}{4n^2} - \sum_{n\geq 0} \frac{1}{(2n+1)^2} \\
+    &= \frac{1}{4} \zeta(2) - \sum_{n\geq 1} \frac{1}{n^2} + \sum_{n\geq 1} \frac{1}{(2n)^2} \\
+    &= -\frac{1}{2} \zeta(2) \\
+    &= -\frac{\pi^2}{12}
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.37, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Soit $z\in \mathbb{C}$. Montrer que $\sum\limits_{k\geq 1}\sum\limits_{n\geq k+1} \frac{e^{\frac{2ik\pi}{n}}}{2^n} = -\frac{1}{2}$. 
+\end{tcolorbox}
+
+\noindent On note $(a_{n, k}) = \left( \frac{e^{\frac{2ik\pi}{n}}}{2^n} \right)_{1\leq k\leq n}$. \\
+On a : 
+\begin{align*}
+    \sum_{1\leq k\leq n} |a_{n, k}| &= \sum_{n\geq 2} \sum_{k=1}^{n-1} \frac{1}{2^n} \text{ (Fubini positif)} \\
+    &= \sum_{n\geq 2} \frac{n-1}{2^n} \\
+    &< +\infty \text{ (car $\frac{n-1}{2^n} = O\left(\frac{1}{n^2}\right)$)} \\
+    \sum_{k\geq 1} \sum_{n\geq n+1} \frac{e^{\frac{2ik\pi}{n}}}{2^n} &= \sum_{n\geq 2} \frac{1}{2^n} \sum_{k=1}^{n-1} e^{\frac{2ik\pi}{n}} \text{ (Fubini positif)} \\
+    &= \sum_{n\geq 2} \frac{1}{2^n} \times (-1) \\
+    &= - \frac{1}{4} \frac{1}{1 - \frac{1}{2}} \\
+    &= -\frac{1}{2}
+\end{align*}
+
+\section{Produit de Cauchy}
+\begin{tcolorbox}[title=Théorème 35.38, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $\sum_{n \geq 0} a_n$ et $\sum_{n \geq 0} b_n$ deux séries absolument convergentes. Soit, pour tout $n \in \mathbb{N}$ :
+    $$c_n=\sum_{k=0}^n a_k b_{n-k}$$
+    Alors $\sum_{n \geq 0} c_n$ est absolument convergente et :
+    $$\sum_{n \geq 0} c_n=\left(\sum_{n \geq 0} a_n\right)\left(\sum_{n \geq 0} b_n\right)$$
+\end{tcolorbox}
+
+\noindent La famille des $(a_i b_j)_{i\geq 0, j\geq 0}$ est sommable (35.38). \\
+D'après le théorème de sommation par paquets : 
+\begin{align*}
+    \left( \sum_{n\geq 0} a_n \right) \left( \sum_{n\geq 0} b_n \right) &= \sum_{i\geq 0, j\geq 0} a_i b_j \text{ (35.33)} \\
+    &= \sum_{n\geq 0} \sum_{i+j = n} a_i b_j \\
+    &= \sum_{n\geq 0} c_n
+\end{align*}
+
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.39, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que pour tout $x\in ]-1; 1[, \sum\limits_{n\geq 1} nx^{n-1} = \frac{1}{(1-x)^2}$.
+\end{tcolorbox}
+
+\noindent Soit $|x| < 1$. 
+\begin{align*}
+    \frac{1}{(1 - x)^2} &= \frac{1}{1 - x} \times \frac{1}{1 - x} \\
+    &= \left( \sum_{k\geq 0} x^k \right) \left( \sum_{k\geq 0} x^k \right) \\
+    &= \sum_{n\geq 0} \sum_{k=0}^{n} x^k x^{n-k} \text{ (produit de Cauchy)} \\
+    &= \sum_{n\geq 0} (n+1) x^n
+\end{align*}
+
+\setsection{40}
+\section{Convergence de la série exponentielle}
+\begin{tcolorbox}[title=Théorème 35.41, title filled=false, colframe=orange, colback=orange!10!white]
+    La série exponentielle est absolument convergente pour tout paramètre $z\in \mathbb{C}$. La somme définit une fonction notée : 
+    \begin{align*}
+        e(z) &= \sum_{n\geq 0} \frac{z^n}{n!}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Comme pour tout $n\geq 0, z\neq 0$ : 
+\begin{align*}
+    \frac{\frac{|z^{n+1}|}{(n+1)!}}{\frac{|z^n|}{n!}} &= \frac{|z|}{n+1} \underset{n \to +\infty}{\longrightarrow} 0
+\end{align*}
+D'après la règle d'Alembert, la série est absolument convergente pour tout $z\neq 0$. \\
+Pour $z=0, e(0) = 1$. 
+
+\setsection{42}
+\section{Propriété fondamentale de la série exponentielle}
+\begin{tcolorbox}[title=Théorème 35.43, title filled=false, colframe=orange, colback=orange!10!white]
+    Soit $z$ et $z'$ deux complexes. On a : 
+    \begin{align*}
+        e(z + z') &= e(z) e(z')
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Produit de Cauchy. 
+
+\setsection{45}
+\section{Corollaire}
+\begin{tcolorbox}[title=Corollaire 35.46, title filled=false, colframe=orange, colback=orange!10!white]
+    Pour tout $z\in \mathbb{C}$, on a $e(z) = e^z$, soit : 
+    \begin{align*}
+        e^z = \sum_{n\geq 0} \frac{z^n}{n!}
+    \end{align*}
+\end{tcolorbox}
+
+\noindent Soit $z = x + iy\in \mathbb{C}, x, y\in \mathbb{R}$. 
+\begin{align*}
+    e(z) &= e(x + iy) \\
+    &= e(x) e(iy) \text{ (35.43)} \\
+    &= e(x) \sum_{n\geq 0} \frac{(iy)^n}{n!} \text{ (35.45)} \\
+    &= e^x \left( \sum_{n\geq 0} \frac{(-1)^n y^{2n}}{(2n)!} + i\sum_{n\geq 0} \frac{(-1)^ny^{2n+1}}{(2n+1)!} \right) \\
+    &= e^x \left( \cos(y) + i\sin(y) \right) \text{ (35.45)} \\
+    &= e^x e^{iy} \\
+    &= e^z
+\end{align*}
+
+
 \end{document}
