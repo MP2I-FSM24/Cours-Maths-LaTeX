@@ -260,5 +260,61 @@ D'après le TCSATTPE, la somme est finie si et seulement si $\alpha > 4$.
     \item Démonstration similaire. 
 \end{enumerate}
 
+\setsection{26}
+\section{Caractérisation de la somme par les $\epsilon$}
+\begin{tcolorbox}[title=Propostion 35.27, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Soit $\left(a_i\right)_{i \in I} \in \ell(I)$ et $S \in \mathbb{C}$. Les assertions suivantes sont équivalentes:
+    \begin{enumerate}
+        \item $S=\sum\limits_{i \in I} a_i$
+        \item pour tout $\epsilon>0$, il existe $J_\epsilon \in \mathcal{P}_f(I)$ tel que pour tout $K \in \mathcal{P}_f(I)$ avec $J_\epsilon \subset K$ : 
+        $$\left|S-\sum_{i \in K} a_i\right| \leq \epsilon$$
+    \end{enumerate}
+\end{tcolorbox}
+
+\boxed{\Rightarrow} \\
+On suppose que $S = \sum\limits_{i\in I} a_i$ (avec $(a_i)$ une famille de réels). \\
+On décompose : 
+\begin{align*}
+    \forall i\in I, a_i = a_i^{+} - a_i^{-}
+\end{align*}
+Et : 
+\begin{align*}
+    S = \sum_{i\in I} a_i^+ - \sum_{i\in I} a_i^- = S^+ - S^-
+\end{align*}
+On note également : 
+\begin{align*}
+    A_+ &= \left\{ \sum_{i\in J} a_i^+ \mid J\in \mathcal{P}_f(I) \right\} \\
+    A_- &= \left\{ \sum_{i\in J} a_i^- \mid J\in \mathcal{P}_f(I) \right\}
+\end{align*}
+Soit $\epsilon > 0$. \\
+$S^+ - \frac{\epsilon}{2}$ ne majore pas $A_+$, on choisit $J_{\epsilon}^+\in \mathcal{P}_f(I)$ tel que :
+\begin{align*}
+    S^+ - \frac{\epsilon}{2} < \sum_{i\in J_\epsilon^+} a_i^+
+\end{align*}
+Pour les mêmes raisons, on choisit $J_{\epsilon}^-\in \mathcal{P}_f(I)$ tel que :
+\begin{align*}
+    S^- - \frac{\epsilon}{2} < \sum_{i\in J_\epsilon^-} a_i^-
+\end{align*}
+Pour tout $K\in \mathcal{P}_f(I)$ avec $K\supset J_\epsilon = J_\epsilon^+ \cup J_\epsilon^-$. 
+\begin{align*}
+    S^+ - \frac{\epsilon}{2} &< \sum_{i\in J_\epsilon^+} a_i^+ \leq \sum_{i\in K} a_i^+ \\
+    S^- - \frac{\epsilon}{2} &< \sum_{i\in J_\epsilon^-} a_i^- \leq \sum_{i\in K} a_i^-
+\end{align*}
+Et ainsi : 
+\begin{align*}
+    \left| S - \sum_{i\in K} a_i \right| &= \left| S^+ - \sum_{i\in K} a_i^+ - S^- + \sum_{i\in K} a_i^- \right| \\
+    &\leq \left| S^+ - \sum_{i\in K} a_i^+ \right| + \left| S^- - \sum_{i\in K} a_i^- \right| \\
+    &\leq \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+    &= \epsilon
+\end{align*}
+
+\boxed{\Leftarrow} \\
+SUpposons qu'il existe $S$ et $S'$ vérifiant la condition 2. Alors pour tout $\epsilon > 0$, n notant $J_\epsilon$ l'ensemble de l'assertion : 
+\begin{align*}
+    |S - S'| &= |S - \sum_{i\in J_\epsilon} a_i + \sum_{i\in J_\epsilon} a_i - S'| \\
+    &\leq 2\epsilon
+\end{align*}
+Donc $S = S'$. 
+
 
 \end{document}
