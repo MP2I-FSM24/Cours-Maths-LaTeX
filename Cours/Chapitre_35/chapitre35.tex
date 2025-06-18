@@ -316,5 +316,39 @@ SUpposons qu'il existe $S$ et $S'$ vérifiant la condition 2. Alors pour tout $\
 \end{align*}
 Donc $S = S'$. 
 
+\section{Linéarité}
+\begin{tcolorbox}[title=Théorème 35.28, title filled=false, colframe=orange, colback=orange!10!white]
+    L'ensemble $\ell^1(I)$ est un $\mathbb{C}$-espace vectoriel et $(a_i)_{i \in I} \to \sum_{i\in I} a_i$ est une forme linéaire sur $\ell^1(I)$. 
+\end{tcolorbox}
+
+\noindent Soit $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$. 
+\begin{itemize}
+    \item \begin{itemize}
+        \item $\ell^1(I)\subset \mathbb{K}^I$. 
+        \item Soit $(a_i), (b_i)$ dans $\ell^1(I)$, $(\lambda, \mu) \in \mathbb{K}^2$. On a : 
+        \begin{align*}
+            \sum_{i\in I} |\lambda a_i + \mu b_i| &\leq \sum_{i\in I} |\lambda| |a_i| + |\mu| |b_i| \\
+            &\leq |\lambda| \sum_{i\in I} |a_i| + |\mu| \sum_{i\in I} |b_i| \\
+            &< +\infty
+        \end{align*}
+        Donc $(\lambda a_i + \mu b_i)_{i \in I} \in \ell^1(I)$.
+    \end{itemize}
+    \item Soit $\epsilon > 0$. Soit $J_\epsilon^a\in \mathcal{P}_f(I)$ tel que : 
+    \begin{align*}
+        \forall K\in \mathcal{P}_f(I), K > J_\epsilon^a, \left| \sum_{i\in I} a_i - \sum_{i\in K} a_i \right| < \epsilon
+    \end{align*}
+    On pose $J_\epsilon = J_\epsilon^a \cup J_\epsilon^b$. \\
+    On a alors, pour $K\in \mathcal{P}_f(I), K > J_\epsilon$ :
+    \begin{align*}
+        \left| \lambda\sum_{i\in I} a_i + \mu\sum_{i\in I} b_i - \sum_{i\in K} (\lambda a_i + \mu b_i) \right| &= \left| \lambda \sum_{i\in I} a_i - \lambda \sum_{i\in K} a_i + \mu\sum_{i\in I} b_i - \mu\sum_{i\in K} b_i \right| \\
+        &\leq |\lambda| \left| \sum_{i\in I} a_i - \sum_{i\in K} a_i \right| + |\mu| \left| \sum_{i\in I} b_i - \sum_{i\in K} b_i \right| \\
+        &\leq (|\lambda| + |\mu|) \epsilon
+    \end{align*}
+    D'après (35.27), on a donc : 
+    \begin{align*}
+        \sum_{i\in I} (\lambda a_i + \mu b_i) = \lambda\sum_{i\in I} a_i + \mu\sum_{i\in I} b_i
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
