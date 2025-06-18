@@ -461,5 +461,28 @@ Ce qui permet de conclure :
     &< +\infty
 \end{align*}
 
+\section{Exemple}
+\begin{tcolorbox}[title=Exemple 35.35, title filled=false, colframe=darkgreen, colback=darkgreen!10!white]
+    Montrer que pour tout $z\in \mathbb{C}$, la famille $(z^{ij})_{i, j\in N^*}$ est sommable si et seulement si $|z|<1$. 
+\end{tcolorbox}
+
+\begin{itemize}
+    \item Si $|z|< 1$ : 
+    \begin{align*}
+        \sum_{i\geq 1, j\geq 1} |z|^{ij} &= \sum_{i\geq 1} \sum_{j\geq 1} |z^i|^j \text{ (Fubini positif)} \\
+        &= \sum_{i\geq 1} |z|^i \frac{1}{1 - |z|^i} \text{ ($|z^i|\neq 1$)} \\
+        &= \sum_{i\geq 1} \sum_{i\geq 1} \frac{|z|^i}{1 - |z|^i} \\
+        &\leq \sum_{i\geq 1} \frac{|z|^i}{1 - |z|} \text{ ($|z|<1$)} \\
+        &= \frac{|z|}{(1 - |z|)^2}
+    \end{align*}
+
+    \item Si $|z|\geq 1$ :
+    \begin{align*}
+        \sum_{i\geq 1, j\geq 1} |z|^{ij} &= \sum_{i\geq 1} \sum_{j\geq 1} |z^i|^j \\
+        &= \sum_{i\geq 1} +\infty \text{ ($|z^i|\geq 1$)} \\
+        &= +\infty
+    \end{align*}
+\end{itemize}
+
 
 \end{document}
