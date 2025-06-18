@@ -350,5 +350,41 @@ Donc $S = S'$.
     \end{align*}
 \end{itemize}
 
+\section{Intégalité triangulaire}
+\begin{tcolorbox}[title=Propostion 25.29, title filled=false, colframe=lightblue, colback=lightblue!10!white]
+    Si $\left(a_i\right)_{i \in I}$ est une famille sommable de complexes, alors
+    $$\left|\sum_{i \in I} a_i\right| \leq \sum_{i \in I}\left|a_i\right|$$
+\end{tcolorbox}
+
+\noindent On suppose que $(a_i)_{i\in I}\in \ell^1(I)(I, \mathbb{R})$. \\
+On écrit donc : 
+\begin{align*}
+    \forall i\in I, a_i &= a_i^{+} - a_i^{-} \\
+    |a_i| &= a_i^{+} + a_i^{-}
+\end{align*}
+Et ainsi : 
+\begin{align*}
+    \left| \sum_{i\in I} a_i \right| &= \left| \sum_{i\in I} a_i^+ - \sum_{i\in I} a_i^- \right| \\
+    &\leq \sum_{i\in I} a_i^+ + \sum_{i\in I} a_i^- \text{ (Inégalité triangulaire sur $\mathbb{R}$)} \\
+    &= \sum_{i\in I} (a_i^+ + a_i^-) \text{ (presque linéarité)} \\
+    &= \sum_{i\in I} |a_i|
+\end{align*}
+On suppose que $(a_i)_{i\in I}\in \ell^1(I)(I, \mathbb{C})$. \\
+Soit $J\in \mathcal{P}_f(I)$ : 
+\begin{align*}
+    \left| \sum_{i\in J} a_i \right| &\leq \sum_{i\in J} |a_i| \\
+    &\leq \sum_{i\in I} |a_i|
+\end{align*}
+On note $M = \sup \left\{ \left| \sum\limits_{i\in J} a_i \right|\mid J\in \mathcal{P}_f(I) \right\}$ de tele sorte que $M\leq \sum\limits_{i\in I} |a_i|$. \\
+Montrons que $M = \left| \sum\limits_{i\in I} a_i \right| = |S|$. \\
+Pour $\epsilon > 0$, on choisit $J_{\epsilon}\in \mathcal{P}_f(I)$ tel que pour tout $K\in \mathcal{P}_f(I)$, $K\supset J_{\epsilon}$ : 
+\begin{align*}
+    \left| |S| - \left| \sum_{i\in K} \right| \right| \leq \left| S - \sum_{i\in K} a_i \right| < \epsilon
+\end{align*}
+Ce qui permet de conclure : 
+\begin{align*}
+    M = |S|
+\end{align*}
+
 
 \end{document}
